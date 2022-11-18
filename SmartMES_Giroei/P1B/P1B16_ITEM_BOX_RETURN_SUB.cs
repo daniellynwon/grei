@@ -69,12 +69,29 @@ namespace SmartMES_Giroei
         {
             int columnIndex = dataGridView1.CurrentCell.ColumnIndex;
 
-            if (columnIndex == 6 || columnIndex == 12)  // LOTNO/투입량
+            if (columnIndex == 8 || columnIndex == 13)  // LOTNO/투입량
             {
                 if (!(char.IsDigit(e.KeyChar) || e.KeyChar == Convert.ToChar(Keys.Back) || e.KeyChar == '.'))    //숫자와 백스페이스를 제외한 나머지를 바로 처리
                 {
                     e.Handled = true;
                 }
+            }
+        }
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (G.Authority == "D") return;
+            if (e.RowIndex < 0) return;
+            if (e.RowIndex == dataGridView1.RowCount - 1) return;
+
+            if (e.ColumnIndex == 9)     // 버튼 
+            {
+                P1B16_ITEM_BOX_RETURN_LOT sub = new P1B16_ITEM_BOX_RETURN_LOT();
+                sub.lblProd.Text += dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
+                sub.lblProdNm.Text += dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
+                sub.lblDate.Text += DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString()).ToString("yyyy-MM-dd");
+                sub.lblBarcode.Text = dataGridView1.Rows[e.RowIndex].Cells[19].Value.ToString();
+                sub.parentWin = this;
+                sub.ShowDialog();
             }
         }
         private void dataGridView1_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)

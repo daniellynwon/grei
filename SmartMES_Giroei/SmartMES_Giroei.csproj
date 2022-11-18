@@ -527,6 +527,12 @@
     <Compile Include="P1B\P1B16_ITEM_BOX_RETURN.designer.cs">
       <DependentUpon>P1B16_ITEM_BOX_RETURN.cs</DependentUpon>
     </Compile>
+    <Compile Include="P1B\P1B16_ITEM_BOX_RETURN_LOT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1B\P1B16_ITEM_BOX_RETURN_LOT.designer.cs">
+      <DependentUpon>P1B16_ITEM_BOX_RETURN_LOT.cs</DependentUpon>
+    </Compile>
     <Compile Include="P1B\P1B16_ITEM_BOX_RETURN_SUB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1117,6 +1123,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P1B\P1B16_ITEM_BOX_RETURN.resx">
       <DependentUpon>P1B16_ITEM_BOX_RETURN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1B\P1B16_ITEM_BOX_RETURN_LOT.resx">
+      <DependentUpon>P1B16_ITEM_BOX_RETURN_LOT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P1B\P1B16_ITEM_BOX_RETURN_SUB.resx">
       <DependentUpon>P1B16_ITEM_BOX_RETURN_SUB.cs</DependentUpon>

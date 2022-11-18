@@ -56,6 +56,7 @@
             this.자재코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.자재명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.입고일 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.필요수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수주수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.총필요수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,6 +66,8 @@
             this.수삽 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.미삽 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.비고 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.바코드 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.바코드Surfix = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPItemBoxSubBindingSource)).BeginInit();
@@ -172,6 +175,7 @@
             this.자재코드DataGridViewTextBoxColumn,
             this.자재명DataGridViewTextBoxColumn,
             this.입고일,
+            this.Column1,
             this.필요수량DataGridViewTextBoxColumn,
             this.수주수량DataGridViewTextBoxColumn,
             this.총필요수량DataGridViewTextBoxColumn,
@@ -180,7 +184,9 @@
             this.사급,
             this.수삽,
             this.미삽,
-            this.비고});
+            this.비고,
+            this.바코드,
+            this.바코드Surfix});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPItemBoxSubBindingSource;
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -211,6 +217,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1071, 646);
             this.dataGridView1.TabIndex = 4;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
             // 
@@ -294,6 +301,12 @@
             this.입고일.HeaderText = "LOTNo";
             this.입고일.Name = "입고일";
             // 
+            // Column1
+            // 
+            this.Column1.FillWeight = 25F;
+            this.Column1.HeaderText = "";
+            this.Column1.Name = "Column1";
+            // 
             // 필요수량DataGridViewTextBoxColumn
             // 
             this.필요수량DataGridViewTextBoxColumn.DataPropertyName = "필요수량";
@@ -371,6 +384,20 @@
             this.비고.Name = "비고";
             this.비고.Visible = false;
             // 
+            // 바코드
+            // 
+            this.바코드.DataPropertyName = "바코드";
+            this.바코드.HeaderText = "바코드";
+            this.바코드.Name = "바코드";
+            this.바코드.Visible = false;
+            // 
+            // 바코드Surfix
+            // 
+            this.바코드Surfix.DataPropertyName = "바코드Surfix";
+            this.바코드Surfix.HeaderText = "바코드Surfix";
+            this.바코드Surfix.Name = "바코드Surfix";
+            this.바코드Surfix.Visible = false;
+            // 
             // P1B16_ITEM_BOX_RETURN_SUB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -418,6 +445,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 자재코드DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 자재명DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 입고일;
+        private System.Windows.Forms.DataGridViewButtonColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn 필요수량DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수주수량DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 총필요수량DataGridViewTextBoxColumn;
@@ -427,5 +455,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 수삽;
         private System.Windows.Forms.DataGridViewTextBoxColumn 미삽;
         private System.Windows.Forms.DataGridViewTextBoxColumn 비고;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 바코드;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 바코드Surfix;
     }
 }
