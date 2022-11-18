@@ -44,7 +44,7 @@ namespace SmartMES_Giroei
             dtpRequestDate.Value = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString());
             tbProd.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
             tbProd.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
-            tbUnit.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[20].Value.ToString();
+            tbUnit.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[19].Value.ToString();        // 포장단위
             tbQty.Text = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString()).ToString("#,##0");
             tbDanga.Text = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString()).ToString("#,##0");
             lblTitle.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[11].Value.ToString();   // 입고여부

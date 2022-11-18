@@ -14,14 +14,14 @@
     <framework targetVersion="4.7.2" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="SmartMES_Giroei.exe.manifest" size="100232">
+    <dependentAssembly dependencyType="install" codebase="SmartMES_Giroei.exe.manifest" size="119496">
       <assemblyIdentity name="SmartMES_Giroei.exe" version="1.0.0.37" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha256" />
-        <dsig:DigestValue>Fwgd4CMIktQJ9M+zzpSsRPHcaaeyO2jlpAuUgIM1vFc=</dsig:DigestValue>
+        <dsig:DigestValue>pkg71l18wJ6kBkQm2M8tDmNvlf/rzVPrLO2GryoptS8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

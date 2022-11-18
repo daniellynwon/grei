@@ -4,7 +4,10 @@ using System;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Printing;
+using System.Text;
 using System.Windows.Forms;
+using ZPLPrinterProject;
 
 namespace SmartMES_Giroei
 {
@@ -17,6 +20,7 @@ namespace SmartMES_Giroei
         public string sCustID = string.Empty;
         public string sProd = string.Empty;
         public string sProdName = string.Empty;
+        public static int rowIndex = 0;
 
         public P1B11_PURCHASE_RAW_MAT_BOM()
         {
@@ -31,6 +35,10 @@ namespace SmartMES_Giroei
 
             //lblMsg.Text = $@"sSujuNo = {@sSujuNo} / sProd = {@sProd}";
             //Debug.Print("sProd : " + sProd);
+
+            rowIndex = parentWin.dataGridView1.CurrentCell.RowIndex;
+            sCustID = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();     // 거래처ID
+            sProd = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();       // 제품품목ID
 
             ListSearch();
             this.ActiveControl = tbSearch;
@@ -93,21 +101,80 @@ namespace SmartMES_Giroei
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
-            if (e.ColumnIndex != 0) return;
+            //if (e.ColumnIndex != 0) return;
 
             lblMsg.Text = "";
 
-            dataGridView1.Rows[e.RowIndex].Cells[8].Value = string.Empty;
-            dataGridView1.Rows[e.RowIndex].Cells[9].Value = string.Empty;
+            if (e.ColumnIndex == 1)
+            {
 
-            //if (dataGridView1.Rows[e.RowIndex].Cells[0].Value != null)
-            //{
-            //    if (dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() == "1")
-            //    {
-            //        dataGridView1.Rows[e.RowIndex].Cells[8].Value = string.Empty;
-            //        dataGridView1.Rows[e.RowIndex].Cells[9].Value = string.Empty;
-            //    }
-            //}
+                dataGridView1.Rows[e.RowIndex].Cells[8].Value = string.Empty;
+                dataGridView1.Rows[e.RowIndex].Cells[9].Value = string.Empty;
+
+                //if (dataGridView1.Rows[e.RowIndex].Cells[0].Value != null)
+                //{
+                //    if (dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() == "1")
+                //    {
+                //        dataGridView1.Rows[e.RowIndex].Cells[8].Value = string.Empty;
+                //        dataGridView1.Rows[e.RowIndex].Cells[9].Value = string.Empty;
+                //    }
+                //}
+            }
+            else if (e.ColumnIndex == 10)         // 바코드 인쇄
+            {
+                string sMatCode = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();             // 자재코드
+
+                string barcodePrefix = sCustID + "-" + sMatCode + "-" + DateTime.Now.ToString("yyMMdd"); ;
+
+                string sQtyInPackage = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString().Replace(",", "");          // 수량/포장
+                string sQty = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString().Replace(",", "");                 // 수량
+
+                if (string.IsNullOrEmpty(sQtyInPackage))
+                {
+                    lblMsg.Text = "팩키지 수량을  입력해 주세요.";
+                    return;
+                }
+                if (string.IsNullOrEmpty(sQty))
+                {
+                    lblMsg.Text = "총 입고수량을  입력해 주세요.";
+                    return;
+                }
+
+                int iQtyInPackage = int.Parse(sQtyInPackage);
+                int iQty = int.Parse(sQty);
+
+                int iQtyPack = iQty / iQtyInPackage;
+                int remain = iQty % iQtyInPackage;
+
+                int index = (remain == 0) ? iQtyPack : iQtyPack + 1;            // Package 수
+
+                string str = string.Empty;
+
+                PrintDialog pd = new PrintDialog();
+                pd.PrinterSettings = new PrinterSettings();
+
+                if (DialogResult.OK == pd.ShowDialog(this))
+                {
+                    for (int i = 0; i < index; i++)
+                    {
+                        string Barcode = barcodePrefix + "-" + (i + 1).ToString("D3") + "-" + int.Parse(sQtyInPackage).ToString("D4");
+
+                        str = "^XA^BY2,2.0^FS";
+                        str += "^FO30,80 ^B3N,N,80,Y,N ^FD" + Barcode.Trim() + " ^FS";
+                        str += "^XZ";
+                        var bytes = Encoding.Default.GetBytes(str);
+
+                        try
+                        {
+                            RawPrinterHelper.SendBytesToPrinter(pd.PrinterSettings.PrinterName, bytes, bytes.Length);
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show(ex.Message);
+                        }
+                    }
+                }
+            }
         }
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
