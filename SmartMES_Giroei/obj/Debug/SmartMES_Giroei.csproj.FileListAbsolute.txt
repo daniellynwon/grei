@@ -794,6 +794,7 @@ C:\Users\innobe\source\repos\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1B1
 C:\Users\innobe\source\repos\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1B16_ITEM_BOX_INPUT_LOT.resources
 C:\Users\innobe\source\repos\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1B16_ITEM_BOX_INPUT_SUB.resources
 C:\Users\innobe\source\repos\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1B16_ITEM_BOX_RETURN.resources
+C:\Users\innobe\source\repos\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1B16_ITEM_BOX_RETURN_LOT.resources
 C:\Users\innobe\source\repos\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1B16_ITEM_BOX_RETURN_SUB.resources
 C:\Users\innobe\source\repos\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1B16_ITEM_BOX_SUB2.resources
 C:\Users\innobe\source\repos\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1B16_ITEM_BOX_SUB.resources
@@ -872,4 +873,3 @@ C:\Users\innobe\source\repos\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.appl
 C:\Users\innobe\source\repos\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.csproj.CopyComplete
 C:\Users\innobe\source\repos\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.exe
 C:\Users\innobe\source\repos\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.pdb
-C:\Users\innobe\source\repos\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1B16_ITEM_BOX_RETURN_LOT.resources
