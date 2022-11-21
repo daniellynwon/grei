@@ -176,8 +176,11 @@ namespace SmartMES_Giroei
             {
                 sCount = dataGridView1.Rows[i].Cells[13].Value.ToString().Replace(",", ""); // 투입량
                 sSubID = dataGridView1.Rows[i].Cells[6].Value.ToString();   // 자재코드
-                string sDate = DateTime.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString()).ToString("yyyy-MM-dd");
+                string sDate = DateTime.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString()).ToString("yyyy-MM-dd");  // 입고일(LOTNO)
                 string sContents = dataGridView1.Rows[i].Cells[17].Value.ToString();
+                string mBarcode = dataGridView1.Rows[i].Cells[18].Value.ToString();
+                string sBarcode = dataGridView1.Rows[i].Cells[19].Value.ToString();
+                string sCust = dataGridView1.Rows[i].Cells[2].Value.ToString();
 
                 sql = $@"UPDATE Item_box_sub SET item_count = " + sCount + ", input_date = '" + sDate + "', contents = '" + sContents + "'  WHERE box_id = '" + sBoxID + "' AND prod_id_sub = '" + sSubID + "'";
                 m.dbCUD(sql, ref msg);
@@ -188,10 +191,10 @@ namespace SmartMES_Giroei
                     return;
                 }
 
-                sql = "insert into INV_material_out (id, prod_id, plant, output_date, qty, box_id, enter_man) " +
-                    "values(null,'" + sSubID + "','" + G.Pos + "','" + sDate + "'," + sCount + ",'" + sBoxID + "','" + G.UserID + "')" +
-                    " on duplicate key update" +
-                    " prod_id = '" + sSubID + "', qty = " + sCount + ", enter_man = '" + G.UserID + "'";
+                sql = "insert into INV_material_out (mbarcode, barcode_surfix, prod_id, cust_id, input_date, plant, prodorder_id, output_date, qty, box_id, enter_man) " +
+                    "values('" + mBarcode + "','" + sBarcode + "','" + sSubID + "','" + sCust + "','" + sDate + "','" + G.Pos + "'," + sSujuNo + "'," + DateTime.Now.ToString("yyyy-MM-dd") + "'," + sCount + ",'" + sBoxID + "','" + G.UserID + "')";
+                    //+ " on duplicate key update" +
+                    //" prod_id = '" + sSubID + "', qty = " + sCount + ", enter_man = '" + G.UserID + "'";
                 m.dbCUD(sql, ref msg);
 
                 if (msg != "OK")
