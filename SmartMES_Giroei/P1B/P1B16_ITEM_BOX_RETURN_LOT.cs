@@ -22,6 +22,7 @@ namespace SmartMES_Giroei
         private void P1B16_ITEM_BOX_RETURN_LOT_Load(object sender, EventArgs e)
         {
             lblMsg.Text = "";
+            ListSearch();
             //this.ActiveControl = dataGridView1;
         }
 
