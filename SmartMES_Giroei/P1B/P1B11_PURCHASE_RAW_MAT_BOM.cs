@@ -164,14 +164,14 @@ namespace SmartMES_Giroei
                         str += "^XZ";
                         var bytes = Encoding.Default.GetBytes(str);
 
-                        try
-                        {
-                            RawPrinterHelper.SendBytesToPrinter(pd.PrinterSettings.PrinterName, bytes, bytes.Length);
-                        }
-                        catch (Exception ex)
-                        {
-                            MessageBox.Show(ex.Message);
-                        }
+                        //try
+                        //{
+                        //    RawPrinterHelper.SendBytesToPrinter(pd.PrinterSettings.PrinterName, bytes, bytes.Length);
+                        //}
+                        //catch (Exception ex)
+                        //{
+                        //    MessageBox.Show(ex.Message);
+                        //}
                     }
                 }
             }
