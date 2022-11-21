@@ -33,9 +33,6 @@ namespace SmartMES_Giroei
             lbSujuNo.Text = "수주번호 : " + sSujuNo;
             lbProdName.Text = "품목명 : " + sProdName;
 
-            //lblMsg.Text = $@"sSujuNo = {@sSujuNo} / sProd = {@sProd}";
-            //Debug.Print("sProd : " + sProd);
-
             rowIndex = parentWin.dataGridView1.CurrentCell.RowIndex;
             sCustID = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();     // 거래처ID
             sProd = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();       // 제품품목ID

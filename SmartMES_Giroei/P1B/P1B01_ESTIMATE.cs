@@ -15,6 +15,7 @@ namespace SmartMES_Giroei
         bool endEdit = false;
         string estTerm = "견적 유효일자 5일";
 
+
         public P1B01_ESTIMATE()
         {
             InitializeComponent();
