@@ -8,7 +8,7 @@
           <Rectangle Name="Rectangle4">
             <ReportItems>
               <Line Name="Line8">
-                <Top>3.84722cm</Top>
+                <Top>5.14897cm</Top>
                 <Left>22.67322cm</Left>
                 <Height>0cm</Height>
                 <Width>-22.67322cm</Width>
@@ -28,7 +28,7 @@
                         <Value>수주번호</Value>
                         <Style>
                           <FontFamily>맑은 고딕</FontFamily>
-                          <FontSize>35pt</FontSize>
+                          <FontSize>30pt</FontSize>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -38,9 +38,9 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox15</rd:DefaultName>
-                <Top>3.95305cm</Top>
+                <Top>5.22305cm</Top>
                 <Left>0.12285cm</Left>
-                <Height>1.65889cm</Height>
+                <Height>1.41194cm</Height>
                 <Width>5.5cm</Width>
                 <ZIndex>1</ZIndex>
                 <Style>
@@ -64,7 +64,7 @@
                         <Value>업 체 명</Value>
                         <Style>
                           <FontFamily>맑은 고딕</FontFamily>
-                          <FontSize>35pt</FontSize>
+                          <FontSize>30pt</FontSize>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -74,9 +74,9 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox15</rd:DefaultName>
-                <Top>5.75305cm</Top>
+                <Top>6.8643cm</Top>
                 <Left>0.12285cm</Left>
-                <Height>1.65889cm</Height>
+                <Height>1.41194cm</Height>
                 <Width>5.5cm</Width>
                 <ZIndex>2</ZIndex>
                 <Style>
@@ -100,7 +100,7 @@
                         <Value>모 델 명</Value>
                         <Style>
                           <FontFamily>맑은 고딕</FontFamily>
-                          <FontSize>35pt</FontSize>
+                          <FontSize>30pt</FontSize>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -110,9 +110,9 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox15</rd:DefaultName>
-                <Top>7.55305cm</Top>
+                <Top>8.56905cm</Top>
                 <Left>0.12285cm</Left>
-                <Height>1.65889cm</Height>
+                <Height>1.41194cm</Height>
                 <Width>5.5cm</Width>
                 <ZIndex>3</ZIndex>
                 <Style>
@@ -136,7 +136,7 @@
                         <Value>S  M  T</Value>
                         <Style>
                           <FontFamily>맑은 고딕</FontFamily>
-                          <FontSize>35pt</FontSize>
+                          <FontSize>30pt</FontSize>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -146,9 +146,9 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox15</rd:DefaultName>
-                <Top>9.35305cm</Top>
+                <Top>10.2103cm</Top>
                 <Left>0.12285cm</Left>
-                <Height>1.62361cm</Height>
+                <Height>1.41194cm</Height>
                 <Width>5.5cm</Width>
                 <ZIndex>4</ZIndex>
                 <Style>
@@ -172,7 +172,7 @@
                         <Value>수     량</Value>
                         <Style>
                           <FontFamily>맑은 고딕</FontFamily>
-                          <FontSize>35pt</FontSize>
+                          <FontSize>30pt</FontSize>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -182,9 +182,9 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox15</rd:DefaultName>
-                <Top>11.11778cm</Top>
+                <Top>11.85861cm</Top>
                 <Left>0.12285cm</Left>
-                <Height>1.69417cm</Height>
+                <Height>1.41194cm</Height>
                 <Width>5.5cm</Width>
                 <ZIndex>5</ZIndex>
                 <Style>
@@ -208,7 +208,7 @@
                         <Value>납     기</Value>
                         <Style>
                           <FontFamily>맑은 고딕</FontFamily>
-                          <FontSize>35pt</FontSize>
+                          <FontSize>30pt</FontSize>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -218,9 +218,9 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox15</rd:DefaultName>
-                <Top>13cm</Top>
+                <Top>13.50339cm</Top>
                 <Left>0.12285cm</Left>
-                <Height>1.90583cm</Height>
+                <Height>1.41194cm</Height>
                 <Width>5.5cm</Width>
                 <ZIndex>6</ZIndex>
                 <Style>
@@ -238,8 +238,8 @@
                 <Source>Embedded</Source>
                 <Value>GiroeiLogo</Value>
                 <Sizing>Fit</Sizing>
-                <Top>1.09472cm</Top>
-                <Left>0.0523cm</Left>
+                <Top>1.64784cm</Top>
+                <Left>0.37591cm</Left>
                 <Height>1.72944cm</Height>
                 <Width>4.92944cm</Width>
                 <ZIndex>7</ZIndex>
@@ -250,7 +250,7 @@
                 </Style>
               </Image>
               <Line Name="Line9">
-                <Top>5.6825cm</Top>
+                <Top>6.79375cm</Top>
                 <Left>22.70982cm</Left>
                 <Height>0cm</Height>
                 <Width>-22.68996cm</Width>
@@ -262,7 +262,7 @@
                 </Style>
               </Line>
               <Line Name="Line10">
-                <Top>7.4825cm</Top>
+                <Top>8.46675cm</Top>
                 <Left>22.70982cm</Left>
                 <Height>0cm</Height>
                 <Width>-22.68996cm</Width>
@@ -274,7 +274,7 @@
                 </Style>
               </Line>
               <Line Name="Line11">
-                <Top>9.2825cm</Top>
+                <Top>10.13975cm</Top>
                 <Left>22.67633cm</Left>
                 <Height>0cm</Height>
                 <Width>-22.65647cm</Width>
@@ -286,7 +286,7 @@
                 </Style>
               </Line>
               <Line Name="Line12">
-                <Top>11.04722cm</Top>
+                <Top>11.74572cm</Top>
                 <Left>22.66943cm</Left>
                 <Height>0cm</Height>
                 <Width>-22.64957cm</Width>
@@ -298,7 +298,7 @@
                 </Style>
               </Line>
               <Line Name="Line13">
-                <Top>12.8825cm</Top>
+                <Top>13.3905cm</Top>
                 <Left>22.68996cm</Left>
                 <Height>0cm</Height>
                 <Width>-22.67011cm</Width>
@@ -310,9 +310,9 @@
                 </Style>
               </Line>
               <Line Name="Line15">
-                <Top>3.84722cm</Top>
+                <Top>5.14897cm</Top>
                 <Left>5.72869cm</Left>
-                <Height>11.15278cm</Height>
+                <Height>10.49049cm</Height>
                 <Width>0cm</Width>
                 <ZIndex>13</ZIndex>
                 <Style>
@@ -331,17 +331,20 @@
                         <Value>공 정 현 품 표</Value>
                         <Style>
                           <FontFamily>맑은 고딕</FontFamily>
-                          <FontSize>50pt</FontSize>
+                          <FontSize>45pt</FontSize>
                           <FontWeight>Bold</FontWeight>
                         </Style>
                       </TextRun>
                     </TextRuns>
-                    <Style />
+                    <Style>
+                      <TextAlign>Center</TextAlign>
+                    </Style>
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox15</rd:DefaultName>
-                <Left>5.0523cm</Left>
-                <Height>2.29778cm</Height>
+                <Top>0.41275cm</Top>
+                <Left>5.72869cm</Left>
+                <Height>2.13903cm</Height>
                 <Width>11.88806cm</Width>
                 <ZIndex>14</ZIndex>
                 <Style>
@@ -365,7 +368,7 @@
                         <Value>수     삽</Value>
                         <Style>
                           <FontFamily>맑은 고딕</FontFamily>
-                          <FontSize>35pt</FontSize>
+                          <FontSize>30pt</FontSize>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -375,9 +378,9 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>Textbox15</rd:DefaultName>
-                <Top>9.31778cm</Top>
+                <Top>10.17503cm</Top>
                 <Left>11.44035cm</Left>
-                <Height>1.72944cm</Height>
+                <Height>1.53894cm</Height>
                 <Width>5.5cm</Width>
                 <ZIndex>15</ZIndex>
                 <Style>
@@ -421,7 +424,7 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>ReportParameter1</rd:DefaultName>
-                <Top>4.05889cm</Top>
+                <Top>5.20189cm</Top>
                 <Left>5.83452cm</Left>
                 <Height>1.44722cm</Height>
                 <Width>16.71167cm</Width>
@@ -457,7 +460,7 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>ReportParameter2</rd:DefaultName>
-                <Top>5.85889cm</Top>
+                <Top>6.90664cm</Top>
                 <Left>5.83452cm</Left>
                 <Height>1.44722cm</Height>
                 <Width>16.71167cm</Width>
@@ -493,7 +496,7 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>ReportParameter3</rd:DefaultName>
-                <Top>7.65889cm</Top>
+                <Top>8.57964cm</Top>
                 <Left>5.83452cm</Left>
                 <Height>1.41194cm</Height>
                 <Width>16.71167cm</Width>
@@ -529,7 +532,7 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>ReportParameter4</rd:DefaultName>
-                <Top>9.45889cm</Top>
+                <Top>10.22089cm</Top>
                 <Left>5.83452cm</Left>
                 <Height>1.41194cm</Height>
                 <Width>5.5cm</Width>
@@ -565,7 +568,7 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>ReportParameter5</rd:DefaultName>
-                <Top>9.45889cm</Top>
+                <Top>10.22089cm</Top>
                 <Left>17.04619cm</Left>
                 <Height>1.41194cm</Height>
                 <Width>5.5cm</Width>
@@ -601,9 +604,9 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>ReportParameter6</rd:DefaultName>
-                <Top>11.22361cm</Top>
+                <Top>11.85861cm</Top>
                 <Left>5.83452cm</Left>
-                <Height>1.4825cm</Height>
+                <Height>1.41194cm</Height>
                 <Width>16.71167cm</Width>
                 <ZIndex>21</ZIndex>
                 <Style>
@@ -637,9 +640,9 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>ReportParameter7</rd:DefaultName>
-                <Top>13cm</Top>
+                <Top>13.47625cm</Top>
                 <Left>5.83452cm</Left>
-                <Height>1.8cm</Height>
+                <Height>1.41194cm</Height>
                 <Width>16.71167cm</Width>
                 <ZIndex>22</ZIndex>
                 <Style>
@@ -663,7 +666,7 @@
                         <Value>=Parameters!ReportParameter8.Value</Value>
                         <Style>
                           <FontFamily>Libre Barcode 39 Extended Text</FontFamily>
-                          <FontSize>30pt</FontSize>
+                          <FontSize>40pt</FontSize>
                         </Style>
                       </TextRun>
                     </TextRuns>
@@ -673,10 +676,10 @@
                   </Paragraph>
                 </Paragraphs>
                 <rd:DefaultName>ReportParameter8</rd:DefaultName>
-                <Top>2.36833cm</Top>
-                <Left>5.01702cm</Left>
-                <Height>1.37305cm</Height>
-                <Width>11.92334cm</Width>
+                <Top>2.27485cm</Top>
+                <Left>5.72869cm</Left>
+                <Height>2.5cm</Height>
+                <Width>11.88806cm</Width>
                 <ZIndex>23</ZIndex>
                 <Style>
                   <Border>
@@ -693,7 +696,7 @@
             <KeepTogether>true</KeepTogether>
             <Top>1.62008cm</Top>
             <Left>3.09771cm</Left>
-            <Height>15cm</Height>
+            <Height>15.63946cm</Height>
             <Width>22.70982cm</Width>
             <Style>
               <Border>
