@@ -22,6 +22,7 @@ namespace SmartMES_Giroei
         private void P1B16_ITEM_BOX_INPUT_LOT_Load(object sender, EventArgs e)
         {
             lblMsg.Text = "";
+            ListSearch();
             //this.ActiveControl = dataGridView1;
         }
 
@@ -120,7 +121,7 @@ namespace SmartMES_Giroei
                 MessageBox.Show("LotNo가 하나 이상 선택되었습니다..");
                 return;
             }
-            // call function 
+            barcodeSearch();
         }
         private void barcodeSearch()
         {
@@ -129,7 +130,7 @@ namespace SmartMES_Giroei
             {
                 if (dataGridView1.Rows[i].Cells[0].Value != null && dataGridView1.Rows[i].Cells[0].Value.ToString() == "1")
                 {
-                    parentWin.sPItemBoxSubBindingSource.AddNew();
+                    //parentWin.sPItemBoxSubBindingSource.AddNew();
                     parentWin.dataGridView1.Rows[iSeq].Cells[19].Value = dataGridView1.Rows[i].Cells[2].Value; //바코드 Surfix
                     iSeq++;
                 }

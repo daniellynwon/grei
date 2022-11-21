@@ -744,7 +744,6 @@ C:\Users\innobe\source\repos\grei\SmartMES_Giroei\bin\Debug\pt\Microsoft.ReportV
 C:\Users\innobe\source\repos\grei\SmartMES_Giroei\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\innobe\source\repos\grei\SmartMES_Giroei\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\Users\innobe\source\repos\grei\SmartMES_Giroei\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\Users\innobe\source\repos\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.csproj.AssemblyReference.cache
 C:\Users\innobe\source\repos\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.csproj.ResolveComReference.cache
 C:\Users\innobe\source\repos\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.CustFinder.resources
 C:\Users\innobe\source\repos\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.MachineFinder.resources

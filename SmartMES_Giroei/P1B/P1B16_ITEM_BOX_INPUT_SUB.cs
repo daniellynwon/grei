@@ -81,6 +81,7 @@ namespace SmartMES_Giroei
                 sub.lblProdNm.Text += dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
                 sub.lblDate.Text += DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString()).ToString("yyyy-MM-dd");
                 sub.lblBarcode.Text = dataGridView1.Rows[e.RowIndex].Cells[18].Value.ToString();
+                sub.sBarcode = dataGridView1.Rows[e.RowIndex].Cells[18].Value.ToString();
                 sub.parentWin = this;
                 sub.ShowDialog();
             }

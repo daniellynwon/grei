@@ -71,25 +71,6 @@ namespace SmartMES_Giroei
                     dataGridView1.Rows[e.RowIndex].Cells[0].Value = 1;
             }
         }
-        private void ProdEventMethod(object sender)
-        {
-            try
-            {
-                string sProd = sender.ToString();
-                if (string.IsNullOrEmpty(sProd)) return;
-
-                int rowIndex = dataGridView1.CurrentCell.RowIndex;
-                if (rowIndex < 0) return;
-
-                dataGridView1.Rows[rowIndex].Cells[2].Value = sProd.Substring(0, 8);
-                dataGridView1.Rows[rowIndex].Cells[4].Value = sProd.Substring(9, sProd.Length - 9);
-                dataGridView1.CurrentCell = dataGridView1[5, rowIndex];
-            }
-            catch (Exception)
-            {
-                return;
-            }
-        }
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             if (dataGridView1.RowCount < 2) return;
@@ -120,7 +101,7 @@ namespace SmartMES_Giroei
                 MessageBox.Show("LotNo가 하나 이상 선택되었습니다..");
                 return;
             }
-            // call function 
+            barcodeSearch();
         }
         private void barcodeSearch()
         {
@@ -129,8 +110,7 @@ namespace SmartMES_Giroei
             {
                 if (dataGridView1.Rows[i].Cells[0].Value != null && dataGridView1.Rows[i].Cells[0].Value.ToString() == "1")
                 {
-                    parentWin.sPItemBoxSubBindingSource.AddNew();
-                    parentWin.dataGridView1.Rows[iSeq].Cells[19].Value = dataGridView1.Rows[i].Cells[2].Value; //바코드 Surfix
+                    parentWin.dataGridView1.Rows[iSeq].Cells[20].Value = dataGridView1.Rows[i].Cells[2].Value; //바코드 Surfix
                     iSeq++;
                 }
             }
