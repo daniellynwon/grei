@@ -1,7 +1,9 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\SmartMES_Giroei",
+    "\\SmartMES_Giroei\\P1B"
   ],
-  "SelectedNode": "\\SmartMES_Giroei.sln",
+  "SelectedNode": "\\SmartMES_Giroei\\P1B\\P1B11_PURCHASE_RAW_MAT_BOM.cs",
   "PreviewInSolutionExplorer": false
 }
