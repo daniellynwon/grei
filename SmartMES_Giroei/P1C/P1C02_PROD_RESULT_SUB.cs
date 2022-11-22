@@ -134,6 +134,7 @@ namespace SmartMES_Giroei
             Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);
 
             lblMsg.Text = "저장되었습니다.";
+            this.Dispose();
             parentWin.ListSearch();
         }
 
