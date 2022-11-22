@@ -119,60 +119,106 @@ namespace SmartMES_Giroei
             }
             else if (e.ColumnIndex == 10)         // 바코드 인쇄
             {
-                string sMatCode = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();             // 자재코드
+                printBarcode(e.RowIndex);
+            }
+        }
 
-                string barcodePrefix = sCustID + "-" + sMatCode + "-" + DateTime.Now.ToString("yyMMdd"); ;
+        private void printBarcode(int rowIndex)
+        {
+            string sMatCode = dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();             // 자재코드
 
-                string sQtyInPackage = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString().Replace(",", "");          // 수량/포장
-                string sQty = dataGridView1.Rows[e.RowIndex].Cells[9].Value.ToString().Replace(",", "");                 // 수량
+            string barcodePrefix = sCustID + "-" + sMatCode + "-" + DateTime.Now.ToString("yyMMdd");
 
-                if (string.IsNullOrEmpty(sQtyInPackage))
+            string sPackageCount = dataGridView1.Rows[rowIndex].Cells[8].Value.ToString().Replace(",", "");          // 포장수량
+            string sQty = dataGridView1.Rows[rowIndex].Cells[9].Value.ToString().Replace(",", "");                 // 총수량
+
+            if (string.IsNullOrEmpty(sPackageCount))
+            {
+                lblMsg.Text = "포장(BOX) 개수을  입력해 주세요.";
+                return;
+            }
+            if (string.IsNullOrEmpty(sQty))
+            {
+                lblMsg.Text = "총 입고수량을  입력해 주세요.";
+                return;
+            }
+
+            int iPackageCount = int.Parse(sPackageCount);
+            int iQty = int.Parse(sQty);
+
+            int iQtyInPackage = iQty / iPackageCount;
+            int remain = iQty % iPackageCount;
+
+            int index = iPackageCount;            // Package 수
+
+            string str = string.Empty;
+
+            PrintDialog pd = new PrintDialog();
+            pd.PrinterSettings = new PrinterSettings();
+
+            if (DialogResult.OK == pd.ShowDialog(this))
+            {
+                for (int i = 0; i < index; i++)
                 {
-                    lblMsg.Text = "팩키지 수량을  입력해 주세요.";
-                    return;
+                    if (remain > 0 && i == (index-1))
+                        iQtyInPackage = remain;
+                    string Barcode = barcodePrefix + "-" + (i + 1).ToString("D3") + "-" + iQtyInPackage.ToString("D4");
+
+                    str = "^XA^BY2,2.0^FS";
+                    str += "^FO30,80 ^B3N,N,80,Y,N ^FD" + Barcode.Trim() + " ^FS";
+                    str += "^XZ";
+                    var bytes = Encoding.Default.GetBytes(str);
+
+                    //try
+                    //{
+                    //    RawPrinterHelper.SendBytesToPrinter(pd.PrinterSettings.PrinterName, bytes, bytes.Length);
+                    //}
+                    //catch (Exception ex)
+                    //{
+                    //    MessageBox.Show(ex.Message);
+                    //}
+                    save2InvBarcode(Barcode, barcodePrefix, iQtyInPackage);
                 }
-                if (string.IsNullOrEmpty(sQty))
+
+            }
+            dataGridView1.Rows[rowIndex].Cells[0].Value = "1";
+        }
+
+        private void save2InvBarcode(string barcode, string mBarcode, int iQtyInPackage)
+        {
+            string sCust = barcode.Split('-')[0].Trim();
+            string sProd = barcode.Split('-')[1].Trim();
+            string surfix = barcode.Split('-')[3] + "-" + barcode.Split('-')[4];
+            string sInDate = DateTime.Now.ToString("yyyy-MM-dd");
+
+            string msg = string.Empty;
+            MariaCRUD m = new MariaCRUD();
+
+            string sql = "insert into INV_barcode (mbarcode, barcode_surfix, cust_id, prod_id, input_date, in_qty, rm_qty, enter_man) " +
+                    "values('" + mBarcode + "','" + surfix + "','" + sCust + "','" + sProd + "','" + sInDate + "'," + iQtyInPackage + "," + iQtyInPackage + ",'" + G.UserID + "')";
+            m.dbCUD(sql, ref msg);
+
+            if (msg != "OK")
+            {
+                lblMsg.Text = msg;
+                return;
+            }
+            var data = sql;
+            Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);
+        }
+        private void btTagPrint_Click(object sender, EventArgs e)
+        {
+            int rowcnt = dataGridView1.Rows.Count;
+
+            for (int rowindex = 0; rowindex < rowcnt; rowindex++)
+            {
+                if (dataGridView1.Rows[rowindex].Cells[0].Value != null && dataGridView1.Rows[rowindex].Cells[0].Value.ToString() == "1")
                 {
-                    lblMsg.Text = "총 입고수량을  입력해 주세요.";
-                    return;
-                }
-
-                int iQtyInPackage = int.Parse(sQtyInPackage);
-                int iQty = int.Parse(sQty);
-
-                int iQtyPack = iQty / iQtyInPackage;
-                int remain = iQty % iQtyInPackage;
-
-                int index = (remain == 0) ? iQtyPack : iQtyPack + 1;            // Package 수
-
-                string str = string.Empty;
-
-                PrintDialog pd = new PrintDialog();
-                pd.PrinterSettings = new PrinterSettings();
-
-                if (DialogResult.OK == pd.ShowDialog(this))
-                {
-                    for (int i = 0; i < index; i++)
-                    {
-                        string Barcode = barcodePrefix + "-" + (i + 1).ToString("D3") + "-" + int.Parse(sQtyInPackage).ToString("D4");
-
-                        str = "^XA^BY2,2.0^FS";
-                        str += "^FO30,80 ^B3N,N,80,Y,N ^FD" + Barcode.Trim() + " ^FS";
-                        str += "^XZ";
-                        var bytes = Encoding.Default.GetBytes(str);
-
-                        //try
-                        //{
-                        //    RawPrinterHelper.SendBytesToPrinter(pd.PrinterSettings.PrinterName, bytes, bytes.Length);
-                        //}
-                        //catch (Exception ex)
-                        //{
-                        //    MessageBox.Show(ex.Message);
-                        //}
-                    }
+                    printBarcode(rowindex);
                 }
             }
         }
+
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             ////if (dataGridView1.RowCount < 2) return;
@@ -209,67 +255,6 @@ namespace SmartMES_Giroei
                 else dataGridView1.Rows[i].Cells[0].Value = "0";
             }
         }
-        private void btTagPrint_Click(object sender, EventArgs e)
-        {
-            string reportFileName = "SmartMES_Giroei.Reports.P1B11_PURCHASE_RAW_MAT_SUB.rdlc";
-
-            string reportParm1 = string.Empty; //수주번호
-            string reportParm2 = string.Empty; //업체명
-            string reportParm3 = string.Empty; //모델명
-            string reportParm4 = string.Empty; //SMT여부
-            string reportParm5 = string.Empty; //수삽여부
-            string reportParm6 = string.Empty; //수량
-            string reportParm7 = string.Empty; //납기일자
-            string reportParm8 = string.Empty; //바코드
-
-            DataTable table;
-
-            string sql = string.Empty;
-            string msg = string.Empty;
-
-            MariaCRUD m = new MariaCRUD();
-
-            sql = $@"SELECT os.order_id, os.order_seq, cust.cust_id, cust.abbname, om.project, IF(os.SMTProcessYN = 'Y','O','X'), IF(os.SusapProcessYN = 'Y','O','X'), os.qty, om.deli_date
-                    FROM SAL_order_sub os JOIN SAL_order_main om ON os.order_id = om.order_id JOIN BAS_customer cust ON om.cust_id = cust.cust_id
-                    WHERE os.order_id = '{@sSujuNo}' AND os.order_seq = {@sSujuSeq}";
-
-            table = m.dbDataTable(sql, ref msg);
-
-            if (msg != "OK")
-            {
-                lblMsg.Text = msg;
-                MessageBox.Show(msg);
-            }
-
-            reportParm1 = table.Rows[0][0].ToString(); //수주번호
-            reportParm2 = table.Rows[0][3].ToString(); //업체명
-            reportParm3 = table.Rows[0][4].ToString(); //모델명
-            reportParm4 = table.Rows[0][5].ToString(); //SMT여부
-            reportParm5 = table.Rows[0][6].ToString(); //수삽여부
-            reportParm6 = table.Rows[0][7].ToString() + " PCS"; //수량
-            reportParm7 = Convert.ToDateTime(table.Rows[0][8].ToString()).ToString("yyyy-MM-dd"); //납기일자
-            reportParm8 = "*" + table.Rows[0][0].ToString() + "*"; //바코드
-
-            ViewReport_H viewReport = new ViewReport_H();
-            viewReport.reportViewer1.ProcessingMode = ProcessingMode.Local;
-            viewReport.reportViewer1.LocalReport.ReportEmbeddedResource = reportFileName;
-
-            ReportParameter rp1 = new ReportParameter("ReportParameter1", reportParm1);
-            ReportParameter rp2 = new ReportParameter("ReportParameter2", reportParm2);
-            ReportParameter rp3 = new ReportParameter("ReportParameter3", reportParm3);
-            ReportParameter rp4 = new ReportParameter("ReportParameter4", reportParm4);
-            ReportParameter rp5 = new ReportParameter("ReportParameter5", reportParm5);
-            ReportParameter rp6 = new ReportParameter("ReportParameter6", reportParm6);
-            ReportParameter rp7 = new ReportParameter("ReportParameter7", reportParm7);
-            ReportParameter rp8 = new ReportParameter("ReportParameter8", reportParm8);
-            viewReport.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rp1, rp2, rp3, rp4, rp5, rp6, rp7, rp8 });
-
-            //ReportDataSource rds = new ReportDataSource("DataSet1", sPPurchaseRawMatINBindingSource);
-            //viewReport.reportViewer1.LocalReport.DataSources.Add(rds);
-            //viewReport.reportViewer1.LocalReport.Refresh();
-
-            viewReport.ShowDialog();
-        }
         private void btnSave_Click(object sender, EventArgs e)
         {
             Save();
@@ -290,7 +275,7 @@ namespace SmartMES_Giroei
 
             if (CheckCount == 0)
             {
-                lblMsg.Text = "선택된 자재가 하나도 없습니다.";
+                lblMsg.Text = "선택된 자재가 하나도 없습니다. 바코드를 꼭 인쇄하세요.";
                 return;
             }
 
@@ -325,6 +310,13 @@ namespace SmartMES_Giroei
                         ret = int.TryParse(dataGridView1.Rows[i].Cells[8].Value.ToString(), out iPackQty);
                         ret = int.TryParse(dataGridView1.Rows[i].Cells[9].Value.ToString(), out iQty);
 
+                        if (iPackQty < 1 || iQty < 1)
+                        {
+                            lblMsg.Text = "포장갯수와 수량을 정확히 입력해 주세요.";
+                            return;
+                        }
+                        string barcodePrefix = sCustID + "-" + sSubProd + "-" + DateTime.Now.ToString("yyMMdd");
+
                         if (ret)
                         {
                             sPackQty = iPackQty.ToString();
@@ -336,8 +328,8 @@ namespace SmartMES_Giroei
                             return;
                         }
 
-                        sql = $@"INSERT INTO INV_material_in (cust_id, prod_id, plant, input_date, order_id, order_seq, qty, pack_type, pack_qty, enter_man) 
-                            VALUES ('{@sCustID}', '{@sSubProd}', 'A', '{@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}', '{@sSujuNo}', {@sSujuSeq}, {@sQty}, '{@sPackType}', {@sPackQty}, '{@G.UserID}');";
+                        sql = $@"INSERT INTO INV_material_in (mbarcode, cust_id, prod_id, plant, input_date, order_id, order_seq, qty, pack_type, pack_qty, enter_man) 
+                            VALUES ('{barcodePrefix}', '{@sCustID}', '{@sSubProd}', 'A', '{@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}', '{@sSujuNo}', {@sSujuSeq}, {@sQty}, '{@sPackType}', {@sPackQty}, '{@G.UserID}');";
 
                         m.dbCUD(sql, ref msg);
 
@@ -351,7 +343,7 @@ namespace SmartMES_Giroei
                         var data = sql;
                         Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);
 
-                        sql = $@"SELECT basestock_qty, partin_total, partout_total, current_qty FROM INV_real_stock WHERE prod_id = '{@sSubProd}' ORDER BY id DESC LIMIT 1";
+                        sql = $@"SELECT basestock_qty, partin_total, partout_total, current_qty FROM INV_real_stock WHERE prod_id = '{@sSubProd}' ORDER BY input_date DESC LIMIT 1";
 
                         table = m.dbDataTable(sql, ref msg);
 
@@ -368,7 +360,7 @@ namespace SmartMES_Giroei
                             data = sql;
                             Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);
 
-                            sql = $@"SELECT basestock_qty, partin_total, partout_total, current_qty FROM INV_real_stock WHERE prod_id = '{@sSubProd}' ORDER BY id DESC LIMIT 1";
+                            sql = $@"SELECT basestock_qty, partin_total, partout_total, current_qty FROM INV_real_stock WHERE prod_id = '{@sSubProd}' ORDER BY input_date DESC LIMIT 1";
 
                             table = m.dbDataTable(sql, ref msg);
 
