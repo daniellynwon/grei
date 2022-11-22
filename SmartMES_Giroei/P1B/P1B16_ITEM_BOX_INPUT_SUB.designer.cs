@@ -45,6 +45,9 @@
             this.btnMaterial = new System.Windows.Forms.Button();
             this.btnItemBox = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sPItemBoxSubBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
+            this.sP_Item_Box_SubTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_Item_Box_SubTableAdapter();
             this.수주번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수주순번DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.업체코드 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,9 +68,6 @@
             this.비고 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.바코드 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.바코드Surfix = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPItemBoxSubBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
-            this.sP_Item_Box_SubTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_Item_Box_SubTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPItemBoxSubBindingSource)).BeginInit();
@@ -217,6 +217,20 @@
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
             // 
+            // sPItemBoxSubBindingSource
+            // 
+            this.sPItemBoxSubBindingSource.DataMember = "SP_Item_Box_Sub";
+            this.sPItemBoxSubBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // dataSetP1B
+            // 
+            this.dataSetP1B.DataSetName = "DataSetP1B";
+            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_Item_Box_SubTableAdapter
+            // 
+            this.sP_Item_Box_SubTableAdapter.ClearBeforeFill = true;
+            // 
             // 수주번호DataGridViewTextBoxColumn
             // 
             this.수주번호DataGridViewTextBoxColumn.DataPropertyName = "수주번호";
@@ -309,7 +323,7 @@
             dataGridViewCellStyle4.Format = "N0";
             dataGridViewCellStyle4.NullValue = null;
             this.필요수량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.필요수량DataGridViewTextBoxColumn.FillWeight = 50F;
+            this.필요수량DataGridViewTextBoxColumn.FillWeight = 30F;
             this.필요수량DataGridViewTextBoxColumn.HeaderText = "필요수량";
             this.필요수량DataGridViewTextBoxColumn.MinimumWidth = 8;
             this.필요수량DataGridViewTextBoxColumn.Name = "필요수량DataGridViewTextBoxColumn";
@@ -320,7 +334,7 @@
             this.수주수량DataGridViewTextBoxColumn.DataPropertyName = "수주수량";
             dataGridViewCellStyle5.Format = "N0";
             this.수주수량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.수주수량DataGridViewTextBoxColumn.FillWeight = 50F;
+            this.수주수량DataGridViewTextBoxColumn.FillWeight = 30F;
             this.수주수량DataGridViewTextBoxColumn.HeaderText = "수주수량";
             this.수주수량DataGridViewTextBoxColumn.MinimumWidth = 8;
             this.수주수량DataGridViewTextBoxColumn.Name = "수주수량DataGridViewTextBoxColumn";
@@ -331,7 +345,7 @@
             this.총필요수량DataGridViewTextBoxColumn.DataPropertyName = "총필요수량";
             dataGridViewCellStyle6.Format = "N0";
             this.총필요수량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.총필요수량DataGridViewTextBoxColumn.FillWeight = 50F;
+            this.총필요수량DataGridViewTextBoxColumn.FillWeight = 30F;
             this.총필요수량DataGridViewTextBoxColumn.HeaderText = "총필요수량";
             this.총필요수량DataGridViewTextBoxColumn.MinimumWidth = 8;
             this.총필요수량DataGridViewTextBoxColumn.Name = "총필요수량DataGridViewTextBoxColumn";
@@ -344,7 +358,7 @@
             dataGridViewCellStyle7.Format = "N0";
             dataGridViewCellStyle7.NullValue = null;
             this.입고량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.입고량DataGridViewTextBoxColumn.FillWeight = 50F;
+            this.입고량DataGridViewTextBoxColumn.FillWeight = 25F;
             this.입고량DataGridViewTextBoxColumn.HeaderText = "투입량";
             this.입고량DataGridViewTextBoxColumn.MinimumWidth = 8;
             this.입고량DataGridViewTextBoxColumn.Name = "입고량DataGridViewTextBoxColumn";
@@ -394,21 +408,6 @@
             this.바코드Surfix.DataPropertyName = "바코드Surfix";
             this.바코드Surfix.HeaderText = "바코드Surfix";
             this.바코드Surfix.Name = "바코드Surfix";
-            this.바코드Surfix.Visible = false;
-            // 
-            // sPItemBoxSubBindingSource
-            // 
-            this.sPItemBoxSubBindingSource.DataMember = "SP_Item_Box_Sub";
-            this.sPItemBoxSubBindingSource.DataSource = this.dataSetP1B;
-            // 
-            // dataSetP1B
-            // 
-            this.dataSetP1B.DataSetName = "DataSetP1B";
-            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_Item_Box_SubTableAdapter
-            // 
-            this.sP_Item_Box_SubTableAdapter.ClearBeforeFill = true;
             // 
             // P1B16_ITEM_BOX_INPUT_SUB
             // 
@@ -447,6 +446,7 @@
         private System.Windows.Forms.Label lblMsg;
         private System.Windows.Forms.Button btnMaterial;
         private System.Windows.Forms.Button btTagPrint;
+        public System.Windows.Forms.BindingSource sPItemBoxSubBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수주번호DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수주순번DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 업체코드;
@@ -467,6 +467,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 비고;
         private System.Windows.Forms.DataGridViewTextBoxColumn 바코드;
         private System.Windows.Forms.DataGridViewTextBoxColumn 바코드Surfix;
-        public System.Windows.Forms.BindingSource sPItemBoxSubBindingSource;
     }
 }
