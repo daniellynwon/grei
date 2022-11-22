@@ -8,7 +8,7 @@ namespace SmartMES_Giroei
     {
         public P1B16_ITEM_BOX_INPUT_SUB parentWin;
         public int parentRow;
-        public string sBarcode;
+        public string sBarcode, sProd;
 
         int columnIndex = 0;
         int rowIndex = 0;
@@ -32,7 +32,7 @@ namespace SmartMES_Giroei
             {
                 Cursor.Current = Cursors.WaitCursor;
                 
-                sP_Barcode_QueryTableAdapter.Fill(dataSetP1B.SP_Barcode_Query, sBarcode);
+                sP_Barcode_QueryTableAdapter.Fill(dataSetP1B.SP_Barcode_Query, sBarcode, sProd);
 
                 dataGridView1.CurrentCell = null;
                 dataGridView1.ClearSelection();
@@ -70,25 +70,6 @@ namespace SmartMES_Giroei
                     dataGridView1.Rows[e.RowIndex].Cells[0].Value = 0;
                 else if (dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() == "0")
                     dataGridView1.Rows[e.RowIndex].Cells[0].Value = 1;
-            }
-        }
-        private void ProdEventMethod(object sender)
-        {
-            try
-            {
-                string sProd = sender.ToString();
-                if (string.IsNullOrEmpty(sProd)) return;
-
-                int rowIndex = dataGridView1.CurrentCell.RowIndex;
-                if (rowIndex < 0) return;
-
-                dataGridView1.Rows[rowIndex].Cells[2].Value = sProd.Substring(0, 8);
-                dataGridView1.Rows[rowIndex].Cells[4].Value = sProd.Substring(9, sProd.Length - 9);
-                dataGridView1.CurrentCell = dataGridView1[5, rowIndex];
-            }
-            catch (Exception)
-            {
-                return;
             }
         }
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)

@@ -34,6 +34,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sPBarcodeQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lblBarcode = new System.Windows.Forms.Label();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.lblDate = new System.Windows.Forms.Label();
+            this.lblProdNm = new System.Windows.Forms.Label();
+            this.lblMsg = new System.Windows.Forms.Label();
+            this.lblProd = new System.Windows.Forms.Label();
+            this.sP_Barcode_QueryTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_Barcode_QueryTableAdapter();
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.바코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.바코드SDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -45,16 +55,6 @@
             this.잔량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.등록자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.갱신자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPBarcodeQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lblBarcode = new System.Windows.Forms.Label();
-            this.btnSave = new System.Windows.Forms.Button();
-            this.lblDate = new System.Windows.Forms.Label();
-            this.lblProdNm = new System.Windows.Forms.Label();
-            this.lblMsg = new System.Windows.Forms.Label();
-            this.lblProd = new System.Windows.Forms.Label();
-            this.sP_Barcode_QueryTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_Barcode_QueryTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPBarcodeQueryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).BeginInit();
@@ -118,83 +118,12 @@
             this.dataGridView1.RowHeadersWidth = 35;
             this.dataGridView1.RowTemplate.Height = 35;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(606, 420);
+            this.dataGridView1.Size = new System.Drawing.Size(763, 520);
             this.dataGridView1.TabIndex = 1;
             this.dataGridView1.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellEndEdit);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
-            // 
-            // Column1
-            // 
-            this.Column1.FalseValue = "0";
-            this.Column1.FillWeight = 30F;
-            this.Column1.HeaderText = "";
-            this.Column1.Name = "Column1";
-            this.Column1.TrueValue = "1";
-            // 
-            // 바코드DataGridViewTextBoxColumn
-            // 
-            this.바코드DataGridViewTextBoxColumn.DataPropertyName = "바코드";
-            this.바코드DataGridViewTextBoxColumn.HeaderText = "바코드";
-            this.바코드DataGridViewTextBoxColumn.Name = "바코드DataGridViewTextBoxColumn";
-            // 
-            // 바코드SDataGridViewTextBoxColumn
-            // 
-            this.바코드SDataGridViewTextBoxColumn.DataPropertyName = "바코드S";
-            this.바코드SDataGridViewTextBoxColumn.HeaderText = "Surfix";
-            this.바코드SDataGridViewTextBoxColumn.Name = "바코드SDataGridViewTextBoxColumn";
-            // 
-            // 이전바코드DataGridViewTextBoxColumn
-            // 
-            this.이전바코드DataGridViewTextBoxColumn.DataPropertyName = "이전바코드";
-            this.이전바코드DataGridViewTextBoxColumn.HeaderText = "이전바코드";
-            this.이전바코드DataGridViewTextBoxColumn.Name = "이전바코드DataGridViewTextBoxColumn";
-            this.이전바코드DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 공급업체DataGridViewTextBoxColumn
-            // 
-            this.공급업체DataGridViewTextBoxColumn.DataPropertyName = "공급업체";
-            this.공급업체DataGridViewTextBoxColumn.HeaderText = "공급업체";
-            this.공급업체DataGridViewTextBoxColumn.Name = "공급업체DataGridViewTextBoxColumn";
-            // 
-            // 자재코드DataGridViewTextBoxColumn
-            // 
-            this.자재코드DataGridViewTextBoxColumn.DataPropertyName = "자재코드";
-            this.자재코드DataGridViewTextBoxColumn.HeaderText = "자재코드";
-            this.자재코드DataGridViewTextBoxColumn.Name = "자재코드DataGridViewTextBoxColumn";
-            // 
-            // 입고일DataGridViewTextBoxColumn
-            // 
-            this.입고일DataGridViewTextBoxColumn.DataPropertyName = "입고일";
-            this.입고일DataGridViewTextBoxColumn.HeaderText = "입고일";
-            this.입고일DataGridViewTextBoxColumn.Name = "입고일DataGridViewTextBoxColumn";
-            // 
-            // 입고수량DataGridViewTextBoxColumn
-            // 
-            this.입고수량DataGridViewTextBoxColumn.DataPropertyName = "입고수량";
-            this.입고수량DataGridViewTextBoxColumn.HeaderText = "입고수량";
-            this.입고수량DataGridViewTextBoxColumn.Name = "입고수량DataGridViewTextBoxColumn";
-            // 
-            // 잔량DataGridViewTextBoxColumn
-            // 
-            this.잔량DataGridViewTextBoxColumn.DataPropertyName = "잔량";
-            this.잔량DataGridViewTextBoxColumn.HeaderText = "잔량";
-            this.잔량DataGridViewTextBoxColumn.Name = "잔량DataGridViewTextBoxColumn";
-            // 
-            // 등록자DataGridViewTextBoxColumn
-            // 
-            this.등록자DataGridViewTextBoxColumn.DataPropertyName = "등록자";
-            this.등록자DataGridViewTextBoxColumn.HeaderText = "등록자";
-            this.등록자DataGridViewTextBoxColumn.Name = "등록자DataGridViewTextBoxColumn";
-            this.등록자DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 갱신자DataGridViewTextBoxColumn
-            // 
-            this.갱신자DataGridViewTextBoxColumn.DataPropertyName = "갱신자";
-            this.갱신자DataGridViewTextBoxColumn.HeaderText = "갱신자";
-            this.갱신자DataGridViewTextBoxColumn.Name = "갱신자DataGridViewTextBoxColumn";
-            this.갱신자DataGridViewTextBoxColumn.Visible = false;
             // 
             // sPBarcodeQueryBindingSource
             // 
@@ -218,7 +147,7 @@
             this.panel2.Controls.Add(this.lblProd);
             this.panel2.Location = new System.Drawing.Point(5, 5);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(606, 73);
+            this.panel2.Size = new System.Drawing.Size(763, 73);
             this.panel2.TabIndex = 0;
             // 
             // lblBarcode
@@ -235,7 +164,7 @@
             // btnSave
             // 
             this.btnSave.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnSave.Location = new System.Drawing.Point(517, 6);
+            this.btnSave.Location = new System.Drawing.Point(595, 6);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(81, 29);
             this.btnSave.TabIndex = 15;
@@ -291,12 +220,86 @@
             // 
             this.sP_Barcode_QueryTableAdapter.ClearBeforeFill = true;
             // 
+            // Column1
+            // 
+            this.Column1.FalseValue = "0";
+            this.Column1.FillWeight = 30F;
+            this.Column1.HeaderText = "";
+            this.Column1.Name = "Column1";
+            this.Column1.TrueValue = "1";
+            // 
+            // 바코드DataGridViewTextBoxColumn
+            // 
+            this.바코드DataGridViewTextBoxColumn.DataPropertyName = "바코드";
+            this.바코드DataGridViewTextBoxColumn.HeaderText = "바코드";
+            this.바코드DataGridViewTextBoxColumn.Name = "바코드DataGridViewTextBoxColumn";
+            this.바코드DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 바코드SDataGridViewTextBoxColumn
+            // 
+            this.바코드SDataGridViewTextBoxColumn.DataPropertyName = "바코드S";
+            this.바코드SDataGridViewTextBoxColumn.HeaderText = "Surfix";
+            this.바코드SDataGridViewTextBoxColumn.Name = "바코드SDataGridViewTextBoxColumn";
+            // 
+            // 이전바코드DataGridViewTextBoxColumn
+            // 
+            this.이전바코드DataGridViewTextBoxColumn.DataPropertyName = "이전바코드";
+            this.이전바코드DataGridViewTextBoxColumn.HeaderText = "이전바코드";
+            this.이전바코드DataGridViewTextBoxColumn.Name = "이전바코드DataGridViewTextBoxColumn";
+            this.이전바코드DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 공급업체DataGridViewTextBoxColumn
+            // 
+            this.공급업체DataGridViewTextBoxColumn.DataPropertyName = "공급업체";
+            this.공급업체DataGridViewTextBoxColumn.HeaderText = "공급업체";
+            this.공급업체DataGridViewTextBoxColumn.Name = "공급업체DataGridViewTextBoxColumn";
+            // 
+            // 자재코드DataGridViewTextBoxColumn
+            // 
+            this.자재코드DataGridViewTextBoxColumn.DataPropertyName = "자재코드";
+            this.자재코드DataGridViewTextBoxColumn.HeaderText = "자재코드";
+            this.자재코드DataGridViewTextBoxColumn.Name = "자재코드DataGridViewTextBoxColumn";
+            // 
+            // 입고일DataGridViewTextBoxColumn
+            // 
+            this.입고일DataGridViewTextBoxColumn.DataPropertyName = "입고일";
+            this.입고일DataGridViewTextBoxColumn.HeaderText = "입고일";
+            this.입고일DataGridViewTextBoxColumn.Name = "입고일DataGridViewTextBoxColumn";
+            // 
+            // 입고수량DataGridViewTextBoxColumn
+            // 
+            this.입고수량DataGridViewTextBoxColumn.DataPropertyName = "입고수량";
+            this.입고수량DataGridViewTextBoxColumn.FillWeight = 50F;
+            this.입고수량DataGridViewTextBoxColumn.HeaderText = "입고수량";
+            this.입고수량DataGridViewTextBoxColumn.Name = "입고수량DataGridViewTextBoxColumn";
+            // 
+            // 잔량DataGridViewTextBoxColumn
+            // 
+            this.잔량DataGridViewTextBoxColumn.DataPropertyName = "잔량";
+            this.잔량DataGridViewTextBoxColumn.FillWeight = 50F;
+            this.잔량DataGridViewTextBoxColumn.HeaderText = "잔량";
+            this.잔량DataGridViewTextBoxColumn.Name = "잔량DataGridViewTextBoxColumn";
+            // 
+            // 등록자DataGridViewTextBoxColumn
+            // 
+            this.등록자DataGridViewTextBoxColumn.DataPropertyName = "등록자";
+            this.등록자DataGridViewTextBoxColumn.HeaderText = "등록자";
+            this.등록자DataGridViewTextBoxColumn.Name = "등록자DataGridViewTextBoxColumn";
+            this.등록자DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 갱신자DataGridViewTextBoxColumn
+            // 
+            this.갱신자DataGridViewTextBoxColumn.DataPropertyName = "갱신자";
+            this.갱신자DataGridViewTextBoxColumn.HeaderText = "갱신자";
+            this.갱신자DataGridViewTextBoxColumn.Name = "갱신자DataGridViewTextBoxColumn";
+            this.갱신자DataGridViewTextBoxColumn.Visible = false;
+            // 
             // P1B16_ITEM_BOX_INPUT_LOT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(616, 508);
+            this.ClientSize = new System.Drawing.Size(771, 609);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel2);
             this.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));

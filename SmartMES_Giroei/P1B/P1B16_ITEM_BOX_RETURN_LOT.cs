@@ -8,7 +8,7 @@ namespace SmartMES_Giroei
     {
         public P1B16_ITEM_BOX_RETURN_SUB parentWin;
         public int parentRow;
-        public string sBarcode;
+        public string sBarcode, sProd;
 
         int columnIndex = 0;
         int rowIndex = 0;
@@ -32,7 +32,7 @@ namespace SmartMES_Giroei
             {
                 Cursor.Current = Cursors.WaitCursor;
                 
-                sP_Barcode_QueryTableAdapter.Fill(dataSetP1B.SP_Barcode_Query, sBarcode);
+                sP_Barcode_QueryTableAdapter.Fill(dataSetP1B.SP_Barcode_Query, sBarcode, sProd);
 
                 dataGridView1.CurrentCell = null;
                 dataGridView1.ClearSelection();

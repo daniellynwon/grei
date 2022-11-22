@@ -1153,3 +1153,4 @@ D:\01.Project\GROEI\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.application
 D:\01.Project\GROEI\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.csproj.CopyComplete
 D:\01.Project\GROEI\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.exe
 D:\01.Project\GROEI\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.pdb
+C:\Users\innobe\source\repos\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.csproj.AssemblyReference.cache
