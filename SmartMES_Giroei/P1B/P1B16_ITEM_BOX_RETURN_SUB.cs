@@ -137,7 +137,7 @@ namespace SmartMES_Giroei
                 }
                 //   INV_material_in 테이블에 다시 입력. -> 이후에 변경해야 할 듯 하다.
                 sql = "insert into INV_material_out (mbarcode, barcode_surfix, prod_id, cust_id, input_date, plant, prodorder_id, output_date, qty, box_id, enter_man) " +
-                    "values('" + mBarcode + "','" + sBarcode + "','" + sSubID + "','" + sCust + "','" + sDate + "','" + G.Pos + "'," + sSujuNo + "'," + DateTime.Now.ToString("yyyy-MM-dd") + "'," + sQty + ",'" + sBoxID + "','" + G.UserID + "')";
+                    "values('" + mBarcode + "','" + sBarcode + "','" + sSubID + "','" + sCust + "','" + sDate + "','" + G.Pos + "','" + sSujuNo + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "'," + sQty + ",'" + sBoxID + "','" + G.UserID + "')";
                     //+ " on duplicate key update" +
                     //" prod_id = '" + sSubID + "', qty = " + sCount + ", enter_man = '" + G.UserID + "'";
                 m.dbCUD(sql, ref msg);
