@@ -88,6 +88,7 @@ namespace SmartMES_Giroei
                 cbWorkLine.SelectedValue = parentWin.dataGridView1.Rows[rowIndex].Cells[29].Value;      // 생산라인
                 tbRorderNo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value.ToString();    // 수주번호
                 tbRorderNo.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[14].Value.ToString();    // 수주순번
+                tbContents.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[20].Value.ToString();    // 지시사항
 
                 this.ActiveControl = btnSave;
             }
