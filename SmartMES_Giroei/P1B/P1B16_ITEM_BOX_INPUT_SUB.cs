@@ -72,7 +72,7 @@ namespace SmartMES_Giroei
         {
             if (G.Authority == "D") return;
             if (e.RowIndex < 0) return;
-            if (e.RowIndex == dataGridView1.RowCount - 1) return;
+            //if (e.RowIndex == dataGridView1.RowCount - 1) return;
 
             if (e.ColumnIndex == 9)     // 버튼 
             {
@@ -193,7 +193,7 @@ namespace SmartMES_Giroei
                 }
 
                 sql = "insert into INV_material_out (mbarcode, barcode_surfix, prod_id, cust_id, input_date, plant, prodorder_id, output_date, qty, box_id, enter_man) " +
-                    "values('" + mBarcode + "','" + sBarcode + "','" + sSubID + "','" + sCust + "','" + sDate + "','" + G.Pos + "'," + sSujuNo + "'," + DateTime.Now.ToString("yyyy-MM-dd") + "'," + sCount + ",'" + sBoxID + "','" + G.UserID + "')";
+                    "values('" + mBarcode + "','" + sBarcode + "','" + sSubID + "','" + sCust + "','" + sDate + "','" + G.Pos + "','" + sSujuNo + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "'," + sCount + ",'" + sBoxID + "','" + G.UserID + "')";
                     //+ " on duplicate key update" +
                     //" prod_id = '" + sSubID + "', qty = " + sCount + ", enter_man = '" + G.UserID + "'";
                 m.dbCUD(sql, ref msg);

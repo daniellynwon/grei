@@ -1540,6 +1540,7 @@
               <Mapping SourceColumn="바코드" DataSetColumn="바코드" />
               <Mapping SourceColumn="바코드S" DataSetColumn="바코드S" />
               <Mapping SourceColumn="이전바코드" DataSetColumn="이전바코드" />
+              <Mapping SourceColumn="업체코드" DataSetColumn="업체코드" />
               <Mapping SourceColumn="공급업체" DataSetColumn="공급업체" />
               <Mapping SourceColumn="자재코드" DataSetColumn="자재코드" />
               <Mapping SourceColumn="입고일" DataSetColumn="입고일" />
@@ -4942,10 +4943,17 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="공급업체" msprop:Generator_ColumnVarNameInTable="column공급업체" msprop:Generator_ColumnPropNameInRow="공급업체" msprop:Generator_ColumnPropNameInTable="공급업체Column" msprop:Generator_UserColumnName="공급업체" minOccurs="0">
+              <xs:element name="업체코드" msprop:Generator_ColumnVarNameInTable="column업체코드" msprop:Generator_ColumnPropNameInRow="업체코드" msprop:Generator_ColumnPropNameInTable="업체코드Column" msprop:Generator_UserColumnName="업체코드" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="공급업체" msprop:Generator_ColumnVarNameInTable="column공급업체" msprop:Generator_ColumnPropNameInRow="공급업체" msprop:Generator_ColumnPropNameInTable="공급업체Column" msprop:Generator_UserColumnName="공급업체" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

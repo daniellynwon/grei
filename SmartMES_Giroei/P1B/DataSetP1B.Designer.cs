@@ -23475,6 +23475,8 @@ namespace SmartMES_Giroei.P1B {
             
             private global::System.Data.DataColumn column이전바코드;
             
+            private global::System.Data.DataColumn column업체코드;
+            
             private global::System.Data.DataColumn column공급업체;
             
             private global::System.Data.DataColumn column자재코드;
@@ -23543,6 +23545,14 @@ namespace SmartMES_Giroei.P1B {
             public global::System.Data.DataColumn 이전바코드Column {
                 get {
                     return this.column이전바코드;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 업체코드Column {
+                get {
+                    return this.column업체코드;
                 }
             }
             
@@ -23639,12 +23649,13 @@ namespace SmartMES_Giroei.P1B {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_Barcode_QueryRow AddSP_Barcode_QueryRow(string 바코드, string 바코드S, string 이전바코드, string 공급업체, string 자재코드, System.DateTime 입고일, int 입고수량, int 잔량, string 등록자, string 갱신자) {
+            public SP_Barcode_QueryRow AddSP_Barcode_QueryRow(string 바코드, string 바코드S, string 이전바코드, string 업체코드, string 공급업체, string 자재코드, System.DateTime 입고일, int 입고수량, int 잔량, string 등록자, string 갱신자) {
                 SP_Barcode_QueryRow rowSP_Barcode_QueryRow = ((SP_Barcode_QueryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         바코드,
                         바코드S,
                         이전바코드,
+                        업체코드,
                         공급업체,
                         자재코드,
                         입고일,
@@ -23677,6 +23688,7 @@ namespace SmartMES_Giroei.P1B {
                 this.column바코드 = base.Columns["바코드"];
                 this.column바코드S = base.Columns["바코드S"];
                 this.column이전바코드 = base.Columns["이전바코드"];
+                this.column업체코드 = base.Columns["업체코드"];
                 this.column공급업체 = base.Columns["공급업체"];
                 this.column자재코드 = base.Columns["자재코드"];
                 this.column입고일 = base.Columns["입고일"];
@@ -23695,6 +23707,8 @@ namespace SmartMES_Giroei.P1B {
                 base.Columns.Add(this.column바코드S);
                 this.column이전바코드 = new global::System.Data.DataColumn("이전바코드", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column이전바코드);
+                this.column업체코드 = new global::System.Data.DataColumn("업체코드", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column업체코드);
                 this.column공급업체 = new global::System.Data.DataColumn("공급업체", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column공급업체);
                 this.column자재코드 = new global::System.Data.DataColumn("자재코드", typeof(string), null, global::System.Data.MappingType.Element);
@@ -23712,7 +23726,8 @@ namespace SmartMES_Giroei.P1B {
                 this.column바코드.MaxLength = 25;
                 this.column바코드S.MaxLength = 8;
                 this.column이전바코드.MaxLength = 25;
-                this.column공급업체.MaxLength = 7;
+                this.column업체코드.MaxLength = 7;
+                this.column공급업체.MaxLength = 50;
                 this.column자재코드.MaxLength = 10;
                 this.column등록자.MaxLength = 50;
                 this.column갱신자.MaxLength = 50;
@@ -39774,6 +39789,22 @@ namespace SmartMES_Giroei.P1B {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 업체코드 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Barcode_Query.업체코드Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_Barcode_Query\' 테이블의 \'업체코드\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Barcode_Query.업체코드Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string 공급업체 {
                 get {
                     try {
@@ -39918,6 +39949,18 @@ namespace SmartMES_Giroei.P1B {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set이전바코드Null() {
                 this[this.tableSP_Barcode_Query.이전바코드Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is업체코드Null() {
+                return this.IsNull(this.tableSP_Barcode_Query.업체코드Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set업체코드Null() {
+                this[this.tableSP_Barcode_Query.업체코드Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -52153,6 +52196,7 @@ namespace SmartMES_Giroei.P1B.DataSetP1BTableAdapters {
             tableMapping.ColumnMappings.Add("바코드", "바코드");
             tableMapping.ColumnMappings.Add("바코드S", "바코드S");
             tableMapping.ColumnMappings.Add("이전바코드", "이전바코드");
+            tableMapping.ColumnMappings.Add("업체코드", "업체코드");
             tableMapping.ColumnMappings.Add("공급업체", "공급업체");
             tableMapping.ColumnMappings.Add("자재코드", "자재코드");
             tableMapping.ColumnMappings.Add("입고일", "입고일");

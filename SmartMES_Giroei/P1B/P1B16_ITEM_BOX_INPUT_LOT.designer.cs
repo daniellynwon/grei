@@ -34,8 +34,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sPBarcodeQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lblBarcode = new System.Windows.Forms.Label();
             this.btnSave = new System.Windows.Forms.Button();
@@ -43,6 +41,8 @@
             this.lblProdNm = new System.Windows.Forms.Label();
             this.lblMsg = new System.Windows.Forms.Label();
             this.lblProd = new System.Windows.Forms.Label();
+            this.sPBarcodeQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
             this.sP_Barcode_QueryTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_Barcode_QueryTableAdapter();
             this.Column1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.바코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,9 +56,9 @@
             this.등록자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.갱신자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sPBarcodeQueryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).BeginInit();
-            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -124,16 +124,6 @@
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
-            // 
-            // sPBarcodeQueryBindingSource
-            // 
-            this.sPBarcodeQueryBindingSource.DataMember = "SP_Barcode_Query";
-            this.sPBarcodeQueryBindingSource.DataSource = this.dataSetP1B;
-            // 
-            // dataSetP1B
-            // 
-            this.dataSetP1B.DataSetName = "DataSetP1B";
-            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // panel2
             // 
@@ -215,6 +205,16 @@
             this.lblProd.Size = new System.Drawing.Size(84, 21);
             this.lblProd.TabIndex = 0;
             this.lblProd.Text = "자재코드: ";
+            // 
+            // sPBarcodeQueryBindingSource
+            // 
+            this.sPBarcodeQueryBindingSource.DataMember = "SP_Barcode_Query";
+            this.sPBarcodeQueryBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // dataSetP1B
+            // 
+            this.dataSetP1B.DataSetName = "DataSetP1B";
+            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sP_Barcode_QueryTableAdapter
             // 
@@ -313,10 +313,10 @@
             this.Text = "LOT 선택";
             this.Load += new System.EventHandler(this.P1B16_ITEM_BOX_INPUT_LOT_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPBarcodeQueryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sPBarcodeQueryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).EndInit();
             this.ResumeLayout(false);
 
         }
