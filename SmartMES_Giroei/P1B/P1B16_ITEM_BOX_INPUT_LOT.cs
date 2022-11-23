@@ -97,11 +97,11 @@ namespace SmartMES_Giroei
                 MessageBox.Show("LotNo가 선택되지 않았습니다.");
                 return;
             }
-            else if (iCnt > 1)
-            {
-                MessageBox.Show("LotNo가 하나 이상 선택되었습니다..");
-                return;
-            }
+            //else if (iCnt > 1)
+            //{
+            //    MessageBox.Show("LotNo가 하나 이상 선택되었습니다..");
+            //    return;
+            //}
             barcodeSearch();
         }
         private void barcodeSearch()
