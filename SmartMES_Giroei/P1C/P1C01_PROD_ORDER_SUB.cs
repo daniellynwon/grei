@@ -29,7 +29,7 @@ namespace SmartMES_Giroei
         {
             lblMsg.Text = "";
 
-            tbJobNo.Text = getCode();
+            //tbJobNo.Text = getCode();
 
             ProcessFlag[0] = 0; ProcessFlag[1] = 0; ProcessFlag[2] = 0; ProcessFlag[3] = 0;
 
@@ -234,6 +234,7 @@ namespace SmartMES_Giroei
                     dataGridView1.Rows[i].Cells[4].Value = 0;
                 }
                 dataGridView1.Rows[e.RowIndex].Cells[4].Value = 1;
+
             }
         }
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -380,6 +381,9 @@ namespace SmartMES_Giroei
                 //    dataGridView3.Rows[i].Cells[4].Value = 0;
                 //}
                 //dataGridView3.Rows[e.RowIndex].Cells[4].Value = 1;
+
+                if (string.IsNullOrEmpty(tbJobNo.Text))
+                    tbJobNo.Text = getCode();
             }
         }
         #endregion
