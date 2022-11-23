@@ -23335,7 +23335,7 @@ namespace SmartMES_Giroei.P1B {
                 this.column미삽.MaxLength = 1;
                 this.column비고.MaxLength = 50;
                 this.column바코드.MaxLength = 25;
-                this.column바코드Surfix.MaxLength = 8;
+                this.column바코드Surfix.MaxLength = 100;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

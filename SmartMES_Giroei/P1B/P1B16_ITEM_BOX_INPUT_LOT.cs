@@ -106,15 +106,19 @@ namespace SmartMES_Giroei
         }
         private void barcodeSearch()
         {
+            string sSurfix = "";
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
                 if (dataGridView1.Rows[i].Cells[0].Value != null && dataGridView1.Rows[i].Cells[0].Value.ToString() == "1")
                 {
-                    for(int iSeq = 0; iSeq < parentWin.dataGridView1.RowCount; iSeq++)
+                    sSurfix += dataGridView1.Rows[i].Cells[2].Value.ToString() + ",";
+                    for (int iSeq = 0; iSeq < parentWin.dataGridView1.RowCount; iSeq++)
                     {
                         if (parentWin.dataGridView1.Rows[iSeq].Cells[6].Value.ToString() == dataGridView1.Rows[i].Cells[5].Value.ToString())  // SUB창의 자재코드랑 해당 창의 자재코드랑 비교
                         {
-                            parentWin.dataGridView1.Rows[iSeq].Cells[19].Value = dataGridView1.Rows[i].Cells[2].Value; //바코드 Surfix
+                            //parentWin.dataGridView1.Rows[iSeq].Cells[19].Value = dataGridView1.Rows[i].Cells[2].Value; //바코드 Surfix
+                            parentWin.dataGridView1.Rows[iSeq].Cells[19].Value = sSurfix; //바코드 Surfix
+
                         }
                     }
                 }

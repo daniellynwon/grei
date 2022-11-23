@@ -106,8 +106,12 @@ namespace SmartMES_Giroei
         {
             e.Control.KeyPress += new KeyPressEventHandler(dataGridView1_KeyPress);
         }
+        void DataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
+        {
+            e.ThrowException = false;
+        }
         #endregion
-        
+
         #region Button Controls
         private void btnItemBox_Click(object sender, EventArgs e)
         {
@@ -178,12 +182,18 @@ namespace SmartMES_Giroei
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
+                if(dataGridView1.Rows[i].Cells[13].Value.ToString().Replace(",", "") == "0")
+                {
+                    MessageBox.Show("투입량을 확인하세요.");
+                    return;
+                }
                 sCount = dataGridView1.Rows[i].Cells[13].Value.ToString().Replace(",", ""); // 투입량
                 sSubID = dataGridView1.Rows[i].Cells[6].Value.ToString();   // 자재코드
                 string sDate = DateTime.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString()).ToString("yyyy-MM-dd");  // 입고일(LOTNO)
                 string sContents = dataGridView1.Rows[i].Cells[17].Value.ToString();
                 string mBarcode = dataGridView1.Rows[i].Cells[18].Value.ToString();
                 string sBarcode = dataGridView1.Rows[i].Cells[19].Value.ToString();
+                string[] tempSurfix = sBarcode.Split(',');
                 string sCust = dataGridView1.Rows[i].Cells[2].Value.ToString();
 
                 sql = $@"UPDATE Item_box_sub SET item_count = " + sCount + ", input_date = '" + sDate + "', contents = '" + sContents + "'  WHERE box_id = '" + sBoxID + "' AND prod_id_sub = '" + sSubID + "'";
@@ -195,17 +205,23 @@ namespace SmartMES_Giroei
                     return;
                 }
 
-                sql = "insert into INV_material_out (mbarcode, barcode_surfix, prod_id, cust_id, input_date, plant, prodorder_id, output_date, qty, box_id, enter_man) " +
-                    "values('" + mBarcode + "','" + sBarcode + "','" + sSubID + "','" + sCust + "','" + sDate + "','" + G.Pos + "','" + sSujuNo + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "'," + sCount + ",'" + sBoxID + "','" + G.UserID + "')";
-                    //+ " on duplicate key update" +
-                    //" prod_id = '" + sSubID + "', qty = " + sCount + ", enter_man = '" + G.UserID + "'";
-                m.dbCUD(sql, ref msg);
-
-                if (msg != "OK")
+                foreach (var surfix in tempSurfix)
                 {
-                    MessageBox.Show(msg);
-                    return;
+                    if (surfix == "" || string.IsNullOrEmpty(surfix)) return;
+                    sql = "insert into INV_material_out (mbarcode, barcode_surfix, prod_id, cust_id, input_date, plant, prodorder_id, output_date, qty, box_id, enter_man) " +
+                        "values('" + mBarcode + "','" + surfix + "','" + sSubID + "','" + sCust + "','" + sDate + "','" + G.Pos + "','" + sSujuNo + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "'," + sCount + ",'" + sBoxID + "','" + G.UserID + "')";
+                        //+ " on duplicate key update" +
+                        //" prod_id = '" + sSubID + "', qty = " + sCount + ", enter_man = '" + G.UserID + "'";
+                    m.dbCUD(sql, ref msg);
+
+                    if (msg != "OK")
+                    {
+                        MessageBox.Show(msg);
+                        return;
+                    }
+
                 }
+
             }
             MessageBox.Show($@"{@sBoxID}번 현품박스의 내용이 저장되었습니다.");
 
