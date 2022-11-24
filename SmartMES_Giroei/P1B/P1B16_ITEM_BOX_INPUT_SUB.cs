@@ -73,6 +73,7 @@ namespace SmartMES_Giroei
             if (G.Authority == "D") return;
             if (e.RowIndex < 0) return;
             //if (e.RowIndex == dataGridView1.RowCount - 1) return;
+            string surfixA, surfixB, surfixC;
 
             if (e.ColumnIndex == 9)     // 버튼 
             {
@@ -84,7 +85,25 @@ namespace SmartMES_Giroei
                 else
                     sub.lblDate.Text += DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString()).ToString("yyyy-MM-dd");
                 sub.lblBarcode.Text = dataGridView1.Rows[e.RowIndex].Cells[18].Value.ToString();
-                sub.sBarcode = dataGridView1.Rows[e.RowIndex].Cells[18].Value.ToString();
+
+                if (string.IsNullOrEmpty(dataGridView1.Rows[e.RowIndex].Cells[18].Value.ToString()))
+                {
+                    lblMsg.Text = "바코드가 없습니다.";
+                    return;
+                }
+
+                string barcode = dataGridView1.Rows[e.RowIndex].Cells[18].Value.ToString();
+                surfixA = barcode.Split('-')[0];  surfixB = barcode.Split('-')[1];  surfixC = barcode.Split('-')[2]; 
+                
+                if (dataGridView1.Rows[e.RowIndex].Cells[14].Value.ToString() == "O")   // 사급
+                {
+                    sub.sBarcode = surfixA + "-" + surfixB;
+                }
+                else if (dataGridView1.Rows[e.RowIndex].Cells[14].Value.ToString() == "X")  // 도급
+                {
+                    sub.sBarcode = surfixB;
+                }
+                //sub.sBarcode = dataGridView1.Rows[e.RowIndex].Cells[18].Value.ToString();
                 sub.sProd = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
                 sub.parentWin = this;
                 sub.ShowDialog();
