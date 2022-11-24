@@ -350,37 +350,38 @@ namespace SmartMES_Giroei
         }
         private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
         {
-            try
-            {
-                if (e.KeyCode == Keys.Enter)
-                {
-                    e.SuppressKeyPress = true;
+            //try
+            //{
+            //    if (e.KeyCode == Keys.Enter)
+            //    {
+            //        e.SuppressKeyPress = true;
                     
-                    int columnIndex = dataGridView1.CurrentCell.ColumnIndex;
-                    int rowIndex = dataGridView1.CurrentCell.RowIndex;
+            //        int columnIndex = dataGridView1.CurrentCell.ColumnIndex;
+            //        int rowIndex = dataGridView1.CurrentCell.RowIndex;
 
-                    //if (columnIndex == dataGridView1.Columns.Count - 1)
-                    if (columnIndex == 15)
-                        dataGridView1.CurrentCell = dataGridView1[4, rowIndex + 1];
-                    else
-                        dataGridView1.CurrentCell = dataGridView1[columnIndex + 1, rowIndex];
-                }
-                if (e.KeyCode == Keys.Tab)
-                {
-                    e.Handled = true;
-                }
-            }
-            catch (Exception)
-            {
-                return;
-            }
+            //        //if (columnIndex == dataGridView1.Columns.Count - 1)
+            //        if (columnIndex == 15)
+            //            dataGridView1.CurrentCell = dataGridView1[4, rowIndex + 1];
+            //        else
+            //            dataGridView1.CurrentCell = dataGridView1[columnIndex + 1, rowIndex];
+            //    }
+            //    if (e.KeyCode == Keys.Tab)
+            //    {
+            //        e.Handled = true;
+            //    }
+            //}
+            //catch (Exception)
+            //{
+            //    return;
+            //}
         }
         private void dataGridView1_CellEndEdit(object sender, DataGridViewCellEventArgs e)
         {
             try
             {
                 columnIndex = dataGridView1.CurrentCell.ColumnIndex;
-                rowIndex = dataGridView1.CurrentCell.RowIndex;
+                // rowIndex = dataGridView1.CurrentCell.RowIndex;
+                rowIndex = e.RowIndex;
                 endEdit = true;
 
                 float money1 = 0;
@@ -430,6 +431,7 @@ namespace SmartMES_Giroei
         {
             //columnIndex = dataGridView1.CurrentCell.ColumnIndex;
             Debug.Print("columnIndex : " + columnIndex);
+            rowIndex = dataGridView1.CurrentCell.RowIndex;
             try
             {
                 if (dataGridView1.CurrentCell != null && endEdit)
