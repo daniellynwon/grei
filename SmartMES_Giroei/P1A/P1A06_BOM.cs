@@ -152,6 +152,8 @@ namespace SmartMES_Giroei
             string sQty = string.Empty;
 
             string sConsignedYN = string.Empty;
+            string sIsSusap = string.Empty;
+            string sIsMisap = string.Empty;
 
             int iCnt = 0;
             for (int i = 0; i < dataGridView2.RowCount; i++)
@@ -160,10 +162,12 @@ namespace SmartMES_Giroei
                 sMaterialID = dataGridView2.Rows[i].Cells[2].Value.ToString();
                 sQty = dataGridView2.Rows[i].Cells[6].Value.ToString();
                 sConsignedYN = (dataGridView2.Rows[i].Cells[8].Value.ToString() == "1") ? "Y" : "N";
+                sIsSusap = (dataGridView2.Rows[i].Cells[9].Value.ToString() == "O") ? "Y" : "N";
+                sIsMisap = (dataGridView2.Rows[i].Cells[10].Value.ToString() == "O") ? "Y" : "N";
 
                 if (string.IsNullOrEmpty(sQty)) sQty = "0";
 
-                sql = $@"UPDATE BOM_bomlist SET req_qty = {@sQty}, consignedYN = '{@sConsignedYN}' WHERE prod_id = '{@sProdID}' AND parent_id = '{@sMaterialID}'";
+                sql = $@"UPDATE BOM_bomlist SET req_qty = {@sQty}, consignedYN = '{@sConsignedYN}', IsSusap = '{sIsSusap}', IsMiSap = '{sIsMisap}' WHERE prod_id = '{@sProdID}' AND parent_id = '{@sMaterialID}'";
 
                 m.dbCUD(sql, ref msg);
 
@@ -372,6 +376,10 @@ namespace SmartMES_Giroei
             //    dataGridView2.CurrentCell = null;
             //    dataGridView2.ClearSelection();
             //}
+            if (e.RowIndex < 0) return;
+            if (e.ColumnIndex < 9 && e.ColumnIndex > 10) return;
+
+            dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = (dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == "O") ? "X" : "O";
         }
         private void dataGridView3_DragDrop(object sender, DragEventArgs e)
         {
