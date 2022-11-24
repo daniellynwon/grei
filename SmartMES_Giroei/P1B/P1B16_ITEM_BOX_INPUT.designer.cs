@@ -43,9 +43,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sPItemBoxMainRorderBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
-            this.sP_Item_Box_Main_RorderTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_Item_Box_Main_RorderTableAdapter();
             this.수주일자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수주번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수주순번DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +51,9 @@
             this.현품박스IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.구성완료여부DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.BOMButtonColumn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.sPItemBoxMainRorderBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
+            this.sP_Item_Box_Main_RorderTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_Item_Box_Main_RorderTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -251,20 +251,6 @@
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
-            // sPItemBoxMainRorderBindingSource
-            // 
-            this.sPItemBoxMainRorderBindingSource.DataMember = "SP_Item_Box_Main_Rorder";
-            this.sPItemBoxMainRorderBindingSource.DataSource = this.dataSetP1B;
-            // 
-            // dataSetP1B
-            // 
-            this.dataSetP1B.DataSetName = "DataSetP1B";
-            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_Item_Box_Main_RorderTableAdapter
-            // 
-            this.sP_Item_Box_Main_RorderTableAdapter.ClearBeforeFill = true;
-            // 
             // 수주일자DataGridViewTextBoxColumn
             // 
             this.수주일자DataGridViewTextBoxColumn.DataPropertyName = "수주일자";
@@ -328,6 +314,20 @@
             this.BOMButtonColumn.ReadOnly = true;
             this.BOMButtonColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.BOMButtonColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // sPItemBoxMainRorderBindingSource
+            // 
+            this.sPItemBoxMainRorderBindingSource.DataMember = "SP_Item_Box_Main_Rorder";
+            this.sPItemBoxMainRorderBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // dataSetP1B
+            // 
+            this.dataSetP1B.DataSetName = "DataSetP1B";
+            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_Item_Box_Main_RorderTableAdapter
+            // 
+            this.sP_Item_Box_Main_RorderTableAdapter.ClearBeforeFill = true;
             // 
             // P1B16_ITEM_BOX_INPUT
             // 

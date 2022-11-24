@@ -88,7 +88,10 @@ namespace SmartMES_Giroei
                 P1B16_ITEM_BOX_RETURN_LOT sub = new P1B16_ITEM_BOX_RETURN_LOT();
                 sub.lblProd.Text += dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
                 sub.lblProdNm.Text += dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
-                sub.lblDate.Text += DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString()).ToString("yyyy-MM-dd");
+                if (dataGridView1.Rows[e.RowIndex].Cells[8].Value == null || dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString() == "")
+                    sub.lblDate.Text += "";
+                else
+                    sub.lblDate.Text += DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString()).ToString("yyyy-MM-dd");
                 sub.lblBarcode.Text = dataGridView1.Rows[e.RowIndex].Cells[19].Value.ToString();
                 sub.sBarcode = dataGridView1.Rows[e.RowIndex].Cells[19].Value.ToString();
                 sub.sProd = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
