@@ -50,7 +50,7 @@ namespace SmartMES_Giroei
             lblTitle.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[11].Value.ToString();   // 입고여부
 
             tbMbarcode.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[20].Value.ToString() + "-" + parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString() + "-" + DateTime.Now.ToString("yyMMdd");
-
+            lbSALOrderID.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[21].Value.ToString();      // 수주ID
             if (lblTitle.Tag.ToString() == "N")
             {
                 long lQty = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString());   // 발주량
@@ -67,9 +67,9 @@ namespace SmartMES_Giroei
             {
                 try
                 {
-                    tbInID.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[19].Value.ToString();    // 입고번호
+                    tbInID.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[20].Value.ToString();    // 고객번호
                     dtpInDate.Value = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[12].Value.ToString());    // 입고일
-                    tbInQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value.ToString();
+                    tbInQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value.ToString();   // 입고량
                     tbAmount.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[14].Value.ToString();  // 매입액
                     cbDepot.SelectedValue = parentWin.dataGridView1.Rows[rowIndex].Cells[15].Value;
 
@@ -217,12 +217,14 @@ namespace SmartMES_Giroei
             string msg = string.Empty;
             MariaCRUD m = new MariaCRUD();
 
-            string sql = "insert into INV_material_in (mbarcode, cust_id, prod_id, plant, input_date, purchase_id, purchase_seq, qty, pack_qty, danga, amount, warehouse_id, reason_code, enter_man) " +
-                    "values('" + mBarcode + "','"+ sCust + "','" + sProd + "','" + G.Pos + "','" + sInDate + "','" + sNo + "'," + sSeq + "," + sInQty + "," + packQty + "," + sDanga + "," + sAmount + ",'" + sDepot + "','" + "0010" + "','" + G.UserID + "')";
-            m.dbCUD(sql, ref msg);
+            string sql = string.Empty;
+ 
+            //sql = "insert into INV_material_in (mbarcode, cust_id, prod_id, plant, input_date, purchase_id, purchase_seq, qty, pack_qty, danga, amount, warehouse_id, reason_code, enter_man) " +
+            //        "values('" + mBarcode + "','"+ sCust + "','" + sProd + "','" + G.Pos + "','" + sInDate + "','" + sNo + "'," + sSeq + "," + sInQty + "," + packQty + "," + sDanga + "," + sAmount + ",'" + sDepot + "','" + "0010" + "','" + G.UserID + "')";
+            //m.dbCUD(sql, ref msg);
 
-            var data = sql;
-            Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);
+            //var data = sql;
+            //Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);
 
             sql = "update PUR_order_sub set closingYN = 'Y' where purchase_id = '" + sNo + "' and purchase_seq = " + sSeq;     // 입고flag update
             m.dbCUD(sql, ref msg);
@@ -250,7 +252,7 @@ namespace SmartMES_Giroei
                 return;
             }
 
-            data = sql;
+            var data = sql;
             Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.수정, data);
 
             if (lblDel.Visible)
@@ -324,16 +326,15 @@ namespace SmartMES_Giroei
 
         private void btnBarcodePrint_Click(object sender, EventArgs e)
         {
-            //ZXing.BarcodeWriter barcodeWriter = new ZXing.BarcodeWriter();
-            //barcodeWriter.Format = ZXing.BarcodeFormat.CODE_39;
-
-            //barcodeWriter.Options.Height = 20;
-            //barcodeWriter.Options.Width = 40;
-
+            printBarcode();
+        }
+        private void printBarcode()
+        {
             string barcodePrefix = tbMbarcode.Text.Trim();
 
-            string sQtyInPacking = tbQtyInPacking.Text.Replace(",", "").Trim();
-            string sPackQty = tbPackQty.Text.Replace(",", "").Trim();
+            string sQtyInPacking = tbQtyInPacking.Text.Replace(",", "").Trim();     // 포장내 수량
+            string sPackQty = tbPackQty.Text.Replace(",", "").Trim();               // 포장수량
+            string sQty = tbInQty.Text.Replace("'", "").Trim();                     // 입고수량
 
             if (string.IsNullOrEmpty(sQtyInPacking))
             {
@@ -350,6 +351,11 @@ namespace SmartMES_Giroei
 
             int index = int.Parse(sPackQty);
 
+            int iQtyInPacking = int.Parse(sQtyInPacking);
+            int iQty = int.Parse(sQty);
+
+            int remain = (index * iQtyInPacking) - iQty;         // 마지막 팩키지안의 수량 
+
             string str = string.Empty;
 
             PrintDialog pd = new PrintDialog();
@@ -359,7 +365,9 @@ namespace SmartMES_Giroei
             {
                 for (int i = 0; i < index; i++)
                 {
-                    string Barcode = barcodePrefix + "-" + (i + 1).ToString("D3") + "-" + int.Parse(sQtyInPacking).ToString("D4");
+                    if (remain > 0 && i == (index - 1))
+                        iQtyInPacking = remain;
+                    string Barcode = barcodePrefix + "-" + (i + 1).ToString("D3") + "-" + iQtyInPacking.ToString("D4");
 
                     str = "^XA^BY2,2.0^FS";
                     str += "^FO30,80 ^B3N,N,80,Y,N ^FD" + Barcode.Trim() + " ^FS";
@@ -374,9 +382,52 @@ namespace SmartMES_Giroei
                     //{
                     //    MessageBox.Show(ex.Message);
                     //}
+                    save2InvMaterialIn(Barcode, barcodePrefix, iQtyInPacking, sQtyInPacking);
                 }
+
             }
         }
+
+        private void save2InvMaterialIn(string barcode, string barcodePrefix, int iQtyInPacking, string sQtyInPacking)
+        {
+            string sCust = barcode.Split('-')[0].Trim();
+            string sProd = barcode.Split('-')[1].Trim();
+            string surfix = barcode.Split('-')[3] + "-" + barcode.Split('-')[4];
+            string sInDate = DateTime.Now.ToString("yyyy-MM-dd");
+            string sOrderId = lbSALOrderID.Text.Trim();
+            string sPackType = tbUnit.Text.Trim();
+
+            string msg = string.Empty;
+            MariaCRUD m = new MariaCRUD();
+
+            string sql = "insert into INV_barcode (mbarcode, barcode_surfix, cust_id, prod_id, input_date, in_qty, rm_qty, enter_man) " +
+                    "values('" + barcodePrefix + "','" + surfix + "','" + sCust + "','" + sProd + "','" + sInDate + "'," + iQtyInPacking + "," + iQtyInPacking + ",'" + G.UserID + "')";
+            m.dbCUD(sql, ref msg);
+
+            if (msg != "OK")
+            {
+                lblMsg.Text = msg;
+                return;
+            }
+            var data = sql;
+            Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);
+
+
+            sql = $@"INSERT INTO INV_material_in (mbarcode, barcode_surfix, cust_id, prod_id, plant, input_date, order_id, order_seq, qty, pack_type, pack_qty, reason_code,  enter_man) 
+                            VALUES ('{barcodePrefix}', '{surfix}', '{@sCust}', '{@sProd}', 'A', '{sInDate}', '{sOrderId}', 1, {iQtyInPacking}, '{@sPackType}', {sQtyInPacking}, '0010', '{@G.UserID}');";
+
+            m.dbCUD(sql, ref msg);
+
+            if (msg != "OK")
+            {
+                lblMsg.Text = msg;
+                MessageBox.Show(msg);
+                return;
+            }
+            data = sql;
+            Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);
+        }
+
         private void tbQtyInPacking_TextChanged(object sender, EventArgs e)
         {
             int iQtyInPacking = 0;

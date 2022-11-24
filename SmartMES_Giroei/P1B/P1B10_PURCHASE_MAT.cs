@@ -19,6 +19,7 @@ namespace SmartMES_Giroei
             cbGubun.SelectedIndex = 0;
 
             this.ActiveControl = tbSearch;
+
         }
         public void ListSearch()
         {
@@ -112,6 +113,9 @@ namespace SmartMES_Giroei
                 dataGridView1[8, rowIndex].Value = iSum2;
                 dataGridView1[13, rowIndex].Value = iSum3;
                 dataGridView1[14, rowIndex].Value = iSum4;
+
+                dataGridView1[21, rowIndex] = new DataGridViewTextBoxCell();
+                dataGridView1[21, rowIndex].Value = "";
             }
             catch (NullReferenceException)
             {

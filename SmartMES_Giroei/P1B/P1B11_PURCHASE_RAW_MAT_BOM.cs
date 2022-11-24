@@ -177,14 +177,14 @@ namespace SmartMES_Giroei
                     //{
                     //    MessageBox.Show(ex.Message);
                     //}
-                    save2InvBarcode(Barcode, barcodePrefix, iQtyInPackage);
+                    save2InvBarcode(Barcode, barcodePrefix, iQtyInPackage, rowIndex);
                 }
 
             }
             dataGridView1.Rows[rowIndex].Cells[0].Value = "1";
         }
 
-        private void save2InvBarcode(string barcode, string mBarcode, int iQtyInPackage)
+        private void save2InvBarcode(string barcode, string mBarcode, int iQtyInPackage, int rowindex)
         {
             string sCust = barcode.Split('-')[0].Trim();
             string sProd = barcode.Split('-')[1].Trim();
@@ -201,6 +201,43 @@ namespace SmartMES_Giroei
             if (msg != "OK")
             {
                 lblMsg.Text = msg;
+                return;
+            }
+
+            int iPackQty = 0;
+            int iQty = 0;
+
+            string sSubProd = dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
+
+            string sPackType = dataGridView1.Rows[rowIndex].Cells[7].Value.ToString();
+            string sPackQty = string.Empty;
+            string sQty = string.Empty;
+
+            bool ret = false;
+
+            ret = int.TryParse(dataGridView1.Rows[rowIndex].Cells[8].Value.ToString(), out iPackQty);
+            ret = int.TryParse(dataGridView1.Rows[rowIndex].Cells[9].Value.ToString(), out iQty);
+            if (ret)
+            {
+                sPackQty = iPackQty.ToString();
+                sQty = iQty.ToString();
+            }
+            else
+            {
+                lblMsg.Text = "포장갯수와 수량을 정확히 입력해 주세요.";
+                return;
+            }
+
+
+            sql = $@"INSERT INTO INV_material_in (mbarcode, barcode_surfix, cust_id, prod_id, plant, input_date, order_id, order_seq, qty, pack_type, pack_qty, reason_code,  enter_man) 
+                            VALUES ('{mBarcode}', '{surfix}', '{@sCustID}', '{sProd}', 'A', '{@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}', '{@sSujuNo}', {@sSujuSeq}, {@sQty}, '{@sPackType}', {@sPackQty}, '0010', '{@G.UserID}');";
+
+            m.dbCUD(sql, ref msg);
+
+            if (msg != "OK")
+            {
+                lblMsg.Text = msg;
+                MessageBox.Show(msg);
                 return;
             }
             var data = sql;
@@ -328,20 +365,20 @@ namespace SmartMES_Giroei
                             return;
                         }
 
-                        sql = $@"INSERT INTO INV_material_in (mbarcode, cust_id, prod_id, plant, input_date, order_id, order_seq, qty, pack_type, pack_qty, reason_code,  enter_man) 
-                            VALUES ('{barcodePrefix}', '{@sCustID}', '{@sSubProd}', 'A', '{@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}', '{@sSujuNo}', {@sSujuSeq}, {@sQty}, '{@sPackType}', {@sPackQty}, '0010', '{@G.UserID}');";
+                        //sql = $@"INSERT INTO INV_material_in (mbarcode, cust_id, prod_id, plant, input_date, order_id, order_seq, qty, pack_type, pack_qty, reason_code,  enter_man) 
+                        //    VALUES ('{barcodePrefix}', '{@sCustID}', '{@sSubProd}', 'A', '{@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}', '{@sSujuNo}', {@sSujuSeq}, {@sQty}, '{@sPackType}', {@sPackQty}, '0010', '{@G.UserID}');";
 
-                        m.dbCUD(sql, ref msg);
+                        //m.dbCUD(sql, ref msg);
 
-                        if (msg != "OK")
-                        {
-                            lblMsg.Text = msg;
-                            MessageBox.Show(msg);
-                            return;
-                        }
+                        //if (msg != "OK")
+                        //{
+                        //    lblMsg.Text = msg;
+                        //    MessageBox.Show(msg);
+                        //    return;
+                        //}
 
-                        var data = sql;
-                        Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);
+                        //var data = sql;
+                        //Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);
 
                         sql = $@"SELECT basestock_qty, partin_total, partout_total, current_qty FROM INV_real_stock WHERE prod_id = '{@sSubProd}' ORDER BY input_date DESC LIMIT 1";
 
@@ -357,7 +394,7 @@ namespace SmartMES_Giroei
 
                             m.dbCUD(sql, ref msg);
 
-                            data = sql;
+                            string data = sql;
                             Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);
 
                             sql = $@"SELECT basestock_qty, partin_total, partout_total, current_qty FROM INV_real_stock WHERE prod_id = '{@sSubProd}' ORDER BY input_date DESC LIMIT 1";
@@ -401,7 +438,7 @@ namespace SmartMES_Giroei
                                 return;
                             }
 
-                            data = sql;
+                            string data = sql;
                             Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.수정, data);
                         }
 

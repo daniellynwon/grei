@@ -65,16 +65,17 @@
             this.tbBigo = new System.Windows.Forms.TextBox();
             this.tbInID = new System.Windows.Forms.TextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.btnBarcodePrint = new System.Windows.Forms.Button();
-            this.tbQtyInPacking = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.tbMbarcode = new System.Windows.Forms.TextBox();
+            this.lbLastQty = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.tbQtyInPacking = new System.Windows.Forms.TextBox();
             this.tbPackQty = new System.Windows.Forms.TextBox();
+            this.btnBarcodePrint = new System.Windows.Forms.Button();
             this.btnClose = new SmartMES_Giroei.UserButtonA();
             this.btnSave = new SmartMES_Giroei.UserButtonA();
-            this.lbLastQty = new System.Windows.Forms.Label();
-            this.tbMbarcode = new System.Windows.Forms.TextBox();
-            this.label18 = new System.Windows.Forms.Label();
+            this.lbSALOrderID = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panTitle.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -87,7 +88,7 @@
             this.lblMsg.ForeColor = System.Drawing.Color.Red;
             this.lblMsg.Location = new System.Drawing.Point(28, 73);
             this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(220, 32);
+            this.lblMsg.Size = new System.Drawing.Size(148, 21);
             this.lblMsg.TabIndex = 0;
             this.lblMsg.Text = "메시지 라벨입니다.";
             // 
@@ -124,7 +125,7 @@
             this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label8.Location = new System.Drawing.Point(29, 94);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(87, 32);
+            this.label8.Size = new System.Drawing.Size(58, 21);
             this.label8.TabIndex = 0;
             this.label8.Text = "발주처";
             // 
@@ -135,7 +136,7 @@
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label4.Location = new System.Drawing.Point(29, 141);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 32);
+            this.label4.Size = new System.Drawing.Size(58, 21);
             this.label4.TabIndex = 0;
             this.label4.Text = "폼목명";
             // 
@@ -146,7 +147,7 @@
             this.tbQty.Location = new System.Drawing.Point(106, 187);
             this.tbQty.Name = "tbQty";
             this.tbQty.ReadOnly = true;
-            this.tbQty.Size = new System.Drawing.Size(211, 39);
+            this.tbQty.Size = new System.Drawing.Size(211, 29);
             this.tbQty.TabIndex = 0;
             this.tbQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -156,7 +157,7 @@
             this.tbUnit.Location = new System.Drawing.Point(461, 137);
             this.tbUnit.Name = "tbUnit";
             this.tbUnit.ReadOnly = true;
-            this.tbUnit.Size = new System.Drawing.Size(211, 39);
+            this.tbUnit.Size = new System.Drawing.Size(211, 29);
             this.tbUnit.TabIndex = 0;
             this.tbUnit.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -166,7 +167,7 @@
             this.tbProd.Location = new System.Drawing.Point(106, 137);
             this.tbProd.Name = "tbProd";
             this.tbProd.ReadOnly = true;
-            this.tbProd.Size = new System.Drawing.Size(211, 39);
+            this.tbProd.Size = new System.Drawing.Size(211, 29);
             this.tbProd.TabIndex = 0;
             this.tbProd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -177,7 +178,7 @@
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label3.Location = new System.Drawing.Point(29, 191);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(111, 32);
+            this.label3.Size = new System.Drawing.Size(74, 21);
             this.label3.TabIndex = 0;
             this.label3.Text = "발주수량";
             // 
@@ -187,7 +188,7 @@
             this.tbCust.Location = new System.Drawing.Point(106, 90);
             this.tbCust.Name = "tbCust";
             this.tbCust.ReadOnly = true;
-            this.tbCust.Size = new System.Drawing.Size(211, 39);
+            this.tbCust.Size = new System.Drawing.Size(211, 29);
             this.tbCust.TabIndex = 0;
             this.tbCust.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -199,7 +200,7 @@
             this.dtpRequestDate.Location = new System.Drawing.Point(461, 90);
             this.dtpRequestDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpRequestDate.Name = "dtpRequestDate";
-            this.dtpRequestDate.Size = new System.Drawing.Size(211, 39);
+            this.dtpRequestDate.Size = new System.Drawing.Size(211, 29);
             this.dtpRequestDate.TabIndex = 0;
             // 
             // label7
@@ -209,7 +210,7 @@
             this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label7.Location = new System.Drawing.Point(384, 94);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(111, 32);
+            this.label7.Size = new System.Drawing.Size(74, 21);
             this.label7.TabIndex = 0;
             this.label7.Text = "입고요청";
             // 
@@ -220,7 +221,7 @@
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label6.Location = new System.Drawing.Point(29, 47);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(100, 32);
+            this.label6.Size = new System.Drawing.Size(68, 21);
             this.label6.TabIndex = 0;
             this.label6.Text = "발주No.";
             // 
@@ -232,7 +233,7 @@
             this.tbNo.Location = new System.Drawing.Point(106, 43);
             this.tbNo.Name = "tbNo";
             this.tbNo.ReadOnly = true;
-            this.tbNo.Size = new System.Drawing.Size(211, 39);
+            this.tbNo.Size = new System.Drawing.Size(211, 29);
             this.tbNo.TabIndex = 0;
             this.tbNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -244,7 +245,7 @@
             this.dtpPutchDate.Location = new System.Drawing.Point(461, 43);
             this.dtpPutchDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpPutchDate.Name = "dtpPutchDate";
-            this.dtpPutchDate.Size = new System.Drawing.Size(211, 39);
+            this.dtpPutchDate.Size = new System.Drawing.Size(211, 29);
             this.dtpPutchDate.TabIndex = 0;
             // 
             // label2
@@ -254,7 +255,7 @@
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(384, 191);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 32);
+            this.label2.Size = new System.Drawing.Size(48, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "단 가";
             // 
@@ -265,7 +266,7 @@
             this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label10.Location = new System.Drawing.Point(384, 141);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(111, 32);
+            this.label10.Size = new System.Drawing.Size(74, 21);
             this.label10.TabIndex = 0;
             this.label10.Text = "포장단위";
             // 
@@ -276,7 +277,7 @@
             this.tbDanga.Location = new System.Drawing.Point(461, 187);
             this.tbDanga.Name = "tbDanga";
             this.tbDanga.ReadOnly = true;
-            this.tbDanga.Size = new System.Drawing.Size(211, 39);
+            this.tbDanga.Size = new System.Drawing.Size(211, 29);
             this.tbDanga.TabIndex = 0;
             this.tbDanga.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -287,7 +288,7 @@
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(384, 47);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 32);
+            this.label1.Size = new System.Drawing.Size(74, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "발주일자";
             // 
@@ -298,7 +299,7 @@
             this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label11.Location = new System.Drawing.Point(411, 477);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(111, 32);
+            this.label11.Size = new System.Drawing.Size(74, 21);
             this.label11.TabIndex = 0;
             this.label11.Text = "입고창고";
             // 
@@ -308,7 +309,7 @@
             this.tbInQty.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.tbInQty.Location = new System.Drawing.Point(485, 383);
             this.tbInQty.Name = "tbInQty";
-            this.tbInQty.Size = new System.Drawing.Size(211, 39);
+            this.tbInQty.Size = new System.Drawing.Size(211, 29);
             this.tbInQty.TabIndex = 2;
             this.tbInQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbInQty.TextChanged += new System.EventHandler(this.tbInQty_TextChanged);
@@ -322,7 +323,7 @@
             this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label12.Location = new System.Drawing.Point(411, 387);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(111, 32);
+            this.label12.Size = new System.Drawing.Size(74, 21);
             this.label12.TabIndex = 0;
             this.label12.Text = "입고수량";
             // 
@@ -333,7 +334,7 @@
             this.dtpInDate.Location = new System.Drawing.Point(127, 383);
             this.dtpInDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpInDate.Name = "dtpInDate";
-            this.dtpInDate.Size = new System.Drawing.Size(211, 39);
+            this.dtpInDate.Size = new System.Drawing.Size(211, 29);
             this.dtpInDate.TabIndex = 1;
             this.dtpInDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nextFocus_KeyDown);
             // 
@@ -344,7 +345,7 @@
             this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label13.Location = new System.Drawing.Point(53, 387);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(111, 32);
+            this.label13.Size = new System.Drawing.Size(74, 21);
             this.label13.TabIndex = 0;
             this.label13.Text = "입고일자";
             // 
@@ -355,7 +356,7 @@
             this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label14.Location = new System.Drawing.Point(53, 432);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(87, 32);
+            this.label14.Size = new System.Drawing.Size(58, 21);
             this.label14.TabIndex = 0;
             this.label14.Text = "매입액";
             // 
@@ -365,7 +366,7 @@
             this.tbAmount.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.tbAmount.Location = new System.Drawing.Point(127, 428);
             this.tbAmount.Name = "tbAmount";
-            this.tbAmount.Size = new System.Drawing.Size(211, 39);
+            this.tbAmount.Size = new System.Drawing.Size(211, 29);
             this.tbAmount.TabIndex = 3;
             this.tbAmount.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbAmount.TextChanged += new System.EventHandler(this.tbAmount_TextChanged);
@@ -378,7 +379,7 @@
             this.cbDepot.FormattingEnabled = true;
             this.cbDepot.Location = new System.Drawing.Point(485, 473);
             this.cbDepot.Name = "cbDepot";
-            this.cbDepot.Size = new System.Drawing.Size(211, 40);
+            this.cbDepot.Size = new System.Drawing.Size(211, 29);
             this.cbDepot.TabIndex = 6;
             // 
             // label15
@@ -388,7 +389,7 @@
             this.label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label15.Location = new System.Drawing.Point(53, 477);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(111, 32);
+            this.label15.Size = new System.Drawing.Size(74, 21);
             this.label15.TabIndex = 0;
             this.label15.Text = "합계금액";
             // 
@@ -399,7 +400,7 @@
             this.tbMoney.Location = new System.Drawing.Point(127, 473);
             this.tbMoney.Name = "tbMoney";
             this.tbMoney.ReadOnly = true;
-            this.tbMoney.Size = new System.Drawing.Size(211, 39);
+            this.tbMoney.Size = new System.Drawing.Size(211, 29);
             this.tbMoney.TabIndex = 5;
             this.tbMoney.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbMoney.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nextFocus_KeyDown);
@@ -410,7 +411,7 @@
             this.tbVat.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.tbVat.Location = new System.Drawing.Point(485, 428);
             this.tbVat.Name = "tbVat";
-            this.tbVat.Size = new System.Drawing.Size(211, 39);
+            this.tbVat.Size = new System.Drawing.Size(211, 29);
             this.tbVat.TabIndex = 4;
             this.tbVat.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.tbVat.TextChanged += new System.EventHandler(this.tbVat_TextChanged);
@@ -424,7 +425,7 @@
             this.label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label16.Location = new System.Drawing.Point(411, 432);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(87, 32);
+            this.label16.Size = new System.Drawing.Size(58, 21);
             this.label16.TabIndex = 0;
             this.label16.Text = "부가세";
             // 
@@ -447,7 +448,7 @@
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(27, 15);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(119, 36);
+            this.lblTitle.Size = new System.Drawing.Size(84, 25);
             this.lblTitle.TabIndex = 0;
             this.lblTitle.Text = "매입등록";
             // 
@@ -459,7 +460,7 @@
             this.lblDel.ForeColor = System.Drawing.Color.Red;
             this.lblDel.Location = new System.Drawing.Point(619, 774);
             this.lblDel.Name = "lblDel";
-            this.lblDel.Size = new System.Drawing.Size(159, 32);
+            this.lblDel.Size = new System.Drawing.Size(106, 21);
             this.lblDel.TabIndex = 32;
             this.lblDel.Text = "매입정보삭제";
             this.lblDel.Click += new System.EventHandler(this.lblDel_Click);
@@ -471,7 +472,7 @@
             this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label9.Location = new System.Drawing.Point(53, 527);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(71, 32);
+            this.label9.Size = new System.Drawing.Size(48, 21);
             this.label9.TabIndex = 33;
             this.label9.Text = "메 모";
             this.label9.Visible = false;
@@ -490,10 +491,10 @@
             // 
             this.tbInID.Font = new System.Drawing.Font("Malgun Gothic", 12F);
             this.tbInID.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbInID.Location = new System.Drawing.Point(514, 77);
+            this.tbInID.Location = new System.Drawing.Point(514, 90);
             this.tbInID.Name = "tbInID";
             this.tbInID.ReadOnly = true;
-            this.tbInID.Size = new System.Drawing.Size(211, 39);
+            this.tbInID.Size = new System.Drawing.Size(211, 29);
             this.tbInID.TabIndex = 35;
             this.tbInID.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -515,6 +516,85 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "자재바코드발행";
             // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.label18.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label18.Location = new System.Drawing.Point(29, 94);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(106, 21);
+            this.label18.TabIndex = 40;
+            this.label18.Text = "마스터바코드";
+            // 
+            // tbMbarcode
+            // 
+            this.tbMbarcode.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbMbarcode.ForeColor = System.Drawing.Color.Blue;
+            this.tbMbarcode.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbMbarcode.Location = new System.Drawing.Point(152, 91);
+            this.tbMbarcode.Name = "tbMbarcode";
+            this.tbMbarcode.ReadOnly = true;
+            this.tbMbarcode.Size = new System.Drawing.Size(385, 29);
+            this.tbMbarcode.TabIndex = 39;
+            this.tbMbarcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // lbLastQty
+            // 
+            this.lbLastQty.AutoSize = true;
+            this.lbLastQty.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.lbLastQty.ForeColor = System.Drawing.Color.Red;
+            this.lbLastQty.Location = new System.Drawing.Point(225, 15);
+            this.lbLastQty.Name = "lbLastQty";
+            this.lbLastQty.Size = new System.Drawing.Size(17, 21);
+            this.lbLastQty.TabIndex = 38;
+            this.lbLastQty.Text = "-";
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label17.Location = new System.Drawing.Point(322, 48);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(55, 21);
+            this.label17.TabIndex = 2;
+            this.label17.Text = "PKG수";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label5.Location = new System.Drawing.Point(29, 48);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(93, 21);
+            this.label5.TabIndex = 1;
+            this.label5.Text = "PKG당 수량";
+            // 
+            // tbQtyInPacking
+            // 
+            this.tbQtyInPacking.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbQtyInPacking.ForeColor = System.Drawing.Color.Blue;
+            this.tbQtyInPacking.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbQtyInPacking.Location = new System.Drawing.Point(138, 45);
+            this.tbQtyInPacking.Name = "tbQtyInPacking";
+            this.tbQtyInPacking.Size = new System.Drawing.Size(142, 29);
+            this.tbQtyInPacking.TabIndex = 1;
+            this.tbQtyInPacking.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbQtyInPacking.TextChanged += new System.EventHandler(this.tbQtyInPacking_TextChanged);
+            // 
+            // tbPackQty
+            // 
+            this.tbPackQty.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbPackQty.ForeColor = System.Drawing.Color.Blue;
+            this.tbPackQty.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbPackQty.Location = new System.Drawing.Point(395, 45);
+            this.tbPackQty.Name = "tbPackQty";
+            this.tbPackQty.Size = new System.Drawing.Size(142, 29);
+            this.tbPackQty.TabIndex = 3;
+            this.tbPackQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
             // btnBarcodePrint
             // 
             this.btnBarcodePrint.Location = new System.Drawing.Point(552, 45);
@@ -524,51 +604,6 @@
             this.btnBarcodePrint.Text = "발행";
             this.btnBarcodePrint.UseVisualStyleBackColor = true;
             this.btnBarcodePrint.Click += new System.EventHandler(this.btnBarcodePrint_Click);
-            // 
-            // tbQtyInPacking
-            // 
-            this.tbQtyInPacking.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.tbQtyInPacking.ForeColor = System.Drawing.Color.Blue;
-            this.tbQtyInPacking.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbQtyInPacking.Location = new System.Drawing.Point(138, 45);
-            this.tbQtyInPacking.Name = "tbQtyInPacking";
-            this.tbQtyInPacking.Size = new System.Drawing.Size(142, 39);
-            this.tbQtyInPacking.TabIndex = 1;
-            this.tbQtyInPacking.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbQtyInPacking.TextChanged += new System.EventHandler(this.tbQtyInPacking_TextChanged);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(29, 48);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(140, 32);
-            this.label5.TabIndex = 1;
-            this.label5.Text = "PKG당 수량";
-            // 
-            // label17
-            // 
-            this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label17.Location = new System.Drawing.Point(322, 48);
-            this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(84, 32);
-            this.label17.TabIndex = 2;
-            this.label17.Text = "PKG수";
-            // 
-            // tbPackQty
-            // 
-            this.tbPackQty.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.tbPackQty.ForeColor = System.Drawing.Color.Blue;
-            this.tbPackQty.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbPackQty.Location = new System.Drawing.Point(395, 45);
-            this.tbPackQty.Name = "tbPackQty";
-            this.tbPackQty.Size = new System.Drawing.Size(142, 39);
-            this.tbPackQty.TabIndex = 3;
-            this.tbPackQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // btnClose
             // 
@@ -598,46 +633,24 @@
             this.btnSave.TabIndex = 30;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // lbLastQty
+            // lbSALOrderID
             // 
-            this.lbLastQty.AutoSize = true;
-            this.lbLastQty.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.lbLastQty.ForeColor = System.Drawing.Color.Red;
-            this.lbLastQty.Location = new System.Drawing.Point(225, 15);
-            this.lbLastQty.Name = "lbLastQty";
-            this.lbLastQty.Size = new System.Drawing.Size(25, 32);
-            this.lbLastQty.TabIndex = 38;
-            this.lbLastQty.Text = "-";
-            // 
-            // tbMbarcode
-            // 
-            this.tbMbarcode.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.tbMbarcode.ForeColor = System.Drawing.Color.Blue;
-            this.tbMbarcode.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbMbarcode.Location = new System.Drawing.Point(152, 91);
-            this.tbMbarcode.Name = "tbMbarcode";
-            this.tbMbarcode.ReadOnly = true;
-            this.tbMbarcode.Size = new System.Drawing.Size(385, 39);
-            this.tbMbarcode.TabIndex = 39;
-            this.tbMbarcode.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label18
-            // 
-            this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.label18.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label18.Location = new System.Drawing.Point(29, 94);
-            this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(159, 32);
-            this.label18.TabIndex = 40;
-            this.label18.Text = "마스터바코드";
+            this.lbSALOrderID.AutoSize = true;
+            this.lbSALOrderID.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.lbSALOrderID.ForeColor = System.Drawing.Color.Red;
+            this.lbSALOrderID.Location = new System.Drawing.Point(510, 57);
+            this.lbSALOrderID.Name = "lbSALOrderID";
+            this.lbSALOrderID.Size = new System.Drawing.Size(17, 21);
+            this.lbSALOrderID.TabIndex = 41;
+            this.lbSALOrderID.Text = "-";
             // 
             // P1B10_PURCHASE_MAT_IN
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 32F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(744, 822);
+            this.Controls.Add(this.lbSALOrderID);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.tbInID);
             this.Controls.Add(this.tbBigo);
@@ -729,5 +742,6 @@
         private System.Windows.Forms.Label lbLastQty;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.TextBox tbMbarcode;
+        private System.Windows.Forms.Label lbSALOrderID;
     }
 }
