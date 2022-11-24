@@ -124,8 +124,8 @@ namespace SmartMES_Giroei
                 string sSubID = dataGridView1.Rows[i].Cells[6].Value.ToString().Replace(",", "");    // 자재코드
                 string sDate = DateTime.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString()).ToString("yyyy-MM-dd");  // 입고일(LOTNO)
                 string sContents = dataGridView1.Rows[i].Cells[17].Value.ToString();
-                string mBarcode = dataGridView1.Rows[i].Cells[18].Value.ToString();
-                string sBarcode = dataGridView1.Rows[i].Cells[19].Value.ToString();
+                string mBarcode = dataGridView1.Rows[i].Cells[19].Value.ToString();
+                string sBarcode = dataGridView1.Rows[i].Cells[20].Value.ToString();
                 string sCust = dataGridView1.Rows[i].Cells[2].Value.ToString();
                 sql = "UPDATE Item_box_sub SET return_Qty = " + sQty + "  WHERE box_id = '" + sBoxID + "' AND prod_id_sub = '" + sSubID + "'";
                 m.dbCUD(sql, ref msg);
