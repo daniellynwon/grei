@@ -9,8 +9,8 @@ namespace SmartMES_Giroei
 {
     public partial class P1B16_ITEM_BOX_SUB2 : Form
     {
-        public P1B16_ITEM_BOX parentWin;
-        public P1B16_ITEM_BOX_INPUT parentWin1;
+        //public P1B16_ITEM_BOX parentWin;
+        public P1B16_ITEM_BOX_INPUT parentWin;
 
         string sOrderID = string.Empty;
         string sOrderSeq = string.Empty;

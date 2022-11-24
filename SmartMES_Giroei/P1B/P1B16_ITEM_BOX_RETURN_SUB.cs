@@ -19,6 +19,7 @@ namespace SmartMES_Giroei
         }
         private void P1B16_ITEM_BOX_RETURN_SUB_Load(object sender, EventArgs e)
         {
+            lblMsg.Text = "";
             if (sGubun == "구성완료")
             {
                 if (sIsComplete == "완료") btnItemBox.Visible = false;
@@ -108,6 +109,7 @@ namespace SmartMES_Giroei
         #region Button Controls
         private void btnItemBox_Click(object sender, EventArgs e)   //회수수량등록
         {
+            lblMsg.Text = "";
             string sql = string.Empty;
             string msg = string.Empty;
             MariaCRUD m = new MariaCRUD();
@@ -139,10 +141,10 @@ namespace SmartMES_Giroei
                     return;
                 }
                 //   INV_material_in 테이블에 다시 입력. -> 이후에 변경해야 할 듯 하다.
-                sql = "insert into INV_material_out (mbarcode, barcode_surfix, prod_id, cust_id, input_date, plant, prodorder_id, output_date, qty, box_id, enter_man) " +
-                    "values('" + mBarcode + "','" + sBarcode + "','" + sSubID + "','" + sCust + "','" + sDate + "','" + G.Pos + "','" + sSujuNo + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "'," + sQty + ",'" + sBoxID + "','" + G.UserID + "')";
+                sql = "insert into INV_material_in (mbarcode, cust_id, prod_id, input_date, plant, order_id, order_seq, qty, reason_code, enter_man) " +
+                    "values ('" + mBarcode + "','" + sCust + "','" + sSubID + "','" + sDate + "','" + G.Pos + "','" + sSujuNo + "','" + sSujuSeq + "'," + sQty + ",'0008','" + G.UserID + "')";
                     //+ " on duplicate key update" +
-                    //" prod_id = '" + sSubID + "', qty = " + sCount + ", enter_man = '" + G.UserID + "'";
+                    //" prod_id = '" + sSubID + "', cust_id = '" + sCust + "', input_date = '" + sDate + "', plant = '" + G.Pos + "', prodorder_id = '" + sSujuNo + "', output_date = " + DateTime.Now.ToString("yyyy-MM-dd") + "', qty = " + sCount + ", enter_man = '" + G.UserID + "'";
                 m.dbCUD(sql, ref msg);
 
                 if (msg != "OK")

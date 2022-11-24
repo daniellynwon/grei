@@ -135,7 +135,7 @@ namespace SmartMES_Giroei
         private void pbAdd_Click(object sender, EventArgs e)
         {
             P1B16_ITEM_BOX_SUB2 sub = new P1B16_ITEM_BOX_SUB2();
-            sub.parentWin1 = this;
+            sub.parentWin = this;
             sub.ShowDialog();
         }
         private void pbDel_Click(object sender, EventArgs e)
