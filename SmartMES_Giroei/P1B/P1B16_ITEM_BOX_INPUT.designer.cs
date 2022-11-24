@@ -337,7 +337,7 @@
             this.Controls.Add(this.panSearch);
             this.Name = "P1B16_ITEM_BOX_INPUT";
             this.Text = "P1B16_ITEM_BOX_INPUT";
-            this.Load += new System.EventHandler(this.pbSearch_Click);
+            this.Load += new System.EventHandler(this.P1B16_ITEM_BOX_INPUT_Load);
             this.Controls.SetChildIndex(this.panSearch, 0);
             this.Controls.SetChildIndex(this.dataGridView1, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).EndInit();

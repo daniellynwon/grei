@@ -68,73 +68,84 @@ namespace SmartMES_Giroei
 
         private void btItemBox_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(sOrderID))
+            try
             {
-                lblMsg.Text = "선택된 수주정보가 없습니다. ";
-                return;
-            }
-
-            MariaCRUD m = new MariaCRUD();
-            DataTable table;
-
-            string sql = string.Empty;
-            string msg = string.Empty;
-
-            sql = $@"SELECT COUNT(parent_id) FROM BOM_bomlist WHERE prod_id = '{@sProdID}'";
-            table = m.dbDataTable(sql, ref msg);
-
-            if (Convert.ToInt64(table.Rows[0][0]) == 0)
-            {
-                MessageBox.Show($@"{@sProdName}의 BOM이 등록되어 있지 않습니다. BOM 먼저 등록해 주세요.");
-                return;
-            }
-
-            sql = $@"INSERT INTO Item_box_main (order_id, order_seq, prod_id) VALUES ('{@sOrderID}', '{@sOrderSeq}', '{@sProdID}');";
-
-            m.dbCUD(sql, ref msg);
-
-            if (msg != "OK")
-            {
-                lblMsg.Text = "현품박스 생성에 실패했습니다.";
-                return;
-            }
-
-            sql = $@"SELECT box_id FROM Item_box_main ORDER BY  box_id DESC LIMIT 1";
-            string sBoxID = m.dbDataTable(sql, ref msg).Rows[0][0].ToString();
-
-            sql = $@"SELECT prod_id, parent_id, req_qty FROM BOM_bomlist WHERE prod_id = '{@sProdID}'";
-            table = m.dbDataTable(sql, ref msg);
-
-            sql = "INSERT INTO Item_box_sub (box_id, prod_id, prod_id_sub, total_count) VALUES ";
-
-            for (int i = 0; i < table.Rows.Count - 1; i++)
-            {
-                sql = sql + $@"({@sBoxID}, '{@table.Rows[i][0].ToString()}', '{@table.Rows[i][1].ToString()}', {@qty * @Convert.ToInt64(table.Rows[i][2])}),";
-            }
-
-            sql = sql + $@"({@sBoxID}, '{@table.Rows[table.Rows.Count - 1][0].ToString()}', '{@table.Rows[table.Rows.Count - 1][1].ToString()}', {@qty * @Convert.ToInt64(table.Rows[table.Rows.Count - 1][2])})";
-
-            m.dbCUD(sql, ref msg);
-
-            if (msg != "OK")
-            {
-                lblMsg.Text = "현품박스 생성에 실패했습니다.";
-                return;
-            }
-
-            parentWin.ListSearch();
-
-            for (int i = 0; i < parentWin.dataGridView1.Rows.Count; i++)
-            {
-                if (parentWin.dataGridView1.Rows[i].Cells[1].Value.ToString() == sOrderID && parentWin.dataGridView1.Rows[i].Cells[2].Value.ToString() == sOrderSeq)
+                if (string.IsNullOrEmpty(sOrderID))
                 {
-                    parentWin.dataGridView1.CurrentCell = parentWin.dataGridView1[0, i];
-                    parentWin.dataGridView1.CurrentCell.Selected = true;
-                    break;
+                    lblMsg.Text = "선택된 수주정보가 없습니다. ";
+                    return;
                 }
-            }
 
-            this.DialogResult = DialogResult.OK;
+                MariaCRUD m = new MariaCRUD();
+                DataTable table;
+
+                string sql = string.Empty;
+                string msg = string.Empty;
+
+                sql = $@"SELECT COUNT(parent_id) FROM BOM_bomlist WHERE prod_id = '{@sProdID}'";
+                table = m.dbDataTable(sql, ref msg);
+
+                if (Convert.ToInt64(table.Rows[0][0]) == 0)
+                {
+                    MessageBox.Show($@"{@sProdName}의 BOM이 등록되어 있지 않습니다. BOM 먼저 등록해 주세요.");
+                    return;
+                }
+
+                sql = $@"INSERT INTO Item_box_main (order_id, order_seq, prod_id) VALUES ('{@sOrderID}', '{@sOrderSeq}', '{@sProdID}');";
+
+                m.dbCUD(sql, ref msg);
+
+                if (msg != "OK")
+                {
+                    lblMsg.Text = "현품박스 생성에 실패했습니다.";
+                    return;
+                }
+
+                sql = $@"SELECT box_id FROM Item_box_main ORDER BY  box_id DESC LIMIT 1";
+                string sBoxID = m.dbDataTable(sql, ref msg).Rows[0][0].ToString();
+
+                sql = $@"SELECT prod_id, parent_id, req_qty FROM BOM_bomlist WHERE prod_id = '{@sProdID}'";
+                table = m.dbDataTable(sql, ref msg);
+
+                sql = "INSERT INTO Item_box_sub (box_id, prod_id, prod_id_sub, input_date, total_count) VALUES ";
+
+                for (int i = 0; i < table.Rows.Count - 1; i++)
+                {
+                    sql = sql + $@"({@sBoxID}, '{@table.Rows[i][0].ToString()}', '{@table.Rows[i][1].ToString()}','{@DateTime.Now.ToString("yyyy-MM-dd")}',{@qty * @Convert.ToInt64(table.Rows[i][2])}),";
+                }
+
+                sql = sql + $@"({@sBoxID}, '{@table.Rows[table.Rows.Count - 1][0].ToString()}', '{@table.Rows[table.Rows.Count - 1][1].ToString()}','{@DateTime.Now.ToString("yyyy-MM-dd")}', {@qty * @Convert.ToInt64(table.Rows[table.Rows.Count - 1][2])})";
+
+                m.dbCUD(sql, ref msg);
+
+                if (msg != "OK")
+                {
+                    lblMsg.Text = "현품박스 생성에 실패했습니다.";
+                    return;
+                }
+
+                parentWin.ListSearch();
+
+                for (int i = 0; i < parentWin.dataGridView1.Rows.Count; i++)
+                {
+                    if (parentWin.dataGridView1.Rows[i].Cells[1].Value.ToString() == sOrderID && parentWin.dataGridView1.Rows[i].Cells[2].Value.ToString() == sOrderSeq)
+                    {
+                        parentWin.dataGridView1.CurrentCell = parentWin.dataGridView1[0, i];
+                        parentWin.dataGridView1.CurrentCell.Selected = true;
+                        break;
+                    }
+                }
+
+                this.DialogResult = DialogResult.OK;
+            }
+            catch (NullReferenceException)
+            {
+                return;
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
         }
     }
 }
