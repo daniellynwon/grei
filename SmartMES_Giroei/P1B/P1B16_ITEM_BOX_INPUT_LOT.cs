@@ -112,7 +112,7 @@ namespace SmartMES_Giroei
                 if (dataGridView1.Rows[i].Cells[0].Value != null && dataGridView1.Rows[i].Cells[0].Value.ToString() == "1")
                 {
 
-                    sSurfix += dataGridView1.Rows[i].Cells[2].Value.ToString() + ",";
+                    sSurfix += dataGridView1.Rows[i].Cells[2].Value.ToString() + " ";
                     for (int iSeq = 0; iSeq < parentWin.dataGridView1.RowCount; iSeq++)
                     {
                         if (parentWin.dataGridView1.Rows[iSeq].Cells[6].Value.ToString() == dataGridView1.Rows[i].Cells[5].Value.ToString())  // SUB창의 자재코드랑 해당 창의 자재코드랑 비교

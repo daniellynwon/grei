@@ -110,7 +110,7 @@ namespace SmartMES_Giroei
             if (e.ColumnIndex == 7)
             {
                 P1B16_ITEM_BOX_INPUT_SUB sub = new P1B16_ITEM_BOX_INPUT_SUB();
-                sub.sGubun = "구성완료"; sub.Text = "BOM 구성정보";
+                //sub.sGubun = "구성완료"; sub.Text = "BOM 구성정보";
                 sub.sSujuNo = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
                 sub.sSujuSeq = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
                 sub.sProdID = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();

@@ -221,7 +221,7 @@ namespace SmartMES_Giroei
                 string sContents = dataGridView1.Rows[i].Cells[17].Value.ToString();
                 string mBarcode = dataGridView1.Rows[i].Cells[18].Value.ToString();
                 string sBarcode = dataGridView1.Rows[i].Cells[19].Value.ToString();
-                string[] tempSurfix = sBarcode.Split(',');
+                string[] tempSurfix = sBarcode.Split(' ');
                 string sCust = dataGridView1.Rows[i].Cells[2].Value.ToString();
 
                 sql = $@"UPDATE Item_box_sub SET item_count = " + sCount + ", input_date = '" + sDate + "', contents = '" + sContents + "'  WHERE box_id = '" + sBoxID + "' AND prod_id_sub = '" + sSubID + "'";
