@@ -101,7 +101,7 @@ namespace SmartMES_Giroei
                     parentWin.tbEstiNo.Text = dataGridView1.Rows[i].Cells[0].Value.ToString();   // 견적번호
 
                     parentWin.dataGridView1.Rows[iSeq].Cells[20].Value = dataGridView1.Rows[i].Cells[19].Value; //estimate_seq
-                    parentWin.dataGridView1.Rows[iSeq].Cells[2].Value = dataGridView1.Rows[i].Cells[9].Value; //품목코드
+                    parentWin.dataGridView1.Rows[iSeq].Cells[3].Value = dataGridView1.Rows[i].Cells[9].Value; //품목코드
                     parentWin.dataGridView1.Rows[iSeq].Cells[4].Value = dataGridView1.Rows[i].Cells[11].Value; ; //품목명
                     parentWin.dataGridView1.Rows[iSeq].Cells[5].Value = dataGridView1.Rows[i].Cells[20].Value; //공정코드
                     parentWin.dataGridView1.Rows[iSeq].Cells[8].Value = dataGridView1.Rows[i].Cells[21].Value; //적용점수

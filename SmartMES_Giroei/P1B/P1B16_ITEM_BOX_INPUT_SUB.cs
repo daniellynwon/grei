@@ -32,7 +32,7 @@ namespace SmartMES_Giroei
         }
         public void ListSearch()
         {
-            //lblMsg.Text = "";
+            lblMsg.Text = "";
             lbSujuInfo.Text = $@"수주번호 : {@sSujuNo} / 수주순번 : {@sSujuSeq} / 품목명 : {@sProdName}";
             try
             {
