@@ -41,13 +41,13 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panSearch = new System.Windows.Forms.Panel();
-            this.cbTerm = new System.Windows.Forms.ComboBox();
             this.cbGubun = new System.Windows.Forms.ComboBox();
+            this.cbTerm = new System.Windows.Forms.ComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
@@ -76,10 +76,11 @@
             this.발주순번 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.포장단위 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.고객번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.수주번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPPurchaseMatQueryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
             this.sP_PurchaseMat_QueryTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseMat_QueryTableAdapter();
             this.sPPurchaseMatQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sPPurchaseMatQueryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -88,9 +89,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).BeginInit();
             this.panSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseMatQueryBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseMatQueryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseMatQueryBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -131,8 +132,8 @@
             this.panSearch.AutoSize = true;
             this.panSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(205)))), ((int)(((byte)(219)))));
             this.panSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panSearch.Controls.Add(this.cbTerm);
             this.panSearch.Controls.Add(this.cbGubun);
+            this.panSearch.Controls.Add(this.cbTerm);
             this.panSearch.Controls.Add(this.label7);
             this.panSearch.Controls.Add(this.label3);
             this.panSearch.Controls.Add(this.dtpToDate);
@@ -141,8 +142,23 @@
             this.panSearch.Controls.Add(this.dtpFromDate);
             this.panSearch.Location = new System.Drawing.Point(2, 58);
             this.panSearch.Name = "panSearch";
-            this.panSearch.Size = new System.Drawing.Size(1974, 160);
+            this.panSearch.Size = new System.Drawing.Size(2676, 160);
             this.panSearch.TabIndex = 0;
+            // 
+            // cbGubun
+            // 
+            this.cbGubun.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbGubun.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbGubun.FormattingEnabled = true;
+            this.cbGubun.Items.AddRange(new object[] {
+            "<전체>",
+            "Y.입고분",
+            "N.미입고분"});
+            this.cbGubun.Location = new System.Drawing.Point(1195, 29);
+            this.cbGubun.Name = "cbGubun";
+            this.cbGubun.Size = new System.Drawing.Size(104, 29);
+            this.cbGubun.TabIndex = 11;
+            this.cbGubun.SelectedIndexChanged += new System.EventHandler(this.cbGubun_SelectedIndexChanged);
             // 
             // cbTerm
             // 
@@ -152,26 +168,11 @@
             this.cbTerm.Items.AddRange(new object[] {
             "1.발주기간",
             "2.입고기간"});
-            this.cbTerm.Location = new System.Drawing.Point(93, 30);
+            this.cbTerm.Location = new System.Drawing.Point(444, 30);
             this.cbTerm.Name = "cbTerm";
             this.cbTerm.Size = new System.Drawing.Size(104, 29);
             this.cbTerm.TabIndex = 1;
             this.cbTerm.SelectedIndexChanged += new System.EventHandler(this.cbTerm_SelectedIndexChanged);
-            // 
-            // cbGubun
-            // 
-            this.cbGubun.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbGubun.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbGubun.FormattingEnabled = true;
-            this.cbGubun.Items.AddRange(new object[] {
-            "<전체>",
-            "0.대기분",
-            "1.입고분"});
-            this.cbGubun.Location = new System.Drawing.Point(1691, 29);
-            this.cbGubun.Name = "cbGubun";
-            this.cbGubun.Size = new System.Drawing.Size(117, 29);
-            this.cbGubun.TabIndex = 5;
-            this.cbGubun.SelectedIndexChanged += new System.EventHandler(this.cbGubun_SelectedIndexChanged);
             // 
             // label7
             // 
@@ -179,7 +180,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(1623, 35);
+            this.label7.Location = new System.Drawing.Point(1974, 35);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 21);
             this.label7.TabIndex = 0;
@@ -191,7 +192,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(571, 37);
+            this.label3.Location = new System.Drawing.Point(922, 37);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(21, 21);
             this.label3.TabIndex = 10;
@@ -202,7 +203,7 @@
             this.dtpToDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpToDate.CalendarFont = new System.Drawing.Font("Malgun Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpToDate.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dtpToDate.Location = new System.Drawing.Point(606, 30);
+            this.dtpToDate.Location = new System.Drawing.Point(957, 30);
             this.dtpToDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpToDate.Name = "dtpToDate";
             this.dtpToDate.Size = new System.Drawing.Size(211, 29);
@@ -215,7 +216,7 @@
             this.tbSearch.BackColor = System.Drawing.SystemColors.Window;
             this.tbSearch.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tbSearch.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbSearch.Location = new System.Drawing.Point(1165, 29);
+            this.tbSearch.Location = new System.Drawing.Point(1462, 27);
             this.tbSearch.Name = "tbSearch";
             this.tbSearch.Size = new System.Drawing.Size(265, 29);
             this.tbSearch.TabIndex = 4;
@@ -227,7 +228,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(993, 35);
+            this.label1.Location = new System.Drawing.Point(1344, 35);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(112, 21);
             this.label1.TabIndex = 0;
@@ -238,7 +239,7 @@
             this.dtpFromDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.dtpFromDate.CalendarFont = new System.Drawing.Font("Malgun Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpFromDate.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dtpFromDate.Location = new System.Drawing.Point(252, 30);
+            this.dtpFromDate.Location = new System.Drawing.Point(603, 30);
             this.dtpFromDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpFromDate.Name = "dtpFromDate";
             this.dtpFromDate.Size = new System.Drawing.Size(211, 29);
@@ -276,7 +277,6 @@
             this.단가DataGridViewTextBoxColumn,
             this.발주액DataGridViewTextBoxColumn,
             this.요청일,
-            this.ColumnBtn,
             this.입고여부DataGridViewTextBoxColumn,
             this.입고일DataGridViewTextBoxColumn,
             this.입고량DataGridViewTextBoxColumn,
@@ -286,7 +286,9 @@
             this.규격,
             this.발주순번,
             this.포장단위,
-            this.고객번호});
+            this.고객번호,
+            this.수주번호,
+            this.ColumnBtn});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPPurchaseMatQueryBindingSource1;
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -315,7 +317,7 @@
             this.dataGridView1.RowTemplate.Height = 35;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(881, 506);
+            this.dataGridView1.Size = new System.Drawing.Size(1583, 506);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
@@ -440,10 +442,10 @@
             // 
             // ColumnBtn
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle10.NullValue = "입고";
-            this.ColumnBtn.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle13.NullValue = "입고";
+            this.ColumnBtn.DefaultCellStyle = dataGridViewCellStyle13;
             this.ColumnBtn.FillWeight = 30F;
             this.ColumnBtn.HeaderText = "";
             this.ColumnBtn.MinimumWidth = 8;
@@ -463,8 +465,8 @@
             // 입고일DataGridViewTextBoxColumn
             // 
             this.입고일DataGridViewTextBoxColumn.DataPropertyName = "입고일";
-            dataGridViewCellStyle11.Format = "MM\\/dd";
-            this.입고일DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle10.Format = "MM\\/dd";
+            this.입고일DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
             this.입고일DataGridViewTextBoxColumn.FillWeight = 45F;
             this.입고일DataGridViewTextBoxColumn.HeaderText = "입고";
             this.입고일DataGridViewTextBoxColumn.MinimumWidth = 8;
@@ -474,9 +476,9 @@
             // 입고량DataGridViewTextBoxColumn
             // 
             this.입고량DataGridViewTextBoxColumn.DataPropertyName = "입고량";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle12.Format = "N0";
-            this.입고량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.Format = "N0";
+            this.입고량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
             this.입고량DataGridViewTextBoxColumn.FillWeight = 60F;
             this.입고량DataGridViewTextBoxColumn.HeaderText = "입고량";
             this.입고량DataGridViewTextBoxColumn.MinimumWidth = 8;
@@ -486,9 +488,9 @@
             // 매입액DataGridViewTextBoxColumn
             // 
             this.매입액DataGridViewTextBoxColumn.DataPropertyName = "매입액";
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle13.Format = "N0";
-            this.매입액DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.Format = "N0";
+            this.매입액DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.매입액DataGridViewTextBoxColumn.FillWeight = 90F;
             this.매입액DataGridViewTextBoxColumn.HeaderText = "매입액";
             this.매입액DataGridViewTextBoxColumn.MinimumWidth = 8;
@@ -550,6 +552,19 @@
             this.고객번호.ReadOnly = true;
             this.고객번호.Visible = false;
             // 
+            // 수주번호
+            // 
+            this.수주번호.DataPropertyName = "수주번호";
+            this.수주번호.HeaderText = "수주번호";
+            this.수주번호.Name = "수주번호";
+            this.수주번호.ReadOnly = true;
+            this.수주번호.Visible = false;
+            // 
+            // sPPurchaseMatQueryBindingSource1
+            // 
+            this.sPPurchaseMatQueryBindingSource1.DataMember = "SP_PurchaseMat_Query";
+            this.sPPurchaseMatQueryBindingSource1.DataSource = this.dataSetP1B;
+            // 
             // dataSetP1B
             // 
             this.dataSetP1B.DataSetName = "DataSetP1B";
@@ -564,15 +579,10 @@
             this.sPPurchaseMatQueryBindingSource.DataMember = "SP_PurchaseMat_Query";
             this.sPPurchaseMatQueryBindingSource.DataSource = this.dataSetP1B;
             // 
-            // sPPurchaseMatQueryBindingSource1
-            // 
-            this.sPPurchaseMatQueryBindingSource1.DataMember = "SP_PurchaseMat_Query";
-            this.sPPurchaseMatQueryBindingSource1.DataSource = this.dataSetP1B;
-            // 
             // P1B10_PURCHASE_MAT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
-            this.ClientSize = new System.Drawing.Size(883, 639);
+            this.ClientSize = new System.Drawing.Size(1585, 639);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panSearch);
             this.Name = "P1B10_PURCHASE_MAT";
@@ -589,9 +599,9 @@
             this.panSearch.ResumeLayout(false);
             this.panSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseMatQueryBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseMatQueryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseMatQueryBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -608,19 +618,15 @@
         private System.Windows.Forms.DateTimePicker dtpFromDate;
         private P1B.DataSetP1B dataSetP1B;
         private System.Windows.Forms.ComboBox cbTerm;
-        private System.Windows.Forms.ComboBox cbGubun;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.DataGridViewTextBoxColumn 자재명DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 규격DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 부가세DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 합계금액DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 비고DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 요청일;
-        private System.Windows.Forms.DataGridViewButtonColumn ColumnBtn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 규격;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 발주순번;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 포장단위;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 고객번호;
+        private P1B.DataSetP1BTableAdapters.SP_PurchaseMat_QueryTableAdapter sP_PurchaseMat_QueryTableAdapter;
+        private System.Windows.Forms.BindingSource sPPurchaseMatQueryBindingSource;
+        private System.Windows.Forms.BindingSource sPPurchaseMatQueryBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn 발주번호DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 발주일DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 발주처IDDataGridViewTextBoxColumn;
@@ -630,14 +636,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 발주량DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 단가DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 발주액DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 요청일;
+        private System.Windows.Forms.DataGridViewButtonColumn ColumnBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 입고여부DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 입고일DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 입고량DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 매입액DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 창고IDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 입고창고DataGridViewTextBoxColumn;
-        private P1B.DataSetP1BTableAdapters.SP_PurchaseMat_QueryTableAdapter sP_PurchaseMat_QueryTableAdapter;
-        private System.Windows.Forms.BindingSource sPPurchaseMatQueryBindingSource;
-        private System.Windows.Forms.BindingSource sPPurchaseMatQueryBindingSource1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 규격;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 발주순번;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 포장단위;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 고객번호;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 수주번호;
+        private System.Windows.Forms.ComboBox cbGubun;
     }
 }
