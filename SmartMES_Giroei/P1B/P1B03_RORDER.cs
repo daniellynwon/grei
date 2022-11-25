@@ -380,13 +380,13 @@ namespace SmartMES_Giroei
             try
             {
                 columnIndex = dataGridView1.CurrentCell.ColumnIndex;
-                // rowIndex = dataGridView1.CurrentCell.RowIndex;
-                rowIndex = e.RowIndex;
+                rowIndex = dataGridView1.CurrentCell.RowIndex;
+                //rowIndex = e.RowIndex;
                 endEdit = true;
 
                 float money1 = 0;
                 float money2 = 0;
-                long moneyA = 0;
+                long moneyA = 0; 
                 long moneyB = 0;
 
                 if (columnIndex == 13 || columnIndex == 14)
@@ -418,7 +418,7 @@ namespace SmartMES_Giroei
                     }
                     else
                     {
-
+                        //
                     }
                 }
             }
@@ -430,8 +430,8 @@ namespace SmartMES_Giroei
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             //columnIndex = dataGridView1.CurrentCell.ColumnIndex;
-            Debug.Print("columnIndex : " + columnIndex);
-            rowIndex = dataGridView1.CurrentCell.RowIndex;
+            //Debug.Print("columnIndex : " + columnIndex);
+            //rowIndex = dataGridView1.CurrentCell.RowIndex;
             try
             {
                 if (dataGridView1.CurrentCell != null && endEdit)
