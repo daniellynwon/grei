@@ -41,10 +41,10 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panSearch = new System.Windows.Forms.Panel();
             this.cbGubun = new System.Windows.Forms.ComboBox();
             this.cbTerm = new System.Windows.Forms.ComboBox();
@@ -55,6 +55,10 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sPPurchaseMatQueryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
+            this.sP_PurchaseMat_QueryTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseMat_QueryTableAdapter();
+            this.sPPurchaseMatQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.발주번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.발주일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.발주처IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -77,10 +81,6 @@
             this.포장단위 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.고객번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수주번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPPurchaseMatQueryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
-            this.sP_PurchaseMat_QueryTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseMat_QueryTableAdapter();
-            this.sPPurchaseMatQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -277,6 +277,7 @@
             this.단가DataGridViewTextBoxColumn,
             this.발주액DataGridViewTextBoxColumn,
             this.요청일,
+            this.ColumnBtn,
             this.입고여부DataGridViewTextBoxColumn,
             this.입고일DataGridViewTextBoxColumn,
             this.입고량DataGridViewTextBoxColumn,
@@ -287,8 +288,7 @@
             this.발주순번,
             this.포장단위,
             this.고객번호,
-            this.수주번호,
-            this.ColumnBtn});
+            this.수주번호});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPPurchaseMatQueryBindingSource1;
             dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -322,6 +322,25 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
+            // 
+            // sPPurchaseMatQueryBindingSource1
+            // 
+            this.sPPurchaseMatQueryBindingSource1.DataMember = "SP_PurchaseMat_Query";
+            this.sPPurchaseMatQueryBindingSource1.DataSource = this.dataSetP1B;
+            // 
+            // dataSetP1B
+            // 
+            this.dataSetP1B.DataSetName = "DataSetP1B";
+            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_PurchaseMat_QueryTableAdapter
+            // 
+            this.sP_PurchaseMat_QueryTableAdapter.ClearBeforeFill = true;
+            // 
+            // sPPurchaseMatQueryBindingSource
+            // 
+            this.sPPurchaseMatQueryBindingSource.DataMember = "SP_PurchaseMat_Query";
+            this.sPPurchaseMatQueryBindingSource.DataSource = this.dataSetP1B;
             // 
             // 발주번호DataGridViewTextBoxColumn
             // 
@@ -442,10 +461,10 @@
             // 
             // ColumnBtn
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle13.NullValue = "입고";
-            this.ColumnBtn.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Malgun Gothic", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle10.NullValue = "입고";
+            this.ColumnBtn.DefaultCellStyle = dataGridViewCellStyle10;
             this.ColumnBtn.FillWeight = 30F;
             this.ColumnBtn.HeaderText = "";
             this.ColumnBtn.MinimumWidth = 8;
@@ -465,8 +484,8 @@
             // 입고일DataGridViewTextBoxColumn
             // 
             this.입고일DataGridViewTextBoxColumn.DataPropertyName = "입고일";
-            dataGridViewCellStyle10.Format = "MM\\/dd";
-            this.입고일DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle11.Format = "MM\\/dd";
+            this.입고일DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
             this.입고일DataGridViewTextBoxColumn.FillWeight = 45F;
             this.입고일DataGridViewTextBoxColumn.HeaderText = "입고";
             this.입고일DataGridViewTextBoxColumn.MinimumWidth = 8;
@@ -476,9 +495,9 @@
             // 입고량DataGridViewTextBoxColumn
             // 
             this.입고량DataGridViewTextBoxColumn.DataPropertyName = "입고량";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.Format = "N0";
-            this.입고량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle12.Format = "N0";
+            this.입고량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.입고량DataGridViewTextBoxColumn.FillWeight = 60F;
             this.입고량DataGridViewTextBoxColumn.HeaderText = "입고량";
             this.입고량DataGridViewTextBoxColumn.MinimumWidth = 8;
@@ -488,9 +507,9 @@
             // 매입액DataGridViewTextBoxColumn
             // 
             this.매입액DataGridViewTextBoxColumn.DataPropertyName = "매입액";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle12.Format = "N0";
-            this.매입액DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle13.Format = "N0";
+            this.매입액DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
             this.매입액DataGridViewTextBoxColumn.FillWeight = 90F;
             this.매입액DataGridViewTextBoxColumn.HeaderText = "매입액";
             this.매입액DataGridViewTextBoxColumn.MinimumWidth = 8;
@@ -560,25 +579,6 @@
             this.수주번호.ReadOnly = true;
             this.수주번호.Visible = false;
             // 
-            // sPPurchaseMatQueryBindingSource1
-            // 
-            this.sPPurchaseMatQueryBindingSource1.DataMember = "SP_PurchaseMat_Query";
-            this.sPPurchaseMatQueryBindingSource1.DataSource = this.dataSetP1B;
-            // 
-            // dataSetP1B
-            // 
-            this.dataSetP1B.DataSetName = "DataSetP1B";
-            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_PurchaseMat_QueryTableAdapter
-            // 
-            this.sP_PurchaseMat_QueryTableAdapter.ClearBeforeFill = true;
-            // 
-            // sPPurchaseMatQueryBindingSource
-            // 
-            this.sPPurchaseMatQueryBindingSource.DataMember = "SP_PurchaseMat_Query";
-            this.sPPurchaseMatQueryBindingSource.DataSource = this.dataSetP1B;
-            // 
             // P1B10_PURCHASE_MAT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -627,6 +627,7 @@
         private P1B.DataSetP1BTableAdapters.SP_PurchaseMat_QueryTableAdapter sP_PurchaseMat_QueryTableAdapter;
         private System.Windows.Forms.BindingSource sPPurchaseMatQueryBindingSource;
         private System.Windows.Forms.BindingSource sPPurchaseMatQueryBindingSource1;
+        private System.Windows.Forms.ComboBox cbGubun;
         private System.Windows.Forms.DataGridViewTextBoxColumn 발주번호DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 발주일DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 발주처IDDataGridViewTextBoxColumn;
@@ -649,6 +650,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 포장단위;
         private System.Windows.Forms.DataGridViewTextBoxColumn 고객번호;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수주번호;
-        private System.Windows.Forms.ComboBox cbGubun;
     }
 }
