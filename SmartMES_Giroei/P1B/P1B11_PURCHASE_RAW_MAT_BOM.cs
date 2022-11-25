@@ -119,11 +119,14 @@ namespace SmartMES_Giroei
             }
             else if (e.ColumnIndex == 10)         // 바코드 인쇄
             {
-                printBarcode(e.RowIndex);
+                if (printBarcode(e.RowIndex) == false)
+                {
+
+                }
             }
         }
 
-        private void printBarcode(int rowIndex)
+        private bool printBarcode(int rowIndex)
         {
             string sMatCode = dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();             // 자재코드
 
@@ -135,12 +138,12 @@ namespace SmartMES_Giroei
             if (string.IsNullOrEmpty(sPackageCount))
             {
                 lblMsg.Text = "포장(BOX) 개수을  입력해 주세요.";
-                return;
+                return false;
             }
             if (string.IsNullOrEmpty(sQty))
             {
                 lblMsg.Text = "총 입고수량을  입력해 주세요.";
-                return;
+                return false;
             }
 
             int iPackageCount = int.Parse(sPackageCount);
@@ -160,28 +163,35 @@ namespace SmartMES_Giroei
             {
                 for (int i = 0; i < index; i++)
                 {
-                    if (remain > 0 && i == (index-1))
+                    if (remain > 0 && i == (index - 1))
                         iQtyInPackage = remain;
                     string Barcode = barcodePrefix + "-" + (i + 1).ToString("D3") + "-" + iQtyInPackage.ToString("D4");
-
-                    str = "^XA^BY2,2.0^FS";
-                    str += "^FO30,80 ^B3N,N,80,Y,N ^FD" + Barcode.Trim() + " ^FS";
-                    str += "^XZ";
+                    string[] aBarcode = Barcode.Split('-');
+                    str = "^XA^BY2,2.5^FS";
+                    // str += "^FO30,80 ^B3N,N,80,Y,N ^FD" + Barcode.Trim() + " ^FS";
+                    str += "^FO50,30 ^BQN,2,3^FDMA," + Barcode.Trim() + " ^FS";
+                    str += "^FO150,20^A0,22,22^FD" + aBarcode[0] + " ^FS";
+                    str += "^FO150,50^A0,22,22^FD" + aBarcode[1] + " ^FS";
+                    str += "^FO150,80^A0,22,22^FD" + aBarcode[2] + " ^FS";
+                    str += "^FO150,110^A0,22,22^FD" + aBarcode[3] + "-" + aBarcode[4] + " ^FS";
                     var bytes = Encoding.Default.GetBytes(str);
 
-                    //try
-                    //{
-                    //    RawPrinterHelper.SendBytesToPrinter(pd.PrinterSettings.PrinterName, bytes, bytes.Length);
-                    //}
-                    //catch (Exception ex)
-                    //{
-                    //    MessageBox.Show(ex.Message);
-                    //}
+                    try
+                    {
+                        RawPrinterHelper.SendBytesToPrinter(pd.PrinterSettings.PrinterName, bytes, bytes.Length);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                     save2InvBarcode(Barcode, barcodePrefix, iQtyInPackage, rowIndex);
                 }
-
+                return true;
+                dataGridView1.Rows[rowIndex].Cells[0].Value = "1";
             }
-            dataGridView1.Rows[rowIndex].Cells[0].Value = "1";
+            else
+                return false;
+
         }
 
         private void save2InvBarcode(string barcode, string mBarcode, int iQtyInPackage, int rowindex)
@@ -190,19 +200,6 @@ namespace SmartMES_Giroei
             string sProd = barcode.Split('-')[1].Trim();
             string surfix = barcode.Split('-')[3] + "-" + barcode.Split('-')[4];
             string sInDate = DateTime.Now.ToString("yyyy-MM-dd");
-
-            string msg = string.Empty;
-            MariaCRUD m = new MariaCRUD();
-
-            string sql = "insert into INV_barcode (mbarcode, barcode_surfix, cust_id, prod_id, input_date, in_qty, rm_qty, enter_man) " +
-                    "values('" + mBarcode + "','" + surfix + "','" + sCust + "','" + sProd + "','" + sInDate + "'," + iQtyInPackage + "," + iQtyInPackage + ",'" + G.UserID + "')";
-            m.dbCUD(sql, ref msg);
-
-            if (msg != "OK")
-            {
-                lblMsg.Text = msg;
-                return;
-            }
 
             int iPackQty = 0;
             int iQty = 0;
@@ -228,6 +225,19 @@ namespace SmartMES_Giroei
                 return;
             }
 
+            string msg = string.Empty;
+            MariaCRUD m = new MariaCRUD();
+
+            string sql = "insert into INV_barcode (mbarcode, barcode_surfix, cust_id, prod_id, input_date, in_qty, rm_qty, enter_man) " +
+                    "values('" + mBarcode + "','" + surfix + "','" + sCust + "','" + sProd + "','" + sInDate + "'," + iQtyInPackage + "," + iQtyInPackage + ",'" + G.UserID + "')";
+            m.dbCUD(sql, ref msg);
+
+            if (msg != "OK")
+            {
+                lblMsg.Text = msg;
+                MessageBox.Show(msg);
+                return;
+            }
 
             sql = $@"INSERT INTO INV_material_in (mbarcode, barcode_surfix, cust_id, prod_id, plant, input_date, order_id, order_seq, qty, pack_type, pack_qty, reason_code,  enter_man) 
                             VALUES ('{mBarcode}', '{surfix}', '{@sCustID}', '{sProd}', 'A', '{@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}', '{@sSujuNo}', {@sSujuSeq}, {@sQty}, '{@sPackType}', {@sPackQty}, '0010', '{@G.UserID}');";

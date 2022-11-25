@@ -114,8 +114,8 @@ namespace SmartMES_Giroei
                 dataGridView1[13, rowIndex].Value = iSum3;
                 dataGridView1[14, rowIndex].Value = iSum4;
 
-                dataGridView1[21, rowIndex] = new DataGridViewTextBoxCell();
-                dataGridView1[21, rowIndex].Value = "";
+                dataGridView1[10, rowIndex] = new DataGridViewTextBoxCell();
+                dataGridView1[10, rowIndex].Value = "";
             }
             catch (NullReferenceException)
             {
