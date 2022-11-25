@@ -368,20 +368,26 @@ namespace SmartMES_Giroei
                     if (remain > 0 && i == (index - 1))
                         iQtyInPacking = remain;
                     string Barcode = barcodePrefix + "-" + (i + 1).ToString("D3") + "-" + iQtyInPacking.ToString("D4");
-
-                    str = "^XA^BY2,2.0^FS";
-                    str += "^FO30,80 ^B3N,N,80,Y,N ^FD" + Barcode.Trim() + " ^FS";
+                    string[] aBarcode = Barcode.Split('-');
+                    str = "^XA^BY2,2.5^FS";
+                    // str += "^FO30,80 ^B3N,N,80,Y,N ^FD" + Barcode.Trim() + " ^FS";
+                    str += "^FO50,30 ^BQN,2,3^FDMA," + Barcode.Trim() + " ^FS";
+                    str += "^FO150,20^A0,22,22^FD" + aBarcode[0] + " ^FS";
+                    str += "^FO150,50^A0,22,22^FD" + aBarcode[1] + " ^FS";
+                    str += "^FO150,80^A0,22,22^FD" + aBarcode[2] + " ^FS";
+                    str += "^FO150,110^A0,22,22^FD" + aBarcode[3] + "-" + aBarcode[4] + " ^FS";
                     str += "^XZ";
+
                     var bytes = Encoding.Default.GetBytes(str);
 
-                    //try
-                    //{
-                    //    RawPrinterHelper.SendBytesToPrinter(pd.PrinterSettings.PrinterName, bytes, bytes.Length);
-                    //}
-                    //catch (Exception ex)
-                    //{
-                    //    MessageBox.Show(ex.Message);
-                    //}
+                    try
+                    {
+                        RawPrinterHelper.SendBytesToPrinter(pd.PrinterSettings.PrinterName, bytes, bytes.Length);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                     save2InvMaterialIn(Barcode, barcodePrefix, iQtyInPacking, sQtyInPacking);
                 }
 
