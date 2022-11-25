@@ -377,7 +377,7 @@ namespace SmartMES_Giroei
             //    dataGridView2.ClearSelection();
             //}
             if (e.RowIndex < 0) return;
-            if (e.ColumnIndex < 9 && e.ColumnIndex > 10) return;
+            if (e.ColumnIndex < 9 || e.ColumnIndex > 10) return;
 
             dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = (dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == "O") ? "X" : "O";
         }
