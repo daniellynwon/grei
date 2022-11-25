@@ -193,6 +193,15 @@ namespace SmartMES_Giroei
             }
             if (dataGridView1.Rows.Count == 0) return;
 
+            for (int n = 0; n < dataGridView1.Rows.Count; n++)
+            {
+                if (dataGridView1.Rows[n].Cells[8].Value.ToString() == "" || string.IsNullOrEmpty(dataGridView1.Rows[n].Cells[8].Value.ToString()))
+                {
+                    MessageBox.Show("해당 자재가 없습니다.");
+                    return;
+                }
+            }
+
             string sCount, sSubID;
 
             string sql = string.Empty;
