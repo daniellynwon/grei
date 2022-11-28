@@ -126,14 +126,14 @@ namespace SmartMES_Giroei
             }
         }
 
-        private bool printBarcode(int rowIndex)
+        private bool printBarcode(int rowindex)
         {
-            string sMatCode = dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();             // 자재코드
+            string sMatCode = dataGridView1.Rows[rowindex].Cells[5].Value.ToString();             // 자재코드
 
             string barcodePrefix = sCustID + "-" + sMatCode + "-" + DateTime.Now.ToString("yyMMdd");
 
-            string sPackageCount = dataGridView1.Rows[rowIndex].Cells[8].Value.ToString().Replace(",", "");          // 포장수량
-            string sQty = dataGridView1.Rows[rowIndex].Cells[9].Value.ToString().Replace(",", "");                 // 총수량
+            string sPackageCount = dataGridView1.Rows[rowindex].Cells[8].Value.ToString().Replace(",", "");          // 포장수량
+            string sQty = dataGridView1.Rows[rowindex].Cells[9].Value.ToString().Replace(",", "");                 // 총수량
 
             if (string.IsNullOrEmpty(sPackageCount))
             {
@@ -176,18 +176,18 @@ namespace SmartMES_Giroei
                     str += "^FO150,110^A0,22,22^FD" + aBarcode[3] + "-" + aBarcode[4] + " ^FS";
                     var bytes = Encoding.Default.GetBytes(str);
 
-                    try
-                    {
-                        RawPrinterHelper.SendBytesToPrinter(pd.PrinterSettings.PrinterName, bytes, bytes.Length);
-                    }
-                    catch (Exception ex)
-                    {
-                        MessageBox.Show(ex.Message);
-                    }
-                    save2InvBarcode(Barcode, barcodePrefix, iQtyInPackage, rowIndex);
+                    //try
+                    //{
+                    //    RawPrinterHelper.SendBytesToPrinter(pd.PrinterSettings.PrinterName, bytes, bytes.Length);
+                    //}
+                    //catch (Exception ex)
+                    //{
+                    //    MessageBox.Show(ex.Message);
+                    //}
+                    save2InvBarcode(Barcode, barcodePrefix, iQtyInPackage, rowindex);
                 }
+                dataGridView1.Rows[rowindex].Cells[0].Value = "1";
                 return true;
-                dataGridView1.Rows[rowIndex].Cells[0].Value = "1";
             }
             else
                 return false;
@@ -204,16 +204,16 @@ namespace SmartMES_Giroei
             int iPackQty = 0;
             int iQty = 0;
 
-            string sSubProd = dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
+            string sSubProd = dataGridView1.Rows[rowindex].Cells[5].Value.ToString();
 
-            string sPackType = dataGridView1.Rows[rowIndex].Cells[7].Value.ToString();
+            string sPackType = dataGridView1.Rows[rowindex].Cells[7].Value.ToString();
             string sPackQty = string.Empty;
             string sQty = string.Empty;
 
             bool ret = false;
 
-            ret = int.TryParse(dataGridView1.Rows[rowIndex].Cells[8].Value.ToString(), out iPackQty);
-            ret = int.TryParse(dataGridView1.Rows[rowIndex].Cells[9].Value.ToString(), out iQty);
+            ret = int.TryParse(dataGridView1.Rows[rowindex].Cells[8].Value.ToString(), out iPackQty);
+            ret = int.TryParse(dataGridView1.Rows[rowindex].Cells[9].Value.ToString(), out iQty);
             if (ret)
             {
                 sPackQty = iPackQty.ToString();
