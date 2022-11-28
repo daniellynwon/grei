@@ -197,7 +197,7 @@ namespace SmartMES_Giroei
             {
                 if (dataGridView1.Rows[n].Cells[8].Value.ToString() == "" || string.IsNullOrEmpty(dataGridView1.Rows[n].Cells[8].Value.ToString()))
                 {
-                    MessageBox.Show("해당 자재가 없습니다.");
+                    MessageBox.Show("LOT가 선택되지 않았습니다.");
                     return;
                 }
             }
@@ -237,9 +237,9 @@ namespace SmartMES_Giroei
                 {
                     if (surfix == "" || string.IsNullOrEmpty(surfix)) return;
                     sql = "insert into INV_material_out (mbarcode, barcode_surfix, prod_id, cust_id, input_date, plant, prodorder_id, output_date, qty, box_id, enter_man) " +
-                        "values('" + mBarcode + "','" + surfix + "','" + sSubID + "','" + sCust + "','" + sDate + "','" + G.Pos + "','" + sSujuNo + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "'," + sCount + ",'" + sBoxID + "','" + G.UserID + "')";
-                        //+ " on duplicate key update" +
-                        //" prod_id = '" + sSubID + "', qty = " + sCount + ", enter_man = '" + G.UserID + "'";
+                        "values('" + mBarcode + "','" + surfix + "','" + sSubID + "','" + sCust + "','" + sDate + "','" + G.Pos + "','" + sSujuNo + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "'," + sCount + ",'" + sBoxID + "','" + G.UserID + "')"
+                        + " on duplicate key update" +
+                        " input_date = '" + sDate + "', qty = " + sCount + ", enter_man = '" + G.UserID + "'";
                     m.dbCUD(sql, ref msg);
 
                     if (msg != "OK")
@@ -248,8 +248,16 @@ namespace SmartMES_Giroei
                         return;
                     }
 
-                }
+                    sql = "update INV_real_stock set current_qty = current_qty - " + sCount + ", partout_total = partout_total + " + sCount + "" +
+                        " where prod_id = '" + sSubID + "' and cust_id = '" + sCust + "'";
+                    m.dbCUD(sql, ref msg);
 
+                    if (msg != "OK")
+                    {
+                        MessageBox.Show(msg);
+                        return;
+                    }
+                }
             }
             MessageBox.Show($@"{@sBoxID}번 현품박스의 내용이 저장되었습니다.");
 
