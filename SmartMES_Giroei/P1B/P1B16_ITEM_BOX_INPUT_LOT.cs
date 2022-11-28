@@ -118,6 +118,7 @@ namespace SmartMES_Giroei
                         if (parentWin.dataGridView1.Rows[iSeq].Cells[6].Value.ToString() == dataGridView1.Rows[i].Cells[5].Value.ToString())  // SUB창의 자재코드랑 해당 창의 자재코드랑 비교
                         {
                             //parentWin.dataGridView1.Rows[iSeq].Cells[19].Value = dataGridView1.Rows[i].Cells[2].Value; //바코드 Surfix
+                            parentWin.dataGridView1.Rows[iSeq].Cells[8].Value = dataGridView1.Rows[i].Cells[6].Value.ToString();   // 입고일
                             parentWin.dataGridView1.Rows[iSeq].Cells[19].Value = sSurfix; //바코드 Surfix
 
                         }
