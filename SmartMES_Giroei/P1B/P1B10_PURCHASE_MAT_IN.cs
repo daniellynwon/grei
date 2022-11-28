@@ -240,7 +240,7 @@ namespace SmartMES_Giroei
             MariaCRUD m = new MariaCRUD();
 
             string sql = string.Empty;
- 
+
             //sql = "insert into INV_material_in (mbarcode, cust_id, prod_id, plant, input_date, purchase_id, purchase_seq, qty, pack_qty, danga, amount, warehouse_id, reason_code, enter_man) " +
             //        "values('" + mBarcode + "','"+ sCust + "','" + sProd + "','" + G.Pos + "','" + sInDate + "','" + sNo + "'," + sSeq + "," + sInQty + "," + packQty + "," + sDanga + "," + sAmount + ",'" + sDepot + "','" + "0010" + "','" + G.UserID + "')";
             //m.dbCUD(sql, ref msg);
@@ -434,6 +434,8 @@ namespace SmartMES_Giroei
             string sInDate = DateTime.Now.ToString("yyyy-MM-dd");
             string sOrderId = lbSALOrderID.Text.Trim();
             string sPackType = tbUnit.Text.Trim();
+            string pId = tbNo.Text;
+            string pSeq = tbNo.Tag.ToString();
 
             string msg = string.Empty;
             MariaCRUD m = new MariaCRUD();
@@ -451,8 +453,8 @@ namespace SmartMES_Giroei
             Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);
 
 
-            sql = $@"INSERT INTO INV_material_in (mbarcode, barcode_surfix, cust_id, prod_id, plant, input_date, order_id, order_seq, qty, pack_type, pack_qty, reason_code,  enter_man) 
-                            VALUES ('{barcodePrefix}', '{surfix}', '{@sCust}', '{@sProd}', 'A', '{sInDate}', '{sOrderId}', 1, {iQtyInPacking}, '{@sPackType}', {sQtyInPacking}, '0010', '{@G.UserID}');";
+            sql = $@"INSERT INTO INV_material_in (mbarcode, barcode_surfix, cust_id, prod_id, plant, input_date, order_id, order_seq, purchase_id, purchase_seq, qty, pack_type, pack_qty, reason_code,  enter_man) 
+                            VALUES ('{barcodePrefix}', '{surfix}', '{@sCust}', '{@sProd}', 'A', '{sInDate}', '{sOrderId}', 1, '{pId}', {pSeq}, {iQtyInPacking}, '{@sPackType}', {sQtyInPacking}, '0010', '{@G.UserID}');";
 
             m.dbCUD(sql, ref msg);
 

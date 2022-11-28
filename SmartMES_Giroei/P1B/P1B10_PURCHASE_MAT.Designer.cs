@@ -55,10 +55,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sPPurchaseMatQueryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
-            this.sP_PurchaseMat_QueryTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseMat_QueryTableAdapter();
-            this.sPPurchaseMatQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.발주번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.발주일DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.발주처IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -81,6 +77,10 @@
             this.포장단위 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.고객번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수주번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPPurchaseMatQueryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
+            this.sP_PurchaseMat_QueryTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseMat_QueryTableAdapter();
+            this.sPPurchaseMatQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -323,25 +323,6 @@
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
-            // sPPurchaseMatQueryBindingSource1
-            // 
-            this.sPPurchaseMatQueryBindingSource1.DataMember = "SP_PurchaseMat_Query";
-            this.sPPurchaseMatQueryBindingSource1.DataSource = this.dataSetP1B;
-            // 
-            // dataSetP1B
-            // 
-            this.dataSetP1B.DataSetName = "DataSetP1B";
-            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_PurchaseMat_QueryTableAdapter
-            // 
-            this.sP_PurchaseMat_QueryTableAdapter.ClearBeforeFill = true;
-            // 
-            // sPPurchaseMatQueryBindingSource
-            // 
-            this.sPPurchaseMatQueryBindingSource.DataMember = "SP_PurchaseMat_Query";
-            this.sPPurchaseMatQueryBindingSource.DataSource = this.dataSetP1B;
-            // 
             // 발주번호DataGridViewTextBoxColumn
             // 
             this.발주번호DataGridViewTextBoxColumn.DataPropertyName = "발주번호";
@@ -578,6 +559,25 @@
             this.수주번호.Name = "수주번호";
             this.수주번호.ReadOnly = true;
             this.수주번호.Visible = false;
+            // 
+            // sPPurchaseMatQueryBindingSource1
+            // 
+            this.sPPurchaseMatQueryBindingSource1.DataMember = "SP_PurchaseMat_Query";
+            this.sPPurchaseMatQueryBindingSource1.DataSource = this.dataSetP1B;
+            // 
+            // dataSetP1B
+            // 
+            this.dataSetP1B.DataSetName = "DataSetP1B";
+            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_PurchaseMat_QueryTableAdapter
+            // 
+            this.sP_PurchaseMat_QueryTableAdapter.ClearBeforeFill = true;
+            // 
+            // sPPurchaseMatQueryBindingSource
+            // 
+            this.sPPurchaseMatQueryBindingSource.DataMember = "SP_PurchaseMat_Query";
+            this.sPPurchaseMatQueryBindingSource.DataSource = this.dataSetP1B;
             // 
             // P1B10_PURCHASE_MAT
             // 
