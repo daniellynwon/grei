@@ -176,7 +176,6 @@ namespace SmartMES_Giroei
                 lblMsg.Text = msg;
                 return;
             }
-
             parentWin.ListSearch();
 
             for (int i = 0; i < parentWin.dataGridView1.Rows.Count; i++)
@@ -188,7 +187,6 @@ namespace SmartMES_Giroei
                     break;
                 }
             }
-
             this.DialogResult = DialogResult.OK;
         }
         private void btnMaterial_Click(object sender, EventArgs e)
@@ -219,21 +217,31 @@ namespace SmartMES_Giroei
             {
                 try
                 {
+                    sCount = dataGridView1.Rows[i].Cells[13].Value.ToString().Replace(",", ""); // 투입량
+                    sSubID = dataGridView1.Rows[i].Cells[6].Value.ToString();   // 자재코드
+
                     if (dataGridView1.Rows[i].Cells[13].Value.ToString().Replace(",", "") == "0" && dataGridView1.Rows[i].Cells[16].Value.ToString() == "X")
                     {
                         MessageBox.Show("투입량을 확인하세요.");
                         return;
                     }
                     else if (dataGridView1.Rows[i].Cells[16].Value.ToString() == "O")
-                        continue;
-
-                    sCount = dataGridView1.Rows[i].Cells[13].Value.ToString().Replace(",", ""); // 투입량
-                    string sTotalRequireQty = dataGridView1.Rows[i].Cells[12].Value.ToString().Replace(",", ""); // 총필요수량
-                    if (int.Parse(sCount) < int.Parse(sTotalRequireQty))
                     {
-                        if (MessageBox.Show("총 요구수량 보다 투입량이 작습니다. 확인하세요. 그래도 투입하겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.No)
+                        // 미삽여부 update
+                        string sMisap = string.Empty;
+                        if (dataGridView1.Rows[i].Cells[16].Value.ToString() == "X") sMisap = "N";
+                        else if (dataGridView1.Rows[i].Cells[16].Value.ToString() == "O") sMisap = "Y";
+
+                        sql = "update BOM_bomlist set IsMiSap = '" + sMisap + "' where prod_id = '" + sProdID + "' and parent_id  = '" + sSubID + "'";
+                        m.dbCUD(sql, ref msg);
+
+                        if (msg != "OK")
+                        {
+                            MessageBox.Show(msg);
                             return;
-                    }
+                        }
+                        continue;
+                    sCount = dataGridView1.Rows[i].Cells[13].Value.ToString().Replace(",", ""); // 투입량
                     sSubID = dataGridView1.Rows[i].Cells[6].Value.ToString();   // 자재코드
                     string sDate = DateTime.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString()).ToString("yyyy-MM-dd");  // 입고일(LOTNO)
                     string sContents = dataGridView1.Rows[i].Cells[17].Value.ToString();
