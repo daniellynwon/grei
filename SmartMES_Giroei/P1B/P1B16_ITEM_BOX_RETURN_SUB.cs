@@ -152,6 +152,16 @@ namespace SmartMES_Giroei
                     lblMsg.Text = msg;
                     return;
                 }
+                
+                sql = "update INV_real_stock set current_qty = current_qty + " + sQty + ", partin_total = partin_total + " + sQty + "" +        // real_stock 테이블에 회수량 더하기.
+                        " where prod_id = '" + sSubID + "' and cust_id = '" + sCust + "'";
+                m.dbCUD(sql, ref msg);
+
+                if (msg != "OK")
+                {
+                    MessageBox.Show(msg);
+                    return;
+                }
             }
             lblMsg.Text = "해당 수주건의 현품박스 구성상태 변경에 성공했습니다.";
             
@@ -189,39 +199,39 @@ namespace SmartMES_Giroei
         }
         private void btnMaterial_Click(object sender, EventArgs e)
         {
-            if (string.IsNullOrEmpty(sBoxID))
-            {
-                MessageBox.Show("현품박스가 구성되지 않았습니다.");
-                return;
-            }
-            if (dataGridView1.Rows.Count == 0) return;
+            //if (string.IsNullOrEmpty(sBoxID))
+            //{
+            //    MessageBox.Show("현품박스가 구성되지 않았습니다.");
+            //    return;
+            //}
+            //if (dataGridView1.Rows.Count == 0) return;
 
-            int ItemCount = 0;
-            string sSubID = string.Empty;
+            //int ItemCount = 0;
+            //string sSubID = string.Empty;
 
-            string sql = string.Empty;
-            string msg = string.Empty;
-            MariaCRUD m = new MariaCRUD();
+            //string sql = string.Empty;
+            //string msg = string.Empty;
+            //MariaCRUD m = new MariaCRUD();
 
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                ItemCount = Convert.ToInt32(dataGridView1.Rows[i].Cells[10].Value); // 투입량
-                sSubID = dataGridView1.Rows[i].Cells[6].Value.ToString().Replace(",","");   // 자재코드
-                string sDate = DateTime.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString()).ToString("yyyy-MM-dd");  // 입고일 (LOTNO)
+            //for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            //{
+            //    ItemCount = Convert.ToInt32(dataGridView1.Rows[i].Cells[10].Value); // 투입량
+            //    sSubID = dataGridView1.Rows[i].Cells[6].Value.ToString().Replace(",","");   // 자재코드
+            //    string sDate = DateTime.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString()).ToString("yyyy-MM-dd");  // 입고일 (LOTNO)
 
-                sql = $@"UPDATE Item_box_sub SET item_count = '" + ItemCount + "', input_date = '" + sDate + "'  WHERE box_id = '" + sBoxID + "' AND prod_id_sub = '" + sSubID + "'";
+            //    sql = $@"UPDATE Item_box_sub SET item_count = '" + ItemCount + "', input_date = '" + sDate + "'  WHERE box_id = '" + sBoxID + "' AND prod_id_sub = '" + sSubID + "'";
 
-                m.dbCUD(sql, ref msg);
+            //    m.dbCUD(sql, ref msg);
 
-                if (msg != "OK")
-                {
-                    MessageBox.Show(msg);
-                    return;
-                }
-            }
-            MessageBox.Show($@"{@sBoxID}번 현품박스의 입고처리가 완료되었습니다.");
+            //    if (msg != "OK")
+            //    {
+            //        MessageBox.Show(msg);
+            //        return;
+            //    }
+            //}
+            //MessageBox.Show($@"{@sBoxID}번 현품박스의 입고처리가 완료되었습니다.");
 
-            this.DialogResult = DialogResult.OK;
+            //this.DialogResult = DialogResult.OK;
         }
         private void btTagPrint_Click(object sender, EventArgs e)
         {
