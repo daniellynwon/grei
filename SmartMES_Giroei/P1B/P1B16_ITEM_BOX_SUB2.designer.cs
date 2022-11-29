@@ -182,7 +182,8 @@
             // 수주순번DataGridViewTextBoxColumn
             // 
             this.수주순번DataGridViewTextBoxColumn.DataPropertyName = "수주순번";
-            this.수주순번DataGridViewTextBoxColumn.HeaderText = "수주순번";
+            this.수주순번DataGridViewTextBoxColumn.FillWeight = 30F;
+            this.수주순번DataGridViewTextBoxColumn.HeaderText = "순번";
             this.수주순번DataGridViewTextBoxColumn.Name = "수주순번DataGridViewTextBoxColumn";
             this.수주순번DataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -196,6 +197,7 @@
             // 품목명DataGridViewTextBoxColumn
             // 
             this.품목명DataGridViewTextBoxColumn.DataPropertyName = "품목명";
+            this.품목명DataGridViewTextBoxColumn.FillWeight = 150F;
             this.품목명DataGridViewTextBoxColumn.HeaderText = "품목명";
             this.품목명DataGridViewTextBoxColumn.Name = "품목명DataGridViewTextBoxColumn";
             this.품목명DataGridViewTextBoxColumn.ReadOnly = true;
@@ -206,7 +208,8 @@
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle3.Format = "#,##0";
             this.수주수량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.수주수량DataGridViewTextBoxColumn.HeaderText = "수주수량";
+            this.수주수량DataGridViewTextBoxColumn.FillWeight = 50F;
+            this.수주수량DataGridViewTextBoxColumn.HeaderText = "수량";
             this.수주수량DataGridViewTextBoxColumn.Name = "수주수량DataGridViewTextBoxColumn";
             this.수주수량DataGridViewTextBoxColumn.ReadOnly = true;
             // 
