@@ -74,6 +74,7 @@ namespace SmartMES_Giroei
             if (e.RowIndex < 0) return;
             //if (e.RowIndex == dataGridView1.RowCount - 1) return;
             string surfixA, surfixB, surfixC;
+            if (e.ColumnIndex != 9 && e.ColumnIndex != 14 && e.ColumnIndex != 15 && e.ColumnIndex != 16) return;
 
             if (e.ColumnIndex == 9)     // 버튼 
             {
@@ -108,29 +109,11 @@ namespace SmartMES_Giroei
                 sub.parentWin = this;
                 sub.ShowDialog();
             }
-            //else if (e.ColumnIndex == 16)
-            //{
-            //    sVal = dataGridView1.Rows[e.RowIndex].Cells[16].Value.ToString();
-            //    if (sVal == "O")
-            //        dataGridView1.Rows[e.RowIndex].Cells[16].Value = "X";
-            //    else
-            //        dataGridView1.Rows[e.RowIndex].Cells[16].Value = "O";
-            //}
-        }
-        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (G.Authority == "D") return;
-            if (e.RowIndex < 0) return;
-            string sVal = string.Empty;
-
-            if (e.ColumnIndex == 16)
+            else                  // 사급 14, 수삽 15, 미삽 16
             {
-                sVal = dataGridView1.Rows[e.RowIndex].Cells[16].Value.ToString();
-                if (sVal == "O")
-                    dataGridView1.Rows[e.RowIndex].Cells[16].Value = "X";
-                else
-                    dataGridView1.Rows[e.RowIndex].Cells[16].Value = "O";
+                dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == "O") ? "X" : "O";
             }
+
 
         }
         private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
@@ -193,6 +176,7 @@ namespace SmartMES_Giroei
                 lblMsg.Text = msg;
                 return;
             }
+
             parentWin.ListSearch();
 
             for (int i = 0; i < parentWin.dataGridView1.Rows.Count; i++)
@@ -204,6 +188,7 @@ namespace SmartMES_Giroei
                     break;
                 }
             }
+
             this.DialogResult = DialogResult.OK;
         }
         private void btnMaterial_Click(object sender, EventArgs e)
@@ -234,32 +219,22 @@ namespace SmartMES_Giroei
             {
                 try
                 {
-                    sCount = dataGridView1.Rows[i].Cells[13].Value.ToString().Replace(",", ""); // 투입량
-                    sSubID = dataGridView1.Rows[i].Cells[6].Value.ToString();   // 자재코드
-
                     if (dataGridView1.Rows[i].Cells[13].Value.ToString().Replace(",", "") == "0" && dataGridView1.Rows[i].Cells[16].Value.ToString() == "X")
                     {
                         MessageBox.Show("투입량을 확인하세요.");
                         return;
                     }
                     else if (dataGridView1.Rows[i].Cells[16].Value.ToString() == "O")
-                    {
-                        // 미삽여부 update
-                        string sMisap = string.Empty;
-                        if (dataGridView1.Rows[i].Cells[16].Value.ToString() == "X") sMisap = "N";
-                        else if (dataGridView1.Rows[i].Cells[16].Value.ToString() == "O") sMisap = "Y";
-
-                        sql = "update BOM_bomlist set IsMiSap = '" + sMisap + "' where prod_id = '" + sProdID + "' and parent_id  = '" + sSubID + "'";
-                        m.dbCUD(sql, ref msg);
-
-                        if (msg != "OK")
-                        {
-                            MessageBox.Show(msg);
-                            return;
-                        }
                         continue;
-                    }
 
+                    sCount = dataGridView1.Rows[i].Cells[13].Value.ToString().Replace(",", ""); // 투입량
+                    string sTotalRequireQty = dataGridView1.Rows[i].Cells[12].Value.ToString().Replace(",", ""); // 총필요수량
+                    if (int.Parse(sCount) < int.Parse(sTotalRequireQty))
+                    {
+                        if (MessageBox.Show("총 요구수량 보다 투입량이 작습니다. 확인하세요. 그래도 투입하겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.No)
+                            return;
+                    }
+                    sSubID = dataGridView1.Rows[i].Cells[6].Value.ToString();   // 자재코드
                     string sDate = DateTime.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString()).ToString("yyyy-MM-dd");  // 입고일(LOTNO)
                     string sContents = dataGridView1.Rows[i].Cells[17].Value.ToString();
                     string mBarcode = dataGridView1.Rows[i].Cells[18].Value.ToString();
