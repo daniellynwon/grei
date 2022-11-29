@@ -363,7 +363,7 @@ namespace SmartMES_Giroei
 
             string sQtyInPacking = tbQtyInPacking.Text.Replace(",", "").Trim();     // 포장내 수량
             string sPackQty = tbPackQty.Text.Replace(",", "").Trim();               // 포장수량
-            string sQty = tbInQty.Text.Replace("'", "").Trim();                     // 입고수량
+            string sQty = tbInQty.Text.Replace(",", "").Trim();                     // 입고수량
 
             if (string.IsNullOrEmpty(sQtyInPacking))
             {
