@@ -783,12 +783,12 @@ namespace SmartMES_Giroei
             }
 
             int pCnt = 0;
-            for (int j = 0; j < dataGridView1.RowCount; j++)
+            for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                if (!(dataGridView1.Rows[j].Cells[24].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[j].Cells[24].Value.ToString()))) pCnt++;
-                else if (!(dataGridView1.Rows[j].Cells[25].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[j].Cells[25].Value.ToString()))) pCnt++;
-                else if (!(dataGridView1.Rows[j].Cells[26].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[j].Cells[26].Value.ToString()))) pCnt++;
-                else if (!(dataGridView1.Rows[j].Cells[27].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[j].Cells[27].Value.ToString()))) pCnt++;
+                if (!(dataGridView1.Rows[i].Cells[24].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[24].Value.ToString()))) pCnt++;
+                else if (!(dataGridView1.Rows[i].Cells[25].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[25].Value.ToString()))) pCnt++;
+                else if (!(dataGridView1.Rows[i].Cells[26].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[26].Value.ToString()))) pCnt++;
+                else if (!(dataGridView1.Rows[i].Cells[27].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[27].Value.ToString()))) pCnt++;
             }
             if (pCnt == 0)
             {
