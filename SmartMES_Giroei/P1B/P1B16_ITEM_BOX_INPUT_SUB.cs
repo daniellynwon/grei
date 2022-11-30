@@ -68,6 +68,10 @@ namespace SmartMES_Giroei
         {
             dataGridView1.ClearSelection();
         }
+        private void dataGridView1_CellClick(object sender, EventArgs e)
+        {
+            //
+        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (G.Authority == "D") return;
@@ -241,32 +245,16 @@ namespace SmartMES_Giroei
                             return;
                         }
                         continue;
-                    sCount = dataGridView1.Rows[i].Cells[13].Value.ToString().Replace(",", ""); // 투입량
-                    sSubID = dataGridView1.Rows[i].Cells[6].Value.ToString();   // 자재코드
-                    string sDate = DateTime.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString()).ToString("yyyy-MM-dd");  // 입고일(LOTNO)
-                    string sContents = dataGridView1.Rows[i].Cells[17].Value.ToString();
-                    string mBarcode = dataGridView1.Rows[i].Cells[18].Value.ToString();
-                    string sBarcode = dataGridView1.Rows[i].Cells[19].Value.ToString();
-                    string[] tempSurfix = sBarcode.Split(' ');
-                    string sCust = dataGridView1.Rows[i].Cells[2].Value.ToString();
+                        sCount = dataGridView1.Rows[i].Cells[13].Value.ToString().Replace(",", ""); // 투입량
+                        sSubID = dataGridView1.Rows[i].Cells[6].Value.ToString();   // 자재코드
+                        string sDate = DateTime.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString()).ToString("yyyy-MM-dd");  // 입고일(LOTNO)
+                        string sContents = dataGridView1.Rows[i].Cells[17].Value.ToString();
+                        string mBarcode = dataGridView1.Rows[i].Cells[18].Value.ToString();
+                        string sBarcode = dataGridView1.Rows[i].Cells[19].Value.ToString();
+                        string[] tempSurfix = sBarcode.Split(' ');
+                        string sCust = dataGridView1.Rows[i].Cells[2].Value.ToString();
 
-                    sql = $@"UPDATE Item_box_sub SET item_count = " + sCount + ", input_date = '" + sDate + "', contents = '" + sContents + "'  WHERE box_id = '" + sBoxID + "' AND prod_id_sub = '" + sSubID + "'";
-                    m.dbCUD(sql, ref msg);
-
-                    if (msg != "OK")
-                    {
-                        MessageBox.Show(msg);
-                        return;
-                    }
-
-                    foreach (var surfix in tempSurfix)
-                    {
-                        if (surfix == "" || string.IsNullOrEmpty(surfix)) 
-                            continue;
-                        sql = "insert into INV_material_out (mbarcode, barcode_surfix, prod_id, cust_id, input_date, plant, prodorder_id, output_date, qty, box_id, enter_man) " +
-                            "values('" + mBarcode + "','" + surfix + "','" + sSubID + "','" + sCust + "','" + sDate + "','" + G.Pos + "','" + sSujuNo + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "'," + sCount + ",'" + sBoxID + "','" + G.UserID + "')"
-                            + " on duplicate key update" +
-                            " input_date = '" + sDate + "', qty = " + sCount + ", enter_man = '" + G.UserID + "'";
+                        sql = $@"UPDATE Item_box_sub SET item_count = " + sCount + ", input_date = '" + sDate + "', contents = '" + sContents + "'  WHERE box_id = '" + sBoxID + "' AND prod_id_sub = '" + sSubID + "'";
                         m.dbCUD(sql, ref msg);
 
                         if (msg != "OK")
@@ -275,14 +263,31 @@ namespace SmartMES_Giroei
                             return;
                         }
 
-                        sql = "update INV_real_stock set current_qty = current_qty - " + sCount + ", partout_total = partout_total + " + sCount + "" +
-                            " where prod_id = '" + sSubID + "' and cust_id = '" + sCust + "'";
-                        m.dbCUD(sql, ref msg);
-
-                        if (msg != "OK")
+                        foreach (var surfix in tempSurfix)
                         {
-                            MessageBox.Show(msg);
-                            return;
+                            if (surfix == "" || string.IsNullOrEmpty(surfix))
+                                continue;
+                            sql = "insert into INV_material_out (mbarcode, barcode_surfix, prod_id, cust_id, input_date, plant, prodorder_id, output_date, qty, box_id, enter_man) " +
+                                "values('" + mBarcode + "','" + surfix + "','" + sSubID + "','" + sCust + "','" + sDate + "','" + G.Pos + "','" + sSujuNo + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "'," + sCount + ",'" + sBoxID + "','" + G.UserID + "')"
+                                + " on duplicate key update" +
+                                " input_date = '" + sDate + "', qty = " + sCount + ", enter_man = '" + G.UserID + "'";
+                            m.dbCUD(sql, ref msg);
+
+                            if (msg != "OK")
+                            {
+                                MessageBox.Show(msg);
+                                return;
+                            }
+
+                            sql = "update INV_real_stock set current_qty = current_qty - " + sCount + ", partout_total = partout_total + " + sCount + "" +
+                                " where prod_id = '" + sSubID + "' and cust_id = '" + sCust + "'";
+                            m.dbCUD(sql, ref msg);
+
+                            if (msg != "OK")
+                            {
+                                MessageBox.Show(msg);
+                                return;
+                            }
                         }
                     }
                 } catch (Exception ex)
