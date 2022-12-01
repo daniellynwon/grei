@@ -76,9 +76,15 @@ namespace SmartMES_Giroei
             string surfixA, surfixB, surfixC;
             if (e.ColumnIndex != 9 && e.ColumnIndex != 14 && e.ColumnIndex != 15 && e.ColumnIndex != 16) return;
 
-            if (e.ColumnIndex == 9)     // 버튼 
+            if (e.ColumnIndex == 9 )     // 버튼 - 미삽이 "O" 이면 
             {
+                if (dataGridView1.Rows[e.RowIndex].Cells[16].Value.ToString() == "O")
+                {
+                    lblMsg.Text = "미삽이면 자재를 투입할 수 없습니다.";
+                    return;
+                }
                 P1B16_ITEM_BOX_INPUT_LOT sub = new P1B16_ITEM_BOX_INPUT_LOT();
+                sub.rowIndex = e.RowIndex;
                 sub.lblProd.Text += dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
                 sub.lblProdNm.Text += dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
                 if (dataGridView1.Rows[e.RowIndex].Cells[8].Value == null || dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString() == "")
@@ -116,6 +122,104 @@ namespace SmartMES_Giroei
 
 
         }
+
+        private void btnMaterialSave_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(sBoxID))
+            {
+                MessageBox.Show("현품박스가 구성되지 않았습니다.");
+                return;
+            }
+            if (dataGridView1.Rows.Count == 0) return;
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                if ((dataGridView1.Rows[i].Cells[8].Value.ToString() == "" || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[8].Value.ToString())) && dataGridView1.Rows[i].Cells[16].Value.ToString() == "X")
+                {
+                    MessageBox.Show("LOT가 선택되지 않았습니다.");
+                    return;
+                }
+            }
+
+            string sCount, sSubID;
+
+            string sql = string.Empty;
+            string msg = string.Empty;
+            MariaCRUD m = new MariaCRUD();
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                try
+                {
+                    if (dataGridView1.Rows[i].Cells[13].Value.ToString().Replace(",", "") == "0" && dataGridView1.Rows[i].Cells[16].Value.ToString() == "X")
+                    {
+                        MessageBox.Show("투입량을 확인하세요.");
+                        return;
+                    }
+                    else if (dataGridView1.Rows[i].Cells[16].Value.ToString() == "O")               // 미삽은 저장하지 않음
+                        continue;
+
+                    sCount = dataGridView1.Rows[i].Cells[13].Value.ToString().Replace(",", ""); // 투입량
+                    string sTotalRequireQty = dataGridView1.Rows[i].Cells[12].Value.ToString().Replace(",", ""); // 총필요수량
+                    if (int.Parse(sCount) < int.Parse(sTotalRequireQty))
+                    {
+                        if (MessageBox.Show("총 요구수량 보다 투입량이 작습니다. 확인하세요. 그래도 투입하겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.No)
+                            return;
+                    }
+                    sSubID = dataGridView1.Rows[i].Cells[6].Value.ToString();   // 자재코드
+                    string sDate = DateTime.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString()).ToString("yyyy-MM-dd");  // 입고일(LOTNO)
+                    string sContents = dataGridView1.Rows[i].Cells[17].Value.ToString();
+                    string mBarcode = dataGridView1.Rows[i].Cells[18].Value.ToString();
+                    string sBarcode = dataGridView1.Rows[i].Cells[19].Value.ToString();
+                    string[] tempSurfix = sBarcode.Split(' ');
+                    string sCust = dataGridView1.Rows[i].Cells[2].Value.ToString();
+
+                    sql = $@"UPDATE Item_box_sub SET item_count = " + sCount + ", input_date = '" + sDate + "', contents = '" + sContents + "'  WHERE box_id = '" + sBoxID + "' AND prod_id_sub = '" + sSubID + "'";
+                    m.dbCUD(sql, ref msg);
+
+                    if (msg != "OK")
+                    {
+                        MessageBox.Show(msg);
+                        return;
+                    }
+
+                    foreach (var surfix in tempSurfix)
+                    {
+                        if (surfix == "" || string.IsNullOrEmpty(surfix))
+                            continue;
+                        sql = "insert into INV_material_out (mbarcode, barcode_surfix, prod_id, cust_id, input_date, plant, prodorder_id, output_date, qty, box_id, enter_man) " +
+                            "values('" + mBarcode + "','" + surfix + "','" + sSubID + "','" + sCust + "','" + sDate + "','" + G.Pos + "','" + sSujuNo + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "'," + sCount + ",'" + sBoxID + "','" + G.UserID + "')"
+                            + " on duplicate key update" +
+                            " input_date = '" + sDate + "', qty = " + sCount + ", enter_man = '" + G.UserID + "'";
+                        m.dbCUD(sql, ref msg);
+
+                        if (msg != "OK")
+                        {
+                            MessageBox.Show(msg);
+                            return;
+                        }
+
+                        sql = "update INV_real_stock set current_qty = current_qty - " + sCount + ", partout_total = partout_total + " + sCount + "" +
+                            " where prod_id = '" + sSubID + "' and cust_id = '" + sCust + "'";
+                        m.dbCUD(sql, ref msg);
+
+                        if (msg != "OK")
+                        {
+                            MessageBox.Show(msg);
+                            return;
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+            }
+            MessageBox.Show($@"{@sBoxID}번 현품박스의 내용이 저장되었습니다.");
+
+            this.DialogResult = DialogResult.OK;
+        }
+
         private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
         {
             int columnIndex = dataGridView1.CurrentCell.ColumnIndex;
@@ -191,102 +295,7 @@ namespace SmartMES_Giroei
 
             this.DialogResult = DialogResult.OK;
         }
-        private void btnMaterial_Click(object sender, EventArgs e)
-        {
-            if (string.IsNullOrEmpty(sBoxID))
-            {
-                MessageBox.Show("현품박스가 구성되지 않았습니다.");
-                return;
-            }
-            if (dataGridView1.Rows.Count == 0) return;
-
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                if ((dataGridView1.Rows[i].Cells[8].Value.ToString() == "" || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[8].Value.ToString())) && dataGridView1.Rows[i].Cells[16].Value.ToString() == "X" )
-                {
-                    MessageBox.Show("LOT가 선택되지 않았습니다.");
-                    return;
-                }
-            }
-
-            string sCount, sSubID;
-
-            string sql = string.Empty;
-            string msg = string.Empty;
-            MariaCRUD m = new MariaCRUD();
-
-            for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            {
-                try
-                {
-                    if (dataGridView1.Rows[i].Cells[13].Value.ToString().Replace(",", "") == "0" && dataGridView1.Rows[i].Cells[16].Value.ToString() == "X")
-                    {
-                        MessageBox.Show("투입량을 확인하세요.");
-                        return;
-                    }
-                    else if (dataGridView1.Rows[i].Cells[16].Value.ToString() == "O")
-                        continue;
-
-                    sCount = dataGridView1.Rows[i].Cells[13].Value.ToString().Replace(",", ""); // 투입량
-                    string sTotalRequireQty = dataGridView1.Rows[i].Cells[12].Value.ToString().Replace(",", ""); // 총필요수량
-                    if (int.Parse(sCount) < int.Parse(sTotalRequireQty))
-                    {
-                        if (MessageBox.Show("총 요구수량 보다 투입량이 작습니다. 확인하세요. 그래도 투입하겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.No)
-                            return;
-                    }
-                    sSubID = dataGridView1.Rows[i].Cells[6].Value.ToString();   // 자재코드
-                    string sDate = DateTime.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString()).ToString("yyyy-MM-dd");  // 입고일(LOTNO)
-                    string sContents = dataGridView1.Rows[i].Cells[17].Value.ToString();
-                    string mBarcode = dataGridView1.Rows[i].Cells[18].Value.ToString();
-                    string sBarcode = dataGridView1.Rows[i].Cells[19].Value.ToString();
-                    string[] tempSurfix = sBarcode.Split(' ');
-                    string sCust = dataGridView1.Rows[i].Cells[2].Value.ToString();
-
-                    sql = $@"UPDATE Item_box_sub SET item_count = " + sCount + ", input_date = '" + sDate + "', contents = '" + sContents + "'  WHERE box_id = '" + sBoxID + "' AND prod_id_sub = '" + sSubID + "'";
-                    m.dbCUD(sql, ref msg);
-
-                    if (msg != "OK")
-                    {
-                        MessageBox.Show(msg);
-                        return;
-                    }
-
-                    foreach (var surfix in tempSurfix)
-                    {
-                        if (surfix == "" || string.IsNullOrEmpty(surfix)) 
-                            continue;
-                        sql = "insert into INV_material_out (mbarcode, barcode_surfix, prod_id, cust_id, input_date, plant, prodorder_id, output_date, qty, box_id, enter_man) " +
-                            "values('" + mBarcode + "','" + surfix + "','" + sSubID + "','" + sCust + "','" + sDate + "','" + G.Pos + "','" + sSujuNo + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "'," + sCount + ",'" + sBoxID + "','" + G.UserID + "')"
-                            + " on duplicate key update" +
-                            " input_date = '" + sDate + "', qty = " + sCount + ", enter_man = '" + G.UserID + "'";
-                        m.dbCUD(sql, ref msg);
-
-                        if (msg != "OK")
-                        {
-                            MessageBox.Show(msg);
-                            return;
-                        }
-
-                        sql = "update INV_real_stock set current_qty = current_qty - " + sCount + ", partout_total = partout_total + " + sCount + "" +
-                            " where prod_id = '" + sSubID + "' and cust_id = '" + sCust + "'";
-                        m.dbCUD(sql, ref msg);
-
-                        if (msg != "OK")
-                        {
-                            MessageBox.Show(msg);
-                            return;
-                        }
-                    }
-                } catch (Exception ex)
-                {
-                    MessageBox.Show(ex.Message);
-                }
-            }
-            MessageBox.Show($@"{@sBoxID}번 현품박스의 내용이 저장되었습니다.");
-
-            this.DialogResult = DialogResult.OK;
-        }
-        private void btTagPrint_Click(object sender, EventArgs e)
+         private void btTagPrint_Click(object sender, EventArgs e)
         {
             string reportFileName = "SmartMES_Giroei.Reports.P1B11_PURCHASE_RAW_MAT_SUB.rdlc";
 

@@ -9,9 +9,9 @@ namespace SmartMES_Giroei
         public P1B16_ITEM_BOX_INPUT_SUB parentWin;
         public int parentRow;
         public string sBarcode, sProd;
+        public int rowIndex;
 
         int columnIndex = 0;
-        int rowIndex = 0;
         bool endEdit = false;
 
         public P1B16_ITEM_BOX_INPUT_LOT()
@@ -107,24 +107,32 @@ namespace SmartMES_Giroei
         private void barcodeSearch()
         {
             string sSurfix = "";
+            int inputQty = 0;
+            if (dataGridView1.RowCount <= 0) return;
+
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
                 if (dataGridView1.Rows[i].Cells[0].Value != null && dataGridView1.Rows[i].Cells[0].Value.ToString() == "1")
                 {
 
-                    sSurfix += dataGridView1.Rows[i].Cells[2].Value.ToString() + " ";
-                    for (int iSeq = 0; iSeq < parentWin.dataGridView1.RowCount; iSeq++)
-                    {
-                        if (parentWin.dataGridView1.Rows[iSeq].Cells[6].Value.ToString() == dataGridView1.Rows[i].Cells[5].Value.ToString())  // SUB창의 자재코드랑 해당 창의 자재코드랑 비교
-                        {
-                            //parentWin.dataGridView1.Rows[iSeq].Cells[19].Value = dataGridView1.Rows[i].Cells[2].Value; //바코드 Surfix
-                            parentWin.dataGridView1.Rows[iSeq].Cells[8].Value = dataGridView1.Rows[i].Cells[6].Value.ToString();   // 입고일
-                            parentWin.dataGridView1.Rows[iSeq].Cells[19].Value = sSurfix; //바코드 Surfix
+                    sSurfix += dataGridView1.Rows[i].Cells[2].Value.ToString() + ",";
+                    inputQty += int.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString());
+                    //for (int iSeq = 0; iSeq < parentWin.dataGridView1.RowCount; iSeq++)
+                    //{
+                    //    if (parentWin.dataGridView1.Rows[iSeq].Cells[6].Value.ToString() == dataGridView1.Rows[i].Cells[5].Value.ToString())  // SUB창의 자재코드랑 해당 창의 자재코드랑 비교
+                    //    {
+                    //        //parentWin.dataGridView1.Rows[iSeq].Cells[19].Value = dataGridView1.Rows[i].Cells[2].Value; //바코드 Surfix
+                    //        parentWin.dataGridView1.Rows[iSeq].Cells[8].Value = dataGridView1.Rows[i].Cells[6].Value.ToString();   // 입고일
+                    //        parentWin.dataGridView1.Rows[iSeq].Cells[19].Value = sSurfix.Substring(0, sSurfix.Length-1); //바코드 Surfix
+                    //        parentWin.dataGridView1.Rows[iSeq].Cells[13].Value = inputQty; // 투입량
 
-                        }
-                    }
+                    //    }
+                    //}
                 }
             }
+            parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value = dataGridView1.Rows[0].Cells[6].Value.ToString();   // 입고일
+            parentWin.dataGridView1.Rows[rowIndex].Cells[19].Value = sSurfix.Substring(0, sSurfix.Length - 1); //바코드 Surfix 마지막 , 제거
+            parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value = inputQty; // 투입량
             this.Dispose();
         }
         #endregion

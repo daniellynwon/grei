@@ -773,6 +773,13 @@ namespace SmartMES_Giroei
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
                 if (!(dataGridView1.Rows[i].Cells[3].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[3].Value.ToString()))) iCnt++;   // 품목코드
+
+                if ((dataGridView1.Rows[i].Cells[24].Value == "Y" || dataGridView1.Rows[i].Cells[25].Value == "Y" || dataGridView1.Rows[i].Cells[26].Value == "Y" || dataGridView1.Rows[i].Cells[27].Value == "Y") == false)
+                {
+                    lblMsg.Text = "공정을 최소 1개 이상 선택하셔야 합니다.";
+                    dataGridView1.Focus();
+                    return;
+                }
             }
 
             if (iCnt == 0)

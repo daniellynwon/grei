@@ -152,13 +152,16 @@ namespace SmartMES_Giroei
             var data = sql;
             Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.조회, data);
 
-            sql = "update SAL_order_sub set prod_status = 2 where order_id = '" + sSujuNo + "' and order_seq = " + sSujuSeq;
-            m.dbCUD(sql, ref msg);
-
-            if (msg != "OK")
+            if (string.IsNullOrEmpty(sSujuNo) == false)
             {
-                lblMsg.Text = msg;
-                return;
+                sql = "update SAL_order_sub set prod_status = 2 where order_id = '" + sSujuNo + "' and order_seq = " + sSujuSeq;
+                m.dbCUD(sql, ref msg);
+
+                if (msg != "OK")
+                {
+                    lblMsg.Text = msg;
+                    return;
+                }
             }
 
             sql = "delete from PRD_prod_order where job_no = '" + sLotNo + "'";

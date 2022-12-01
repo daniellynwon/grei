@@ -1295,39 +1295,6 @@
             </Mappings>
             <Sources />
           </TableAdapter>
-          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_ROrderToEstimate_QueryTableAdapter" GeneratorDataComponentClassName="SP_ROrderToEstimate_QueryTableAdapter" Name="SP_ROrderToEstimate_Query" UserDataComponentName="SP_ROrderToEstimate_QueryTableAdapter">
-            <MainSource>
-              <DbSource ConnectionRef="jiroei_mesConnectionString (Settings)" DbObjectName="`jiroei_mes`.`SP_ROrderToEstimate_Query`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
-                <SelectCommand>
-                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
-                    <CommandText>`jiroei_mes`.`SP_ROrderToEstimate_Query`</CommandText>
-                    <Parameters />
-                  </DbCommand>
-                </SelectCommand>
-              </DbSource>
-            </MainSource>
-            <Mappings>
-              <Mapping SourceColumn="수주번호" DataSetColumn="수주번호" />
-              <Mapping SourceColumn="순번" DataSetColumn="순번" />
-              <Mapping SourceColumn="수주일자" DataSetColumn="수주일자" />
-              <Mapping SourceColumn="프로젝트명" DataSetColumn="프로젝트명" />
-              <Mapping SourceColumn="거래처ID" DataSetColumn="거래처ID" />
-              <Mapping SourceColumn="거래처명" DataSetColumn="거래처명" />
-              <Mapping SourceColumn="주소" DataSetColumn="주소" />
-              <Mapping SourceColumn="담당자" DataSetColumn="담당자" />
-              <Mapping SourceColumn="연락처" DataSetColumn="연락처" />
-              <Mapping SourceColumn="이메일" DataSetColumn="이메일" />
-              <Mapping SourceColumn="품목코드" DataSetColumn="품목코드" />
-              <Mapping SourceColumn="품목명" DataSetColumn="품목명" />
-              <Mapping SourceColumn="공정코드" DataSetColumn="공정코드" />
-              <Mapping SourceColumn="공정명" DataSetColumn="공정명" />
-              <Mapping SourceColumn="수주수량" DataSetColumn="수주수량" />
-              <Mapping SourceColumn="기준단가" DataSetColumn="기준단가" />
-              <Mapping SourceColumn="제안단가" DataSetColumn="제안단가" />
-              <Mapping SourceColumn="수주금액" DataSetColumn="수주금액" />
-            </Mappings>
-            <Sources />
-          </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_PurchaseMat1_SubTableAdapter" GeneratorDataComponentClassName="SP_PurchaseMat1_SubTableAdapter" Name="SP_PurchaseMat1_Sub" UserDataComponentName="SP_PurchaseMat1_SubTableAdapter">
             <MainSource>
               <DbSource ConnectionRef="jiroei_mesConnectionString (Settings)" DbObjectName="`jiroei_mes`.`SP_PurchaseMat1_Sub`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
@@ -1549,6 +1516,77 @@
               <Mapping SourceColumn="잔량" DataSetColumn="잔량" />
               <Mapping SourceColumn="등록자" DataSetColumn="등록자" />
               <Mapping SourceColumn="갱신자" DataSetColumn="갱신자" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_ROrderToEstimate_QueryTableAdapter" GeneratorDataComponentClassName="SP_ROrderToEstimate_QueryTableAdapter" Name="SP_ROrderToEstimate_Query" UserDataComponentName="SP_ROrderToEstimate_QueryTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="jiroei_mesConnectionString (Settings)" DbObjectName="`jiroei_mes`.`SP_ROrderToEstimate_Query`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>`jiroei_mes`.`SP_ROrderToEstimate_Query`</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="수주번호" DataSetColumn="수주번호" />
+              <Mapping SourceColumn="순번" DataSetColumn="순번" />
+              <Mapping SourceColumn="수주일자" DataSetColumn="수주일자" />
+              <Mapping SourceColumn="프로젝트명" DataSetColumn="프로젝트명" />
+              <Mapping SourceColumn="거래처ID" DataSetColumn="거래처ID" />
+              <Mapping SourceColumn="거래처명" DataSetColumn="거래처명" />
+              <Mapping SourceColumn="주소" DataSetColumn="주소" />
+              <Mapping SourceColumn="담당자" DataSetColumn="담당자" />
+              <Mapping SourceColumn="연락처" DataSetColumn="연락처" />
+              <Mapping SourceColumn="이메일" DataSetColumn="이메일" />
+              <Mapping SourceColumn="품목코드" DataSetColumn="품목코드" />
+              <Mapping SourceColumn="품목명" DataSetColumn="품목명" />
+              <Mapping SourceColumn="수주수량" DataSetColumn="수주수량" />
+              <Mapping SourceColumn="기준단가" DataSetColumn="기준단가" />
+              <Mapping SourceColumn="제안단가" DataSetColumn="제안단가" />
+              <Mapping SourceColumn="수주금액" DataSetColumn="수주금액" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_Item_Box_Sub_ReturnTableAdapter" GeneratorDataComponentClassName="SP_Item_Box_Sub_ReturnTableAdapter" Name="SP_Item_Box_Sub_Return" UserDataComponentName="SP_Item_Box_Sub_ReturnTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="jiroei_mesConnectionString (Settings)" DbObjectName="`jiroei_mes`.`SP_Item_Box_Sub_Return`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
+                    <CommandText>`jiroei_mes`.`SP_Item_Box_Sub_Return`</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="String" Direction="Input" ParameterName="_OrderID" Precision="255" ProviderType="VarChar" Scale="255" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="_OrderSeq" Precision="10" ProviderType="Int32" Scale="0" Size="2147483647" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="수주번호" DataSetColumn="수주번호" />
+              <Mapping SourceColumn="수주순번" DataSetColumn="수주순번" />
+              <Mapping SourceColumn="업체코드" DataSetColumn="업체코드" />
+              <Mapping SourceColumn="업체명" DataSetColumn="업체명" />
+              <Mapping SourceColumn="품목코드" DataSetColumn="품목코드" />
+              <Mapping SourceColumn="품목명" DataSetColumn="품목명" />
+              <Mapping SourceColumn="자재코드" DataSetColumn="자재코드" />
+              <Mapping SourceColumn="자재명" DataSetColumn="자재명" />
+              <Mapping SourceColumn="입고일" DataSetColumn="입고일" />
+              <Mapping SourceColumn="필요수량" DataSetColumn="필요수량" />
+              <Mapping SourceColumn="수주수량" DataSetColumn="수주수량" />
+              <Mapping SourceColumn="총필요수량" DataSetColumn="총필요수량" />
+              <Mapping SourceColumn="입고량" DataSetColumn="입고량" />
+              <Mapping SourceColumn="박스ID" DataSetColumn="박스ID" />
+              <Mapping SourceColumn="회수량" DataSetColumn="회수량" />
+              <Mapping SourceColumn="유실수량" DataSetColumn="유실수량" />
+              <Mapping SourceColumn="사급" DataSetColumn="사급" />
+              <Mapping SourceColumn="수삽" DataSetColumn="수삽" />
+              <Mapping SourceColumn="미삽" DataSetColumn="미삽" />
+              <Mapping SourceColumn="비고" DataSetColumn="비고" />
+              <Mapping SourceColumn="바코드" DataSetColumn="바코드" />
+              <Mapping SourceColumn="바코드Surfix" DataSetColumn="바코드Surfix" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -4347,102 +4385,6 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_ROrderToEstimate_Query" msprop:Generator_TableClassName="SP_ROrderToEstimate_QueryDataTable" msprop:Generator_TableVarName="tableSP_ROrderToEstimate_Query" msprop:Generator_RowChangedName="SP_ROrderToEstimate_QueryRowChanged" msprop:Generator_TablePropName="SP_ROrderToEstimate_Query" msprop:Generator_RowDeletingName="SP_ROrderToEstimate_QueryRowDeleting" msprop:Generator_RowChangingName="SP_ROrderToEstimate_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_ROrderToEstimate_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ROrderToEstimate_QueryRowDeleted" msprop:Generator_RowClassName="SP_ROrderToEstimate_QueryRow" msprop:Generator_UserTableName="SP_ROrderToEstimate_Query" msprop:Generator_RowEvArgName="SP_ROrderToEstimate_QueryRowChangeEvent">
-          <xs:complexType>
-            <xs:sequence>
-              <xs:element name="수주번호" msprop:Generator_ColumnVarNameInTable="column수주번호" msprop:Generator_ColumnPropNameInRow="수주번호" msprop:Generator_ColumnPropNameInTable="수주번호Column" msprop:Generator_UserColumnName="수주번호">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="13" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="순번" msprop:Generator_ColumnVarNameInTable="column순번" msprop:Generator_ColumnPropNameInRow="순번" msprop:Generator_ColumnPropNameInTable="순번Column" msprop:Generator_UserColumnName="순번" type="xs:unsignedInt" />
-              <xs:element name="수주일자" msprop:Generator_ColumnVarNameInTable="column수주일자" msprop:Generator_ColumnPropNameInRow="수주일자" msprop:Generator_ColumnPropNameInTable="수주일자Column" msprop:Generator_UserColumnName="수주일자" type="xs:dateTime" />
-              <xs:element name="프로젝트명" msprop:Generator_ColumnVarNameInTable="column프로젝트명" msprop:Generator_ColumnPropNameInRow="프로젝트명" msprop:Generator_ColumnPropNameInTable="프로젝트명Column" msprop:Generator_UserColumnName="프로젝트명" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="거래처ID" msprop:Generator_ColumnVarNameInTable="column거래처ID" msprop:Generator_ColumnPropNameInRow="거래처ID" msprop:Generator_ColumnPropNameInTable="거래처IDColumn" msprop:Generator_UserColumnName="거래처ID">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="7" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="거래처명" msprop:Generator_ColumnVarNameInTable="column거래처명" msprop:Generator_ColumnPropNameInRow="거래처명" msprop:Generator_ColumnPropNameInTable="거래처명Column" msprop:Generator_UserColumnName="거래처명">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="주소" msprop:Generator_ColumnVarNameInTable="column주소" msprop:Generator_ColumnPropNameInRow="주소" msprop:Generator_ColumnPropNameInTable="주소Column" msprop:Generator_UserColumnName="주소" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="112" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="담당자" msprop:Generator_ColumnVarNameInTable="column담당자" msprop:Generator_ColumnPropNameInRow="담당자" msprop:Generator_ColumnPropNameInTable="담당자Column" msprop:Generator_UserColumnName="담당자" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="연락처" msprop:Generator_ColumnVarNameInTable="column연락처" msprop:Generator_ColumnPropNameInRow="연락처" msprop:Generator_ColumnPropNameInTable="연락처Column" msprop:Generator_UserColumnName="연락처" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="이메일" msprop:Generator_ColumnVarNameInTable="column이메일" msprop:Generator_ColumnPropNameInRow="이메일" msprop:Generator_ColumnPropNameInTable="이메일Column" msprop:Generator_UserColumnName="이메일" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="품목코드" msprop:Generator_ColumnVarNameInTable="column품목코드" msprop:Generator_ColumnPropNameInRow="품목코드" msprop:Generator_ColumnPropNameInTable="품목코드Column" msprop:Generator_UserColumnName="품목코드">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="10" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="품목명" msprop:Generator_ColumnVarNameInTable="column품목명" msprop:Generator_ColumnPropNameInRow="품목명" msprop:Generator_ColumnPropNameInTable="품목명Column" msprop:Generator_UserColumnName="품목명">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="공정코드" msprop:Generator_ColumnVarNameInTable="column공정코드" msprop:Generator_ColumnPropNameInRow="공정코드" msprop:Generator_ColumnPropNameInTable="공정코드Column" msprop:Generator_UserColumnName="공정코드" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="5" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="공정명" msprop:Generator_ColumnVarNameInTable="column공정명" msprop:Generator_ColumnPropNameInRow="공정명" msprop:Generator_ColumnPropNameInTable="공정명Column" msprop:Generator_UserColumnName="공정명" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="수주수량" msprop:Generator_ColumnVarNameInTable="column수주수량" msprop:Generator_ColumnPropNameInRow="수주수량" msprop:Generator_ColumnPropNameInTable="수주수량Column" msprop:Generator_UserColumnName="수주수량" type="xs:int" minOccurs="0" />
-              <xs:element name="기준단가" msprop:Generator_ColumnVarNameInTable="column기준단가" msprop:Generator_ColumnPropNameInRow="기준단가" msprop:Generator_ColumnPropNameInTable="기준단가Column" msprop:Generator_UserColumnName="기준단가" type="xs:double" minOccurs="0" />
-              <xs:element name="제안단가" msprop:Generator_ColumnVarNameInTable="column제안단가" msprop:Generator_ColumnPropNameInRow="제안단가" msprop:Generator_ColumnPropNameInTable="제안단가Column" msprop:Generator_UserColumnName="제안단가" type="xs:double" minOccurs="0" />
-              <xs:element name="수주금액" msprop:Generator_ColumnVarNameInTable="column수주금액" msprop:Generator_ColumnPropNameInRow="수주금액" msprop:Generator_ColumnPropNameInTable="수주금액Column" msprop:Generator_UserColumnName="수주금액" type="xs:double" minOccurs="0" />
-            </xs:sequence>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="SP_PurchaseMat1_Sub" msprop:Generator_TableClassName="SP_PurchaseMat1_SubDataTable" msprop:Generator_TableVarName="tableSP_PurchaseMat1_Sub" msprop:Generator_TablePropName="SP_PurchaseMat1_Sub" msprop:Generator_RowDeletingName="SP_PurchaseMat1_SubRowDeleting" msprop:Generator_RowChangingName="SP_PurchaseMat1_SubRowChanging" msprop:Generator_RowEvHandlerName="SP_PurchaseMat1_SubRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_PurchaseMat1_SubRowDeleted" msprop:Generator_UserTableName="SP_PurchaseMat1_Sub" msprop:Generator_RowChangedName="SP_PurchaseMat1_SubRowChanged" msprop:Generator_RowEvArgName="SP_PurchaseMat1_SubRowChangeEvent" msprop:Generator_RowClassName="SP_PurchaseMat1_SubRow">
           <xs:complexType>
             <xs:sequence>
@@ -4986,6 +4928,194 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="16" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SP_ROrderToEstimate_Query" msprop:Generator_TableClassName="SP_ROrderToEstimate_QueryDataTable" msprop:Generator_TableVarName="tableSP_ROrderToEstimate_Query" msprop:Generator_RowChangedName="SP_ROrderToEstimate_QueryRowChanged" msprop:Generator_TablePropName="SP_ROrderToEstimate_Query" msprop:Generator_RowDeletingName="SP_ROrderToEstimate_QueryRowDeleting" msprop:Generator_RowChangingName="SP_ROrderToEstimate_QueryRowChanging" msprop:Generator_RowEvHandlerName="SP_ROrderToEstimate_QueryRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_ROrderToEstimate_QueryRowDeleted" msprop:Generator_RowClassName="SP_ROrderToEstimate_QueryRow" msprop:Generator_UserTableName="SP_ROrderToEstimate_Query" msprop:Generator_RowEvArgName="SP_ROrderToEstimate_QueryRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="수주번호" msprop:Generator_ColumnVarNameInTable="column수주번호" msprop:Generator_ColumnPropNameInRow="수주번호" msprop:Generator_ColumnPropNameInTable="수주번호Column" msprop:Generator_UserColumnName="수주번호">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="순번" msprop:Generator_ColumnVarNameInTable="column순번" msprop:Generator_ColumnPropNameInRow="순번" msprop:Generator_ColumnPropNameInTable="순번Column" msprop:Generator_UserColumnName="순번" type="xs:unsignedInt" />
+              <xs:element name="수주일자" msprop:Generator_ColumnVarNameInTable="column수주일자" msprop:Generator_ColumnPropNameInRow="수주일자" msprop:Generator_ColumnPropNameInTable="수주일자Column" msprop:Generator_UserColumnName="수주일자" type="xs:dateTime" />
+              <xs:element name="프로젝트명" msprop:Generator_ColumnVarNameInTable="column프로젝트명" msprop:Generator_ColumnPropNameInRow="프로젝트명" msprop:Generator_ColumnPropNameInTable="프로젝트명Column" msprop:Generator_UserColumnName="프로젝트명" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="거래처ID" msprop:Generator_ColumnVarNameInTable="column거래처ID" msprop:Generator_ColumnPropNameInRow="거래처ID" msprop:Generator_ColumnPropNameInTable="거래처IDColumn" msprop:Generator_UserColumnName="거래처ID">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="거래처명" msprop:Generator_ColumnVarNameInTable="column거래처명" msprop:Generator_ColumnPropNameInRow="거래처명" msprop:Generator_ColumnPropNameInTable="거래처명Column" msprop:Generator_UserColumnName="거래처명">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="주소" msprop:Generator_ColumnVarNameInTable="column주소" msprop:Generator_ColumnPropNameInRow="주소" msprop:Generator_ColumnPropNameInTable="주소Column" msprop:Generator_UserColumnName="주소" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="112" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="담당자" msprop:Generator_ColumnVarNameInTable="column담당자" msprop:Generator_ColumnPropNameInRow="담당자" msprop:Generator_ColumnPropNameInTable="담당자Column" msprop:Generator_UserColumnName="담당자" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="연락처" msprop:Generator_ColumnVarNameInTable="column연락처" msprop:Generator_ColumnPropNameInRow="연락처" msprop:Generator_ColumnPropNameInTable="연락처Column" msprop:Generator_UserColumnName="연락처" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="이메일" msprop:Generator_ColumnVarNameInTable="column이메일" msprop:Generator_ColumnPropNameInRow="이메일" msprop:Generator_ColumnPropNameInTable="이메일Column" msprop:Generator_UserColumnName="이메일" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="품목코드" msprop:Generator_ColumnVarNameInTable="column품목코드" msprop:Generator_ColumnPropNameInRow="품목코드" msprop:Generator_ColumnPropNameInTable="품목코드Column" msprop:Generator_UserColumnName="품목코드">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="품목명" msprop:Generator_ColumnVarNameInTable="column품목명" msprop:Generator_ColumnPropNameInRow="품목명" msprop:Generator_ColumnPropNameInTable="품목명Column" msprop:Generator_UserColumnName="품목명">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="수주수량" msprop:Generator_ColumnVarNameInTable="column수주수량" msprop:Generator_ColumnPropNameInRow="수주수량" msprop:Generator_ColumnPropNameInTable="수주수량Column" msprop:Generator_UserColumnName="수주수량" type="xs:int" minOccurs="0" />
+              <xs:element name="기준단가" msprop:Generator_ColumnVarNameInTable="column기준단가" msprop:Generator_ColumnPropNameInRow="기준단가" msprop:Generator_ColumnPropNameInTable="기준단가Column" msprop:Generator_UserColumnName="기준단가" type="xs:double" minOccurs="0" />
+              <xs:element name="제안단가" msprop:Generator_ColumnVarNameInTable="column제안단가" msprop:Generator_ColumnPropNameInRow="제안단가" msprop:Generator_ColumnPropNameInTable="제안단가Column" msprop:Generator_UserColumnName="제안단가" type="xs:double" minOccurs="0" />
+              <xs:element name="수주금액" msprop:Generator_ColumnVarNameInTable="column수주금액" msprop:Generator_ColumnPropNameInRow="수주금액" msprop:Generator_ColumnPropNameInTable="수주금액Column" msprop:Generator_UserColumnName="수주금액" type="xs:double" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="SP_Item_Box_Sub_Return" msprop:Generator_TableClassName="SP_Item_Box_Sub_ReturnDataTable" msprop:Generator_TableVarName="tableSP_Item_Box_Sub_Return" msprop:Generator_TablePropName="SP_Item_Box_Sub_Return" msprop:Generator_RowDeletingName="SP_Item_Box_Sub_ReturnRowDeleting" msprop:Generator_RowChangingName="SP_Item_Box_Sub_ReturnRowChanging" msprop:Generator_RowEvHandlerName="SP_Item_Box_Sub_ReturnRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Item_Box_Sub_ReturnRowDeleted" msprop:Generator_UserTableName="SP_Item_Box_Sub_Return" msprop:Generator_RowChangedName="SP_Item_Box_Sub_ReturnRowChanged" msprop:Generator_RowEvArgName="SP_Item_Box_Sub_ReturnRowChangeEvent" msprop:Generator_RowClassName="SP_Item_Box_Sub_ReturnRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="수주번호" msprop:Generator_ColumnVarNameInTable="column수주번호" msprop:Generator_ColumnPropNameInRow="수주번호" msprop:Generator_ColumnPropNameInTable="수주번호Column" msprop:Generator_UserColumnName="수주번호">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="수주순번" msprop:Generator_ColumnVarNameInTable="column수주순번" msprop:Generator_ColumnPropNameInRow="수주순번" msprop:Generator_ColumnPropNameInTable="수주순번Column" msprop:Generator_UserColumnName="수주순번" type="xs:unsignedInt" />
+              <xs:element name="업체코드" msprop:Generator_ColumnVarNameInTable="column업체코드" msprop:Generator_ColumnPropNameInRow="업체코드" msprop:Generator_ColumnPropNameInTable="업체코드Column" msprop:Generator_UserColumnName="업체코드" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="7" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="업체명" msprop:Generator_ColumnVarNameInTable="column업체명" msprop:Generator_ColumnPropNameInRow="업체명" msprop:Generator_ColumnPropNameInTable="업체명Column" msprop:Generator_UserColumnName="업체명" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="품목코드" msprop:Generator_ColumnVarNameInTable="column품목코드" msprop:Generator_ColumnPropNameInRow="품목코드" msprop:Generator_ColumnPropNameInTable="품목코드Column" msprop:Generator_UserColumnName="품목코드">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="품목명" msprop:Generator_ColumnVarNameInTable="column품목명" msprop:Generator_ColumnPropNameInRow="품목명" msprop:Generator_ColumnPropNameInTable="품목명Column" msprop:Generator_UserColumnName="품목명" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="자재코드" msprop:Generator_ColumnVarNameInTable="column자재코드" msprop:Generator_ColumnPropNameInRow="자재코드" msprop:Generator_ColumnPropNameInTable="자재코드Column" msprop:Generator_UserColumnName="자재코드" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="자재명" msprop:Generator_ColumnVarNameInTable="column자재명" msprop:Generator_ColumnPropNameInRow="자재명" msprop:Generator_ColumnPropNameInTable="자재명Column" msprop:Generator_UserColumnName="자재명" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="입고일" msprop:Generator_ColumnVarNameInTable="column입고일" msprop:Generator_ColumnPropNameInRow="입고일" msprop:Generator_ColumnPropNameInTable="입고일Column" msprop:Generator_UserColumnName="입고일" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="필요수량" msprop:Generator_ColumnVarNameInTable="column필요수량" msprop:Generator_ColumnPropNameInRow="필요수량" msprop:Generator_ColumnPropNameInTable="필요수량Column" msprop:Generator_UserColumnName="필요수량" type="xs:byte" minOccurs="0" />
+              <xs:element name="수주수량" msprop:Generator_ColumnVarNameInTable="column수주수량" msprop:Generator_ColumnPropNameInRow="수주수량" msprop:Generator_ColumnPropNameInTable="수주수량Column" msprop:Generator_UserColumnName="수주수량" type="xs:int" minOccurs="0" />
+              <xs:element name="총필요수량" msprop:Generator_ColumnVarNameInTable="column총필요수량" msprop:Generator_ColumnPropNameInRow="총필요수량" msprop:Generator_ColumnPropNameInTable="총필요수량Column" msprop:Generator_UserColumnName="총필요수량" type="xs:long" minOccurs="0" />
+              <xs:element name="입고량" msprop:Generator_ColumnVarNameInTable="column입고량" msprop:Generator_ColumnPropNameInRow="입고량" msprop:Generator_ColumnPropNameInTable="입고량Column" msprop:Generator_UserColumnName="입고량" type="xs:decimal" />
+              <xs:element name="박스ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="column박스ID" msprop:Generator_ColumnPropNameInRow="박스ID" msprop:Generator_ColumnPropNameInTable="박스IDColumn" msprop:Generator_UserColumnName="박스ID" type="xs:int" minOccurs="0" />
+              <xs:element name="회수량" msprop:Generator_ColumnVarNameInTable="column회수량" msprop:Generator_ColumnPropNameInRow="회수량" msprop:Generator_ColumnPropNameInTable="회수량Column" msprop:Generator_UserColumnName="회수량" type="xs:unsignedInt" minOccurs="0" />
+              <xs:element name="유실수량" msprop:Generator_ColumnVarNameInTable="column유실수량" msprop:Generator_ColumnPropNameInRow="유실수량" msprop:Generator_ColumnPropNameInTable="유실수량Column" msprop:Generator_UserColumnName="유실수량" type="xs:decimal" minOccurs="0" />
+              <xs:element name="사급" msprop:Generator_ColumnVarNameInTable="column사급" msprop:Generator_ColumnPropNameInRow="사급" msprop:Generator_ColumnPropNameInTable="사급Column" msprop:Generator_UserColumnName="사급" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="수삽" msprop:Generator_ColumnVarNameInTable="column수삽" msprop:Generator_ColumnPropNameInRow="수삽" msprop:Generator_ColumnPropNameInTable="수삽Column" msprop:Generator_UserColumnName="수삽" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="미삽" msprop:Generator_ColumnVarNameInTable="column미삽" msprop:Generator_ColumnPropNameInRow="미삽" msprop:Generator_ColumnPropNameInTable="미삽Column" msprop:Generator_UserColumnName="미삽" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="1" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="비고" msprop:Generator_ColumnVarNameInTable="column비고" msprop:Generator_ColumnPropNameInRow="비고" msprop:Generator_ColumnPropNameInTable="비고Column" msprop:Generator_UserColumnName="비고" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="바코드" msprop:Generator_ColumnVarNameInTable="column바코드" msprop:Generator_ColumnPropNameInRow="바코드" msprop:Generator_ColumnPropNameInTable="바코드Column" msprop:Generator_UserColumnName="바코드" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="바코드Surfix" msprop:Generator_ColumnVarNameInTable="column바코드Surfix" msprop:Generator_ColumnPropNameInRow="바코드Surfix" msprop:Generator_ColumnPropNameInTable="바코드SurfixColumn" msprop:Generator_UserColumnName="바코드Surfix" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

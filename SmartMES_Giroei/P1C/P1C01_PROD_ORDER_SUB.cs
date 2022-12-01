@@ -90,6 +90,8 @@ namespace SmartMES_Giroei
                 tbRorderNo.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[14].Value.ToString();    // 수주순번
                 tbContents.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[20].Value.ToString();    // 지시사항
 
+                if (string.IsNullOrEmpty(tbJobTimeStart.Text) == false)
+                    btnStart.Enabled = false;
                 this.ActiveControl = btnSave;
             }
         }

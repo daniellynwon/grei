@@ -29,25 +29,22 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btTagPrint = new System.Windows.Forms.Button();
             this.lblMsg = new System.Windows.Forms.Label();
             this.lbSujuInfo = new System.Windows.Forms.Label();
-            this.btnMaterial = new System.Windows.Forms.Button();
+            this.btnMaterialSave = new System.Windows.Forms.Button();
             this.btnItemBox = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sPItemBoxSubBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
-            this.sP_Item_Box_SubTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_Item_Box_SubTableAdapter();
             this.수주번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수주순번DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.업체코드 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,6 +65,9 @@
             this.비고 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.바코드 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.바코드Surfix = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPItemBoxSubBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
+            this.sP_Item_Box_SubTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_Item_Box_SubTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPItemBoxSubBindingSource)).BeginInit();
@@ -81,7 +81,7 @@
             this.panel1.Controls.Add(this.btTagPrint);
             this.panel1.Controls.Add(this.lblMsg);
             this.panel1.Controls.Add(this.lbSujuInfo);
-            this.panel1.Controls.Add(this.btnMaterial);
+            this.panel1.Controls.Add(this.btnMaterialSave);
             this.panel1.Controls.Add(this.btnItemBox);
             this.panel1.Location = new System.Drawing.Point(5, 6);
             this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
@@ -104,7 +104,7 @@
             this.lblMsg.AutoSize = true;
             this.lblMsg.Font = new System.Drawing.Font("Malgun Gothic", 12F);
             this.lblMsg.ForeColor = System.Drawing.Color.Red;
-            this.lblMsg.Location = new System.Drawing.Point(519, 18);
+            this.lblMsg.Location = new System.Drawing.Point(3, 30);
             this.lblMsg.Name = "lblMsg";
             this.lblMsg.Size = new System.Drawing.Size(148, 21);
             this.lblMsg.TabIndex = 13;
@@ -114,22 +114,22 @@
             // 
             this.lbSujuInfo.AutoSize = true;
             this.lbSujuInfo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbSujuInfo.Location = new System.Drawing.Point(6, 18);
+            this.lbSujuInfo.Location = new System.Drawing.Point(6, 9);
             this.lbSujuInfo.Name = "lbSujuInfo";
             this.lbSujuInfo.Size = new System.Drawing.Size(106, 21);
             this.lbSujuInfo.TabIndex = 11;
             this.lbSujuInfo.Text = "수주정보라벨";
             // 
-            // btnMaterial
+            // btnMaterialSave
             // 
-            this.btnMaterial.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnMaterial.Location = new System.Drawing.Point(812, 14);
-            this.btnMaterial.Name = "btnMaterial";
-            this.btnMaterial.Size = new System.Drawing.Size(81, 29);
-            this.btnMaterial.TabIndex = 14;
-            this.btnMaterial.Text = "저   장";
-            this.btnMaterial.UseVisualStyleBackColor = true;
-            this.btnMaterial.Click += new System.EventHandler(this.btnMaterial_Click);
+            this.btnMaterialSave.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnMaterialSave.Location = new System.Drawing.Point(812, 14);
+            this.btnMaterialSave.Name = "btnMaterialSave";
+            this.btnMaterialSave.Size = new System.Drawing.Size(81, 29);
+            this.btnMaterialSave.TabIndex = 14;
+            this.btnMaterialSave.Text = "저   장";
+            this.btnMaterialSave.UseVisualStyleBackColor = true;
+            this.btnMaterialSave.Click += new System.EventHandler(this.btnMaterialSave_Click);
             // 
             // btnItemBox
             // 
@@ -151,14 +151,14 @@
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
             this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.ColumnHeadersHeight = 35;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -184,27 +184,27 @@
             this.바코드Surfix});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPItemBoxSubBindingSource;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle17.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle17;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(5, 73);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle18.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle18.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 35;
             this.dataGridView1.RowTemplate.Height = 35;
@@ -216,20 +216,6 @@
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.DataGridView_DataError);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
-            // 
-            // sPItemBoxSubBindingSource
-            // 
-            this.sPItemBoxSubBindingSource.DataMember = "SP_Item_Box_Sub";
-            this.sPItemBoxSubBindingSource.DataSource = this.dataSetP1B;
-            // 
-            // dataSetP1B
-            // 
-            this.dataSetP1B.DataSetName = "DataSetP1B";
-            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_Item_Box_SubTableAdapter
-            // 
-            this.sP_Item_Box_SubTableAdapter.ClearBeforeFill = true;
             // 
             // 수주번호DataGridViewTextBoxColumn
             // 
@@ -296,8 +282,8 @@
             // 입고일
             // 
             this.입고일.DataPropertyName = "입고일";
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            this.입고일.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            this.입고일.DefaultCellStyle = dataGridViewCellStyle11;
             this.입고일.FillWeight = 60F;
             this.입고일.HeaderText = "LOTNo";
             this.입고일.MinimumWidth = 8;
@@ -305,9 +291,9 @@
             // 
             // Column1
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = "LOT";
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.NullValue = "LOT";
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle12;
             this.Column1.FillWeight = 25F;
             this.Column1.HeaderText = "";
             this.Column1.Name = "Column1";
@@ -315,9 +301,9 @@
             // 필요수량DataGridViewTextBoxColumn
             // 
             this.필요수량DataGridViewTextBoxColumn.DataPropertyName = "필요수량";
-            dataGridViewCellStyle4.Format = "N0";
-            dataGridViewCellStyle4.NullValue = null;
-            this.필요수량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle13.Format = "N0";
+            dataGridViewCellStyle13.NullValue = null;
+            this.필요수량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
             this.필요수량DataGridViewTextBoxColumn.FillWeight = 30F;
             this.필요수량DataGridViewTextBoxColumn.HeaderText = "필요수량";
             this.필요수량DataGridViewTextBoxColumn.MinimumWidth = 8;
@@ -326,8 +312,8 @@
             // 수주수량DataGridViewTextBoxColumn
             // 
             this.수주수량DataGridViewTextBoxColumn.DataPropertyName = "수주수량";
-            dataGridViewCellStyle5.Format = "N0";
-            this.수주수량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle14.Format = "N0";
+            this.수주수량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
             this.수주수량DataGridViewTextBoxColumn.FillWeight = 30F;
             this.수주수량DataGridViewTextBoxColumn.HeaderText = "수주수량";
             this.수주수량DataGridViewTextBoxColumn.MinimumWidth = 8;
@@ -336,8 +322,8 @@
             // 총필요수량DataGridViewTextBoxColumn
             // 
             this.총필요수량DataGridViewTextBoxColumn.DataPropertyName = "총필요수량";
-            dataGridViewCellStyle6.Format = "N0";
-            this.총필요수량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle15.Format = "N0";
+            this.총필요수량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle15;
             this.총필요수량DataGridViewTextBoxColumn.FillWeight = 30F;
             this.총필요수량DataGridViewTextBoxColumn.HeaderText = "총필요수량";
             this.총필요수량DataGridViewTextBoxColumn.MinimumWidth = 8;
@@ -346,10 +332,10 @@
             // 입고량DataGridViewTextBoxColumn
             // 
             this.입고량DataGridViewTextBoxColumn.DataPropertyName = "입고량";
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
-            dataGridViewCellStyle7.Format = "N0";
-            dataGridViewCellStyle7.NullValue = null;
-            this.입고량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(224)))), ((int)(((byte)(192)))));
+            dataGridViewCellStyle16.Format = "N0";
+            dataGridViewCellStyle16.NullValue = null;
+            this.입고량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
             this.입고량DataGridViewTextBoxColumn.FillWeight = 30F;
             this.입고량DataGridViewTextBoxColumn.HeaderText = "투입량";
             this.입고량DataGridViewTextBoxColumn.MinimumWidth = 8;
@@ -404,6 +390,20 @@
             this.바코드Surfix.HeaderText = "바코드Surfix";
             this.바코드Surfix.Name = "바코드Surfix";
             // 
+            // sPItemBoxSubBindingSource
+            // 
+            this.sPItemBoxSubBindingSource.DataMember = "SP_Item_Box_Sub";
+            this.sPItemBoxSubBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // dataSetP1B
+            // 
+            this.dataSetP1B.DataSetName = "DataSetP1B";
+            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_Item_Box_SubTableAdapter
+            // 
+            this.sP_Item_Box_SubTableAdapter.ClearBeforeFill = true;
+            // 
             // P1B16_ITEM_BOX_INPUT_SUB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -439,7 +439,7 @@
         private P1B.DataSetP1BTableAdapters.SP_Item_Box_SubTableAdapter sP_Item_Box_SubTableAdapter;
         private System.Windows.Forms.Button btnItemBox;
         private System.Windows.Forms.Label lblMsg;
-        private System.Windows.Forms.Button btnMaterial;
+        private System.Windows.Forms.Button btnMaterialSave;
         private System.Windows.Forms.Button btTagPrint;
         public System.Windows.Forms.BindingSource sPItemBoxSubBindingSource;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수주번호DataGridViewTextBoxColumn;

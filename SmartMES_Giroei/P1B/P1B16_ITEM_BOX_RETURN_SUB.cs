@@ -36,7 +36,7 @@ namespace SmartMES_Giroei
             {
                 Cursor.Current = Cursors.WaitCursor;
 
-                sP_Item_Box_SubTableAdapter.Fill(dataSetP1B.SP_Item_Box_Sub, sSujuNo, Convert.ToInt32(sSujuSeq));
+                sP_Item_Box_Sub_ReturnTableAdapter.Fill(dataSetP1B.SP_Item_Box_Sub_Return, sSujuNo, Convert.ToInt32(sSujuSeq));
                 var data = dataSetP1B.SP_Item_Box_Sub;
                 Logger.ApiLog(G.UserID, "BOM 정보(현품박스)", ActionType.조회, data);
 
@@ -125,12 +125,12 @@ namespace SmartMES_Giroei
             
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
-                string sQty = dataGridView1.Rows[i].Cells[13].Value.ToString(); // 회수량
+                string sQty = dataGridView1.Rows[i].Cells[15].Value.ToString(); // 회수량
                 string sSubID = dataGridView1.Rows[i].Cells[6].Value.ToString().Replace(",", "");    // 자재코드
                 string sDate = DateTime.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString()).ToString("yyyy-MM-dd");  // 입고일(LOTNO)
-                string sContents = dataGridView1.Rows[i].Cells[17].Value.ToString();
-                string mBarcode = dataGridView1.Rows[i].Cells[19].Value.ToString();
-                string sBarcode = dataGridView1.Rows[i].Cells[20].Value.ToString();
+                string sContents = dataGridView1.Rows[i].Cells[20].Value.ToString();
+                string mBarcode = dataGridView1.Rows[i].Cells[21].Value.ToString();
+                string sBarcode = dataGridView1.Rows[i].Cells[9].Value.ToString();
                 string sCust = dataGridView1.Rows[i].Cells[2].Value.ToString();
                 sql = "UPDATE Item_box_sub SET return_Qty = " + sQty + "  WHERE box_id = '" + sBoxID + "' AND prod_id_sub = '" + sSubID + "'";
                 m.dbCUD(sql, ref msg);
