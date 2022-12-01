@@ -789,6 +789,21 @@ namespace SmartMES_Giroei
                 return;
             }
 
+            int pCnt = 0;
+            for (int i = 0; i < dataGridView1.RowCount; i++)
+            {
+                if (!(dataGridView1.Rows[i].Cells[24].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[24].Value.ToString()))) pCnt++;
+                else if (!(dataGridView1.Rows[i].Cells[25].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[25].Value.ToString()))) pCnt++;
+                else if (!(dataGridView1.Rows[i].Cells[26].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[26].Value.ToString()))) pCnt++;
+                else if (!(dataGridView1.Rows[i].Cells[27].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[27].Value.ToString()))) pCnt++;
+            }
+            if (pCnt == 0)
+            {
+                lblMsg.Text = "공정을 확인해 주세요.";
+                dataGridView1.Focus();
+                return;
+            }
+
             string sNo = tbNo.Text;
             string sDate = dtpDate.Value.ToString("yyyy-MM-dd");
             string sCust = tbCust.Tag.ToString();
