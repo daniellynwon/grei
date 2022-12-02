@@ -77,6 +77,7 @@ namespace SmartMES_Giroei
             {
                 P1C01_PROD_ORDER_SUB sub = new P1C01_PROD_ORDER_SUB();
                 sub.lblTitle.Text = sub.lblTitle.Text + "[수정]";
+                sub.tbJobTimeStart.Text = dataGridView1.Rows[e.RowIndex].Cells[25].Value.ToString();      // 작업시작
                 sub.parentWin = this;
                 sub.ShowDialog();
             }

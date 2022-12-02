@@ -81,7 +81,7 @@ namespace SmartMES_Giroei
                 tbSolder.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[15].Value.ToString();      // 솔더
                 tbMask.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[16].Value.ToString();      // 마스크
                 cbMan.SelectedValue = parentWin.dataGridView1.Rows[rowIndex].Cells[22].Value;      // 책임자ID
-                tbJobTimeStart.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[25].Value.ToString();      // 작업시작
+                //tbJobTimeStart.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[25].Value.ToString();      // 작업시작
                 tbJobTimeFinish.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[26].Value.ToString();      // 작업종료
                 tbGdQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[27].Value.ToString();      // 양품수량
                 tbNgQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[28].Value.ToString();      // 불량수량
