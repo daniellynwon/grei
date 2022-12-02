@@ -68,6 +68,10 @@ namespace SmartMES_Giroei
         {
             dataGridView1.ClearSelection();
         }
+        private void dataGridView1_CellClick(object sender, EventArgs e)
+        {
+            //
+        }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (G.Authority == "D") return;

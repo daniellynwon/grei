@@ -115,30 +115,16 @@ namespace SmartMES_Giroei
 
             dataGridView1[1, rowIndex].Value = rowIndex.ToString() + "건";
 
-            //
-
-            long iSum1 = 0, iSum2 = 0, iSum3 = 0, iSum4 = 0, iSum5 = 0, iSum6 = 0, iSum7 = 0, iSum8 = 0;
+            long iSum1 = 0, iSum2 = 0, iSum3 = 0, iSum4 = 0, iSum5 = 0, iSum6 = 0;
 
             for (int i = 0; i < rowIndex; i++)
             {
-                iSum1 += long.Parse(dataGridView1.Rows[i].Cells[4].Value.ToString());
-                iSum2 += long.Parse(dataGridView1.Rows[i].Cells[5].Value.ToString());
-                iSum3 += long.Parse(dataGridView1.Rows[i].Cells[6].Value.ToString());
-                iSum4 += long.Parse(dataGridView1.Rows[i].Cells[7].Value.ToString());
-                iSum5 += long.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString());
-                iSum6 += long.Parse(dataGridView1.Rows[i].Cells[9].Value.ToString());
-                iSum7 += long.Parse(dataGridView1.Rows[i].Cells[10].Value.ToString());
-                iSum8 += long.Parse(dataGridView1.Rows[i].Cells[12].Value.ToString());
-
-                if (dataGridView1.Rows[i].Cells[4].Value.ToString() == "0")
-                    dataGridView1.Rows[i].Cells[4].Style.ForeColor = Color.Transparent;
-                else
-                    dataGridView1.Rows[i].Cells[4].Style.ForeColor = Color.Gray;
-
-                if (dataGridView1.Rows[i].Cells[5].Value.ToString() == "0")
-                    dataGridView1.Rows[i].Cells[5].Style.ForeColor = Color.Transparent;
-                else
-                    dataGridView1.Rows[i].Cells[5].Style.ForeColor = Color.Black;
+                iSum1 += long.Parse(dataGridView1.Rows[i].Cells[6].Value.ToString());
+                iSum2 += long.Parse(dataGridView1.Rows[i].Cells[7].Value.ToString());
+                iSum3 += long.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString());
+                iSum4 += long.Parse(dataGridView1.Rows[i].Cells[9].Value.ToString());
+                iSum5 += long.Parse(dataGridView1.Rows[i].Cells[10].Value.ToString());
+                //iSum6 += long.Parse(dataGridView1.Rows[i].Cells[12].Value.ToString());
 
                 if (dataGridView1.Rows[i].Cells[6].Value.ToString() == "0")
                     dataGridView1.Rows[i].Cells[6].Style.ForeColor = Color.Transparent;
@@ -156,14 +142,12 @@ namespace SmartMES_Giroei
                     dataGridView1.Rows[i].Cells[8].Style.ForeColor = Color.Black;
             }
 
-            dataGridView1[4, rowIndex].Value = iSum1;
-            dataGridView1[5, rowIndex].Value = iSum2;
-            dataGridView1[6, rowIndex].Value = iSum3;
-            dataGridView1[7, rowIndex].Value = iSum4;
-            dataGridView1[8, rowIndex].Value = iSum5;
-            dataGridView1[9, rowIndex].Value = iSum6;
-            dataGridView1[10, rowIndex].Value = iSum7;
-            dataGridView1[12, rowIndex].Value = iSum8;
+            dataGridView1[6, rowIndex].Value = iSum1;
+            dataGridView1[7, rowIndex].Value = iSum2;
+            dataGridView1[8, rowIndex].Value = iSum3;
+            dataGridView1[9, rowIndex].Value = iSum4;
+            dataGridView1[10, rowIndex].Value = iSum5;
+            //dataGridView1[12, rowIndex].Value = iSum5;
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
