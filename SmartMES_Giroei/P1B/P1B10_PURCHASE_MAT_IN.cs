@@ -407,16 +407,16 @@ namespace SmartMES_Giroei
                     str += "^FO150,110^A0,22,22^FD" + aBarcode[3] + "-" + aBarcode[4] + " ^FS";
                     str += "^XZ";
 
-                    //var bytes = Encoding.Default.GetBytes(str);
+                    var bytes = Encoding.Default.GetBytes(str);
 
-                    //try
-                    //{
-                    //    RawPrinterHelper.SendBytesToPrinter(pd.PrinterSettings.PrinterName, bytes, bytes.Length);
-                    //}
-                    //catch (Exception ex)
-                    //{
-                    //    MessageBox.Show(ex.Message);
-                    //}
+                    try
+                    {
+                        RawPrinterHelper.SendBytesToPrinter(pd.PrinterSettings.PrinterName, bytes, bytes.Length);
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
                     save2InvMaterialIn(Barcode, barcodePrefix, iQtyInPacking, sQtyInPacking);
                 }
 

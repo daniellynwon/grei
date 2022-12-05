@@ -203,8 +203,8 @@ namespace SmartMES_Giroei
                             return;
                         }
 
-                        sql = "update INV_real_stock set current_qty = current_qty - " + sCount + ", partout_total = partout_total + " + sCount + "" +
-                            " where prod_id = '" + sSubID + "' and cust_id = '" + sCust + "'";
+                        sql = "update INV_real_stock set current_qty = current_qty - " + sCount + ", partout_total = partout_total + " + sCount +
+                             " where prod_id = '" + sSubID + "' and cust_id = '" + sCust + "'";
                         m.dbCUD(sql, ref msg);
 
                         if (msg != "OK")
