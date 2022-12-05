@@ -44,10 +44,11 @@
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataSetP1C = new SmartMES_Giroei.P1C.DataSetP1C();
             this.sPProdResultCheckBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1C = new SmartMES_Giroei.P1C.DataSetP1C();
             this.sP_Prod_Result_CheckTableAdapter = new SmartMES_Giroei.P1C.DataSetP1CTableAdapters.SP_Prod_Result_CheckTableAdapter();
             this.작업지시번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.수주번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.검사시작시간DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.검사종료시간DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.baking실시여부DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,8 +67,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).BeginInit();
             this.panSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPProdResultCheckBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -214,6 +215,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.작업지시번호DataGridViewTextBoxColumn,
+            this.수주번호,
             this.검사시작시간DataGridViewTextBoxColumn,
             this.검사종료시간DataGridViewTextBoxColumn,
             this.baking실시여부DataGridViewTextBoxColumn,
@@ -257,15 +259,15 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
-            // dataSetP1C
-            // 
-            this.dataSetP1C.DataSetName = "DataSetP1C";
-            this.dataSetP1C.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
             // sPProdResultCheckBindingSource
             // 
             this.sPProdResultCheckBindingSource.DataMember = "SP_Prod_Result_Check";
             this.sPProdResultCheckBindingSource.DataSource = this.dataSetP1C;
+            // 
+            // dataSetP1C
+            // 
+            this.dataSetP1C.DataSetName = "DataSetP1C";
+            this.dataSetP1C.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sP_Prod_Result_CheckTableAdapter
             // 
@@ -274,10 +276,18 @@
             // 작업지시번호DataGridViewTextBoxColumn
             // 
             this.작업지시번호DataGridViewTextBoxColumn.DataPropertyName = "작업지시번호";
-            this.작업지시번호DataGridViewTextBoxColumn.FillWeight = 85F;
+            this.작업지시번호DataGridViewTextBoxColumn.FillWeight = 90F;
             this.작업지시번호DataGridViewTextBoxColumn.HeaderText = "작업지시번호";
             this.작업지시번호DataGridViewTextBoxColumn.Name = "작업지시번호DataGridViewTextBoxColumn";
             this.작업지시번호DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 수주번호
+            // 
+            this.수주번호.DataPropertyName = "수주번호";
+            this.수주번호.FillWeight = 90F;
+            this.수주번호.HeaderText = "수주번호";
+            this.수주번호.Name = "수주번호";
+            this.수주번호.ReadOnly = true;
             // 
             // 검사시작시간DataGridViewTextBoxColumn
             // 
@@ -383,8 +393,8 @@
             this.panSearch.ResumeLayout(false);
             this.panSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPProdResultCheckBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -411,6 +421,7 @@
         private P1C.DataSetP1C dataSetP1C;
         private P1C.DataSetP1CTableAdapters.SP_Prod_Result_CheckTableAdapter sP_Prod_Result_CheckTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn 작업지시번호DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 수주번호;
         private System.Windows.Forms.DataGridViewTextBoxColumn 검사시작시간DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 검사종료시간DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn baking실시여부DataGridViewTextBoxColumn;

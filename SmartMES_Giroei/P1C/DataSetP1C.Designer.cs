@@ -9239,6 +9239,8 @@ namespace SmartMES_Giroei.P1C {
             
             private global::System.Data.DataColumn column점검자;
             
+            private global::System.Data.DataColumn column수주번호;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_Prod_Result_CheckDataTable() {
@@ -9362,6 +9364,14 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 수주번호Column {
+                get {
+                    return this.column수주번호;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9397,7 +9407,7 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_Prod_Result_CheckRow AddSP_Prod_Result_CheckRow(string 작업지시번호, System.DateTime 검사시작시간, System.DateTime 검사종료시간, string Baking실시여부, string SPI실시여부, string 극성자재확인, string 원자재유실확인, string 피드백, string 미삽POINT점검, string 납땜상태확인, string 점검자) {
+            public SP_Prod_Result_CheckRow AddSP_Prod_Result_CheckRow(string 작업지시번호, System.DateTime 검사시작시간, System.DateTime 검사종료시간, string Baking실시여부, string SPI실시여부, string 극성자재확인, string 원자재유실확인, string 피드백, string 미삽POINT점검, string 납땜상태확인, string 점검자, string 수주번호) {
                 SP_Prod_Result_CheckRow rowSP_Prod_Result_CheckRow = ((SP_Prod_Result_CheckRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         작업지시번호,
@@ -9410,7 +9420,8 @@ namespace SmartMES_Giroei.P1C {
                         피드백,
                         미삽POINT점검,
                         납땜상태확인,
-                        점검자};
+                        점검자,
+                        수주번호};
                 rowSP_Prod_Result_CheckRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_Prod_Result_CheckRow);
                 return rowSP_Prod_Result_CheckRow;
@@ -9444,6 +9455,7 @@ namespace SmartMES_Giroei.P1C {
                 this.column미삽POINT점검 = base.Columns["미삽POINT점검"];
                 this.column납땜상태확인 = base.Columns["납땜상태확인"];
                 this.column점검자 = base.Columns["점검자"];
+                this.column수주번호 = base.Columns["수주번호"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9471,6 +9483,8 @@ namespace SmartMES_Giroei.P1C {
                 base.Columns.Add(this.column납땜상태확인);
                 this.column점검자 = new global::System.Data.DataColumn("점검자", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column점검자);
+                this.column수주번호 = new global::System.Data.DataColumn("수주번호", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column수주번호);
                 this.column작업지시번호.AllowDBNull = false;
                 this.column작업지시번호.MaxLength = 13;
                 this.column검사시작시간.AllowDBNull = false;
@@ -9490,6 +9504,7 @@ namespace SmartMES_Giroei.P1C {
                 this.column납땜상태확인.AllowDBNull = false;
                 this.column납땜상태확인.MaxLength = 1;
                 this.column점검자.MaxLength = 10;
+                this.column수주번호.MaxLength = 13;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -17928,6 +17943,22 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 수주번호 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Prod_Result_Check.수주번호Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_Prod_Result_Check\' 테이블의 \'수주번호\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Prod_Result_Check.수주번호Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is점검자Null() {
                 return this.IsNull(this.tableSP_Prod_Result_Check.점검자Column);
             }
@@ -17936,6 +17967,18 @@ namespace SmartMES_Giroei.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set점검자Null() {
                 this[this.tableSP_Prod_Result_Check.점검자Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is수주번호Null() {
+                return this.IsNull(this.tableSP_Prod_Result_Check.수주번호Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set수주번호Null() {
+                this[this.tableSP_Prod_Result_Check.수주번호Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -25475,6 +25518,7 @@ namespace SmartMES_Giroei.P1C.DataSetP1CTableAdapters {
             tableMapping.ColumnMappings.Add("미삽POINT점검", "미삽POINT점검");
             tableMapping.ColumnMappings.Add("납땜상태확인", "납땜상태확인");
             tableMapping.ColumnMappings.Add("점검자", "점검자");
+            tableMapping.ColumnMappings.Add("수주번호", "수주번호");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
