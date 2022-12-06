@@ -27,7 +27,6 @@ namespace SmartMES_Giroei
                 if (sIsComplete == "완료") btnItemBox.Visible = false;
                 else if (sIsComplete == "진행중") btnItemBox.Visible = true;
             }
-
             ListSearch();
         }
         public void ListSearch()
@@ -123,8 +122,6 @@ namespace SmartMES_Giroei
             {
                 dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == "O") ? "X" : "O";
             }
-
-
         }
 
         private void btnMaterialSave_Click(object sender, EventArgs e)

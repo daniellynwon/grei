@@ -32,7 +32,7 @@ namespace SmartMES_Giroei
             //        Application.Exit();
             //    }
             //}
-
+             
             timer1.Start();
             lblMsg.Text = "";
 
