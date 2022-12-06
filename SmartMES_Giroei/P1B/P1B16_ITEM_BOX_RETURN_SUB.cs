@@ -129,6 +129,7 @@ namespace SmartMES_Giroei
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 string sQty = dataGridView1.Rows[i].Cells[15].Value.ToString(); // 회수량
+                if (sQty == "0") continue;
                 string sSubID = dataGridView1.Rows[i].Cells[6].Value.ToString().Replace(",", "");    // 자재코드
                 string sDate = DateTime.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString()).ToString("yyyy-MM-dd");  // 입고일(LOTNO)
                 string sContents = dataGridView1.Rows[i].Cells[20].Value.ToString();

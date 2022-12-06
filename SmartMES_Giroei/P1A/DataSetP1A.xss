@@ -14,7 +14,7 @@
     <Shape ID="DesignTable:SP_BOM_List" ZOrder="2" X="771" Y="605" Height="172" Width="219" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="121" />
     <Shape ID="DesignTable:SP_Customer_Query" ZOrder="4" X="16" Y="18" Height="305" Width="262" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
     <Shape ID="DesignTable:SP_Product_Query" ZOrder="3" X="21" Y="659" Height="305" Width="276" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="254" />
-    <Shape ID="DesignTable:SP_BOM_Select" ZOrder="1" X="519" Y="733" Height="286" Width="234" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="235" />
+    <Shape ID="DesignTable:SP_BOM_Select" ZOrder="1" X="533" Y="750" Height="267" Width="234" AdapterExpanded="true" DataTableExpanded="true" OldAdapterHeight="0" OldDataTableHeight="0" SplitterPosition="216" />
   </Shapes>
   <Connectors />
 </DiagramLayout>
