@@ -45,9 +45,6 @@
             this.btnMaterial = new System.Windows.Forms.Button();
             this.btnItemBox = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
-            this.sP_Item_Box_Sub_ReturnTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_Item_Box_Sub_ReturnTableAdapter();
-            this.sPItemBoxSubReturnBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.수주번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수주순번DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.업체코드 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,10 +67,13 @@
             this.미삽 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.비고 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.바코드 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPItemBoxSubReturnBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
+            this.sP_Item_Box_Sub_ReturnTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_Item_Box_Sub_ReturnTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPItemBoxSubReturnBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -220,22 +220,9 @@
             this.dataGridView1.Size = new System.Drawing.Size(1071, 646);
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
-            // 
-            // dataSetP1B
-            // 
-            this.dataSetP1B.DataSetName = "DataSetP1B";
-            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_Item_Box_Sub_ReturnTableAdapter
-            // 
-            this.sP_Item_Box_Sub_ReturnTableAdapter.ClearBeforeFill = true;
-            // 
-            // sPItemBoxSubReturnBindingSource
-            // 
-            this.sPItemBoxSubReturnBindingSource.DataMember = "SP_Item_Box_Sub_Return";
-            this.sPItemBoxSubReturnBindingSource.DataSource = this.dataSetP1B;
             // 
             // 수주번호DataGridViewTextBoxColumn
             // 
@@ -418,6 +405,20 @@
             this.바코드.Name = "바코드";
             this.바코드.Visible = false;
             // 
+            // sPItemBoxSubReturnBindingSource
+            // 
+            this.sPItemBoxSubReturnBindingSource.DataMember = "SP_Item_Box_Sub_Return";
+            this.sPItemBoxSubReturnBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // dataSetP1B
+            // 
+            this.dataSetP1B.DataSetName = "DataSetP1B";
+            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_Item_Box_Sub_ReturnTableAdapter
+            // 
+            this.sP_Item_Box_Sub_ReturnTableAdapter.ClearBeforeFill = true;
+            // 
             // P1B16_ITEM_BOX_RETURN_SUB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -439,8 +440,8 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPItemBoxSubReturnBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).EndInit();
             this.ResumeLayout(false);
 
         }

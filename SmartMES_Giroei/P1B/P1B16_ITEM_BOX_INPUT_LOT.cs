@@ -107,6 +107,7 @@ namespace SmartMES_Giroei
         private void barcodeSearch()
         {
             string sSurfix = "";
+            string sQtyList = "";
             int inputQty = 0;
             if (dataGridView1.RowCount <= 0) return;
 
@@ -116,6 +117,7 @@ namespace SmartMES_Giroei
                 {
 
                     sSurfix += dataGridView1.Rows[i].Cells[2].Value.ToString() + ",";
+                    sQtyList += dataGridView1.Rows[i].Cells[8].Value.ToString() + ",";              // 잔량 리스트 생성
                     inputQty += int.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString());
                     //for (int iSeq = 0; iSeq < parentWin.dataGridView1.RowCount; iSeq++)
                     //{
@@ -132,6 +134,7 @@ namespace SmartMES_Giroei
             }
             parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value = dataGridView1.Rows[0].Cells[6].Value.ToString();   // 입고일
             parentWin.dataGridView1.Rows[rowIndex].Cells[19].Value = sSurfix.Substring(0, sSurfix.Length - 1); //바코드 Surfix 마지막 , 제거
+            parentWin.dataGridView1.Rows[rowIndex].Cells[20].Value = sQtyList.Substring(0, sQtyList.Length - 1); //Qty List 마지막 , 제거
             parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value = inputQty; // 투입량
             this.Dispose();
         }

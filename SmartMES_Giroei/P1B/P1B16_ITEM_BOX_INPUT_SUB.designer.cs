@@ -45,6 +45,9 @@
             this.btnMaterialSave = new System.Windows.Forms.Button();
             this.btnItemBox = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sPItemBoxSubBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
+            this.sP_Item_Box_SubTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_Item_Box_SubTableAdapter();
             this.수주번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수주순번DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.업체코드 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,9 +68,7 @@
             this.비고 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.바코드 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.바코드Surfix = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPItemBoxSubBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
-            this.sP_Item_Box_SubTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_Item_Box_SubTableAdapter();
+            this.qtyList = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPItemBoxSubBindingSource)).BeginInit();
@@ -102,7 +103,7 @@
             // lblMsg
             // 
             this.lblMsg.AutoSize = true;
-            this.lblMsg.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.lblMsg.Font = new System.Drawing.Font("Malgun Gothic", 12F);
             this.lblMsg.ForeColor = System.Drawing.Color.Red;
             this.lblMsg.Location = new System.Drawing.Point(3, 30);
             this.lblMsg.Name = "lblMsg";
@@ -153,7 +154,7 @@
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -181,12 +182,13 @@
             this.미삽,
             this.비고,
             this.바코드,
-            this.바코드Surfix});
+            this.바코드Surfix,
+            this.qtyList});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPItemBoxSubBindingSource;
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Tomato;
             dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -199,7 +201,7 @@
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
@@ -216,6 +218,20 @@
             this.dataGridView1.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.DataGridView_DataError);
             this.dataGridView1.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.dataGridView1_EditingControlShowing);
             this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
+            // 
+            // sPItemBoxSubBindingSource
+            // 
+            this.sPItemBoxSubBindingSource.DataMember = "SP_Item_Box_Sub";
+            this.sPItemBoxSubBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // dataSetP1B
+            // 
+            this.dataSetP1B.DataSetName = "DataSetP1B";
+            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_Item_Box_SubTableAdapter
+            // 
+            this.sP_Item_Box_SubTableAdapter.ClearBeforeFill = true;
             // 
             // 수주번호DataGridViewTextBoxColumn
             // 
@@ -390,19 +406,11 @@
             this.바코드Surfix.HeaderText = "바코드Surfix";
             this.바코드Surfix.Name = "바코드Surfix";
             // 
-            // sPItemBoxSubBindingSource
+            // qtyList
             // 
-            this.sPItemBoxSubBindingSource.DataMember = "SP_Item_Box_Sub";
-            this.sPItemBoxSubBindingSource.DataSource = this.dataSetP1B;
-            // 
-            // dataSetP1B
-            // 
-            this.dataSetP1B.DataSetName = "DataSetP1B";
-            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_Item_Box_SubTableAdapter
-            // 
-            this.sP_Item_Box_SubTableAdapter.ClearBeforeFill = true;
+            this.qtyList.HeaderText = "투입수량리스트";
+            this.qtyList.Name = "qtyList";
+            this.qtyList.Visible = false;
             // 
             // P1B16_ITEM_BOX_INPUT_SUB
             // 
@@ -412,7 +420,7 @@
             this.ClientSize = new System.Drawing.Size(1080, 722);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
@@ -462,5 +470,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 비고;
         private System.Windows.Forms.DataGridViewTextBoxColumn 바코드;
         private System.Windows.Forms.DataGridViewTextBoxColumn 바코드Surfix;
+        private System.Windows.Forms.DataGridViewTextBoxColumn qtyList;
     }
 }

@@ -101,28 +101,28 @@ namespace SmartMES_Giroei
                     return;
                 }
 
-                sql = $@"SELECT box_id FROM Item_box_main ORDER BY  box_id DESC LIMIT 1";
-                string sBoxID = m.dbDataTable(sql, ref msg).Rows[0][0].ToString();
+                //sql = $@"SELECT box_id FROM Item_box_main ORDER BY  box_id DESC LIMIT 1";
+                //string sBoxID = m.dbDataTable(sql, ref msg).Rows[0][0].ToString();
 
-                sql = $@"SELECT prod_id, parent_id, req_qty FROM BOM_bomlist WHERE prod_id = '{@sProdID}'";
-                table = m.dbDataTable(sql, ref msg);
+                //sql = $@"SELECT prod_id, parent_id, req_qty FROM BOM_bomlist WHERE prod_id = '{@sProdID}'";
+                //table = m.dbDataTable(sql, ref msg);
 
-                sql = "INSERT INTO Item_box_sub (box_id, prod_id, prod_id_sub, input_date, total_count) VALUES ";
+                //sql = "INSERT INTO Item_box_sub (box_id, prod_id, prod_id_sub, input_date, total_count) VALUES ";
 
-                for (int i = 0; i < table.Rows.Count - 1; i++)
-                {
-                    sql = sql + $@"({@sBoxID}, '{@table.Rows[i][0].ToString()}', '{@table.Rows[i][1].ToString()}','{@DateTime.Now.ToString("yyyy-MM-dd")}',{@qty * @Convert.ToInt64(table.Rows[i][2])}),";
-                }
+                //for (int i = 0; i < table.Rows.Count - 1; i++)
+                //{
+                //    sql = sql + $@"({@sBoxID}, '{@table.Rows[i][0].ToString()}', '{@table.Rows[i][1].ToString()}','{@DateTime.Now.ToString("yyyy-MM-dd")}',{@qty * @Convert.ToInt64(table.Rows[i][2])}),";
+                //}
 
-                sql = sql + $@"({@sBoxID}, '{@table.Rows[table.Rows.Count - 1][0].ToString()}', '{@table.Rows[table.Rows.Count - 1][1].ToString()}','{@DateTime.Now.ToString("yyyy-MM-dd")}', {@qty * @Convert.ToInt64(table.Rows[table.Rows.Count - 1][2])})";
+                //sql = sql + $@"({@sBoxID}, '{@table.Rows[table.Rows.Count - 1][0].ToString()}', '{@table.Rows[table.Rows.Count - 1][1].ToString()}','{@DateTime.Now.ToString("yyyy-MM-dd")}', {@qty * @Convert.ToInt64(table.Rows[table.Rows.Count - 1][2])})";
 
-                m.dbCUD(sql, ref msg);
+                //m.dbCUD(sql, ref msg);
 
-                if (msg != "OK")
-                {
-                    lblMsg.Text = "현품박스 생성에 실패했습니다.";
-                    return;
-                }
+                //if (msg != "OK")
+                //{
+                //    lblMsg.Text = "현품박스 생성에 실패했습니다.";
+                //    return;
+                //}
 
                 parentWin.ListSearch();
 
