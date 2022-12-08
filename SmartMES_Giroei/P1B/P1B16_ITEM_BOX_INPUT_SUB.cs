@@ -156,7 +156,7 @@ namespace SmartMES_Giroei
                         MessageBox.Show("투입량을 확인하세요.");
                         return;
                     }
-                    else if (dataGridView1.Rows[i].Cells[16].Value.ToString() == "O")               // 미삽은 저장하지 않음
+                    else if (dataGridView1.Rows[i].Cells[16].Value.ToString() == "O")
                         continue;
 
                     sCount = dataGridView1.Rows[i].Cells[13].Value.ToString().Replace(",", ""); // 투입량
@@ -174,8 +174,8 @@ namespace SmartMES_Giroei
                     string[] tempSurfix = sBarcode.Split(' ');
                     string sCust = dataGridView1.Rows[i].Cells[2].Value.ToString();
 
-                    sql = $@"UPDATE Item_box_sub SET item_count = " + sCount + ", input_date = '" + sDate + "', contents = '" + sContents + "'  WHERE box_id = '" + sBoxID + "' AND prod_id_sub = '" + sSubID + "'";
-                    m.dbCUD(sql, ref msg);
+                        sql = $@"UPDATE Item_box_sub SET item_count = " + sCount + ", input_date = '" + sDate + "', contents = '" + sContents + "'  WHERE box_id = '" + sBoxID + "' AND prod_id_sub = '" + sSubID + "'";
+                        m.dbCUD(sql, ref msg);
 
                     if (msg != "OK")
                     {
@@ -183,34 +183,34 @@ namespace SmartMES_Giroei
                         return;
                     }
 
-                    foreach (var surfix in tempSurfix)
-                    {
-                        if (surfix == "" || string.IsNullOrEmpty(surfix))
-                            continue;
-                        sql = "insert into INV_material_out (mbarcode, barcode_surfix, prod_id, cust_id, input_date, plant, prodorder_id, output_date, qty, box_id, enter_man) " +
-                            "values('" + mBarcode + "','" + surfix + "','" + sSubID + "','" + sCust + "','" + sDate + "','" + G.Pos + "','" + sSujuNo + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "'," + sCount + ",'" + sBoxID + "','" + G.UserID + "')"
-                            + " on duplicate key update" +
-                            " input_date = '" + sDate + "', qty = " + sCount + ", enter_man = '" + G.UserID + "'";
-                        m.dbCUD(sql, ref msg);
-
-                        if (msg != "OK")
+                        foreach (var surfix in tempSurfix)
                         {
-                            MessageBox.Show(msg);
-                            return;
-                        }
+                            if (surfix == "" || string.IsNullOrEmpty(surfix))
+                                continue;
+                            sql = "insert into INV_material_out (mbarcode, barcode_surfix, prod_id, cust_id, input_date, plant, prodorder_id, output_date, qty, box_id, enter_man) " +
+                                "values('" + mBarcode + "','" + surfix + "','" + sSubID + "','" + sCust + "','" + sDate + "','" + G.Pos + "','" + sSujuNo + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "'," + sCount + ",'" + sBoxID + "','" + G.UserID + "')"
+                                + " on duplicate key update" +
+                                " input_date = '" + sDate + "', qty = " + sCount + ", enter_man = '" + G.UserID + "'";
+                            m.dbCUD(sql, ref msg);
 
-                        sql = "update INV_real_stock set current_qty = current_qty - " + sCount + ", partout_total = partout_total + " + sCount + "" +
-                            " where prod_id = '" + sSubID + "' and cust_id = '" + sCust + "'";
-                        m.dbCUD(sql, ref msg);
+                            if (msg != "OK")
+                            {
+                                MessageBox.Show(msg);
+                                return;
+                            }
 
-                        if (msg != "OK")
-                        {
-                            MessageBox.Show(msg);
-                            return;
+                            sql = "update INV_real_stock set current_qty = current_qty - " + sCount + ", partout_total = partout_total + " + sCount + "" +
+                                " where prod_id = '" + sSubID + "' and cust_id = '" + sCust + "'";
+                            m.dbCUD(sql, ref msg);
+
+                            if (msg != "OK")
+                            {
+                                MessageBox.Show(msg);
+                                return;
+                            }
                         }
                     }
-                }
-                catch (Exception ex)
+                } catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
