@@ -122,7 +122,10 @@ namespace SmartMES_Giroei
                 MessageBox.Show("해당 현품박스 정보가 없습니다.");
                 return;
             }
-            
+
+            DialogResult dr = MessageBox.Show("\r회수수량 등록 후에 \r 수정이 불가능합니다. \r 등록하시겠습니까?", "회수수량 등록", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            if (dr == DialogResult.No) return;
+
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 string sQty = dataGridView1.Rows[i].Cells[15].Value.ToString(); // 회수량

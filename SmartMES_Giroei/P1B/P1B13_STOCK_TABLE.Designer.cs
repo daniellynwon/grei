@@ -32,8 +32,14 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P1B13_STOCK_TABLE));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panSearch = new System.Windows.Forms.Panel();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
@@ -46,10 +52,10 @@
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.ColumnNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
             this.sPRealStockQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
             this.sP_RealStock_QueryTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_RealStock_QueryTableAdapter();
+            this.ColumnNo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.품목코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.품목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.거래처코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -69,41 +75,35 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).BeginInit();
             this.panSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPRealStockQueryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
-            this.lblTitle.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
-            this.lblTitle.Size = new System.Drawing.Size(412, 46);
             this.lblTitle.Text = "재고집계표";
             // 
             // pbPrint
             // 
             this.pbPrint.Enabled = true;
             this.pbPrint.Image = global::SmartMES_Giroei.Properties.Resources.out_A;
-            this.pbPrint.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.pbPrint.Click += new System.EventHandler(this.pbPrint_Click);
             // 
             // pbSave
             // 
             this.pbSave.Image = ((System.Drawing.Image)(resources.GetObject("pbSave.Image")));
-            this.pbSave.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.pbSave.Click += new System.EventHandler(this.pbSave_Click);
             // 
             // pbDel
             // 
             this.pbDel.Enabled = false;
             this.pbDel.Image = global::SmartMES_Giroei.Properties.Resources.del_B;
-            this.pbDel.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.pbDel.Click += new System.EventHandler(this.pbDel_Click);
             // 
             // pbAdd
             // 
             this.pbAdd.Enabled = false;
             this.pbAdd.Image = global::SmartMES_Giroei.Properties.Resources.add_B;
-            this.pbAdd.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
             this.pbAdd.Click += new System.EventHandler(this.pbAdd_Click);
             // 
             // pbSearch
@@ -127,22 +127,20 @@
             this.panSearch.Controls.Add(this.dtpToDate);
             this.panSearch.Controls.Add(this.dtpFromDate);
             this.panSearch.Controls.Add(this.label1);
-            this.panSearch.Location = new System.Drawing.Point(3, 88);
-            this.panSearch.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.panSearch.Location = new System.Drawing.Point(2, 58);
             this.panSearch.Name = "panSearch";
-            this.panSearch.Size = new System.Drawing.Size(2051, 107);
+            this.panSearch.Size = new System.Drawing.Size(1319, 71);
             this.panSearch.TabIndex = 0;
             // 
             // tbSearch
             // 
             this.tbSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbSearch.BackColor = System.Drawing.SystemColors.Window;
-            this.tbSearch.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tbSearch.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.tbSearch.Location = new System.Drawing.Point(1190, 30);
-            this.tbSearch.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.tbSearch.Location = new System.Drawing.Point(765, 20);
             this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(272, 39);
+            this.tbSearch.Size = new System.Drawing.Size(176, 29);
             this.tbSearch.TabIndex = 7;
             this.tbSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearch_KeyUp);
             // 
@@ -150,12 +148,11 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(982, 37);
-            this.label5.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label5.Location = new System.Drawing.Point(631, 24);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(193, 32);
+            this.label5.Size = new System.Drawing.Size(128, 21);
             this.label5.TabIndex = 6;
             this.label5.Text = "품목코드/품목명";
             // 
@@ -164,10 +161,9 @@
             this.cbDepot.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbDepot.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbDepot.FormattingEnabled = true;
-            this.cbDepot.Location = new System.Drawing.Point(1658, 30);
-            this.cbDepot.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cbDepot.Location = new System.Drawing.Point(1066, 20);
             this.cbDepot.Name = "cbDepot";
-            this.cbDepot.Size = new System.Drawing.Size(256, 40);
+            this.cbDepot.Size = new System.Drawing.Size(166, 29);
             this.cbDepot.TabIndex = 4;
             this.cbDepot.SelectedIndexChanged += new System.EventHandler(this.cbDepot_SelectedIndexChanged);
             // 
@@ -175,12 +171,11 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(1579, -6);
-            this.label4.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label4.Location = new System.Drawing.Point(1015, -4);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(71, 32);
+            this.label4.Size = new System.Drawing.Size(48, 21);
             this.label4.TabIndex = 0;
             this.label4.Text = "분 류";
             this.label4.Visible = false;
@@ -190,10 +185,9 @@
             this.cbKind.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbKind.FormattingEnabled = true;
-            this.cbKind.Location = new System.Drawing.Point(1658, -12);
-            this.cbKind.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.cbKind.Location = new System.Drawing.Point(1066, -8);
             this.cbKind.Name = "cbKind";
-            this.cbKind.Size = new System.Drawing.Size(256, 40);
+            this.cbKind.Size = new System.Drawing.Size(166, 29);
             this.cbKind.TabIndex = 3;
             this.cbKind.Visible = false;
             // 
@@ -201,12 +195,11 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(527, 37);
-            this.label3.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label3.Location = new System.Drawing.Point(339, 24);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 32);
+            this.label3.Size = new System.Drawing.Size(21, 21);
             this.label3.TabIndex = 0;
             this.label3.Text = "~";
             // 
@@ -214,36 +207,35 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(117, 37);
-            this.label2.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label2.Location = new System.Drawing.Point(75, 24);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(71, 32);
+            this.label2.Size = new System.Drawing.Size(48, 21);
             this.label2.TabIndex = 0;
             this.label2.Text = "기 간";
             // 
             // dtpToDate
             // 
             this.dtpToDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpToDate.CalendarFont = new System.Drawing.Font("Malgun Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dtpToDate.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dtpToDate.Location = new System.Drawing.Point(563, 30);
-            this.dtpToDate.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.dtpToDate.CalendarFont = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpToDate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpToDate.Location = new System.Drawing.Point(362, 20);
+            this.dtpToDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpToDate.Name = "dtpToDate";
-            this.dtpToDate.Size = new System.Drawing.Size(326, 39);
+            this.dtpToDate.Size = new System.Drawing.Size(211, 29);
             this.dtpToDate.TabIndex = 2;
             this.dtpToDate.ValueChanged += new System.EventHandler(this.dtpDate_ValueChanged);
             // 
             // dtpFromDate
             // 
             this.dtpFromDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpFromDate.CalendarFont = new System.Drawing.Font("Malgun Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dtpFromDate.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dtpFromDate.Location = new System.Drawing.Point(196, 30);
-            this.dtpFromDate.Margin = new System.Windows.Forms.Padding(5, 6, 5, 6);
+            this.dtpFromDate.CalendarFont = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpFromDate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpFromDate.Location = new System.Drawing.Point(126, 20);
+            this.dtpFromDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpFromDate.Name = "dtpFromDate";
-            this.dtpFromDate.Size = new System.Drawing.Size(326, 39);
+            this.dtpFromDate.Size = new System.Drawing.Size(211, 29);
             this.dtpFromDate.TabIndex = 1;
             this.dtpFromDate.ValueChanged += new System.EventHandler(this.dtpDate_ValueChanged);
             // 
@@ -251,12 +243,11 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(1538, 37);
-            this.label1.Margin = new System.Windows.Forms.Padding(5, 0, 5, 0);
+            this.label1.Location = new System.Drawing.Point(989, 24);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(111, 32);
+            this.label1.Size = new System.Drawing.Size(74, 21);
             this.label1.TabIndex = 0;
             this.label1.Text = "재고창고";
             // 
@@ -274,7 +265,7 @@
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -297,38 +288,51 @@
             this.현재고DataGridViewTextBoxColumn});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPRealStockQueryBindingSource;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 205);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dataGridView1.Location = new System.Drawing.Point(2, 135);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle10.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle10;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 35;
             this.dataGridView1.RowTemplate.Height = 35;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(2052, 1298);
+            this.dataGridView1.Size = new System.Drawing.Size(1319, 852);
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dataGridView1_RowPostPaint);
+            // 
+            // sPRealStockQueryBindingSource
+            // 
+            this.sPRealStockQueryBindingSource.DataMember = "SP_RealStock_Query";
+            this.sPRealStockQueryBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // dataSetP1B
+            // 
+            this.dataSetP1B.DataSetName = "DataSetP1B";
+            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_RealStock_QueryTableAdapter
+            // 
+            this.sP_RealStock_QueryTableAdapter.ClearBeforeFill = true;
             // 
             // ColumnNo
             // 
@@ -338,20 +342,6 @@
             this.ColumnNo.Name = "ColumnNo";
             this.ColumnNo.ReadOnly = true;
             this.ColumnNo.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
-            // 
-            // dataSetP1B
-            // 
-            this.dataSetP1B.DataSetName = "DataSetP1B";
-            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sPRealStockQueryBindingSource
-            // 
-            this.sPRealStockQueryBindingSource.DataMember = "SP_RealStock_Query";
-            this.sPRealStockQueryBindingSource.DataSource = this.dataSetP1B;
-            // 
-            // sP_RealStock_QueryTableAdapter
-            // 
-            this.sP_RealStock_QueryTableAdapter.ClearBeforeFill = true;
             // 
             // 품목코드DataGridViewTextBoxColumn
             // 
@@ -396,6 +386,8 @@
             // 기초재고DataGridViewTextBoxColumn
             // 
             this.기초재고DataGridViewTextBoxColumn.DataPropertyName = "기초재고";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.기초재고DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.기초재고DataGridViewTextBoxColumn.HeaderText = "기초재고";
             this.기초재고DataGridViewTextBoxColumn.MinimumWidth = 8;
             this.기초재고DataGridViewTextBoxColumn.Name = "기초재고DataGridViewTextBoxColumn";
@@ -404,6 +396,8 @@
             // 생산입고DataGridViewTextBoxColumn
             // 
             this.생산입고DataGridViewTextBoxColumn.DataPropertyName = "생산입고";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.생산입고DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.생산입고DataGridViewTextBoxColumn.HeaderText = "생산입고";
             this.생산입고DataGridViewTextBoxColumn.MinimumWidth = 8;
             this.생산입고DataGridViewTextBoxColumn.Name = "생산입고DataGridViewTextBoxColumn";
@@ -412,6 +406,8 @@
             // 입고량DataGridViewTextBoxColumn
             // 
             this.입고량DataGridViewTextBoxColumn.DataPropertyName = "입고량";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.입고량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.입고량DataGridViewTextBoxColumn.HeaderText = "입고량";
             this.입고량DataGridViewTextBoxColumn.MinimumWidth = 8;
             this.입고량DataGridViewTextBoxColumn.Name = "입고량DataGridViewTextBoxColumn";
@@ -420,6 +416,8 @@
             // 출고량DataGridViewTextBoxColumn
             // 
             this.출고량DataGridViewTextBoxColumn.DataPropertyName = "출고량";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.출고량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.출고량DataGridViewTextBoxColumn.HeaderText = "출고량";
             this.출고량DataGridViewTextBoxColumn.MinimumWidth = 8;
             this.출고량DataGridViewTextBoxColumn.Name = "출고량DataGridViewTextBoxColumn";
@@ -428,6 +426,8 @@
             // 이전재고DataGridViewTextBoxColumn
             // 
             this.이전재고DataGridViewTextBoxColumn.DataPropertyName = "이전재고";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.이전재고DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.이전재고DataGridViewTextBoxColumn.HeaderText = "이전재고";
             this.이전재고DataGridViewTextBoxColumn.MinimumWidth = 8;
             this.이전재고DataGridViewTextBoxColumn.Name = "이전재고DataGridViewTextBoxColumn";
@@ -436,6 +436,8 @@
             // 현재고DataGridViewTextBoxColumn
             // 
             this.현재고DataGridViewTextBoxColumn.DataPropertyName = "현재고";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            this.현재고DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
             this.현재고DataGridViewTextBoxColumn.HeaderText = "현재고";
             this.현재고DataGridViewTextBoxColumn.MinimumWidth = 8;
             this.현재고DataGridViewTextBoxColumn.Name = "현재고DataGridViewTextBoxColumn";
@@ -443,11 +445,10 @@
             // 
             // P1B13_STOCK_TABLE
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(14F, 32F);
-            this.ClientSize = new System.Drawing.Size(2061, 1509);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
+            this.ClientSize = new System.Drawing.Size(1325, 726);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panSearch);
-            this.Margin = new System.Windows.Forms.Padding(6, 9, 6, 9);
             this.Name = "P1B13_STOCK_TABLE";
             this.Text = "P1B13_STOCK_TABLE";
             this.Activated += new System.EventHandler(this.P1B13_STOCK_TABLE_Activated);
@@ -463,8 +464,8 @@
             this.panSearch.ResumeLayout(false);
             this.panSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPRealStockQueryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -485,6 +486,8 @@
         public System.Windows.Forms.ComboBox cbKind;
         public System.Windows.Forms.TextBox tbSearch;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.BindingSource sPRealStockQueryBindingSource;
+        private P1B.DataSetP1BTableAdapters.SP_RealStock_QueryTableAdapter sP_RealStock_QueryTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColumnNo;
         private System.Windows.Forms.DataGridViewTextBoxColumn 품목코드DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 품목명DataGridViewTextBoxColumn;
@@ -497,7 +500,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 출고량DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 이전재고DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 현재고DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource sPRealStockQueryBindingSource;
-        private P1B.DataSetP1BTableAdapters.SP_RealStock_QueryTableAdapter sP_RealStock_QueryTableAdapter;
     }
 }

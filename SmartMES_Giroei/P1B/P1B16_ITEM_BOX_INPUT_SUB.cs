@@ -171,7 +171,7 @@ namespace SmartMES_Giroei
                     string sContents = dataGridView1.Rows[i].Cells[17].Value.ToString();
                     string mBarcode = dataGridView1.Rows[i].Cells[18].Value.ToString();
                     string sBarcode = dataGridView1.Rows[i].Cells[19].Value.ToString();
-                    string[] tempSurfix = sBarcode.Split(' ');
+                    string[] tempSurfix = sBarcode.Split(',');
                     string sCust = dataGridView1.Rows[i].Cells[2].Value.ToString();
 
                         sql = $@"UPDATE Item_box_sub SET item_count = " + sCount + ", input_date = '" + sDate + "', contents = '" + sContents + "'  WHERE box_id = '" + sBoxID + "' AND prod_id_sub = '" + sSubID + "'";
@@ -193,24 +193,24 @@ namespace SmartMES_Giroei
                                 " input_date = '" + sDate + "', qty = " + sCount + ", enter_man = '" + G.UserID + "'";
                             m.dbCUD(sql, ref msg);
 
-                            if (msg != "OK")
-                            {
-                                MessageBox.Show(msg);
-                                return;
-                            }
+                        if (msg != "OK")
+                        {
+                            MessageBox.Show(msg);
+                            return;
+                        }
 
-                            sql = "update INV_real_stock set current_qty = current_qty - " + sCount + ", partout_total = partout_total + " + sCount + "" +
-                                " where prod_id = '" + sSubID + "' and cust_id = '" + sCust + "'";
-                            m.dbCUD(sql, ref msg);
+                        sql = "update INV_real_stock set current_qty = current_qty - " + sCount + ", partout_total = partout_total + " + sCount +
+                             " where prod_id = '" + sSubID + "' and cust_id = '" + sCust + "'";
+                        m.dbCUD(sql, ref msg);
 
-                            if (msg != "OK")
-                            {
-                                MessageBox.Show(msg);
-                                return;
-                            }
+                        if (msg != "OK")
+                        {
+                            MessageBox.Show(msg);
+                            return;
                         }
                     }
-                } catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show(ex.Message);
                 }
