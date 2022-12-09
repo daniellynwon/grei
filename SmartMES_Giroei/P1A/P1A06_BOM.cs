@@ -161,9 +161,9 @@ namespace SmartMES_Giroei
                 sProdID = dataGridView2.Rows[i].Cells[1].Value.ToString();
                 sMaterialID = dataGridView2.Rows[i].Cells[2].Value.ToString();
                 sQty = dataGridView2.Rows[i].Cells[6].Value.ToString();
-                sConsignedYN = (dataGridView2.Rows[i].Cells[8].Value.ToString() == "1") ? "Y" : "N";
-                sIsSusap = (dataGridView2.Rows[i].Cells[9].Value.ToString() == "O") ? "Y" : "N";
-                sIsMisap = (dataGridView2.Rows[i].Cells[10].Value.ToString() == "O") ? "Y" : "N";
+                sConsignedYN = (dataGridView2.Rows[i].Cells[7].Value.ToString() == "O") ? "Y" : "N";
+                sIsSusap = (dataGridView2.Rows[i].Cells[8].Value.ToString() == "O") ? "Y" : "N";
+                sIsMisap = (dataGridView2.Rows[i].Cells[9].Value.ToString() == "O") ? "Y" : "N";
 
                 if (string.IsNullOrEmpty(sQty)) sQty = "0";
 
@@ -321,35 +321,35 @@ namespace SmartMES_Giroei
         {
             for (int i = 0; i < dataGridView2.Rows.Count; i++)
             {
-                if (dataGridView2.Rows[i].Cells[7].Value == null)
-                    dataGridView2.Rows[i].Cells[8].Value = 0;
-                else
-                {
-                    if (dataGridView2.Rows[i].Cells[7].Value.ToString() == "Y")
-                    {
-                        dataGridView2.Rows[i].Cells[8].Value = 1;
-                    }
-                    else
-                        dataGridView2.Rows[i].Cells[8].Value = 0;
-                }
+                //if (dataGridView2.Rows[i].Cells[7].Value == null)
+                //    dataGridView2.Rows[i].Cells[8].Value = 0;
+                //else
+                //{
+                //    if (dataGridView2.Rows[i].Cells[7].Value.ToString() == "Y")
+                //    {
+                //        dataGridView2.Rows[i].Cells[8].Value = 1;
+                //    }
+                //    else
+                //        dataGridView2.Rows[i].Cells[8].Value = 0;
+                //}
 
-                if (dataGridView2.Rows[i].Cells[9].Value.ToString() == "Y")
-                {
-                    dataGridView2.Rows[i].Cells[9].Value = "O";
-                }
-                else if (dataGridView2.Rows[i].Cells[9].Value.ToString() == "N")
-                {
-                    dataGridView2.Rows[i].Cells[9].Value = "X";
-                }
+                //if (dataGridView2.Rows[i].Cells[9].Value.ToString() == "Y")
+                //{
+                //    dataGridView2.Rows[i].Cells[9].Value = "O";
+                //}
+                //else if (dataGridView2.Rows[i].Cells[9].Value.ToString() == "N")
+                //{
+                //    dataGridView2.Rows[i].Cells[9].Value = "X";
+                //}
 
-                if (dataGridView2.Rows[i].Cells[10].Value.ToString() == "Y")
-                {
-                    dataGridView2.Rows[i].Cells[10].Value = "O";
-                }
-                else if (dataGridView2.Rows[i].Cells[10].Value.ToString() == "N")
-                {
-                    dataGridView2.Rows[i].Cells[10].Value = "X";
-                }
+                //if (dataGridView2.Rows[i].Cells[10].Value.ToString() == "Y")
+                //{
+                //    dataGridView2.Rows[i].Cells[10].Value = "O";
+                //}
+                //else if (dataGridView2.Rows[i].Cells[10].Value.ToString() == "N")
+                //{
+                //    dataGridView2.Rows[i].Cells[10].Value = "X";
+                //}
             }
         }
         private void dataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
@@ -377,7 +377,7 @@ namespace SmartMES_Giroei
             //    dataGridView2.ClearSelection();
             //}
             if (e.RowIndex < 0) return;
-            if (e.ColumnIndex < 9 || e.ColumnIndex > 10) return;
+            if (e.ColumnIndex < 7 || e.ColumnIndex > 9) return;
 
             dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = (dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == "O") ? "X" : "O";
         }
@@ -504,21 +504,28 @@ namespace SmartMES_Giroei
                 //    sProdID = m.dbDataTable(sql, ref msg).Rows[0][0].ToString();
                 //}
 
-                if ((range.Cells[4, 3] as Excel.Range).Value2.ToString() != sProdName)
+
+                if ((range.Cells[4, 3] as Excel.Range).Value2.ToString().Trim() != sProdName)
                 {
                     MessageBox.Show("해당 품목의 BOM 엑셀 파일이 아닙니다.");
+                    workBook.Close();
+                    excelApp.Quit();
                     return;
                 }
+
+                progressBar1.Visible = true;
+
+                int count = 0;
 
                 for (int row = 8; row <= range.Rows.Count; row++) // 가져온 행 만큼 반복
                 {
                     if ((range.Cells[row, 5] as Excel.Range).Value2 == null
-                        || string.IsNullOrEmpty((range.Cells[row, 5] as Excel.Range).Value2.ToString())) break;
+                        || string.IsNullOrEmpty((range.Cells[row, 5] as Excel.Range).Value2.ToString().Trim())) break;
 
-                    sProdNameSub = (range.Cells[row, 4] as Excel.Range).Value2.ToString();
-                    sProdSize = (range.Cells[row, 5] as Excel.Range).Value2.ToString();
-                    sQty = (range.Cells[row, 6] as Excel.Range).Value2.ToString();
-                    sProcess = ((range.Cells[row, 15] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 15] as Excel.Range).Value2.ToString();
+                    sProdNameSub = (range.Cells[row, 4] as Excel.Range).Value2.ToString().Trim();
+                    sProdSize = (range.Cells[row, 5] as Excel.Range).Value2.ToString().Trim();
+                    sQty = (range.Cells[row, 6] as Excel.Range).Value2.ToString().Trim();
+                    sProcess = ((range.Cells[row, 15] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 15] as Excel.Range).Value2.ToString().Trim();
 
                     //if (sProcess == "수삽") sProcess = "S";
                     //else if (sProcess == "미삽") sProcess = "M";
@@ -578,8 +585,11 @@ namespace SmartMES_Giroei
 
                         m.dbCUD(sql, ref msg);
                     }
+                    if (count < 100)
+                        progressBar1.Value = count = count + 1;
                 }
-
+                progressBar1.Value = 0;
+                progressBar1.Visible = false;
                 ListSearch1("");
                 ListSearch2(_sProdID);
                 ListSearch3(_sProdID);
@@ -587,10 +597,13 @@ namespace SmartMES_Giroei
             }
             catch (Exception e2)
             {
-                //MessageBox.Show("WHY : " + e2.Message);
+                MessageBox.Show("WHY : " + e2.Message);
             }
             finally
             {
+                workBook.Close(true);
+                excelApp.Quit();
+
                 ReleaseObject(workSheet);
                 ReleaseObject(workBook);
                 ReleaseObject(excelApp);
