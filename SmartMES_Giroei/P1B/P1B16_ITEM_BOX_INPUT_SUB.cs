@@ -27,6 +27,7 @@ namespace SmartMES_Giroei
                 if (sIsComplete == "완료") btnItemBox.Visible = false;
                 else if (sIsComplete == "진행중") btnItemBox.Visible = true;
             }
+
             ListSearch();
         }
         public void ListSearch()
@@ -66,10 +67,6 @@ namespace SmartMES_Giroei
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
         {
             dataGridView1.ClearSelection();
-        }
-        private void dataGridView1_CellClick(object sender, EventArgs e)
-        {
-            //
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -122,6 +119,8 @@ namespace SmartMES_Giroei
             {
                 dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == "O") ? "X" : "O";
             }
+
+
         }
 
         private void btnMaterialSave_Click(object sender, EventArgs e)
@@ -157,7 +156,7 @@ namespace SmartMES_Giroei
                         MessageBox.Show("투입량을 확인하세요.");
                         return;
                     }
-                    else if (dataGridView1.Rows[i].Cells[16].Value.ToString() == "O")               // 미삽은 저장하지 않음
+                    else if (dataGridView1.Rows[i].Cells[16].Value.ToString() == "O")           // 미삽은 제외
                         continue;
 
                     sCount = dataGridView1.Rows[i].Cells[13].Value.ToString().Replace(",", ""); // 투입량
@@ -172,24 +171,29 @@ namespace SmartMES_Giroei
                     string sContents = dataGridView1.Rows[i].Cells[17].Value.ToString();
                     string mBarcode = dataGridView1.Rows[i].Cells[18].Value.ToString();
                     string sBarcode = dataGridView1.Rows[i].Cells[19].Value.ToString();
+                    string sQtys = dataGridView1.Rows[i].Cells[20].Value.ToString();
                     string[] tempSurfix = sBarcode.Split(',');
+                    string[] sItemCount = sQtys.Split(',');
                     string sCust = dataGridView1.Rows[i].Cells[2].Value.ToString();
 
-                    sql = $@"UPDATE Item_box_sub SET item_count = " + sCount + ", input_date = '" + sDate + "', contents = '" + sContents + "'  WHERE box_id = '" + sBoxID + "' AND prod_id_sub = '" + sSubID + "'";
-                    m.dbCUD(sql, ref msg);
+                    int index = tempSurfix.Length;
 
-                    if (msg != "OK")
+                    for (int j = 0; j < index; j++)
                     {
-                        MessageBox.Show(msg);
-                        return;
-                    }
+                        //sql = $@"UPDATE Item_box_sub SET item_count = " + sCount + ", input_date = '" + sDate + "', contents = '" + sContents + "'  WHERE box_id = '" + sBoxID + "' AND prod_id_sub = '" + sSubID + "'";
+                        sql = $@"insert into Item_box_sub (box_id, prod_id, prod_id_sub, input_date, total_count, barcode_surfix, item_count, return_qty, contents) " +
+                            "values(" + sBoxID + ",'" + sProdID + "','" + sSubID + "','" + sDate + "'," + sTotalRequireQty + ",'" + tempSurfix[j] + "'," + sItemCount[j] + "," + "0" + "," + "'')"
+                            + " on duplicate key update" +
+                            " input_date = '" + sDate + "', item_count = " + sItemCount[j] + ";";
+                        m.dbCUD(sql, ref msg);
 
-                    foreach (var surfix in tempSurfix)
-                    {
-                        if (surfix == "" || string.IsNullOrEmpty(surfix))
-                            continue;
+                        if (msg != "OK")
+                        {
+                            MessageBox.Show(msg);
+                            return;
+                        }
                         sql = "insert into INV_material_out (mbarcode, barcode_surfix, prod_id, cust_id, input_date, plant, prodorder_id, output_date, qty, box_id, enter_man) " +
-                            "values('" + mBarcode + "','" + surfix + "','" + sSubID + "','" + sCust + "','" + sDate + "','" + G.Pos + "','" + sSujuNo + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "'," + sCount + ",'" + sBoxID + "','" + G.UserID + "')"
+                            "values('" + mBarcode + "','" + tempSurfix[j] + "','" + sSubID + "','" + sCust + "','" + sDate + "','" + G.Pos + "','" + sSujuNo + "','" + DateTime.Now.ToString("yyyy-MM-dd") + "'," + sItemCount[j] + ",'" + sBoxID + "','" + G.UserID + "')"
                             + " on duplicate key update" +
                             " input_date = '" + sDate + "', qty = " + sCount + ", enter_man = '" + G.UserID + "'";
                         m.dbCUD(sql, ref msg);
@@ -199,16 +203,15 @@ namespace SmartMES_Giroei
                             MessageBox.Show(msg);
                             return;
                         }
+                    }
+                    sql = "update INV_real_stock set current_qty = current_qty - " + sCount + ", partout_total = partout_total + " + sCount +
+                            " where prod_id = '" + sSubID + "' and cust_id = '" + sCust + "'";
+                    m.dbCUD(sql, ref msg);
 
-                        sql = "update INV_real_stock set current_qty = current_qty - " + sCount + ", partout_total = partout_total + " + sCount +
-                             " where prod_id = '" + sSubID + "' and cust_id = '" + sCust + "'";
-                        m.dbCUD(sql, ref msg);
-
-                        if (msg != "OK")
-                        {
-                            MessageBox.Show(msg);
-                            return;
-                        }
+                    if (msg != "OK")
+                    {
+                        MessageBox.Show(msg);
+                        return;
                     }
                 }
                 catch (Exception ex)

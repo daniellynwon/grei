@@ -66,6 +66,33 @@ namespace SmartMES_Giroei
         {
             dataGridView1.ClearSelection();
         }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            int rowIndex = dataGridView1.Rows.GetLastRow(DataGridViewElementStates.Visible);
+            if (rowIndex <= 0) return;
+
+            try
+            {
+                string pre_mbarcode = string.Empty;
+
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    string mbarcode = dataGridView1.Rows[i].Cells[21].Value.ToString();
+                    if (string.Equals(pre_mbarcode, mbarcode))
+                    {
+                        dataGridView1.Rows[i].Cells[13].Style.ForeColor = Color.Transparent;
+                        dataGridView1.Rows[i].Cells[16].Style.ForeColor = Color.Transparent;
+                    }
+                    pre_mbarcode = mbarcode;
+                }
+            }
+            catch (NullReferenceException)
+            {
+                return;
+            }
+        }
+
         private void dataGridView1_KeyPress(object sender, KeyPressEventArgs e)
         {
             int columnIndex = dataGridView1.CurrentCell.ColumnIndex;
@@ -129,14 +156,16 @@ namespace SmartMES_Giroei
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 string sQty = dataGridView1.Rows[i].Cells[15].Value.ToString(); // 회수량
-                if (sQty == "0") continue;
+
+                if (string.IsNullOrEmpty(sQty)) continue;
+
                 string sSubID = dataGridView1.Rows[i].Cells[6].Value.ToString().Replace(",", "");    // 자재코드
                 string sDate = DateTime.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString()).ToString("yyyy-MM-dd");  // 입고일(LOTNO)
                 string sContents = dataGridView1.Rows[i].Cells[20].Value.ToString();
                 string mBarcode = dataGridView1.Rows[i].Cells[21].Value.ToString();
                 string sBarcode = dataGridView1.Rows[i].Cells[9].Value.ToString();
                 string sCust = dataGridView1.Rows[i].Cells[2].Value.ToString();
-                sql = "UPDATE Item_box_sub SET return_Qty = " + sQty + "  WHERE box_id = '" + sBoxID + "' AND prod_id_sub = '" + sSubID + "'";
+                sql = "UPDATE Item_box_sub SET return_Qty = " + sQty + "  WHERE box_id = " + sBoxID + " AND prod_id_sub = '" + sSubID + "' and barcode_surfix = '" + sBarcode + "'";
                 m.dbCUD(sql, ref msg);
                 
                 if (msg != "OK")
@@ -144,8 +173,11 @@ namespace SmartMES_Giroei
                     lblMsg.Text = msg;
                     return;
                 }
+
+                if (int.Parse(sQty) == 0) continue;
+
                 //   INV_material_in 테이블에 다시 입력. -> 이후에 변경해야 할 듯 하다.
-                sql = "insert into INV_material_in (mbarcode, barcode_surfix, cust_id, prod_id, input_date, plant, order_id, order_seq, qty, reason_code, enter_man) " +
+                sql = "insert ignore into INV_material_in (mbarcode, barcode_surfix, cust_id, prod_id, input_date, plant, order_id, order_seq, qty, reason_code, enter_man) " +
                     "values ('" + mBarcode + "','" + sBarcode + "','" + sCust + "','" + sSubID + "','" + sDate + "','" + G.Pos + "','" + sSujuNo + "','" + sSujuSeq + "'," + sQty + ",'0008','" + G.UserID + "')";
                     //+ " on duplicate key update" +
                     //" prod_id = '" + sSubID + "', cust_id = '" + sCust + "', input_date = '" + sDate + "', plant = '" + G.Pos + "', prodorder_id = '" + sSujuNo + "', output_date = " + DateTime.Now.ToString("yyyy-MM-dd") + "', qty = " + sCount + ", enter_man = '" + G.UserID + "'";
