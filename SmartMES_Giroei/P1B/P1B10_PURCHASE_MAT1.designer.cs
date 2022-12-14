@@ -50,6 +50,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.panSearch = new System.Windows.Forms.Panel();
+            this.btnBOM = new System.Windows.Forms.Button();
             this.cbProduct = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
             this.tbModelName = new System.Windows.Forms.TextBox();
@@ -101,13 +102,6 @@
             this.lblCnt = new System.Windows.Forms.Label();
             this.lblSumMoney = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sPPurchaseMatSubQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sP_PurchaseMatMain_QueryTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseMatMain_QueryTableAdapter();
-            this.sP_PurchaseMatSub_QueryTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseMatSub_QueryTableAdapter();
-            this.sPPurchaseMat1QueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sP_PurchaseMat1_QueryTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseMat1_QueryTableAdapter();
-            this.sPPurchaseMat2QueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.sP_PurchaseMat2_QueryTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseMat2_QueryTableAdapter();
             this.btnColumn = new System.Windows.Forms.DataGridViewButtonColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -137,6 +131,13 @@
             this.포장단위 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.입고등록일 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.입고등록자 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPPurchaseMatSubQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_PurchaseMatMain_QueryTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseMatMain_QueryTableAdapter();
+            this.sP_PurchaseMatSub_QueryTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseMatSub_QueryTableAdapter();
+            this.sPPurchaseMat1QueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_PurchaseMat1_QueryTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseMat1_QueryTableAdapter();
+            this.sPPurchaseMat2QueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_PurchaseMat2_QueryTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseMat2_QueryTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -200,7 +201,7 @@
             // 
             this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label8.Location = new System.Drawing.Point(9, 7);
             this.label8.Name = "label8";
@@ -223,6 +224,7 @@
             this.panSearch.AutoSize = true;
             this.panSearch.BackColor = System.Drawing.SystemColors.Info;
             this.panSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panSearch.Controls.Add(this.btnBOM);
             this.panSearch.Controls.Add(this.cbProduct);
             this.panSearch.Controls.Add(this.label11);
             this.panSearch.Controls.Add(this.tbModelName);
@@ -255,6 +257,17 @@
             this.panSearch.Size = new System.Drawing.Size(1002, 305);
             this.panSearch.TabIndex = 0;
             // 
+            // btnBOM
+            // 
+            this.btnBOM.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnBOM.Location = new System.Drawing.Point(667, 210);
+            this.btnBOM.Name = "btnBOM";
+            this.btnBOM.Size = new System.Drawing.Size(211, 29);
+            this.btnBOM.TabIndex = 37;
+            this.btnBOM.Text = "BOM 조회";
+            this.btnBOM.UseVisualStyleBackColor = true;
+            this.btnBOM.Click += new System.EventHandler(this.btnBOM_Click);
+            // 
             // cbProduct
             // 
             this.cbProduct.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -264,13 +277,12 @@
             this.cbProduct.Name = "cbProduct";
             this.cbProduct.Size = new System.Drawing.Size(211, 29);
             this.cbProduct.TabIndex = 36;
-            this.cbProduct.SelectedIndexChanged += new System.EventHandler(this.cbProduct_SelectedIndexChanged);
             // 
             // label11
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label11.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label11.Location = new System.Drawing.Point(350, 214);
             this.label11.Name = "label11";
@@ -292,7 +304,7 @@
             // 
             this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label9.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label9.Location = new System.Drawing.Point(363, 163);
             this.label9.Name = "label9";
@@ -319,7 +331,7 @@
             // 
             this.label6.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label6.Location = new System.Drawing.Point(350, 265);
             this.label6.Name = "label6";
@@ -341,7 +353,7 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label5.Location = new System.Drawing.Point(32, 214);
             this.label5.Name = "label5";
@@ -368,7 +380,7 @@
             // 
             this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label7.Location = new System.Drawing.Point(32, 265);
             this.label7.Name = "label7";
@@ -391,7 +403,7 @@
             // 
             this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label3.Location = new System.Drawing.Point(32, 163);
             this.label3.Name = "label3";
@@ -403,7 +415,7 @@
             // 
             this.lblNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblNo.AutoSize = true;
-            this.lblNo.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblNo.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblNo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblNo.Location = new System.Drawing.Point(28, 159);
             this.lblNo.Name = "lblNo";
@@ -420,7 +432,6 @@
             this.btnUpdate.Text = "발주가져오기";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Visible = false;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdateClick);
             // 
             // btnCopy
             // 
@@ -469,7 +480,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(670, 30);
             this.label2.Name = "label2";
@@ -489,7 +500,7 @@
             // 
             this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label4.Location = new System.Drawing.Point(363, 117);
             this.label4.Name = "label4";
@@ -500,8 +511,8 @@
             // dtpDeliDate
             // 
             this.dtpDeliDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpDeliDate.CalendarFont = new System.Drawing.Font("Malgun Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dtpDeliDate.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpDeliDate.CalendarFont = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpDeliDate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpDeliDate.Location = new System.Drawing.Point(119, 115);
             this.dtpDeliDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpDeliDate.Name = "dtpDeliDate";
@@ -514,7 +525,7 @@
             this.lblCust.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblCust.AutoSize = true;
             this.lblCust.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCust.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Underline);
+            this.lblCust.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Underline);
             this.lblCust.ForeColor = System.Drawing.Color.Blue;
             this.lblCust.Location = new System.Drawing.Point(357, 75);
             this.lblCust.Name = "lblCust";
@@ -537,8 +548,8 @@
             // dtpDate
             // 
             this.dtpDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpDate.CalendarFont = new System.Drawing.Font("Malgun Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dtpDate.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpDate.CalendarFont = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpDate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpDate.Location = new System.Drawing.Point(119, 71);
             this.dtpDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpDate.Name = "dtpDate";
@@ -550,7 +561,7 @@
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label10.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label10.Location = new System.Drawing.Point(28, 118);
             this.label10.Name = "label10";
@@ -562,7 +573,7 @@
             // 
             this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label1.Location = new System.Drawing.Point(28, 75);
             this.label1.Name = "label1";
@@ -584,7 +595,7 @@
             this.dataGridViewList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -613,7 +624,7 @@
             this.dataGridViewList.DataSource = this.sPPurchaseMatMainQueryBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tomato;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -626,7 +637,7 @@
             this.dataGridViewList.ReadOnly = true;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
@@ -793,7 +804,7 @@
             // lblMsg
             // 
             this.lblMsg.AutoSize = true;
-            this.lblMsg.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.lblMsg.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.lblMsg.ForeColor = System.Drawing.Color.Red;
             this.lblMsg.Location = new System.Drawing.Point(7, 9);
             this.lblMsg.Name = "lblMsg";
@@ -805,7 +816,7 @@
             // 
             this.lblCnt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblCnt.AutoSize = true;
-            this.lblCnt.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblCnt.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblCnt.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblCnt.Location = new System.Drawing.Point(911, 9);
             this.lblCnt.Name = "lblCnt";
@@ -817,7 +828,7 @@
             // 
             this.lblSumMoney.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblSumMoney.AutoSize = true;
-            this.lblSumMoney.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblSumMoney.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblSumMoney.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblSumMoney.Location = new System.Drawing.Point(529, 9);
             this.lblSumMoney.Name = "lblSumMoney";
@@ -838,7 +849,7 @@
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -880,7 +891,7 @@
             this.dataGridView1.DataSource = this.sPPurchaseMatSubQueryBindingSource;
             dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.Tomato;
             dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -892,7 +903,7 @@
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle17.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
@@ -911,41 +922,10 @@
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nextFocus_KeyDown);
             this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
             // 
-            // sPPurchaseMatSubQueryBindingSource
-            // 
-            this.sPPurchaseMatSubQueryBindingSource.DataMember = "SP_PurchaseMatSub_Query";
-            this.sPPurchaseMatSubQueryBindingSource.DataSource = this.dataSetP1B;
-            // 
-            // sP_PurchaseMatMain_QueryTableAdapter
-            // 
-            this.sP_PurchaseMatMain_QueryTableAdapter.ClearBeforeFill = true;
-            // 
-            // sP_PurchaseMatSub_QueryTableAdapter
-            // 
-            this.sP_PurchaseMatSub_QueryTableAdapter.ClearBeforeFill = true;
-            // 
-            // sPPurchaseMat1QueryBindingSource
-            // 
-            this.sPPurchaseMat1QueryBindingSource.DataMember = "SP_PurchaseMat1_Query";
-            this.sPPurchaseMat1QueryBindingSource.DataSource = this.dataSetP1B;
-            // 
-            // sP_PurchaseMat1_QueryTableAdapter
-            // 
-            this.sP_PurchaseMat1_QueryTableAdapter.ClearBeforeFill = true;
-            // 
-            // sPPurchaseMat2QueryBindingSource
-            // 
-            this.sPPurchaseMat2QueryBindingSource.DataMember = "SP_PurchaseMat2_Query";
-            this.sPPurchaseMat2QueryBindingSource.DataSource = this.dataSetP1B;
-            // 
-            // sP_PurchaseMat2_QueryTableAdapter
-            // 
-            this.sP_PurchaseMat2_QueryTableAdapter.ClearBeforeFill = true;
-            // 
             // btnColumn
             // 
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle7.NullValue = "품목";
             this.btnColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.btnColumn.FillWeight = 50F;
@@ -1030,7 +1010,7 @@
             // Column1
             // 
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Malgun Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle12.NullValue = "입고";
             this.Column1.DefaultCellStyle = dataGridViewCellStyle12;
             this.Column1.FillWeight = 30F;
@@ -1175,6 +1155,37 @@
             this.입고등록자.HeaderText = "등록자";
             this.입고등록자.Name = "입고등록자";
             this.입고등록자.Visible = false;
+            // 
+            // sPPurchaseMatSubQueryBindingSource
+            // 
+            this.sPPurchaseMatSubQueryBindingSource.DataMember = "SP_PurchaseMatSub_Query";
+            this.sPPurchaseMatSubQueryBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // sP_PurchaseMatMain_QueryTableAdapter
+            // 
+            this.sP_PurchaseMatMain_QueryTableAdapter.ClearBeforeFill = true;
+            // 
+            // sP_PurchaseMatSub_QueryTableAdapter
+            // 
+            this.sP_PurchaseMatSub_QueryTableAdapter.ClearBeforeFill = true;
+            // 
+            // sPPurchaseMat1QueryBindingSource
+            // 
+            this.sPPurchaseMat1QueryBindingSource.DataMember = "SP_PurchaseMat1_Query";
+            this.sPPurchaseMat1QueryBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // sP_PurchaseMat1_QueryTableAdapter
+            // 
+            this.sP_PurchaseMat1_QueryTableAdapter.ClearBeforeFill = true;
+            // 
+            // sPPurchaseMat2QueryBindingSource
+            // 
+            this.sPPurchaseMat2QueryBindingSource.DataMember = "SP_PurchaseMat2_Query";
+            this.sPPurchaseMat2QueryBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // sP_PurchaseMat2_QueryTableAdapter
+            // 
+            this.sP_PurchaseMat2_QueryTableAdapter.ClearBeforeFill = true;
             // 
             // P1B10_PURCHASE_MAT1
             // 
@@ -1368,5 +1379,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 포장단위;
         private System.Windows.Forms.DataGridViewTextBoxColumn 입고등록일;
         private System.Windows.Forms.DataGridViewTextBoxColumn 입고등록자;
+        private System.Windows.Forms.Button btnBOM;
     }
 }
