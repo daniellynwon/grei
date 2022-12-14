@@ -176,6 +176,9 @@ namespace SmartMES_Giroei
 
                 iCnt++;
             }
+            // bom여부 update기능 없어서 추가, BOM 등록일자 칼럼 추가. 12/14
+            sql = "UPDATE BAS_product set bomYN = 'Y', bom_dt = '" + DateTime.Now.ToString("yyyy-MM-dd") + "' where prod_id = '" + sProdID + "'";
+            m.dbCUD(sql, ref msg);
 
             m.TransLogCreate(G.Authority, G.UserID, "M", this.Name, lblTitle.Text, sProdID + " " + iCnt.ToString() + "건");
             lblMsg.Text = "저장되었습니다.";
