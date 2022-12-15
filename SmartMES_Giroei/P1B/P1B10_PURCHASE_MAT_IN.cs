@@ -364,6 +364,8 @@ namespace SmartMES_Giroei
             string sQtyInPacking = tbQtyInPacking.Text.Replace(",", "").Trim();     // 포장내 수량
             string sPackQty = tbPackQty.Text.Replace(",", "").Trim();               // 포장수량
             string sQty = tbInQty.Text.Replace(",", "").Trim();                     // 입고수량
+            string sCustName = tbCust.Text.Substring(0, (tbCust.Text.Length > 12) ? 12 : tbCust.Text.Length).Trim();                        // 업체명 12자리
+            string sProdName = tbProd.Text.Substring(0, (tbProd.Text.Length > 12) ? 12 : tbProd.Text.Length).Trim();                        // 자재명 12자리
 
             if (string.IsNullOrEmpty(sQtyInPacking))
             {
@@ -398,11 +400,19 @@ namespace SmartMES_Giroei
                         iQtyInPacking = remain;
                     string Barcode = barcodePrefix + "-" + (i + 1).ToString("D3") + "-" + iQtyInPacking.ToString("D4");
                     string[] aBarcode = Barcode.Split('-');
+                    // 한글문제
+
                     str = "^XA^BY2,2.5^FS";
+                    str += "^SEE:UHANGUL.DAT^FS";
+                    str += "^CW1,E:KFONT3.FNT^FS^CI26^FS";
+                    //str += "^FO443,70 ";
+
                     // str += "^FO30,80 ^B3N,N,80,Y,N ^FD" + Barcode.Trim() + " ^FS";
                     str += "^FO50,30 ^BQN,2,3^FDMA," + Barcode.Trim() + " ^FS";
-                    str += "^FO150,20^A0,22,22^FD" + aBarcode[0] + " ^FS";
-                    str += "^FO150,50^A0,22,22^FD" + aBarcode[1] + " ^FS";
+                    //str += "^FO150,20^A0,22,22^FD" + aBarcode[0] + " ^FS";
+                    //str += "^FO150,50^A0,22,22^FD" + aBarcode[1] + " ^FS";
+                    str += "^FO150,20^A1N,22,22^FD" + sCustName + " ^FS";
+                    str += "^FO150,50^A0,22,22^FD" + sProdName + " ^FS";
                     str += "^FO150,80^A0,22,22^FD" + aBarcode[2] + " ^FS";
                     str += "^FO150,110^A0,22,22^FD" + aBarcode[3] + "-" + aBarcode[4] + " ^FS";
                     str += "^XZ";

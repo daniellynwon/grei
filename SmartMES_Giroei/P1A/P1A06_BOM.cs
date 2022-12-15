@@ -298,84 +298,8 @@ namespace SmartMES_Giroei
                 }
             }
         }
-        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            //if (e.RowIndex < 0) return;
-
-            ////if (e.ColumnIndex != 6) return;
-
-            ////MessageBox.Show("" + e.ColumnIndex);
-
-            //if (e.ColumnIndex == 8)
-            //{
-            //    if (dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == "1")
-            //        dataGridView2[9, e.RowIndex].Style.ForeColor = Color.Black;
-            //    else
-            //        dataGridView2[9, e.RowIndex].Style.ForeColor = Color.Transparent;
-
-            //    dataGridView2.CurrentCell = null;
-            //    dataGridView2.ClearSelection();
-            //}
-        }
-        private void dataGridView2_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            for (int i = 0; i < dataGridView2.Rows.Count; i++)
-            {
-                //if (dataGridView2.Rows[i].Cells[7].Value == null)
-                //    dataGridView2.Rows[i].Cells[8].Value = 0;
-                //else
-                //{
-                //    if (dataGridView2.Rows[i].Cells[7].Value.ToString() == "Y")
-                //    {
-                //        dataGridView2.Rows[i].Cells[8].Value = 1;
-                //    }
-                //    else
-                //        dataGridView2.Rows[i].Cells[8].Value = 0;
-                //}
-
-                //if (dataGridView2.Rows[i].Cells[9].Value.ToString() == "Y")
-                //{
-                //    dataGridView2.Rows[i].Cells[9].Value = "O";
-                //}
-                //else if (dataGridView2.Rows[i].Cells[9].Value.ToString() == "N")
-                //{
-                //    dataGridView2.Rows[i].Cells[9].Value = "X";
-                //}
-
-                //if (dataGridView2.Rows[i].Cells[10].Value.ToString() == "Y")
-                //{
-                //    dataGridView2.Rows[i].Cells[10].Value = "O";
-                //}
-                //else if (dataGridView2.Rows[i].Cells[10].Value.ToString() == "N")
-                //{
-                //    dataGridView2.Rows[i].Cells[10].Value = "X";
-                //}
-            }
-        }
-        private void dataGridView2_CellValueChanged(object sender, DataGridViewCellEventArgs e)
-        {
-            //if (dataGridView2.Rows.Count == 0) return;
-
-            //if (e.ColumnIndex == 8)
-            //{
-            //    if (dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == "1")
-            //        dataGridView2[9, e.RowIndex].Style.ForeColor = Color.Transparent;
-            //    else
-            //        dataGridView2[9, e.RowIndex].Style.ForeColor = Color.Black;
-            //}
-        }
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.ColumnIndex == 8)
-            //{
-            //    if (dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "1")
-            //        dataGridView2[9, e.RowIndex].Style.ForeColor = Color.Black;
-            //    else
-            //        dataGridView2[9, e.RowIndex].Style.ForeColor = Color.Transparent;
-
-            //    dataGridView2.CurrentCell = null;
-            //    dataGridView2.ClearSelection();
-            //}
             if (e.RowIndex < 0) return;
             if (e.ColumnIndex < 7 || e.ColumnIndex > 9) return;
 
@@ -485,25 +409,6 @@ namespace SmartMES_Giroei
 
                 workSheet = workBook.Worksheets.get_Item(1) as Excel.Worksheet; // 엑셀 첫번째 워크시트 가져오기 
                 range = workSheet.UsedRange; // 사용중인 셀 범위를 가져오기
-
-                //sOrderNo = (range.Cells[2, 4] as Excel.Range).Value2.ToString();
-                //sProdName = (range.Cells[4, 4] as Excel.Range).Value2.ToString();
-
-                //sql = $@"SELECT prod_id, prod_name FROM BAS_product WHERE gubun = 'P' AND prod_name = '{@sProdName}' ORDER BY prod_id DESC LIMIT 1";
-
-                //if (m.dbDataTable(sql, ref msg).Rows.Count == 0)
-                //{
-                //    sProdID = getProdCode("P");
-
-                //    sql = $@"INSERT INTO BAS_product (gubun, prod_id, prod_name) VALUES ('P', '{@sProdID}', '{@sProdName}');";
-
-                //    m.dbCUD(sql, ref msg);
-                //}
-                //else
-                //{
-                //    sProdID = m.dbDataTable(sql, ref msg).Rows[0][0].ToString();
-                //}
-
 
                 if ((range.Cells[4, 3] as Excel.Range).Value2.ToString().Trim() != sProdName)
                 {
