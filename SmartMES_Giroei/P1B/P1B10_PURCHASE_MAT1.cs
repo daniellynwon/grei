@@ -253,25 +253,6 @@ namespace SmartMES_Giroei
 
             lblMsg.Text = "복사되었습니다.";
         }
-        private void btnUpdateClick(object sender, EventArgs e)
-        {
-            if (G.Authority == "C" || G.Authority == "D") return;
-
-            ListSearch1();
-            ListInit();
-
-            //P1B10_PURCHASE_MAT_EXCEL sub = new P1B10_PURCHASE_MAT_EXCEL();
-            //sub.parentWin = this;
-            //sub.ShowDialog();
-        }
-        private void btnTemp_Click(object sender, EventArgs e)
-        {
-            if (G.Authority == "C" || G.Authority == "D") return;
-
-            //P1A01_PROD_ORDER_SUB1 sub = new P1A01_PROD_ORDER_SUB1();
-            //sub.parentWin = this;
-            //sub.ShowDialog();
-        }
         private void lblCust_Click(object sender, EventArgs e)
         {
             if (G.Authority == "D") return;
@@ -292,10 +273,27 @@ namespace SmartMES_Giroei
             tbStaff.Text = sCust.Substring(sCust.IndexOf("#5/") + 3, sCust.IndexOf("#6/") - (sCust.IndexOf("#5/") + 3));
             tbContents.Focus();
         }
+        private void btnBOM_Click(object sender, EventArgs e)
+        {
+            if (G.Authority == "C" || G.Authority == "D") return;
+            try
+            {
+                if (cbProduct.Text == "" || string.IsNullOrEmpty(cbProduct.Text)) return;
+
+                P1B10_PURCHASE_MAT1_BOM sub = new P1B10_PURCHASE_MAT1_BOM();
+                sub.parentWin = this;
+                sub.sProd = cbProduct.SelectedValue.ToString();
+                sub.ShowDialog();
+            }
+            catch (Exception)
+            {
+                return;
+            }
+        }
         #endregion
 
-        #region 엔터키로 포커스 이동
-        public bool NextFocus(object sender, KeyEventArgs e)
+            #region 엔터키로 포커스 이동
+            public bool NextFocus(object sender, KeyEventArgs e)
         {
             if ((e.KeyCode == Keys.Enter) || (e.KeyCode == Keys.Return))
             {
@@ -966,11 +964,6 @@ namespace SmartMES_Giroei
                 cbProduct.ValueMember = "품목코드";
                 cbProduct.DisplayMember = "품목명";
             }
-        }
-
-        private void cbProduct_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
     }
 }
