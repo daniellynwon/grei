@@ -4,7 +4,10 @@ using System;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.Drawing.Printing;
+using System.Text;
 using System.Windows.Forms;
+using ZPLPrinterProject;
 
 namespace SmartMES_Giroei
 {
@@ -589,91 +592,6 @@ namespace SmartMES_Giroei
             ListSearch1();
             ListInit();
         }
-        //private void pbSave_Click(object sender, EventArgs e)
-        //{
-        //    if (G.Authority == "D") return;
-
-        //    dataGridView1.CurrentCell = dataGridView1[3, 0];
-        //    lblMsg.Text = "";
-        //    lblBarcode.Text = "";
-        //    int iCnt = 0;
-
-        //    for (int i = 0; i < dataGridView1.RowCount; i++)
-        //    {
-        //        if (!(dataGridView1.Rows[i].Cells[2].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[2].Value.ToString()))) iCnt++;
-        //    }
-        //    if (iCnt == 0)
-        //    {
-        //        lblMsg.Text = "품목정보를 확인해 주세요.";
-        //        dataGridView1.Focus();
-        //        return;
-        //    }
-        //    if (tbCust.Tag == null || string.IsNullOrEmpty(tbCust.Tag.ToString()))
-        //    {
-        //        lblMsg.Text = "거래처명을 선택해 주세요.";
-        //        lblCust.Focus();
-        //        return;
-        //    }
-
-        //    string sNo = tbNo.Text;
-        //    string sRorderNo = tbRorder.Text;
-        //    string sRorderSeq = tbRorder.Tag.ToString();
-        //    string sDate = DateTime.Today.ToString("yyyy-MM-dd");
-        //    string sReqDate = dtpDate.Value.ToString("yyyy-MM-dd");
-        //    string sCust = tbCust.Tag.ToString();
-        //    string sPlace = tbPlace.Text.Trim();
-        //    string sDeliCar = cbDeliCar.Text.Substring(0, 1);
-        //    string sDeliInfo = tbDeliInfo.Text.Trim();
-        //    string sContents = tbContents.Text.Trim();
-
-        //    string sPackingType = cbPackingType.Text.Split('.')[1];
-        //    string sDeliCost = tbDeliCost.Text.Trim();
-
-        //    string sql = string.Empty;
-        //    string msg = string.Empty;
-        //    MariaCRUD m = new MariaCRUD();
-
-        //    string sSeq = string.Empty;
-        //    string sProdID = string.Empty;
-        //    string sQty = string.Empty;
-        //    string sDanga = string.Empty;
-        //    string sAmount = string.Empty;
-        //    string sVat = string.Empty;
-        //    string sBigo = string.Empty;
-
-        //    sql = "update tb_delivery_main " +
-        //            "set deli_date = '" + sDate + "', dorder_id = '" + sDNo + "', cust_id = '" + sCust + "', place = '" + sPlace + "', deli_car = '" + sDeliCar + "', deli_info = '" + sDeliInfo + "', contents = '" + sContents + "'" +
-        //            " where deli_id = '" + sNo + "'";
-
-        //    m.dbCUD(sql, ref msg);
-
-        //    if (msg != "OK")
-        //    {
-        //        MessageBox.Show(msg);
-        //        return;
-        //    }
-
-        //    tbSearch.Text = "";
-        //    ListSearch1();
-
-        //    for (int i = 0; i < dataGridViewList.Rows.Count; i++)
-        //    {
-        //        if (dataGridViewList.Rows[i].Cells[0].Value.ToString() == sNo)
-        //        {
-        //            dataGridViewList.CurrentCell = dataGridViewList[2, i];
-        //            dataGridViewList.CurrentCell.Selected = true;
-
-        //            ListSearch2(i);
-        //            ListSearch3();
-        //            ListSearch4();
-        //            break;
-        //        }
-        //    }
-
-        //    m.TransLogCreate(G.Authority, G.UserID, "M", this.Name, lblTitle.Text, sNo + " " + tbCust.Text);
-        //    lblMsg.Text = "저장되었습니다.";
-        //}
-
         private async void pbSave_Click(object sender, EventArgs e)
         {
             if (G.Authority == "D") return;
@@ -964,6 +882,71 @@ namespace SmartMES_Giroei
             P1B05_DELIVERY_SUB1 sub = new P1B05_DELIVERY_SUB1();
             sub.parentWin = this;
             sub.ShowDialog();
+        }
+        private void btnBarcode_Click(object sender, EventArgs e)  // 품질검사완료 SP  보는 화면 연결.
+        {
+            if (G.Authority == "D") return;
+            if (dataGridView1.Rows.Count < 1)
+            {
+                lblMsg.Text = "품목을 확인하세요.";
+                return;
+            }
+
+            //for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            //{
+            //    if (dataGridView1.Rows[i].Cells[14].Value == null || dataGridView1.Rows[i].Cells[14].Value.ToString() != "1")
+            //    {
+            //        lblMsg.Text = "출력할 품목을 선택하세요.";
+            //        return;
+            //    }
+
+            //    if (dataGridView1.Rows[i].Cells[14].Value.ToString() == "1")
+            //    {
+            //        barcodePrint();      // 바코드 프린트. 
+            //    }
+            //}     -> 나중에 출력품목이 하나 이상일 경우에,...? 나중에 변경.. (12/16) cells[14]번은 Visible False로
+            barcodePrint();
+        }
+        private void barcodePrint()
+        {
+            string sDeliNo = tbNo.Text;
+            string sROrderNo = tbRorder.Text;
+            int idx = 0;    // int idx = dataGridView1.RowCount - 1;
+
+            string sProd = dataGridView1.Rows[idx].Cells[3].Value.ToString();
+            string sName = dataGridView1.Rows[idx].Cells[4].Value.ToString();
+            string sUnit = dataGridView1.Rows[idx].Cells[6].Value.ToString();
+            string sQty = dataGridView1.Rows[idx].Cells[7].Value.ToString();
+
+            string str = string.Empty;
+
+            PrintDialog pd = new PrintDialog();
+            pd.PrinterSettings = new PrinterSettings();
+
+            if (DialogResult.OK == pd.ShowDialog(this))
+            {
+                str = "^XA^BY2,2.5^FS";
+                str += "^SEE:UHANGUL.DAT^FS";
+                str += "^CW1,E:KFONT3.FNT^FS^CI26^FS";
+                str += "^FO50,30 ^BQN,2,3^FDMA," + sDeliNo + " ^FS";
+                str += "^FO150,20^A1N,22,22^FD" + sROrderNo + " ^FS";
+                str += "^FO150,50^A0,22,22^FD" + sName + " ^FS";
+                str += "^FO150,80^A0,22,22^FD" + sUnit + " ^FS";
+                str += "^FO150,110^A0,22,22^FD" + sQty + " ^FS";
+                str += "^XZ";
+
+                var bytes = Encoding.Default.GetBytes(str);
+
+                try
+                {
+                    RawPrinterHelper.SendBytesToPrinter(pd.PrinterSettings.PrinterName, bytes, bytes.Length);
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                this.DialogResult = DialogResult.OK;
+            }
         }
         #endregion
     }

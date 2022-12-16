@@ -154,6 +154,7 @@ namespace SmartMES_Giroei
             string sConsignedYN = string.Empty;
             string sIsSusap = string.Empty;
             string sIsMisap = string.Empty;
+            string sContents = string.Empty;
 
             int iCnt = 0;
             for (int i = 0; i < dataGridView2.RowCount; i++)
@@ -164,10 +165,12 @@ namespace SmartMES_Giroei
                 sConsignedYN = (dataGridView2.Rows[i].Cells[7].Value.ToString() == "O") ? "Y" : "N";
                 sIsSusap = (dataGridView2.Rows[i].Cells[8].Value.ToString() == "O") ? "Y" : "N";
                 sIsMisap = (dataGridView2.Rows[i].Cells[9].Value.ToString() == "O") ? "Y" : "N";
+                sContents = dataGridView2.Rows[i].Cells[10].Value.ToString();
 
                 if (string.IsNullOrEmpty(sQty)) sQty = "0";
 
-                sql = $@"UPDATE BOM_bomlist SET req_qty = {@sQty}, consignedYN = '{@sConsignedYN}', IsSusap = '{sIsSusap}', IsMiSap = '{sIsMisap}' WHERE prod_id = '{@sProdID}' AND parent_id = '{@sMaterialID}'";
+                sql = $@"UPDATE BOM_bomlist SET req_qty = {@sQty}, consignedYN = '{@sConsignedYN}', IsSusap = '{sIsSusap}', IsMiSap = '{sIsMisap}', contents = '" + sContents + 
+                    "' WHERE prod_id = '" + sProdID + "' AND parent_id = '" + sMaterialID + "'";
 
                 m.dbCUD(sql, ref msg);
 
@@ -392,6 +395,7 @@ namespace SmartMES_Giroei
             string sProdSize = string.Empty;
             string sQty = string.Empty;
             string sProcess = string.Empty;
+            string sContents = string.Empty;
 
             try
             {
@@ -433,6 +437,7 @@ namespace SmartMES_Giroei
                     sProdNameSub = (range.Cells[row, 4] as Excel.Range).Value2.ToString().Trim();
                     sProdSize = (range.Cells[row, 5] as Excel.Range).Value2.ToString().Trim();
                     sQty = (range.Cells[row, 6] as Excel.Range).Value2.ToString().Trim();
+                    sContents = ((range.Cells[row, 13] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 13] as Excel.Range).Value2.ToString().Trim();
                     sProcess = ((range.Cells[row, 15] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 15] as Excel.Range).Value2.ToString().Trim();
 
                     //if (sProcess == "수삽") sProcess = "S";
@@ -445,7 +450,8 @@ namespace SmartMES_Giroei
                     {
                         sProdIDSub = getProdCode("M");
 
-                        sql = $@"INSERT INTO BAS_product (gubun, prod_id, prod_kind, prod_name, prod_size, consignedYN, enter_man) VALUES ('M', '{@sProdIDSub}', '0001', '{@sProdNameSub}', '{@sProdSize}', 'Y', '{@G.UserID}');";
+                        sql = $@"INSERT INTO BAS_product (gubun, prod_id, prod_kind, prod_name, prod_size, consignedYN, enter_man) 
+                                VALUES ('M', '{@sProdIDSub}', '0001', '{@sProdNameSub}', '{@sProdSize}', 'Y', '{@G.UserID}');";
 
                         m.dbCUD(sql, ref msg);
                     }
@@ -463,15 +469,15 @@ namespace SmartMES_Giroei
                     {
                         if (sProcess == "수삽")
                         {
-                            sql = $@"INSERT INTO BOM_bomlist (prod_id, parent_id, req_qty, IsSusap, IsMiSap) VALUES ('{@_sProdID}', '{@sProdIDSub}', '{@sQty}', 'Y', 'N');";
+                            sql = $@"INSERT INTO BOM_bomlist (prod_id, parent_id, req_qty, IsSusap, IsMiSap, contents) VALUES ('{@_sProdID}', '{@sProdIDSub}', '{@sQty}', 'Y', 'N','" + sContents + "');";
                         }
                         else if (sProcess == "미삽")
                         {
-                            sql = $@"INSERT INTO BOM_bomlist (prod_id, parent_id, req_qty, IsSusap, IsMiSap) VALUES ('{@_sProdID}', '{@sProdIDSub}', '{@sQty}', 'N', 'Y');";
+                            sql = $@"INSERT INTO BOM_bomlist (prod_id, parent_id, req_qty, IsSusap, IsMiSap, contents) VALUES ('{@_sProdID}', '{@sProdIDSub}', '{@sQty}', 'N', 'Y','" + sContents + "');";
                         }
                         else
                         {
-                            sql = $@"INSERT INTO BOM_bomlist (prod_id, parent_id, req_qty, IsSusap, IsMiSap) VALUES ('{@_sProdID}', '{@sProdIDSub}', '{@sQty}', 'N', 'N');";
+                            sql = $@"INSERT INTO BOM_bomlist (prod_id, parent_id, req_qty, IsSusap, IsMiSap, contents) VALUES ('{@_sProdID}', '{@sProdIDSub}', '{@sQty}', 'N', 'N','" + sContents + "');";
                         }
 
                         m.dbCUD(sql, ref msg);
@@ -480,21 +486,25 @@ namespace SmartMES_Giroei
                     {
                         if (sProcess == "수삽")
                         {
-                            sql = $@"UPDATE BOM_bomlist SET IsSusap = 'Y', IsMiSap = 'N' WHERE prod_id = '{@_sProdID}' AND parent_id = '{@sProdIDSub}'";
+                            sql = $@"UPDATE BOM_bomlist SET IsSusap = 'Y', IsMiSap = 'N', contents = '" + sContents + "' WHERE prod_id = '{@_sProdID}' AND parent_id = '{@sProdIDSub}'";
                         }
                         else if (sProcess == "미삽")
                         {
-                            sql = $@"UPDATE BOM_bomlist SET IsSusap = 'N', IsMiSap = 'Y' WHERE prod_id = '{@_sProdID}' AND parent_id = '{@sProdIDSub}'";
+                            sql = $@"UPDATE BOM_bomlist SET IsSusap = 'N', IsMiSap = 'Y', contents = '" + sContents + "'  WHERE prod_id = '{@_sProdID}' AND parent_id = '{@sProdIDSub}'";
                         }
                         else
                         {
-                            sql = $@"UPDATE BOM_bomlist SET IsSusap = 'N', IsMiSap = 'N' WHERE prod_id = '{@_sProdID}' AND parent_id = '{@sProdIDSub}'";
+                            sql = $@"UPDATE BOM_bomlist SET IsSusap = 'N', IsMiSap = 'N', contents = '" + sContents + "'  WHERE prod_id = '{@_sProdID}' AND parent_id = '{@sProdIDSub}'";
                         }
 
                         m.dbCUD(sql, ref msg);
                     }
                     if (count < 100)
                         progressBar1.Value = count = count + 1;
+
+                    sql = "update BAS_product set bomYN = 'Y', bom_dt = now() where prod_id = '" + _sProdID + "'";
+                    m.dbCUD(sql, ref msg);
+
                 }
                 progressBar1.Value = 0;
                 progressBar1.Visible = false;
