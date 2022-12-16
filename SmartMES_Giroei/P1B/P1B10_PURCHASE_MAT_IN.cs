@@ -45,19 +45,23 @@ namespace SmartMES_Giroei
             tbProd.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
             tbProd.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
             tbUnit.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[19].Value.ToString();        // 포장단위
+            tbPreInQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value.ToString();    // 기 입고량
             tbQty.Text = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString()).ToString("#,##0");
             tbDanga.Text = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString()).ToString("#,##0");
             lblTitle.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[11].Value.ToString();   // 입고여부
 
-            tbMbarcode.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[20].Value.ToString() + "-" + parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString() + "-" + DateTime.Now.ToString("yyMMdd");
+            
             lbSALOrderID.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[21].Value.ToString();      // 수주ID
 
-            if (lblTitle.Tag.ToString() == "N")
+            if (lblTitle.Tag.ToString() == "N")     // 신규분
             {
+                tbMbarcode.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[20].Value.ToString() + "-" + parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString() + "-" + DateTime.Now.ToString("yyMMdd");
                 long lQty = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString());   // 발주량
+                long lpreQty = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value.ToString());   // 발주량
                 long lDanga = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString()); // 단가
 
-                tbInQty.Text = lQty.ToString();
+                // tbInQty.Text = lQty.ToString();
+                tbInQty.Text = (lQty - lpreQty).ToString("#,##0");
                 tbAmount.Text = (lQty * lDanga).ToString();
                 tbVat.Text = (lQty * lDanga * 0.1).ToString();
                 tbMoney.Text = ((lQty * lDanga) + (lQty * lDanga * 0.1)).ToString("#,##0");
@@ -68,20 +72,24 @@ namespace SmartMES_Giroei
             {
                 try
                 {
+                    checkClosed.Checked = true;
+
                     tbInID.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[20].Value.ToString();    // 고객번호
                     dtpInDate.Value = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[12].Value.ToString());    // 입고일
                     tbInQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value.ToString();   // 입고량
-                    tbAmount.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[14].Value.ToString();  // 매입액
+                    //tbAmount.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[14].Value.ToString();  // 매입액
                     cbDepot.SelectedValue = parentWin.dataGridView1.Rows[rowIndex].Cells[15].Value;
+                    string LotNo = parentWin.dataGridView1.Rows[rowIndex].Cells[12].Value.ToString().Replace("-", "").Substring(2,6);
+                    tbMbarcode.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[20].Value.ToString() + "-" + parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString() + "-" + LotNo;
 
-                    long lAmount = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[14].Value.ToString());
-                    tbVat.Text = (lAmount * 0.1).ToString();
-                    long lVat = long.Parse((lAmount * 0.1).ToString());
-                    //long lVat = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[17].Value.ToString());
-                    tbMoney.Text = (lAmount + lVat).ToString("#,##0");
+                    //long lAmount = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[14].Value.ToString());
+                    //tbVat.Text = (lAmount * 0.1).ToString();
+                    //long lVat = long.Parse((lAmount * 0.1).ToString());
+                    ////long lVat = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[17].Value.ToString());
+                    //tbMoney.Text = (lAmount + lVat).ToString("#,##0");
 
                     // barcode
-                    sql = "select count(barcode_surfix) as count, sum(qty) as qty from INV_material_in where mbarcode = '" + tbMbarcode.Text + "'";
+                    sql = "select count(barcode_surfix) as count, ifnull(sum(qty),0) as qty from INV_material_in where mbarcode = '" + tbMbarcode.Text + "'";
                     m = new MariaCRUD();
                     msg = string.Empty;
                     table = m.dbDataTable(sql, ref msg);
@@ -106,7 +114,8 @@ namespace SmartMES_Giroei
                 }
             }
 
-            this.ActiveControl = btnSave;
+            // this.ActiveControl = btnSave;
+            this.ActiveControl = dtpInDate;
         }
 
         #region 엔터키로 포커스 이동
@@ -141,6 +150,11 @@ namespace SmartMES_Giroei
                 tbAmount.Text = (lQty * lDanga).ToString("#,##0");
                 tbVat.Text = (lQty * lDanga * 0.1).ToString("#,##0");
                 tbMoney.Text = ((lQty * lDanga) + (lQty * lDanga * 0.1)).ToString("#,##0");
+
+                if (long.Parse(tbQty.Text.Replace(",","").Trim()) <= (lQty - long.Parse(tbPreInQty.Text.Replace(",", "").Trim())))                   // 발주수량 - 기존입고량  이상 입고하면
+                {
+                    checkClosed.Checked = true;
+                }
             }
             catch (FormatException)
             {
@@ -241,37 +255,36 @@ namespace SmartMES_Giroei
 
             string sql = string.Empty;
 
-            //sql = "insert into INV_material_in (mbarcode, cust_id, prod_id, plant, input_date, purchase_id, purchase_seq, qty, pack_qty, danga, amount, warehouse_id, reason_code, enter_man) " +
-            //        "values('" + mBarcode + "','"+ sCust + "','" + sProd + "','" + G.Pos + "','" + sInDate + "','" + sNo + "'," + sSeq + "," + sInQty + "," + packQty + "," + sDanga + "," + sAmount + ",'" + sDepot + "','" + "0010" + "','" + G.UserID + "')";
-            //m.dbCUD(sql, ref msg);
 
-            //var data = sql;
-            //Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);
-
-            sql = "update PUR_order_sub set closingYN = 'Y' where purchase_id = '" + sNo + "' and purchase_seq = " + sSeq;     // 입고flag update
-            m.dbCUD(sql, ref msg);
-
-            if (msg != "OK")
+            if (checkClosed.Checked == true)
             {
-                lblMsg.Text = msg;
-                return;
-            }
+                sql = "update PUR_order_sub set closingYN = 'Y' where purchase_id = '" + sNo + "' and purchase_seq = " + sSeq;     // 입고flag update
+                m.dbCUD(sql, ref msg);
 
-            //
-            // Update 재고 테이블 INV_real_stock
-            //
-            sql = "insert into INV_real_stock (prod_id, cust_id, input_date, partin_total, partout_total, current_qty, update_man) " +
+                if (msg != "OK")
+                {
+                    lblMsg.Text = msg;
+                    return;
+                }
+            }
+            if (lblTitle.Tag.ToString() == "N")         // 신규분만 재고 반영
+            {
+                //
+                // Update 재고 테이블 INV_real_stock
+                //
+                sql = "insert into INV_real_stock (prod_id, cust_id, input_date, partin_total, partout_total, current_qty, update_man) " +
                   "values ('" + sProd + "','" + sCust + "','" + sInDate + "'," + sInQty + "," + "0" + "," + sInQty + ",'" + G.UserID + "')" +
                   " ON DUPLICATE KEY UPDATE" +
-                  " partin_total = partin_total + " + sInQty + 
+                  " partin_total = partin_total + " + sInQty +
                   ", current_qty = current_qty + " + sInQty +
                   ", update_man = '" + G.UserID + "';";
-            m.dbCUD(sql, ref msg);
+                m.dbCUD(sql, ref msg);
 
-            if (msg != "OK")
-            {
-                lblMsg.Text = msg;
-                return;
+                if (msg != "OK")
+                {
+                    lblMsg.Text = msg;
+                    return;
+                }
             }
 
             var data = sql;
@@ -435,7 +448,9 @@ namespace SmartMES_Giroei
 
         private void save2InvMaterialIn(string barcode, string barcodePrefix, int iQtyInPacking, string sQtyInPacking)
         {
-
+            //
+            // 재발행일 경우 입고처리 안함
+            //
             if (btnBarcodePrint.Text == "재발행") return;
 
             string sCust = barcode.Split('-')[0].Trim();
