@@ -56,8 +56,6 @@ namespace SmartMES_Giroei.P1B {
         
         private SP_ROrderList_QueryDataTable tableSP_ROrderList_Query;
         
-        private SP_PurchaseMatSub_QueryDataTable tableSP_PurchaseMatSub_Query;
-        
         private SP_Deliorder_Main_QueryDataTable tableSP_Deliorder_Main_Query;
         
         private SP_Delivery_QueryDataTable tableSP_Delivery_Query;
@@ -123,6 +121,8 @@ namespace SmartMES_Giroei.P1B {
         private SP_ROrderToEstimate_QueryDataTable tableSP_ROrderToEstimate_Query;
         
         private SP_Item_Box_Sub_ReturnDataTable tableSP_Item_Box_Sub_Return;
+        
+        private SP_PurchaseMatSub_QueryDataTable tableSP_PurchaseMatSub_Query;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -199,9 +199,6 @@ namespace SmartMES_Giroei.P1B {
                 }
                 if ((ds.Tables["SP_ROrderList_Query"] != null)) {
                     base.Tables.Add(new SP_ROrderList_QueryDataTable(ds.Tables["SP_ROrderList_Query"]));
-                }
-                if ((ds.Tables["SP_PurchaseMatSub_Query"] != null)) {
-                    base.Tables.Add(new SP_PurchaseMatSub_QueryDataTable(ds.Tables["SP_PurchaseMatSub_Query"]));
                 }
                 if ((ds.Tables["SP_Deliorder_Main_Query"] != null)) {
                     base.Tables.Add(new SP_Deliorder_Main_QueryDataTable(ds.Tables["SP_Deliorder_Main_Query"]));
@@ -301,6 +298,9 @@ namespace SmartMES_Giroei.P1B {
                 }
                 if ((ds.Tables["SP_Item_Box_Sub_Return"] != null)) {
                     base.Tables.Add(new SP_Item_Box_Sub_ReturnDataTable(ds.Tables["SP_Item_Box_Sub_Return"]));
+                }
+                if ((ds.Tables["SP_PurchaseMatSub_Query"] != null)) {
+                    base.Tables.Add(new SP_PurchaseMatSub_QueryDataTable(ds.Tables["SP_PurchaseMatSub_Query"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -477,16 +477,6 @@ namespace SmartMES_Giroei.P1B {
         public SP_ROrderList_QueryDataTable SP_ROrderList_Query {
             get {
                 return this.tableSP_ROrderList_Query;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SP_PurchaseMatSub_QueryDataTable SP_PurchaseMatSub_Query {
-            get {
-                return this.tableSP_PurchaseMatSub_Query;
             }
         }
         
@@ -822,6 +812,16 @@ namespace SmartMES_Giroei.P1B {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public SP_PurchaseMatSub_QueryDataTable SP_PurchaseMatSub_Query {
+            get {
+                return this.tableSP_PurchaseMatSub_Query;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -935,9 +935,6 @@ namespace SmartMES_Giroei.P1B {
                 if ((ds.Tables["SP_ROrderList_Query"] != null)) {
                     base.Tables.Add(new SP_ROrderList_QueryDataTable(ds.Tables["SP_ROrderList_Query"]));
                 }
-                if ((ds.Tables["SP_PurchaseMatSub_Query"] != null)) {
-                    base.Tables.Add(new SP_PurchaseMatSub_QueryDataTable(ds.Tables["SP_PurchaseMatSub_Query"]));
-                }
                 if ((ds.Tables["SP_Deliorder_Main_Query"] != null)) {
                     base.Tables.Add(new SP_Deliorder_Main_QueryDataTable(ds.Tables["SP_Deliorder_Main_Query"]));
                 }
@@ -1036,6 +1033,9 @@ namespace SmartMES_Giroei.P1B {
                 }
                 if ((ds.Tables["SP_Item_Box_Sub_Return"] != null)) {
                     base.Tables.Add(new SP_Item_Box_Sub_ReturnDataTable(ds.Tables["SP_Item_Box_Sub_Return"]));
+                }
+                if ((ds.Tables["SP_PurchaseMatSub_Query"] != null)) {
+                    base.Tables.Add(new SP_PurchaseMatSub_QueryDataTable(ds.Tables["SP_PurchaseMatSub_Query"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -1164,12 +1164,6 @@ namespace SmartMES_Giroei.P1B {
             if ((initTable == true)) {
                 if ((this.tableSP_ROrderList_Query != null)) {
                     this.tableSP_ROrderList_Query.InitVars();
-                }
-            }
-            this.tableSP_PurchaseMatSub_Query = ((SP_PurchaseMatSub_QueryDataTable)(base.Tables["SP_PurchaseMatSub_Query"]));
-            if ((initTable == true)) {
-                if ((this.tableSP_PurchaseMatSub_Query != null)) {
-                    this.tableSP_PurchaseMatSub_Query.InitVars();
                 }
             }
             this.tableSP_Deliorder_Main_Query = ((SP_Deliorder_Main_QueryDataTable)(base.Tables["SP_Deliorder_Main_Query"]));
@@ -1370,6 +1364,12 @@ namespace SmartMES_Giroei.P1B {
                     this.tableSP_Item_Box_Sub_Return.InitVars();
                 }
             }
+            this.tableSP_PurchaseMatSub_Query = ((SP_PurchaseMatSub_QueryDataTable)(base.Tables["SP_PurchaseMatSub_Query"]));
+            if ((initTable == true)) {
+                if ((this.tableSP_PurchaseMatSub_Query != null)) {
+                    this.tableSP_PurchaseMatSub_Query.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1412,8 +1412,6 @@ namespace SmartMES_Giroei.P1B {
             base.Tables.Add(this.tableSP_EstimateList_Query);
             this.tableSP_ROrderList_Query = new SP_ROrderList_QueryDataTable();
             base.Tables.Add(this.tableSP_ROrderList_Query);
-            this.tableSP_PurchaseMatSub_Query = new SP_PurchaseMatSub_QueryDataTable();
-            base.Tables.Add(this.tableSP_PurchaseMatSub_Query);
             this.tableSP_Deliorder_Main_Query = new SP_Deliorder_Main_QueryDataTable();
             base.Tables.Add(this.tableSP_Deliorder_Main_Query);
             this.tableSP_Delivery_Query = new SP_Delivery_QueryDataTable();
@@ -1480,6 +1478,8 @@ namespace SmartMES_Giroei.P1B {
             base.Tables.Add(this.tableSP_ROrderToEstimate_Query);
             this.tableSP_Item_Box_Sub_Return = new SP_Item_Box_Sub_ReturnDataTable();
             base.Tables.Add(this.tableSP_Item_Box_Sub_Return);
+            this.tableSP_PurchaseMatSub_Query = new SP_PurchaseMatSub_QueryDataTable();
+            base.Tables.Add(this.tableSP_PurchaseMatSub_Query);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1575,12 +1575,6 @@ namespace SmartMES_Giroei.P1B {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeSP_ROrderList_Query() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeSP_PurchaseMatSub_Query() {
             return false;
         }
         
@@ -1784,6 +1778,12 @@ namespace SmartMES_Giroei.P1B {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeSP_PurchaseMatSub_Query() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1886,9 +1886,6 @@ namespace SmartMES_Giroei.P1B {
         public delegate void SP_ROrderList_QueryRowChangeEventHandler(object sender, SP_ROrderList_QueryRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void SP_PurchaseMatSub_QueryRowChangeEventHandler(object sender, SP_PurchaseMatSub_QueryRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void SP_Deliorder_Main_QueryRowChangeEventHandler(object sender, SP_Deliorder_Main_QueryRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1986,6 +1983,9 @@ namespace SmartMES_Giroei.P1B {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void SP_Item_Box_Sub_ReturnRowChangeEventHandler(object sender, SP_Item_Box_Sub_ReturnRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void SP_PurchaseMatSub_QueryRowChangeEventHandler(object sender, SP_PurchaseMatSub_QueryRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -9076,644 +9076,6 @@ namespace SmartMES_Giroei.P1B {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "SP_ROrderList_QueryDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SP_PurchaseMatSub_QueryDataTable : global::System.Data.TypedTableBase<SP_PurchaseMatSub_QueryRow> {
-            
-            private global::System.Data.DataColumn column발주번호;
-            
-            private global::System.Data.DataColumn column순번;
-            
-            private global::System.Data.DataColumn column품목코드;
-            
-            private global::System.Data.DataColumn column품목명;
-            
-            private global::System.Data.DataColumn column규격;
-            
-            private global::System.Data.DataColumn column포장단위;
-            
-            private global::System.Data.DataColumn column단위;
-            
-            private global::System.Data.DataColumn column발주량;
-            
-            private global::System.Data.DataColumn column단가;
-            
-            private global::System.Data.DataColumn column발주액;
-            
-            private global::System.Data.DataColumn column입고여부;
-            
-            private global::System.Data.DataColumn column입고;
-            
-            private global::System.Data.DataColumn column입고일;
-            
-            private global::System.Data.DataColumn column입고량;
-            
-            private global::System.Data.DataColumn column포장단위1;
-            
-            private global::System.Data.DataColumn column포장수량;
-            
-            private global::System.Data.DataColumn column입고단가;
-            
-            private global::System.Data.DataColumn column유닛단가;
-            
-            private global::System.Data.DataColumn column입고금액;
-            
-            private global::System.Data.DataColumn column자재전표;
-            
-            private global::System.Data.DataColumn column수입신고번호;
-            
-            private global::System.Data.DataColumn columnBL번호;
-            
-            private global::System.Data.DataColumn column창고ID;
-            
-            private global::System.Data.DataColumn column입고창고;
-            
-            private global::System.Data.DataColumn column등록일;
-            
-            private global::System.Data.DataColumn column등록자;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_PurchaseMatSub_QueryDataTable() {
-                this.TableName = "SP_PurchaseMatSub_Query";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SP_PurchaseMatSub_QueryDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected SP_PurchaseMatSub_QueryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 발주번호Column {
-                get {
-                    return this.column발주번호;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 순번Column {
-                get {
-                    return this.column순번;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 품목코드Column {
-                get {
-                    return this.column품목코드;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 품목명Column {
-                get {
-                    return this.column품목명;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 규격Column {
-                get {
-                    return this.column규격;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 포장단위Column {
-                get {
-                    return this.column포장단위;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 단위Column {
-                get {
-                    return this.column단위;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 발주량Column {
-                get {
-                    return this.column발주량;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 단가Column {
-                get {
-                    return this.column단가;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 발주액Column {
-                get {
-                    return this.column발주액;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 입고여부Column {
-                get {
-                    return this.column입고여부;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 입고Column {
-                get {
-                    return this.column입고;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 입고일Column {
-                get {
-                    return this.column입고일;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 입고량Column {
-                get {
-                    return this.column입고량;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 포장단위1Column {
-                get {
-                    return this.column포장단위1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 포장수량Column {
-                get {
-                    return this.column포장수량;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 입고단가Column {
-                get {
-                    return this.column입고단가;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 유닛단가Column {
-                get {
-                    return this.column유닛단가;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 입고금액Column {
-                get {
-                    return this.column입고금액;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 자재전표Column {
-                get {
-                    return this.column자재전표;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 수입신고번호Column {
-                get {
-                    return this.column수입신고번호;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn BL번호Column {
-                get {
-                    return this.columnBL번호;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 창고IDColumn {
-                get {
-                    return this.column창고ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 입고창고Column {
-                get {
-                    return this.column입고창고;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 등록일Column {
-                get {
-                    return this.column등록일;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 등록자Column {
-                get {
-                    return this.column등록자;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_PurchaseMatSub_QueryRow this[int index] {
-                get {
-                    return ((SP_PurchaseMatSub_QueryRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_PurchaseMatSub_QueryRowChangeEventHandler SP_PurchaseMatSub_QueryRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_PurchaseMatSub_QueryRowChangeEventHandler SP_PurchaseMatSub_QueryRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_PurchaseMatSub_QueryRowChangeEventHandler SP_PurchaseMatSub_QueryRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_PurchaseMatSub_QueryRowChangeEventHandler SP_PurchaseMatSub_QueryRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddSP_PurchaseMatSub_QueryRow(SP_PurchaseMatSub_QueryRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_PurchaseMatSub_QueryRow AddSP_PurchaseMatSub_QueryRow(
-                        string 발주번호, 
-                        int 순번, 
-                        string 품목코드, 
-                        string 품목명, 
-                        string 규격, 
-                        string 포장단위, 
-                        string 단위, 
-                        int 발주량, 
-                        long 단가, 
-                        long 발주액, 
-                        string 입고여부, 
-                        string 입고, 
-                        System.DateTime 입고일, 
-                        int 입고량, 
-                        string 포장단위1, 
-                        int 포장수량, 
-                        double 입고단가, 
-                        double 유닛단가, 
-                        double 입고금액, 
-                        string 자재전표, 
-                        string 수입신고번호, 
-                        string BL번호, 
-                        string 창고ID, 
-                        string 입고창고, 
-                        System.DateTime 등록일, 
-                        string 등록자) {
-                SP_PurchaseMatSub_QueryRow rowSP_PurchaseMatSub_QueryRow = ((SP_PurchaseMatSub_QueryRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        발주번호,
-                        순번,
-                        품목코드,
-                        품목명,
-                        규격,
-                        포장단위,
-                        단위,
-                        발주량,
-                        단가,
-                        발주액,
-                        입고여부,
-                        입고,
-                        입고일,
-                        입고량,
-                        포장단위1,
-                        포장수량,
-                        입고단가,
-                        유닛단가,
-                        입고금액,
-                        자재전표,
-                        수입신고번호,
-                        BL번호,
-                        창고ID,
-                        입고창고,
-                        등록일,
-                        등록자};
-                rowSP_PurchaseMatSub_QueryRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSP_PurchaseMatSub_QueryRow);
-                return rowSP_PurchaseMatSub_QueryRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                SP_PurchaseMatSub_QueryDataTable cln = ((SP_PurchaseMatSub_QueryDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new SP_PurchaseMatSub_QueryDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal void InitVars() {
-                this.column발주번호 = base.Columns["발주번호"];
-                this.column순번 = base.Columns["순번"];
-                this.column품목코드 = base.Columns["품목코드"];
-                this.column품목명 = base.Columns["품목명"];
-                this.column규격 = base.Columns["규격"];
-                this.column포장단위 = base.Columns["포장단위"];
-                this.column단위 = base.Columns["단위"];
-                this.column발주량 = base.Columns["발주량"];
-                this.column단가 = base.Columns["단가"];
-                this.column발주액 = base.Columns["발주액"];
-                this.column입고여부 = base.Columns["입고여부"];
-                this.column입고 = base.Columns["입고"];
-                this.column입고일 = base.Columns["입고일"];
-                this.column입고량 = base.Columns["입고량"];
-                this.column포장단위1 = base.Columns["포장단위1"];
-                this.column포장수량 = base.Columns["포장수량"];
-                this.column입고단가 = base.Columns["입고단가"];
-                this.column유닛단가 = base.Columns["유닛단가"];
-                this.column입고금액 = base.Columns["입고금액"];
-                this.column자재전표 = base.Columns["자재전표"];
-                this.column수입신고번호 = base.Columns["수입신고번호"];
-                this.columnBL번호 = base.Columns["BL번호"];
-                this.column창고ID = base.Columns["창고ID"];
-                this.column입고창고 = base.Columns["입고창고"];
-                this.column등록일 = base.Columns["등록일"];
-                this.column등록자 = base.Columns["등록자"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            private void InitClass() {
-                this.column발주번호 = new global::System.Data.DataColumn("발주번호", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column발주번호);
-                this.column순번 = new global::System.Data.DataColumn("순번", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column순번);
-                this.column품목코드 = new global::System.Data.DataColumn("품목코드", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column품목코드);
-                this.column품목명 = new global::System.Data.DataColumn("품목명", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column품목명);
-                this.column규격 = new global::System.Data.DataColumn("규격", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column규격);
-                this.column포장단위 = new global::System.Data.DataColumn("포장단위", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column포장단위);
-                this.column단위 = new global::System.Data.DataColumn("단위", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column단위);
-                this.column발주량 = new global::System.Data.DataColumn("발주량", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column발주량);
-                this.column단가 = new global::System.Data.DataColumn("단가", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column단가);
-                this.column발주액 = new global::System.Data.DataColumn("발주액", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column발주액);
-                this.column입고여부 = new global::System.Data.DataColumn("입고여부", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column입고여부);
-                this.column입고 = new global::System.Data.DataColumn("입고", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column입고);
-                this.column입고일 = new global::System.Data.DataColumn("입고일", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column입고일);
-                this.column입고량 = new global::System.Data.DataColumn("입고량", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column입고량);
-                this.column포장단위1 = new global::System.Data.DataColumn("포장단위1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column포장단위1);
-                this.column포장수량 = new global::System.Data.DataColumn("포장수량", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column포장수량);
-                this.column입고단가 = new global::System.Data.DataColumn("입고단가", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column입고단가);
-                this.column유닛단가 = new global::System.Data.DataColumn("유닛단가", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column유닛단가);
-                this.column입고금액 = new global::System.Data.DataColumn("입고금액", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column입고금액);
-                this.column자재전표 = new global::System.Data.DataColumn("자재전표", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column자재전표);
-                this.column수입신고번호 = new global::System.Data.DataColumn("수입신고번호", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column수입신고번호);
-                this.columnBL번호 = new global::System.Data.DataColumn("BL번호", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnBL번호);
-                this.column창고ID = new global::System.Data.DataColumn("창고ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column창고ID);
-                this.column입고창고 = new global::System.Data.DataColumn("입고창고", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column입고창고);
-                this.column등록일 = new global::System.Data.DataColumn("등록일", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column등록일);
-                this.column등록자 = new global::System.Data.DataColumn("등록자", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column등록자);
-                this.column발주번호.MaxLength = 16;
-                this.column품목코드.MaxLength = 10;
-                this.column품목명.MaxLength = 50;
-                this.column규격.MaxLength = 50;
-                this.column포장단위.MaxLength = 4;
-                this.column단위.MaxLength = 50;
-                this.column입고여부.MaxLength = 1;
-                this.column입고.MaxLength = 1;
-                this.column포장단위1.MaxLength = 10;
-                this.column자재전표.MaxLength = 10;
-                this.column수입신고번호.MaxLength = 14;
-                this.columnBL번호.MaxLength = 20;
-                this.column창고ID.MaxLength = 10;
-                this.column입고창고.MaxLength = 50;
-                this.column등록자.MaxLength = 10;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_PurchaseMatSub_QueryRow NewSP_PurchaseMatSub_QueryRow() {
-                return ((SP_PurchaseMatSub_QueryRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SP_PurchaseMatSub_QueryRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(SP_PurchaseMatSub_QueryRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.SP_PurchaseMatSub_QueryRowChanged != null)) {
-                    this.SP_PurchaseMatSub_QueryRowChanged(this, new SP_PurchaseMatSub_QueryRowChangeEvent(((SP_PurchaseMatSub_QueryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.SP_PurchaseMatSub_QueryRowChanging != null)) {
-                    this.SP_PurchaseMatSub_QueryRowChanging(this, new SP_PurchaseMatSub_QueryRowChangeEvent(((SP_PurchaseMatSub_QueryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.SP_PurchaseMatSub_QueryRowDeleted != null)) {
-                    this.SP_PurchaseMatSub_QueryRowDeleted(this, new SP_PurchaseMatSub_QueryRowChangeEvent(((SP_PurchaseMatSub_QueryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.SP_PurchaseMatSub_QueryRowDeleting != null)) {
-                    this.SP_PurchaseMatSub_QueryRowDeleting(this, new SP_PurchaseMatSub_QueryRowChangeEvent(((SP_PurchaseMatSub_QueryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveSP_PurchaseMatSub_QueryRow(SP_PurchaseMatSub_QueryRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSetP1B ds = new DataSetP1B();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SP_PurchaseMatSub_QueryDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -24459,6 +23821,644 @@ namespace SmartMES_Giroei.P1B {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class SP_PurchaseMatSub_QueryDataTable : global::System.Data.TypedTableBase<SP_PurchaseMatSub_QueryRow> {
+            
+            private global::System.Data.DataColumn column발주번호;
+            
+            private global::System.Data.DataColumn column순번;
+            
+            private global::System.Data.DataColumn column품목코드;
+            
+            private global::System.Data.DataColumn column품목명;
+            
+            private global::System.Data.DataColumn column규격;
+            
+            private global::System.Data.DataColumn column포장단위;
+            
+            private global::System.Data.DataColumn column단위;
+            
+            private global::System.Data.DataColumn column발주량;
+            
+            private global::System.Data.DataColumn column단가;
+            
+            private global::System.Data.DataColumn column발주액;
+            
+            private global::System.Data.DataColumn column입고여부;
+            
+            private global::System.Data.DataColumn column입고;
+            
+            private global::System.Data.DataColumn column입고일;
+            
+            private global::System.Data.DataColumn column입고량;
+            
+            private global::System.Data.DataColumn column포장수량;
+            
+            private global::System.Data.DataColumn column입고단가;
+            
+            private global::System.Data.DataColumn column유닛단가;
+            
+            private global::System.Data.DataColumn column입고금액;
+            
+            private global::System.Data.DataColumn column자재전표;
+            
+            private global::System.Data.DataColumn column수입신고번호;
+            
+            private global::System.Data.DataColumn columnBL번호;
+            
+            private global::System.Data.DataColumn column창고ID;
+            
+            private global::System.Data.DataColumn column입고창고;
+            
+            private global::System.Data.DataColumn column등록일;
+            
+            private global::System.Data.DataColumn column등록자;
+            
+            private global::System.Data.DataColumn column발주단위;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_PurchaseMatSub_QueryDataTable() {
+                this.TableName = "SP_PurchaseMatSub_Query";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal SP_PurchaseMatSub_QueryDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected SP_PurchaseMatSub_QueryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 발주번호Column {
+                get {
+                    return this.column발주번호;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 순번Column {
+                get {
+                    return this.column순번;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 품목코드Column {
+                get {
+                    return this.column품목코드;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 품목명Column {
+                get {
+                    return this.column품목명;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 규격Column {
+                get {
+                    return this.column규격;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 포장단위Column {
+                get {
+                    return this.column포장단위;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 단위Column {
+                get {
+                    return this.column단위;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 발주량Column {
+                get {
+                    return this.column발주량;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 단가Column {
+                get {
+                    return this.column단가;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 발주액Column {
+                get {
+                    return this.column발주액;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 입고여부Column {
+                get {
+                    return this.column입고여부;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 입고Column {
+                get {
+                    return this.column입고;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 입고일Column {
+                get {
+                    return this.column입고일;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 입고량Column {
+                get {
+                    return this.column입고량;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 포장수량Column {
+                get {
+                    return this.column포장수량;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 입고단가Column {
+                get {
+                    return this.column입고단가;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 유닛단가Column {
+                get {
+                    return this.column유닛단가;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 입고금액Column {
+                get {
+                    return this.column입고금액;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 자재전표Column {
+                get {
+                    return this.column자재전표;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 수입신고번호Column {
+                get {
+                    return this.column수입신고번호;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn BL번호Column {
+                get {
+                    return this.columnBL번호;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 창고IDColumn {
+                get {
+                    return this.column창고ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 입고창고Column {
+                get {
+                    return this.column입고창고;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 등록일Column {
+                get {
+                    return this.column등록일;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 등록자Column {
+                get {
+                    return this.column등록자;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 발주단위Column {
+                get {
+                    return this.column발주단위;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_PurchaseMatSub_QueryRow this[int index] {
+                get {
+                    return ((SP_PurchaseMatSub_QueryRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_PurchaseMatSub_QueryRowChangeEventHandler SP_PurchaseMatSub_QueryRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_PurchaseMatSub_QueryRowChangeEventHandler SP_PurchaseMatSub_QueryRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_PurchaseMatSub_QueryRowChangeEventHandler SP_PurchaseMatSub_QueryRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_PurchaseMatSub_QueryRowChangeEventHandler SP_PurchaseMatSub_QueryRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddSP_PurchaseMatSub_QueryRow(SP_PurchaseMatSub_QueryRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_PurchaseMatSub_QueryRow AddSP_PurchaseMatSub_QueryRow(
+                        string 발주번호, 
+                        int 순번, 
+                        string 품목코드, 
+                        string 품목명, 
+                        string 규격, 
+                        string 포장단위, 
+                        string 단위, 
+                        int 발주량, 
+                        long 단가, 
+                        long 발주액, 
+                        string 입고여부, 
+                        string 입고, 
+                        System.DateTime 입고일, 
+                        int 입고량, 
+                        int 포장수량, 
+                        double 입고단가, 
+                        double 유닛단가, 
+                        double 입고금액, 
+                        string 자재전표, 
+                        string 수입신고번호, 
+                        string BL번호, 
+                        string 창고ID, 
+                        string 입고창고, 
+                        System.DateTime 등록일, 
+                        string 등록자, 
+                        string 발주단위) {
+                SP_PurchaseMatSub_QueryRow rowSP_PurchaseMatSub_QueryRow = ((SP_PurchaseMatSub_QueryRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        발주번호,
+                        순번,
+                        품목코드,
+                        품목명,
+                        규격,
+                        포장단위,
+                        단위,
+                        발주량,
+                        단가,
+                        발주액,
+                        입고여부,
+                        입고,
+                        입고일,
+                        입고량,
+                        포장수량,
+                        입고단가,
+                        유닛단가,
+                        입고금액,
+                        자재전표,
+                        수입신고번호,
+                        BL번호,
+                        창고ID,
+                        입고창고,
+                        등록일,
+                        등록자,
+                        발주단위};
+                rowSP_PurchaseMatSub_QueryRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSP_PurchaseMatSub_QueryRow);
+                return rowSP_PurchaseMatSub_QueryRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                SP_PurchaseMatSub_QueryDataTable cln = ((SP_PurchaseMatSub_QueryDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new SP_PurchaseMatSub_QueryDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.column발주번호 = base.Columns["발주번호"];
+                this.column순번 = base.Columns["순번"];
+                this.column품목코드 = base.Columns["품목코드"];
+                this.column품목명 = base.Columns["품목명"];
+                this.column규격 = base.Columns["규격"];
+                this.column포장단위 = base.Columns["포장단위"];
+                this.column단위 = base.Columns["단위"];
+                this.column발주량 = base.Columns["발주량"];
+                this.column단가 = base.Columns["단가"];
+                this.column발주액 = base.Columns["발주액"];
+                this.column입고여부 = base.Columns["입고여부"];
+                this.column입고 = base.Columns["입고"];
+                this.column입고일 = base.Columns["입고일"];
+                this.column입고량 = base.Columns["입고량"];
+                this.column포장수량 = base.Columns["포장수량"];
+                this.column입고단가 = base.Columns["입고단가"];
+                this.column유닛단가 = base.Columns["유닛단가"];
+                this.column입고금액 = base.Columns["입고금액"];
+                this.column자재전표 = base.Columns["자재전표"];
+                this.column수입신고번호 = base.Columns["수입신고번호"];
+                this.columnBL번호 = base.Columns["BL번호"];
+                this.column창고ID = base.Columns["창고ID"];
+                this.column입고창고 = base.Columns["입고창고"];
+                this.column등록일 = base.Columns["등록일"];
+                this.column등록자 = base.Columns["등록자"];
+                this.column발주단위 = base.Columns["발주단위"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.column발주번호 = new global::System.Data.DataColumn("발주번호", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column발주번호);
+                this.column순번 = new global::System.Data.DataColumn("순번", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column순번);
+                this.column품목코드 = new global::System.Data.DataColumn("품목코드", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column품목코드);
+                this.column품목명 = new global::System.Data.DataColumn("품목명", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column품목명);
+                this.column규격 = new global::System.Data.DataColumn("규격", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column규격);
+                this.column포장단위 = new global::System.Data.DataColumn("포장단위", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column포장단위);
+                this.column단위 = new global::System.Data.DataColumn("단위", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column단위);
+                this.column발주량 = new global::System.Data.DataColumn("발주량", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column발주량);
+                this.column단가 = new global::System.Data.DataColumn("단가", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column단가);
+                this.column발주액 = new global::System.Data.DataColumn("발주액", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column발주액);
+                this.column입고여부 = new global::System.Data.DataColumn("입고여부", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column입고여부);
+                this.column입고 = new global::System.Data.DataColumn("입고", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column입고);
+                this.column입고일 = new global::System.Data.DataColumn("입고일", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column입고일);
+                this.column입고량 = new global::System.Data.DataColumn("입고량", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column입고량);
+                this.column포장수량 = new global::System.Data.DataColumn("포장수량", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column포장수량);
+                this.column입고단가 = new global::System.Data.DataColumn("입고단가", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column입고단가);
+                this.column유닛단가 = new global::System.Data.DataColumn("유닛단가", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column유닛단가);
+                this.column입고금액 = new global::System.Data.DataColumn("입고금액", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column입고금액);
+                this.column자재전표 = new global::System.Data.DataColumn("자재전표", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column자재전표);
+                this.column수입신고번호 = new global::System.Data.DataColumn("수입신고번호", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column수입신고번호);
+                this.columnBL번호 = new global::System.Data.DataColumn("BL번호", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBL번호);
+                this.column창고ID = new global::System.Data.DataColumn("창고ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column창고ID);
+                this.column입고창고 = new global::System.Data.DataColumn("입고창고", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column입고창고);
+                this.column등록일 = new global::System.Data.DataColumn("등록일", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column등록일);
+                this.column등록자 = new global::System.Data.DataColumn("등록자", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column등록자);
+                this.column발주단위 = new global::System.Data.DataColumn("발주단위", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column발주단위);
+                this.column발주번호.MaxLength = 13;
+                this.column품목코드.MaxLength = 10;
+                this.column품목명.MaxLength = 50;
+                this.column규격.MaxLength = 50;
+                this.column포장단위.MaxLength = 4;
+                this.column단위.MaxLength = 50;
+                this.column입고여부.MaxLength = 1;
+                this.column입고.MaxLength = 1;
+                this.column자재전표.MaxLength = 10;
+                this.column수입신고번호.MaxLength = 14;
+                this.columnBL번호.MaxLength = 20;
+                this.column창고ID.MaxLength = 4;
+                this.column입고창고.MaxLength = 50;
+                this.column등록자.MaxLength = 10;
+                this.column발주단위.MaxLength = 10;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_PurchaseMatSub_QueryRow NewSP_PurchaseMatSub_QueryRow() {
+                return ((SP_PurchaseMatSub_QueryRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new SP_PurchaseMatSub_QueryRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(SP_PurchaseMatSub_QueryRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.SP_PurchaseMatSub_QueryRowChanged != null)) {
+                    this.SP_PurchaseMatSub_QueryRowChanged(this, new SP_PurchaseMatSub_QueryRowChangeEvent(((SP_PurchaseMatSub_QueryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.SP_PurchaseMatSub_QueryRowChanging != null)) {
+                    this.SP_PurchaseMatSub_QueryRowChanging(this, new SP_PurchaseMatSub_QueryRowChangeEvent(((SP_PurchaseMatSub_QueryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.SP_PurchaseMatSub_QueryRowDeleted != null)) {
+                    this.SP_PurchaseMatSub_QueryRowDeleted(this, new SP_PurchaseMatSub_QueryRowChangeEvent(((SP_PurchaseMatSub_QueryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.SP_PurchaseMatSub_QueryRowDeleting != null)) {
+                    this.SP_PurchaseMatSub_QueryRowDeleting(this, new SP_PurchaseMatSub_QueryRowChangeEvent(((SP_PurchaseMatSub_QueryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveSP_PurchaseMatSub_QueryRow(SP_PurchaseMatSub_QueryRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetP1B ds = new DataSetP1B();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "SP_PurchaseMatSub_QueryDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class SP_Z_Common_IDRow : global::System.Data.DataRow {
@@ -29530,749 +29530,6 @@ namespace SmartMES_Giroei.P1B {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set출하Null() {
                 this[this.tableSP_ROrderList_Query.출하Column] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class SP_PurchaseMatSub_QueryRow : global::System.Data.DataRow {
-            
-            private SP_PurchaseMatSub_QueryDataTable tableSP_PurchaseMatSub_Query;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SP_PurchaseMatSub_QueryRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableSP_PurchaseMatSub_Query = ((SP_PurchaseMatSub_QueryDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 발주번호 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.발주번호Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'발주번호\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.발주번호Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int 순번 {
-                get {
-                    try {
-                        return ((int)(this[this.tableSP_PurchaseMatSub_Query.순번Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'순번\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.순번Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 품목코드 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.품목코드Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'품목코드\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.품목코드Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 품목명 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.품목명Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'품목명\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.품목명Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 규격 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.규격Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'규격\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.규격Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 포장단위 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.포장단위Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'포장단위\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.포장단위Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 단위 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.단위Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'단위\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.단위Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int 발주량 {
-                get {
-                    try {
-                        return ((int)(this[this.tableSP_PurchaseMatSub_Query.발주량Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'발주량\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.발주량Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long 단가 {
-                get {
-                    try {
-                        return ((long)(this[this.tableSP_PurchaseMatSub_Query.단가Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'단가\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.단가Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long 발주액 {
-                get {
-                    try {
-                        return ((long)(this[this.tableSP_PurchaseMatSub_Query.발주액Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'발주액\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.발주액Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 입고여부 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.입고여부Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'입고여부\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.입고여부Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 입고 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.입고Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'입고\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.입고Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime 입고일 {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableSP_PurchaseMatSub_Query.입고일Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'입고일\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.입고일Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int 입고량 {
-                get {
-                    try {
-                        return ((int)(this[this.tableSP_PurchaseMatSub_Query.입고량Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'입고량\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.입고량Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 포장단위1 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.포장단위1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'포장단위1\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.포장단위1Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int 포장수량 {
-                get {
-                    try {
-                        return ((int)(this[this.tableSP_PurchaseMatSub_Query.포장수량Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'포장수량\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.포장수량Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double 입고단가 {
-                get {
-                    try {
-                        return ((double)(this[this.tableSP_PurchaseMatSub_Query.입고단가Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'입고단가\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.입고단가Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double 유닛단가 {
-                get {
-                    try {
-                        return ((double)(this[this.tableSP_PurchaseMatSub_Query.유닛단가Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'유닛단가\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.유닛단가Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public double 입고금액 {
-                get {
-                    try {
-                        return ((double)(this[this.tableSP_PurchaseMatSub_Query.입고금액Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'입고금액\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.입고금액Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 자재전표 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.자재전표Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'자재전표\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.자재전표Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 수입신고번호 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.수입신고번호Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'수입신고번호\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.수입신고번호Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string BL번호 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.BL번호Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'BL번호\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.BL번호Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 창고ID {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.창고IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'창고ID\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.창고IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 입고창고 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.입고창고Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'입고창고\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.입고창고Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime 등록일 {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableSP_PurchaseMatSub_Query.등록일Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'등록일\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.등록일Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 등록자 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.등록자Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'등록자\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_PurchaseMatSub_Query.등록자Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is발주번호Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.발주번호Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set발주번호Null() {
-                this[this.tableSP_PurchaseMatSub_Query.발주번호Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is순번Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.순번Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set순번Null() {
-                this[this.tableSP_PurchaseMatSub_Query.순번Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is품목코드Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.품목코드Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set품목코드Null() {
-                this[this.tableSP_PurchaseMatSub_Query.품목코드Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is품목명Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.품목명Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set품목명Null() {
-                this[this.tableSP_PurchaseMatSub_Query.품목명Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is규격Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.규격Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set규격Null() {
-                this[this.tableSP_PurchaseMatSub_Query.규격Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is포장단위Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.포장단위Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set포장단위Null() {
-                this[this.tableSP_PurchaseMatSub_Query.포장단위Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is단위Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.단위Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set단위Null() {
-                this[this.tableSP_PurchaseMatSub_Query.단위Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is발주량Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.발주량Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set발주량Null() {
-                this[this.tableSP_PurchaseMatSub_Query.발주량Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is단가Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.단가Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set단가Null() {
-                this[this.tableSP_PurchaseMatSub_Query.단가Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is발주액Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.발주액Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set발주액Null() {
-                this[this.tableSP_PurchaseMatSub_Query.발주액Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is입고여부Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.입고여부Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set입고여부Null() {
-                this[this.tableSP_PurchaseMatSub_Query.입고여부Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is입고Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.입고Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set입고Null() {
-                this[this.tableSP_PurchaseMatSub_Query.입고Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is입고일Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.입고일Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set입고일Null() {
-                this[this.tableSP_PurchaseMatSub_Query.입고일Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is입고량Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.입고량Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set입고량Null() {
-                this[this.tableSP_PurchaseMatSub_Query.입고량Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is포장단위1Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.포장단위1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set포장단위1Null() {
-                this[this.tableSP_PurchaseMatSub_Query.포장단위1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is포장수량Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.포장수량Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set포장수량Null() {
-                this[this.tableSP_PurchaseMatSub_Query.포장수량Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is입고단가Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.입고단가Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set입고단가Null() {
-                this[this.tableSP_PurchaseMatSub_Query.입고단가Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is유닛단가Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.유닛단가Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set유닛단가Null() {
-                this[this.tableSP_PurchaseMatSub_Query.유닛단가Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is입고금액Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.입고금액Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set입고금액Null() {
-                this[this.tableSP_PurchaseMatSub_Query.입고금액Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is자재전표Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.자재전표Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set자재전표Null() {
-                this[this.tableSP_PurchaseMatSub_Query.자재전표Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is수입신고번호Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.수입신고번호Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set수입신고번호Null() {
-                this[this.tableSP_PurchaseMatSub_Query.수입신고번호Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool IsBL번호Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.BL번호Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void SetBL번호Null() {
-                this[this.tableSP_PurchaseMatSub_Query.BL번호Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is창고IDNull() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.창고IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set창고IDNull() {
-                this[this.tableSP_PurchaseMatSub_Query.창고IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is입고창고Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.입고창고Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set입고창고Null() {
-                this[this.tableSP_PurchaseMatSub_Query.입고창고Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is등록일Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.등록일Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set등록일Null() {
-                this[this.tableSP_PurchaseMatSub_Query.등록일Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is등록자Null() {
-                return this.IsNull(this.tableSP_PurchaseMatSub_Query.등록자Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set등록자Null() {
-                this[this.tableSP_PurchaseMatSub_Query.등록자Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -41185,6 +40442,749 @@ namespace SmartMES_Giroei.P1B {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class SP_PurchaseMatSub_QueryRow : global::System.Data.DataRow {
+            
+            private SP_PurchaseMatSub_QueryDataTable tableSP_PurchaseMatSub_Query;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal SP_PurchaseMatSub_QueryRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSP_PurchaseMatSub_Query = ((SP_PurchaseMatSub_QueryDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 발주번호 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.발주번호Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'발주번호\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.발주번호Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 순번 {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_PurchaseMatSub_Query.순번Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'순번\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.순번Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 품목코드 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.품목코드Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'품목코드\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.품목코드Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 품목명 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.품목명Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'품목명\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.품목명Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 규격 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.규격Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'규격\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.규격Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 포장단위 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.포장단위Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'포장단위\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.포장단위Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 단위 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.단위Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'단위\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.단위Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 발주량 {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_PurchaseMatSub_Query.발주량Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'발주량\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.발주량Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long 단가 {
+                get {
+                    try {
+                        return ((long)(this[this.tableSP_PurchaseMatSub_Query.단가Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'단가\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.단가Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long 발주액 {
+                get {
+                    try {
+                        return ((long)(this[this.tableSP_PurchaseMatSub_Query.발주액Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'발주액\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.발주액Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 입고여부 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.입고여부Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'입고여부\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.입고여부Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 입고 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.입고Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'입고\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.입고Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime 입고일 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_PurchaseMatSub_Query.입고일Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'입고일\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.입고일Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 입고량 {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_PurchaseMatSub_Query.입고량Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'입고량\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.입고량Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 포장수량 {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_PurchaseMatSub_Query.포장수량Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'포장수량\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.포장수량Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double 입고단가 {
+                get {
+                    try {
+                        return ((double)(this[this.tableSP_PurchaseMatSub_Query.입고단가Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'입고단가\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.입고단가Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double 유닛단가 {
+                get {
+                    try {
+                        return ((double)(this[this.tableSP_PurchaseMatSub_Query.유닛단가Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'유닛단가\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.유닛단가Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public double 입고금액 {
+                get {
+                    try {
+                        return ((double)(this[this.tableSP_PurchaseMatSub_Query.입고금액Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'입고금액\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.입고금액Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 자재전표 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.자재전표Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'자재전표\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.자재전표Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 수입신고번호 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.수입신고번호Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'수입신고번호\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.수입신고번호Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string BL번호 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.BL번호Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'BL번호\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.BL번호Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 창고ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.창고IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'창고ID\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.창고IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 입고창고 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.입고창고Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'입고창고\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.입고창고Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime 등록일 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_PurchaseMatSub_Query.등록일Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'등록일\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.등록일Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 등록자 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.등록자Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'등록자\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.등록자Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 발주단위 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_PurchaseMatSub_Query.발주단위Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseMatSub_Query\' 테이블의 \'발주단위\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseMatSub_Query.발주단위Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is발주번호Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.발주번호Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set발주번호Null() {
+                this[this.tableSP_PurchaseMatSub_Query.발주번호Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is순번Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.순번Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set순번Null() {
+                this[this.tableSP_PurchaseMatSub_Query.순번Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is품목코드Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.품목코드Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set품목코드Null() {
+                this[this.tableSP_PurchaseMatSub_Query.품목코드Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is품목명Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.품목명Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set품목명Null() {
+                this[this.tableSP_PurchaseMatSub_Query.품목명Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is규격Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.규격Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set규격Null() {
+                this[this.tableSP_PurchaseMatSub_Query.규격Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is포장단위Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.포장단위Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set포장단위Null() {
+                this[this.tableSP_PurchaseMatSub_Query.포장단위Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is단위Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.단위Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set단위Null() {
+                this[this.tableSP_PurchaseMatSub_Query.단위Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is발주량Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.발주량Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set발주량Null() {
+                this[this.tableSP_PurchaseMatSub_Query.발주량Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is단가Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.단가Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set단가Null() {
+                this[this.tableSP_PurchaseMatSub_Query.단가Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is발주액Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.발주액Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set발주액Null() {
+                this[this.tableSP_PurchaseMatSub_Query.발주액Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is입고여부Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.입고여부Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set입고여부Null() {
+                this[this.tableSP_PurchaseMatSub_Query.입고여부Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is입고Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.입고Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set입고Null() {
+                this[this.tableSP_PurchaseMatSub_Query.입고Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is입고일Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.입고일Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set입고일Null() {
+                this[this.tableSP_PurchaseMatSub_Query.입고일Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is입고량Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.입고량Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set입고량Null() {
+                this[this.tableSP_PurchaseMatSub_Query.입고량Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is포장수량Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.포장수량Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set포장수량Null() {
+                this[this.tableSP_PurchaseMatSub_Query.포장수량Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is입고단가Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.입고단가Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set입고단가Null() {
+                this[this.tableSP_PurchaseMatSub_Query.입고단가Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is유닛단가Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.유닛단가Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set유닛단가Null() {
+                this[this.tableSP_PurchaseMatSub_Query.유닛단가Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is입고금액Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.입고금액Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set입고금액Null() {
+                this[this.tableSP_PurchaseMatSub_Query.입고금액Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is자재전표Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.자재전표Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set자재전표Null() {
+                this[this.tableSP_PurchaseMatSub_Query.자재전표Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is수입신고번호Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.수입신고번호Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set수입신고번호Null() {
+                this[this.tableSP_PurchaseMatSub_Query.수입신고번호Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsBL번호Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.BL번호Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetBL번호Null() {
+                this[this.tableSP_PurchaseMatSub_Query.BL번호Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is창고IDNull() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.창고IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set창고IDNull() {
+                this[this.tableSP_PurchaseMatSub_Query.창고IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is입고창고Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.입고창고Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set입고창고Null() {
+                this[this.tableSP_PurchaseMatSub_Query.입고창고Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is등록일Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.등록일Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set등록일Null() {
+                this[this.tableSP_PurchaseMatSub_Query.등록일Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is등록자Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.등록자Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set등록자Null() {
+                this[this.tableSP_PurchaseMatSub_Query.등록자Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is발주단위Null() {
+                return this.IsNull(this.tableSP_PurchaseMatSub_Query.발주단위Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set발주단위Null() {
+                this[this.tableSP_PurchaseMatSub_Query.발주단위Column] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -41714,40 +41714,6 @@ namespace SmartMES_Giroei.P1B {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_ROrderList_QueryRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class SP_PurchaseMatSub_QueryRowChangeEvent : global::System.EventArgs {
-            
-            private SP_PurchaseMatSub_QueryRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_PurchaseMatSub_QueryRowChangeEvent(SP_PurchaseMatSub_QueryRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_PurchaseMatSub_QueryRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -42870,6 +42836,40 @@ namespace SmartMES_Giroei.P1B {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_Item_Box_Sub_ReturnRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class SP_PurchaseMatSub_QueryRowChangeEvent : global::System.EventArgs {
+            
+            private SP_PurchaseMatSub_QueryRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_PurchaseMatSub_QueryRowChangeEvent(SP_PurchaseMatSub_QueryRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_PurchaseMatSub_QueryRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -46495,217 +46495,6 @@ namespace SmartMES_Giroei.P1B.DataSetP1BTableAdapters {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(_search));
             }
             DataSetP1B.SP_ROrderList_QueryDataTable dataTable = new DataSetP1B.SP_ROrderList_QueryDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class SP_PurchaseMatSub_QueryTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
-        
-        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
-        
-        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
-        
-        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public SP_PurchaseMatSub_QueryTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "SP_PurchaseMatSub_Query";
-            tableMapping.ColumnMappings.Add("발주번호", "발주번호");
-            tableMapping.ColumnMappings.Add("순번", "순번");
-            tableMapping.ColumnMappings.Add("품목코드", "품목코드");
-            tableMapping.ColumnMappings.Add("품목명", "품목명");
-            tableMapping.ColumnMappings.Add("규격", "규격");
-            tableMapping.ColumnMappings.Add("포장단위", "포장단위");
-            tableMapping.ColumnMappings.Add("단위", "단위");
-            tableMapping.ColumnMappings.Add("발주량", "발주량");
-            tableMapping.ColumnMappings.Add("단가", "단가");
-            tableMapping.ColumnMappings.Add("발주액", "발주액");
-            tableMapping.ColumnMappings.Add("입고여부", "입고여부");
-            tableMapping.ColumnMappings.Add("입고", "입고");
-            tableMapping.ColumnMappings.Add("입고일", "입고일");
-            tableMapping.ColumnMappings.Add("입고량", "입고량");
-            tableMapping.ColumnMappings.Add("포장단위1", "포장단위1");
-            tableMapping.ColumnMappings.Add("포장수량", "포장수량");
-            tableMapping.ColumnMappings.Add("입고단가", "입고단가");
-            tableMapping.ColumnMappings.Add("유닛단가", "유닛단가");
-            tableMapping.ColumnMappings.Add("입고금액", "입고금액");
-            tableMapping.ColumnMappings.Add("자재전표", "자재전표");
-            tableMapping.ColumnMappings.Add("수입신고번호", "수입신고번호");
-            tableMapping.ColumnMappings.Add("BL번호", "BL번호");
-            tableMapping.ColumnMappings.Add("창고ID", "창고ID");
-            tableMapping.ColumnMappings.Add("입고창고", "입고창고");
-            tableMapping.ColumnMappings.Add("등록일", "등록일");
-            tableMapping.ColumnMappings.Add("등록자", "등록자");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::SmartMES_Giroei.Properties.Settings.Default.jiroei_mesConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
-            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "`jiroei_mes`.`SP_PurchaseMatSub_Query`";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
-            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "_no";
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
-            param.Size = 16;
-            param.IsNullable = true;
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[0].Parameters.Add(param);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetP1B.SP_PurchaseMatSub_QueryDataTable dataTable, string _no) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((_no == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(_no));
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetP1B.SP_PurchaseMatSub_QueryDataTable GetData(string _no) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((_no == null)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(_no));
-            }
-            DataSetP1B.SP_PurchaseMatSub_QueryDataTable dataTable = new DataSetP1B.SP_PurchaseMatSub_QueryDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -53678,6 +53467,217 @@ namespace SmartMES_Giroei.P1B.DataSetP1BTableAdapters {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             DataSetP1B.SP_Item_Box_Sub_ReturnDataTable dataTable = new DataSetP1B.SP_Item_Box_Sub_ReturnDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class SP_PurchaseMatSub_QueryTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
+        
+        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
+        
+        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
+        
+        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public SP_PurchaseMatSub_QueryTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "SP_PurchaseMatSub_Query";
+            tableMapping.ColumnMappings.Add("발주번호", "발주번호");
+            tableMapping.ColumnMappings.Add("순번", "순번");
+            tableMapping.ColumnMappings.Add("품목코드", "품목코드");
+            tableMapping.ColumnMappings.Add("품목명", "품목명");
+            tableMapping.ColumnMappings.Add("규격", "규격");
+            tableMapping.ColumnMappings.Add("포장단위", "포장단위");
+            tableMapping.ColumnMappings.Add("단위", "단위");
+            tableMapping.ColumnMappings.Add("발주량", "발주량");
+            tableMapping.ColumnMappings.Add("단가", "단가");
+            tableMapping.ColumnMappings.Add("발주액", "발주액");
+            tableMapping.ColumnMappings.Add("입고여부", "입고여부");
+            tableMapping.ColumnMappings.Add("입고", "입고");
+            tableMapping.ColumnMappings.Add("입고일", "입고일");
+            tableMapping.ColumnMappings.Add("입고량", "입고량");
+            tableMapping.ColumnMappings.Add("포장수량", "포장수량");
+            tableMapping.ColumnMappings.Add("입고단가", "입고단가");
+            tableMapping.ColumnMappings.Add("유닛단가", "유닛단가");
+            tableMapping.ColumnMappings.Add("입고금액", "입고금액");
+            tableMapping.ColumnMappings.Add("자재전표", "자재전표");
+            tableMapping.ColumnMappings.Add("수입신고번호", "수입신고번호");
+            tableMapping.ColumnMappings.Add("BL번호", "BL번호");
+            tableMapping.ColumnMappings.Add("창고ID", "창고ID");
+            tableMapping.ColumnMappings.Add("입고창고", "입고창고");
+            tableMapping.ColumnMappings.Add("등록일", "등록일");
+            tableMapping.ColumnMappings.Add("등록자", "등록자");
+            tableMapping.ColumnMappings.Add("발주단위", "발주단위");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
+            this._connection.ConnectionString = global::SmartMES_Giroei.Properties.Settings.Default.jiroei_mesConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "`jiroei_mes`.`SP_PurchaseMatSub_Query`";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "_no";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
+            param.Size = 16;
+            param.IsNullable = true;
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[0].Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSetP1B.SP_PurchaseMatSub_QueryDataTable dataTable, string _no) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((_no == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(_no));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSetP1B.SP_PurchaseMatSub_QueryDataTable GetData(string _no) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((_no == null)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((string)(_no));
+            }
+            DataSetP1B.SP_PurchaseMatSub_QueryDataTable dataTable = new DataSetP1B.SP_PurchaseMatSub_QueryDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

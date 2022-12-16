@@ -754,7 +754,7 @@ namespace SmartMES_Giroei
                     seq = seq + 1;
                     sSeq = seq.ToString();
                     sProdID = dataGridView1.Rows[i].Cells[3].Value.ToString().Trim();
-                    sUnit = dataGridView1.Rows[i].Cells[26].Value.ToString().Trim();
+                    sUnit = dataGridView1.Rows[i].Cells[6].Value.ToString().Trim();
                     sQty = dataGridView1.Rows[i].Cells[7].Value.ToString().Trim();
                     sDanga = dataGridView1.Rows[i].Cells[8].Value.ToString().Trim();
                     sAmount = dataGridView1.Rows[i].Cells[9].Value.ToString().Trim();
@@ -793,7 +793,7 @@ namespace SmartMES_Giroei
                     if (dataGridView1.Rows[i].Cells[3].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[i].Cells[3].Value.ToString())) continue;
 
                     sProdID = dataGridView1.Rows[i].Cells[3].Value.ToString().Trim();
-                    sUnit = dataGridView1.Rows[i].Cells[26].Value.ToString().Trim();        // 단위 공통코드로 가져가야 됨 6-> 26(포장단위) 변경
+                    sUnit = dataGridView1.Rows[i].Cells[6].Value.ToString().Trim();        // 단위 공통코드로 가져가야 됨 6-> 26(포장단위) 변경
                     sQty = dataGridView1.Rows[i].Cells[7].Value.ToString().Trim();
                     sDanga = dataGridView1.Rows[i].Cells[8].Value.ToString().Trim();
                     sAmount = dataGridView1.Rows[i].Cells[9].Value.ToString().Trim();
