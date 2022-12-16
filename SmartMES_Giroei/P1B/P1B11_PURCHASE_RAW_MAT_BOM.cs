@@ -18,6 +18,7 @@ namespace SmartMES_Giroei
         public string sSujuNo = string.Empty;
         public string sSujuSeq = string.Empty;
         public string sCustID = string.Empty;
+        public string sCustName = string.Empty;
         public string sProd = string.Empty;
         public string sProdName = string.Empty;
         public static int rowIndex = 0;
@@ -36,6 +37,7 @@ namespace SmartMES_Giroei
             rowIndex = parentWin.dataGridView1.CurrentCell.RowIndex;
             sCustID = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();     // 거래처ID
             sProd = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();       // 제품품목ID
+            sCustName = parentWin.dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();     // 거래처명
 
             ListSearch();
             this.ActiveControl = tbSearch;
@@ -117,7 +119,7 @@ namespace SmartMES_Giroei
                 //    }
                 //}
             }
-            else if (e.ColumnIndex == 10)         // 바코드 인쇄
+            else if (e.ColumnIndex == 11)         // 바코드 인쇄
             {
                 if (printBarcode(e.RowIndex) == false)
                 {
@@ -167,13 +169,23 @@ namespace SmartMES_Giroei
                         iQtyInPackage = remain;
                     string Barcode = barcodePrefix + "-" + (i + 1).ToString("D3") + "-" + iQtyInPackage.ToString("D4");
                     string[] aBarcode = Barcode.Split('-');
+                    // 한글문제
+
                     str = "^XA^BY2,2.5^FS";
+                    str += "^SEE:UHANGUL.DAT^FS";
+                    str += "^CW1,E:KFONT3.FNT^FS^CI26^FS";
+                    //str += "^FO443,70 ";
+
                     // str += "^FO30,80 ^B3N,N,80,Y,N ^FD" + Barcode.Trim() + " ^FS";
                     str += "^FO50,30 ^BQN,2,3^FDMA," + Barcode.Trim() + " ^FS";
-                    str += "^FO150,20^A0,22,22^FD" + aBarcode[0] + " ^FS";
-                    str += "^FO150,50^A0,22,22^FD" + aBarcode[1] + " ^FS";
+                    //str += "^FO150,20^A0,22,22^FD" + aBarcode[0] + " ^FS";
+                    //str += "^FO150,50^A0,22,22^FD" + aBarcode[1] + " ^FS";
+                    str += "^FO150,20^A1N,22,22^FD" + sCustName + " ^FS";
+                    str += "^FO150,50^A0,22,22^FD" + sProdName + " ^FS";
                     str += "^FO150,80^A0,22,22^FD" + aBarcode[2] + " ^FS";
                     str += "^FO150,110^A0,22,22^FD" + aBarcode[3] + "-" + aBarcode[4] + " ^FS";
+                    str += "^XZ";
+
                     var bytes = Encoding.Default.GetBytes(str);
 
                     //try
@@ -197,7 +209,7 @@ namespace SmartMES_Giroei
         private void save2InvBarcode(string barcode, string mBarcode, int iQtyInPackage, int rowindex)
         {
             string sCust = barcode.Split('-')[0].Trim();
-            string sProd = barcode.Split('-')[1].Trim();
+            string sMatCode = barcode.Split('-')[1].Trim();
             string surfix = barcode.Split('-')[3] + "-" + barcode.Split('-')[4];
             string sInDate = DateTime.Now.ToString("yyyy-MM-dd");
 
@@ -206,7 +218,7 @@ namespace SmartMES_Giroei
 
             string sSubProd = dataGridView1.Rows[rowindex].Cells[5].Value.ToString();
 
-            string sPackType = dataGridView1.Rows[rowindex].Cells[7].Value.ToString();
+            string sPackType = dataGridView1.Rows[rowindex].Cells[7].Value.ToString();          // 포장단위
             string sPackQty = string.Empty;
             string sQty = string.Empty;
 
@@ -229,7 +241,7 @@ namespace SmartMES_Giroei
             MariaCRUD m = new MariaCRUD();
 
             string sql = "insert into INV_barcode (mbarcode, barcode_surfix, cust_id, prod_id, input_date, in_qty, rm_qty, enter_man) " +
-                    "values('" + mBarcode + "','" + surfix + "','" + sCust + "','" + sProd + "','" + sInDate + "'," + iQtyInPackage + "," + iQtyInPackage + ",'" + G.UserID + "')";
+                    "values('" + mBarcode + "','" + surfix + "','" + sCust + "','" + sMatCode + "','" + sInDate + "'," + iQtyInPackage + "," + iQtyInPackage + ",'" + G.UserID + "')";
             m.dbCUD(sql, ref msg);
 
             if (msg != "OK")
@@ -240,7 +252,7 @@ namespace SmartMES_Giroei
             }
 
             sql = $@"INSERT INTO INV_material_in (mbarcode, barcode_surfix, cust_id, prod_id, plant, input_date, order_id, order_seq, qty, pack_type, pack_qty, reason_code,  enter_man) 
-                            VALUES ('{mBarcode}', '{surfix}', '{@sCustID}', '{sProd}', 'A', '{@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}', '{@sSujuNo}', {@sSujuSeq}, {@sQty}, '{@sPackType}', {@sPackQty}, '0010', '{@G.UserID}');";
+                            VALUES ('{mBarcode}', '{surfix}', '{@sCustID}', '{sMatCode}', 'A', '{@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}', '{@sSujuNo}', {@sSujuSeq}, {@sQty}, '{@sPackType}', {@sPackQty}, '0010', '{@G.UserID}');";
 
             m.dbCUD(sql, ref msg);
 

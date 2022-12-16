@@ -90,9 +90,29 @@ namespace SmartMES_Giroei
                 int iSujuCount = 1;
                 long iSum1 = 0, iSum2 = 0, iSum3 = 0, iSum4 = 0;
                 DataGridViewButtonCell buttonCell;
+                string sCodeA = dataGridView1.Rows[0].Cells[0].Value.ToString();        // 수주번호
+                string sCodeB = dataGridView1.Rows[0].Cells[1].Value.ToString();        // 수주순번
 
                 for (int i = 0; i < rowIndex; i++)
                 {
+                    //
+                    //   중복 제거
+                    if (sCodeA == dataGridView1.Rows[i].Cells[0].Value.ToString() && sCodeB == dataGridView1.Rows[i].Cells[1].Value.ToString())
+                    {
+                        if (i > 0)
+                        {
+                            dataGridView1.Rows[i].Cells[0].Style.ForeColor = Color.Transparent;
+                            dataGridView1.Rows[i].Cells[1].Style.ForeColor = Color.Transparent;
+                            dataGridView1.Rows[i].Cells[2].Style.ForeColor = Color.Transparent;
+                            dataGridView1.Rows[i].Cells[3].Style.ForeColor = Color.Transparent;
+                            dataGridView1.Rows[i].Cells[4].Style.ForeColor = Color.Transparent;
+                            dataGridView1.Rows[i].Cells[5].Style.ForeColor = Color.Transparent;
+                        }
+                    }
+                    sCodeA = dataGridView1.Rows[i].Cells[0].Value.ToString();
+                    sCodeB = dataGridView1.Rows[i].Cells[1].Value.ToString();
+
+                    //
                     if (i > 0)
                     {
                         if (dataGridView1.Rows[i].Cells[0].Value.ToString() != dataGridView1.Rows[i - 1].Cells[0].Value.ToString())
@@ -128,6 +148,34 @@ namespace SmartMES_Giroei
             {
                 return;
             }
+
+
+
+            //if (dataGridView1.RowCount < 1) return;
+
+            //try
+            //{
+            //    string sCodeA = dataGridView1.Rows[0].Cells[0].Value.ToString();        // 수주번호
+            //    string sCodeB = dataGridView1.Rows[0].Cells[4].Value.ToString();        // 품목코드
+
+            //    for (int i = 1; i < dataGridView1.RowCount; i++)
+            //    {
+            //        if (sCodeA == dataGridView1.Rows[i].Cells[0].Value.ToString())
+            //        {
+            //            dataGridView1.Rows[i].Cells[0].Style.ForeColor = Color.Transparent;
+            //            dataGridView1.Rows[i].Cells[1].Style.ForeColor = Color.Transparent;
+            //            dataGridView1.Rows[i].Cells[2].Style.ForeColor = Color.Transparent;
+            //            dataGridView1.Rows[i].Cells[3].Style.ForeColor = Color.Transparent;
+            //            dataGridView1.Rows[i].Cells[4].Style.ForeColor = Color.Transparent;
+            //            dataGridView1.Rows[i].Cells[5].Style.ForeColor = Color.Transparent;
+            //        }
+            //        sCodeA = dataGridView1.Rows[i].Cells[0].Value.ToString();
+            //    }
+            //}
+            //catch (NullReferenceException)
+            //{
+            //    return;
+            //}
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
