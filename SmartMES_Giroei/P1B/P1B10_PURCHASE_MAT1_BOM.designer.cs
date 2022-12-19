@@ -38,11 +38,6 @@
             this.btnPurch = new System.Windows.Forms.Button();
             this.btAllCheck = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sPPurchaseRawMatBOMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
-            this.lblMsg = new System.Windows.Forms.Label();
-            this.lblProd = new System.Windows.Forms.Label();
-            this.sP_PurchaseRawMat_BOMTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseRawMat_BOMTableAdapter();
             this.ColumnCheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.품목코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,10 +49,18 @@
             this.포장수량 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수량 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.sPPurchaseRawMatBOMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
+            this.lblMsg = new System.Windows.Forms.Label();
+            this.lblProd = new System.Windows.Forms.Label();
+            this.sP_PurchaseRawMat_BOMTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseRawMat_BOMTableAdapter();
+            this.sPPurchaseMatBOMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_PurchaseMat_BOMTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseMat_BOMTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseRawMatBOMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseMatBOMBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -129,7 +132,7 @@
             this.수량,
             this.Column1});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.dataGridView1.DataSource = this.sPPurchaseRawMatBOMBindingSource;
+            this.dataGridView1.DataSource = this.sPPurchaseMatBOMBindingSource;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -159,41 +162,6 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // sPPurchaseRawMatBOMBindingSource
-            // 
-            this.sPPurchaseRawMatBOMBindingSource.DataMember = "SP_PurchaseRawMat_BOM";
-            this.sPPurchaseRawMatBOMBindingSource.DataSource = this.dataSetP1B;
-            // 
-            // dataSetP1B
-            // 
-            this.dataSetP1B.DataSetName = "DataSetP1B";
-            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // lblMsg
-            // 
-            this.lblMsg.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblMsg.AutoSize = true;
-            this.lblMsg.ForeColor = System.Drawing.Color.Red;
-            this.lblMsg.Location = new System.Drawing.Point(-1, 1);
-            this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(148, 21);
-            this.lblMsg.TabIndex = 12;
-            this.lblMsg.Text = "메시지 라벨입니다.";
-            // 
-            // lblProd
-            // 
-            this.lblProd.AutoSize = true;
-            this.lblProd.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblProd.Location = new System.Drawing.Point(11, 26);
-            this.lblProd.Name = "lblProd";
-            this.lblProd.Size = new System.Drawing.Size(63, 21);
-            this.lblProd.TabIndex = 10;
-            this.lblProd.Text = "lblProd";
-            // 
-            // sP_PurchaseRawMat_BOMTableAdapter
-            // 
-            this.sP_PurchaseRawMat_BOMTableAdapter.ClearBeforeFill = true;
             // 
             // ColumnCheckBox
             // 
@@ -283,6 +251,50 @@
             this.Column1.Name = "Column1";
             this.Column1.Visible = false;
             // 
+            // sPPurchaseRawMatBOMBindingSource
+            // 
+            this.sPPurchaseRawMatBOMBindingSource.DataMember = "SP_PurchaseRawMat_BOM";
+            this.sPPurchaseRawMatBOMBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // dataSetP1B
+            // 
+            this.dataSetP1B.DataSetName = "DataSetP1B";
+            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // lblMsg
+            // 
+            this.lblMsg.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblMsg.AutoSize = true;
+            this.lblMsg.ForeColor = System.Drawing.Color.Red;
+            this.lblMsg.Location = new System.Drawing.Point(-1, 1);
+            this.lblMsg.Name = "lblMsg";
+            this.lblMsg.Size = new System.Drawing.Size(148, 21);
+            this.lblMsg.TabIndex = 12;
+            this.lblMsg.Text = "메시지 라벨입니다.";
+            // 
+            // lblProd
+            // 
+            this.lblProd.AutoSize = true;
+            this.lblProd.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblProd.Location = new System.Drawing.Point(11, 26);
+            this.lblProd.Name = "lblProd";
+            this.lblProd.Size = new System.Drawing.Size(63, 21);
+            this.lblProd.TabIndex = 10;
+            this.lblProd.Text = "lblProd";
+            // 
+            // sP_PurchaseRawMat_BOMTableAdapter
+            // 
+            this.sP_PurchaseRawMat_BOMTableAdapter.ClearBeforeFill = true;
+            // 
+            // sPPurchaseMatBOMBindingSource
+            // 
+            this.sPPurchaseMatBOMBindingSource.DataMember = "SP_PurchaseMat_BOM";
+            this.sPPurchaseMatBOMBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // sP_PurchaseMat_BOMTableAdapter
+            // 
+            this.sP_PurchaseMat_BOMTableAdapter.ClearBeforeFill = true;
+            // 
             // P1B10_PURCHASE_MAT1_BOM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -305,6 +317,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseRawMatBOMBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseMatBOMBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -345,5 +358,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 포장수량;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수량;
         private System.Windows.Forms.DataGridViewButtonColumn Column1;
+        private System.Windows.Forms.BindingSource sPPurchaseMatBOMBindingSource;
+        private P1B.DataSetP1BTableAdapters.SP_PurchaseMat_BOMTableAdapter sP_PurchaseMat_BOMTableAdapter;
     }
 }

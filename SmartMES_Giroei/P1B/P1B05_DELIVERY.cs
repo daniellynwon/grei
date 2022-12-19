@@ -857,7 +857,6 @@ namespace SmartMES_Giroei
             MariaCRUD m = new MariaCRUD();
             string msg = string.Empty;
             int cnt = Int32.Parse(m.dbRonlyOne(sql, ref msg).ToString());
-
             if (cnt > 0) return true;
             else return false;
         }
@@ -882,6 +881,7 @@ namespace SmartMES_Giroei
             P1B05_DELIVERY_SUB1 sub = new P1B05_DELIVERY_SUB1();
             sub.parentWin = this;
             sub.ShowDialog();
+
         }
         private void btnBarcode_Click(object sender, EventArgs e)  // 품질검사완료 SP  보는 화면 연결.
         {
