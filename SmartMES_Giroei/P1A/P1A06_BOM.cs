@@ -97,6 +97,7 @@ namespace SmartMES_Giroei
                 string sSearch = tbSearch3.Text.Trim();
 
                 sP_BOM_ListTableAdapter.Fill(dataSetP1A.SP_BOM_List, sSearch, sProd);
+                //sP_BOM_ListTableAdapter.Fill(dataSetP1A.SP_BOM_List, sSearch, "P0000001");
 
                 var data = dataSetP1A.SP_BOM_List;
                 var result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.조회, data);
@@ -141,7 +142,7 @@ namespace SmartMES_Giroei
                 return;
             }
 
-            dataGridView2.CurrentCell = dataGridView2[0, 0];
+            dataGridView2.CurrentCell = dataGridView2[1, 0];
 
             string sql = string.Empty;
             string msg = string.Empty;
@@ -155,23 +156,29 @@ namespace SmartMES_Giroei
             string sIsSusap = string.Empty;
             string sIsMisap = string.Empty;
             string sContents = string.Empty;
+            string sSeq = string.Empty;
 
             int iCnt = 0;
             for (int i = 0; i < dataGridView2.RowCount; i++)
             {
-                sProdID = dataGridView2.Rows[i].Cells[1].Value.ToString();
-                sMaterialID = dataGridView2.Rows[i].Cells[2].Value.ToString();
-                sQty = dataGridView2.Rows[i].Cells[6].Value.ToString();
-                sConsignedYN = (dataGridView2.Rows[i].Cells[7].Value.ToString() == "O") ? "Y" : "N";
-                sIsSusap = (dataGridView2.Rows[i].Cells[8].Value.ToString() == "O") ? "Y" : "N";
-                sIsMisap = (dataGridView2.Rows[i].Cells[9].Value.ToString() == "O") ? "Y" : "N";
-                sContents = dataGridView2.Rows[i].Cells[10].Value.ToString();
+                if(dataGridView2.Rows[i].Cells[1].Value.ToString() == "" || string.IsNullOrEmpty(dataGridView2.Rows[i].Cells[1].Value.ToString()))
+                {
+                    lblMsg.Text = "순번을 입력하세요";
+                    break;  
+                }
+                sSeq = dataGridView2.Rows[i].Cells[1].Value.ToString();
+                sProdID = dataGridView2.Rows[i].Cells[2].Value.ToString();
+                sMaterialID = dataGridView2.Rows[i].Cells[3].Value.ToString();
+                sQty = dataGridView2.Rows[i].Cells[7].Value.ToString();
+                sConsignedYN = (dataGridView2.Rows[i].Cells[8].Value.ToString() == "O") ? "Y" : "N";
+                sIsSusap = (dataGridView2.Rows[i].Cells[9].Value.ToString() == "O") ? "Y" : "N";
+                sIsMisap = (dataGridView2.Rows[i].Cells[10].Value.ToString() == "O") ? "Y" : "N";
+                sContents = dataGridView2.Rows[i].Cells[11].Value.ToString();
 
                 if (string.IsNullOrEmpty(sQty)) sQty = "0";
 
-                sql = $@"UPDATE BOM_bomlist SET req_qty = {@sQty}, consignedYN = '{@sConsignedYN}', IsSusap = '{sIsSusap}', IsMiSap = '{sIsMisap}', contents = '" + sContents + 
+                sql = $@"UPDATE BOM_bomlist SET seq = {@sSeq}, req_qty = {@sQty}, consignedYN = '{@sConsignedYN}', IsSusap = '{sIsSusap}', IsMiSap = '{sIsMisap}', contents = '" + sContents + 
                     "' WHERE prod_id = '" + sProdID + "' AND parent_id = '" + sMaterialID + "'";
-
                 m.dbCUD(sql, ref msg);
 
                 var data = sql;
@@ -214,6 +221,15 @@ namespace SmartMES_Giroei
         {
             if (e.KeyCode == Keys.Enter)
             {
+                if (dataGridView1.CurrentRow == null)
+                {
+                    MessageBox.Show("선택된 품목이 없습니다");
+
+                    dataGridView1.CurrentCell = dataGridView1.Rows[0].Cells[2];
+
+                    return;
+                }
+
                 int index = dataGridView1.CurrentRow.Index;
                 if (index < 0) return;
 
@@ -241,17 +257,17 @@ namespace SmartMES_Giroei
         {
             if (dragTag != 3) return;
 
-            if (dataGridView1.CurrentCell == null ||
-                    dataGridView1.CurrentCell.RowIndex < 0) return;
+            if (dataGridView1.CurrentCell == null ||dataGridView1.CurrentCell.RowIndex < 0) return;
 
             if (e.Effect == DragDropEffects.Copy)
             {
                 int index = dataGridView1.CurrentCell.RowIndex;
                 string sPCode = dataGridView1.Rows[index].Cells[1].Value.ToString();
+                string sSeq = dataGridView1.Rows[index].Cells[0].Value.ToString();
                 string sMCode = (string)e.Data.GetData(DataFormats.StringFormat);
 
-                string sql = "INSERT INTO BOM_bomlist (prod_id, parent_id, req_qty) " +
-                    "VALUES('" + sPCode + "', '" + sMCode + "', 1)";
+                string sql = "INSERT INTO BOM_bomlist (prod_id, parent_id, seq, req_qty) " +
+                    "VALUES('" + sPCode + "','" + sMCode + "'," + sSeq + ",1)";
 
                 string msg = string.Empty;
 
@@ -298,7 +314,7 @@ namespace SmartMES_Giroei
                 if (dragBoxFromMouseDown != Rectangle.Empty && !dragBoxFromMouseDown.Contains(e.X, e.Y))
                 {
                     dragTag = 2;
-                    string sCode = dataGridView2.Rows[rowIndexFromMouseDown].Cells[2].Value.ToString();
+                    string sCode = dataGridView2.Rows[rowIndexFromMouseDown].Cells[3].Value.ToString();
 
                     DragDropEffects dropEffect = dataGridView2.DoDragDrop(sCode, DragDropEffects.Copy);
                 }
@@ -307,7 +323,7 @@ namespace SmartMES_Giroei
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
-            if (e.ColumnIndex < 7 || e.ColumnIndex > 9) return;
+            if (e.ColumnIndex < 8 || e.ColumnIndex > 10) return;
 
             dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = (dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == "O") ? "X" : "O";
         }
@@ -315,8 +331,7 @@ namespace SmartMES_Giroei
         {
             if (dragTag != 2) return;
 
-            if (dataGridView1.CurrentCell == null ||
-                    dataGridView1.CurrentCell.RowIndex < 0) return;
+            if (dataGridView1.CurrentCell == null || dataGridView1.CurrentCell.RowIndex < 0) return;
 
             if (e.Effect == DragDropEffects.Copy)
             {
@@ -388,14 +403,15 @@ namespace SmartMES_Giroei
 
             string sOrderNo = string.Empty;
 
-            string _sProdName = sProdName;
+            string _sProdName = sProdName; 
             string _sProdID = sProdID;
             string sProdNameSub = string.Empty;
             string sProdIDSub = string.Empty;
             string sProdSize = string.Empty;
             string sQty = string.Empty;
-            string sProcess = string.Empty;
-            string sContents = string.Empty;
+            string sSusap = string.Empty; string sMisap = string.Empty;
+            string sContents = string.Empty; string sKind = string.Empty; /*(P,M,S)*/ string sProdKind = string.Empty; /*품목분류 */
+            string sConsign = "N"; /*사급도급*/ string sSeq = string.Empty;
 
             try
             {
@@ -417,7 +433,7 @@ namespace SmartMES_Giroei
                 workSheet = workBook.Worksheets.get_Item(1) as Excel.Worksheet; // 엑셀 첫번째 워크시트 가져오기 
                 range = workSheet.UsedRange; // 사용중인 셀 범위를 가져오기
 
-                if ((range.Cells[4, 3] as Excel.Range).Value2.ToString().Trim() != sProdName)
+                if ((range.Cells[4, 5] as Excel.Range).Value2.ToString().Trim() != sProdName)
                 {
                     MessageBox.Show("해당 품목의 BOM 엑셀 파일이 아닙니다.");
                     workBook.Close();
@@ -431,28 +447,40 @@ namespace SmartMES_Giroei
 
                 for (int row = 8; row <= range.Rows.Count; row++) // 가져온 행 만큼 반복
                 {
-                    if ((range.Cells[row, 5] as Excel.Range).Value2 == null
-                        || string.IsNullOrEmpty((range.Cells[row, 5] as Excel.Range).Value2.ToString().Trim())) break;
+                    if ((range.Cells[row, 6] as Excel.Range).Value2 == null || string.IsNullOrEmpty((range.Cells[row, 6] as Excel.Range).Value2.ToString().Trim())) break;
+                    
+                    sSeq = (range.Cells[row, 1] as Excel.Range).Value2.ToString().Trim();  // 순번
+                    sKind = (range.Cells[row, 4] as Excel.Range).Value2.ToString().Trim();  // 품목구분
+                    if ((range.Cells[row, 4] as Excel.Range).Value2.ToString().Trim() == "-") sKind = "S";
+                    sProdKind = (range.Cells[row, 2] as Excel.Range).Value2.ToString().Trim();  // 품목분류
+                    sProdNameSub = (range.Cells[row, 6] as Excel.Range).Value2.ToString().Trim();   // 자재명
+                    sProdSize = (range.Cells[row, 7] as Excel.Range).Value2.ToString().Trim();
+                    sQty = (range.Cells[row, 8] as Excel.Range).Value2.ToString().Trim();
+                    sContents = ((range.Cells[row, 15] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 15] as Excel.Range).Value2.ToString().Trim();
+                    sMisap = ((range.Cells[row, 14] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 14] as Excel.Range).Value2.ToString().Trim();   // 미삽
+                    sSusap = ((range.Cells[row, 18] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 18] as Excel.Range).Value2.ToString().Trim();    // 수삽
+                    //sConsign = (range.Cells[row, 17] as Excel.Range).Value2.ToString().Trim();    // 도급(N)/사급(Y)
+                    if ((range.Cells[row, 17] as Excel.Range).Value2.ToString().Trim() == "사급") sConsign = "Y";
 
-                    sProdNameSub = (range.Cells[row, 4] as Excel.Range).Value2.ToString().Trim();
-                    sProdSize = (range.Cells[row, 5] as Excel.Range).Value2.ToString().Trim();
-                    sQty = (range.Cells[row, 6] as Excel.Range).Value2.ToString().Trim();
-                    sContents = ((range.Cells[row, 13] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 13] as Excel.Range).Value2.ToString().Trim();
-                    sProcess = ((range.Cells[row, 15] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 15] as Excel.Range).Value2.ToString().Trim();
+                     //if (sProcess == "수삽") sProcess = "S";
+                     //else if (sProcess == "미삽") sProcess = "M";
+                     //else sProcess = "X";
+                     // SELECT c.co_code, c.co_item, p.prod_id, p.prod_kind FROM BAS_common c LEFT JOIN BAS_product p ON p.prod_kind = c.co_code WHERE c.co_kind = 'C' AND c.co_item = 'TR'
+                     //sql = $@"SELECT co_code, co_item FROM BAS_common WHERE co_kind = 'C' AND prod_name = '{@sProdKind}' ORDER BY prod_id DESC LIMIT 1";
 
-                    //if (sProcess == "수삽") sProcess = "S";
-                    //else if (sProcess == "미삽") sProcess = "M";
-                    //else sProcess = "X";
+                     //if (m.dbDataTable(sql, ref msg).Rows.Count == 0)
 
-                    sql = $@"SELECT prod_name FROM BAS_product WHERE gubun = 'M' AND prod_name = '{@sProdNameSub}' ORDER BY prod_id DESC LIMIT 1";
+                     sql = $@"SELECT prod_name FROM BAS_product WHERE gubun = 'M' AND prod_name = '{@sProdNameSub}' ORDER BY prod_id DESC LIMIT 1";
 
                     if (m.dbDataTable(sql, ref msg).Rows.Count == 0)
                     {
-                        sProdIDSub = getProdCode("M");
+                        sql = $@"SELECT DISTINCT c.co_code, c.co_item FROM BAS_common c LEFT JOIN BAS_product p ON p.prod_kind = c.co_code WHERE c.co_kind = 'C' AND c.co_item = '{@sProdKind}'";
+                        string sProdKindCode = m.dbDataTable(sql, ref msg).Rows[0][0].ToString();
+
+                        sProdIDSub = getProdCode(sKind);
 
                         sql = $@"INSERT INTO BAS_product (gubun, prod_id, prod_kind, prod_name, prod_size, consignedYN, enter_man) 
-                                VALUES ('M', '{@sProdIDSub}', '0001', '{@sProdNameSub}', '{@sProdSize}', 'Y', '{@G.UserID}');";
-
+                                VALUES ('M', '{@sProdIDSub}', '{@sProdKindCode}', '{@sProdNameSub}', '{@sProdSize}', '{@sConsign}', '{@G.UserID}');";
                         m.dbCUD(sql, ref msg);
                     }
                     else
@@ -467,30 +495,30 @@ namespace SmartMES_Giroei
 
                     if (m.dbDataTable(sql, ref msg).Rows.Count == 0)
                     {
-                        if (sProcess == "수삽")
+                        if (sMisap == "미삽" && string.IsNullOrEmpty(sSusap))
                         {
-                            sql = $@"INSERT INTO BOM_bomlist (prod_id, parent_id, req_qty, IsSusap, IsMiSap, contents) VALUES ('{@_sProdID}', '{@sProdIDSub}', '{@sQty}', 'Y', 'N','" + sContents + "');";
+                            sql = $@"INSERT INTO BOM_bomlist (seq, prod_id, parent_id, req_qty, IsSusap, IsMiSap, contents) VALUES ('{@sSeq}', '{@_sProdID}', '{@sProdIDSub}', '{@sQty}', 'N', 'Y','" + sContents + "');";
                         }
-                        else if (sProcess == "미삽")
+                        else if (sSusap == "수삽" && (string.IsNullOrEmpty(sMisap) || sMisap != "미삽"))
                         {
-                            sql = $@"INSERT INTO BOM_bomlist (prod_id, parent_id, req_qty, IsSusap, IsMiSap, contents) VALUES ('{@_sProdID}', '{@sProdIDSub}', '{@sQty}', 'N', 'Y','" + sContents + "');";
+                            sql = $@"INSERT INTO BOM_bomlist (seq, prod_id, parent_id, req_qty, IsSusap, IsMiSap, contents) VALUES ('{@sSeq}', '{@_sProdID}', '{@sProdIDSub}', '{@sQty}', 'Y', 'N','" + sContents + "');";
                         }
                         else
                         {
-                            sql = $@"INSERT INTO BOM_bomlist (prod_id, parent_id, req_qty, IsSusap, IsMiSap, contents) VALUES ('{@_sProdID}', '{@sProdIDSub}', '{@sQty}', 'N', 'N','" + sContents + "');";
+                            sql = $@"INSERT INTO BOM_bomlist (seq, prod_id, parent_id, req_qty, IsSusap, IsMiSap, contents) VALUES ('{@sSeq}', '{@_sProdID}', '{@sProdIDSub}', '{@sQty}', 'N', 'N','" + sContents + "');";
                         }
 
                         m.dbCUD(sql, ref msg);
                     }
                     else
                     {
-                        if (sProcess == "수삽")
+                        if (sMisap == "미삽" && string.IsNullOrEmpty(sSusap))
                         {
-                            sql = $@"UPDATE BOM_bomlist SET IsSusap = 'Y', IsMiSap = 'N', contents = '" + sContents + "' WHERE prod_id = '{@_sProdID}' AND parent_id = '{@sProdIDSub}'";
+                            sql = $@"UPDATE BOM_bomlist SET IsSusap = 'N', IsMiSap = 'Y', contents = '" + sContents + "' WHERE prod_id = '{@_sProdID}' AND parent_id = '{@sProdIDSub}'";
                         }
-                        else if (sProcess == "미삽")
+                        else if (sSusap == "수삽" && (string.IsNullOrEmpty(sMisap) || sMisap != "미삽"))
                         {
-                            sql = $@"UPDATE BOM_bomlist SET IsSusap = 'N', IsMiSap = 'Y', contents = '" + sContents + "'  WHERE prod_id = '{@_sProdID}' AND parent_id = '{@sProdIDSub}'";
+                            sql = $@"UPDATE BOM_bomlist SET IsSusap = 'Y', IsMiSap = 'N', contents = '" + sContents + "'  WHERE prod_id = '{@_sProdID}' AND parent_id = '{@sProdIDSub}'";
                         }
                         else
                         {
