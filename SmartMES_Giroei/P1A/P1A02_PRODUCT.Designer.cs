@@ -59,8 +59,8 @@
             this.번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.분류DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.품목분류DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.품목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.품목코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.품목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.규격DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.포장단위DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.포장단위내수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -215,9 +215,9 @@
             this.lbSearch.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbSearch.Location = new System.Drawing.Point(63, 24);
             this.lbSearch.Name = "lbSearch";
-            this.lbSearch.Size = new System.Drawing.Size(222, 21);
+            this.lbSearch.Size = new System.Drawing.Size(140, 21);
             this.lbSearch.TabIndex = 0;
-            this.lbSearch.Text = "품목명 / 품목코드 / 품목분류";
+            this.lbSearch.Text = "품목명 / 품목코드";
             // 
             // dataGridView1
             // 
@@ -246,8 +246,8 @@
             this.번호DataGridViewTextBoxColumn,
             this.분류DataGridViewTextBoxColumn,
             this.품목분류DataGridViewTextBoxColumn,
-            this.품목명DataGridViewTextBoxColumn,
             this.품목코드DataGridViewTextBoxColumn,
+            this.품목명DataGridViewTextBoxColumn,
             this.규격DataGridViewTextBoxColumn,
             this.포장단위DataGridViewTextBoxColumn,
             this.포장단위내수량DataGridViewTextBoxColumn,
@@ -320,7 +320,7 @@
             // 번호DataGridViewTextBoxColumn
             // 
             this.번호DataGridViewTextBoxColumn.DataPropertyName = "번호";
-            this.번호DataGridViewTextBoxColumn.FillWeight = 40.80047F;
+            this.번호DataGridViewTextBoxColumn.FillWeight = 25F;
             this.번호DataGridViewTextBoxColumn.HeaderText = "No";
             this.번호DataGridViewTextBoxColumn.Name = "번호DataGridViewTextBoxColumn";
             this.번호DataGridViewTextBoxColumn.ReadOnly = true;
@@ -336,34 +336,33 @@
             // 품목분류DataGridViewTextBoxColumn
             // 
             this.품목분류DataGridViewTextBoxColumn.DataPropertyName = "품목분류";
-            this.품목분류DataGridViewTextBoxColumn.FillWeight = 60F;
-            this.품목분류DataGridViewTextBoxColumn.HeaderText = "품목분류";
+            this.품목분류DataGridViewTextBoxColumn.FillWeight = 35F;
+            this.품목분류DataGridViewTextBoxColumn.HeaderText = "";
             this.품목분류DataGridViewTextBoxColumn.Name = "품목분류DataGridViewTextBoxColumn";
             this.품목분류DataGridViewTextBoxColumn.ReadOnly = true;
-            this.품목분류DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 품목코드DataGridViewTextBoxColumn
+            // 
+            this.품목코드DataGridViewTextBoxColumn.DataPropertyName = "품목코드";
+            this.품목코드DataGridViewTextBoxColumn.FillWeight = 90F;
+            this.품목코드DataGridViewTextBoxColumn.HeaderText = "품목코드";
+            this.품목코드DataGridViewTextBoxColumn.Name = "품목코드DataGridViewTextBoxColumn";
+            this.품목코드DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 품목명DataGridViewTextBoxColumn
             // 
             this.품목명DataGridViewTextBoxColumn.DataPropertyName = "품목명";
-            this.품목명DataGridViewTextBoxColumn.FillWeight = 190.9899F;
+            this.품목명DataGridViewTextBoxColumn.FillWeight = 120F;
             this.품목명DataGridViewTextBoxColumn.HeaderText = "품목명";
             this.품목명DataGridViewTextBoxColumn.Name = "품목명DataGridViewTextBoxColumn";
             this.품목명DataGridViewTextBoxColumn.ReadOnly = true;
             this.품목명DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.품목명DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // 품목코드DataGridViewTextBoxColumn
-            // 
-            this.품목코드DataGridViewTextBoxColumn.DataPropertyName = "품목코드";
-            this.품목코드DataGridViewTextBoxColumn.HeaderText = "품목코드";
-            this.품목코드DataGridViewTextBoxColumn.Name = "품목코드DataGridViewTextBoxColumn";
-            this.품목코드DataGridViewTextBoxColumn.ReadOnly = true;
-            this.품목코드DataGridViewTextBoxColumn.Visible = false;
-            // 
             // 규격DataGridViewTextBoxColumn
             // 
             this.규격DataGridViewTextBoxColumn.DataPropertyName = "규격";
-            this.규격DataGridViewTextBoxColumn.FillWeight = 90.66771F;
+            this.규격DataGridViewTextBoxColumn.FillWeight = 110F;
             this.규격DataGridViewTextBoxColumn.HeaderText = "규격";
             this.규격DataGridViewTextBoxColumn.Name = "규격DataGridViewTextBoxColumn";
             this.규격DataGridViewTextBoxColumn.ReadOnly = true;
@@ -371,7 +370,7 @@
             // 포장단위DataGridViewTextBoxColumn
             // 
             this.포장단위DataGridViewTextBoxColumn.DataPropertyName = "포장단위";
-            this.포장단위DataGridViewTextBoxColumn.FillWeight = 70F;
+            this.포장단위DataGridViewTextBoxColumn.FillWeight = 50F;
             this.포장단위DataGridViewTextBoxColumn.HeaderText = "포장단위";
             this.포장단위DataGridViewTextBoxColumn.Name = "포장단위DataGridViewTextBoxColumn";
             this.포장단위DataGridViewTextBoxColumn.ReadOnly = true;
@@ -383,6 +382,7 @@
             dataGridViewCellStyle3.Format = "N0";
             dataGridViewCellStyle3.NullValue = null;
             this.포장단위내수량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.포장단위내수량DataGridViewTextBoxColumn.FillWeight = 50F;
             this.포장단위내수량DataGridViewTextBoxColumn.HeaderText = "포장단위내수량";
             this.포장단위내수량DataGridViewTextBoxColumn.Name = "포장단위내수량DataGridViewTextBoxColumn";
             this.포장단위내수량DataGridViewTextBoxColumn.ReadOnly = true;
@@ -394,7 +394,7 @@
             dataGridViewCellStyle4.Format = "N0";
             dataGridViewCellStyle4.NullValue = null;
             this.단가DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.단가DataGridViewTextBoxColumn.FillWeight = 55F;
+            this.단가DataGridViewTextBoxColumn.FillWeight = 35F;
             this.단가DataGridViewTextBoxColumn.HeaderText = "단가";
             this.단가DataGridViewTextBoxColumn.Name = "단가DataGridViewTextBoxColumn";
             this.단가DataGridViewTextBoxColumn.ReadOnly = true;
@@ -402,7 +402,7 @@
             // 인증DataGridViewTextBoxColumn
             // 
             this.인증DataGridViewTextBoxColumn.DataPropertyName = "인증";
-            this.인증DataGridViewTextBoxColumn.FillWeight = 55F;
+            this.인증DataGridViewTextBoxColumn.FillWeight = 35F;
             this.인증DataGridViewTextBoxColumn.HeaderText = "인증";
             this.인증DataGridViewTextBoxColumn.Name = "인증DataGridViewTextBoxColumn";
             this.인증DataGridViewTextBoxColumn.ReadOnly = true;
@@ -414,7 +414,7 @@
             dataGridViewCellStyle5.Format = "N0";
             dataGridViewCellStyle5.NullValue = null;
             this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dataGridViewTextBoxColumn1.FillWeight = 70F;
+            this.dataGridViewTextBoxColumn1.FillWeight = 40F;
             this.dataGridViewTextBoxColumn1.HeaderText = "PCB층수";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
             this.dataGridViewTextBoxColumn1.ReadOnly = true;
@@ -426,7 +426,7 @@
             dataGridViewCellStyle6.Format = "N0";
             dataGridViewCellStyle6.NullValue = null;
             this.sMDDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.sMDDataGridViewTextBoxColumn.FillWeight = 60F;
+            this.sMDDataGridViewTextBoxColumn.FillWeight = 40F;
             this.sMDDataGridViewTextBoxColumn.HeaderText = "SMD";
             this.sMDDataGridViewTextBoxColumn.Name = "sMDDataGridViewTextBoxColumn";
             this.sMDDataGridViewTextBoxColumn.ReadOnly = true;
@@ -437,7 +437,7 @@
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle7.Format = "N0";
             this.dIPDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.dIPDataGridViewTextBoxColumn.FillWeight = 60F;
+            this.dIPDataGridViewTextBoxColumn.FillWeight = 40F;
             this.dIPDataGridViewTextBoxColumn.HeaderText = "DIP";
             this.dIPDataGridViewTextBoxColumn.Name = "dIPDataGridViewTextBoxColumn";
             this.dIPDataGridViewTextBoxColumn.ReadOnly = true;
@@ -448,7 +448,7 @@
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle8.Format = "N0";
             this.적용점수DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.적용점수DataGridViewTextBoxColumn.FillWeight = 70F;
+            this.적용점수DataGridViewTextBoxColumn.FillWeight = 50F;
             this.적용점수DataGridViewTextBoxColumn.HeaderText = "적용점수";
             this.적용점수DataGridViewTextBoxColumn.Name = "적용점수DataGridViewTextBoxColumn";
             this.적용점수DataGridViewTextBoxColumn.ReadOnly = true;
@@ -459,7 +459,7 @@
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle9.Format = "N0";
             this.metalMASKDataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
-            this.metalMASKDataGridViewTextBoxColumn.FillWeight = 90F;
+            this.metalMASKDataGridViewTextBoxColumn.FillWeight = 40F;
             this.metalMASKDataGridViewTextBoxColumn.HeaderText = "MetalMASK";
             this.metalMASKDataGridViewTextBoxColumn.Name = "metalMASKDataGridViewTextBoxColumn";
             this.metalMASKDataGridViewTextBoxColumn.ReadOnly = true;
@@ -470,7 +470,7 @@
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle10.Format = "N0";
             this.dataGridViewTextBoxColumn2.DefaultCellStyle = dataGridViewCellStyle10;
-            this.dataGridViewTextBoxColumn2.FillWeight = 90F;
+            this.dataGridViewTextBoxColumn2.FillWeight = 50F;
             this.dataGridViewTextBoxColumn2.HeaderText = "보드수/Array";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
             this.dataGridViewTextBoxColumn2.ReadOnly = true;
@@ -481,7 +481,7 @@
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle11.Format = "N0";
             this.기준단가DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
-            this.기준단가DataGridViewTextBoxColumn.FillWeight = 77.06755F;
+            this.기준단가DataGridViewTextBoxColumn.FillWeight = 45F;
             this.기준단가DataGridViewTextBoxColumn.HeaderText = "기준단가";
             this.기준단가DataGridViewTextBoxColumn.Name = "기준단가DataGridViewTextBoxColumn";
             this.기준단가DataGridViewTextBoxColumn.ReadOnly = true;
@@ -489,8 +489,8 @@
             // 사급여부DataGridViewTextBoxColumn
             // 
             this.사급여부DataGridViewTextBoxColumn.DataPropertyName = "사급여부";
-            this.사급여부DataGridViewTextBoxColumn.FillWeight = 65F;
-            this.사급여부DataGridViewTextBoxColumn.HeaderText = "사급여부";
+            this.사급여부DataGridViewTextBoxColumn.FillWeight = 40F;
+            this.사급여부DataGridViewTextBoxColumn.HeaderText = "사급";
             this.사급여부DataGridViewTextBoxColumn.Name = "사급여부DataGridViewTextBoxColumn";
             this.사급여부DataGridViewTextBoxColumn.ReadOnly = true;
             // 
@@ -549,8 +549,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 번호DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 분류DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 품목분류DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewLinkColumn 품목명DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 품목코드DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewLinkColumn 품목명DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 규격DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 포장단위DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 포장단위내수량DataGridViewTextBoxColumn;

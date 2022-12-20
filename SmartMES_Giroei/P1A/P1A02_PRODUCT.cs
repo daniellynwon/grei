@@ -70,39 +70,6 @@ namespace SmartMES_Giroei
 
             this.ActiveControl = tbSearch;
         }
-
-        public async void ListSearch(string gubun, string gubun2, string kind, string search)
-        {
-            lblMsg.Text = "";
-
-            try
-            {
-                Cursor.Current = Cursors.WaitCursor;
-
-                sP_Product_QueryTableAdapter.Fill(dataSetP1A.SP_Product_Query, gubun, gubun2, kind, search);
-
-                var data = dataSetP1A.SP_Product_Query;
-                var result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.조회, data);
-
-                for (int i = 0; i < dataGridView1.RowCount; i++)
-                {
-                    if (dataGridView1.Rows[i].Cells[17].Value.ToString() == "Y") dataGridView1.Rows[i].Cells[17].Value = "O";
-                    else if (dataGridView1.Rows[i].Cells[17].Value.ToString() == "N") dataGridView1.Rows[i].Cells[17].Value = "X";
-                }
-
-                dataGridView1.CurrentCell = null;
-                dataGridView1.ClearSelection();
-            }
-            catch (NullReferenceException)
-            {
-                return;
-            }
-            finally
-            {
-                Cursor.Current = Cursors.Default;
-            }
-        }
-
         public async void ListSearch()
         {
             lblMsg.Text = "";
@@ -305,7 +272,7 @@ namespace SmartMES_Giroei
         {
             if (G.Authority == "D") return;
             if (e.RowIndex < 0) return;
-            if (e.ColumnIndex != 3) return;
+            if (e.ColumnIndex != 4) return;
 
             string sGubun = "P";
             string sKind = cbKind.Text;
