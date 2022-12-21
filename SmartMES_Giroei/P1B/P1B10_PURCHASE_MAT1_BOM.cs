@@ -402,5 +402,47 @@ namespace SmartMES_Giroei
             this.DialogResult = DialogResult.Cancel;
         }
         #endregion
+
+        private void dataGridView1_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex == 0 && e.RowIndex == -1)
+            {
+                e.PaintBackground(e.ClipBounds, false);
+
+                Point pt = e.CellBounds.Location;  // where you want the bitmap in the cell
+
+                int nChkBoxWidth = 15;
+                int nChkBoxHeight = 15;
+                int offsetx = (e.CellBounds.Width - nChkBoxWidth) / 2;
+                int offsety = (e.CellBounds.Height - nChkBoxHeight) / 2;
+
+                pt.X += offsetx;
+                pt.Y += offsety;
+
+                CheckBox cb = new CheckBox();
+                cb.Size = new Size(nChkBoxWidth, nChkBoxHeight);
+                cb.Location = pt;
+                cb.CheckedChanged += new EventHandler(gvSheetListCheckBox_CheckedChanged);
+
+                ((DataGridView)sender).Controls.Add(cb);
+
+                e.Handled = true;
+            }
+        }
+        private void gvSheetListCheckBox_CheckedChanged(object sender, EventArgs e)
+        {
+            //foreach (DataGridViewRow r in dataGridView1.Rows)
+            //{
+            //    r.Cells["ColumnCheckBox"].Value = ((CheckBox)sender).Checked;
+            //}
+
+            lblMsg.Text = "";
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[0].Value == null || dataGridView1.Rows[i].Cells[0].Value == "0") dataGridView1.Rows[i].Cells[0].Value = "1";
+                else dataGridView1.Rows[i].Cells[0].Value = "0";
+            }
+        }
     }
 }
