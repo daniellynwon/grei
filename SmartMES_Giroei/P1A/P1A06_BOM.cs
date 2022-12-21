@@ -262,12 +262,20 @@ namespace SmartMES_Giroei
             if (e.Effect == DragDropEffects.Copy)
             {
                 int index = dataGridView1.CurrentCell.RowIndex;
+                int iSeq = 0; string sSeq = string.Empty;
                 string sPCode = dataGridView1.Rows[index].Cells[1].Value.ToString();
-                string sSeq = dataGridView1.Rows[index].Cells[0].Value.ToString();
                 string sMCode = (string)e.Data.GetData(DataFormats.StringFormat);
 
+                if (dataGridView2.RowCount > 0)
+                {
+                    int idx = dataGridView2.RowCount - 1;
+                    iSeq = Int32.Parse(dataGridView2.Rows[idx].Cells[1].Value.ToString());
+                    iSeq += 1;
+                }
+                else iSeq = 1; // sSeq = "1";
+
                 string sql = "INSERT INTO BOM_bomlist (prod_id, parent_id, seq, req_qty) " +
-                    "VALUES('" + sPCode + "','" + sMCode + "'," + sSeq + ",1)";
+                    "VALUES('" + sPCode + "','" + sMCode + "'," + iSeq + ",1)";
 
                 string msg = string.Empty;
 

@@ -911,10 +911,11 @@ namespace SmartMES_Giroei
         {
             string sDeliNo = tbNo.Text;
             string sROrderNo = tbRorder.Text;
+            string sDate = dtpDate.Value.ToString("yyyy-MM-dd");
             int idx = 0;    // int idx = dataGridView1.RowCount - 1;
 
             string sProd = dataGridView1.Rows[idx].Cells[3].Value.ToString();
-            string sName = dataGridView1.Rows[idx].Cells[4].Value.ToString();
+            string sName = dataGridView1.Rows[idx].Cells[4].Value.ToString();   // 품목명
             string sUnit = dataGridView1.Rows[idx].Cells[6].Value.ToString();
             string sQty = dataGridView1.Rows[idx].Cells[7].Value.ToString();
 
@@ -928,10 +929,21 @@ namespace SmartMES_Giroei
                 str = "^XA^BY2,2.5^FS";
                 str += "^SEE:UHANGUL.DAT^FS";
                 str += "^CW1,E:KFONT3.FNT^FS^CI26^FS";
-                str += "^FO50,30 ^BQN,2,3^FDMA," + sDeliNo + " ^FS";
-                str += "^FO150,20^A1N,22,22^FD" + sROrderNo + " ^FS";
-                str += "^FO150,50^A0,22,22^FD" + sName + " ^FS";
-                str += "^FO150,80^A0,22,22^FD" + sUnit + " ^FS";
+                str += "^FO10,10 ^GB770,465,3,B,1 ^FS";
+                str += "^FO380,370 ^GB4,105,4,B,5 ^FS";
+                str += "^FO10,160 ^GB770,4,4,B ^FS";
+                str += "^FO10,265 ^GB770,4,4,B ^FS";
+                str += "^FO10,370 ^GB770,4,4,B ^FS";
+                str += "^FO10,40 ^A1N,30,15, ^FD 지로이아이 ^FS";
+                //str += "^FO20,115 ^AJN,25,25 ^FD T. (+82) 000-000-0000   F. (+82) 000-000-0000 ^FS";
+                str += "^FO660,30 ^BQN,2,4 ^FDMA," + sDeliNo + " ^FS";
+                str += "^FO25,177 ^A0N,30,35 ^FD Order No. ^FS";
+                str += "^FO20,217 ^A1N,30,15 ^FD" + sROrderNo + " ^FS";
+                str += "^FO25,277 ^A0N,30,35 ^FD Product ^FS";
+                str += "^FO20,322 ^A1N,30,15 ^FD" + sName + " ^FS";
+                str += "^FO25,382 ^A0N,30,35 ^FD Date ^FS";
+                str += "^FO20,422 ^A1N,30,15 ^FD" + sUnit + " ^FS";
+                str += "^FO390,382 ^A0N,30,35 ^FD Amount ^FS";
                 str += "^FO150,110^A0,22,22^FD" + sQty + " ^FS";
                 str += "^XZ";
 
