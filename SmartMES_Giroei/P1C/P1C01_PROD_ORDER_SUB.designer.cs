@@ -105,8 +105,7 @@
             this.tbJobTimeStart = new System.Windows.Forms.TextBox();
             this.tbJobTimeFinish = new System.Windows.Forms.TextBox();
             this.tbRorderNo = new System.Windows.Forms.TextBox();
-            this.btnClose = new SmartMES_Giroei.UserButtonA();
-            this.btnSave = new SmartMES_Giroei.UserButtonA();
+            this.btnComment = new System.Windows.Forms.Button();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -117,6 +116,8 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.btnClose = new SmartMES_Giroei.UserButtonA();
+            this.btnSave = new SmartMES_Giroei.UserButtonA();
             this.panTitle.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sPProdOrderROderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).BeginInit();
@@ -331,7 +332,6 @@
             this.btnBatch.Text = "작업지시일괄등록";
             this.btnBatch.UseVisualStyleBackColor = true;
             this.btnBatch.Visible = false;
-            this.btnBatch.Click += new System.EventHandler(this.btnBatch_Click);
             // 
             // label3
             // 
@@ -866,6 +866,94 @@
             this.tbRorderNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.tbRorderNo.Visible = false;
             // 
+            // btnComment
+            // 
+            this.btnComment.Location = new System.Drawing.Point(1061, 613);
+            this.btnComment.Name = "btnComment";
+            this.btnComment.Size = new System.Drawing.Size(101, 29);
+            this.btnComment.TabIndex = 68;
+            this.btnComment.Text = "보고사항";
+            this.btnComment.UseVisualStyleBackColor = true;
+            this.btnComment.Click += new System.EventHandler(this.btnComment_Click);
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "수주번호";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 30F;
+            this.Column3.HeaderText = "순번";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Visible = false;
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 90F;
+            this.Column4.HeaderText = "품목코드";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "품목명";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "거래처코드";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
+            // 
+            // Column7
+            // 
+            this.Column7.FillWeight = 80F;
+            this.Column7.HeaderText = "거래처명";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.FillWeight = 70F;
+            this.Column8.HeaderText = "납기요청일";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.FillWeight = 30F;
+            this.Column9.HeaderText = "공정";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.NullValue = "#,##0";
+            this.Column10.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Column10.FillWeight = 40F;
+            this.Column10.HeaderText = "수량";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.NullValue = "보고";
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Column1.FillWeight = 25F;
+            this.Column1.HeaderText = "";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
             // btnClose
             // 
             this.btnClose.BackColor = System.Drawing.Color.Transparent;
@@ -896,88 +984,13 @@
             this.btnSave.Visible = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // Column2
-            // 
-            this.Column2.FillWeight = 110F;
-            this.Column2.HeaderText = "수주번호";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
-            // 
-            // Column3
-            // 
-            this.Column3.FillWeight = 30F;
-            this.Column3.HeaderText = "순번";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            // 
-            // Column4
-            // 
-            this.Column4.FillWeight = 95F;
-            this.Column4.HeaderText = "품목코드";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "품목명";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "거래처코드";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Visible = false;
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "거래처명";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.FillWeight = 95F;
-            this.Column8.HeaderText = "납기요청일";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.FillWeight = 55F;
-            this.Column9.HeaderText = "공정";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.NullValue = "#,##0";
-            this.Column10.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Column10.FillWeight = 30F;
-            this.Column10.HeaderText = "수량";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.NullValue = "보고사항";
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle8;
-            this.Column1.FillWeight = 40F;
-            this.Column1.HeaderText = "";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            // 
             // P1C01_PROD_ORDER_SUB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(1347, 711);
+            this.Controls.Add(this.btnComment);
             this.Controls.Add(this.tbRorderNo);
             this.Controls.Add(this.tbJobTimeFinish);
             this.Controls.Add(this.tbJobTimeStart);
@@ -1126,5 +1139,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewButtonColumn Column1;
+        private System.Windows.Forms.Button btnComment;
     }
 }

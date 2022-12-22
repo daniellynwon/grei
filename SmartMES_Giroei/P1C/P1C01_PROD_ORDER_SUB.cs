@@ -67,7 +67,7 @@ namespace SmartMES_Giroei
             {
                 rowIndex = parentWin.dataGridView1.CurrentCell.RowIndex;
                 label1.Visible = false; tbSearch.Visible = false;           // 그리드뷰 안보이게 (수정이니까)
-                //dataGridView1.Visible = false; dataGridView2.Visible = false; dataGridView3.Visible = false;
+                dataGridView2.Visible = false; dataGridView3.Visible = false;
 
                 dtpDate.Value = (DateTime)parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value;    // 생산계획일
                 tbJobNo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();    // JobNo
@@ -317,16 +317,6 @@ namespace SmartMES_Giroei
 
                 if (string.IsNullOrEmpty(tbJobNo.Text))
                     tbJobNo.Text = getCode();
-            }
-            else if(e.ColumnIndex == 9)     // 진행상황 비고
-            {
-                rorderID = dataGridView3.Rows[e.RowIndex].Cells[0].Value.ToString();
-                rorderSeq = dataGridView3.Rows[e.RowIndex].Cells[1].Value.ToString();
-                string sBigo = "";
-
-                P1C01_PROD_ORDER_SUB2 sub = new P1C01_PROD_ORDER_SUB2(rorderID, rorderSeq, sBigo);
-                sub.parentWin = this;
-                sub.ShowDialog();
             }
         }
         #endregion
@@ -597,120 +587,22 @@ namespace SmartMES_Giroei
         #endregion
 
         #region 작업지시일괄등록
-        private void btnBatch_Click(object sender, EventArgs e)
+        private void btnComment_Click(object sender, EventArgs e)
         {
-            //lblMsg.Text = "";
-            //if (dataGridView1.RowCount < 1) return;
+            lblMsg.Text = "";
+            if(tbRorderNo.Text == "" || string.IsNullOrEmpty(tbRorderNo.Text))
+            {
+                lblMsg.Text = "선택된 수주(작업)이 없습니다.";
+                return;
+            }
 
-            //int iCnt = 0;
-            //int iNoCnt = 0;
-            //string sSujuNo = string.Empty;
+            rorderID = tbRorderNo.Text.Trim();
+            rorderSeq = tbRorderNo.Tag.ToString();
+            string sBigo = "";
 
-            //for (int i = 0; i < dataGridView1.RowCount; i++)
-            //{
-            //    if (dataGridView1.Rows[i].Cells[4].Value != null && dataGridView1.Rows[i].Cells[4].Value.ToString() == "1")
-            //    {
-            //        iCnt++;
-            //        if (iCnt == 1)
-            //            sSujuNo = dataGridView1.Rows[i].Cells[0].Value.ToString();
-            //        else
-            //            if (sSujuNo != dataGridView1.Rows[i].Cells[0].Value.ToString()) iNoCnt++;
-            //    }
-            //}
-
-            //if (iCnt < 1)
-            //{
-            //    MessageBox.Show("작업지시대상이 선택되지 않았습니다.");
-            //    return;
-            //}
-            ////if (iNoCnt > 0)
-            ////{
-            ////    MessageBox.Show("동일 수주건만 선택 가능합니다.");
-            ////    return;
-            ////}
-
-            //string sql;
-            //MariaCRUD m = new MariaCRUD();
-            //string msg = string.Empty;
-
-            //string sProc = string.Empty;
-            //string sDate = dtpDate.Value.ToString("yyyy-MM-dd");
-            //string sProd = string.Empty;
-            //string sSizeT = string.Empty;
-            //string sSizeW = string.Empty;
-            //string sSizeL = string.Empty;
-            //string sSujuSeq = string.Empty;
-            //string sMat = string.Empty;
-            //string sDoc = string.Empty;
-            //string sProdNo = string.Empty;
-            //string sRework = "0";
-            ////if (cbRework.Checked) sRework = "1";
-            //string sQty = string.Empty;
-            //string sSujuQty = sQty;
-            //string sConts = string.Empty;
-
-            //string sqlQty;
-            //MariaCRUD mQty;
-            //string msgQty = string.Empty;
-            //string com;
-
-            //for (int i = 0; i < dataGridView1.RowCount; i++)
-            //{
-            //    if (dataGridView1.Rows[i].Cells[4].Value != null && dataGridView1.Rows[i].Cells[4].Value.ToString() == "1")
-            //    {
-            //        string sJobNo = getCode();
-            //        sSujuNo = dataGridView1.Rows[i].Cells[0].Value.ToString();
-            //        sProd = dataGridView1.Rows[i].Cells[6].Value.ToString();    // 품목코드
-            //        sSujuSeq = dataGridView1.Rows[i].Cells[5].Value.ToString();
-            //        sQty = dataGridView1.Rows[i].Cells[10].Value.ToString();
-            //        sProc = dataGridView1.Rows[i].Cells[11].Value.ToString();
-            //        sSizeT = dataGridView1.Rows[i].Cells[15].Value.ToString(); 
-            //        sSizeW = dataGridView1.Rows[i].Cells[16].Value.ToString();
-            //        sSizeL = dataGridView1.Rows[i].Cells[17].Value.ToString();
-            //        sDoc = dataGridView1.Rows[i].Cells[18].Value.ToString();
-            //        sProdNo = dataGridView1.Rows[i].Cells[19].Value.ToString();
-            //        sMat = dataGridView1.Rows[i].Cells[20].Value.ToString();
-            //        sConts = dataGridView1.Rows[i].Cells[22].Value.ToString();
-
-            //        string sProcStd = "0001";
-            //        if (sProc == "0001") sProcStd = "0002";   // 절단만
-            //        else if (sProc == "0002" && sMat == "2")
-            //        {
-            //            sProcStd = "0003";   // 밀링만
-            //            sProdNo = "20";
-            //        }
-
-            //        sqlQty = "select qty from vw_rorder where rorder_id = '" + sSujuNo + "' and rorder_seq = " + sSujuSeq;
-            //        mQty = new MariaCRUD();
-                    
-            //        com = mQty.dbRonlyOne(sqlQty, ref msgQty).ToString();
-
-            //        if (msgQty == "OK") sSujuQty = com;
-
-            //        sql = "insert into tb_prod_order (job_no, proc_no, pos, lot_date, prod_id, size_t, size_w, size_l, proc_kind, proc_std, doc_no, prod_no, mat_kind, rework, rorder_id, rorder_seq, rorder_date, order_qty, ment, enter_man) " +
-            //            "select '" + sJobNo + "',p.proc_no,'" + G.Pos + "','" + sDate + "','" + sProd + "'," + sSizeT + "," + sSizeW + "," + sSizeL + ",'" + sProc + "','" + sProcStd + "','" + sDoc + "','" + sProdNo + "'," + sMat + "," + sRework + ",'" + sSujuNo + "'," + sSujuSeq + ",'" + sDate + "',"
-            //            + sSujuQty + " - ifnull((select sum(v.gd_qty) from vw_production v where v.rorder_id = '" + sSujuNo + "' and v.rorder_seq = " + sSujuSeq + " and v.proc_std = p.proc_no),0),'" + sConts + "','" + G.UserID + "' " +
-            //            "from tb_gi_process p where p.proc_std = '" + sProcStd + "' order by p.proc_no";
-
-            //        //m = new MariaCRUD();
-            //        m.dbCUD(sql, ref msg);
-
-            //        if (msg != "OK")
-            //        {
-            //            lblMsg.Text = msg;
-            //            return;
-            //        }
-
-            //        var data = sql;
-            //        Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);
-
-            //        //QRCodeCreate(sSujuNo, sSujuSeq);
-            //        //QRImageSave(sSujuNo + sSujuSeq);
-            //    }
-            //}
-
-            //parentWin.ListSearch();
-            //this.Dispose();
+            P1C01_PROD_ORDER_SUB2 sub = new P1C01_PROD_ORDER_SUB2(rorderID, rorderSeq, sBigo);
+            sub.parentWin = this;
+            sub.ShowDialog();
         }
         #endregion
 

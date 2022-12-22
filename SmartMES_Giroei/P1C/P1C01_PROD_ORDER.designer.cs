@@ -44,6 +44,9 @@
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sPProdOrderQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1C = new SmartMES_Giroei.P1C.DataSetP1C();
+            this.sP_ProdOrder_QueryTableAdapter = new SmartMES_Giroei.P1C.DataSetP1CTableAdapters.SP_ProdOrder_QueryTableAdapter();
             this.일자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lotNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.거래처코드 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,9 +77,6 @@
             this.양품수량 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.불량수량 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPProdOrderQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1C = new SmartMES_Giroei.P1C.DataSetP1C();
-            this.sP_ProdOrder_QueryTableAdapter = new SmartMES_Giroei.P1C.DataSetP1CTableAdapters.SP_ProdOrder_QueryTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -307,6 +307,20 @@
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
+            // sPProdOrderQueryBindingSource
+            // 
+            this.sPProdOrderQueryBindingSource.DataMember = "SP_ProdOrder_Query";
+            this.sPProdOrderQueryBindingSource.DataSource = this.dataSetP1C;
+            // 
+            // dataSetP1C
+            // 
+            this.dataSetP1C.DataSetName = "DataSetP1C";
+            this.dataSetP1C.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_ProdOrder_QueryTableAdapter
+            // 
+            this.sP_ProdOrder_QueryTableAdapter.ClearBeforeFill = true;
+            // 
             // 일자DataGridViewTextBoxColumn
             // 
             this.일자DataGridViewTextBoxColumn.DataPropertyName = "일자";
@@ -440,6 +454,7 @@
             this.솔더사양.HeaderText = "솔더사양";
             this.솔더사양.Name = "솔더사양";
             this.솔더사양.ReadOnly = true;
+            this.솔더사양.Visible = false;
             // 
             // MM번호
             // 
@@ -448,6 +463,7 @@
             this.MM번호.HeaderText = "M/Mask";
             this.MM번호.Name = "MM번호";
             this.MM번호.ReadOnly = true;
+            this.MM번호.Visible = false;
             // 
             // 시작시간
             // 
@@ -509,7 +525,7 @@
             // 
             this.완료여부.DataPropertyName = "완료여부";
             this.완료여부.FillWeight = 30F;
-            this.완료여부.HeaderText = "완료여부";
+            this.완료여부.HeaderText = "상태";
             this.완료여부.Name = "완료여부";
             this.완료여부.ReadOnly = true;
             // 
@@ -552,20 +568,6 @@
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
-            // 
-            // sPProdOrderQueryBindingSource
-            // 
-            this.sPProdOrderQueryBindingSource.DataMember = "SP_ProdOrder_Query";
-            this.sPProdOrderQueryBindingSource.DataSource = this.dataSetP1C;
-            // 
-            // dataSetP1C
-            // 
-            this.dataSetP1C.DataSetName = "DataSetP1C";
-            this.dataSetP1C.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_ProdOrder_QueryTableAdapter
-            // 
-            this.sP_ProdOrder_QueryTableAdapter.ClearBeforeFill = true;
             // 
             // P1C01_PROD_ORDER
             // 
