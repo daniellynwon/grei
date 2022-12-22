@@ -442,7 +442,6 @@ namespace SmartMES_Giroei
                     }
                     save2InvMaterialIn(Barcode, barcodePrefix, iQtyInPacking, sQtyInPacking);
                 }
-
             }
         }
 
