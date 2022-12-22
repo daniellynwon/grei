@@ -484,6 +484,7 @@ namespace SmartMES_Giroei
             string pId = tbNo.Text;
             string pSeq = tbNo.Tag.ToString();
             string sBigo = tbBigo.Text.Trim();
+            string sDepot = cbDepot.SelectedValue.ToString();
 
             string msg = string.Empty;
             MariaCRUD m = new MariaCRUD();
@@ -501,8 +502,8 @@ namespace SmartMES_Giroei
             Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);
 
 
-            sql = $@"INSERT INTO INV_material_in (mbarcode, barcode_surfix, cust_id, prod_id, plant, input_date, order_id, order_seq, purchase_id, purchase_seq, qty, pack_type, pack_qty, reason_code, contents,  enter_man) 
-                            VALUES ('{barcodePrefix}', '{surfix}', '{@sCust}', '{@sProd}', 'A', '{sInDate}', '{sOrderId}', 1, '{pId}', {pSeq}, {iQtyInPacking}, '{@sPackType}', {sQtyInPacking}, '0010','{sBigo}', '{@G.UserID}');";
+            sql = $@"INSERT INTO INV_material_in (mbarcode, barcode_surfix, cust_id, prod_id, plant, input_date, order_id, order_seq, purchase_id, purchase_seq, qty, pack_type, pack_qty, reason_code, contents,  warehouse_id, enter_man) 
+                            VALUES ('{barcodePrefix}', '{surfix}', '{@sCust}', '{@sProd}', 'A', '{sInDate}', '{sOrderId}', 1, '{pId}', {pSeq}, {iQtyInPacking}, '{@sPackType}', {sQtyInPacking}, '0010','{sBigo}', '{sDepot}', '{@G.UserID}');";
 
             m.dbCUD(sql, ref msg);
 
