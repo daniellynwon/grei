@@ -54,10 +54,13 @@
             this.lblMsg = new System.Windows.Forms.Label();
             this.lblProd = new System.Windows.Forms.Label();
             this.sP_PurchaseRawMat_BOMTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseRawMat_BOMTableAdapter();
+            this.sPPurchaseMatBOMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_PurchaseMat_BOMTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseMat_BOMTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseRawMatBOMBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseMatBOMBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -129,7 +132,7 @@
             this.수량,
             this.Column1});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.dataGridView1.DataSource = this.sPPurchaseRawMatBOMBindingSource;
+            this.dataGridView1.DataSource = this.sPPurchaseMatBOMBindingSource;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
             dataGridViewCellStyle4.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -284,6 +287,15 @@
             // 
             this.sP_PurchaseRawMat_BOMTableAdapter.ClearBeforeFill = true;
             // 
+            // sPPurchaseMatBOMBindingSource
+            // 
+            this.sPPurchaseMatBOMBindingSource.DataMember = "SP_PurchaseMat_BOM";
+            this.sPPurchaseMatBOMBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // sP_PurchaseMat_BOMTableAdapter
+            // 
+            this.sP_PurchaseMat_BOMTableAdapter.ClearBeforeFill = true;
+            // 
             // P1B10_PURCHASE_MAT1_BOM
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -306,6 +318,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseRawMatBOMBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseMatBOMBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -346,5 +359,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 포장수량;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수량;
         private System.Windows.Forms.DataGridViewButtonColumn Column1;
+        private System.Windows.Forms.BindingSource sPPurchaseMatBOMBindingSource;
+        private P1B.DataSetP1BTableAdapters.SP_PurchaseMat_BOMTableAdapter sP_PurchaseMat_BOMTableAdapter;
     }
 }

@@ -40,7 +40,7 @@ namespace SmartMES_Giroei
             {
                 Cursor.Current = Cursors.WaitCursor;
 
-                sP_PurchaseRawMat_BOMTableAdapter.Fill(dataSetP1B.SP_PurchaseRawMat_BOM, sProd, "");
+                sP_PurchaseMat_BOMTableAdapter.Fill(dataSetP1B.SP_PurchaseMat_BOM, sProd, "");
 
                 var data = dataSetP1B.SP_PurchaseRawMat_BOM;
                 Logger.ApiLog(G.UserID, "P1B10_PURCHASE_MAT1_BOM", ActionType.조회, data);
