@@ -30,6 +30,8 @@
         {
             this.lblMsg = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbPreInQty = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tbQty = new System.Windows.Forms.TextBox();
@@ -77,8 +79,6 @@
             this.checkClosed = new System.Windows.Forms.CheckBox();
             this.btnClose = new SmartMES_Giroei.UserButtonA();
             this.btnSave = new SmartMES_Giroei.UserButtonA();
-            this.tbPreInQty = new System.Windows.Forms.TextBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.panTitle.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -122,6 +122,29 @@
             this.groupBox1.TabIndex = 0;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "자재발주";
+            // 
+            // tbPreInQty
+            // 
+            this.tbPreInQty.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbPreInQty.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbPreInQty.Location = new System.Drawing.Point(106, 234);
+            this.tbPreInQty.Name = "tbPreInQty";
+            this.tbPreInQty.ReadOnly = true;
+            this.tbPreInQty.Size = new System.Drawing.Size(211, 29);
+            this.tbPreInQty.TabIndex = 1;
+            this.tbPreInQty.TabStop = false;
+            this.tbPreInQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label19.Location = new System.Drawing.Point(17, 237);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(80, 21);
+            this.label19.TabIndex = 2;
+            this.label19.Text = "기 입고량";
             // 
             // label8
             // 
@@ -647,6 +670,7 @@
             this.checkClosed.TabIndex = 6;
             this.checkClosed.Text = "마감여부";
             this.checkClosed.UseVisualStyleBackColor = true;
+            this.checkClosed.CheckedChanged += new System.EventHandler(this.checkClosed_CheckedChanged);
             // 
             // btnClose
             // 
@@ -675,29 +699,6 @@
             this.btnSave.Size = new System.Drawing.Size(100, 27);
             this.btnSave.TabIndex = 11;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // tbPreInQty
-            // 
-            this.tbPreInQty.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.tbPreInQty.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbPreInQty.Location = new System.Drawing.Point(106, 234);
-            this.tbPreInQty.Name = "tbPreInQty";
-            this.tbPreInQty.ReadOnly = true;
-            this.tbPreInQty.Size = new System.Drawing.Size(211, 29);
-            this.tbPreInQty.TabIndex = 1;
-            this.tbPreInQty.TabStop = false;
-            this.tbPreInQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label19.Location = new System.Drawing.Point(17, 237);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(80, 21);
-            this.label19.TabIndex = 2;
-            this.label19.Text = "기 입고량";
             // 
             // P1B10_PURCHASE_MAT_IN
             // 
