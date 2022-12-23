@@ -33,7 +33,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>72</ApplicationRevision>
+    <ApplicationRevision>73</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -661,6 +661,12 @@
     <Compile Include="P1C\P1C01_PROD_ORDER_SUB2.designer.cs">
       <DependentUpon>P1C01_PROD_ORDER_SUB2.cs</DependentUpon>
     </Compile>
+    <Compile Include="P1C\P1C02_PROD_RESULT1_SUB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C02_PROD_RESULT1_SUB.designer.cs">
+      <DependentUpon>P1C02_PROD_RESULT1_SUB.cs</DependentUpon>
+    </Compile>
     <Compile Include="P1C\P1C02_PROD_RESULT_CHECK.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1198,6 +1204,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P1C\P1C01_PROD_ORDER_SUB2.resx">
       <DependentUpon>P1C01_PROD_ORDER_SUB2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C02_PROD_RESULT1_SUB.resx">
+      <DependentUpon>P1C02_PROD_RESULT1_SUB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P1C\P1C02_PROD_RESULT_CHECK.resx">
       <DependentUpon>P1C02_PROD_RESULT_CHECK.cs</DependentUpon>

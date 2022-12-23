@@ -164,23 +164,16 @@ namespace SmartMES_Giroei
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            //if (e.RowIndex < 0) return;
-            //string sRecipe = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
+            if (e.RowIndex < 0) return;
+            string rorderID = dataGridView1.Rows[e.RowIndex].Cells[12].Value.ToString();
+            string rorderSeq = dataGridView1.Rows[e.RowIndex].Cells[13].Value.ToString();
 
-            //if(e.ColumnIndex == 1)
-            //{
-            //    //P1C02_PROD_RESULT1_SUB sub = new P1C02_PROD_RESULT1_SUB();
-            //    //sub.lblTitle.Text = sub.lblTitle.Text + "[수정]";
-            //    //sub.parentWin = this;
-            //    //sub.ShowDialog();
-            //}
-            //else if(e.ColumnIndex == 8)
-            //{
-            //    //P1C02_PROD_RESULT1_SUB1 sub = new P1C02_PROD_RESULT1_SUB1();
-            //    //sub.sRecipe = sRecipe;
-            //    //sub.parentWin = this;
-            //    //sub.ShowDialog();
-            //}
+            if (e.ColumnIndex == 11)
+            {
+                P1C02_PROD_RESULT1_SUB sub = new P1C02_PROD_RESULT1_SUB(rorderID, rorderSeq, "");
+                sub.parentWin = this;
+                sub.ShowDialog();
+            }
         }
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {

@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace SmartMES_Giroei
 {
-    public partial class P1C01_PROD_ORDER_SUB2 : Form
+    public partial class P1C02_PROD_RESULT1_SUB : Form
     {
-        internal P1C01_PROD_ORDER_SUB parentWin;
+        internal P1C02_PROD_RESULT1 parentWin;
         static public string rid;
         static public string rseq;
         int rowIndex = -1;
 
-        public P1C01_PROD_ORDER_SUB2(string v, string seq, string sBigo)
+        public P1C02_PROD_RESULT1_SUB(string v, string seq, string sBigo)
         {
             InitializeComponent();
 

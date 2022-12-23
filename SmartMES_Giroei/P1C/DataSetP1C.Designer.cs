@@ -11864,6 +11864,10 @@ namespace SmartMES_Giroei.P1C {
             
             private global::System.Data.DataColumn column생산일자;
             
+            private global::System.Data.DataColumn column수주번호;
+            
+            private global::System.Data.DataColumn column수주순번;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_ProdResult_Query1DataTable() {
@@ -11995,6 +11999,22 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 수주번호Column {
+                get {
+                    return this.column수주번호;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 수주순번Column {
+                get {
+                    return this.column수주순번;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -12030,7 +12050,7 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_ProdResult_Query1Row AddSP_ProdResult_Query1Row(long 순번, string JobNo, string 작업라인, string 품목코드, string 품목명, System.DateTime 시작시간, System.DateTime 종료시간, System.TimeSpan 경과시간, int 지시수량, int 생산량, string 진행상황, System.DateTime 생산일자) {
+            public SP_ProdResult_Query1Row AddSP_ProdResult_Query1Row(long 순번, string JobNo, string 작업라인, string 품목코드, string 품목명, System.DateTime 시작시간, System.DateTime 종료시간, System.TimeSpan 경과시간, int 지시수량, int 생산량, string 진행상황, System.DateTime 생산일자, string 수주번호, int 수주순번) {
                 SP_ProdResult_Query1Row rowSP_ProdResult_Query1Row = ((SP_ProdResult_Query1Row)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         순번,
@@ -12044,7 +12064,9 @@ namespace SmartMES_Giroei.P1C {
                         지시수량,
                         생산량,
                         진행상황,
-                        생산일자};
+                        생산일자,
+                        수주번호,
+                        수주순번};
                 rowSP_ProdResult_Query1Row.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_ProdResult_Query1Row);
                 return rowSP_ProdResult_Query1Row;
@@ -12079,6 +12101,8 @@ namespace SmartMES_Giroei.P1C {
                 this.column생산량 = base.Columns["생산량"];
                 this.column진행상황 = base.Columns["진행상황"];
                 this.column생산일자 = base.Columns["생산일자"];
+                this.column수주번호 = base.Columns["수주번호"];
+                this.column수주순번 = base.Columns["수주순번"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -12108,11 +12132,16 @@ namespace SmartMES_Giroei.P1C {
                 base.Columns.Add(this.column진행상황);
                 this.column생산일자 = new global::System.Data.DataColumn("생산일자", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column생산일자);
+                this.column수주번호 = new global::System.Data.DataColumn("수주번호", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column수주번호);
+                this.column수주순번 = new global::System.Data.DataColumn("수주순번", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column수주순번);
                 this.columnJobNo.MaxLength = 13;
                 this.column작업라인.MaxLength = 5;
                 this.column품목코드.MaxLength = 10;
                 this.column품목명.MaxLength = 50;
                 this.column진행상황.MaxLength = 16;
+                this.column수주번호.MaxLength = 13;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20585,6 +20614,38 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 수주번호 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Query1.수주번호Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query1\' 테이블의 \'수주번호\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query1.수주번호Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 수주순번 {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_ProdResult_Query1.수주순번Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query1\' 테이블의 \'수주순번\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query1.수주순번Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is순번Null() {
                 return this.IsNull(this.tableSP_ProdResult_Query1.순번Column);
             }
@@ -20725,6 +20786,30 @@ namespace SmartMES_Giroei.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set생산일자Null() {
                 this[this.tableSP_ProdResult_Query1.생산일자Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is수주번호Null() {
+                return this.IsNull(this.tableSP_ProdResult_Query1.수주번호Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set수주번호Null() {
+                this[this.tableSP_ProdResult_Query1.수주번호Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is수주순번Null() {
+                return this.IsNull(this.tableSP_ProdResult_Query1.수주순번Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set수주순번Null() {
+                this[this.tableSP_ProdResult_Query1.수주순번Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -27008,6 +27093,8 @@ namespace SmartMES_Giroei.P1C.DataSetP1CTableAdapters {
             tableMapping.ColumnMappings.Add("생산량", "생산량");
             tableMapping.ColumnMappings.Add("진행상황", "진행상황");
             tableMapping.ColumnMappings.Add("생산일자", "생산일자");
+            tableMapping.ColumnMappings.Add("수주번호", "수주번호");
+            tableMapping.ColumnMappings.Add("수주순번", "수주순번");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

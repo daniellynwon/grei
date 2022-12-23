@@ -727,6 +727,7 @@ namespace SmartMES_Giroei
                 return;
             }
             this.Close();
+            parentWin.ListSearch();
             parentWin.lblMsg.Text = "작업시작되었습니다.";
         }
         private void btnFinish_Click(object sender, EventArgs e)
