@@ -150,7 +150,6 @@ namespace SmartMES_Giroei
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             lblMsg.Text = "";
-
             if (dataGridView1.Rows.Count == 0) return;
 
             int rowIndex = dataGridView1.CurrentRow.Index;

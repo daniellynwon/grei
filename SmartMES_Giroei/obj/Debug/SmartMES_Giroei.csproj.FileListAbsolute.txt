@@ -1474,3 +1474,4 @@ E:\worksapce\INNOBE\SmartMES_Geroei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1
 C:\Users\innobe\source\repos\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1C01_PROD_ORDER_SUB2.resources
 E:\worksapce\INNOBE\SmartMES_Geroei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1C01_PROD_ORDER_SUB2.resources
 C:\Users\innobe\source\repos\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1C02_PROD_RESULT1_SUB.resources
+C:\Users\innobe\source\repos\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.csproj.AssemblyReference.cache

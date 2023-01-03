@@ -433,6 +433,10 @@ namespace SmartMES_Giroei
                     sFileName = ofg.FileName;
                     //MessageBox.Show("sFileName : " + sFileName);
                 }
+                else if (ofg.ShowDialog() == DialogResult.No)       // 1/3/23 취소 경우 
+                {
+                    return;
+                }
 
                 excelApp = new Excel.Application(); // 엑셀 어플리케이션 생성 
 

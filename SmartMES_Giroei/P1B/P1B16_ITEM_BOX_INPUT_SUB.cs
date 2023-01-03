@@ -119,8 +119,6 @@ namespace SmartMES_Giroei
             {
                 dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == "O") ? "X" : "O";
             }
-
-
         }
 
         private void btnMaterialSave_Click(object sender, EventArgs e)
