@@ -2065,9 +2065,11 @@ namespace SmartMES_Giroei.P1A {
             
             private global::System.Data.DataColumn column등록;
             
+            private global::System.Data.DataColumn column등록일자;
+            
             private global::System.Data.DataColumn column번호;
             
-            private global::System.Data.DataColumn column등록일자;
+            private global::System.Data.DataColumn column분류;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -2144,6 +2146,14 @@ namespace SmartMES_Giroei.P1A {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 등록일자Column {
+                get {
+                    return this.column등록일자;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn 번호Column {
                 get {
                     return this.column번호;
@@ -2152,9 +2162,9 @@ namespace SmartMES_Giroei.P1A {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 등록일자Column {
+            public global::System.Data.DataColumn 분류Column {
                 get {
-                    return this.column등록일자;
+                    return this.column분류;
                 }
             }
             
@@ -2195,7 +2205,7 @@ namespace SmartMES_Giroei.P1A {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_BOM_QueryRow AddSP_BOM_QueryRow(string 품목코드, string 품목명, string 규격, string 단위, long 등록, double 번호, System.DateTime 등록일자) {
+            public SP_BOM_QueryRow AddSP_BOM_QueryRow(string 품목코드, string 품목명, string 규격, string 단위, long 등록, System.DateTime 등록일자, double 번호, string 분류) {
                 SP_BOM_QueryRow rowSP_BOM_QueryRow = ((SP_BOM_QueryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         품목코드,
@@ -2203,8 +2213,9 @@ namespace SmartMES_Giroei.P1A {
                         규격,
                         단위,
                         등록,
+                        등록일자,
                         번호,
-                        등록일자};
+                        분류};
                 rowSP_BOM_QueryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_BOM_QueryRow);
                 return rowSP_BOM_QueryRow;
@@ -2239,8 +2250,9 @@ namespace SmartMES_Giroei.P1A {
                 this.column규격 = base.Columns["규격"];
                 this.column단위 = base.Columns["단위"];
                 this.column등록 = base.Columns["등록"];
-                this.column번호 = base.Columns["번호"];
                 this.column등록일자 = base.Columns["등록일자"];
+                this.column번호 = base.Columns["번호"];
+                this.column분류 = base.Columns["분류"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2256,10 +2268,12 @@ namespace SmartMES_Giroei.P1A {
                 base.Columns.Add(this.column단위);
                 this.column등록 = new global::System.Data.DataColumn("등록", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column등록);
-                this.column번호 = new global::System.Data.DataColumn("번호", typeof(double), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column번호);
                 this.column등록일자 = new global::System.Data.DataColumn("등록일자", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column등록일자);
+                this.column번호 = new global::System.Data.DataColumn("번호", typeof(double), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column번호);
+                this.column분류 = new global::System.Data.DataColumn("분류", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column분류);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.column품목코드}, true));
                 this.column품목코드.AllowDBNull = false;
@@ -2269,6 +2283,8 @@ namespace SmartMES_Giroei.P1A {
                 this.column품목명.MaxLength = 50;
                 this.column규격.MaxLength = 50;
                 this.column단위.MaxLength = 4;
+                this.column분류.AllowDBNull = false;
+                this.column분류.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5132,6 +5148,22 @@ namespace SmartMES_Giroei.P1A {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime 등록일자 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_BOM_Query.등록일자Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_BOM_Query\' 테이블의 \'등록일자\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_BOM_Query.등록일자Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public double 번호 {
                 get {
                     try {
@@ -5148,17 +5180,12 @@ namespace SmartMES_Giroei.P1A {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime 등록일자 {
+            public string 분류 {
                 get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableSP_BOM_Query.등록일자Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_BOM_Query\' 테이블의 \'등록일자\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((string)(this[this.tableSP_BOM_Query.분류Column]));
                 }
                 set {
-                    this[this.tableSP_BOM_Query.등록일자Column] = value;
+                    this[this.tableSP_BOM_Query.분류Column] = value;
                 }
             }
             
@@ -5200,18 +5227,6 @@ namespace SmartMES_Giroei.P1A {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is번호Null() {
-                return this.IsNull(this.tableSP_BOM_Query.번호Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set번호Null() {
-                this[this.tableSP_BOM_Query.번호Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is등록일자Null() {
                 return this.IsNull(this.tableSP_BOM_Query.등록일자Column);
             }
@@ -5220,6 +5235,18 @@ namespace SmartMES_Giroei.P1A {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set등록일자Null() {
                 this[this.tableSP_BOM_Query.등록일자Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is번호Null() {
+                return this.IsNull(this.tableSP_BOM_Query.번호Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set번호Null() {
+                this[this.tableSP_BOM_Query.번호Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -8067,8 +8094,9 @@ namespace SmartMES_Giroei.P1A.DataSetP1ATableAdapters {
             tableMapping.ColumnMappings.Add("규격", "규격");
             tableMapping.ColumnMappings.Add("단위", "단위");
             tableMapping.ColumnMappings.Add("등록", "등록");
-            tableMapping.ColumnMappings.Add("번호", "번호");
             tableMapping.ColumnMappings.Add("등록일자", "등록일자");
+            tableMapping.ColumnMappings.Add("번호", "번호");
+            tableMapping.ColumnMappings.Add("분류", "분류");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

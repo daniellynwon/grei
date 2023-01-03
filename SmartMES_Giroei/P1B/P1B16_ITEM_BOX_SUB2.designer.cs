@@ -35,18 +35,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sPItemBoxNewBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
-            this.sP_Item_Box_NewTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_Item_Box_NewTableAdapter();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.btItemBox = new System.Windows.Forms.Button();
-            this.lblMsg = new System.Windows.Forms.Label();
-            this.btnItemBox = new System.Windows.Forms.Button();
             this.수주번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수주순번DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.품목코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.품목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수주수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPItemBoxNewBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
+            this.sP_Item_Box_NewTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_Item_Box_NewTableAdapter();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btItemBox = new System.Windows.Forms.Button();
+            this.lblMsg = new System.Windows.Forms.Label();
+            this.btnItemBox = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPItemBoxNewBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).BeginInit();
@@ -113,65 +115,6 @@
             this.dataGridView1.TabIndex = 4;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // sPItemBoxNewBindingSource
-            // 
-            this.sPItemBoxNewBindingSource.DataMember = "SP_Item_Box_New";
-            this.sPItemBoxNewBindingSource.DataSource = this.dataSetP1B;
-            // 
-            // dataSetP1B
-            // 
-            this.dataSetP1B.DataSetName = "DataSetP1B";
-            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_Item_Box_NewTableAdapter
-            // 
-            this.sP_Item_Box_NewTableAdapter.ClearBeforeFill = true;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Info;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.btItemBox);
-            this.panel1.Controls.Add(this.lblMsg);
-            this.panel1.Controls.Add(this.btnItemBox);
-            this.panel1.Location = new System.Drawing.Point(5, 8);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(700, 53);
-            this.panel1.TabIndex = 5;
-            // 
-            // btItemBox
-            // 
-            this.btItemBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btItemBox.Location = new System.Drawing.Point(535, 11);
-            this.btItemBox.Name = "btItemBox";
-            this.btItemBox.Size = new System.Drawing.Size(155, 29);
-            this.btItemBox.TabIndex = 14;
-            this.btItemBox.Text = "현품박스 등록";
-            this.btItemBox.UseVisualStyleBackColor = true;
-            this.btItemBox.Click += new System.EventHandler(this.btItemBox_Click);
-            // 
-            // lblMsg
-            // 
-            this.lblMsg.AutoSize = true;
-            this.lblMsg.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.lblMsg.ForeColor = System.Drawing.Color.Red;
-            this.lblMsg.Location = new System.Drawing.Point(8, 15);
-            this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(148, 21);
-            this.lblMsg.TabIndex = 13;
-            this.lblMsg.Text = "메시지 라벨입니다.";
-            // 
-            // btnItemBox
-            // 
-            this.btnItemBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnItemBox.Location = new System.Drawing.Point(722, 14);
-            this.btnItemBox.Name = "btnItemBox";
-            this.btnItemBox.Size = new System.Drawing.Size(155, 29);
-            this.btnItemBox.TabIndex = 12;
-            this.btnItemBox.Text = "현품박스 구성완료";
-            this.btnItemBox.UseVisualStyleBackColor = true;
-            // 
             // 수주번호DataGridViewTextBoxColumn
             // 
             this.수주번호DataGridViewTextBoxColumn.DataPropertyName = "수주번호";
@@ -212,6 +155,88 @@
             this.수주수량DataGridViewTextBoxColumn.HeaderText = "수량";
             this.수주수량DataGridViewTextBoxColumn.Name = "수주수량DataGridViewTextBoxColumn";
             this.수주수량DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sPItemBoxNewBindingSource
+            // 
+            this.sPItemBoxNewBindingSource.DataMember = "SP_Item_Box_New";
+            this.sPItemBoxNewBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // dataSetP1B
+            // 
+            this.dataSetP1B.DataSetName = "DataSetP1B";
+            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_Item_Box_NewTableAdapter
+            // 
+            this.sP_Item_Box_NewTableAdapter.ClearBeforeFill = true;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.tbSearch);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.btItemBox);
+            this.panel1.Controls.Add(this.lblMsg);
+            this.panel1.Controls.Add(this.btnItemBox);
+            this.panel1.Location = new System.Drawing.Point(5, 8);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(700, 53);
+            this.panel1.TabIndex = 5;
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbSearch.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbSearch.Location = new System.Drawing.Point(210, 11);
+            this.tbSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(239, 29);
+            this.tbSearch.TabIndex = 15;
+            this.tbSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearch_KeyUp);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(6, 15);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(198, 21);
+            this.label1.TabIndex = 16;
+            this.label1.Text = "품목명/수주번호/품목코드";
+            // 
+            // btItemBox
+            // 
+            this.btItemBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btItemBox.Location = new System.Drawing.Point(535, 11);
+            this.btItemBox.Name = "btItemBox";
+            this.btItemBox.Size = new System.Drawing.Size(155, 29);
+            this.btItemBox.TabIndex = 14;
+            this.btItemBox.Text = "현품박스 등록";
+            this.btItemBox.UseVisualStyleBackColor = true;
+            this.btItemBox.Click += new System.EventHandler(this.btItemBox_Click);
+            // 
+            // lblMsg
+            // 
+            this.lblMsg.AutoSize = true;
+            this.lblMsg.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.lblMsg.ForeColor = System.Drawing.Color.Red;
+            this.lblMsg.Location = new System.Drawing.Point(6, -1);
+            this.lblMsg.Name = "lblMsg";
+            this.lblMsg.Size = new System.Drawing.Size(148, 21);
+            this.lblMsg.TabIndex = 13;
+            this.lblMsg.Text = "메시지 라벨입니다.";
+            // 
+            // btnItemBox
+            // 
+            this.btnItemBox.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnItemBox.Location = new System.Drawing.Point(722, 14);
+            this.btnItemBox.Name = "btnItemBox";
+            this.btnItemBox.Size = new System.Drawing.Size(155, 29);
+            this.btnItemBox.TabIndex = 12;
+            this.btnItemBox.Text = "현품박스 구성완료";
+            this.btnItemBox.UseVisualStyleBackColor = true;
             // 
             // P1B16_ITEM_BOX_SUB2
             // 
@@ -254,5 +279,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 품목코드DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 품목명DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수주수량DataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox tbSearch;
+        private System.Windows.Forms.Label label1;
     }
 }

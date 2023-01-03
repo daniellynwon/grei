@@ -27,14 +27,16 @@ namespace SmartMES_Giroei
             lblMsg.Text = "";
 
             ListSearch();
+            this.ActiveControl = tbSearch;
         }
         public void ListSearch()
         {
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
+                string sSearch = tbSearch.Text.Trim();
 
-                sP_Item_Box_NewTableAdapter.Fill(dataSetP1B.SP_Item_Box_New);
+                sP_Item_Box_NewTableAdapter.Fill(dataSetP1B.SP_Item_Box_New, sSearch);
 
                 dataGridView1.CurrentCell = null;
                 dataGridView1.ClearSelection();
@@ -66,6 +68,13 @@ namespace SmartMES_Giroei
         }
         #endregion
 
+        private void tbSearch_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                ListSearch();
+            }
+        }
         private void btItemBox_Click(object sender, EventArgs e)
         {
             try

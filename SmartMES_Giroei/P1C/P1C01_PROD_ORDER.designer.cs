@@ -106,7 +106,8 @@
             // 
             // pbDel
             // 
-            this.pbDel.Image = global::SmartMES_Giroei.Properties.Resources.del_A;
+            this.pbDel.Enabled = false;
+            this.pbDel.Image = global::SmartMES_Giroei.Properties.Resources.del_B;
             this.pbDel.Click += new System.EventHandler(this.pbDel_Click);
             // 
             // pbAdd
@@ -440,6 +441,7 @@
             this.솔더사양.HeaderText = "솔더사양";
             this.솔더사양.Name = "솔더사양";
             this.솔더사양.ReadOnly = true;
+            this.솔더사양.Visible = false;
             // 
             // MM번호
             // 
@@ -448,6 +450,7 @@
             this.MM번호.HeaderText = "M/Mask";
             this.MM번호.Name = "MM번호";
             this.MM번호.ReadOnly = true;
+            this.MM번호.Visible = false;
             // 
             // 시작시간
             // 
@@ -509,7 +512,7 @@
             // 
             this.완료여부.DataPropertyName = "완료여부";
             this.완료여부.FillWeight = 30F;
-            this.완료여부.HeaderText = "완료여부";
+            this.완료여부.HeaderText = "상태";
             this.완료여부.Name = "완료여부";
             this.완료여부.ReadOnly = true;
             // 
