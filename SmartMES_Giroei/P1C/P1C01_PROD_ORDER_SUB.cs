@@ -834,6 +834,7 @@ namespace SmartMES_Giroei
                 //MessageBox.Show(msg);
                 return;
             }
+            parentWin.ListSearch();         // reflash
             this.Close();
             parentWin.lblMsg.Text = "작업시작되었습니다.";
         }

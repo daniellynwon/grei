@@ -12,8 +12,8 @@ namespace SmartMES_Giroei
         public static string UserName;
         public static string Authority;
 
-        //public static string conStr = ConfigurationManager.ConnectionStrings["SmartMES_Giroei.Properties.Settings.jiroei_mesConnectionString"].ConnectionString;
-        public static string conStr = "server=db.mes.innobe.co.kr;user id=jiroei;password=jiroei1234!;database=jiroei_mes;SSL Mode=None";
+        public static string conStr = ConfigurationManager.ConnectionStrings["SmartMES_Giroei.Properties.Settings.jiroei_mesConnectionString"].ConnectionString;
+        // public static string conStr = "server=db.mes.innobe.co.kr;user id=jiroei;password=jiroei1234!;database=jiroei_mes;SSL Mode=None";
         
     }
 }
