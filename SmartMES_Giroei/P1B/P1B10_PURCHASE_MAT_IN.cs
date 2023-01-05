@@ -45,6 +45,7 @@ namespace SmartMES_Giroei
             tbProd.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
             tbProd.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
             tbUnit.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[19].Value.ToString();        // 포장단위
+            tbUnit.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[23].Value.ToString();        // 품목분류
             tbPreInQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value.ToString();    // 기 입고량
             tbQty.Text = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString()).ToString("#,##0");
             tbDanga.Text = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString()).ToString("#,##0");
@@ -380,6 +381,7 @@ namespace SmartMES_Giroei
             string sQty = tbInQty.Text.Replace(",", "").Trim();                     // 입고수량
             string sCustName = tbCust.Text.Substring(0, (tbCust.Text.Length > 12) ? 12 : tbCust.Text.Length).Trim();                        // 업체명 12자리
             string sProdName = tbProd.Text.Substring(0, (tbProd.Text.Length > 12) ? 12 : tbProd.Text.Length).Trim();                        // 자재명 12자리
+            string sProdKind = tbUnit.Tag.ToString();       // 품목분류 가져와서 바코드 보여주기 (1/5/23)
 
             if (string.IsNullOrEmpty(sQtyInPacking))
             {
@@ -444,7 +446,8 @@ namespace SmartMES_Giroei
                     //str += "^FO443,70 ";
 
                     // str += "^FO30,80 ^B3N,N,80,Y,N ^FD" + Barcode.Trim() + " ^FS";
-                    str += "^FO50,30 ^BQN,2,3^FDMA," + Barcode.Trim() + " ^FS";
+                    str += "^FO40,20 ^BQN,2,3^FDMA," + Barcode.Trim() + " ^FS";
+                    str += "^FO50,100 ^A0,22,22^FD" + sProdKind + " ^FS";
                     //str += "^FO150,20^A0,22,22^FD" + aBarcode[0] + " ^FS";
                     //str += "^FO150,50^A0,22,22^FD" + aBarcode[1] + " ^FS";
                     str += "^FO150,20^A1N,22,22^FD" + sCustName + " ^FS";
@@ -500,7 +503,6 @@ namespace SmartMES_Giroei
             }
             var data = sql;
             Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);
-
 
             sql = $@"INSERT INTO INV_material_in (mbarcode, barcode_surfix, cust_id, prod_id, plant, input_date, order_id, order_seq, purchase_id, purchase_seq, qty, pack_type, pack_qty, reason_code, contents,  warehouse_id, enter_man) 
                             VALUES ('{barcodePrefix}', '{surfix}', '{@sCust}', '{@sProd}', 'A', '{sInDate}', '{sOrderId}', 1, '{pId}', {pSeq}, {iQtyInPacking}, '{@sPackType}', {sQtyInPacking}, '0010','{sBigo}', '{sDepot}', '{@G.UserID}');";
