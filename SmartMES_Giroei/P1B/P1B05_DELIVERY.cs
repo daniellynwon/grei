@@ -942,9 +942,9 @@ namespace SmartMES_Giroei
                 str += "^FO25,277 ^A0N,30,35 ^FD Product ^FS";
                 str += "^FO20,322 ^A1N,30,15 ^FD" + sName + " ^FS";
                 str += "^FO25,382 ^A0N,30,35 ^FD Date ^FS";
-                str += "^FO20,422 ^A1N,30,15 ^FD" + sUnit + " ^FS";
+                str += "^FO20,422 ^A1N,30,15 ^FD" + sDate + " ^FS";
                 str += "^FO390,382 ^A0N,30,35 ^FD Amount ^FS";
-                str += "^FO150,110^A0,22,22^FD" + sQty + " ^FS";
+                str += "^FO150,110 ^A0,22,22^FD" + sQty + " ^FS";
                 str += "^XZ";
 
                 var bytes = Encoding.Default.GetBytes(str);
