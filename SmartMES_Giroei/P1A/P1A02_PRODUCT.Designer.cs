@@ -139,7 +139,7 @@
             // lblMsg
             // 
             this.lblMsg.AutoSize = true;
-            this.lblMsg.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.lblMsg.Font = new System.Drawing.Font("Malgun Gothic", 12F);
             this.lblMsg.ForeColor = System.Drawing.Color.Red;
             this.lblMsg.Location = new System.Drawing.Point(3, 48);
             this.lblMsg.Name = "lblMsg";
@@ -199,7 +199,7 @@
             // 
             this.tbSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbSearch.BackColor = System.Drawing.SystemColors.Window;
-            this.tbSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tbSearch.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.tbSearch.ForeColor = System.Drawing.SystemColors.WindowText;
             this.tbSearch.Location = new System.Drawing.Point(291, 21);
             this.tbSearch.Name = "tbSearch";
@@ -211,7 +211,7 @@
             // 
             this.lbSearch.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbSearch.AutoSize = true;
-            this.lbSearch.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbSearch.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbSearch.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbSearch.Location = new System.Drawing.Point(63, 24);
             this.lbSearch.Name = "lbSearch";
@@ -234,7 +234,7 @@
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -266,7 +266,7 @@
             this.dataGridView1.DataSource = this.sPProductQueryBindingSource;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Tomato;
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -279,7 +279,7 @@
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
@@ -364,6 +364,7 @@
             this.규격DataGridViewTextBoxColumn.DataPropertyName = "규격";
             this.규격DataGridViewTextBoxColumn.FillWeight = 110F;
             this.규격DataGridViewTextBoxColumn.HeaderText = "규격";
+            this.규격DataGridViewTextBoxColumn.MaxInputLength = 1000;
             this.규격DataGridViewTextBoxColumn.Name = "규격DataGridViewTextBoxColumn";
             this.규격DataGridViewTextBoxColumn.ReadOnly = true;
             // 

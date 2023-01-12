@@ -492,7 +492,15 @@ namespace SmartMES_Giroei
             //    else if (sVal == "단면") dataGridView1.Rows[e.RowIndex].Cells[9].Value = "";
             //    else dataGridView1.Rows[e.RowIndex].Cells[9].Value = "양면";
             //}
-            else if (e.ColumnIndex == 28) // X
+            else if (e.ColumnIndex == 28)       // 상세입력
+            {
+                P1B03_RORDER_DETAIL rd = new P1B03_RORDER_DETAIL();
+                rd.rowIndex = e.RowIndex;
+                rd.parentWin = this;
+
+                rd.ShowDialog();
+            }
+            else if (e.ColumnIndex == 29) // X
             {
                 try
                 {

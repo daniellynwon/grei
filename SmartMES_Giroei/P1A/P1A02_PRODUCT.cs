@@ -16,7 +16,10 @@ namespace SmartMES_Giroei
         {
             lblMsg.Text = "";
 
+            cbGubun.SelectedIndexChanged -= cbGubun_SelectedIndexChanged;
+            cbKind.SelectedIndexChanged -= cbKind_SelectedIndexChanged;
             cbGubun.SelectedIndex = 0;
+
 
             //string sql = @"SELECT co_code, co_item FROM BAS_common WHERE co_kind = 'C' AND co_item <> '<전체>' ORDER BY co_code";
 
@@ -66,6 +69,10 @@ namespace SmartMES_Giroei
                 }
             }
 
+            cbKind.SelectedIndex = 0;
+            cbGubun.SelectedIndexChanged += cbGubun_SelectedIndexChanged;
+            cbKind.SelectedIndexChanged += cbKind_SelectedIndexChanged;
+
             ListSearch();
 
             this.ActiveControl = tbSearch;
@@ -105,8 +112,9 @@ namespace SmartMES_Giroei
                     sGubun2 = "C";
                 }
 
-                string sKind = cbKind.SelectedValue == null ? string.Empty : cbKind.SelectedValue.ToString();
-                string sSearch = tbSearch.Text.Trim();
+                string sKind = cbKind.SelectedValue.ToString() == "" ? "%" : cbKind.SelectedValue.ToString().Trim();
+              
+                string sSearch = tbSearch.Text == "" ? "%": tbSearch.Text.Trim();
 
                 sP_Product_QueryTableAdapter.Fill(dataSetP1A.SP_Product_Query, sGubun, sGubun2, sKind, sSearch);
 
@@ -125,8 +133,9 @@ namespace SmartMES_Giroei
                 dataGridView1.CurrentCell = null;
                 dataGridView1.ClearSelection();
             }
-            catch (NullReferenceException)
+            catch (Exception ex)
             {
+                MessageBox.Show(ex.Message);
                 return;
             }
             finally
@@ -226,7 +235,8 @@ namespace SmartMES_Giroei
             string msg = string.Empty;
 
             MariaCRUD m = new MariaCRUD();
-
+            
+            cbKind.SelectedIndexChanged -= cbKind_SelectedIndexChanged;
             if (cbGubun.SelectedIndex == 0)
             {
                 sql = @"SELECT co_code, co_item FROM BAS_common WHERE co_kind = 'P' ORDER BY co_code";
@@ -254,6 +264,8 @@ namespace SmartMES_Giroei
                 }
             }
 
+            cbKind.SelectedIndex = 0;
+            cbKind.SelectedIndexChanged += cbKind_SelectedIndexChanged;
             ListSearch();
         }
         private void cbKind_SelectedIndexChanged(object sender, EventArgs e)

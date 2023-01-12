@@ -14,25 +14,25 @@ namespace SmartMES_Giroei
 
         private void FormBasic_Load(object sender, EventArgs e)
         {
-            AssemblyName name = Assembly.GetExecutingAssembly().GetName();
-            lbVersion.Text = "Ver: " + name.Version.ToString();
-            lblFormID.Text = this.Name;
-            lblUser.Text = G.UserName + "님께서 접속 중 입니다.";
+            //AssemblyName name = Assembly.GetExecutingAssembly().GetName();
+            //lbVersion.Text = "Ver: " + name.Version.ToString();
+            //lblFormID.Text = this.Name;
+            //lblUser.Text = G.UserName + "님께서 접속 중 입니다.";
 
-            //MariaCRUD m = new MariaCRUD();
-            //m.TransLogCreate(G.Authority, G.UserID, "S", this.Name, lblTitle.Text, lblTitle.Text);
+            ////MariaCRUD m = new MariaCRUD();
+            ////m.TransLogCreate(G.Authority, G.UserID, "S", this.Name, lblTitle.Text, lblTitle.Text);
 
-            if (!(G.Authority == "A" || G.Authority == "B" || G.Authority == "C"))
-            {
-                pbAdd.Image = global::SmartMES_Giroei.Properties.Resources.add_B;
-                pbDel.Image = global::SmartMES_Giroei.Properties.Resources.del_B;
-                pbSave.Image = global::SmartMES_Giroei.Properties.Resources.save_B;
-                pbPrint.Image = global::SmartMES_Giroei.Properties.Resources.out_B;
-                pbAdd.Enabled = false;
-                pbDel.Enabled = false;
-                pbSave.Enabled = false;
-                pbPrint.Enabled = false;
-            }
+            //if (!(G.Authority == "A" || G.Authority == "B" || G.Authority == "C"))
+            //{
+            //    pbAdd.Image = global::SmartMES_Giroei.Properties.Resources.add_B;
+            //    pbDel.Image = global::SmartMES_Giroei.Properties.Resources.del_B;
+            //    pbSave.Image = global::SmartMES_Giroei.Properties.Resources.save_B;
+            //    pbPrint.Image = global::SmartMES_Giroei.Properties.Resources.out_B;
+            //    pbAdd.Enabled = false;
+            //    pbDel.Enabled = false;
+            //    pbSave.Enabled = false;
+            //    pbPrint.Enabled = false;
+            //}
         }
 
         private void pb_MouseDown(object sender, MouseEventArgs e)
