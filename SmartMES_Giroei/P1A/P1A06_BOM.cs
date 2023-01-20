@@ -246,8 +246,8 @@ namespace SmartMES_Giroei
 
             CurrentCellRowIndex = e.RowIndex;
 
-            sProdID = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
-            sProdName = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            sProdID = dataGridView1.Rows[e.RowIndex].Cells[2].Value.ToString();
+            sProdName = dataGridView1.Rows[e.RowIndex].Cells[3].Value.ToString();
 
             ListSearch2(sProdID);
             tbSearch3.Text = "";
@@ -263,7 +263,7 @@ namespace SmartMES_Giroei
             {
                 int index = dataGridView1.CurrentCell.RowIndex;
                 int iSeq = 0; string sSeq = string.Empty;
-                string sPCode = dataGridView1.Rows[index].Cells[1].Value.ToString();
+                string sPCode = dataGridView1.Rows[index].Cells[2].Value.ToString();
                 string sMCode = (string)e.Data.GetData(DataFormats.StringFormat);
 
                 if (dataGridView2.RowCount > 0)
@@ -344,7 +344,7 @@ namespace SmartMES_Giroei
             if (e.Effect == DragDropEffects.Copy)
             {
                 int index = dataGridView1.CurrentCell.RowIndex;
-                string sPCode = dataGridView1.Rows[index].Cells[1].Value.ToString();
+                string sPCode = dataGridView1.Rows[index].Cells[2].Value.ToString();
                 string sMCode = (string)e.Data.GetData(DataFormats.StringFormat);
 
                 string sql = "DELETE FROM BOM_bomlist WHERE " +

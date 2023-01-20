@@ -20,13 +20,13 @@ namespace SmartMES_Giroei
             G.PosName = "지로이아이";
             G.UserName = "admin";
             G.Authority = "A";
-            Application.Run(new MDIForm());
+            //Application.Run(new MDIForm());
 
-            //using (var form = new FormLogin())
-            //{
-            //    if (form.ShowDialog() == DialogResult.OK)
-            //        Application.Run(new MDIForm());
-            //}
+            using (var form = new FormLogin())
+            {
+                if (form.ShowDialog() == DialogResult.OK)
+                    Application.Run(new MDIForm());
+            }
         }
     }
 }

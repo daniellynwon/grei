@@ -532,6 +532,13 @@ namespace SmartMES_Giroei
             }
         }
         #endregion
+
+        private void btnAOI_Click(object sender, EventArgs e)
+        {
+            P1C02_PROD_RESULT_AOI sub = new P1C02_PROD_RESULT_AOI();
+            sub.parentWin = this;
+            sub.ShowDialog();
+        }
     }
 }
 

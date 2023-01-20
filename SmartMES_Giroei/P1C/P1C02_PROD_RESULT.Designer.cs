@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P1C02_PROD_RESULT));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -58,6 +59,7 @@
             this.양품수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.불량수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnAOI = new System.Windows.Forms.Button();
             this.btnNg = new System.Windows.Forms.Button();
             this.cbWorkLine = new System.Windows.Forms.ComboBox();
             this.tbInstBot = new System.Windows.Forms.TextBox();
@@ -84,31 +86,6 @@
             this.tbMan = new System.Windows.Forms.TextBox();
             this.tbUserCnt = new System.Windows.Forms.TextBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sPProdResultQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1C = new SmartMES_Giroei.P1C.DataSetP1C();
-            this.tbNgQty = new System.Windows.Forms.TextBox();
-            this.tbGdQty = new System.Windows.Forms.TextBox();
-            this.tbQty = new System.Windows.Forms.TextBox();
-            this.tbJobNo = new System.Windows.Forms.TextBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label23 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lblMsg = new System.Windows.Forms.Label();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.tbJobTimeFinish = new System.Windows.Forms.TextBox();
-            this.tbJobTimeStart = new System.Windows.Forms.TextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
-            this.btnFinish = new System.Windows.Forms.Button();
-            this.btnStart = new System.Windows.Forms.Button();
-            this.label14 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.sP_ProdResult_QueryTableAdapter = new SmartMES_Giroei.P1C.DataSetP1CTableAdapters.SP_ProdResult_QueryTableAdapter();
             this.jobNoDataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.공정명DataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.작업라인DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -156,6 +133,31 @@
             this.불량비고 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수주번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수주순번 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPProdResultQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1C = new SmartMES_Giroei.P1C.DataSetP1C();
+            this.tbNgQty = new System.Windows.Forms.TextBox();
+            this.tbGdQty = new System.Windows.Forms.TextBox();
+            this.tbQty = new System.Windows.Forms.TextBox();
+            this.tbJobNo = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lblMsg = new System.Windows.Forms.Label();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.tbJobTimeFinish = new System.Windows.Forms.TextBox();
+            this.tbJobTimeStart = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.btnFinish = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
+            this.label14 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.sP_ProdResult_QueryTableAdapter = new SmartMES_Giroei.P1C.DataSetP1CTableAdapters.SP_ProdResult_QueryTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -224,7 +226,7 @@
             this.userButtonA2.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.right2;
             this.userButtonA2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.userButtonA2.buttonImage = global::SmartMES_Giroei.Properties.Resources.right2;
-            this.userButtonA2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.userButtonA2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.userButtonA2.Location = new System.Drawing.Point(797, 24);
             this.userButtonA2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.userButtonA2.Name = "userButtonA2";
@@ -239,7 +241,7 @@
             this.userButtonA1.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.left2;
             this.userButtonA1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.userButtonA1.buttonImage = global::SmartMES_Giroei.Properties.Resources.left2;
-            this.userButtonA1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.userButtonA1.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.userButtonA1.Location = new System.Drawing.Point(516, 24);
             this.userButtonA1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.userButtonA1.Name = "userButtonA1";
@@ -251,7 +253,7 @@
             // 
             this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label2.Location = new System.Drawing.Point(436, 24);
             this.label2.Name = "label2";
@@ -262,8 +264,8 @@
             // dtpDate
             // 
             this.dtpDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpDate.CalendarFont = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dtpDate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpDate.CalendarFont = new System.Drawing.Font("Malgun Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpDate.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.dtpDate.Location = new System.Drawing.Point(581, 20);
             this.dtpDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtpDate.Name = "dtpDate";
@@ -403,6 +405,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(205)))), ((int)(((byte)(219)))));
+            this.panel1.Controls.Add(this.btnAOI);
             this.panel1.Controls.Add(this.btnNg);
             this.panel1.Controls.Add(this.cbWorkLine);
             this.panel1.Controls.Add(this.tbInstBot);
@@ -446,14 +449,29 @@
             this.panel1.Size = new System.Drawing.Size(1319, 843);
             this.panel1.TabIndex = 1;
             // 
+            // btnAOI
+            // 
+            this.btnAOI.BackColor = System.Drawing.Color.White;
+            this.btnAOI.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAOI.BackgroundImage")));
+            this.btnAOI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnAOI.Font = new System.Drawing.Font("Malgun Gothic", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnAOI.Location = new System.Drawing.Point(978, 324);
+            this.btnAOI.Name = "btnAOI";
+            this.btnAOI.Size = new System.Drawing.Size(184, 58);
+            this.btnAOI.TabIndex = 77;
+            this.btnAOI.Text = "AOI";
+            this.btnAOI.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAOI.UseVisualStyleBackColor = false;
+            this.btnAOI.Click += new System.EventHandler(this.btnAOI_Click);
+            // 
             // btnNg
             // 
             this.btnNg.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnNg.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.불량보고;
             this.btnNg.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnNg.Location = new System.Drawing.Point(647, 301);
+            this.btnNg.Location = new System.Drawing.Point(741, 324);
             this.btnNg.Name = "btnNg";
-            this.btnNg.Size = new System.Drawing.Size(262, 72);
+            this.btnNg.Size = new System.Drawing.Size(200, 58);
             this.btnNg.TabIndex = 76;
             this.btnNg.UseVisualStyleBackColor = true;
             this.btnNg.Click += new System.EventHandler(this.btnNg_Click);
@@ -471,7 +489,7 @@
             // tbInstBot
             // 
             this.tbInstBot.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbInstBot.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbInstBot.Font = new System.Drawing.Font("Malgun Gothic", 12F);
             this.tbInstBot.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.tbInstBot.Location = new System.Drawing.Point(1188, 277);
             this.tbInstBot.Name = "tbInstBot";
@@ -482,7 +500,7 @@
             // tbInstTop
             // 
             this.tbInstTop.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbInstTop.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbInstTop.Font = new System.Drawing.Font("Malgun Gothic", 12F);
             this.tbInstTop.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.tbInstTop.Location = new System.Drawing.Point(1065, 277);
             this.tbInstTop.Name = "tbInstTop";
@@ -494,7 +512,7 @@
             // 
             this.label17.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label17.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label17.Location = new System.Drawing.Point(967, 281);
             this.label17.Name = "label17";
@@ -506,7 +524,7 @@
             // 
             this.label18.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label18.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label18.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label18.Location = new System.Drawing.Point(1167, 281);
             this.label18.Name = "label18";
@@ -517,7 +535,7 @@
             // tbMatptbot
             // 
             this.tbMatptbot.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbMatptbot.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbMatptbot.Font = new System.Drawing.Font("Malgun Gothic", 12F);
             this.tbMatptbot.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.tbMatptbot.Location = new System.Drawing.Point(1189, 231);
             this.tbMatptbot.Name = "tbMatptbot";
@@ -528,7 +546,7 @@
             // tbMatpttop
             // 
             this.tbMatpttop.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbMatpttop.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbMatpttop.Font = new System.Drawing.Font("Malgun Gothic", 12F);
             this.tbMatpttop.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.tbMatpttop.Location = new System.Drawing.Point(1066, 231);
             this.tbMatpttop.Name = "tbMatpttop";
@@ -540,7 +558,7 @@
             // 
             this.label13.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label13.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label13.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label13.Location = new System.Drawing.Point(967, 235);
             this.label13.Name = "label13";
@@ -552,7 +570,7 @@
             // 
             this.label16.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label16.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label16.Location = new System.Drawing.Point(1168, 235);
             this.label16.Name = "label16";
@@ -563,7 +581,7 @@
             // tbMatnobot
             // 
             this.tbMatnobot.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbMatnobot.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbMatnobot.Font = new System.Drawing.Font("Malgun Gothic", 12F);
             this.tbMatnobot.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.tbMatnobot.Location = new System.Drawing.Point(1188, 185);
             this.tbMatnobot.Name = "tbMatnobot";
@@ -574,7 +592,7 @@
             // tbMatnotop
             // 
             this.tbMatnotop.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbMatnotop.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbMatnotop.Font = new System.Drawing.Font("Malgun Gothic", 12F);
             this.tbMatnotop.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.tbMatnotop.Location = new System.Drawing.Point(1065, 185);
             this.tbMatnotop.Name = "tbMatnotop";
@@ -586,7 +604,7 @@
             // 
             this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label10.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label10.Location = new System.Drawing.Point(966, 189);
             this.label10.Name = "label10";
@@ -598,7 +616,7 @@
             // 
             this.label11.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label11.AutoSize = true;
-            this.label11.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label11.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label11.Location = new System.Drawing.Point(1167, 189);
             this.label11.Name = "label11";
@@ -613,9 +631,9 @@
             this.groupBox2.Controls.Add(this.tbStartTime);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Location = new System.Drawing.Point(647, 350);
+            this.groupBox2.Location = new System.Drawing.Point(647, 406);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(311, 177);
+            this.groupBox2.Size = new System.Drawing.Size(311, 144);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Visible = false;
@@ -623,9 +641,9 @@
             // tbFinishTime
             // 
             this.tbFinishTime.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbFinishTime.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbFinishTime.Font = new System.Drawing.Font("Malgun Gothic", 12F);
             this.tbFinishTime.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbFinishTime.Location = new System.Drawing.Point(28, 132);
+            this.tbFinishTime.Location = new System.Drawing.Point(28, 107);
             this.tbFinishTime.Name = "tbFinishTime";
             this.tbFinishTime.ReadOnly = true;
             this.tbFinishTime.Size = new System.Drawing.Size(245, 29);
@@ -636,7 +654,7 @@
             // tbStartTime
             // 
             this.tbStartTime.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbStartTime.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbStartTime.Font = new System.Drawing.Font("Malgun Gothic", 12F);
             this.tbStartTime.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.tbStartTime.Location = new System.Drawing.Point(28, 51);
             this.tbStartTime.Name = "tbStartTime";
@@ -649,7 +667,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label6.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label6.Location = new System.Drawing.Point(24, 26);
             this.label6.Name = "label6";
@@ -660,9 +678,9 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(24, 108);
+            this.label7.Location = new System.Drawing.Point(24, 83);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(106, 21);
             this.label7.TabIndex = 8;
@@ -672,18 +690,17 @@
             // 
             this.lblLotNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lblLotNo.AutoSize = true;
-            this.lblLotNo.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblLotNo.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblLotNo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lblLotNo.Location = new System.Drawing.Point(737, 50);
             this.lblLotNo.Name = "lblLotNo";
-            this.lblLotNo.Size = new System.Drawing.Size(60, 21);
+            this.lblLotNo.Size = new System.Drawing.Size(0, 21);
             this.lblLotNo.TabIndex = 62;
-            this.lblLotNo.Text = "LotNo.";
             // 
             // tbProd
             // 
             this.tbProd.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbProd.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbProd.Font = new System.Drawing.Font("Malgun Gothic", 12F);
             this.tbProd.Location = new System.Drawing.Point(741, 93);
             this.tbProd.Name = "tbProd";
             this.tbProd.ReadOnly = true;
@@ -695,7 +712,7 @@
             // 
             this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label5.Location = new System.Drawing.Point(643, 281);
             this.label5.Name = "label5";
@@ -719,7 +736,7 @@
             // tbMan
             // 
             this.tbMan.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbMan.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbMan.Font = new System.Drawing.Font("Malgun Gothic", 12F);
             this.tbMan.Location = new System.Drawing.Point(741, 277);
             this.tbMan.Name = "tbMan";
             this.tbMan.Size = new System.Drawing.Size(200, 29);
@@ -730,7 +747,7 @@
             // tbUserCnt
             // 
             this.tbUserCnt.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbUserCnt.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbUserCnt.Font = new System.Drawing.Font("Malgun Gothic", 12F);
             this.tbUserCnt.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.tbUserCnt.Location = new System.Drawing.Point(741, 231);
             this.tbUserCnt.Name = "tbUserCnt";
@@ -752,7 +769,7 @@
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -812,7 +829,7 @@
             this.dataGridView1.DataSource = this.sPProdResultQueryBindingSource;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Tomato;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -825,7 +842,7 @@
             this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
@@ -840,281 +857,6 @@
             this.dataGridView1.TabIndex = 37;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            // 
-            // sPProdResultQueryBindingSource
-            // 
-            this.sPProdResultQueryBindingSource.DataMember = "SP_ProdResult_Query";
-            this.sPProdResultQueryBindingSource.DataSource = this.dataSetP1C;
-            // 
-            // dataSetP1C
-            // 
-            this.dataSetP1C.DataSetName = "DataSetP1C";
-            this.dataSetP1C.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // tbNgQty
-            // 
-            this.tbNgQty.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbNgQty.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbNgQty.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbNgQty.Location = new System.Drawing.Point(741, 185);
-            this.tbNgQty.Name = "tbNgQty";
-            this.tbNgQty.ReadOnly = true;
-            this.tbNgQty.Size = new System.Drawing.Size(200, 29);
-            this.tbNgQty.TabIndex = 40;
-            this.tbNgQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbNgQty.TextChanged += new System.EventHandler(this.tbDigit_TextChanged);
-            this.tbNgQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
-            // 
-            // tbGdQty
-            // 
-            this.tbGdQty.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbGdQty.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbGdQty.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbGdQty.Location = new System.Drawing.Point(741, 139);
-            this.tbGdQty.Name = "tbGdQty";
-            this.tbGdQty.ReadOnly = true;
-            this.tbGdQty.Size = new System.Drawing.Size(200, 29);
-            this.tbGdQty.TabIndex = 39;
-            this.tbGdQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbGdQty.TextChanged += new System.EventHandler(this.tbDigit_TextChanged);
-            this.tbGdQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
-            // 
-            // tbQty
-            // 
-            this.tbQty.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbQty.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbQty.Location = new System.Drawing.Point(1065, 139);
-            this.tbQty.Name = "tbQty";
-            this.tbQty.ReadOnly = true;
-            this.tbQty.Size = new System.Drawing.Size(221, 29);
-            this.tbQty.TabIndex = 28;
-            this.tbQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbQty.TextChanged += new System.EventHandler(this.tbDigit_TextChanged);
-            this.tbQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
-            // 
-            // tbJobNo
-            // 
-            this.tbJobNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbJobNo.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbJobNo.Location = new System.Drawing.Point(925, 19);
-            this.tbJobNo.Name = "tbJobNo";
-            this.tbJobNo.ReadOnly = true;
-            this.tbJobNo.Size = new System.Drawing.Size(200, 29);
-            this.tbJobNo.TabIndex = 35;
-            this.tbJobNo.Text = "741, 84";
-            this.tbJobNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbJobNo.Visible = false;
-            // 
-            // label25
-            // 
-            this.label25.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label25.AutoSize = true;
-            this.label25.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label25.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label25.Location = new System.Drawing.Point(643, 585);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(42, 21);
-            this.label25.TabIndex = 59;
-            this.label25.Text = "비고";
-            this.label25.Visible = false;
-            // 
-            // label23
-            // 
-            this.label23.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label23.AutoSize = true;
-            this.label23.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label23.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label23.Location = new System.Drawing.Point(966, 143);
-            this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(74, 21);
-            this.label23.TabIndex = 54;
-            this.label23.Text = "지시수량";
-            // 
-            // label9
-            // 
-            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label9.Location = new System.Drawing.Point(966, 97);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(74, 21);
-            this.label9.TabIndex = 53;
-            this.label9.Text = "작업라인";
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(643, 235);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(90, 21);
-            this.label3.TabIndex = 52;
-            this.label3.Text = "작업자공수";
-            this.label3.Visible = false;
-            // 
-            // lblMsg
-            // 
-            this.lblMsg.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblMsg.AutoSize = true;
-            this.lblMsg.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.lblMsg.ForeColor = System.Drawing.Color.Red;
-            this.lblMsg.Location = new System.Drawing.Point(643, 19);
-            this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(148, 21);
-            this.lblMsg.TabIndex = 30;
-            this.lblMsg.Text = "메시지 라벨입니다.";
-            // 
-            // groupBox1
-            // 
-            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox1.Controls.Add(this.tbJobTimeFinish);
-            this.groupBox1.Controls.Add(this.tbJobTimeStart);
-            this.groupBox1.Controls.Add(this.label15);
-            this.groupBox1.Controls.Add(this.label12);
-            this.groupBox1.Location = new System.Drawing.Point(975, 350);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(311, 177);
-            this.groupBox1.TabIndex = 29;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Visible = false;
-            // 
-            // tbJobTimeFinish
-            // 
-            this.tbJobTimeFinish.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbJobTimeFinish.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbJobTimeFinish.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbJobTimeFinish.Location = new System.Drawing.Point(28, 139);
-            this.tbJobTimeFinish.Name = "tbJobTimeFinish";
-            this.tbJobTimeFinish.ReadOnly = true;
-            this.tbJobTimeFinish.Size = new System.Drawing.Size(245, 29);
-            this.tbJobTimeFinish.TabIndex = 10;
-            this.tbJobTimeFinish.Tag = "";
-            this.tbJobTimeFinish.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // tbJobTimeStart
-            // 
-            this.tbJobTimeStart.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbJobTimeStart.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbJobTimeStart.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbJobTimeStart.Location = new System.Drawing.Point(28, 58);
-            this.tbJobTimeStart.Name = "tbJobTimeStart";
-            this.tbJobTimeStart.ReadOnly = true;
-            this.tbJobTimeStart.Size = new System.Drawing.Size(245, 29);
-            this.tbJobTimeStart.TabIndex = 9;
-            this.tbJobTimeStart.Tag = "";
-            this.tbJobTimeStart.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label15.Location = new System.Drawing.Point(24, 33);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(106, 21);
-            this.label15.TabIndex = 7;
-            this.label15.Text = "작업시작일시";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label12.Location = new System.Drawing.Point(24, 115);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(106, 21);
-            this.label12.TabIndex = 8;
-            this.label12.Text = "작업종료일시";
-            // 
-            // btnFinish
-            // 
-            this.btnFinish.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnFinish.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.작업종료;
-            this.btnFinish.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFinish.Location = new System.Drawing.Point(1024, 669);
-            this.btnFinish.Name = "btnFinish";
-            this.btnFinish.Size = new System.Drawing.Size(262, 72);
-            this.btnFinish.TabIndex = 36;
-            this.btnFinish.UseVisualStyleBackColor = true;
-            this.btnFinish.Visible = false;
-            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
-            // 
-            // btnStart
-            // 
-            this.btnStart.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnStart.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.작업시작;
-            this.btnStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnStart.Location = new System.Drawing.Point(722, 669);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(262, 72);
-            this.btnStart.TabIndex = 38;
-            this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Visible = false;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
-            // 
-            // label14
-            // 
-            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label14.Location = new System.Drawing.Point(643, 189);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(74, 21);
-            this.label14.TabIndex = 31;
-            this.label14.Text = "불량수량";
-            // 
-            // label8
-            // 
-            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(643, 143);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 21);
-            this.label8.TabIndex = 32;
-            this.label8.Text = "양품수량";
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(643, 97);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(58, 21);
-            this.label4.TabIndex = 34;
-            this.label4.Text = "품목명";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(643, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(60, 21);
-            this.label1.TabIndex = 33;
-            this.label1.Text = "LotNo.";
-            this.label1.Visible = false;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            // 
-            // timer2
-            // 
-            this.timer2.Interval = 1000;
-            // 
-            // sP_ProdResult_QueryTableAdapter
-            // 
-            this.sP_ProdResult_QueryTableAdapter.ClearBeforeFill = true;
             // 
             // jobNoDataGridViewTextBoxColumn3
             // 
@@ -1491,6 +1233,281 @@
             this.수주순번.ReadOnly = true;
             this.수주순번.Visible = false;
             // 
+            // sPProdResultQueryBindingSource
+            // 
+            this.sPProdResultQueryBindingSource.DataMember = "SP_ProdResult_Query";
+            this.sPProdResultQueryBindingSource.DataSource = this.dataSetP1C;
+            // 
+            // dataSetP1C
+            // 
+            this.dataSetP1C.DataSetName = "DataSetP1C";
+            this.dataSetP1C.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // tbNgQty
+            // 
+            this.tbNgQty.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbNgQty.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbNgQty.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbNgQty.Location = new System.Drawing.Point(741, 185);
+            this.tbNgQty.Name = "tbNgQty";
+            this.tbNgQty.ReadOnly = true;
+            this.tbNgQty.Size = new System.Drawing.Size(200, 29);
+            this.tbNgQty.TabIndex = 40;
+            this.tbNgQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbNgQty.TextChanged += new System.EventHandler(this.tbDigit_TextChanged);
+            this.tbNgQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
+            // 
+            // tbGdQty
+            // 
+            this.tbGdQty.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbGdQty.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbGdQty.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbGdQty.Location = new System.Drawing.Point(741, 139);
+            this.tbGdQty.Name = "tbGdQty";
+            this.tbGdQty.ReadOnly = true;
+            this.tbGdQty.Size = new System.Drawing.Size(200, 29);
+            this.tbGdQty.TabIndex = 39;
+            this.tbGdQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbGdQty.TextChanged += new System.EventHandler(this.tbDigit_TextChanged);
+            this.tbGdQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
+            // 
+            // tbQty
+            // 
+            this.tbQty.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbQty.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbQty.Location = new System.Drawing.Point(1065, 139);
+            this.tbQty.Name = "tbQty";
+            this.tbQty.ReadOnly = true;
+            this.tbQty.Size = new System.Drawing.Size(221, 29);
+            this.tbQty.TabIndex = 28;
+            this.tbQty.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbQty.TextChanged += new System.EventHandler(this.tbDigit_TextChanged);
+            this.tbQty.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tb_KeyPress);
+            // 
+            // tbJobNo
+            // 
+            this.tbJobNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbJobNo.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbJobNo.Location = new System.Drawing.Point(925, 19);
+            this.tbJobNo.Name = "tbJobNo";
+            this.tbJobNo.ReadOnly = true;
+            this.tbJobNo.Size = new System.Drawing.Size(200, 29);
+            this.tbJobNo.TabIndex = 35;
+            this.tbJobNo.Text = "741, 84";
+            this.tbJobNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbJobNo.Visible = false;
+            // 
+            // label25
+            // 
+            this.label25.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label25.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label25.Location = new System.Drawing.Point(643, 585);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(42, 21);
+            this.label25.TabIndex = 59;
+            this.label25.Text = "비고";
+            this.label25.Visible = false;
+            // 
+            // label23
+            // 
+            this.label23.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label23.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label23.Location = new System.Drawing.Point(966, 143);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(74, 21);
+            this.label23.TabIndex = 54;
+            this.label23.Text = "지시수량";
+            // 
+            // label9
+            // 
+            this.label9.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label9.Location = new System.Drawing.Point(966, 97);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(74, 21);
+            this.label9.TabIndex = 53;
+            this.label9.Text = "작업라인";
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(643, 235);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 21);
+            this.label3.TabIndex = 52;
+            this.label3.Text = "작업자공수";
+            this.label3.Visible = false;
+            // 
+            // lblMsg
+            // 
+            this.lblMsg.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblMsg.AutoSize = true;
+            this.lblMsg.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.lblMsg.ForeColor = System.Drawing.Color.Red;
+            this.lblMsg.Location = new System.Drawing.Point(643, 19);
+            this.lblMsg.Name = "lblMsg";
+            this.lblMsg.Size = new System.Drawing.Size(148, 21);
+            this.lblMsg.TabIndex = 30;
+            this.lblMsg.Text = "메시지 라벨입니다.";
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox1.Controls.Add(this.tbJobTimeFinish);
+            this.groupBox1.Controls.Add(this.tbJobTimeStart);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Location = new System.Drawing.Point(975, 406);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(311, 144);
+            this.groupBox1.TabIndex = 29;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Visible = false;
+            // 
+            // tbJobTimeFinish
+            // 
+            this.tbJobTimeFinish.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbJobTimeFinish.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbJobTimeFinish.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbJobTimeFinish.Location = new System.Drawing.Point(28, 107);
+            this.tbJobTimeFinish.Name = "tbJobTimeFinish";
+            this.tbJobTimeFinish.ReadOnly = true;
+            this.tbJobTimeFinish.Size = new System.Drawing.Size(245, 29);
+            this.tbJobTimeFinish.TabIndex = 10;
+            this.tbJobTimeFinish.Tag = "";
+            this.tbJobTimeFinish.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbJobTimeStart
+            // 
+            this.tbJobTimeStart.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbJobTimeStart.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbJobTimeStart.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbJobTimeStart.Location = new System.Drawing.Point(28, 51);
+            this.tbJobTimeStart.Name = "tbJobTimeStart";
+            this.tbJobTimeStart.ReadOnly = true;
+            this.tbJobTimeStart.Size = new System.Drawing.Size(245, 29);
+            this.tbJobTimeStart.TabIndex = 9;
+            this.tbJobTimeStart.Tag = "";
+            this.tbJobTimeStart.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label15.Location = new System.Drawing.Point(24, 26);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(106, 21);
+            this.label15.TabIndex = 7;
+            this.label15.Text = "작업시작일시";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label12.Location = new System.Drawing.Point(24, 83);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(106, 21);
+            this.label12.TabIndex = 8;
+            this.label12.Text = "작업종료일시";
+            // 
+            // btnFinish
+            // 
+            this.btnFinish.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnFinish.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.작업종료;
+            this.btnFinish.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFinish.Location = new System.Drawing.Point(1024, 669);
+            this.btnFinish.Name = "btnFinish";
+            this.btnFinish.Size = new System.Drawing.Size(262, 72);
+            this.btnFinish.TabIndex = 36;
+            this.btnFinish.UseVisualStyleBackColor = true;
+            this.btnFinish.Visible = false;
+            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
+            // 
+            // btnStart
+            // 
+            this.btnStart.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnStart.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.작업시작;
+            this.btnStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnStart.Location = new System.Drawing.Point(722, 669);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(262, 72);
+            this.btnStart.TabIndex = 38;
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Visible = false;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
+            // 
+            // label14
+            // 
+            this.label14.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label14.Location = new System.Drawing.Point(643, 189);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(74, 21);
+            this.label14.TabIndex = 31;
+            this.label14.Text = "불량수량";
+            // 
+            // label8
+            // 
+            this.label8.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label8.Location = new System.Drawing.Point(643, 143);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(74, 21);
+            this.label8.TabIndex = 32;
+            this.label8.Text = "양품수량";
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(643, 97);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(58, 21);
+            this.label4.TabIndex = 34;
+            this.label4.Text = "품목명";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(643, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(60, 21);
+            this.label1.TabIndex = 33;
+            this.label1.Text = "LotNo.";
+            this.label1.Visible = false;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 1000;
+            // 
+            // sP_ProdResult_QueryTableAdapter
+            // 
+            this.sP_ProdResult_QueryTableAdapter.ClearBeforeFill = true;
+            // 
             // P1C02_PROD_RESULT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -1825,5 +1842,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 불량비고;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수주번호;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수주순번;
+        private System.Windows.Forms.Button btnAOI;
     }
 }
