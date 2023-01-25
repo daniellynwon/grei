@@ -471,8 +471,10 @@ namespace SmartMES_Giroei
                     sContents = ((range.Cells[row, 15] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 15] as Excel.Range).Value2.ToString().Trim();
                     sMisap = ((range.Cells[row, 14] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 14] as Excel.Range).Value2.ToString().Trim();   // 미삽
                     sSusap = ((range.Cells[row, 18] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 18] as Excel.Range).Value2.ToString().Trim();    // 수삽
+                    string sSageop = ((range.Cells[row, 17] as Excel.Range).Value2 == null) ? "도급" : (range.Cells[row, 17] as Excel.Range).Value2.ToString().Trim();    // 사급
                     //sConsign = (range.Cells[row, 17] as Excel.Range).Value2.ToString().Trim();    // 도급(N)/사급(Y)
-                    if ((range.Cells[row, 17] as Excel.Range).Value2.ToString().Trim() == "사급") sConsign = "Y";
+                    if (sSageop == "사급") 
+                        sConsign = "Y";
 
                      //if (sProcess == "수삽") sProcess = "S";
                      //else if (sProcess == "미삽") sProcess = "M";
@@ -507,40 +509,37 @@ namespace SmartMES_Giroei
 
                     if (m.dbDataTable(sql, ref msg).Rows.Count == 0)
                     {
+                        string Misap = "N", Susap = "N";
                         if (sMisap == "미삽" && string.IsNullOrEmpty(sSusap))
                         {
-                            sql = $@"INSERT INTO BOM_bomlist (seq, prod_id, parent_id, req_qty, IsSusap, IsMiSap, contents) VALUES ('{@sSeq}', '{@_sProdID}', '{@sProdIDSub}', '{@sQty}', 'N', 'Y','" + sContents + "');";
+                            Susap = "Y";
                         }
                         else if (sSusap == "수삽" && (string.IsNullOrEmpty(sMisap) || sMisap != "미삽"))
                         {
-                            sql = $@"INSERT INTO BOM_bomlist (seq, prod_id, parent_id, req_qty, IsSusap, IsMiSap, contents) VALUES ('{@sSeq}', '{@_sProdID}', '{@sProdIDSub}', '{@sQty}', 'Y', 'N','" + sContents + "');";
-                        }
-                        else
-                        {
-                            sql = $@"INSERT INTO BOM_bomlist (seq, prod_id, parent_id, req_qty, IsSusap, IsMiSap, contents) VALUES ('{@sSeq}', '{@_sProdID}', '{@sProdIDSub}', '{@sQty}', 'N', 'N','" + sContents + "');";
+                            Misap = "Y";
                         }
 
+                        sql = $@"INSERT INTO BOM_bomlist (seq, prod_id, parent_id, req_qty, IsSusap, IsMiSap, contents) VALUES ('{@sSeq}', '{@_sProdID}', '{@sProdIDSub}', '{@sQty}', '{Susap}', '{Misap}','" + sContents + "');";
                         m.dbCUD(sql, ref msg);
                     }
                     else
                     {
+                        string Misap = "N", Susap = "N";
                         if (sMisap == "미삽" && string.IsNullOrEmpty(sSusap))
                         {
-                            sql = $@"UPDATE BOM_bomlist SET IsSusap = 'N', IsMiSap = 'Y', contents = '" + sContents + "' WHERE prod_id = '{@_sProdID}' AND parent_id = '{@sProdIDSub}'";
+                            Misap = "Y";
                         }
                         else if (sSusap == "수삽" && (string.IsNullOrEmpty(sMisap) || sMisap != "미삽"))
                         {
-                            sql = $@"UPDATE BOM_bomlist SET IsSusap = 'Y', IsMiSap = 'N', contents = '" + sContents + "'  WHERE prod_id = '{@_sProdID}' AND parent_id = '{@sProdIDSub}'";
-                        }
-                        else
-                        {
-                            sql = $@"UPDATE BOM_bomlist SET IsSusap = 'N', IsMiSap = 'N', contents = '" + sContents + "'  WHERE prod_id = '{@_sProdID}' AND parent_id = '{@sProdIDSub}'";
+                            Susap = "Y";
                         }
 
+                        sql = $@"UPDATE BOM_bomlist SET consignedYN = '{@sConsign}', IsSusap = '{Susap}', IsMiSap = '{Misap}', contents = '" + sContents + "'  WHERE prod_id = '{@_sProdID}' AND parent_id = '{@sProdIDSub}'";
                         m.dbCUD(sql, ref msg);
                     }
-                    if (count < 100)
-                        progressBar1.Value = count = count + 1;
+                    int ratio = (int)Math.Round((count * 100) / ((double)range.Rows.Count - 8.0));
+                    progressBar1.Value = (ratio > 100) ? 100 : ratio;
+                    count = count + 1;
 
                     sql = "update BAS_product set bomYN = 'Y', bom_dt = now() where prod_id = '" + _sProdID + "'";
                     m.dbCUD(sql, ref msg);

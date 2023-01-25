@@ -147,6 +147,12 @@ namespace SmartMES_Giroei
                 lblMsg.Text = "총 입고수량을  입력해 주세요.";
                 return false;
             }
+            bool rePrint = false;
+            if (rePrint = CheckRePrint(barcodePrefix))
+            {
+                if (MessageBox.Show("이미 발행된 바코드입니다. 재 발행하겠습니까?", "YesOrNO", MessageBoxButtons.YesNo) == DialogResult.No)
+                    return false;
+            }
 
             int iPackageCount = int.Parse(sPackageCount);
             int iQty = int.Parse(sQty);
@@ -196,7 +202,8 @@ namespace SmartMES_Giroei
                     //{
                     //    MessageBox.Show(ex.Message);
                     //}
-                    save2InvBarcode(Barcode, barcodePrefix, iQtyInPackage, rowindex);
+                    if (rePrint == false)
+                        save2InvBarcode(Barcode, barcodePrefix, iQtyInPackage, rowindex);
                 }
                 dataGridView1.Rows[rowindex].Cells[0].Value = "1";
                 return true;
@@ -204,6 +211,18 @@ namespace SmartMES_Giroei
             else
                 return false;
 
+        }
+
+        private bool CheckRePrint(string barcodePrefix)
+        {
+            string msg = string.Empty;
+            MariaCRUD m = new MariaCRUD();
+
+            string sql = "select count(mbarcode) from INV_barcode where mbarcode = '" + barcodePrefix + "'";
+            if (m.dbDataTable(sql, ref msg).Rows.Count > 0)
+                return true;
+            else
+                return false;
         }
 
         private void save2InvBarcode(string barcode, string mBarcode, int iQtyInPackage, int rowindex)

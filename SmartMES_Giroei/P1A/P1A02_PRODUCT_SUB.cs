@@ -123,8 +123,8 @@ namespace SmartMES_Giroei
                 rowIndex = parentWin.dataGridView1.CurrentCell.RowIndex;
 
                 cbKind.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();
-                tbProdCode.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
-                tbProdName.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
+                tbProdCode.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
+                tbProdName.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
                 tbSize.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
                 cbUnit.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();
                 tbQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString();
