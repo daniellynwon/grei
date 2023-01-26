@@ -196,6 +196,8 @@ namespace SmartMES_Giroei
             dataGridView2.CurrentCell = null;
 
             ListSearch1("save");
+            ListSearch2("");
+            ListSearch3("");
 
             dataGridView1.CurrentCell = dataGridView1[0, CurrentCellRowIndex];
             dataGridView1.Rows[CurrentCellRowIndex].Selected = true;
