@@ -40,6 +40,17 @@
             this.lbProdName = new System.Windows.Forms.Label();
             this.lbSujuNo = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sPPurchaseRawMatBOMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
+            this.btnClose = new SmartMES_Giroei.UserButtonA();
+            this.btnSave = new SmartMES_Giroei.UserButtonA();
+            this.lblMsg = new System.Windows.Forms.Label();
+            this.pbSearch = new System.Windows.Forms.PictureBox();
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panTitle = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
+            this.sP_PurchaseRawMat_BOMTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseRawMat_BOMTableAdapter();
             this.ColumnCheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.품목코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,17 +63,6 @@
             this.수량 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.비고 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.sPPurchaseRawMatBOMBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
-            this.btnClose = new SmartMES_Giroei.UserButtonA();
-            this.btnSave = new SmartMES_Giroei.UserButtonA();
-            this.lblMsg = new System.Windows.Forms.Label();
-            this.pbSearch = new System.Windows.Forms.PictureBox();
-            this.tbSearch = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panTitle = new System.Windows.Forms.Panel();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.sP_PurchaseRawMat_BOMTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseRawMat_BOMTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseRawMatBOMBindingSource)).BeginInit();
@@ -199,100 +199,6 @@
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // ColumnCheckBox
-            // 
-            this.ColumnCheckBox.FalseValue = "0";
-            this.ColumnCheckBox.FillWeight = 31.73251F;
-            this.ColumnCheckBox.HeaderText = "";
-            this.ColumnCheckBox.Name = "ColumnCheckBox";
-            this.ColumnCheckBox.TrueValue = "1";
-            // 
-            // 번호DataGridViewTextBoxColumn
-            // 
-            this.번호DataGridViewTextBoxColumn.DataPropertyName = "번호";
-            this.번호DataGridViewTextBoxColumn.FillWeight = 42.31001F;
-            this.번호DataGridViewTextBoxColumn.HeaderText = "No.";
-            this.번호DataGridViewTextBoxColumn.Name = "번호DataGridViewTextBoxColumn";
-            this.번호DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 품목코드DataGridViewTextBoxColumn
-            // 
-            this.품목코드DataGridViewTextBoxColumn.DataPropertyName = "품목코드";
-            this.품목코드DataGridViewTextBoxColumn.HeaderText = "품목코드";
-            this.품목코드DataGridViewTextBoxColumn.Name = "품목코드DataGridViewTextBoxColumn";
-            this.품목코드DataGridViewTextBoxColumn.ReadOnly = true;
-            this.품목코드DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 품목명DataGridViewTextBoxColumn
-            // 
-            this.품목명DataGridViewTextBoxColumn.DataPropertyName = "품목명";
-            this.품목명DataGridViewTextBoxColumn.HeaderText = "품목명";
-            this.품목명DataGridViewTextBoxColumn.Name = "품목명DataGridViewTextBoxColumn";
-            this.품목명DataGridViewTextBoxColumn.ReadOnly = true;
-            this.품목명DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 자재구분DataGridViewTextBoxColumn
-            // 
-            this.자재구분DataGridViewTextBoxColumn.DataPropertyName = "자재구분";
-            this.자재구분DataGridViewTextBoxColumn.FillWeight = 74.04252F;
-            this.자재구분DataGridViewTextBoxColumn.HeaderText = "자재구분";
-            this.자재구분DataGridViewTextBoxColumn.Name = "자재구분DataGridViewTextBoxColumn";
-            this.자재구분DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 자재코드DataGridViewTextBoxColumn
-            // 
-            this.자재코드DataGridViewTextBoxColumn.DataPropertyName = "자재코드";
-            this.자재코드DataGridViewTextBoxColumn.FillWeight = 105.775F;
-            this.자재코드DataGridViewTextBoxColumn.HeaderText = "자재코드";
-            this.자재코드DataGridViewTextBoxColumn.Name = "자재코드DataGridViewTextBoxColumn";
-            this.자재코드DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 자재명DataGridViewTextBoxColumn
-            // 
-            this.자재명DataGridViewTextBoxColumn.DataPropertyName = "자재명";
-            this.자재명DataGridViewTextBoxColumn.FillWeight = 126.93F;
-            this.자재명DataGridViewTextBoxColumn.HeaderText = "자재명";
-            this.자재명DataGridViewTextBoxColumn.Name = "자재명DataGridViewTextBoxColumn";
-            this.자재명DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 포장단위DataGridViewTextBoxColumn
-            // 
-            this.포장단위DataGridViewTextBoxColumn.DataPropertyName = "포장단위";
-            this.포장단위DataGridViewTextBoxColumn.FillWeight = 74.04252F;
-            this.포장단위DataGridViewTextBoxColumn.HeaderText = "포장단위";
-            this.포장단위DataGridViewTextBoxColumn.Name = "포장단위DataGridViewTextBoxColumn";
-            // 
-            // 포장수량
-            // 
-            this.포장수량.DataPropertyName = "포장수량";
-            this.포장수량.FillWeight = 60.15228F;
-            this.포장수량.HeaderText = "포장개수";
-            this.포장수량.Name = "포장수량";
-            // 
-            // 수량
-            // 
-            this.수량.DataPropertyName = "수량";
-            this.수량.FillWeight = 105.775F;
-            this.수량.HeaderText = "총 수량";
-            this.수량.Name = "수량";
-            // 
-            // 비고
-            // 
-            this.비고.DataPropertyName = "비고";
-            this.비고.FillWeight = 105.775F;
-            this.비고.HeaderText = "비고";
-            this.비고.Name = "비고";
-            this.비고.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = "인쇄";
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column1.FillWeight = 63.46502F;
-            this.Column1.HeaderText = "바코드";
-            this.Column1.Name = "Column1";
-            // 
             // sPPurchaseRawMatBOMBindingSource
             // 
             this.sPPurchaseRawMatBOMBindingSource.DataMember = "SP_PurchaseRawMat_BOM";
@@ -402,6 +308,100 @@
             // sP_PurchaseRawMat_BOMTableAdapter
             // 
             this.sP_PurchaseRawMat_BOMTableAdapter.ClearBeforeFill = true;
+            // 
+            // ColumnCheckBox
+            // 
+            this.ColumnCheckBox.FalseValue = "0";
+            this.ColumnCheckBox.FillWeight = 31.73251F;
+            this.ColumnCheckBox.HeaderText = "";
+            this.ColumnCheckBox.Name = "ColumnCheckBox";
+            this.ColumnCheckBox.TrueValue = "1";
+            // 
+            // 번호DataGridViewTextBoxColumn
+            // 
+            this.번호DataGridViewTextBoxColumn.DataPropertyName = "번호";
+            this.번호DataGridViewTextBoxColumn.FillWeight = 42.31001F;
+            this.번호DataGridViewTextBoxColumn.HeaderText = "No.";
+            this.번호DataGridViewTextBoxColumn.Name = "번호DataGridViewTextBoxColumn";
+            this.번호DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 품목코드DataGridViewTextBoxColumn
+            // 
+            this.품목코드DataGridViewTextBoxColumn.DataPropertyName = "품목코드";
+            this.품목코드DataGridViewTextBoxColumn.HeaderText = "품목코드";
+            this.품목코드DataGridViewTextBoxColumn.Name = "품목코드DataGridViewTextBoxColumn";
+            this.품목코드DataGridViewTextBoxColumn.ReadOnly = true;
+            this.품목코드DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 품목명DataGridViewTextBoxColumn
+            // 
+            this.품목명DataGridViewTextBoxColumn.DataPropertyName = "품목명";
+            this.품목명DataGridViewTextBoxColumn.HeaderText = "품목명";
+            this.품목명DataGridViewTextBoxColumn.Name = "품목명DataGridViewTextBoxColumn";
+            this.품목명DataGridViewTextBoxColumn.ReadOnly = true;
+            this.품목명DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 자재구분DataGridViewTextBoxColumn
+            // 
+            this.자재구분DataGridViewTextBoxColumn.DataPropertyName = "자재구분";
+            this.자재구분DataGridViewTextBoxColumn.FillWeight = 74.04252F;
+            this.자재구분DataGridViewTextBoxColumn.HeaderText = "자재구분";
+            this.자재구분DataGridViewTextBoxColumn.Name = "자재구분DataGridViewTextBoxColumn";
+            this.자재구분DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 자재코드DataGridViewTextBoxColumn
+            // 
+            this.자재코드DataGridViewTextBoxColumn.DataPropertyName = "자재코드";
+            this.자재코드DataGridViewTextBoxColumn.FillWeight = 105.775F;
+            this.자재코드DataGridViewTextBoxColumn.HeaderText = "자재코드";
+            this.자재코드DataGridViewTextBoxColumn.Name = "자재코드DataGridViewTextBoxColumn";
+            this.자재코드DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 자재명DataGridViewTextBoxColumn
+            // 
+            this.자재명DataGridViewTextBoxColumn.DataPropertyName = "자재명";
+            this.자재명DataGridViewTextBoxColumn.FillWeight = 126.93F;
+            this.자재명DataGridViewTextBoxColumn.HeaderText = "자재명";
+            this.자재명DataGridViewTextBoxColumn.Name = "자재명DataGridViewTextBoxColumn";
+            this.자재명DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 포장단위DataGridViewTextBoxColumn
+            // 
+            this.포장단위DataGridViewTextBoxColumn.DataPropertyName = "포장단위";
+            this.포장단위DataGridViewTextBoxColumn.FillWeight = 74.04252F;
+            this.포장단위DataGridViewTextBoxColumn.HeaderText = "포장단위";
+            this.포장단위DataGridViewTextBoxColumn.Name = "포장단위DataGridViewTextBoxColumn";
+            // 
+            // 포장수량
+            // 
+            this.포장수량.DataPropertyName = "포장수량";
+            this.포장수량.FillWeight = 65F;
+            this.포장수량.HeaderText = "포장개수";
+            this.포장수량.Name = "포장수량";
+            // 
+            // 수량
+            // 
+            this.수량.DataPropertyName = "수량";
+            this.수량.FillWeight = 105.775F;
+            this.수량.HeaderText = "총 수량";
+            this.수량.Name = "수량";
+            // 
+            // 비고
+            // 
+            this.비고.DataPropertyName = "비고";
+            this.비고.FillWeight = 105.775F;
+            this.비고.HeaderText = "비고";
+            this.비고.Name = "비고";
+            this.비고.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = "인쇄";
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column1.FillWeight = 63.46502F;
+            this.Column1.HeaderText = "바코드";
+            this.Column1.Name = "Column1";
             // 
             // P1B11_PURCHASE_RAW_MAT_BOM
             // 

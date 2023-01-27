@@ -148,7 +148,7 @@ namespace SmartMES_Giroei
                     ckbUseFlag.Checked = true;
 
                 cbGubun.Enabled = false;
-                cbKind.Enabled = false;
+                //cbKind.Enabled = false;
 
                 this.ActiveControl = btnSave;
             }

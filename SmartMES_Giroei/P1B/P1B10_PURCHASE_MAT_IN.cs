@@ -447,12 +447,12 @@ namespace SmartMES_Giroei
 
                     // str += "^FO30,80 ^B3N,N,80,Y,N ^FD" + Barcode.Trim() + " ^FS";
                     str += "^FO40,20 ^BQN,2,3^FDMA," + Barcode.Trim() + " ^FS";
-                    str += "^FO50,100 ^A0,22,22^FD" + sProdKind + " ^FS";
+                    //str += "^FO50,100 ^A0,22,22^FD" + sProdKind + " ^FS";
                     //str += "^FO150,20^A0,22,22^FD" + aBarcode[0] + " ^FS";
                     //str += "^FO150,50^A0,22,22^FD" + aBarcode[1] + " ^FS";
                     str += "^FO150,20^A1N,22,22^FD" + sCustName + " ^FS";
                     str += "^FO150,50^A0,22,22^FD" + sProdName + " ^FS";
-                    str += "^FO150,80^A0,22,22^FD" + aBarcode[2] + " ^FS";
+                    str += "^FO150,80^A0,22,22^FD" + sProdKind + "/" + aBarcode[2] + " ^FS";
                     str += "^FO150,110^A0,22,22^FD" + aBarcode[3] + "-" + aBarcode[4] + " ^FS";
                     str += "^XZ";
 
