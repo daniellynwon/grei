@@ -39,8 +39,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.panTitle = new System.Windows.Forms.Panel();
             this.lblMsg = new System.Windows.Forms.Label();
             this.sPProdOrderROderBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetP1C = new SmartMES_Giroei.P1C.DataSetP1C();
@@ -94,18 +92,6 @@
             this.수주수량 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPProdOrderProcessBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.sP_ProdOrder_ROderTableAdapter = new SmartMES_Giroei.P1C.DataSetP1CTableAdapters.SP_ProdOrder_ROderTableAdapter();
-            this.sP_ProdOrder_ProcessTableAdapter = new SmartMES_Giroei.P1C.DataSetP1CTableAdapters.SP_ProdOrder_ProcessTableAdapter();
-            this.btnStart = new System.Windows.Forms.Button();
-            this.btnFinish = new System.Windows.Forms.Button();
-            this.tbNgQty = new System.Windows.Forms.TextBox();
-            this.tbGdQty = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label15 = new System.Windows.Forms.Label();
-            this.tbJobTimeStart = new System.Windows.Forms.TextBox();
-            this.tbJobTimeFinish = new System.Windows.Forms.TextBox();
-            this.tbRorderNo = new System.Windows.Forms.TextBox();
-            this.btnComment = new System.Windows.Forms.Button();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -116,38 +102,30 @@
             this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.sP_ProdOrder_ROderTableAdapter = new SmartMES_Giroei.P1C.DataSetP1CTableAdapters.SP_ProdOrder_ROderTableAdapter();
+            this.sP_ProdOrder_ProcessTableAdapter = new SmartMES_Giroei.P1C.DataSetP1CTableAdapters.SP_ProdOrder_ProcessTableAdapter();
+            this.tbNgQty = new System.Windows.Forms.TextBox();
+            this.tbGdQty = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label15 = new System.Windows.Forms.Label();
+            this.tbJobTimeStart = new System.Windows.Forms.TextBox();
+            this.tbJobTimeFinish = new System.Windows.Forms.TextBox();
+            this.tbRorderNo = new System.Windows.Forms.TextBox();
+            this.btnComment = new System.Windows.Forms.Button();
+            this.btnOrder = new System.Windows.Forms.Button();
+            this.btnFinish = new System.Windows.Forms.Button();
+            this.btnStart = new System.Windows.Forms.Button();
             this.btnClose = new SmartMES_Giroei.UserButtonA();
             this.btnSave = new SmartMES_Giroei.UserButtonA();
-            this.panTitle.SuspendLayout();
+            this.panTitle = new System.Windows.Forms.Panel();
+            this.lblTitle = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.sPProdOrderROderBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPProdOrderProcessBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            this.panTitle.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // lblTitle
-            // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Font = new System.Drawing.Font("맑은 고딕", 13F);
-            this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(27, 15);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(120, 25);
-            this.lblTitle.TabIndex = 0;
-            this.lblTitle.Text = "작업지시등록";
-            // 
-            // panTitle
-            // 
-            this.panTitle.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.photo_background;
-            this.panTitle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panTitle.Controls.Add(this.lblTitle);
-            this.panTitle.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panTitle.Location = new System.Drawing.Point(0, 0);
-            this.panTitle.Name = "panTitle";
-            this.panTitle.Size = new System.Drawing.Size(1347, 54);
-            this.panTitle.TabIndex = 0;
             // 
             // lblMsg
             // 
@@ -752,6 +730,84 @@
             this.dataGridView3.TabIndex = 58;
             this.dataGridView3.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellContentClick);
             // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "수주번호";
+            this.Column2.Name = "Column2";
+            this.Column2.ReadOnly = true;
+            // 
+            // Column3
+            // 
+            this.Column3.FillWeight = 30F;
+            this.Column3.HeaderText = "순번";
+            this.Column3.Name = "Column3";
+            this.Column3.ReadOnly = true;
+            this.Column3.Visible = false;
+            // 
+            // Column4
+            // 
+            this.Column4.FillWeight = 90F;
+            this.Column4.HeaderText = "품목코드";
+            this.Column4.Name = "Column4";
+            this.Column4.ReadOnly = true;
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "품목명";
+            this.Column5.Name = "Column5";
+            this.Column5.ReadOnly = true;
+            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "거래처코드";
+            this.Column6.Name = "Column6";
+            this.Column6.ReadOnly = true;
+            this.Column6.Visible = false;
+            // 
+            // Column7
+            // 
+            this.Column7.FillWeight = 80F;
+            this.Column7.HeaderText = "거래처명";
+            this.Column7.Name = "Column7";
+            this.Column7.ReadOnly = true;
+            // 
+            // Column8
+            // 
+            this.Column8.FillWeight = 70F;
+            this.Column8.HeaderText = "납기요청일";
+            this.Column8.Name = "Column8";
+            this.Column8.ReadOnly = true;
+            // 
+            // Column9
+            // 
+            this.Column9.FillWeight = 30F;
+            this.Column9.HeaderText = "공정";
+            this.Column9.Name = "Column9";
+            this.Column9.ReadOnly = true;
+            // 
+            // Column10
+            // 
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.NullValue = "#,##0";
+            this.Column10.DefaultCellStyle = dataGridViewCellStyle7;
+            this.Column10.FillWeight = 40F;
+            this.Column10.HeaderText = "수량";
+            this.Column10.Name = "Column10";
+            this.Column10.ReadOnly = true;
+            // 
+            // Column1
+            // 
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.NullValue = "보고";
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle8;
+            this.Column1.FillWeight = 25F;
+            this.Column1.HeaderText = "";
+            this.Column1.Name = "Column1";
+            this.Column1.ReadOnly = true;
+            this.Column1.Visible = false;
+            // 
             // sP_ProdOrder_ROderTableAdapter
             // 
             this.sP_ProdOrder_ROderTableAdapter.ClearBeforeFill = true;
@@ -759,30 +815,6 @@
             // sP_ProdOrder_ProcessTableAdapter
             // 
             this.sP_ProdOrder_ProcessTableAdapter.ClearBeforeFill = true;
-            // 
-            // btnStart
-            // 
-            this.btnStart.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnStart.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.작업시작;
-            this.btnStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnStart.Location = new System.Drawing.Point(37, 616);
-            this.btnStart.Name = "btnStart";
-            this.btnStart.Size = new System.Drawing.Size(126, 58);
-            this.btnStart.TabIndex = 59;
-            this.btnStart.UseVisualStyleBackColor = true;
-            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
-            // 
-            // btnFinish
-            // 
-            this.btnFinish.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnFinish.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.작업종료;
-            this.btnFinish.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnFinish.Location = new System.Drawing.Point(203, 616);
-            this.btnFinish.Name = "btnFinish";
-            this.btnFinish.Size = new System.Drawing.Size(126, 58);
-            this.btnFinish.TabIndex = 60;
-            this.btnFinish.UseVisualStyleBackColor = true;
-            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
             // tbNgQty
             // 
@@ -876,83 +908,41 @@
             this.btnComment.UseVisualStyleBackColor = true;
             this.btnComment.Click += new System.EventHandler(this.btnComment_Click);
             // 
-            // Column2
+            // btnOrder
             // 
-            this.Column2.HeaderText = "수주번호";
-            this.Column2.Name = "Column2";
-            this.Column2.ReadOnly = true;
+            this.btnOrder.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnOrder.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.작업지시;
+            this.btnOrder.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnOrder.Location = new System.Drawing.Point(11, 616);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(126, 58);
+            this.btnOrder.TabIndex = 69;
+            this.btnOrder.UseVisualStyleBackColor = true;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
             // 
-            // Column3
+            // btnFinish
             // 
-            this.Column3.FillWeight = 30F;
-            this.Column3.HeaderText = "순번";
-            this.Column3.Name = "Column3";
-            this.Column3.ReadOnly = true;
-            this.Column3.Visible = false;
+            this.btnFinish.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnFinish.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.작업종료;
+            this.btnFinish.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnFinish.Location = new System.Drawing.Point(273, 616);
+            this.btnFinish.Name = "btnFinish";
+            this.btnFinish.Size = new System.Drawing.Size(126, 58);
+            this.btnFinish.TabIndex = 60;
+            this.btnFinish.UseVisualStyleBackColor = true;
+            this.btnFinish.Click += new System.EventHandler(this.btnFinish_Click);
             // 
-            // Column4
+            // btnStart
             // 
-            this.Column4.FillWeight = 90F;
-            this.Column4.HeaderText = "품목코드";
-            this.Column4.Name = "Column4";
-            this.Column4.ReadOnly = true;
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "품목명";
-            this.Column5.Name = "Column5";
-            this.Column5.ReadOnly = true;
-            this.Column5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.Column5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "거래처코드";
-            this.Column6.Name = "Column6";
-            this.Column6.ReadOnly = true;
-            this.Column6.Visible = false;
-            // 
-            // Column7
-            // 
-            this.Column7.FillWeight = 80F;
-            this.Column7.HeaderText = "거래처명";
-            this.Column7.Name = "Column7";
-            this.Column7.ReadOnly = true;
-            // 
-            // Column8
-            // 
-            this.Column8.FillWeight = 70F;
-            this.Column8.HeaderText = "납기요청일";
-            this.Column8.Name = "Column8";
-            this.Column8.ReadOnly = true;
-            // 
-            // Column9
-            // 
-            this.Column9.FillWeight = 30F;
-            this.Column9.HeaderText = "공정";
-            this.Column9.Name = "Column9";
-            this.Column9.ReadOnly = true;
-            // 
-            // Column10
-            // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.NullValue = "#,##0";
-            this.Column10.DefaultCellStyle = dataGridViewCellStyle7;
-            this.Column10.FillWeight = 40F;
-            this.Column10.HeaderText = "수량";
-            this.Column10.Name = "Column10";
-            this.Column10.ReadOnly = true;
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle8.NullValue = "보고";
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle8;
-            this.Column1.FillWeight = 25F;
-            this.Column1.HeaderText = "";
-            this.Column1.Name = "Column1";
-            this.Column1.ReadOnly = true;
-            this.Column1.Visible = false;
+            this.btnStart.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnStart.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.작업시작;
+            this.btnStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnStart.Location = new System.Drawing.Point(142, 616);
+            this.btnStart.Name = "btnStart";
+            this.btnStart.Size = new System.Drawing.Size(126, 58);
+            this.btnStart.TabIndex = 59;
+            this.btnStart.UseVisualStyleBackColor = true;
+            this.btnStart.Click += new System.EventHandler(this.btnStart_Click);
             // 
             // btnClose
             // 
@@ -984,12 +974,36 @@
             this.btnSave.Visible = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // panTitle
+            // 
+            this.panTitle.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.photo_background;
+            this.panTitle.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panTitle.Controls.Add(this.lblTitle);
+            this.panTitle.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panTitle.Location = new System.Drawing.Point(0, 0);
+            this.panTitle.Name = "panTitle";
+            this.panTitle.Size = new System.Drawing.Size(1347, 54);
+            this.panTitle.TabIndex = 0;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.BackColor = System.Drawing.Color.Transparent;
+            this.lblTitle.Font = new System.Drawing.Font("맑은 고딕", 13F);
+            this.lblTitle.ForeColor = System.Drawing.Color.White;
+            this.lblTitle.Location = new System.Drawing.Point(27, 15);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(120, 25);
+            this.lblTitle.TabIndex = 0;
+            this.lblTitle.Text = "작업지시등록";
+            // 
             // P1C01_PROD_ORDER_SUB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(1347, 711);
+            this.Controls.Add(this.btnOrder);
             this.Controls.Add(this.btnComment);
             this.Controls.Add(this.tbRorderNo);
             this.Controls.Add(this.tbJobTimeFinish);
@@ -1046,13 +1060,13 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Smart Factory MES";
             this.Load += new System.EventHandler(this.P1C01_PROD_ORDER_SUB_Load);
-            this.panTitle.ResumeLayout(false);
-            this.panTitle.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.sPProdOrderROderBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPProdOrderProcessBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            this.panTitle.ResumeLayout(false);
+            this.panTitle.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1140,5 +1154,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
         private System.Windows.Forms.DataGridViewButtonColumn Column1;
         private System.Windows.Forms.Button btnComment;
+        public System.Windows.Forms.Button btnOrder;
     }
 }

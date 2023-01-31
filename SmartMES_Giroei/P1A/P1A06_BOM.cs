@@ -5,6 +5,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.Runtime.InteropServices;
 using System.Data;
+using System.IO;
 
 namespace SmartMES_Giroei
 {
@@ -599,5 +600,71 @@ namespace SmartMES_Giroei
             return m.dbRonlyOne(sql, ref msg).ToString();
         }
         #endregion
+
+        //private string GetResourceFileName() 
+        //{
+        //    // My Project Resource에 있는 파일의 Full Path를 가져오는 코드 
+        //    String strAppPath = Path.GetDirectoryName(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
+        //    String strFilePath = Path.Combine(strAppPath, "Resources");
+        //    String strFullFilename = Path.Combine(strFilePath, "지로이아이액셀다운로드테스트.xlsx");
+
+        //    return strFullFilename == "" ? "" : strFullFilename;
+        //}
+        private void btnExcelbasic_Click(object sender, EventArgs e)
+        {
+            //SaveFileDialog sfd = new SaveFileDialog();
+            //sfd.Title = "Save as Excel File";
+            //sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
+            //sfd.FileName = "";
+            //if (sfd.ShowDialog() == DialogResult.OK) 
+            //{
+            //    dataGridView_ExportToExcel(sfd.FileName, dataGridView2);
+            //}
+        }
+
+        private void dataGridView_ExportToExcel(string fileName, DataGridView dgv) 
+        {
+            //Excel.Application excelApp = new Excel.Application();
+            //if (excelApp == null) {
+            //    MessageBox.Show("엑셀이 설치되지 않았습니다");
+            //    return;
+            //}
+            //Excel.Workbook wb = excelApp.Workbooks.Add(true);
+            //Excel._Worksheet workSheet = wb.Worksheets.get_Item(1) as Excel._Worksheet;
+            //workSheet.Name = "EXCELDOWN_소일정계획";
+
+            //if (dgv.Rows.Count == 0) {
+            //    MessageBox.Show("출력할 데이터가 없습니다");
+            //    return;
+            //}
+
+            //// 헤더 출력
+            //for (int i = 0; i < dgv.Columns.Count; i++) {
+            //    workSheet.Cells[1, i + 1] = dgv.Columns[i].HeaderText;
+            //}
+
+            ////내용 출력
+            //for (int r = 0; r < dgv.Rows.Count; r++) {
+            //    for (int i = 0; i < dgv.Columns.Count; i++) {
+            //        workSheet.Cells[r + 2, i + 1] = dgv.Rows[r].Cells[i].Value;
+            //    }
+            //}
+
+            //workSheet.Columns.AutoFit(); // 글자 크기에 맞게 셀 크기를 자동으로 조절 
+
+
+            //// 엑셀 2003 으로만 저장이 됨
+            //wb.SaveAs(fileName, Excel.XlFileFormat.xlWorkbookNormal, Type.Missing, Type.Missing, Type.Missing, Type.Missing,
+            //    Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+
+            //wb.Close(Type.Missing, Type.Missing, Type.Missing);
+            //excelApp.Quit();
+            //ReleaseObject(excelApp);
+            //ReleaseObject(workSheet);
+            //ReleaseObject(wb);
+
+
+            //MessageBox.Show(fileName + " 엑셀 내보내기 완료");
+        }
     }
 }

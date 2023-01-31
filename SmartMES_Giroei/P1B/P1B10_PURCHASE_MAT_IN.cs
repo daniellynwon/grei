@@ -407,7 +407,7 @@ namespace SmartMES_Giroei
 
             // 분할 입고 처리
             // barcode
-            string sql = "select count(barcode_surfix) as count from INV_material_in where mbarcode = '" + barcodePrefix + "'";
+            string sql = "select count(barcode_surfix) as count from INV_material_in where mbarcode = '" + barcodePrefix + "'"; // 수정해야함
             MariaCRUD m = new MariaCRUD();
             string msg = string.Empty;
             DataTable table = m.dbDataTable(sql, ref msg);

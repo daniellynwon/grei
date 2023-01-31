@@ -11,7 +11,8 @@ namespace SmartMES_Giroei
     public partial class P1B16_ITEM_BOX_INPUT_SUB : Form
     {
         public P1B16_ITEM_BOX_INPUT parentWin;
-        public string sGubun, sIsComplete, sSujuNo, sSujuSeq, sProdID, sProdName, sBoxID;
+        public string sGubun, sIsComplete, sSujuNo, sSujuSeq, sProdID, sProdName, sBoxID, sMiSap;
+        private string sCount, sSubID;
 
         public P1B16_ITEM_BOX_INPUT_SUB()
         {
@@ -70,6 +71,13 @@ namespace SmartMES_Giroei
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            string sql = string.Empty;
+            string msg = string.Empty;
+            MariaCRUD m = new MariaCRUD();
+
+            sCount = "";
+            sSubID = "";  
+
             if (G.Authority == "D") return;
             if (e.RowIndex < 0) return;
             //if (e.RowIndex == dataGridView1.RowCount - 1) return;
@@ -116,13 +124,40 @@ namespace SmartMES_Giroei
                 sub.ShowDialog();
             }
             else                  // 사급 14, 수삽 15, 미삽 16
-            {
-                dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == "O") ? "X" : "O";
+            {   
+                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+                {
+                    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == "O") ? "X" : "O";
+                    string sMiSap = dataGridView1.Rows[i].Cells[16].Value.ToString(); //미삽
+                    if (sMiSap == "O")
+                    {
+                        sMiSap = "Y";
+                    }
+                    else
+                    {
+                        sMiSap = "N";
+                    }
+                        sql = "update BOM_bomlist set IsMiSap = '" + sMiSap + "' where parent_id = '" + dataGridView1.Rows[i].Cells[6].Value.ToString() + "'"; //미삽 상태 변경 시 BOMLIST 즉시 업데이트
+                    lblMsg.Text = "미삽의 상태가 변경되었습니다."; //미삽 상태 변경 시 좌측 상단 출력문구
+                    m.dbCUD(sql, ref msg);
+                    if (msg != "OK")
+                    {
+                        MessageBox.Show(msg);
+                        return;
+                    }
+                }
             }
         }
 
         private void btnMaterialSave_Click(object sender, EventArgs e)
         {
+            string sql = string.Empty;
+            string msg = string.Empty;
+            MariaCRUD m = new MariaCRUD();
+
+            sCount = "";
+            sSubID = "";
+
             if (string.IsNullOrEmpty(sBoxID))
             {
                 MessageBox.Show("현품박스가 구성되지 않았습니다.");
@@ -137,25 +172,19 @@ namespace SmartMES_Giroei
                     MessageBox.Show("LOT가 선택되지 않았습니다.");
                     return;
                 }
-            }
-
-            string sCount, sSubID;
-
-            string sql = string.Empty;
-            string msg = string.Empty;
-            MariaCRUD m = new MariaCRUD();
+            }  
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {
                 try
                 {
-                    if (dataGridView1.Rows[i].Cells[13].Value.ToString().Replace(",", "") == "0" && dataGridView1.Rows[i].Cells[16].Value.ToString() == "X")
+                    if (dataGridView1.Rows[i].Cells[13].Value.ToString().Replace(",", "") == "0" && dataGridView1.Rows[i].Cells[16].Value.ToString() == "X") 
                     {
                         MessageBox.Show("투입량을 확인하세요.");
                         return;
                     }
-                    else if (dataGridView1.Rows[i].Cells[16].Value.ToString() == "O")           // 미삽은 제외
-                        continue;
+                    //else if (dataGridView1.Rows[i].Cells[16].Value.ToString() == "O")           // 미삽은 제외
+                    //    continue;
 
                     sCount = dataGridView1.Rows[i].Cells[13].Value.ToString().Replace(",", ""); // 투입량
                     string sTotalRequireQty = dataGridView1.Rows[i].Cells[12].Value.ToString().Replace(",", ""); // 총필요수량

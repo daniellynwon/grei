@@ -666,6 +666,81 @@ namespace SmartMES_Giroei
         #endregion
 
         #region 작업시작/작업종료/update기능 (작업실적등록 update할 때)
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            lblMsg.Text = "";
+            if (string.IsNullOrEmpty(tbJobNo.Text)) // tbJobNo.Text
+            {
+                lblMsg.Text = "해당 Lot를 추가해 주세요.";
+                return;
+            }
+            if (string.IsNullOrEmpty(tbJobTimeStart.Text))
+                Save();
+            if (!string.IsNullOrEmpty(tbJobTimeStart.Text))
+            {
+                lblMsg.Text = "이미 지시된 Lot입니다. 다시 확인해주세요.";
+                return;
+                DialogResult dr = MessageBox.Show("이미 지시된 Lot입니다.\r" + "해당 정보를 수정하시겠습니까?", this.lblTitle.Text + "[수정]", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dr == DialogResult.No)
+                    return;
+                else
+                    Update();
+                return;
+            }
+            if (!string.IsNullOrEmpty(tbJobTimeFinish.Text))
+            {
+                //lblMsg.Text = "이미 종료된 Lot입니다.";
+                //return;
+                DialogResult dr = MessageBox.Show("이미 종료된 Lot입니다.\r" + "해당 정보를 수정하시겠습니까?", this.lblTitle.Text + "[수정]", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if (dr == DialogResult.No)
+                    return;
+                else
+                    Update();
+                return;
+            }
+
+            string sDate = dtpDate.Value.ToString("yyyy-MM-dd");
+            string sProd = tbProd.Tag.ToString();
+            //string sProdName = tbProd.Text;
+            string sProdLine = cbWorkLine.SelectedValue.ToString();
+            string sMan = cbMan.SelectedValue.ToString();
+            string sJobNo = tbJobNo.Text;
+            string sRework = "A";
+            if (rbB.Checked)sRework = "B";
+            string sSolder = tbSolder.Text.Trim();
+            string sMask = tbMask.Text.Trim();
+            string sUserCnt = tbNum.Text.Trim();
+            if (string.IsNullOrEmpty(tbNum.Text.Trim()))
+                sUserCnt = "0";
+            string sContents = tbContents.Text.Trim();
+            string sJobTimeA = "";
+            string sJobTimeB = "";
+            string sGdQty = tbGdQty.Text.Replace(",", "").Trim();
+            string sNgQty = tbNgQty.Text.Replace(",", "").Trim();
+            if (string.IsNullOrEmpty(sGdQty))
+                sGdQty = "0";
+            if (string.IsNullOrEmpty(sNgQty))
+                sNgQty = "0";
+
+            string msg = string.Empty;
+            MariaCRUD m = new MariaCRUD();
+            string sql = string.Empty;
+
+            sql = "insert into PRD_prod_result (job_no, plant, work_line, prod_date, good_qty, bad_qty, job_part, num_workers, contents, enter_man) " +
+                    "values('" + tbJobNo.Text + "','" + G.Pos + "','" + sProdLine + "','" + sDate + "'," + sGdQty + "," + sNgQty + ",'A'," + sUserCnt + ",'" + sContents + "','" + G.UserID + "') ";
+            m.dbCUD(sql, ref msg);
+
+            if (msg != "OK")
+            {
+                lblMsg.Text = "작업시작에 문제가 있습니다.";
+                //MessageBox.Show(msg);
+                return;
+            }
+            parentWin.ListSearch();         // reflash
+            this.Close();
+            parentWin.ListSearch();
+            parentWin.lblMsg.Text = "작업지시가 되었습니다.";
+        }
         private void btnStart_Click(object sender, EventArgs e)
         {
             lblMsg.Text = "";
@@ -674,11 +749,12 @@ namespace SmartMES_Giroei
                 lblMsg.Text = "해당 Lot를 추가해 주세요.";
                 return;
             }
-            if (string.IsNullOrEmpty(tbJobTimeStart.Text)) Save();
+            if (string.IsNullOrEmpty(tbJobTimeStart.Text))
+                Update();
             if (!string.IsNullOrEmpty(tbJobTimeStart.Text))
             {
-                //lblMsg.Text = "이미 시작된 Lot입니다.";
-                //return;
+                lblMsg.Text = "이미 시작된 Lot입니다.";
+                return;
                 DialogResult dr = MessageBox.Show("이미 시작된 Lot입니다.\r" + "해당 정보를 수정하시겠습니까?", this.lblTitle.Text + "[수정]", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
                 if (dr == DialogResult.No) return;
                 else Update();
@@ -715,22 +791,105 @@ namespace SmartMES_Giroei
             MariaCRUD m = new MariaCRUD();
             string sql = string.Empty;
 
-            sql = "insert into PRD_prod_result (job_no, plant, work_line, prod_date, good_qty, bad_qty, job_start_time, job_part, num_workers, contents, enter_man) " +
-                    "values('" + tbJobNo.Text + "','" + G.Pos + "','" + sProdLine + "','" + sDate + "'," + sGdQty + "," + sNgQty + ",now(),'A'," + sUserCnt + ",'" + sContents + "','" + G.UserID + "') ";
+            //sql = "insert into PRD_prod_result (job_start_time) " +
+            //        "values(' + now()  + ') ";
+            //m.dbCUD(sql, ref msg); //삭제예정
 
+            sql = "UPDATE PRD_prod_result set job_start_time = NOW() where job_no = '" + tbJobNo.Text + "'";   // 지시수량 update
             m.dbCUD(sql, ref msg);
+
+            //sql = "update PRD_prod_result set  = job_start_time = 'GETDATE()' where job_start_time IS NULL";  // 지시수량 update
+            //sql = "UPDATE PRD_prod_result set job_start_time = NOW() where job_start_time IS NULL";
+            //m.dbCUD(sql, ref msg);
 
             if (msg != "OK")
             {
                 lblMsg.Text = "작업시작에 문제가 있습니다.";
-                //MessageBox.Show(msg);
+                MessageBox.Show(msg);
                 return;
             }
             parentWin.ListSearch();         // reflash
             this.Close();
             parentWin.ListSearch();
-            parentWin.lblMsg.Text = "작업시작되었습니다.";
+            parentWin.lblMsg.Text = "작업시작 되었습니다.";
         }
+        //private void btnStart_Click(object sender, EventArgs e)
+        //{
+        //    lblMsg.Text = "";
+        //    if (string.IsNullOrEmpty(tbJobNo.Text)) // tbJobNo.Text
+        //    {
+        //        lblMsg.Text = "해당 Lot를 추가해 주세요.";
+        //        return;
+        //    }
+        //    if (string.IsNullOrEmpty(tbJobTimeStart.Text))
+        //        Save();
+        //    if (!string.IsNullOrEmpty(tbJobTimeStart.Text))
+        //    {
+        //        //lblMsg.Text = "이미 시작된 Lot입니다.";
+        //        //return;
+        //        DialogResult dr = MessageBox.Show("이미 시작된 Lot입니다.\r" + "해당 정보를 수정하시겠습니까?", this.lblTitle.Text + "[수정]", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+        //        if (dr == DialogResult.No)
+        //            return;
+        //        else
+        //            Update();
+        //        return;
+        //    }
+        //    if (!string.IsNullOrEmpty(tbJobTimeFinish.Text))
+        //    {
+        //        //lblMsg.Text = "이미 종료된 Lot입니다.";
+        //        //return;
+        //        DialogResult dr = MessageBox.Show("이미 종료된 Lot입니다.\r" + "해당 정보를 수정하시겠습니까?", this.lblTitle.Text + "[수정]", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+        //        if (dr == DialogResult.No)
+        //            return;
+        //        else
+        //            Update();
+        //        return;
+        //    }
+
+        //    string sDate = dtpDate.Value.ToString("yyyy-MM-dd");
+        //    string sProd = tbProd.Tag.ToString();
+        //    //string sProdName = tbProd.Text;
+        //    string sProdLine = cbWorkLine.SelectedValue.ToString();
+        //    string sMan = cbMan.SelectedValue.ToString();
+        //    string sJobNo = tbJobNo.Text;
+        //    string sRework = "A";
+        //    if (rbB.Checked)
+        //        sRework = "B";
+        //    string sSolder = tbSolder.Text.Trim();
+        //    string sMask = tbMask.Text.Trim();
+        //    string sUserCnt = tbNum.Text.Trim();
+        //    if (string.IsNullOrEmpty(tbNum.Text.Trim()))
+        //        sUserCnt = "0";
+        //    string sContents = tbContents.Text.Trim();
+        //    string sJobTimeA = "";
+        //    string sJobTimeB = "";
+        //    string sGdQty = tbGdQty.Text.Replace(",", "").Trim();
+        //    string sNgQty = tbNgQty.Text.Replace(",", "").Trim();
+        //    if (string.IsNullOrEmpty(sGdQty))
+        //        sGdQty = "0";
+        //    if (string.IsNullOrEmpty(sNgQty))
+        //        sNgQty = "0";
+
+        //    string msg = string.Empty;
+        //    MariaCRUD m = new MariaCRUD();
+        //    string sql = string.Empty;
+
+        //    sql = "insert into PRD_prod_result (job_no, plant, work_line, prod_date, good_qty, bad_qty, job_start_time, job_part, num_workers, contents, enter_man) " +
+        //            "values('" + tbJobNo.Text + "','" + G.Pos + "','" + sProdLine + "','" + sDate + "'," + sGdQty + "," + sNgQty + ",now(),'A'," + sUserCnt + ",'" + sContents + "','" + G.UserID + "') ";
+
+        //    m.dbCUD(sql, ref msg);
+
+        //    if (msg != "OK")
+        //    {
+        //        lblMsg.Text = "작업시작에 문제가 있습니다.";
+        //        //MessageBox.Show(msg);
+        //        return;
+        //    }
+        //    parentWin.ListSearch();         // reflash
+        //    this.Close();
+        //    parentWin.ListSearch();
+        //    parentWin.lblMsg.Text = "작업시작되었습니다.";
+        //}
         private void btnFinish_Click(object sender, EventArgs e)
         {
             lblMsg.Text = "";
@@ -747,11 +906,11 @@ namespace SmartMES_Giroei
             }
             if (!string.IsNullOrEmpty(tbJobTimeFinish.Text))
             {
-                //lblMsg.Text = "이미 종료된 Lot입니다.";
+                //lblMsg.Text = "이미 종료된 Lot입니다. 보고사항을 이용해주세요.";
                 //return;
-                DialogResult dr = MessageBox.Show("이미 종료된 Lot입니다.\r" + "해당 정보를 수정하시겠습니까?", this.lblTitle.Text + "[수정]", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-                if (dr == DialogResult.No) return;
-                else Update();
+                DialogResult dr = MessageBox.Show("이미 종료된 Lot입니다.\r" + "우측하단 보고사항을 이용해주세요.", this.lblTitle.Text + "[수정]", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                //if (dr == DialogResult.No) return;
+                //else Update();
                 return;
             }
             if (string.IsNullOrEmpty(tbGdQty.Text) || tbGdQty.Text == "0")
