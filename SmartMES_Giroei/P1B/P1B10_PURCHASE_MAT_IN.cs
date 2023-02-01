@@ -56,7 +56,7 @@ namespace SmartMES_Giroei
 
             if (lblTitle.Tag.ToString() == "N")     // 신규분
             {
-                tbMbarcode.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[20].Value.ToString() + "-" + parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString() + "-" + DateTime.Now.ToString("yyMMdd");
+                tbMbarcode.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString() + "-" + parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString() + "-" + DateTime.Now.ToString("yyMMdd");
                 long lQty = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString());   // 발주량
                 long lpreQty = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value.ToString());   // 발주량
                 long lDanga = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString()); // 단가
@@ -75,14 +75,14 @@ namespace SmartMES_Giroei
                 {
                     checkClosed.Checked = true;
 
-                    tbInID.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[20].Value.ToString();    // 고객번호
+                    tbInID.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();    // 고객번호 수정전 Cells20
                     dtpInDate.Value = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[12].Value.ToString());    // 입고일
                     tbInQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value.ToString();   // 입고량
                     //tbAmount.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[14].Value.ToString();  // 매입액
                     cbDepot.SelectedValue = parentWin.dataGridView1.Rows[rowIndex].Cells[15].Value;
                     string LotNo = parentWin.dataGridView1.Rows[rowIndex].Cells[12].Value.ToString().Replace("-", "").Substring(2,6);
-                    tbMbarcode.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[20].Value.ToString() + "-" + parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString() + "-" + LotNo;
-                    tbBigo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[20].Value.ToString().Replace("'", "`");
+                    tbMbarcode.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString() + "-" + parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString() + "-" + LotNo;
+                    tbBigo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString().Replace("'", "`");
 
                     //long lAmount = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[14].Value.ToString());
                     //tbVat.Text = (lAmount * 0.1).ToString();
@@ -215,6 +215,9 @@ namespace SmartMES_Giroei
         #region 저장
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("저장 전 바코드 발행부터 진행하여야 합니다. \rPKG당 수량을 입력 하셨습니까?", "경고", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.No) // 저장 버튼 누를때 경고 메시지 출력 최고의 방법은 아닐거라 예상됨.
+                return;
+            printBarcode();
             Save();
         }
         private void btnClose_Click(object sender, EventArgs e)
