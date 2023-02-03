@@ -198,7 +198,7 @@ namespace SmartMES_Giroei
                     string sContents = dataGridView1.Rows[i].Cells[17].Value.ToString();
                     string mBarcode = dataGridView1.Rows[i].Cells[18].Value.ToString();
                     string sBarcode = dataGridView1.Rows[i].Cells[19].Value.ToString();
-                    string sQtys = dataGridView1.Rows[i].Cells[20].Value.ToString();
+                    string sQtys = dataGridView1.Rows[i].Cells[20].Value.ToString(); //투입량리스트
                     string[] tempSurfix = sBarcode.Split(',');
                     string[] sItemCount = sQtys.Split(',');
                     string sCust = dataGridView1.Rows[i].Cells[2].Value.ToString();
