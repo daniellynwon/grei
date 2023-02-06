@@ -612,8 +612,14 @@ namespace SmartMES_Giroei
         //}
         private void btnExcelbasic_Click(object sender, EventArgs e)
         {
-            P1A06_BOM_Excel newform2 = new P1A06_BOM_Excel();//폼2를 사용할 수 있도록
-            newform2.ShowDialog();//폼2를 호출 후엔 창을 닫기 전까지 폼1을 제어할 수 없음
+            //SaveFileDialog sfd = new SaveFileDialog();
+            //sfd.Title = "Save as Excel File";
+            //sfd.Filter = "Excel Files(2003)|*.xls|Excel Files(2007)|*.xlsx";
+            //sfd.FileName = "";
+            //if (sfd.ShowDialog() == DialogResult.OK) 
+            //{
+            //    dataGridView_ExportToExcel(sfd.FileName, dataGridView2);
+            //}
         }
 
         private void dataGridView_ExportToExcel(string fileName, DataGridView dgv) 

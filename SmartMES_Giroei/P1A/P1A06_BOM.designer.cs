@@ -585,6 +585,7 @@
             // btnExcelbasic
             // 
             this.btnExcelbasic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcelbasic.Enabled = false;
             this.btnExcelbasic.Location = new System.Drawing.Point(547, 4);
             this.btnExcelbasic.Name = "btnExcelbasic";
             this.btnExcelbasic.Size = new System.Drawing.Size(100, 29);

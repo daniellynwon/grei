@@ -393,7 +393,7 @@
             dataGridViewCellStyle7.NullValue = null;
             this.설계.DefaultCellStyle = dataGridViewCellStyle7;
             this.설계.FillWeight = 50F;
-            this.설계.HeaderText = "설계비용";
+            this.설계.HeaderText = "설계";
             this.설계.Name = "설계";
             this.설계.ReadOnly = true;
             // 
@@ -404,7 +404,7 @@
             dataGridViewCellStyle8.Format = "N0";
             this.제작.DefaultCellStyle = dataGridViewCellStyle8;
             this.제작.FillWeight = 50F;
-            this.제작.HeaderText = "제작비용";
+            this.제작.HeaderText = "제작";
             this.제작.Name = "제작";
             this.제작.ReadOnly = true;
             // 
@@ -415,7 +415,7 @@
             dataGridViewCellStyle9.Format = "N0";
             this.조립.DefaultCellStyle = dataGridViewCellStyle9;
             this.조립.FillWeight = 50F;
-            this.조립.HeaderText = "조립비용";
+            this.조립.HeaderText = "조립";
             this.조립.Name = "조립";
             this.조립.ReadOnly = true;
             // 
@@ -426,7 +426,7 @@
             dataGridViewCellStyle10.Format = "N0";
             this.구매수삽.DefaultCellStyle = dataGridViewCellStyle10;
             this.구매수삽.FillWeight = 50F;
-            this.구매수삽.HeaderText = "구매/수삽비용";
+            this.구매수삽.HeaderText = "구매/수삽";
             this.구매수삽.Name = "구매수삽";
             this.구매수삽.ReadOnly = true;
             // 
@@ -436,8 +436,8 @@
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle11.Format = "N0";
             this.기타METAL.DefaultCellStyle = dataGridViewCellStyle11;
-            this.기타METAL.FillWeight = 65F;
-            this.기타METAL.HeaderText = "기타(METAL)비용";
+            this.기타METAL.FillWeight = 50F;
+            this.기타METAL.HeaderText = "기타(METAL)";
             this.기타METAL.Name = "기타METAL";
             this.기타METAL.ReadOnly = true;
             // 
@@ -447,11 +447,10 @@
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle12.Format = "N0";
             this.합계금액DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
-            this.합계금액DataGridViewTextBoxColumn.FillWeight = 75F;
+            this.합계금액DataGridViewTextBoxColumn.FillWeight = 97.57564F;
             this.합계금액DataGridViewTextBoxColumn.HeaderText = "합계금액";
             this.합계금액DataGridViewTextBoxColumn.Name = "합계금액DataGridViewTextBoxColumn";
             this.합계금액DataGridViewTextBoxColumn.ReadOnly = true;
-            this.합계금액DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
             // 납기DataGridViewTextBoxColumn
             // 

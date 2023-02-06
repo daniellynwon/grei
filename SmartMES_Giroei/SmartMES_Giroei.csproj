@@ -345,12 +345,6 @@
     <Compile Include="P1A\P1A06_BOM.designer.cs">
       <DependentUpon>P1A06_BOM.cs</DependentUpon>
     </Compile>
-    <Compile Include="P1A\P1A06_BOM_Excel.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="P1A\P1A06_BOM_Excel.Designer.cs">
-      <DependentUpon>P1A06_BOM_Excel.cs</DependentUpon>
-    </Compile>
     <Compile Include="P1A\P1A06_BOM_SUB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1073,9 +1067,6 @@
     <EmbeddedResource Include="P1A\P1A06_BOM.resx">
       <DependentUpon>P1A06_BOM.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="P1A\P1A06_BOM_Excel.resx">
-      <DependentUpon>P1A06_BOM_Excel.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="P1A\P1A06_BOM_SUB.resx">
       <DependentUpon>P1A06_BOM_SUB.cs</DependentUpon>
     </EmbeddedResource>
@@ -1436,9 +1427,6 @@
     <EmbeddedResource Include="Font\LibreBarcode39ExtendedText-Regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
-    <None Include="Giroel%28BOM%29.xlsx">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="Jschemical_mesDataSet.xsc">
       <DependentUpon>Jschemical_mesDataSet.xsd</DependentUpon>
     </None>
