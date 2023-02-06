@@ -1172,3 +1172,4 @@ C:\Project\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES
 C:\Project\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.csproj.CopyComplete
 C:\Project\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.exe
 C:\Project\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.pdb
+C:\Project\(유지보수)지로이아이\grei\SmartMES_Giroei\bin\Debug\Giroel(BOM).xlsx
