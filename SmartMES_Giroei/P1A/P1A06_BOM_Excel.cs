@@ -13,7 +13,7 @@ namespace SmartMES_Giroei
 {
     public partial class P1A06_BOM_Excel : Form
     {
-        string srcFile = @"\\Giroel(BOM).xlsx";
+        string srcFile = @"Giroel(BOM).xlsx";
         public P1A06_BOM_Excel()
         {
             InitializeComponent();
@@ -21,7 +21,6 @@ namespace SmartMES_Giroei
 
         private void btnDown_Click(object sender, EventArgs e)
         {
-            string srcFile = @"\\Giroel(BOM).xlsx";
             string destFile = string.Empty;
 
             saveFileDialog1.InitialDirectory = @"C:";
