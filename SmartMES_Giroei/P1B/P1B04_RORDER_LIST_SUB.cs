@@ -25,7 +25,7 @@ namespace SmartMES_Giroei
             tbCust.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();
 
             tbROrderDate.Text = Convert.ToDateTime(parentWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString()).ToString("yyyy-MM-dd");
-            tbDeliDate.Text = Convert.ToDateTime(parentWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString()).ToString("yyyy-MM-dd");
+            tbDeliDate.Text = Convert.ToDateTime(parentWin.dataGridView1.Rows[rowIndex].Cells[15].Value.ToString()).ToString("yyyy-MM-dd");
 
             ListSearch();
         }
