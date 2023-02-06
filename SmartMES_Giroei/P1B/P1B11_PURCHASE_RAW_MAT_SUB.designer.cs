@@ -35,14 +35,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sPPurchaseRawMatINSUBBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lblMsg = new System.Windows.Forms.Label();
-            this.pbSearch = new System.Windows.Forms.PictureBox();
-            this.tbSearch = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.sP_PurchaseRawMat_IN_SUBTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseRawMat_IN_SUBTableAdapter();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.거래처코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,6 +44,14 @@
             this.사급DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColumnCheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.sPPurchaseRawMatINSUBBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblMsg = new System.Windows.Forms.Label();
+            this.pbSearch = new System.Windows.Forms.PictureBox();
+            this.tbSearch = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.sP_PurchaseRawMat_IN_SUBTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseRawMat_IN_SUBTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseRawMatINSUBBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).BeginInit();
@@ -124,78 +124,6 @@
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
             // 
-            // sPPurchaseRawMatINSUBBindingSource
-            // 
-            this.sPPurchaseRawMatINSUBBindingSource.DataMember = "SP_PurchaseRawMat_IN_SUB";
-            this.sPPurchaseRawMatINSUBBindingSource.DataSource = this.dataSetP1B;
-            // 
-            // dataSetP1B
-            // 
-            this.dataSetP1B.DataSetName = "DataSetP1B";
-            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Info;
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.lblMsg);
-            this.panel1.Controls.Add(this.pbSearch);
-            this.panel1.Controls.Add(this.tbSearch);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(5, 6);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1071, 59);
-            this.panel1.TabIndex = 0;
-            // 
-            // lblMsg
-            // 
-            this.lblMsg.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblMsg.AutoSize = true;
-            this.lblMsg.ForeColor = System.Drawing.Color.Red;
-            this.lblMsg.Location = new System.Drawing.Point(493, 18);
-            this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(0, 21);
-            this.lblMsg.TabIndex = 12;
-            // 
-            // pbSearch
-            // 
-            this.pbSearch.BackColor = System.Drawing.Color.Transparent;
-            this.pbSearch.Image = global::SmartMES_Giroei.Properties.Resources.search;
-            this.pbSearch.Location = new System.Drawing.Point(388, 19);
-            this.pbSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.pbSearch.Name = "pbSearch";
-            this.pbSearch.Size = new System.Drawing.Size(32, 26);
-            this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pbSearch.TabIndex = 11;
-            this.pbSearch.TabStop = false;
-            this.pbSearch.Click += new System.EventHandler(this.pbSearch_Click);
-            // 
-            // tbSearch
-            // 
-            this.tbSearch.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbSearch.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbSearch.Location = new System.Drawing.Point(195, 18);
-            this.tbSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(238, 29);
-            this.tbSearch.TabIndex = 9;
-            this.tbSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearch_KeyUp);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(58, 21);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(128, 21);
-            this.label1.TabIndex = 10;
-            this.label1.Text = "수주번호/거래처";
-            // 
-            // sP_PurchaseRawMat_IN_SUBTableAdapter
-            // 
-            this.sP_PurchaseRawMat_IN_SUBTableAdapter.ClearBeforeFill = true;
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "수주번호";
@@ -266,6 +194,78 @@
             this.Column1.FillWeight = 30F;
             this.Column1.HeaderText = "BOM";
             this.Column1.Name = "Column1";
+            // 
+            // sPPurchaseRawMatINSUBBindingSource
+            // 
+            this.sPPurchaseRawMatINSUBBindingSource.DataMember = "SP_PurchaseRawMat_IN_SUB";
+            this.sPPurchaseRawMatINSUBBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // dataSetP1B
+            // 
+            this.dataSetP1B.DataSetName = "DataSetP1B";
+            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.Info;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.lblMsg);
+            this.panel1.Controls.Add(this.pbSearch);
+            this.panel1.Controls.Add(this.tbSearch);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(5, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1071, 59);
+            this.panel1.TabIndex = 0;
+            // 
+            // lblMsg
+            // 
+            this.lblMsg.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblMsg.AutoSize = true;
+            this.lblMsg.ForeColor = System.Drawing.Color.Red;
+            this.lblMsg.Location = new System.Drawing.Point(493, 18);
+            this.lblMsg.Name = "lblMsg";
+            this.lblMsg.Size = new System.Drawing.Size(0, 21);
+            this.lblMsg.TabIndex = 12;
+            // 
+            // pbSearch
+            // 
+            this.pbSearch.BackColor = System.Drawing.Color.Transparent;
+            this.pbSearch.Image = global::SmartMES_Giroei.Properties.Resources.search;
+            this.pbSearch.Location = new System.Drawing.Point(413, 17);
+            this.pbSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.pbSearch.Name = "pbSearch";
+            this.pbSearch.Size = new System.Drawing.Size(32, 26);
+            this.pbSearch.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbSearch.TabIndex = 11;
+            this.pbSearch.TabStop = false;
+            this.pbSearch.Click += new System.EventHandler(this.pbSearch_Click);
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbSearch.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbSearch.Location = new System.Drawing.Point(220, 16);
+            this.tbSearch.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(238, 29);
+            this.tbSearch.TabIndex = 9;
+            this.tbSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearch_KeyUp);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(37, 19);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(182, 21);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "수주번호/거래처/품목명";
+            // 
+            // sP_PurchaseRawMat_IN_SUBTableAdapter
+            // 
+            this.sP_PurchaseRawMat_IN_SUBTableAdapter.ClearBeforeFill = true;
             // 
             // P1B11_PURCHASE_RAW_MAT_SUB
             // 

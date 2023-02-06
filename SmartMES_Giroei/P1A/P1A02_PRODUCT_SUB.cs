@@ -148,7 +148,7 @@ namespace SmartMES_Giroei
                     ckbUseFlag.Checked = true;
 
                 cbGubun.Enabled = false;
-                cbKind.Enabled = false;
+                //cbKind.Enabled = false;
 
                 this.ActiveControl = btnSave;
             }
@@ -520,6 +520,12 @@ namespace SmartMES_Giroei
 
             tbQty.SelectionStart = tbQty.TextLength;
         }
+
+        private void btnSelect_Click(object sender, EventArgs e) 
+        {
+
+        }
+
         private void tbDanga_TextChanged(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(tbDanga.Text)) return;

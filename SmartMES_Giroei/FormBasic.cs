@@ -32,7 +32,7 @@ namespace SmartMES_Giroei
             //    pbDel.Enabled = false;
             //    pbSave.Enabled = false;
             //    pbPrint.Enabled = false;
-            //}
+            //} //***님께서 접속 중 입니다. 주석 해제 후 해결 주석처리 이유 모름.
         }
 
         private void pb_MouseDown(object sender, MouseEventArgs e)

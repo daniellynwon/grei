@@ -65,6 +65,7 @@
             this.lbSMDPins = new System.Windows.Forms.Label();
             this.btnClose = new SmartMES_Giroei.UserButtonA();
             this.btnSave = new SmartMES_Giroei.UserButtonA();
+            this.btnSelect = new System.Windows.Forms.Button();
             this.panTitle.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +73,7 @@
             // 
             this.cbGubun.BackColor = System.Drawing.SystemColors.Window;
             this.cbGubun.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbGubun.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.cbGubun.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.cbGubun.FormattingEnabled = true;
             this.cbGubun.Items.AddRange(new object[] {
             "제품",
@@ -87,7 +88,7 @@
             // 
             // tbProdName
             // 
-            this.tbProdName.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbProdName.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbProdName.Location = new System.Drawing.Point(488, 187);
             this.tbProdName.Name = "tbProdName";
             this.tbProdName.Size = new System.Drawing.Size(200, 29);
@@ -98,7 +99,7 @@
             // lbKind
             // 
             this.lbKind.AutoSize = true;
-            this.lbKind.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.lbKind.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.lbKind.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbKind.Location = new System.Drawing.Point(408, 120);
             this.lbKind.Name = "lbKind";
@@ -109,7 +110,7 @@
             // lbProdCode
             // 
             this.lbProdCode.AutoSize = true;
-            this.lbProdCode.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.lbProdCode.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.lbProdCode.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbProdCode.Location = new System.Drawing.Point(55, 190);
             this.lbProdCode.Name = "lbProdCode";
@@ -120,7 +121,7 @@
             // lblMsg
             // 
             this.lblMsg.AutoSize = true;
-            this.lblMsg.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.lblMsg.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.lblMsg.ForeColor = System.Drawing.Color.Red;
             this.lblMsg.Location = new System.Drawing.Point(55, 72);
             this.lblMsg.Name = "lblMsg";
@@ -141,7 +142,7 @@
             // 
             // tbQty
             // 
-            this.tbQty.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbQty.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbQty.Location = new System.Drawing.Point(875, 260);
             this.tbQty.Name = "tbQty";
             this.tbQty.Size = new System.Drawing.Size(200, 29);
@@ -154,7 +155,7 @@
             // lbSize
             // 
             this.lbSize.AutoSize = true;
-            this.lbSize.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.lbSize.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.lbSize.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbSize.Location = new System.Drawing.Point(81, 260);
             this.lbSize.Name = "lbSize";
@@ -165,7 +166,7 @@
             // lbQty
             // 
             this.lbQty.AutoSize = true;
-            this.lbQty.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.lbQty.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.lbQty.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbQty.Location = new System.Drawing.Point(779, 250);
             this.lbQty.Name = "lbQty";
@@ -177,7 +178,7 @@
             // lbProdName
             // 
             this.lbProdName.AutoSize = true;
-            this.lbProdName.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.lbProdName.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.lbProdName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbProdName.Location = new System.Drawing.Point(424, 190);
             this.lbProdName.Name = "lbProdName";
@@ -187,7 +188,7 @@
             // 
             // tbSize
             // 
-            this.tbSize.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbSize.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbSize.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.tbSize.Location = new System.Drawing.Point(135, 257);
             this.tbSize.Name = "tbSize";
@@ -200,7 +201,7 @@
             // 
             this.cbKind.BackColor = System.Drawing.SystemColors.Window;
             this.cbKind.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbKind.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.cbKind.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.cbKind.FormattingEnabled = true;
             this.cbKind.Location = new System.Drawing.Point(488, 117);
             this.cbKind.Name = "cbKind";
@@ -212,7 +213,7 @@
             // lbGubun
             // 
             this.lbGubun.AutoSize = true;
-            this.lbGubun.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.lbGubun.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.lbGubun.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbGubun.Location = new System.Drawing.Point(81, 120);
             this.lbGubun.Name = "lbGubun";
@@ -222,7 +223,7 @@
             // 
             // tbProdCode
             // 
-            this.tbProdCode.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbProdCode.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbProdCode.Location = new System.Drawing.Point(135, 187);
             this.tbProdCode.Name = "tbProdCode";
             this.tbProdCode.ReadOnly = true;
@@ -233,7 +234,7 @@
             // lbUnit
             // 
             this.lbUnit.AutoSize = true;
-            this.lbUnit.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.lbUnit.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.lbUnit.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbUnit.Location = new System.Drawing.Point(408, 260);
             this.lbUnit.Name = "lbUnit";
@@ -244,7 +245,7 @@
             // lbCertification
             // 
             this.lbCertification.AutoSize = true;
-            this.lbCertification.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.lbCertification.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.lbCertification.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbCertification.Location = new System.Drawing.Point(434, 330);
             this.lbCertification.Name = "lbCertification";
@@ -254,7 +255,7 @@
             // 
             // tbDanga
             // 
-            this.tbDanga.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbDanga.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbDanga.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tbDanga.Location = new System.Drawing.Point(135, 327);
             this.tbDanga.Name = "tbDanga";
@@ -267,7 +268,7 @@
             // lbDanga
             // 
             this.lbDanga.AutoSize = true;
-            this.lbDanga.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.lbDanga.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.lbDanga.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbDanga.Location = new System.Drawing.Point(81, 330);
             this.lbDanga.Name = "lbDanga";
@@ -277,7 +278,7 @@
             // 
             // tbCertification
             // 
-            this.tbCertification.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbCertification.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbCertification.ImeMode = System.Windows.Forms.ImeMode.Hangul;
             this.tbCertification.Location = new System.Drawing.Point(488, 327);
             this.tbCertification.Name = "tbCertification";
@@ -323,7 +324,7 @@
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.BackColor = System.Drawing.Color.Transparent;
-            this.lblTitle.Font = new System.Drawing.Font("Malgun Gothic", 13F);
+            this.lblTitle.Font = new System.Drawing.Font("맑은 고딕", 13F);
             this.lblTitle.ForeColor = System.Drawing.Color.White;
             this.lblTitle.Location = new System.Drawing.Point(27, 15);
             this.lblTitle.Name = "lblTitle";
@@ -333,7 +334,7 @@
             // 
             // tbQty4Array
             // 
-            this.tbQty4Array.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbQty4Array.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbQty4Array.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tbQty4Array.Location = new System.Drawing.Point(875, 467);
             this.tbQty4Array.Name = "tbQty4Array";
@@ -345,7 +346,7 @@
             // 
             // tbMetalMasks
             // 
-            this.tbMetalMasks.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbMetalMasks.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbMetalMasks.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tbMetalMasks.Location = new System.Drawing.Point(488, 467);
             this.tbMetalMasks.Name = "tbMetalMasks";
@@ -357,7 +358,7 @@
             // 
             // tbMountPins
             // 
-            this.tbMountPins.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbMountPins.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbMountPins.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tbMountPins.Location = new System.Drawing.Point(135, 467);
             this.tbMountPins.Name = "tbMountPins";
@@ -370,7 +371,7 @@
             // lbMountPins
             // 
             this.lbMountPins.AutoSize = true;
-            this.lbMountPins.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.lbMountPins.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.lbMountPins.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbMountPins.Location = new System.Drawing.Point(55, 470);
             this.lbMountPins.Name = "lbMountPins";
@@ -380,7 +381,7 @@
             // 
             // tbDIPPins
             // 
-            this.tbDIPPins.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbDIPPins.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbDIPPins.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tbDIPPins.Location = new System.Drawing.Point(875, 397);
             this.tbDIPPins.Name = "tbDIPPins";
@@ -392,7 +393,7 @@
             // 
             // tbSMDPins
             // 
-            this.tbSMDPins.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbSMDPins.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbSMDPins.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tbSMDPins.Location = new System.Drawing.Point(488, 397);
             this.tbSMDPins.Name = "tbSMDPins";
@@ -405,7 +406,7 @@
             // lbQty4Array
             // 
             this.lbQty4Array.AutoSize = true;
-            this.lbQty4Array.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.lbQty4Array.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.lbQty4Array.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbQty4Array.Location = new System.Drawing.Point(770, 460);
             this.lbQty4Array.Name = "lbQty4Array";
@@ -417,7 +418,7 @@
             // lbLayers
             // 
             this.lbLayers.AutoSize = true;
-            this.lbLayers.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.lbLayers.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.lbLayers.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbLayers.Location = new System.Drawing.Point(53, 400);
             this.lbLayers.Name = "lbLayers";
@@ -428,7 +429,7 @@
             // lbDIPPins
             // 
             this.lbDIPPins.AutoSize = true;
-            this.lbDIPPins.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.lbDIPPins.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.lbDIPPins.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbDIPPins.Location = new System.Drawing.Point(782, 400);
             this.lbDIPPins.Name = "lbDIPPins";
@@ -438,7 +439,7 @@
             // 
             // tbLayers
             // 
-            this.tbLayers.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbLayers.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbLayers.Location = new System.Drawing.Point(135, 397);
             this.tbLayers.Name = "tbLayers";
             this.tbLayers.ReadOnly = true;
@@ -450,7 +451,7 @@
             // lbMetalMasks
             // 
             this.lbMetalMasks.AutoSize = true;
-            this.lbMetalMasks.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.lbMetalMasks.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.lbMetalMasks.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbMetalMasks.Location = new System.Drawing.Point(358, 470);
             this.lbMetalMasks.Name = "lbMetalMasks";
@@ -461,7 +462,7 @@
             // lbSMDPins
             // 
             this.lbSMDPins.AutoSize = true;
-            this.lbSMDPins.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.lbSMDPins.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.lbSMDPins.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbSMDPins.Location = new System.Drawing.Point(384, 400);
             this.lbSMDPins.Name = "lbSMDPins";
@@ -475,7 +476,7 @@
             this.btnClose.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.close;
             this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnClose.buttonImage = global::SmartMES_Giroei.Properties.Resources.close;
-            this.btnClose.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnClose.Location = new System.Drawing.Point(588, 547);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnClose.Name = "btnClose";
@@ -489,7 +490,7 @@
             this.btnSave.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.save;
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnSave.buttonImage = global::SmartMES_Giroei.Properties.Resources.save;
-            this.btnSave.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSave.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.btnSave.Location = new System.Drawing.Point(374, 547);
             this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnSave.Name = "btnSave";
@@ -497,12 +498,23 @@
             this.btnSave.TabIndex = 12;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // btnSelect
+            // 
+            this.btnSelect.Location = new System.Drawing.Point(774, 117);
+            this.btnSelect.Name = "btnSelect";
+            this.btnSelect.Size = new System.Drawing.Size(155, 42);
+            this.btnSelect.TabIndex = 51;
+            this.btnSelect.Text = "btnSelect";
+            this.btnSelect.UseVisualStyleBackColor = true;
+            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
+            // 
             // P1A02_PRODUCT_SUB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(1194, 594);
+            this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.tbQty4Array);
             this.Controls.Add(this.tbMetalMasks);
             this.Controls.Add(this.tbMountPins);
@@ -539,7 +551,7 @@
             this.Controls.Add(this.lbProdCode);
             this.Controls.Add(this.lblMsg);
             this.Controls.Add(this.panTitle);
-            this.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
@@ -594,5 +606,6 @@
         private System.Windows.Forms.TextBox tbLayers;
         private System.Windows.Forms.Label lbMetalMasks;
         private System.Windows.Forms.Label lbSMDPins;
+        private System.Windows.Forms.Button btnSelect;
     }
 }

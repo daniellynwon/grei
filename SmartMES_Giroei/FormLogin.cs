@@ -31,8 +31,8 @@ namespace SmartMES_Giroei
             //        Process.Start(processStartInfo);
             //        Application.Exit();
             //    }
-            //}
-            
+            //}//배포할땐 막고, 개발할땐 풀고하기
+
             timer1.Start();
             lblMsg.Text = "";
 

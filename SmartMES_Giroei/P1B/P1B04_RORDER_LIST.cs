@@ -79,25 +79,33 @@ namespace SmartMES_Giroei
 
                 dataGridView1[0, rowIndex].Value = rowIndex.ToString() + "건";
 
-                long iSum1 = 0, iSum2 = 0, iSum3 = 0, iSum4 = 0, iSum5 = 0;
+                long iSum1 = 0, iSum2 = 0, iSum3 = 0, iSum4 = 0, iSum5 = 0, iSum6 = 0, iSum7 = 0, iSum8 = 0, iSum9 = 0;
 
                 for (int i = 0; i < rowIndex; i++)
                 {
                     iSum1 += long.Parse(dataGridView1.Rows[i].Cells[6].Value.ToString());
                     iSum2 += long.Parse(dataGridView1.Rows[i].Cells[7].Value.ToString());
                     iSum3 += long.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString());
-                    iSum4 += long.Parse(dataGridView1.Rows[i].Cells[9].Value.ToString());
-                    iSum5 += long.Parse(dataGridView1.Rows[i].Cells[10].Value.ToString());
+                    //iSum4 += long.Parse(dataGridView1.Rows[i].Cells[9].Value.ToString());
+                    //iSum5 += long.Parse(dataGridView1.Rows[i].Cells[10].Value.ToString());
+                    //iSum6 += long.Parse(dataGridView1.Rows[i].Cells[11].Value.ToString());
+                    //iSum7 += long.Parse(dataGridView1.Rows[i].Cells[12].Value.ToString());
+                    //iSum8 += long.Parse(dataGridView1.Rows[i].Cells[13].Value.ToString());
+                    iSum9 += long.Parse(dataGridView1.Rows[i].Cells[14].Value.ToString());
                 }
 
                 dataGridView1[6, rowIndex].Value = iSum1;
                 dataGridView1[7, rowIndex].Value = iSum2;
                 dataGridView1[8, rowIndex].Value = iSum3;
-                dataGridView1[9, rowIndex].Value = iSum4;
-                dataGridView1[10, rowIndex].Value = iSum5;
+                //dataGridView1[9, rowIndex].Value = iSum4;
+                //dataGridView1[10, rowIndex].Value = iSum5;
+                //dataGridView1[11, rowIndex].Value = iSum6;
+                //dataGridView1[12, rowIndex].Value = iSum7;
+                //dataGridView1[13, rowIndex].Value = iSum8;
+                dataGridView1[14, rowIndex].Value = iSum9;
 
-                dataGridView1[13, rowIndex] = new DataGridViewTextBoxCell();
-                dataGridView1[13, rowIndex].Value = "";
+                dataGridView1[17, rowIndex] = new DataGridViewTextBoxCell();
+                dataGridView1[17, rowIndex].Value = "";
             }
             catch (NullReferenceException)
             {
@@ -145,51 +153,51 @@ namespace SmartMES_Giroei
                     }
                 }
             }
-            else if (e.ColumnIndex == 9)
-            {
-                DataTable table;
-                string sql = string.Empty;
-                string msg = string.Empty;
+            //else if (e.ColumnIndex == 9)
+            //{
+            //    //DataTable table;
+            //    //string sql = string.Empty;
+            //    //string msg = string.Empty;
 
-                MariaCRUD m = new MariaCRUD();
+            //    //MariaCRUD m = new MariaCRUD();
 
-                string sNo = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            //    //string sNo = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
 
-                sql = @"select proc_id, cost from SAL_order_sub_detail where order_id = '" + sNo + "'";
+            //    //sql = @"select proc_id, cost from SAL_order_sub_detail where order_id = '" + sNo + "'";
 
-                table = m.dbDataTable(sql, ref msg);
+            //    //table = m.dbDataTable(sql, ref msg);
 
-                string sText = string.Empty;
+            //    //string sText = string.Empty;
 
-                for (int i = 0; i < table.Rows.Count; i++)
-                {
-                    if (table.Rows[i][0].ToString() == "1")
-                    {
-                        sText = sText + "PCB : " + string.Format("{0:#,0}", int.Parse(table.Rows[i][1].ToString())) + "원";
-                    }
-                    else if (table.Rows[i][0].ToString() == "2")
-                    {
-                        sText = sText + "MASK : " + string.Format("{0:#,0}", int.Parse(table.Rows[i][1].ToString())) + "원";
-                    }
-                    else if (table.Rows[i][0].ToString() == "3")
-                    {
-                        sText = sText + "설계 : " + string.Format("{0:#,0}", int.Parse(table.Rows[i][1].ToString())) + "원";
-                    }
-                    else if (table.Rows[i][0].ToString() == "4")
-                    {
-                        sText = sText + "구매 : " + string.Format("{0:#,0}", int.Parse(table.Rows[i][1].ToString())) + "원";
-                    }
-                    else
-                    {
-                        sText = sText + "기타 : " + string.Format("{0:#,0}", int.Parse(table.Rows[i][1].ToString())) + "원";
-                    }
-                    sText = sText + "\n\r";
-                }
+            //    //for (int i = 0; i < table.Rows.Count; i++)
+            //    //{
+            //    //    if (table.Rows[i][0].ToString() == "1")
+            //    //    {
+            //    //        sText = sText + "조립 : " + string.Format("{0:#,0}", int.Parse(table.Rows[i][1].ToString())) + "원";
+            //    //    }
+            //    //    else if (table.Rows[i][0].ToString() == "2")
+            //    //    {
+            //    //        sText = sText + "기타 : " + string.Format("{0:#,0}", int.Parse(table.Rows[i][1].ToString())) + "원";
+            //    //    }
+            //    //    else if (table.Rows[i][0].ToString() == "3")
+            //    //    {
+            //    //        sText = sText + "설계 : " + string.Format("{0:#,0}", int.Parse(table.Rows[i][1].ToString())) + "원";
+            //    //    }
+            //    //    else if (table.Rows[i][0].ToString() == "4")
+            //    //    {
+            //    //        sText = sText + "구매/수삽 : " + string.Format("{0:#,0}", int.Parse(table.Rows[i][1].ToString())) + "원";
+            //    //    }
+            //    //    else
+            //    //    {
+            //    //        sText = sText + "기타 : " + string.Format("{0:#,0}", int.Parse(table.Rows[i][1].ToString())) + "원";
+            //    //    }
+            //    //    sText = sText + "\n\r";
+            //    //}
 
-                dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = sText;
+            //    //dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = sText;
 
-            }
-            else if(e.ColumnIndex == 13)
+            //}
+            else if(e.ColumnIndex == 17)
             {
                 P1B04_RORDER_LIST_SUB sub = new P1B04_RORDER_LIST_SUB();
                 sub.parentWin = this;

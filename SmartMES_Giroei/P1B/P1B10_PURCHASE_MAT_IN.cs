@@ -56,7 +56,7 @@ namespace SmartMES_Giroei
 
             if (lblTitle.Tag.ToString() == "N")     // 신규분
             {
-                tbMbarcode.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[20].Value.ToString() + "-" + parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString() + "-" + DateTime.Now.ToString("yyMMdd");
+                tbMbarcode.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString() + "-" + parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString() + "-" + DateTime.Now.ToString("yyMMdd");
                 long lQty = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString());   // 발주량
                 long lpreQty = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value.ToString());   // 발주량
                 long lDanga = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString()); // 단가
@@ -75,14 +75,14 @@ namespace SmartMES_Giroei
                 {
                     checkClosed.Checked = true;
 
-                    tbInID.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[20].Value.ToString();    // 고객번호
+                    tbInID.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();    // 고객번호 수정전 Cells20
                     dtpInDate.Value = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[12].Value.ToString());    // 입고일
                     tbInQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value.ToString();   // 입고량
                     //tbAmount.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[14].Value.ToString();  // 매입액
                     cbDepot.SelectedValue = parentWin.dataGridView1.Rows[rowIndex].Cells[15].Value;
                     string LotNo = parentWin.dataGridView1.Rows[rowIndex].Cells[12].Value.ToString().Replace("-", "").Substring(2,6);
-                    tbMbarcode.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[20].Value.ToString() + "-" + parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString() + "-" + LotNo;
-                    tbBigo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[20].Value.ToString().Replace("'", "`");
+                    tbMbarcode.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString() + "-" + parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString() + "-" + LotNo;
+                    tbBigo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString().Replace("'", "`");
 
                     //long lAmount = long.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[14].Value.ToString());
                     //tbVat.Text = (lAmount * 0.1).ToString();
@@ -412,7 +412,7 @@ namespace SmartMES_Giroei
 
             // 분할 입고 처리
             // barcode
-            string sql = "select count(barcode_surfix) as count from INV_material_in where mbarcode = '" + barcodePrefix + "'";
+            string sql = "select count(barcode_surfix) as count from INV_material_in where mbarcode = '" + barcodePrefix + "'"; // 수정해야함
             MariaCRUD m = new MariaCRUD();
             string msg = string.Empty;
             DataTable table = m.dbDataTable(sql, ref msg);
@@ -452,12 +452,12 @@ namespace SmartMES_Giroei
 
                     // str += "^FO30,80 ^B3N,N,80,Y,N ^FD" + Barcode.Trim() + " ^FS";
                     str += "^FO40,20 ^BQN,2,3^FDMA," + Barcode.Trim() + " ^FS";
-                    str += "^FO50,100 ^A0,22,22^FD" + sProdKind + " ^FS";
+                    //str += "^FO50,100 ^A0,22,22^FD" + sProdKind + " ^FS";
                     //str += "^FO150,20^A0,22,22^FD" + aBarcode[0] + " ^FS";
                     //str += "^FO150,50^A0,22,22^FD" + aBarcode[1] + " ^FS";
                     str += "^FO150,20^A1N,22,22^FD" + sCustName + " ^FS";
                     str += "^FO150,50^A0,22,22^FD" + sProdName + " ^FS";
-                    str += "^FO150,80^A0,22,22^FD" + aBarcode[2] + " ^FS";
+                    str += "^FO150,80^A0,22,22^FD" + sProdKind + "/" + aBarcode[2] + " ^FS";
                     str += "^FO150,110^A0,22,22^FD" + aBarcode[3] + "-" + aBarcode[4] + " ^FS";
                     str += "^XZ";
 

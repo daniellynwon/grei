@@ -79,6 +79,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnExcelbasic = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.btnExcel = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
@@ -296,6 +297,7 @@
             // 번호DataGridViewTextBoxColumn2
             // 
             this.번호DataGridViewTextBoxColumn2.DataPropertyName = "번호";
+            this.번호DataGridViewTextBoxColumn2.FillWeight = 33F;
             this.번호DataGridViewTextBoxColumn2.HeaderText = "번호";
             this.번호DataGridViewTextBoxColumn2.Name = "번호DataGridViewTextBoxColumn2";
             this.번호DataGridViewTextBoxColumn2.ReadOnly = true;
@@ -303,6 +305,7 @@
             // 자재코드DataGridViewTextBoxColumn1
             // 
             this.자재코드DataGridViewTextBoxColumn1.DataPropertyName = "자재코드";
+            this.자재코드DataGridViewTextBoxColumn1.FillWeight = 50F;
             this.자재코드DataGridViewTextBoxColumn1.HeaderText = "자재코드";
             this.자재코드DataGridViewTextBoxColumn1.Name = "자재코드DataGridViewTextBoxColumn1";
             this.자재코드DataGridViewTextBoxColumn1.ReadOnly = true;
@@ -324,6 +327,7 @@
             // 단위DataGridViewTextBoxColumn2
             // 
             this.단위DataGridViewTextBoxColumn2.DataPropertyName = "단위";
+            this.단위DataGridViewTextBoxColumn2.FillWeight = 33F;
             this.단위DataGridViewTextBoxColumn2.HeaderText = "단위";
             this.단위DataGridViewTextBoxColumn2.Name = "단위DataGridViewTextBoxColumn2";
             this.단위DataGridViewTextBoxColumn2.ReadOnly = true;
@@ -567,6 +571,7 @@
             this.panel3.AutoSize = true;
             this.panel3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(205)))), ((int)(((byte)(219)))));
             this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel3.Controls.Add(this.btnExcelbasic);
             this.panel3.Controls.Add(this.progressBar1);
             this.panel3.Controls.Add(this.btnExcel);
             this.panel3.Controls.Add(this.label8);
@@ -577,10 +582,22 @@
             this.panel3.Size = new System.Drawing.Size(657, 84);
             this.panel3.TabIndex = 11;
             // 
+            // btnExcelbasic
+            // 
+            this.btnExcelbasic.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnExcelbasic.Enabled = false;
+            this.btnExcelbasic.Location = new System.Drawing.Point(547, 4);
+            this.btnExcelbasic.Name = "btnExcelbasic";
+            this.btnExcelbasic.Size = new System.Drawing.Size(100, 29);
+            this.btnExcelbasic.TabIndex = 12;
+            this.btnExcelbasic.Text = "Excel양식";
+            this.btnExcelbasic.UseVisualStyleBackColor = true;
+            this.btnExcelbasic.Click += new System.EventHandler(this.btnExcelbasic_Click);
+            // 
             // progressBar1
             // 
             this.progressBar1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.progressBar1.Location = new System.Drawing.Point(487, 62);
+            this.progressBar1.Location = new System.Drawing.Point(487, 69);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(160, 10);
             this.progressBar1.TabIndex = 11;
@@ -589,7 +606,7 @@
             // btnExcel
             // 
             this.btnExcel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnExcel.Location = new System.Drawing.Point(547, 27);
+            this.btnExcel.Location = new System.Drawing.Point(547, 34);
             this.btnExcel.Name = "btnExcel";
             this.btnExcel.Size = new System.Drawing.Size(100, 29);
             this.btnExcel.TabIndex = 10;
@@ -823,11 +840,6 @@
         private P1A.DataSetP1ATableAdapters.SP_BOM_SelectTableAdapter sP_BOM_SelectTableAdapter;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수량1DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 번호DataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 자재코드DataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 자재명DataGridViewTextBoxColumn1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 규격DataGridViewTextBoxColumn2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 단위DataGridViewTextBoxColumn2;
         private System.Windows.Forms.BindingSource sPBOMListBindingSource;
         private P1A.DataSetP1ATableAdapters.SP_BOM_ListTableAdapter sP_BOM_ListTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn 번호DataGridViewTextBoxColumn1;
@@ -850,5 +862,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 단위DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 등록DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 규격;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 번호DataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 자재코드DataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 자재명DataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 규격DataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 단위DataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Button btnExcelbasic;
     }
 }

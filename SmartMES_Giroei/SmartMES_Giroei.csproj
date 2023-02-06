@@ -33,7 +33,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>80</ApplicationRevision>
+    <ApplicationRevision>81</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -68,10 +68,11 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>4A1B7E3560ED332476054811E6F74B05DE786700</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>803282B89A1F7CD2A28B0CA86B59E36101163B8A</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>SmartMES_Giroei_2_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -997,6 +998,7 @@
       <DependentUpon>PwdChange.cs</DependentUpon>
     </Compile>
     <Compile Include="SqlServerTypes\Loader.cs" />
+    <Compile Include="System\Io.cs" />
     <Compile Include="UserControls\UserButtonA.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -1527,6 +1529,7 @@
     <EmbeddedResource Include="Resources\LibreBarcode39ExtendedText-Regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <None Include="Resources\지로이아이액셀다운로드테스트.xlsx" />
     <None Include="SmartMES_Giroei_1_TemporaryKey.pfx" />
     <None Include="SmartMES_Giroei_2_TemporaryKey.pfx" />
     <None Include="SmartMES_Giroei_TemporaryKey.pfx" />
@@ -1537,7 +1540,7 @@
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
       <Visible>False</Visible>
-      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <ProductName>Microsoft .NET Framework 4.7.2%28x86 및 x64%29</ProductName>
       <Install>true</Install>
     </BootstrapperPackage>
     <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
@@ -1655,6 +1658,7 @@
     <Content Include="Resources\비가동.jpg" />
     <Content Include="Resources\작업시작.jpg" />
     <Content Include="Resources\작업종료.jpg" />
+    <Content Include="Resources\작업지시.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

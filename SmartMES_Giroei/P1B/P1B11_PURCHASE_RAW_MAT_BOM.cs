@@ -130,7 +130,9 @@ namespace SmartMES_Giroei
 
         private bool printBarcode(int rowindex)
         {
+            string sGuCode = dataGridView1.Rows[rowindex].Cells[4].Value.ToString();             // 자재구분
             string sMatCode = dataGridView1.Rows[rowindex].Cells[5].Value.ToString();             // 자재코드
+            string sGuName = dataGridView1.Rows[rowindex].Cells[6].Value.ToString();             // 자재명
 
             string barcodePrefix = sCustID + "-" + sMatCode + "-" + DateTime.Now.ToString("yyMMdd");
 
@@ -187,21 +189,20 @@ namespace SmartMES_Giroei
                     //str += "^FO150,20^A0,22,22^FD" + aBarcode[0] + " ^FS";
                     //str += "^FO150,50^A0,22,22^FD" + aBarcode[1] + " ^FS";
                     str += "^FO150,20^A1N,22,22^FD" + sCustName + " ^FS";
-                    str += "^FO150,50^A0,22,22^FD" + sProdName + " ^FS";
-                    str += "^FO150,80^A0,22,22^FD" + aBarcode[2] + " ^FS";
+                    str += "^FO150,50^A0,22,22^FD" + sGuName + " ^FS"; //자재명
+                    str += "^FO150,80^A0,22,22^FD" + sGuCode + "/" + aBarcode[2] + " ^FS"; //자재구분코드/발행일자
                     str += "^FO150,110^A0,22,22^FD" + aBarcode[3] + "-" + aBarcode[4] + " ^FS";
                     str += "^XZ";
 
                     var bytes = Encoding.Default.GetBytes(str);
 
-                    //try
-                    //{
-                    //    RawPrinterHelper.SendBytesToPrinter(pd.PrinterSettings.PrinterName, bytes, bytes.Length);
-                    //}
-                    //catch (Exception ex)
-                    //{
-                    //    MessageBox.Show(ex.Message);
-                    //}
+                    try {
+                        RawPrinterHelper.SendBytesToPrinter(pd.PrinterSettings.PrinterName, bytes, bytes.Length);
+                    }
+                    catch (Exception ex) {
+                        MessageBox.Show(ex.Message);
+                    }
+
                     if (rePrint == false)
                         save2InvBarcode(Barcode, barcodePrefix, iQtyInPackage, rowindex);
                 }
