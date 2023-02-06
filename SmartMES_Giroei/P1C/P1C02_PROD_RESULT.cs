@@ -535,8 +535,17 @@ namespace SmartMES_Giroei
 
         private void btnAOI_Click(object sender, EventArgs e)
         {
+            lblMsg.Text = "";
+
+            if (string.IsNullOrEmpty(lblLotNo.Text))
+            {
+                lblMsg.Text = "LotNo.가 선택되지 않았습니다.";
+                return;
+            }
+
             P1C02_PROD_RESULT_AOI sub = new P1C02_PROD_RESULT_AOI();
             sub.parentWin = this;
+            sub.job_no = lblLotNo.Text;
             sub.ShowDialog();
         }
     }

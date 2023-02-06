@@ -215,6 +215,11 @@ namespace SmartMES_Giroei
         #region 저장
         private void btnSave_Click(object sender, EventArgs e)
         {
+            if ((string)btnBarcodePrint.Tag == "0")
+            {
+                MessageBox.Show("바코트 발행 후에 저장하세요.");
+                return;
+            }       
             Save();
         }
         private void btnClose_Click(object sender, EventArgs e)
@@ -468,6 +473,7 @@ namespace SmartMES_Giroei
                     }
                     save2InvMaterialIn(Barcode, barcodePrefix, iQtyInPacking, sQtyInPacking);
                 }
+                btnBarcodePrint.Tag = "1";          // 바코드 발행완료
             }
         }
 

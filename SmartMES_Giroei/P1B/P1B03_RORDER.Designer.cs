@@ -59,6 +59,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.panSearch = new System.Windows.Forms.Panel();
+            this.btnDetail = new System.Windows.Forms.Button();
             this.doc4 = new SmartMES_Giroei.UserButtonA();
             this.doc3 = new SmartMES_Giroei.UserButtonA();
             this.doc2 = new SmartMES_Giroei.UserButtonA();
@@ -326,6 +327,7 @@
             this.panSearch.AutoSize = true;
             this.panSearch.BackColor = System.Drawing.SystemColors.Info;
             this.panSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panSearch.Controls.Add(this.btnDetail);
             this.panSearch.Controls.Add(this.doc4);
             this.panSearch.Controls.Add(this.doc3);
             this.panSearch.Controls.Add(this.doc2);
@@ -350,8 +352,20 @@
             this.panSearch.Controls.Add(this.cbNo);
             this.panSearch.Location = new System.Drawing.Point(310, 58);
             this.panSearch.Name = "panSearch";
-            this.panSearch.Size = new System.Drawing.Size(1011, 217);
+            this.panSearch.Size = new System.Drawing.Size(1011, 225);
             this.panSearch.TabIndex = 0;
+            // 
+            // btnDetail
+            // 
+            this.btnDetail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDetail.Location = new System.Drawing.Point(693, 187);
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.Size = new System.Drawing.Size(188, 33);
+            this.btnDetail.TabIndex = 37;
+            this.btnDetail.Text = "상세정보입력";
+            this.btnDetail.UseVisualStyleBackColor = true;
+            this.btnDetail.Visible = false;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
             // 
             // doc4
             // 
@@ -1166,6 +1180,7 @@
             this.Detail.FillWeight = 53.29949F;
             this.Detail.HeaderText = "";
             this.Detail.Name = "Detail";
+            this.Detail.Visible = false;
             // 
             // ColumnDel
             // 
@@ -1237,7 +1252,6 @@
         private System.Windows.Forms.DateTimePicker dtpDate;
         private System.Windows.Forms.Label lblCust;
         public System.Windows.Forms.TextBox tbSearch;
-        private System.Windows.Forms.TextBox tbNo;
         private System.Windows.Forms.BindingSource sPROrderMainQueryBindingSource;
         private P1B.DataSetP1BTableAdapters.SP_ROrderMain_QueryTableAdapter sP_ROrderMain_QueryTableAdapter;
         private System.Windows.Forms.DateTimePicker dtpDeliDate;
@@ -1277,6 +1291,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 첨부물2;
         private System.Windows.Forms.DataGridViewTextBoxColumn 첨부물3;
         private System.Windows.Forms.DataGridViewTextBoxColumn 첨부물4;
+        public System.Windows.Forms.TextBox tbNo;
+        private System.Windows.Forms.Button btnDetail;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수주번호DataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn 순번DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn btnColumn;

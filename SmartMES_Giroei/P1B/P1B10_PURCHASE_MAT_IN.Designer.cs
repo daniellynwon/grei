@@ -646,6 +646,7 @@
             this.btnBarcodePrint.Name = "btnBarcodePrint";
             this.btnBarcodePrint.Size = new System.Drawing.Size(129, 81);
             this.btnBarcodePrint.TabIndex = 10;
+            this.btnBarcodePrint.Tag = "0";
             this.btnBarcodePrint.Text = "발행";
             this.btnBarcodePrint.UseVisualStyleBackColor = true;
             this.btnBarcodePrint.Click += new System.EventHandler(this.btnBarcodePrint_Click);

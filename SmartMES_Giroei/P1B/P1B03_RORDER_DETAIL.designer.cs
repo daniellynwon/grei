@@ -1689,7 +1689,7 @@
             // lbNotice
             // 
             this.lbNotice.AutoSize = true;
-            this.lbNotice.Location = new System.Drawing.Point(460, 457);
+            this.lbNotice.Location = new System.Drawing.Point(444, 451);
             this.lbNotice.Name = "lbNotice";
             this.lbNotice.Size = new System.Drawing.Size(0, 21);
             this.lbNotice.TabIndex = 202;

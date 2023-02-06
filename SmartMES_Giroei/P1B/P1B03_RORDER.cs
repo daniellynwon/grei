@@ -126,6 +126,8 @@ namespace SmartMES_Giroei
             }
 
             Cursor.Current = Cursors.Default;
+            if (!string.IsNullOrEmpty(tbNo.Text))
+                btnDetail.Visible = true;
         }
         public async void ListSearch3()
         {
@@ -1036,6 +1038,15 @@ namespace SmartMES_Giroei
                 }
             }
 
+            if (MessageBox.Show("상세정보를 입력하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                tbNo.Text = sNo;
+                P1B03_RORDER_DETAIL rd = new P1B03_RORDER_DETAIL();
+                rd.rowIndex = 0;
+                rd.parentWin = this;
+
+                rd.ShowDialog();
+            }
             tbSearch.Text = "";
             ListSearch1();
 
@@ -1055,6 +1066,8 @@ namespace SmartMES_Giroei
 
             m.TransLogCreate(G.Authority, G.UserID, "M", this.Name, lblTitle.Text, sNo + "-" + tbCust.Text);
             lblMsg.Text = "저장되었습니다.";
+
+            btnDetail.Visible = true;
         }
         private void pbPrint_Click(object sender, EventArgs e)
         {
@@ -1175,5 +1188,13 @@ namespace SmartMES_Giroei
         }
         #endregion
 
+        private void btnDetail_Click(object sender, EventArgs e)
+        {
+            P1B03_RORDER_DETAIL rd = new P1B03_RORDER_DETAIL();
+            rd.rowIndex = 0;
+            rd.parentWin = this;
+
+            rd.ShowDialog();
+        }
     }
 }

@@ -703,6 +703,16 @@ namespace SmartMES_Giroei
                 lblMsg.Text = "여신기일을 입력하세요";
                 return;
             }
+            if (cbPayment.Text == "" || string.IsNullOrEmpty(cbPayment.Text))
+            {
+                lblMsg.Text = "지불조건을 선택하세요";
+                return;
+            }
+            if (cbQC.Text == "" || string.IsNullOrEmpty(cbQC.Text))
+            {
+                lblMsg.Text = "검사조건을 선택하세요";
+                return;
+            }
 
             string sNo = tbNo.Text;
             string sPutchDate = dtpDate.Value.ToString("yyyy-MM-dd");

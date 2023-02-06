@@ -265,6 +265,9 @@ namespace SmartMES_Giroei
                                 ZIG = '{maskZig}', size_W = '{maskSizeW}', size_L = '{maskSizeL}', bigo = '{maskBigo}'";
                 m.dbCUD(sql, ref msg);
 
+                if (msg == "OK")
+                    lbNotice.Text = "저장되었습니다.";
+
             }
             if (!(string.IsNullOrEmpty(dsnCost) || dsnCost == "0"))
             {

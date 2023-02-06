@@ -10,6 +10,7 @@ namespace SmartMES_Giroei
         public P1C02_PROD_RESULT parentWin;
         private int rowIndex = 0;
         public string rorderID, rorderSeq;
+        public string job_no;
 
         public P1C02_PROD_RESULT_AOI()
         {
@@ -33,29 +34,40 @@ namespace SmartMES_Giroei
             
             rowIndex = parentWin.dataGridView1.CurrentCell.RowIndex;
 
-            if (parentWin.dataGridView1.Rows[rowIndex].Cells[25].Value != DBNull.Value)
-            {
-                //tbJobTimeStart.Text = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[25].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-                //tbJobTimeFinish.Text = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[26].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-                if (parentWin.dataGridView1.Rows[rowIndex].Cells[25].Value == null || string.IsNullOrEmpty(parentWin.dataGridView1.Rows[rowIndex].Cells[25].Value.ToString())) tbJobTimeStart.Text = "";
-                else
-                    tbJobTimeStart.Text = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[25].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-                if (parentWin.dataGridView1.Rows[rowIndex].Cells[26].Value == null || string.IsNullOrEmpty(parentWin.dataGridView1.Rows[rowIndex].Cells[26].Value.ToString())) tbJobTimeFinish.Text = "";
-                else
-                    tbJobTimeFinish.Text = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[26].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-                cbMan.SelectedValue = parentWin.dataGridView1.Rows[rowIndex].Cells[34].Value.ToString();
+            tbProdName.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString(); // 품목명
+            tbProdName.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();  // 품목코드
+            string sJobNo = parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString(); // JobNo
 
-                //if(parentWin.dataGridView1.Rows[rowIndex].Cells[27].Value.ToString() == "1") rbOk1.Checked = true;
-                //if(parentWin.dataGridView1.Rows[rowIndex].Cells[28].Value.ToString() == "1") rbOk2.Checked = true;
-                //if(parentWin.dataGridView1.Rows[rowIndex].Cells[29].Value.ToString() == "1") rbOk3.Checked = true;
-                //if(parentWin.dataGridView1.Rows[rowIndex].Cells[30].Value.ToString() == "1") rbOk4.Checked = true;
-                //if(parentWin.dataGridView1.Rows[rowIndex].Cells[31].Value.ToString() == "1") rbOk5.Checked = true;
-                //if(parentWin.dataGridView1.Rows[rowIndex].Cells[32].Value.ToString() == "1") rbOk6.Checked = true;
-                //if(parentWin.dataGridView1.Rows[rowIndex].Cells[33].Value.ToString() == "1") rbOk7.Checked = true;
-                cbMan.SelectedValue = parentWin.dataGridView1.Rows[rowIndex].Cells[34].Value.ToString();
+            sql = "select * from QLT_inspection_AOI where job_no = '" + sJobNo + "' limit 1";
+            table = m.dbDataTable(sql, ref msg);
+
+            if (table.Rows.Count < 1) {
+                lblMsg.Text = "저장된 Detail정보가 없습니다.";
+            } else
+            {
+                DataRow[] row = table.Select();
+                if (row.Length > 0) 
+                {
+                    tbJobTimeStart.Text = row[0][2].ToString();
+                    tbJobTimeFinish.Text = row[0][3].ToString();
+                    tbInspCount.Text = row[0][4].ToString();
+                    tbTotalDefect.Text = row[0][5].ToString();
+                    tbSonap.Text = row[0][6].ToString();
+                    tbnengttaem.Text = row[0][7].ToString();
+                    tbMiSap.Text = row[0][8].ToString();
+                    tbOverTurned.Text = row[0][9].ToString();
+                    tbLeadOpen.Text = row[0][10].ToString();
+                    tbMiNap.Text = row[0][11].ToString();
+                    tbShort.Text = row[0][12].ToString();
+                    tbReverse.Text = row[0][13].ToString();
+                    tbManhattan.Text = row[0][14].ToString();
+                    tbTwisted.Text = row[0][15].ToString();
+                    tbEtcError.Text = row[0][16].ToString();
+                    rtbContents.Text = row[0][17].ToString();
+                    cbMan.Text = row[0][18].ToString();
+                }
+
             }
-            else
-                cbMan.SelectedValue = G.UserID;
 
             this.ActiveControl = btnSave;
         }
@@ -205,6 +217,17 @@ namespace SmartMES_Giroei
             //tbJobTimeStart.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
 
         }
+
+        private void btnFile1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnFile2_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void btnFinish_Click(object sender, EventArgs e)
         {
             //lblMsg.Text = "";

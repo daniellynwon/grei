@@ -132,7 +132,7 @@
   <xs:element name="DataSetCOMMON" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetCOMMON" msprop:Generator_UserDSName="DataSetCOMMON">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
-        <xs:element name="SP_Customer_Common" msprop:Generator_TableClassName="SP_Customer_CommonDataTable" msprop:Generator_TableVarName="tableSP_Customer_Common" msprop:Generator_RowChangedName="SP_Customer_CommonRowChanged" msprop:Generator_TablePropName="SP_Customer_Common" msprop:Generator_RowDeletingName="SP_Customer_CommonRowDeleting" msprop:Generator_RowChangingName="SP_Customer_CommonRowChanging" msprop:Generator_RowEvHandlerName="SP_Customer_CommonRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Customer_CommonRowDeleted" msprop:Generator_RowClassName="SP_Customer_CommonRow" msprop:Generator_UserTableName="SP_Customer_Common" msprop:Generator_RowEvArgName="SP_Customer_CommonRowChangeEvent">
+        <xs:element name="SP_Customer_Common" msprop:Generator_TableClassName="SP_Customer_CommonDataTable" msprop:Generator_TableVarName="tableSP_Customer_Common" msprop:Generator_TablePropName="SP_Customer_Common" msprop:Generator_RowDeletingName="SP_Customer_CommonRowDeleting" msprop:Generator_RowChangingName="SP_Customer_CommonRowChanging" msprop:Generator_RowEvHandlerName="SP_Customer_CommonRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Customer_CommonRowDeleted" msprop:Generator_UserTableName="SP_Customer_Common" msprop:Generator_RowChangedName="SP_Customer_CommonRowChanged" msprop:Generator_RowEvArgName="SP_Customer_CommonRowChangeEvent" msprop:Generator_RowClassName="SP_Customer_CommonRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="거래처코드" msprop:Generator_ColumnVarNameInTable="column거래처코드" msprop:Generator_ColumnPropNameInRow="거래처코드" msprop:Generator_ColumnPropNameInTable="거래처코드Column" msprop:Generator_UserColumnName="거래처코드">
@@ -187,7 +187,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_Product_Common1" msprop:Generator_TableClassName="SP_Product_Common1DataTable" msprop:Generator_TableVarName="tableSP_Product_Common1" msprop:Generator_TablePropName="SP_Product_Common1" msprop:Generator_RowDeletingName="SP_Product_Common1RowDeleting" msprop:Generator_RowChangingName="SP_Product_Common1RowChanging" msprop:Generator_RowEvHandlerName="SP_Product_Common1RowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Product_Common1RowDeleted" msprop:Generator_UserTableName="SP_Product_Common1" msprop:Generator_RowChangedName="SP_Product_Common1RowChanged" msprop:Generator_RowEvArgName="SP_Product_Common1RowChangeEvent" msprop:Generator_RowClassName="SP_Product_Common1Row">
+        <xs:element name="SP_Product_Common1" msprop:Generator_TableClassName="SP_Product_Common1DataTable" msprop:Generator_TableVarName="tableSP_Product_Common1" msprop:Generator_RowChangedName="SP_Product_Common1RowChanged" msprop:Generator_TablePropName="SP_Product_Common1" msprop:Generator_RowDeletingName="SP_Product_Common1RowDeleting" msprop:Generator_RowChangingName="SP_Product_Common1RowChanging" msprop:Generator_RowEvHandlerName="SP_Product_Common1RowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Product_Common1RowDeleted" msprop:Generator_RowClassName="SP_Product_Common1Row" msprop:Generator_UserTableName="SP_Product_Common1" msprop:Generator_RowEvArgName="SP_Product_Common1RowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="구분" msprop:Generator_ColumnVarNameInTable="column구분" msprop:Generator_ColumnPropNameInRow="구분" msprop:Generator_ColumnPropNameInTable="구분Column" msprop:Generator_UserColumnName="구분">
@@ -269,7 +269,7 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_Machine_Common" msprop:Generator_TableClassName="SP_Machine_CommonDataTable" msprop:Generator_TableVarName="tableSP_Machine_Common" msprop:Generator_TablePropName="SP_Machine_Common" msprop:Generator_RowDeletingName="SP_Machine_CommonRowDeleting" msprop:Generator_RowChangingName="SP_Machine_CommonRowChanging" msprop:Generator_RowEvHandlerName="SP_Machine_CommonRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Machine_CommonRowDeleted" msprop:Generator_UserTableName="SP_Machine_Common" msprop:Generator_RowChangedName="SP_Machine_CommonRowChanged" msprop:Generator_RowEvArgName="SP_Machine_CommonRowChangeEvent" msprop:Generator_RowClassName="SP_Machine_CommonRow">
+        <xs:element name="SP_Machine_Common" msprop:Generator_TableClassName="SP_Machine_CommonDataTable" msprop:Generator_TableVarName="tableSP_Machine_Common" msprop:Generator_RowChangedName="SP_Machine_CommonRowChanged" msprop:Generator_TablePropName="SP_Machine_Common" msprop:Generator_RowDeletingName="SP_Machine_CommonRowDeleting" msprop:Generator_RowChangingName="SP_Machine_CommonRowChanging" msprop:Generator_RowEvHandlerName="SP_Machine_CommonRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Machine_CommonRowDeleted" msprop:Generator_RowClassName="SP_Machine_CommonRow" msprop:Generator_UserTableName="SP_Machine_Common" msprop:Generator_RowEvArgName="SP_Machine_CommonRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="설비ID" msprop:Generator_ColumnVarNameInTable="column설비ID" msprop:Generator_ColumnPropNameInRow="설비ID" msprop:Generator_ColumnPropNameInTable="설비IDColumn" msprop:Generator_UserColumnName="설비ID">
@@ -310,13 +310,13 @@
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="SP_Product_Common" msprop:Generator_TableClassName="SP_Product_CommonDataTable" msprop:Generator_TableVarName="tableSP_Product_Common" msprop:Generator_TablePropName="SP_Product_Common" msprop:Generator_RowDeletingName="SP_Product_CommonRowDeleting" msprop:Generator_RowChangingName="SP_Product_CommonRowChanging" msprop:Generator_RowEvHandlerName="SP_Product_CommonRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Product_CommonRowDeleted" msprop:Generator_UserTableName="SP_Product_Common" msprop:Generator_RowChangedName="SP_Product_CommonRowChanged" msprop:Generator_RowEvArgName="SP_Product_CommonRowChangeEvent" msprop:Generator_RowClassName="SP_Product_CommonRow">
+        <xs:element name="SP_Product_Common" msprop:Generator_TableClassName="SP_Product_CommonDataTable" msprop:Generator_TableVarName="tableSP_Product_Common" msprop:Generator_RowChangedName="SP_Product_CommonRowChanged" msprop:Generator_TablePropName="SP_Product_Common" msprop:Generator_RowDeletingName="SP_Product_CommonRowDeleting" msprop:Generator_RowChangingName="SP_Product_CommonRowChanging" msprop:Generator_RowEvHandlerName="SP_Product_CommonRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Product_CommonRowDeleted" msprop:Generator_RowClassName="SP_Product_CommonRow" msprop:Generator_UserTableName="SP_Product_Common" msprop:Generator_RowEvArgName="SP_Product_CommonRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="구분" msprop:Generator_ColumnVarNameInTable="column구분" msprop:Generator_ColumnPropNameInRow="구분" msprop:Generator_ColumnPropNameInTable="구분Column" msprop:Generator_UserColumnName="구분">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="3" />
+                    <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -344,7 +344,7 @@
               <xs:element name="규격" msprop:Generator_ColumnVarNameInTable="column규격" msprop:Generator_ColumnPropNameInRow="규격" msprop:Generator_ColumnPropNameInTable="규격Column" msprop:Generator_UserColumnName="규격" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="500" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -373,7 +373,7 @@
         </xs:element>
       </xs:choice>
     </xs:complexType>
-    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+    <xs:unique name="Constraint1">
       <xs:selector xpath=".//mstns:SP_Customer_Common" />
       <xs:field xpath="mstns:거래처코드" />
     </xs:unique>
@@ -384,10 +384,6 @@
     <xs:unique name="SP_Machine_Common_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:SP_Machine_Common" />
       <xs:field xpath="mstns:설비ID" />
-    </xs:unique>
-    <xs:unique name="SP_Product_Common_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
-      <xs:selector xpath=".//mstns:SP_Product_Common" />
-      <xs:field xpath="mstns:품목코드" />
     </xs:unique>
   </xs:element>
 </xs:schema>

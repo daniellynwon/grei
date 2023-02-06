@@ -451,6 +451,7 @@
             // 
             // btnAOI
             // 
+            this.btnAOI.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.btnAOI.BackColor = System.Drawing.Color.White;
             this.btnAOI.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnAOI.BackgroundImage")));
             this.btnAOI.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;

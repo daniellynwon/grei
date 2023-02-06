@@ -39,40 +39,42 @@
             this.cbMan = new System.Windows.Forms.ComboBox();
             this.tbJobTimeStart = new System.Windows.Forms.TextBox();
             this.tbJobTimeFinish = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.tbCustName = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tbProdName = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.tbInspCount = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.tbSonap = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.tbnengttaem = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.tbOverTurned = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.tbMiSap = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
+            this.tbReverse = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.tbShort = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.tbMiNap = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox11 = new System.Windows.Forms.TextBox();
+            this.tbLeadOpen = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.textBox13 = new System.Windows.Forms.TextBox();
+            this.tbEtcError = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
-            this.textBox14 = new System.Windows.Forms.TextBox();
+            this.tbTwisted = new System.Windows.Forms.TextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox15 = new System.Windows.Forms.TextBox();
+            this.tbManhattan = new System.Windows.Forms.TextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.rtbContents = new System.Windows.Forms.RichTextBox();
+            this.btnFile1 = new System.Windows.Forms.Button();
+            this.btnFile2 = new System.Windows.Forms.Button();
             this.lbFname1 = new System.Windows.Forms.Label();
             this.lbFname2 = new System.Windows.Forms.Label();
+            this.label19 = new System.Windows.Forms.Label();
+            this.tbTotalDefect = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -209,17 +211,17 @@
             this.tbJobTimeFinish.Tag = "";
             this.tbJobTimeFinish.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // textBox1
+            // tbCustName
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox1.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.textBox1.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.textBox1.Location = new System.Drawing.Point(106, 70);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(196, 29);
-            this.textBox1.TabIndex = 90;
-            this.textBox1.Tag = "";
-            this.textBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbCustName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbCustName.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbCustName.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbCustName.Location = new System.Drawing.Point(106, 70);
+            this.tbCustName.Name = "tbCustName";
+            this.tbCustName.Size = new System.Drawing.Size(196, 29);
+            this.tbCustName.TabIndex = 90;
+            this.tbCustName.Tag = "";
+            this.tbCustName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label10
             // 
@@ -232,17 +234,17 @@
             this.label10.TabIndex = 89;
             this.label10.Text = "회사명";
             // 
-            // textBox2
+            // tbProdName
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox2.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.textBox2.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.textBox2.Location = new System.Drawing.Point(106, 105);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(196, 29);
-            this.textBox2.TabIndex = 92;
-            this.textBox2.Tag = "";
-            this.textBox2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbProdName.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbProdName.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbProdName.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbProdName.Location = new System.Drawing.Point(106, 105);
+            this.tbProdName.Name = "tbProdName";
+            this.tbProdName.Size = new System.Drawing.Size(196, 29);
+            this.tbProdName.TabIndex = 92;
+            this.tbProdName.Tag = "";
+            this.tbProdName.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label12
             // 
@@ -255,17 +257,17 @@
             this.label12.TabIndex = 91;
             this.label12.Text = "모델명";
             // 
-            // textBox3
+            // tbInspCount
             // 
-            this.textBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox3.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.textBox3.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.textBox3.Location = new System.Drawing.Point(383, 105);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(196, 29);
-            this.textBox3.TabIndex = 94;
-            this.textBox3.Tag = "";
-            this.textBox3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbInspCount.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbInspCount.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbInspCount.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbInspCount.Location = new System.Drawing.Point(383, 105);
+            this.tbInspCount.Name = "tbInspCount";
+            this.tbInspCount.Size = new System.Drawing.Size(196, 29);
+            this.tbInspCount.TabIndex = 94;
+            this.tbInspCount.Tag = "";
+            this.tbInspCount.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label13
             // 
@@ -278,17 +280,17 @@
             this.label13.TabIndex = 93;
             this.label13.Text = "검사수량";
             // 
-            // textBox4
+            // tbSonap
             // 
-            this.textBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox4.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.textBox4.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.textBox4.Location = new System.Drawing.Point(90, 205);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(59, 29);
-            this.textBox4.TabIndex = 96;
-            this.textBox4.Tag = "";
-            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbSonap.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbSonap.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbSonap.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbSonap.Location = new System.Drawing.Point(90, 205);
+            this.tbSonap.Name = "tbSonap";
+            this.tbSonap.Size = new System.Drawing.Size(59, 29);
+            this.tbSonap.TabIndex = 96;
+            this.tbSonap.Tag = "";
+            this.tbSonap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label3
             // 
@@ -301,17 +303,17 @@
             this.label3.TabIndex = 95;
             this.label3.Text = "소납";
             // 
-            // textBox5
+            // tbnengttaem
             // 
-            this.textBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox5.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.textBox5.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.textBox5.Location = new System.Drawing.Point(234, 205);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(59, 29);
-            this.textBox5.TabIndex = 98;
-            this.textBox5.Tag = "";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbnengttaem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbnengttaem.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbnengttaem.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbnengttaem.Location = new System.Drawing.Point(234, 205);
+            this.tbnengttaem.Name = "tbnengttaem";
+            this.tbnengttaem.Size = new System.Drawing.Size(59, 29);
+            this.tbnengttaem.TabIndex = 98;
+            this.tbnengttaem.Tag = "";
+            this.tbnengttaem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label4
             // 
@@ -324,17 +326,17 @@
             this.label4.TabIndex = 97;
             this.label4.Text = "냉땜";
             // 
-            // textBox6
+            // tbOverTurned
             // 
-            this.textBox6.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox6.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.textBox6.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.textBox6.Location = new System.Drawing.Point(521, 205);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(59, 29);
-            this.textBox6.TabIndex = 102;
-            this.textBox6.Tag = "";
-            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbOverTurned.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbOverTurned.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbOverTurned.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbOverTurned.Location = new System.Drawing.Point(521, 205);
+            this.tbOverTurned.Name = "tbOverTurned";
+            this.tbOverTurned.Size = new System.Drawing.Size(59, 29);
+            this.tbOverTurned.TabIndex = 102;
+            this.tbOverTurned.Tag = "";
+            this.tbOverTurned.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label5
             // 
@@ -347,17 +349,17 @@
             this.label5.TabIndex = 101;
             this.label5.Text = "뒤집힘";
             // 
-            // textBox7
+            // tbMiSap
             // 
-            this.textBox7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox7.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.textBox7.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.textBox7.Location = new System.Drawing.Point(367, 205);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(59, 29);
-            this.textBox7.TabIndex = 100;
-            this.textBox7.Tag = "";
-            this.textBox7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbMiSap.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbMiSap.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbMiSap.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbMiSap.Location = new System.Drawing.Point(367, 205);
+            this.tbMiSap.Name = "tbMiSap";
+            this.tbMiSap.Size = new System.Drawing.Size(59, 29);
+            this.tbMiSap.TabIndex = 100;
+            this.tbMiSap.Tag = "";
+            this.tbMiSap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label7
             // 
@@ -370,17 +372,17 @@
             this.label7.TabIndex = 99;
             this.label7.Text = "미삽";
             // 
-            // textBox8
+            // tbReverse
             // 
-            this.textBox8.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox8.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.textBox8.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.textBox8.Location = new System.Drawing.Point(521, 240);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(59, 29);
-            this.textBox8.TabIndex = 110;
-            this.textBox8.Tag = "";
-            this.textBox8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbReverse.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbReverse.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbReverse.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbReverse.Location = new System.Drawing.Point(521, 240);
+            this.tbReverse.Name = "tbReverse";
+            this.tbReverse.Size = new System.Drawing.Size(59, 29);
+            this.tbReverse.TabIndex = 110;
+            this.tbReverse.Tag = "";
+            this.tbReverse.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label8
             // 
@@ -393,17 +395,17 @@
             this.label8.TabIndex = 109;
             this.label8.Text = "역삽";
             // 
-            // textBox9
+            // tbShort
             // 
-            this.textBox9.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox9.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.textBox9.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.textBox9.Location = new System.Drawing.Point(367, 240);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(59, 29);
-            this.textBox9.TabIndex = 108;
-            this.textBox9.Tag = "";
-            this.textBox9.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbShort.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbShort.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbShort.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbShort.Location = new System.Drawing.Point(367, 240);
+            this.tbShort.Name = "tbShort";
+            this.tbShort.Size = new System.Drawing.Size(59, 29);
+            this.tbShort.TabIndex = 108;
+            this.tbShort.Tag = "";
+            this.tbShort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label9
             // 
@@ -416,17 +418,17 @@
             this.label9.TabIndex = 107;
             this.label9.Text = "쇼트";
             // 
-            // textBox10
+            // tbMiNap
             // 
-            this.textBox10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox10.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.textBox10.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.textBox10.Location = new System.Drawing.Point(234, 240);
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(59, 29);
-            this.textBox10.TabIndex = 106;
-            this.textBox10.Tag = "";
-            this.textBox10.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbMiNap.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbMiNap.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbMiNap.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbMiNap.Location = new System.Drawing.Point(234, 240);
+            this.tbMiNap.Name = "tbMiNap";
+            this.tbMiNap.Size = new System.Drawing.Size(59, 29);
+            this.tbMiNap.TabIndex = 106;
+            this.tbMiNap.Tag = "";
+            this.tbMiNap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label11
             // 
@@ -439,17 +441,17 @@
             this.label11.TabIndex = 105;
             this.label11.Text = "미납";
             // 
-            // textBox11
+            // tbLeadOpen
             // 
-            this.textBox11.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox11.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.textBox11.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.textBox11.Location = new System.Drawing.Point(90, 240);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(59, 29);
-            this.textBox11.TabIndex = 104;
-            this.textBox11.Tag = "";
-            this.textBox11.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbLeadOpen.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbLeadOpen.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbLeadOpen.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbLeadOpen.Location = new System.Drawing.Point(90, 240);
+            this.tbLeadOpen.Name = "tbLeadOpen";
+            this.tbLeadOpen.Size = new System.Drawing.Size(59, 29);
+            this.tbLeadOpen.TabIndex = 104;
+            this.tbLeadOpen.Tag = "";
+            this.tbLeadOpen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label14
             // 
@@ -462,17 +464,17 @@
             this.label14.TabIndex = 103;
             this.label14.Text = "리드뜸";
             // 
-            // textBox13
+            // tbEtcError
             // 
-            this.textBox13.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox13.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.textBox13.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.textBox13.Location = new System.Drawing.Point(367, 275);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(59, 29);
-            this.textBox13.TabIndex = 116;
-            this.textBox13.Tag = "";
-            this.textBox13.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbEtcError.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbEtcError.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbEtcError.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbEtcError.Location = new System.Drawing.Point(367, 275);
+            this.tbEtcError.Name = "tbEtcError";
+            this.tbEtcError.Size = new System.Drawing.Size(59, 29);
+            this.tbEtcError.TabIndex = 116;
+            this.tbEtcError.Tag = "";
+            this.tbEtcError.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label16
             // 
@@ -485,17 +487,17 @@
             this.label16.TabIndex = 115;
             this.label16.Text = "기타";
             // 
-            // textBox14
+            // tbTwisted
             // 
-            this.textBox14.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox14.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.textBox14.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.textBox14.Location = new System.Drawing.Point(234, 275);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(59, 29);
-            this.textBox14.TabIndex = 114;
-            this.textBox14.Tag = "";
-            this.textBox14.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbTwisted.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbTwisted.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbTwisted.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbTwisted.Location = new System.Drawing.Point(234, 275);
+            this.tbTwisted.Name = "tbTwisted";
+            this.tbTwisted.Size = new System.Drawing.Size(59, 29);
+            this.tbTwisted.TabIndex = 114;
+            this.tbTwisted.Tag = "";
+            this.tbTwisted.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label17
             // 
@@ -508,17 +510,17 @@
             this.label17.TabIndex = 113;
             this.label17.Text = "틀어짐";
             // 
-            // textBox15
+            // tbManhattan
             // 
-            this.textBox15.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.textBox15.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.textBox15.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.textBox15.Location = new System.Drawing.Point(90, 275);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(59, 29);
-            this.textBox15.TabIndex = 112;
-            this.textBox15.Tag = "";
-            this.textBox15.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbManhattan.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbManhattan.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbManhattan.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbManhattan.Location = new System.Drawing.Point(90, 275);
+            this.tbManhattan.Name = "tbManhattan";
+            this.tbManhattan.Size = new System.Drawing.Size(59, 29);
+            this.tbManhattan.TabIndex = 112;
+            this.tbManhattan.Tag = "";
+            this.tbManhattan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label18
             // 
@@ -536,51 +538,53 @@
             this.label15.AutoSize = true;
             this.label15.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label15.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label15.Location = new System.Drawing.Point(29, 325);
+            this.label15.Location = new System.Drawing.Point(29, 349);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(74, 21);
             this.label15.TabIndex = 117;
             this.label15.Text = "특이사항";
             // 
-            // richTextBox1
+            // rtbContents
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(114, 325);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(466, 96);
-            this.richTextBox1.TabIndex = 118;
-            this.richTextBox1.Text = "";
+            this.rtbContents.Location = new System.Drawing.Point(114, 349);
+            this.rtbContents.Name = "rtbContents";
+            this.rtbContents.Size = new System.Drawing.Size(466, 96);
+            this.rtbContents.TabIndex = 118;
+            this.rtbContents.Text = "";
             // 
-            // button1
+            // btnFile1
             // 
-            this.button1.Image = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(114, 443);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(108, 46);
-            this.button1.TabIndex = 119;
-            this.button1.Text = "파일1";
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnFile1.Image = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.btnFile1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFile1.Location = new System.Drawing.Point(114, 467);
+            this.btnFile1.Name = "btnFile1";
+            this.btnFile1.Size = new System.Drawing.Size(108, 46);
+            this.btnFile1.TabIndex = 119;
+            this.btnFile1.Text = "파일1";
+            this.btnFile1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFile1.UseVisualStyleBackColor = true;
+            this.btnFile1.Click += new System.EventHandler(this.btnFile1_Click);
             // 
-            // button2
+            // btnFile2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.Info;
-            this.button2.Image = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button2.Location = new System.Drawing.Point(114, 504);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(108, 46);
-            this.button2.TabIndex = 120;
-            this.button2.Text = "파일2";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnFile2.BackColor = System.Drawing.SystemColors.Info;
+            this.btnFile2.Image = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.btnFile2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnFile2.Location = new System.Drawing.Point(114, 528);
+            this.btnFile2.Name = "btnFile2";
+            this.btnFile2.Size = new System.Drawing.Size(108, 46);
+            this.btnFile2.TabIndex = 120;
+            this.btnFile2.Text = "파일2";
+            this.btnFile2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnFile2.UseVisualStyleBackColor = false;
+            this.btnFile2.Click += new System.EventHandler(this.btnFile2_Click);
             // 
             // lbFname1
             // 
             this.lbFname1.AutoSize = true;
             this.lbFname1.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbFname1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbFname1.Location = new System.Drawing.Point(228, 456);
+            this.lbFname1.Location = new System.Drawing.Point(228, 480);
             this.lbFname1.Name = "lbFname1";
             this.lbFname1.Size = new System.Drawing.Size(39, 21);
             this.lbFname1.TabIndex = 121;
@@ -591,11 +595,34 @@
             this.lbFname2.AutoSize = true;
             this.lbFname2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbFname2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbFname2.Location = new System.Drawing.Point(228, 517);
+            this.lbFname2.Location = new System.Drawing.Point(228, 541);
             this.lbFname2.Name = "lbFname2";
             this.lbFname2.Size = new System.Drawing.Size(39, 21);
             this.lbFname2.TabIndex = 122;
             this.lbFname2.Text = "File:";
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label19.Location = new System.Drawing.Point(26, 318);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(90, 21);
+            this.label19.TabIndex = 123;
+            this.label19.Text = "총불량수량";
+            // 
+            // tbTotalDefect
+            // 
+            this.tbTotalDefect.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbTotalDefect.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.tbTotalDefect.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbTotalDefect.Location = new System.Drawing.Point(122, 314);
+            this.tbTotalDefect.Name = "tbTotalDefect";
+            this.tbTotalDefect.Size = new System.Drawing.Size(149, 29);
+            this.tbTotalDefect.TabIndex = 124;
+            this.tbTotalDefect.Tag = "";
+            this.tbTotalDefect.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // P1C02_PROD_RESULT_AOI
             // 
@@ -603,39 +630,41 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(629, 639);
+            this.Controls.Add(this.tbTotalDefect);
+            this.Controls.Add(this.label19);
             this.Controls.Add(this.lbFname2);
             this.Controls.Add(this.lbFname1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.richTextBox1);
+            this.Controls.Add(this.btnFile2);
+            this.Controls.Add(this.btnFile1);
+            this.Controls.Add(this.rtbContents);
             this.Controls.Add(this.label15);
-            this.Controls.Add(this.textBox13);
+            this.Controls.Add(this.tbEtcError);
             this.Controls.Add(this.label16);
-            this.Controls.Add(this.textBox14);
+            this.Controls.Add(this.tbTwisted);
             this.Controls.Add(this.label17);
-            this.Controls.Add(this.textBox15);
+            this.Controls.Add(this.tbManhattan);
             this.Controls.Add(this.label18);
-            this.Controls.Add(this.textBox8);
+            this.Controls.Add(this.tbReverse);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.tbShort);
             this.Controls.Add(this.label9);
-            this.Controls.Add(this.textBox10);
+            this.Controls.Add(this.tbMiNap);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox11);
+            this.Controls.Add(this.tbLeadOpen);
             this.Controls.Add(this.label14);
-            this.Controls.Add(this.textBox6);
+            this.Controls.Add(this.tbOverTurned);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.textBox7);
+            this.Controls.Add(this.tbMiSap);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox5);
+            this.Controls.Add(this.tbnengttaem);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.tbSonap);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.tbInspCount);
             this.Controls.Add(this.label13);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tbProdName);
             this.Controls.Add(this.label12);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tbCustName);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.tbJobTimeFinish);
             this.Controls.Add(this.tbJobTimeStart);
@@ -675,39 +704,41 @@
         public System.Windows.Forms.ComboBox cbMan;
         public System.Windows.Forms.TextBox tbJobTimeStart;
         public System.Windows.Forms.TextBox tbJobTimeFinish;
-        public System.Windows.Forms.TextBox textBox1;
+        public System.Windows.Forms.TextBox tbCustName;
         private System.Windows.Forms.Label label10;
-        public System.Windows.Forms.TextBox textBox2;
+        public System.Windows.Forms.TextBox tbProdName;
         private System.Windows.Forms.Label label12;
-        public System.Windows.Forms.TextBox textBox3;
+        public System.Windows.Forms.TextBox tbInspCount;
         private System.Windows.Forms.Label label13;
-        public System.Windows.Forms.TextBox textBox4;
+        public System.Windows.Forms.TextBox tbSonap;
         private System.Windows.Forms.Label label3;
-        public System.Windows.Forms.TextBox textBox5;
+        public System.Windows.Forms.TextBox tbnengttaem;
         private System.Windows.Forms.Label label4;
-        public System.Windows.Forms.TextBox textBox6;
+        public System.Windows.Forms.TextBox tbOverTurned;
         private System.Windows.Forms.Label label5;
-        public System.Windows.Forms.TextBox textBox7;
+        public System.Windows.Forms.TextBox tbMiSap;
         private System.Windows.Forms.Label label7;
-        public System.Windows.Forms.TextBox textBox8;
+        public System.Windows.Forms.TextBox tbReverse;
         private System.Windows.Forms.Label label8;
-        public System.Windows.Forms.TextBox textBox9;
+        public System.Windows.Forms.TextBox tbShort;
         private System.Windows.Forms.Label label9;
-        public System.Windows.Forms.TextBox textBox10;
+        public System.Windows.Forms.TextBox tbMiNap;
         private System.Windows.Forms.Label label11;
-        public System.Windows.Forms.TextBox textBox11;
+        public System.Windows.Forms.TextBox tbLeadOpen;
         private System.Windows.Forms.Label label14;
-        public System.Windows.Forms.TextBox textBox13;
+        public System.Windows.Forms.TextBox tbEtcError;
         private System.Windows.Forms.Label label16;
-        public System.Windows.Forms.TextBox textBox14;
+        public System.Windows.Forms.TextBox tbTwisted;
         private System.Windows.Forms.Label label17;
-        public System.Windows.Forms.TextBox textBox15;
+        public System.Windows.Forms.TextBox tbManhattan;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.RichTextBox richTextBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.RichTextBox rtbContents;
+        private System.Windows.Forms.Button btnFile1;
+        private System.Windows.Forms.Button btnFile2;
         private System.Windows.Forms.Label lbFname1;
         private System.Windows.Forms.Label lbFname2;
+        private System.Windows.Forms.Label label19;
+        public System.Windows.Forms.TextBox tbTotalDefect;
     }
 }
