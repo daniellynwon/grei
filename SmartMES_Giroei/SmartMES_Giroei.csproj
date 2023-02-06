@@ -33,7 +33,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>82</ApplicationRevision>
+    <ApplicationRevision>83</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -344,6 +344,12 @@
     </Compile>
     <Compile Include="P1A\P1A06_BOM.designer.cs">
       <DependentUpon>P1A06_BOM.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1A\P1A06_BOM_Excel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1A\P1A06_BOM_Excel.Designer.cs">
+      <DependentUpon>P1A06_BOM_Excel.cs</DependentUpon>
     </Compile>
     <Compile Include="P1A\P1A06_BOM_SUB.cs">
       <SubType>Form</SubType>
@@ -1427,6 +1433,7 @@
     <EmbeddedResource Include="Font\LibreBarcode39ExtendedText-Regular.ttf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </EmbeddedResource>
+    <None Include="Giroel%28BOM%29.xlsx" />
     <None Include="Jschemical_mesDataSet.xsc">
       <DependentUpon>Jschemical_mesDataSet.xsd</DependentUpon>
     </None>
