@@ -424,22 +424,23 @@ namespace SmartMES_Giroei
             string sContents = string.Empty; string sKind = string.Empty; /*(P,M,S)*/ string sProdKind = string.Empty; /*품목분류 */
             string sConsign = "N"; /*사급도급*/ string sSeq = string.Empty;
 
+            string sFileName = string.Empty;
+            OpenFileDialog ofg = new OpenFileDialog();
+
+            ofg.Filter = "Excel File 97~2013(*.xls)| *.xls| *.xlsx|*.xlsx| All Files(*.*)|*.*";
+
+            if (ofg.ShowDialog() == DialogResult.OK)
+            {
+                sFileName = ofg.FileName;
+                //MessageBox.Show("sFileName : " + sFileName);
+            }
+            else       // 1/3/23 취소 경우 
+            {
+                return;
+            }
+
             try
             {
-                string sFileName = string.Empty;
-                OpenFileDialog ofg = new OpenFileDialog();
-
-                ofg.Filter = "Excel File 97~2013(*.xls)| *.xls| *.xlsx|*.xlsx| All Files(*.*)|*.*";
-
-                if (ofg.ShowDialog() == DialogResult.OK)
-                {
-                    sFileName = ofg.FileName;
-                    //MessageBox.Show("sFileName : " + sFileName);
-                }
-                else if (ofg.ShowDialog() == DialogResult.No)       // 1/3/23 취소 경우 
-                {
-                    return;
-                }
 
                 excelApp = new Excel.Application(); // 엑셀 어플리케이션 생성 
 
@@ -557,7 +558,7 @@ namespace SmartMES_Giroei
             }
             catch (Exception e2)
             {
-                MessageBox.Show("WHY : " + e2.Message);
+                return;
             }
             finally
             {
@@ -600,20 +601,31 @@ namespace SmartMES_Giroei
             return m.dbRonlyOne(sql, ref msg).ToString();
         }
         #endregion
-
-        //private string GetResourceFileName() 
-        //{
-        //    // My Project Resource에 있는 파일의 Full Path를 가져오는 코드 
-        //    String strAppPath = Path.GetDirectoryName(System.Diagnostics.Process.GetCurrentProcess().MainModule.FileName);
-        //    String strFilePath = Path.Combine(strAppPath, "Resources");
-        //    String strFullFilename = Path.Combine(strFilePath, "지로이아이액셀다운로드테스트.xlsx");
-
-        //    return strFullFilename == "" ? "" : strFullFilename;
-        //}
         private void btnExcelbasic_Click(object sender, EventArgs e)
         {
-            P1A06_BOM_Excel newform2 = new P1A06_BOM_Excel();//폼2를 사용할 수 있도록
-            newform2.ShowDialog();//폼2를 호출 후엔 창을 닫기 전까지 폼1을 제어할 수 없음
+            SaveFileDialog saveFileDialog1 = new SaveFileDialog();
+
+            string srcFile = @"Giroel(BOM).xlsx";
+            string destFile = string.Empty;
+
+            saveFileDialog1.FileName = "Giroel_BOM" + ".xlsx"; //초기 파일명을 지정할 때 사용
+            saveFileDialog1.InitialDirectory = @"C:";
+            saveFileDialog1.Title = "Excel 서식 저장";
+            saveFileDialog1.DefaultExt = "xls";
+            saveFileDialog1.Filter = "Xlsx files(*.xlsx)|*.xlsx";
+
+            if (saveFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                destFile = saveFileDialog1.FileName;
+            }
+            else
+            {
+                return;
+            }
+            saveFileDialog1.Dispose();
+            File.Copy(srcFile, destFile, true);
+
+            MessageBox.Show("설정하신 경로로 BOM 엑셀 파일이 저장 되었습니다.");
         }
 
         private void dataGridView_ExportToExcel(string fileName, DataGridView dgv) 

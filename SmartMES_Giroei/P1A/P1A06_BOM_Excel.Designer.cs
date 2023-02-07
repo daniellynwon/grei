@@ -29,21 +29,10 @@ namespace SmartMES_Giroei
         /// </summary>
         private void InitializeComponent()
         {
-            this.btnSave = new System.Windows.Forms.Button();
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.btnDown = new System.Windows.Forms.Button();
             this.tbFname = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // btnSave
-            // 
-            this.btnSave.Location = new System.Drawing.Point(404, 52);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(95, 27);
-            this.btnSave.TabIndex = 6;
-            this.btnSave.Text = "저장";
-            this.btnSave.UseVisualStyleBackColor = true;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnDown
             // 
@@ -66,8 +55,7 @@ namespace SmartMES_Giroei
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(509, 90);
-            this.Controls.Add(this.btnSave);
+            this.ClientSize = new System.Drawing.Size(509, 46);
             this.Controls.Add(this.btnDown);
             this.Controls.Add(this.tbFname);
             this.Name = "P1A06_BOM_Excel";
@@ -79,9 +67,8 @@ namespace SmartMES_Giroei
         }
 
         #endregion
-        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
-        private System.Windows.Forms.Button btnDown;
-        private System.Windows.Forms.TextBox tbFname;
+        public System.Windows.Forms.Button btnDown;
+        public System.Windows.Forms.TextBox tbFname;
     }
 }

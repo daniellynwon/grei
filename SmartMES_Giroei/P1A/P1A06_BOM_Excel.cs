@@ -32,8 +32,11 @@ namespace SmartMES_Giroei
             {
                 tbFname.Text = saveFileDialog1.FileName;
             }
-
             saveFileDialog1.Dispose();
+            File.Copy(srcFile, tbFname.Text, true);
+
+            MessageBox.Show("설정하신 경로로 BOM 엑셀 파일이 저장 되었습니다.");
+            Close();         
         }
 
         private void P1A06_BOM_Excel_Load(object sender, EventArgs e)
@@ -41,13 +44,13 @@ namespace SmartMES_Giroei
 
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            File.Copy(srcFile, tbFname.Text, true);
+        //private void btnSave_Click(object sender, EventArgs e)
+        //{
+        //    File.Copy(srcFile, tbFname.Text, true);
 
-            MessageBox.Show("설정하신 경로로 BOM 엑셀 파일이 저장 되었습니다.");
-            Close();
-        }
+        //    MessageBox.Show("설정하신 경로로 BOM 엑셀 파일이 저장 되었습니다.");
+        //    Close();
+        //}
 
         private void lblNotice_Click(object sender, EventArgs e)
         {

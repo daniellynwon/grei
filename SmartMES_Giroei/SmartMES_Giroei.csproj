@@ -33,7 +33,7 @@
     <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
     <WebPage>publish.htm</WebPage>
     <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
-    <ApplicationRevision>88</ApplicationRevision>
+    <ApplicationRevision>91</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <CreateDesktopShortcut>true</CreateDesktopShortcut>
@@ -1072,6 +1072,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P1A\P1A06_BOM.resx">
       <DependentUpon>P1A06_BOM.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1A\P1A06_BOM_Excel.resx">
+      <DependentUpon>P1A06_BOM_Excel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P1A\P1A06_BOM_SUB.resx">
       <DependentUpon>P1A06_BOM_SUB.cs</DependentUpon>
