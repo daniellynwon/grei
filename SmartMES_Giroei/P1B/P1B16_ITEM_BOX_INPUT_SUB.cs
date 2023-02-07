@@ -76,7 +76,7 @@ namespace SmartMES_Giroei
             MariaCRUD m = new MariaCRUD();
 
             sCount = "";
-            sSubID = "";  
+            sSubID = "";
 
             if (G.Authority == "D") return;
             if (e.RowIndex < 0) return;
@@ -84,7 +84,7 @@ namespace SmartMES_Giroei
             string surfixA, surfixB, surfixC;
             if (e.ColumnIndex != 9 && e.ColumnIndex != 14 && e.ColumnIndex != 15 && e.ColumnIndex != 16) return;
 
-            if (e.ColumnIndex == 9 )     // 버튼 - 미삽이 "O" 이면 
+            if (e.ColumnIndex == 9)     // 버튼 - 미삽이 "O" 이면 
             {
                 if (dataGridView1.Rows[e.RowIndex].Cells[16].Value.ToString() == "O")
                 {
@@ -108,8 +108,8 @@ namespace SmartMES_Giroei
                 }
 
                 string barcode = dataGridView1.Rows[e.RowIndex].Cells[18].Value.ToString();
-                surfixA = barcode.Split('-')[0];  surfixB = barcode.Split('-')[1];  surfixC = barcode.Split('-')[2]; 
-                
+                surfixA = barcode.Split('-')[0]; surfixB = barcode.Split('-')[1]; surfixC = barcode.Split('-')[2];
+
                 if (dataGridView1.Rows[e.RowIndex].Cells[14].Value.ToString() == "O")   // 사급
                 {
                     sub.sBarcode = surfixA + "-" + surfixB;
@@ -124,11 +124,10 @@ namespace SmartMES_Giroei
                 sub.ShowDialog();
             }
             else                  // 사급 14, 수삽 15, 미삽 16
-            {   
-                for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
                 {
                     dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = (dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == "O") ? "X" : "O";
-                    string sMiSap = dataGridView1.Rows[i].Cells[16].Value.ToString(); //미삽
+                    string sMiSap = dataGridView1.Rows[e.RowIndex].Cells[16].Value.ToString(); //미삽
                     if (sMiSap == "O")
                     {
                         sMiSap = "Y";
@@ -137,7 +136,7 @@ namespace SmartMES_Giroei
                     {
                         sMiSap = "N";
                     }
-                        sql = "update BOM_bomlist set IsMiSap = '" + sMiSap + "' where parent_id = '" + dataGridView1.Rows[i].Cells[6].Value.ToString() + "'"; //미삽 상태 변경 시 BOMLIST 즉시 업데이트
+                    sql = "update BOM_bomlist set IsMiSap = '" + sMiSap + "' where parent_id = '" + dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString() + "'"; //미삽 상태 변경 시 BOMLIST 즉시 업데이트
                     lblMsg.Text = "미삽의 상태가 변경되었습니다."; //미삽 상태 변경 시 좌측 상단 출력문구
                     m.dbCUD(sql, ref msg);
                     if (msg != "OK")
