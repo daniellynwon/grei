@@ -65,7 +65,6 @@
             this.lbSMDPins = new System.Windows.Forms.Label();
             this.btnClose = new SmartMES_Giroei.UserButtonA();
             this.btnSave = new SmartMES_Giroei.UserButtonA();
-            this.btnSelect = new System.Windows.Forms.Button();
             this.panTitle.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -498,23 +497,12 @@
             this.btnSave.TabIndex = 12;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
-            // btnSelect
-            // 
-            this.btnSelect.Location = new System.Drawing.Point(774, 117);
-            this.btnSelect.Name = "btnSelect";
-            this.btnSelect.Size = new System.Drawing.Size(155, 42);
-            this.btnSelect.TabIndex = 51;
-            this.btnSelect.Text = "btnSelect";
-            this.btnSelect.UseVisualStyleBackColor = true;
-            this.btnSelect.Click += new System.EventHandler(this.btnSelect_Click);
-            // 
             // P1A02_PRODUCT_SUB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(1194, 594);
-            this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.tbQty4Array);
             this.Controls.Add(this.tbMetalMasks);
             this.Controls.Add(this.tbMountPins);
@@ -606,6 +594,5 @@
         private System.Windows.Forms.TextBox tbLayers;
         private System.Windows.Forms.Label lbMetalMasks;
         private System.Windows.Forms.Label lbSMDPins;
-        private System.Windows.Forms.Button btnSelect;
     }
 }
