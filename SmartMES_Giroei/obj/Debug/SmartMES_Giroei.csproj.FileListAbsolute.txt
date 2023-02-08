@@ -1175,3 +1175,5 @@ C:\Project\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES
 E:\worksapce\INNOBE\SmartMES_Geroei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.g.resources
 C:\Project\(유지보수)지로이아이\grei\SmartMES_Giroei\bin\Debug\Giroel(BOM).xlsx
 C:\Project\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1A06_BOM_Excel.resources
+C:\Project\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1C02_PROD_RESULT_AOI_DOC.resources
+C:\Project\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1C11_AOI_CHART.resources

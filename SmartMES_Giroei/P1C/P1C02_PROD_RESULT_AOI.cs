@@ -220,7 +220,8 @@ namespace SmartMES_Giroei
 
         private void btnFile1_Click(object sender, EventArgs e)
         {
-
+            P1C02_PROD_RESULT_AOI_DOC newdoc = new P1C02_PROD_RESULT_AOI_DOC();
+            newdoc.ShowDialog();
         }
 
         private void btnFile2_Click(object sender, EventArgs e)

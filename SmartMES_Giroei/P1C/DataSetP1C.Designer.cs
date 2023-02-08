@@ -76,6 +76,8 @@ namespace SmartMES_Giroei.P1C {
         
         private SP_Job_CommentDataTable tableSP_Job_Comment;
         
+        private SP_Aoi_ChartDataTable tableSP_Aoi_Chart;
+        
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -181,6 +183,9 @@ namespace SmartMES_Giroei.P1C {
                 }
                 if ((ds.Tables["SP_Job_Comment"] != null)) {
                     base.Tables.Add(new SP_Job_CommentDataTable(ds.Tables["SP_Job_Comment"]));
+                }
+                if ((ds.Tables["SP_Aoi_Chart"] != null)) {
+                    base.Tables.Add(new SP_Aoi_ChartDataTable(ds.Tables["SP_Aoi_Chart"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -462,6 +467,16 @@ namespace SmartMES_Giroei.P1C {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public SP_Aoi_ChartDataTable SP_Aoi_Chart {
+            get {
+                return this.tableSP_Aoi_Chart;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -604,6 +619,9 @@ namespace SmartMES_Giroei.P1C {
                 }
                 if ((ds.Tables["SP_Job_Comment"] != null)) {
                     base.Tables.Add(new SP_Job_CommentDataTable(ds.Tables["SP_Job_Comment"]));
+                }
+                if ((ds.Tables["SP_Aoi_Chart"] != null)) {
+                    base.Tables.Add(new SP_Aoi_ChartDataTable(ds.Tables["SP_Aoi_Chart"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -794,6 +812,12 @@ namespace SmartMES_Giroei.P1C {
                     this.tableSP_Job_Comment.InitVars();
                 }
             }
+            this.tableSP_Aoi_Chart = ((SP_Aoi_ChartDataTable)(base.Tables["SP_Aoi_Chart"]));
+            if ((initTable == true)) {
+                if ((this.tableSP_Aoi_Chart != null)) {
+                    this.tableSP_Aoi_Chart.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -856,6 +880,8 @@ namespace SmartMES_Giroei.P1C {
             base.Tables.Add(this.tableSP_ProdResult_Query1);
             this.tableSP_Job_Comment = new SP_Job_CommentDataTable();
             base.Tables.Add(this.tableSP_Job_Comment);
+            this.tableSP_Aoi_Chart = new SP_Aoi_ChartDataTable();
+            base.Tables.Add(this.tableSP_Aoi_Chart);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1016,6 +1042,12 @@ namespace SmartMES_Giroei.P1C {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeSP_Aoi_Chart() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -1146,6 +1178,9 @@ namespace SmartMES_Giroei.P1C {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void SP_Job_CommentRowChangeEventHandler(object sender, SP_Job_CommentRowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void SP_Aoi_ChartRowChangeEventHandler(object sender, SP_Aoi_ChartRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -12586,6 +12621,571 @@ namespace SmartMES_Giroei.P1C {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class SP_Aoi_ChartDataTable : global::System.Data.TypedTableBase<SP_Aoi_ChartRow> {
+            
+            private global::System.Data.DataColumn column검사기록ID;
+            
+            private global::System.Data.DataColumn column작지번호;
+            
+            private global::System.Data.DataColumn column검사시작시간;
+            
+            private global::System.Data.DataColumn column검사종료시간;
+            
+            private global::System.Data.DataColumn column검사수량;
+            
+            private global::System.Data.DataColumn column총불량수량;
+            
+            private global::System.Data.DataColumn column소납;
+            
+            private global::System.Data.DataColumn column냉땜;
+            
+            private global::System.Data.DataColumn column미삽;
+            
+            private global::System.Data.DataColumn column뒤집힘;
+            
+            private global::System.Data.DataColumn column리드뜸;
+            
+            private global::System.Data.DataColumn column미삽1;
+            
+            private global::System.Data.DataColumn column쇼트;
+            
+            private global::System.Data.DataColumn column역삽;
+            
+            private global::System.Data.DataColumn column맨하탄;
+            
+            private global::System.Data.DataColumn column틀어짐;
+            
+            private global::System.Data.DataColumn column기타;
+            
+            private global::System.Data.DataColumn column비고;
+            
+            private global::System.Data.DataColumn column등록자;
+            
+            private global::System.Data.DataColumn column등록일자;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_Aoi_ChartDataTable() {
+                this.TableName = "SP_Aoi_Chart";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal SP_Aoi_ChartDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected SP_Aoi_ChartDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 검사기록IDColumn {
+                get {
+                    return this.column검사기록ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 작지번호Column {
+                get {
+                    return this.column작지번호;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 검사시작시간Column {
+                get {
+                    return this.column검사시작시간;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 검사종료시간Column {
+                get {
+                    return this.column검사종료시간;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 검사수량Column {
+                get {
+                    return this.column검사수량;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 총불량수량Column {
+                get {
+                    return this.column총불량수량;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 소납Column {
+                get {
+                    return this.column소납;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 냉땜Column {
+                get {
+                    return this.column냉땜;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 미삽Column {
+                get {
+                    return this.column미삽;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 뒤집힘Column {
+                get {
+                    return this.column뒤집힘;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 리드뜸Column {
+                get {
+                    return this.column리드뜸;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 미삽1Column {
+                get {
+                    return this.column미삽1;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 쇼트Column {
+                get {
+                    return this.column쇼트;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 역삽Column {
+                get {
+                    return this.column역삽;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 맨하탄Column {
+                get {
+                    return this.column맨하탄;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 틀어짐Column {
+                get {
+                    return this.column틀어짐;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 기타Column {
+                get {
+                    return this.column기타;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 비고Column {
+                get {
+                    return this.column비고;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 등록자Column {
+                get {
+                    return this.column등록자;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 등록일자Column {
+                get {
+                    return this.column등록일자;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_Aoi_ChartRow this[int index] {
+                get {
+                    return ((SP_Aoi_ChartRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_Aoi_ChartRowChangeEventHandler SP_Aoi_ChartRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_Aoi_ChartRowChangeEventHandler SP_Aoi_ChartRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_Aoi_ChartRowChangeEventHandler SP_Aoi_ChartRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_Aoi_ChartRowChangeEventHandler SP_Aoi_ChartRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddSP_Aoi_ChartRow(SP_Aoi_ChartRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_Aoi_ChartRow AddSP_Aoi_ChartRow(
+                        string 작지번호, 
+                        System.DateTime 검사시작시간, 
+                        System.DateTime 검사종료시간, 
+                        int 검사수량, 
+                        int 총불량수량, 
+                        int 소납, 
+                        int 냉땜, 
+                        int 미삽, 
+                        int 뒤집힘, 
+                        int 리드뜸, 
+                        int 미삽1, 
+                        int 쇼트, 
+                        int 역삽, 
+                        int 맨하탄, 
+                        int 틀어짐, 
+                        int 기타, 
+                        string 비고, 
+                        string 등록자, 
+                        System.DateTime 등록일자) {
+                SP_Aoi_ChartRow rowSP_Aoi_ChartRow = ((SP_Aoi_ChartRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        null,
+                        작지번호,
+                        검사시작시간,
+                        검사종료시간,
+                        검사수량,
+                        총불량수량,
+                        소납,
+                        냉땜,
+                        미삽,
+                        뒤집힘,
+                        리드뜸,
+                        미삽1,
+                        쇼트,
+                        역삽,
+                        맨하탄,
+                        틀어짐,
+                        기타,
+                        비고,
+                        등록자,
+                        등록일자};
+                rowSP_Aoi_ChartRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSP_Aoi_ChartRow);
+                return rowSP_Aoi_ChartRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_Aoi_ChartRow FindBy검사기록ID(long 검사기록ID) {
+                return ((SP_Aoi_ChartRow)(this.Rows.Find(new object[] {
+                            검사기록ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                SP_Aoi_ChartDataTable cln = ((SP_Aoi_ChartDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new SP_Aoi_ChartDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.column검사기록ID = base.Columns["검사기록ID"];
+                this.column작지번호 = base.Columns["작지번호"];
+                this.column검사시작시간 = base.Columns["검사시작시간"];
+                this.column검사종료시간 = base.Columns["검사종료시간"];
+                this.column검사수량 = base.Columns["검사수량"];
+                this.column총불량수량 = base.Columns["총불량수량"];
+                this.column소납 = base.Columns["소납"];
+                this.column냉땜 = base.Columns["냉땜"];
+                this.column미삽 = base.Columns["미삽"];
+                this.column뒤집힘 = base.Columns["뒤집힘"];
+                this.column리드뜸 = base.Columns["리드뜸"];
+                this.column미삽1 = base.Columns["미삽1"];
+                this.column쇼트 = base.Columns["쇼트"];
+                this.column역삽 = base.Columns["역삽"];
+                this.column맨하탄 = base.Columns["맨하탄"];
+                this.column틀어짐 = base.Columns["틀어짐"];
+                this.column기타 = base.Columns["기타"];
+                this.column비고 = base.Columns["비고"];
+                this.column등록자 = base.Columns["등록자"];
+                this.column등록일자 = base.Columns["등록일자"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.column검사기록ID = new global::System.Data.DataColumn("검사기록ID", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column검사기록ID);
+                this.column작지번호 = new global::System.Data.DataColumn("작지번호", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column작지번호);
+                this.column검사시작시간 = new global::System.Data.DataColumn("검사시작시간", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column검사시작시간);
+                this.column검사종료시간 = new global::System.Data.DataColumn("검사종료시간", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column검사종료시간);
+                this.column검사수량 = new global::System.Data.DataColumn("검사수량", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column검사수량);
+                this.column총불량수량 = new global::System.Data.DataColumn("총불량수량", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column총불량수량);
+                this.column소납 = new global::System.Data.DataColumn("소납", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column소납);
+                this.column냉땜 = new global::System.Data.DataColumn("냉땜", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column냉땜);
+                this.column미삽 = new global::System.Data.DataColumn("미삽", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column미삽);
+                this.column뒤집힘 = new global::System.Data.DataColumn("뒤집힘", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column뒤집힘);
+                this.column리드뜸 = new global::System.Data.DataColumn("리드뜸", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column리드뜸);
+                this.column미삽1 = new global::System.Data.DataColumn("미삽1", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column미삽1);
+                this.column쇼트 = new global::System.Data.DataColumn("쇼트", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column쇼트);
+                this.column역삽 = new global::System.Data.DataColumn("역삽", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column역삽);
+                this.column맨하탄 = new global::System.Data.DataColumn("맨하탄", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column맨하탄);
+                this.column틀어짐 = new global::System.Data.DataColumn("틀어짐", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column틀어짐);
+                this.column기타 = new global::System.Data.DataColumn("기타", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column기타);
+                this.column비고 = new global::System.Data.DataColumn("비고", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column비고);
+                this.column등록자 = new global::System.Data.DataColumn("등록자", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column등록자);
+                this.column등록일자 = new global::System.Data.DataColumn("등록일자", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column등록일자);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.column검사기록ID}, true));
+                this.column검사기록ID.AutoIncrement = true;
+                this.column검사기록ID.AutoIncrementSeed = -1;
+                this.column검사기록ID.AutoIncrementStep = -1;
+                this.column검사기록ID.AllowDBNull = false;
+                this.column검사기록ID.Unique = true;
+                this.column작지번호.AllowDBNull = false;
+                this.column작지번호.MaxLength = 13;
+                this.column검사시작시간.AllowDBNull = false;
+                this.column검사수량.AllowDBNull = false;
+                this.column총불량수량.AllowDBNull = false;
+                this.column소납.AllowDBNull = false;
+                this.column냉땜.AllowDBNull = false;
+                this.column미삽.AllowDBNull = false;
+                this.column뒤집힘.AllowDBNull = false;
+                this.column리드뜸.AllowDBNull = false;
+                this.column미삽1.AllowDBNull = false;
+                this.column쇼트.AllowDBNull = false;
+                this.column역삽.AllowDBNull = false;
+                this.column맨하탄.AllowDBNull = false;
+                this.column틀어짐.AllowDBNull = false;
+                this.column기타.AllowDBNull = false;
+                this.column비고.MaxLength = 1000;
+                this.column등록자.MaxLength = 10;
+                this.column등록일자.AllowDBNull = false;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_Aoi_ChartRow NewSP_Aoi_ChartRow() {
+                return ((SP_Aoi_ChartRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new SP_Aoi_ChartRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(SP_Aoi_ChartRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.SP_Aoi_ChartRowChanged != null)) {
+                    this.SP_Aoi_ChartRowChanged(this, new SP_Aoi_ChartRowChangeEvent(((SP_Aoi_ChartRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.SP_Aoi_ChartRowChanging != null)) {
+                    this.SP_Aoi_ChartRowChanging(this, new SP_Aoi_ChartRowChangeEvent(((SP_Aoi_ChartRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.SP_Aoi_ChartRowDeleted != null)) {
+                    this.SP_Aoi_ChartRowDeleted(this, new SP_Aoi_ChartRowChangeEvent(((SP_Aoi_ChartRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.SP_Aoi_ChartRowDeleting != null)) {
+                    this.SP_Aoi_ChartRowDeleting(this, new SP_Aoi_ChartRowChangeEvent(((SP_Aoi_ChartRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveSP_Aoi_ChartRow(SP_Aoi_ChartRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetP1C ds = new DataSetP1C();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "SP_Aoi_ChartDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class SP_Z_Common_IDRow : global::System.Data.DataRow {
@@ -20952,6 +21552,292 @@ namespace SmartMES_Giroei.P1C {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class SP_Aoi_ChartRow : global::System.Data.DataRow {
+            
+            private SP_Aoi_ChartDataTable tableSP_Aoi_Chart;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal SP_Aoi_ChartRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSP_Aoi_Chart = ((SP_Aoi_ChartDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long 검사기록ID {
+                get {
+                    return ((long)(this[this.tableSP_Aoi_Chart.검사기록IDColumn]));
+                }
+                set {
+                    this[this.tableSP_Aoi_Chart.검사기록IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 작지번호 {
+                get {
+                    return ((string)(this[this.tableSP_Aoi_Chart.작지번호Column]));
+                }
+                set {
+                    this[this.tableSP_Aoi_Chart.작지번호Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime 검사시작시간 {
+                get {
+                    return ((global::System.DateTime)(this[this.tableSP_Aoi_Chart.검사시작시간Column]));
+                }
+                set {
+                    this[this.tableSP_Aoi_Chart.검사시작시간Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime 검사종료시간 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_Aoi_Chart.검사종료시간Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_Aoi_Chart\' 테이블의 \'검사종료시간\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Aoi_Chart.검사종료시간Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 검사수량 {
+                get {
+                    return ((int)(this[this.tableSP_Aoi_Chart.검사수량Column]));
+                }
+                set {
+                    this[this.tableSP_Aoi_Chart.검사수량Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 총불량수량 {
+                get {
+                    return ((int)(this[this.tableSP_Aoi_Chart.총불량수량Column]));
+                }
+                set {
+                    this[this.tableSP_Aoi_Chart.총불량수량Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 소납 {
+                get {
+                    return ((int)(this[this.tableSP_Aoi_Chart.소납Column]));
+                }
+                set {
+                    this[this.tableSP_Aoi_Chart.소납Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 냉땜 {
+                get {
+                    return ((int)(this[this.tableSP_Aoi_Chart.냉땜Column]));
+                }
+                set {
+                    this[this.tableSP_Aoi_Chart.냉땜Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 미삽 {
+                get {
+                    return ((int)(this[this.tableSP_Aoi_Chart.미삽Column]));
+                }
+                set {
+                    this[this.tableSP_Aoi_Chart.미삽Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 뒤집힘 {
+                get {
+                    return ((int)(this[this.tableSP_Aoi_Chart.뒤집힘Column]));
+                }
+                set {
+                    this[this.tableSP_Aoi_Chart.뒤집힘Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 리드뜸 {
+                get {
+                    return ((int)(this[this.tableSP_Aoi_Chart.리드뜸Column]));
+                }
+                set {
+                    this[this.tableSP_Aoi_Chart.리드뜸Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 미삽1 {
+                get {
+                    return ((int)(this[this.tableSP_Aoi_Chart.미삽1Column]));
+                }
+                set {
+                    this[this.tableSP_Aoi_Chart.미삽1Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 쇼트 {
+                get {
+                    return ((int)(this[this.tableSP_Aoi_Chart.쇼트Column]));
+                }
+                set {
+                    this[this.tableSP_Aoi_Chart.쇼트Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 역삽 {
+                get {
+                    return ((int)(this[this.tableSP_Aoi_Chart.역삽Column]));
+                }
+                set {
+                    this[this.tableSP_Aoi_Chart.역삽Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 맨하탄 {
+                get {
+                    return ((int)(this[this.tableSP_Aoi_Chart.맨하탄Column]));
+                }
+                set {
+                    this[this.tableSP_Aoi_Chart.맨하탄Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 틀어짐 {
+                get {
+                    return ((int)(this[this.tableSP_Aoi_Chart.틀어짐Column]));
+                }
+                set {
+                    this[this.tableSP_Aoi_Chart.틀어짐Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 기타 {
+                get {
+                    return ((int)(this[this.tableSP_Aoi_Chart.기타Column]));
+                }
+                set {
+                    this[this.tableSP_Aoi_Chart.기타Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 비고 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Aoi_Chart.비고Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_Aoi_Chart\' 테이블의 \'비고\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Aoi_Chart.비고Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 등록자 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_Aoi_Chart.등록자Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_Aoi_Chart\' 테이블의 \'등록자\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Aoi_Chart.등록자Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime 등록일자 {
+                get {
+                    return ((global::System.DateTime)(this[this.tableSP_Aoi_Chart.등록일자Column]));
+                }
+                set {
+                    this[this.tableSP_Aoi_Chart.등록일자Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is검사종료시간Null() {
+                return this.IsNull(this.tableSP_Aoi_Chart.검사종료시간Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set검사종료시간Null() {
+                this[this.tableSP_Aoi_Chart.검사종료시간Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is비고Null() {
+                return this.IsNull(this.tableSP_Aoi_Chart.비고Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set비고Null() {
+                this[this.tableSP_Aoi_Chart.비고Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is등록자Null() {
+                return this.IsNull(this.tableSP_Aoi_Chart.등록자Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set등록자Null() {
+                this[this.tableSP_Aoi_Chart.등록자Column] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -21821,6 +22707,40 @@ namespace SmartMES_Giroei.P1C {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_Job_CommentRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class SP_Aoi_ChartRowChangeEvent : global::System.EventArgs {
+            
+            private SP_Aoi_ChartRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_Aoi_ChartRowChangeEvent(SP_Aoi_ChartRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_Aoi_ChartRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -27384,6 +28304,232 @@ namespace SmartMES_Giroei.P1C.DataSetP1CTableAdapters {
                 this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
             }
             DataSetP1C.SP_Job_CommentDataTable dataTable = new DataSetP1C.SP_Job_CommentDataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class SP_Aoi_ChartTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
+        
+        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
+        
+        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
+        
+        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public SP_Aoi_ChartTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "SP_Aoi_Chart";
+            tableMapping.ColumnMappings.Add("검사기록ID", "검사기록ID");
+            tableMapping.ColumnMappings.Add("작지번호", "작지번호");
+            tableMapping.ColumnMappings.Add("검사시작시간", "검사시작시간");
+            tableMapping.ColumnMappings.Add("검사종료시간", "검사종료시간");
+            tableMapping.ColumnMappings.Add("검사수량", "검사수량");
+            tableMapping.ColumnMappings.Add("총불량수량", "총불량수량");
+            tableMapping.ColumnMappings.Add("소납", "소납");
+            tableMapping.ColumnMappings.Add("냉땜", "냉땜");
+            tableMapping.ColumnMappings.Add("미삽", "미삽");
+            tableMapping.ColumnMappings.Add("뒤집힘", "뒤집힘");
+            tableMapping.ColumnMappings.Add("리드뜸", "리드뜸");
+            tableMapping.ColumnMappings.Add("미삽1", "미삽1");
+            tableMapping.ColumnMappings.Add("쇼트", "쇼트");
+            tableMapping.ColumnMappings.Add("역삽", "역삽");
+            tableMapping.ColumnMappings.Add("맨하탄", "맨하탄");
+            tableMapping.ColumnMappings.Add("틀어짐", "틀어짐");
+            tableMapping.ColumnMappings.Add("기타", "기타");
+            tableMapping.ColumnMappings.Add("비고", "비고");
+            tableMapping.ColumnMappings.Add("등록자", "등록자");
+            tableMapping.ColumnMappings.Add("등록일자", "등록일자");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
+            this._connection.ConnectionString = global::SmartMES_Giroei.Properties.Settings.Default.jiroei_mesConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "`jiroei_mes`.`SP_Aoi_Chart`";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "_fromDate";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[0].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "_toDate";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.DateTime;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[0].Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSetP1C.SP_Aoi_ChartDataTable dataTable, global::System.Nullable<global::System.DateTime> _fromDate, global::System.Nullable<global::System.DateTime> _toDate) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((_fromDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(_fromDate.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((_toDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(_toDate.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSetP1C.SP_Aoi_ChartDataTable GetData(global::System.Nullable<global::System.DateTime> _fromDate, global::System.Nullable<global::System.DateTime> _toDate) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((_fromDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(_fromDate.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((_toDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(_toDate.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            DataSetP1C.SP_Aoi_ChartDataTable dataTable = new DataSetP1C.SP_Aoi_ChartDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

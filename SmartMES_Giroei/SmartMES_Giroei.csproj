@@ -679,6 +679,12 @@
     <Compile Include="P1C\P1C02_PROD_RESULT1_SUB.designer.cs">
       <DependentUpon>P1C02_PROD_RESULT1_SUB.cs</DependentUpon>
     </Compile>
+    <Compile Include="P1C\P1C02_PROD_RESULT_AOI_DOC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C02_PROD_RESULT_AOI_DOC.Designer.cs">
+      <DependentUpon>P1C02_PROD_RESULT_AOI_DOC.cs</DependentUpon>
+    </Compile>
     <Compile Include="P1C\P1C02_PROD_RESULT_CHECK.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -810,6 +816,12 @@
     </Compile>
     <Compile Include="P1C\P1C09_PROD_NG_SUB_RESULT.designer.cs">
       <DependentUpon>P1C09_PROD_NG_SUB_RESULT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="P1C\P1C11_AOI_CHART.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C11_AOI_CHART.Designer.cs">
+      <DependentUpon>P1C11_AOI_CHART.cs</DependentUpon>
     </Compile>
     <Compile Include="P1C\P1C10_PROD_RESULT_save.cs">
       <SubType>Form</SubType>
@@ -1233,6 +1245,9 @@
     <EmbeddedResource Include="P1C\P1C02_PROD_RESULT1_SUB.resx">
       <DependentUpon>P1C02_PROD_RESULT1_SUB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C02_PROD_RESULT_AOI_DOC.resx">
+      <DependentUpon>P1C02_PROD_RESULT_AOI_DOC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="P1C\P1C02_PROD_RESULT_CHECK.resx">
       <DependentUpon>P1C02_PROD_RESULT_CHECK.cs</DependentUpon>
     </EmbeddedResource>
@@ -1298,6 +1313,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P1C\P1C09_PROD_NG_SUB_RESULT.resx">
       <DependentUpon>P1C09_PROD_NG_SUB_RESULT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C11_AOI_CHART.resx">
+      <DependentUpon>P1C11_AOI_CHART.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P1C\P1C10_PROD_RESULT_save.resx">
       <DependentUpon>P1C10_PROD_RESULT_save.cs</DependentUpon>
