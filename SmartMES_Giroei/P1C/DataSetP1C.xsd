@@ -841,7 +841,7 @@
               <Mapping SourceColumn="미삽" DataSetColumn="미삽" />
               <Mapping SourceColumn="뒤집힘" DataSetColumn="뒤집힘" />
               <Mapping SourceColumn="리드뜸" DataSetColumn="리드뜸" />
-              <Mapping SourceColumn="미삽1" DataSetColumn="미삽1" />
+              <Mapping SourceColumn="미삽1" DataSetColumn="미납" />
               <Mapping SourceColumn="쇼트" DataSetColumn="쇼트" />
               <Mapping SourceColumn="역삽" DataSetColumn="역삽" />
               <Mapping SourceColumn="맨하탄" DataSetColumn="맨하탄" />
@@ -2586,7 +2586,7 @@
         <xs:element name="SP_Aoi_Chart" msprop:Generator_TableClassName="SP_Aoi_ChartDataTable" msprop:Generator_TableVarName="tableSP_Aoi_Chart" msprop:Generator_TablePropName="SP_Aoi_Chart" msprop:Generator_RowDeletingName="SP_Aoi_ChartRowDeleting" msprop:Generator_RowChangingName="SP_Aoi_ChartRowChanging" msprop:Generator_RowEvHandlerName="SP_Aoi_ChartRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Aoi_ChartRowDeleted" msprop:Generator_UserTableName="SP_Aoi_Chart" msprop:Generator_RowChangedName="SP_Aoi_ChartRowChanged" msprop:Generator_RowEvArgName="SP_Aoi_ChartRowChangeEvent" msprop:Generator_RowClassName="SP_Aoi_ChartRow">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="검사기록ID" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="column검사기록ID" msprop:Generator_ColumnPropNameInRow="검사기록ID" msprop:Generator_ColumnPropNameInTable="검사기록IDColumn" msprop:Generator_UserColumnName="검사기록ID" type="xs:long" />
+              <xs:element name="검사기록ID" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="column검사기록ID" msprop:Generator_ColumnPropNameInRow="검사기록ID" msprop:Generator_ColumnPropNameInTable="검사기록IDColumn" msprop:Generator_UserColumnName="검사기록ID" type="xs:string" />
               <xs:element name="작지번호" msprop:Generator_ColumnVarNameInTable="column작지번호" msprop:Generator_ColumnPropNameInRow="작지번호" msprop:Generator_ColumnPropNameInTable="작지번호Column" msprop:Generator_UserColumnName="작지번호">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -2598,17 +2598,17 @@
               <xs:element name="검사종료시간" msprop:Generator_ColumnVarNameInTable="column검사종료시간" msprop:Generator_ColumnPropNameInRow="검사종료시간" msprop:Generator_ColumnPropNameInTable="검사종료시간Column" msprop:Generator_UserColumnName="검사종료시간" type="xs:dateTime" minOccurs="0" />
               <xs:element name="검사수량" msprop:Generator_ColumnVarNameInTable="column검사수량" msprop:Generator_ColumnPropNameInRow="검사수량" msprop:Generator_ColumnPropNameInTable="검사수량Column" msprop:Generator_UserColumnName="검사수량" type="xs:int" />
               <xs:element name="총불량수량" msprop:Generator_ColumnVarNameInTable="column총불량수량" msprop:Generator_ColumnPropNameInRow="총불량수량" msprop:Generator_ColumnPropNameInTable="총불량수량Column" msprop:Generator_UserColumnName="총불량수량" type="xs:int" />
-              <xs:element name="소납" msprop:Generator_ColumnVarNameInTable="column소납" msprop:Generator_ColumnPropNameInRow="소납" msprop:Generator_ColumnPropNameInTable="소납Column" msprop:Generator_UserColumnName="소납" type="xs:int" />
-              <xs:element name="냉땜" msprop:Generator_ColumnVarNameInTable="column냉땜" msprop:Generator_ColumnPropNameInRow="냉땜" msprop:Generator_ColumnPropNameInTable="냉땜Column" msprop:Generator_UserColumnName="냉땜" type="xs:int" />
-              <xs:element name="미삽" msprop:Generator_ColumnVarNameInTable="column미삽" msprop:Generator_ColumnPropNameInRow="미삽" msprop:Generator_ColumnPropNameInTable="미삽Column" msprop:Generator_UserColumnName="미삽" type="xs:int" />
-              <xs:element name="뒤집힘" msprop:Generator_ColumnVarNameInTable="column뒤집힘" msprop:Generator_ColumnPropNameInRow="뒤집힘" msprop:Generator_ColumnPropNameInTable="뒤집힘Column" msprop:Generator_UserColumnName="뒤집힘" type="xs:int" />
-              <xs:element name="리드뜸" msprop:Generator_ColumnVarNameInTable="column리드뜸" msprop:Generator_ColumnPropNameInRow="리드뜸" msprop:Generator_ColumnPropNameInTable="리드뜸Column" msprop:Generator_UserColumnName="리드뜸" type="xs:int" />
-              <xs:element name="미삽1" msprop:Generator_ColumnVarNameInTable="column미삽1" msprop:Generator_ColumnPropNameInRow="미삽1" msprop:Generator_ColumnPropNameInTable="미삽1Column" msprop:Generator_UserColumnName="미삽1" type="xs:int" />
-              <xs:element name="쇼트" msprop:Generator_ColumnVarNameInTable="column쇼트" msprop:Generator_ColumnPropNameInRow="쇼트" msprop:Generator_ColumnPropNameInTable="쇼트Column" msprop:Generator_UserColumnName="쇼트" type="xs:int" />
-              <xs:element name="역삽" msprop:Generator_ColumnVarNameInTable="column역삽" msprop:Generator_ColumnPropNameInRow="역삽" msprop:Generator_ColumnPropNameInTable="역삽Column" msprop:Generator_UserColumnName="역삽" type="xs:int" />
-              <xs:element name="맨하탄" msprop:Generator_ColumnVarNameInTable="column맨하탄" msprop:Generator_ColumnPropNameInRow="맨하탄" msprop:Generator_ColumnPropNameInTable="맨하탄Column" msprop:Generator_UserColumnName="맨하탄" type="xs:int" />
-              <xs:element name="틀어짐" msprop:Generator_ColumnVarNameInTable="column틀어짐" msprop:Generator_ColumnPropNameInRow="틀어짐" msprop:Generator_ColumnPropNameInTable="틀어짐Column" msprop:Generator_UserColumnName="틀어짐" type="xs:int" />
-              <xs:element name="기타" msprop:Generator_ColumnVarNameInTable="column기타" msprop:Generator_ColumnPropNameInRow="기타" msprop:Generator_ColumnPropNameInTable="기타Column" msprop:Generator_UserColumnName="기타" type="xs:int" />
+              <xs:element name="소납" msprop:Generator_ColumnVarNameInTable="column소납" msprop:Generator_ColumnPropNameInRow="소납" msprop:Generator_ColumnPropNameInTable="소납Column" msprop:Generator_UserColumnName="소납" type="xs:long" />
+              <xs:element name="냉땜" msprop:Generator_ColumnVarNameInTable="column냉땜" msprop:Generator_ColumnPropNameInRow="냉땜" msprop:Generator_ColumnPropNameInTable="냉땜Column" msprop:Generator_UserColumnName="냉땜" type="xs:long" />
+              <xs:element name="미삽" msprop:Generator_ColumnVarNameInTable="column미삽" msprop:Generator_ColumnPropNameInRow="미삽" msprop:Generator_ColumnPropNameInTable="미삽Column" msprop:Generator_UserColumnName="미삽" type="xs:long" />
+              <xs:element name="뒤집힘" msprop:Generator_ColumnVarNameInTable="column뒤집힘" msprop:Generator_ColumnPropNameInRow="뒤집힘" msprop:Generator_ColumnPropNameInTable="뒤집힘Column" msprop:Generator_UserColumnName="뒤집힘" type="xs:long" />
+              <xs:element name="리드뜸" msprop:Generator_ColumnVarNameInTable="column리드뜸" msprop:Generator_ColumnPropNameInRow="리드뜸" msprop:Generator_ColumnPropNameInTable="리드뜸Column" msprop:Generator_UserColumnName="리드뜸" type="xs:long" />
+              <xs:element name="미납" msprop:Generator_ColumnVarNameInTable="column미납" msprop:Generator_ColumnPropNameInRow="미납" msprop:Generator_ColumnPropNameInTable="미납Column" msprop:Generator_UserColumnName="미납" type="xs:long" />
+              <xs:element name="쇼트" msprop:Generator_ColumnVarNameInTable="column쇼트" msprop:Generator_ColumnPropNameInRow="쇼트" msprop:Generator_ColumnPropNameInTable="쇼트Column" msprop:Generator_UserColumnName="쇼트" type="xs:long" />
+              <xs:element name="역삽" msprop:Generator_ColumnVarNameInTable="column역삽" msprop:Generator_ColumnPropNameInRow="역삽" msprop:Generator_ColumnPropNameInTable="역삽Column" msprop:Generator_UserColumnName="역삽" type="xs:long" />
+              <xs:element name="맨하탄" msprop:Generator_ColumnVarNameInTable="column맨하탄" msprop:Generator_ColumnPropNameInRow="맨하탄" msprop:Generator_ColumnPropNameInTable="맨하탄Column" msprop:Generator_UserColumnName="맨하탄" type="xs:long" />
+              <xs:element name="틀어짐" msprop:Generator_ColumnVarNameInTable="column틀어짐" msprop:Generator_ColumnPropNameInRow="틀어짐" msprop:Generator_ColumnPropNameInTable="틀어짐Column" msprop:Generator_UserColumnName="틀어짐" type="xs:long" />
+              <xs:element name="기타" msprop:Generator_ColumnVarNameInTable="column기타" msprop:Generator_ColumnPropNameInRow="기타" msprop:Generator_ColumnPropNameInTable="기타Column" msprop:Generator_UserColumnName="기타" type="xs:long" />
               <xs:element name="비고" msprop:Generator_ColumnVarNameInTable="column비고" msprop:Generator_ColumnPropNameInRow="비고" msprop:Generator_ColumnPropNameInTable="비고Column" msprop:Generator_UserColumnName="비고" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">

@@ -12649,7 +12649,7 @@ namespace SmartMES_Giroei.P1C {
             
             private global::System.Data.DataColumn column리드뜸;
             
-            private global::System.Data.DataColumn column미삽1;
+            private global::System.Data.DataColumn column미납;
             
             private global::System.Data.DataColumn column쇼트;
             
@@ -12790,9 +12790,9 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 미삽1Column {
+            public global::System.Data.DataColumn 미납Column {
                 get {
-                    return this.column미삽1;
+                    return this.column미납;
                 }
             }
             
@@ -12898,28 +12898,29 @@ namespace SmartMES_Giroei.P1C {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_Aoi_ChartRow AddSP_Aoi_ChartRow(
+                        string 검사기록ID, 
                         string 작지번호, 
                         System.DateTime 검사시작시간, 
                         System.DateTime 검사종료시간, 
                         int 검사수량, 
                         int 총불량수량, 
-                        int 소납, 
-                        int 냉땜, 
-                        int 미삽, 
-                        int 뒤집힘, 
-                        int 리드뜸, 
-                        int 미삽1, 
-                        int 쇼트, 
-                        int 역삽, 
-                        int 맨하탄, 
-                        int 틀어짐, 
-                        int 기타, 
+                        long 소납, 
+                        long 냉땜, 
+                        long 미삽, 
+                        long 뒤집힘, 
+                        long 리드뜸, 
+                        long 미납, 
+                        long 쇼트, 
+                        long 역삽, 
+                        long 맨하탄, 
+                        long 틀어짐, 
+                        long 기타, 
                         string 비고, 
                         string 등록자, 
                         System.DateTime 등록일자) {
                 SP_Aoi_ChartRow rowSP_Aoi_ChartRow = ((SP_Aoi_ChartRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        null,
+                        검사기록ID,
                         작지번호,
                         검사시작시간,
                         검사종료시간,
@@ -12930,7 +12931,7 @@ namespace SmartMES_Giroei.P1C {
                         미삽,
                         뒤집힘,
                         리드뜸,
-                        미삽1,
+                        미납,
                         쇼트,
                         역삽,
                         맨하탄,
@@ -12946,7 +12947,7 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_Aoi_ChartRow FindBy검사기록ID(long 검사기록ID) {
+            public SP_Aoi_ChartRow FindBy검사기록ID(string 검사기록ID) {
                 return ((SP_Aoi_ChartRow)(this.Rows.Find(new object[] {
                             검사기록ID})));
             }
@@ -12979,7 +12980,7 @@ namespace SmartMES_Giroei.P1C {
                 this.column미삽 = base.Columns["미삽"];
                 this.column뒤집힘 = base.Columns["뒤집힘"];
                 this.column리드뜸 = base.Columns["리드뜸"];
-                this.column미삽1 = base.Columns["미삽1"];
+                this.column미납 = base.Columns["미납"];
                 this.column쇼트 = base.Columns["쇼트"];
                 this.column역삽 = base.Columns["역삽"];
                 this.column맨하탄 = base.Columns["맨하탄"];
@@ -12993,7 +12994,7 @@ namespace SmartMES_Giroei.P1C {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.column검사기록ID = new global::System.Data.DataColumn("검사기록ID", typeof(long), null, global::System.Data.MappingType.Element);
+                this.column검사기록ID = new global::System.Data.DataColumn("검사기록ID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column검사기록ID);
                 this.column작지번호 = new global::System.Data.DataColumn("작지번호", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column작지번호);
@@ -13005,27 +13006,27 @@ namespace SmartMES_Giroei.P1C {
                 base.Columns.Add(this.column검사수량);
                 this.column총불량수량 = new global::System.Data.DataColumn("총불량수량", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column총불량수량);
-                this.column소납 = new global::System.Data.DataColumn("소납", typeof(int), null, global::System.Data.MappingType.Element);
+                this.column소납 = new global::System.Data.DataColumn("소납", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column소납);
-                this.column냉땜 = new global::System.Data.DataColumn("냉땜", typeof(int), null, global::System.Data.MappingType.Element);
+                this.column냉땜 = new global::System.Data.DataColumn("냉땜", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column냉땜);
-                this.column미삽 = new global::System.Data.DataColumn("미삽", typeof(int), null, global::System.Data.MappingType.Element);
+                this.column미삽 = new global::System.Data.DataColumn("미삽", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column미삽);
-                this.column뒤집힘 = new global::System.Data.DataColumn("뒤집힘", typeof(int), null, global::System.Data.MappingType.Element);
+                this.column뒤집힘 = new global::System.Data.DataColumn("뒤집힘", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column뒤집힘);
-                this.column리드뜸 = new global::System.Data.DataColumn("리드뜸", typeof(int), null, global::System.Data.MappingType.Element);
+                this.column리드뜸 = new global::System.Data.DataColumn("리드뜸", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column리드뜸);
-                this.column미삽1 = new global::System.Data.DataColumn("미삽1", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column미삽1);
-                this.column쇼트 = new global::System.Data.DataColumn("쇼트", typeof(int), null, global::System.Data.MappingType.Element);
+                this.column미납 = new global::System.Data.DataColumn("미납", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column미납);
+                this.column쇼트 = new global::System.Data.DataColumn("쇼트", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column쇼트);
-                this.column역삽 = new global::System.Data.DataColumn("역삽", typeof(int), null, global::System.Data.MappingType.Element);
+                this.column역삽 = new global::System.Data.DataColumn("역삽", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column역삽);
-                this.column맨하탄 = new global::System.Data.DataColumn("맨하탄", typeof(int), null, global::System.Data.MappingType.Element);
+                this.column맨하탄 = new global::System.Data.DataColumn("맨하탄", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column맨하탄);
-                this.column틀어짐 = new global::System.Data.DataColumn("틀어짐", typeof(int), null, global::System.Data.MappingType.Element);
+                this.column틀어짐 = new global::System.Data.DataColumn("틀어짐", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column틀어짐);
-                this.column기타 = new global::System.Data.DataColumn("기타", typeof(int), null, global::System.Data.MappingType.Element);
+                this.column기타 = new global::System.Data.DataColumn("기타", typeof(long), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column기타);
                 this.column비고 = new global::System.Data.DataColumn("비고", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column비고);
@@ -13035,7 +13036,6 @@ namespace SmartMES_Giroei.P1C {
                 base.Columns.Add(this.column등록일자);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.column검사기록ID}, true));
-                this.column검사기록ID.AutoIncrement = true;
                 this.column검사기록ID.AutoIncrementSeed = -1;
                 this.column검사기록ID.AutoIncrementStep = -1;
                 this.column검사기록ID.AllowDBNull = false;
@@ -13050,7 +13050,7 @@ namespace SmartMES_Giroei.P1C {
                 this.column미삽.AllowDBNull = false;
                 this.column뒤집힘.AllowDBNull = false;
                 this.column리드뜸.AllowDBNull = false;
-                this.column미삽1.AllowDBNull = false;
+                this.column미납.AllowDBNull = false;
                 this.column쇼트.AllowDBNull = false;
                 this.column역삽.AllowDBNull = false;
                 this.column맨하탄.AllowDBNull = false;
@@ -21567,9 +21567,9 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long 검사기록ID {
+            public string 검사기록ID {
                 get {
-                    return ((long)(this[this.tableSP_Aoi_Chart.검사기록IDColumn]));
+                    return ((string)(this[this.tableSP_Aoi_Chart.검사기록IDColumn]));
                 }
                 set {
                     this[this.tableSP_Aoi_Chart.검사기록IDColumn] = value;
@@ -21638,9 +21638,9 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int 소납 {
+            public long 소납 {
                 get {
-                    return ((int)(this[this.tableSP_Aoi_Chart.소납Column]));
+                    return ((long)(this[this.tableSP_Aoi_Chart.소납Column]));
                 }
                 set {
                     this[this.tableSP_Aoi_Chart.소납Column] = value;
@@ -21649,9 +21649,9 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int 냉땜 {
+            public long 냉땜 {
                 get {
-                    return ((int)(this[this.tableSP_Aoi_Chart.냉땜Column]));
+                    return ((long)(this[this.tableSP_Aoi_Chart.냉땜Column]));
                 }
                 set {
                     this[this.tableSP_Aoi_Chart.냉땜Column] = value;
@@ -21660,9 +21660,9 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int 미삽 {
+            public long 미삽 {
                 get {
-                    return ((int)(this[this.tableSP_Aoi_Chart.미삽Column]));
+                    return ((long)(this[this.tableSP_Aoi_Chart.미삽Column]));
                 }
                 set {
                     this[this.tableSP_Aoi_Chart.미삽Column] = value;
@@ -21671,9 +21671,9 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int 뒤집힘 {
+            public long 뒤집힘 {
                 get {
-                    return ((int)(this[this.tableSP_Aoi_Chart.뒤집힘Column]));
+                    return ((long)(this[this.tableSP_Aoi_Chart.뒤집힘Column]));
                 }
                 set {
                     this[this.tableSP_Aoi_Chart.뒤집힘Column] = value;
@@ -21682,9 +21682,9 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int 리드뜸 {
+            public long 리드뜸 {
                 get {
-                    return ((int)(this[this.tableSP_Aoi_Chart.리드뜸Column]));
+                    return ((long)(this[this.tableSP_Aoi_Chart.리드뜸Column]));
                 }
                 set {
                     this[this.tableSP_Aoi_Chart.리드뜸Column] = value;
@@ -21693,20 +21693,20 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int 미삽1 {
+            public long 미납 {
                 get {
-                    return ((int)(this[this.tableSP_Aoi_Chart.미삽1Column]));
+                    return ((long)(this[this.tableSP_Aoi_Chart.미납Column]));
                 }
                 set {
-                    this[this.tableSP_Aoi_Chart.미삽1Column] = value;
+                    this[this.tableSP_Aoi_Chart.미납Column] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int 쇼트 {
+            public long 쇼트 {
                 get {
-                    return ((int)(this[this.tableSP_Aoi_Chart.쇼트Column]));
+                    return ((long)(this[this.tableSP_Aoi_Chart.쇼트Column]));
                 }
                 set {
                     this[this.tableSP_Aoi_Chart.쇼트Column] = value;
@@ -21715,9 +21715,9 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int 역삽 {
+            public long 역삽 {
                 get {
-                    return ((int)(this[this.tableSP_Aoi_Chart.역삽Column]));
+                    return ((long)(this[this.tableSP_Aoi_Chart.역삽Column]));
                 }
                 set {
                     this[this.tableSP_Aoi_Chart.역삽Column] = value;
@@ -21726,9 +21726,9 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int 맨하탄 {
+            public long 맨하탄 {
                 get {
-                    return ((int)(this[this.tableSP_Aoi_Chart.맨하탄Column]));
+                    return ((long)(this[this.tableSP_Aoi_Chart.맨하탄Column]));
                 }
                 set {
                     this[this.tableSP_Aoi_Chart.맨하탄Column] = value;
@@ -21737,9 +21737,9 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int 틀어짐 {
+            public long 틀어짐 {
                 get {
-                    return ((int)(this[this.tableSP_Aoi_Chart.틀어짐Column]));
+                    return ((long)(this[this.tableSP_Aoi_Chart.틀어짐Column]));
                 }
                 set {
                     this[this.tableSP_Aoi_Chart.틀어짐Column] = value;
@@ -21748,9 +21748,9 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int 기타 {
+            public long 기타 {
                 get {
-                    return ((int)(this[this.tableSP_Aoi_Chart.기타Column]));
+                    return ((long)(this[this.tableSP_Aoi_Chart.기타Column]));
                 }
                 set {
                     this[this.tableSP_Aoi_Chart.기타Column] = value;
@@ -28441,7 +28441,7 @@ namespace SmartMES_Giroei.P1C.DataSetP1CTableAdapters {
             tableMapping.ColumnMappings.Add("미삽", "미삽");
             tableMapping.ColumnMappings.Add("뒤집힘", "뒤집힘");
             tableMapping.ColumnMappings.Add("리드뜸", "리드뜸");
-            tableMapping.ColumnMappings.Add("미삽1", "미삽1");
+            tableMapping.ColumnMappings.Add("미삽1", "미납");
             tableMapping.ColumnMappings.Add("쇼트", "쇼트");
             tableMapping.ColumnMappings.Add("역삽", "역삽");
             tableMapping.ColumnMappings.Add("맨하탄", "맨하탄");
