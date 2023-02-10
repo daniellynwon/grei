@@ -427,7 +427,8 @@ namespace SmartMES_Giroei
             string sFileName = string.Empty;
             OpenFileDialog ofg = new OpenFileDialog();
 
-            ofg.Filter = "Excel File 97~2013(*.xls)| *.xls| *.xlsx|*.xlsx| All Files(*.*)|*.*";
+            //ofg.Filter = "Excel File 97~2013(*.xls)| *.xls| *.xlsx|*.xlsx| All Files(*.*)|*.*";
+            ofg.Filter = "Excel File *.xls| *.xlsx| 97~2013(*.xls)|*.xlsx| All Files(*.*)|*.*"; //양식 액셀이 바로 나오게 수정
 
             if (ofg.ShowDialog() == DialogResult.OK)
             {
