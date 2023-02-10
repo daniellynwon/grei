@@ -68,11 +68,10 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>803282B89A1F7CD2A28B0CA86B59E36101163B8A</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>7560DE9BF0DC64B63C67F02D0D61F83B7BA2EAD7</ManifestCertificateThumbprint>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>
-    </ManifestKeyFile>
+    <ManifestKeyFile>SmartMES_Giroei_3_TemporaryKey.pfx</ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
     <TargetZone>LocalIntranet</TargetZone>
@@ -1561,6 +1560,7 @@
     </EmbeddedResource>
     <None Include="SmartMES_Giroei_1_TemporaryKey.pfx" />
     <None Include="SmartMES_Giroei_2_TemporaryKey.pfx" />
+    <None Include="SmartMES_Giroei_3_TemporaryKey.pfx" />
     <None Include="SmartMES_Giroei_TemporaryKey.pfx" />
   </ItemGroup>
   <ItemGroup>
