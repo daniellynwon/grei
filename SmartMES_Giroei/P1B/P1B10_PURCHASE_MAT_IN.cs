@@ -400,6 +400,18 @@ namespace SmartMES_Giroei
                 tbPackQty.Focus();
                 return;
             }
+            else if (int.Parse(sPackQty) >= 10)
+            {
+                if(MessageBox.Show("발행 바코드 수가 10장이 넘습니다. 정말 발행하시겠습니까?", "바코드 경고",MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes) //팩키지 수량 잘못 입력하여 여러장 바코드 발행하는 가능성 방지
+                {
+                    
+                }
+                else
+                {
+                    tbPackQty.Focus();
+                    return;
+                }
+            }
 
             int index = int.Parse(sPackQty);
 
