@@ -68,28 +68,31 @@ namespace SmartMES_Giroei
                 DataRow[] row = table.Select();
                 if (row.Length > 0) 
                 {
-                    dTFromTime.Text = row[0][2].ToString();
-                    dTToTime.Text = row[0][3].ToString();
-                    tbInspCount.Text = row[0][4].ToString();
-                    tbTotalDefect.Text = row[0][5].ToString();
-                    tbSonap.Text = row[0][6].ToString();
-                    tbnengttem.Text = row[0][7].ToString();
-                    tbMiSap.Text = row[0][8].ToString();
-                    tbOverTurned.Text = row[0][9].ToString();
-                    tbLeadOpen.Text = row[0][10].ToString();
-                    tbMiNap.Text = row[0][11].ToString();
-                    tbShort.Text = row[0][12].ToString();
-                    tbReverse.Text = row[0][13].ToString();
-                    tbManhattan.Text = row[0][14].ToString();
-                    tbTwisted.Text = row[0][15].ToString();
-                    tbEtcError.Text = row[0][16].ToString();
-                    rtbContents.Text = row[0][21].ToString();
-                    cbMan.SelectedValue = row[0][22].ToString();
+                    //dTFromTime.Text = row[0][2].ToString();
+                    //dTToTime.Text = row[0][3].ToString();
+                    dTFromTime.Value = Convert.ToDateTime(row[0][1].ToString());
+                    dTToTime.Value = Convert.ToDateTime(row[0][2].ToString());
+                    tbInspCount.Text = row[0][3].ToString();
+                    tbTotalDefect.Text = row[0][4].ToString();
+                    tbSonap.Text = row[0][5].ToString();
+                    tbnengttem.Text = row[0][6].ToString();
+                    tbMiSap.Text = row[0][7].ToString();
+                    tbOverTurned.Text = row[0][8].ToString();
+                    tbLeadOpen.Text = row[0][9].ToString();
+                    tbMiNap.Text = row[0][10].ToString();
+                    tbShort.Text = row[0][11].ToString();
+                    tbReverse.Text = row[0][12].ToString();
+                    tbManhattan.Text = row[0][13].ToString();
+                    tbTwisted.Text = row[0][14].ToString();
+                    tbEtcError.Text = row[0][15].ToString();
+                    rtbContents.Text = row[0][20].ToString();
+                    cbMan.SelectedValue = row[0][21].ToString();
 
-                    lbFname1.Text = row[0][17].ToString();
-                    lbFname2.Text = row[0][18].ToString();
+                    lbFname1.Text = row[0][16].ToString();
+                    lbFname2.Text = row[0][17].ToString();
 
                     isNew = false;
+
                 }
 
             }
@@ -130,35 +133,36 @@ namespace SmartMES_Giroei
 
             if (!string.IsNullOrEmpty(lbFname1.Text))
             {
+                if (changedFname1) {
+                    string[] fnames = sFname1.Split('\\');
+                    fname1 = fnames[fnames.Length - 1];
+                    FileStream fs1 = new FileStream(sFname1, FileMode.Open);
+                    BinaryReader br1 = new BinaryReader(fs1);
+                    fs1.Position = 0;
+                    UInt32 FileSize1 = (UInt32)fs1.Length;
+                    rawdata1 = br1.ReadBytes((int)fs1.Length);
 
-                string[] fnames1 = sFname1.Split('\\');
-                fname1 = fnames1[fnames1.Length - 1];
-                FileStream fs1 = new FileStream(sFname1, FileMode.Open);
-                BinaryReader br1 = new BinaryReader(fs1);
-                fs1.Position = 0;
-                UInt32 FileSize1 = (UInt32)fs1.Length;
-                rawdata1 = br1.ReadBytes((int)fs1.Length);
-
-                br1.Close();
+                    br1.Close();
+                } else {
+                    fname1 = lbFname1.Text;
+                    rawdata1 = get_file_data(lbFname1.Text, job_no);
+                }
             }
-            if (!string.IsNullOrEmpty(lbFname1.Text))
+            if (!string.IsNullOrEmpty(lbFname2.Text))
             {
-
-                string[] fnames2 = sFname2.Split('\\');
-                fname2 = fnames2[fnames2.Length - 1];
-
-
-                FileStream fs2 = new FileStream(sFname2, FileMode.Open);
-
-
-                BinaryReader br2 = new BinaryReader(fs2);
-                fs2.Position = 0;
-
-                UInt32 FileSize2 = (UInt32)fs2.Length;
-
-
-                rawdata2 = br2.ReadBytes((int)fs2.Length);
-                br2.Close();
+                if (changedFname2) {
+                    string[] fnames = sFname2.Split('\\');
+                    fname2 = fnames[fnames.Length - 1];
+                    FileStream fs2 = new FileStream(sFname2, FileMode.Open);
+                    BinaryReader br2 = new BinaryReader(fs2);
+                    fs2.Position = 0;
+                    UInt32 FileSize2 = (UInt32)fs2.Length;
+                    rawdata2 = br2.ReadBytes((int)fs2.Length);
+                    br2.Close();
+                } else {
+                    fname2 = lbFname2.Text;
+                    rawdata2 = get_file_data(lbFname2.Text, job_no);
+                }
             }
 
             MySqlConnection con = new MySqlConnection(G.conStr);
@@ -168,11 +172,11 @@ namespace SmartMES_Giroei
             sql = "insert into QLT_inspection_AOI (job_no, insp_start_time, insp_end_time, insp_qty, defect_count, sonap, nengttem, misap, overturned, leadopen, minap, short, reverse, manhattan, twisted, etc_error, file1_name, file2_name, file1, file2, contents, enter_man)" +
                     " values('" + job_no + "','" + sInspFromTime + "','" + sInspToTime + "'," + sInspCount + "," + sTotalDefect + "," + sSonap + "," + sNengttem + "," + sMisap + "," + sOverturned + "," + sLeadopen + "," + sMinap + "," + sShort + "," + sReverse + "," + 
                         sManhattan + "," + sTwisted + "," + sEtcerror + ",'" + fname1 + "','" + fname2 + "', @File1, @File2,'" + sContents + "','" + sMan + "')" 
-                        + " on duplicate key update" + " job_no = '" + job_no + "',insp_start_time = '" + dTFromTime + "', insp_end_time = '" + dTToTime + "'," 
+                        + " on duplicate key update" + " insp_start_time = '" + sInspFromTime + "', insp_end_time = '" + sInspToTime + "'," 
                         + " insp_qty = " + sInspCount + ", defect_count = " + sTotalDefect + ", sonap = " + sSonap + ", nengttem = " + sNengttem 
                         + ", misap = " + sMisap + ", short = " + sShort + ", reverse = " + sReverse
                         + ", manhattan = " + sManhattan + ", twisted = " + sTwisted + ", etc_error = " + sEtcerror
-                        +  ", file1_name = '" + sFname1 + "', file2_name ='" + sFname2 + "', file1 = @File1, file2 = @File2"
+                        +  ", file1_name = '" + fname1 + "', file2_name ='" + fname2 + "', file1 = @File1, file2 = @File2"
                         + ", contents = '" + sContents + "', enter_man = '" + sMan + "'";
             cmd.Connection = con;
             cmd.CommandText = sql;
@@ -183,6 +187,22 @@ namespace SmartMES_Giroei
             con.Close();
 
             lblMsg.Text = "저장되었습니다.";
+        }
+
+        public byte[] get_file_data(string fname, string job_no)
+        {
+            byte[] rawdata = new byte[0];
+            string sql = "select file1 from QLT_inspection_AOI where job_no = '" + job_no + "' and file1_name = '" + fname + "'";
+            MySqlConnection con = new MySqlConnection(G.conStr);
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            con.Open();
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                rawdata = (byte[])rdr[0];
+            }
+            con.Close();
+            return rawdata;
         }
 
         #region 엔터키로 포커스 이동
@@ -222,6 +242,9 @@ namespace SmartMES_Giroei
             {
                 lbFname1.Text = newdoc.filename;
                 changedFname1 = true;
+            } else
+            {
+                changedFname1 = false;
             }
 
         }
@@ -238,6 +261,10 @@ namespace SmartMES_Giroei
             {
                 lbFname2.Text = newdoc.filename;
                 changedFname2 = true;
+            }
+            else
+            {
+                changedFname2 = false;
             }
         }
         #endregion

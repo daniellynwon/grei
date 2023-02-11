@@ -34,6 +34,11 @@ namespace SmartMES_Giroei
 
         private void Load_Exist_Image()
         {
+            if (PtbAOI.Image != null)
+            {
+                PtbAOI.Image.Dispose();
+                PtbAOI.Image = null;
+            }
             MySqlConnection con = new MySqlConnection(G.conStr);
             MySqlCommand cmd = new MySqlCommand();
             con.Open();
@@ -60,6 +65,12 @@ namespace SmartMES_Giroei
                     lblFname.Text = dr.GetString("file" + index.ToString() + "_name");
 
                     Stream rawStream = dr.GetStream(1);
+
+                    if (rawStream == null)
+                    {
+                        dr.Close();
+                        return;
+                    }
 
                     PtbAOI.Image = Image.FromStream(rawStream);
 
