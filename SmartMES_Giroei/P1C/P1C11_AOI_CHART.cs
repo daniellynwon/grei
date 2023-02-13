@@ -49,7 +49,7 @@ namespace SmartMES_Giroei
             ListSearch();
         }
 
-        public void ChartSearch(int sId, string sNo)
+        public void ChartSearch(int sID, string sNo)
         {
             try
             {
@@ -62,18 +62,17 @@ namespace SmartMES_Giroei
                 chartTitle.Font = new Font("새굴림", 25, FontStyle.Bold);
                 sCheckItem = "불량";
                 chart1.Series[sCheckItem].Points.Clear();
-
-                chart1.Series[sCheckItem].Points.AddXY("소납", dataGridView1.Rows[sId].Cells[6].Value.ToString());
-                chart1.Series[sCheckItem].Points.AddXY("냉땜", dataGridView1.Rows[sId].Cells[7].Value.ToString());
-                chart1.Series[sCheckItem].Points.AddXY("미삽", dataGridView1.Rows[sId].Cells[8].Value.ToString());
-                chart1.Series[sCheckItem].Points.AddXY("뒤집힘", dataGridView1.Rows[sId].Cells[9].Value.ToString());
-                chart1.Series[sCheckItem].Points.AddXY("리드뜸", dataGridView1.Rows[sId].Cells[10].Value.ToString());
-                chart1.Series[sCheckItem].Points.AddXY("미납", dataGridView1.Rows[sId].Cells[11].Value.ToString());
-                chart1.Series[sCheckItem].Points.AddXY("쇼트", dataGridView1.Rows[sId].Cells[12].Value.ToString());
-                chart1.Series[sCheckItem].Points.AddXY("역삽", dataGridView1.Rows[sId].Cells[13].Value.ToString());
-                chart1.Series[sCheckItem].Points.AddXY("맨하탄", dataGridView1.Rows[sId].Cells[14].Value.ToString());
-                chart1.Series[sCheckItem].Points.AddXY("틀어짐", dataGridView1.Rows[sId].Cells[15].Value.ToString());
-                chart1.Series[sCheckItem].Points.AddXY("기타", dataGridView1.Rows[sId].Cells[16].Value.ToString());
+                    chart1.Series[sCheckItem].Points.AddXY("소납", dataGridView1.Rows[sID].Cells[5].Value.ToString());
+                    chart1.Series[sCheckItem].Points.AddXY("냉땜", dataGridView1.Rows[sID].Cells[6].Value.ToString());
+                    chart1.Series[sCheckItem].Points.AddXY("미삽", dataGridView1.Rows[sID].Cells[7].Value.ToString());
+                    chart1.Series[sCheckItem].Points.AddXY("뒤집힘", dataGridView1.Rows[sID].Cells[8].Value.ToString());
+                    chart1.Series[sCheckItem].Points.AddXY("리드뜸", dataGridView1.Rows[sID].Cells[9].Value.ToString());
+                    chart1.Series[sCheckItem].Points.AddXY("미납", dataGridView1.Rows[sID].Cells[10].Value.ToString());
+                    chart1.Series[sCheckItem].Points.AddXY("쇼트", dataGridView1.Rows[sID].Cells[11].Value.ToString());
+                    chart1.Series[sCheckItem].Points.AddXY("역삽", dataGridView1.Rows[sID].Cells[12].Value.ToString());
+                    chart1.Series[sCheckItem].Points.AddXY("맨하탄", dataGridView1.Rows[sID].Cells[13].Value.ToString());
+                    chart1.Series[sCheckItem].Points.AddXY("틀어짐", dataGridView1.Rows[sID].Cells[14].Value.ToString());
+                    chart1.Series[sCheckItem].Points.AddXY("기타", dataGridView1.Rows[sID].Cells[15].Value.ToString());
             }
             catch (NullReferenceException)
             {
@@ -102,17 +101,17 @@ namespace SmartMES_Giroei
                 sCheckItem = "불량합계";
                 chart2.Series[sCheckItem].Points.Clear();
 
-                chart2.Series[sCheckItem].Points.AddXY("소납", dataGridView1[6, rowIndex].Value);
-                chart2.Series[sCheckItem].Points.AddXY("냉땜", dataGridView1[7, rowIndex].Value);
-                chart2.Series[sCheckItem].Points.AddXY("미삽", dataGridView1[8, rowIndex].Value);
-                chart2.Series[sCheckItem].Points.AddXY("뒤집힘", dataGridView1[9, rowIndex].Value);
-                chart2.Series[sCheckItem].Points.AddXY("리드뜸", dataGridView1[10, rowIndex].Value);
-                chart2.Series[sCheckItem].Points.AddXY("미납", dataGridView1[11, rowIndex].Value);
-                chart2.Series[sCheckItem].Points.AddXY("쇼트", dataGridView1[12, rowIndex].Value);
-                chart2.Series[sCheckItem].Points.AddXY("역삽", dataGridView1[13, rowIndex].Value);
-                chart2.Series[sCheckItem].Points.AddXY("맨하탄", dataGridView1[14, rowIndex].Value);
-                chart2.Series[sCheckItem].Points.AddXY("틀어짐", dataGridView1[15, rowIndex].Value);
-                chart2.Series[sCheckItem].Points.AddXY("기타", dataGridView1[16, rowIndex].Value);
+                chart2.Series[sCheckItem].Points.AddXY("소납", dataGridView1[5, rowIndex].Value);
+                chart2.Series[sCheckItem].Points.AddXY("냉땜", dataGridView1[6, rowIndex].Value);
+                chart2.Series[sCheckItem].Points.AddXY("미삽", dataGridView1[7, rowIndex].Value);
+                chart2.Series[sCheckItem].Points.AddXY("뒤집힘", dataGridView1[8, rowIndex].Value);
+                chart2.Series[sCheckItem].Points.AddXY("리드뜸", dataGridView1[9, rowIndex].Value);
+                chart2.Series[sCheckItem].Points.AddXY("미납", dataGridView1[10, rowIndex].Value);
+                chart2.Series[sCheckItem].Points.AddXY("쇼트", dataGridView1[11, rowIndex].Value);
+                chart2.Series[sCheckItem].Points.AddXY("역삽", dataGridView1[12, rowIndex].Value);
+                chart2.Series[sCheckItem].Points.AddXY("맨하탄", dataGridView1[13, rowIndex].Value);
+                chart2.Series[sCheckItem].Points.AddXY("틀어짐", dataGridView1[14, rowIndex].Value);
+                chart2.Series[sCheckItem].Points.AddXY("기타", dataGridView1[15, rowIndex].Value);
             }
             catch (NullReferenceException)
             {
@@ -145,30 +144,30 @@ namespace SmartMES_Giroei
 
                 for (int i = 0; i < rowIndex; i++)
                 {
-                    iSum1 += long.Parse(dataGridView1.Rows[i].Cells[6].Value.ToString());
-                    iSum2 += long.Parse(dataGridView1.Rows[i].Cells[7].Value.ToString());
-                    iSum3 += long.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString());
-                    iSum4 += long.Parse(dataGridView1.Rows[i].Cells[9].Value.ToString());
-                    iSum5 += long.Parse(dataGridView1.Rows[i].Cells[10].Value.ToString());
-                    iSum6 += long.Parse(dataGridView1.Rows[i].Cells[11].Value.ToString());
-                    iSum7 += long.Parse(dataGridView1.Rows[i].Cells[12].Value.ToString());
-                    iSum8 += long.Parse(dataGridView1.Rows[i].Cells[13].Value.ToString());
-                    iSum9 += long.Parse(dataGridView1.Rows[i].Cells[14].Value.ToString());
-                    iSum10 += long.Parse(dataGridView1.Rows[i].Cells[15].Value.ToString());
-                    iSum11 += long.Parse(dataGridView1.Rows[i].Cells[16].Value.ToString());
+                    iSum1 += long.Parse(dataGridView1.Rows[i].Cells[5].Value.ToString());
+                    iSum2 += long.Parse(dataGridView1.Rows[i].Cells[6].Value.ToString());
+                    iSum3 += long.Parse(dataGridView1.Rows[i].Cells[7].Value.ToString());
+                    iSum4 += long.Parse(dataGridView1.Rows[i].Cells[8].Value.ToString());
+                    iSum5 += long.Parse(dataGridView1.Rows[i].Cells[9].Value.ToString());
+                    iSum6 += long.Parse(dataGridView1.Rows[i].Cells[10].Value.ToString());
+                    iSum7 += long.Parse(dataGridView1.Rows[i].Cells[11].Value.ToString());
+                    iSum8 += long.Parse(dataGridView1.Rows[i].Cells[12].Value.ToString());
+                    iSum9 += long.Parse(dataGridView1.Rows[i].Cells[13].Value.ToString());
+                    iSum10 += long.Parse(dataGridView1.Rows[i].Cells[14].Value.ToString());
+                    iSum11 += long.Parse(dataGridView1.Rows[i].Cells[15].Value.ToString());
                 }
 
-                dataGridView1[6, rowIndex].Value = iSum1;
-                dataGridView1[7, rowIndex].Value = iSum2;
-                dataGridView1[8, rowIndex].Value = iSum3;
-                dataGridView1[9, rowIndex].Value = iSum4;
-                dataGridView1[10, rowIndex].Value = iSum5;
-                dataGridView1[11, rowIndex].Value = iSum6;
-                dataGridView1[12, rowIndex].Value = iSum7;
-                dataGridView1[13, rowIndex].Value = iSum8;
-                dataGridView1[14, rowIndex].Value = iSum9;
-                dataGridView1[15, rowIndex].Value = iSum10;
-                dataGridView1[16, rowIndex].Value = iSum11;
+                dataGridView1[5, rowIndex].Value = iSum1;
+                dataGridView1[6, rowIndex].Value = iSum2;
+                dataGridView1[7, rowIndex].Value = iSum3;
+                dataGridView1[8, rowIndex].Value = iSum4;
+                dataGridView1[9, rowIndex].Value = iSum5;
+                dataGridView1[10, rowIndex].Value = iSum6;
+                dataGridView1[11, rowIndex].Value = iSum7;
+                dataGridView1[12, rowIndex].Value = iSum8;
+                dataGridView1[13, rowIndex].Value = iSum9;
+                dataGridView1[14, rowIndex].Value = iSum10;
+                dataGridView1[15, rowIndex].Value = iSum11;
 
             }
             catch (NullReferenceException)
@@ -181,7 +180,7 @@ namespace SmartMES_Giroei
         private void dataGridView1_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int sID = dataGridView1.CurrentCell.RowIndex;
-            string sNo = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();
+            string sNo = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             ChartSearch(sID, sNo);
         }
     }

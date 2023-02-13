@@ -71,9 +71,8 @@ namespace SmartMES_Giroei
             this.lblFname.Font = new System.Drawing.Font("굴림", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lblFname.Location = new System.Drawing.Point(20, 729);
             this.lblFname.Name = "lblFname";
-            this.lblFname.Size = new System.Drawing.Size(45, 15);
+            this.lblFname.Size = new System.Drawing.Size(0, 15);
             this.lblFname.TabIndex = 4;
-            this.lblFname.Text = "label1";
             // 
             // P1C02_PROD_RESULT_AOI_DOC
             // 

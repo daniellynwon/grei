@@ -158,6 +158,7 @@ namespace SmartMES_Giroei
                     fs2.Position = 0;
                     UInt32 FileSize2 = (UInt32)fs2.Length;
                     rawdata2 = br2.ReadBytes((int)fs2.Length);
+
                     br2.Close();
                 } else {
                     fname2 = lbFname2.Text;

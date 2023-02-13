@@ -63,13 +63,12 @@ namespace SmartMES_Giroei
             this.chartTitle = new System.Windows.Forms.Label();
             this.chart2 = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.chart2Title = new System.Windows.Forms.Label();
-            this.sPAoiChartBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1C = new SmartMES_Giroei.P1C.DataSetP1C();
-            this.sP_Aoi_ChartTableAdapter = new SmartMES_Giroei.P1C.DataSetP1CTableAdapters.SP_Aoi_ChartTableAdapter();
             this.chart3Title = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.검사기록IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataSetP1C = new SmartMES_Giroei.P1C.DataSetP1C();
+            this.sPAoiChartBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_Aoi_ChartTableAdapter = new SmartMES_Giroei.P1C.DataSetP1CTableAdapters.SP_Aoi_ChartTableAdapter();
             this.작지번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.검사시작시간DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.검사종료시간DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -80,7 +79,7 @@ namespace SmartMES_Giroei
             this.미삽DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.뒤집힘DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.리드뜸DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.미납 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.쇼트DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.역삽DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.맨하탄DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -99,9 +98,9 @@ namespace SmartMES_Giroei
             this.panSearch.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPAoiChartBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).BeginInit();
             this.tableLayoutPanel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPAoiChartBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -232,7 +231,6 @@ namespace SmartMES_Giroei
             this.dataGridView1.ColumnHeadersHeight = 35;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.검사기록IDDataGridViewTextBoxColumn,
             this.작지번호DataGridViewTextBoxColumn,
             this.검사시작시간DataGridViewTextBoxColumn,
             this.검사종료시간DataGridViewTextBoxColumn,
@@ -243,7 +241,7 @@ namespace SmartMES_Giroei
             this.미삽DataGridViewTextBoxColumn,
             this.뒤집힘DataGridViewTextBoxColumn,
             this.리드뜸DataGridViewTextBoxColumn,
-            this.미납,
+            this.dataGridViewTextBoxColumn1,
             this.쇼트DataGridViewTextBoxColumn,
             this.역삽DataGridViewTextBoxColumn,
             this.맨하탄DataGridViewTextBoxColumn,
@@ -332,20 +330,6 @@ namespace SmartMES_Giroei
             this.chart2Title.TabIndex = 15;
             this.chart2Title.Text = "타이틀";
             // 
-            // sPAoiChartBindingSource
-            // 
-            this.sPAoiChartBindingSource.DataMember = "SP_Aoi_Chart";
-            this.sPAoiChartBindingSource.DataSource = this.dataSetP1C;
-            // 
-            // dataSetP1C
-            // 
-            this.dataSetP1C.DataSetName = "DataSetP1C";
-            this.dataSetP1C.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_Aoi_ChartTableAdapter
-            // 
-            this.sP_Aoi_ChartTableAdapter.ClearBeforeFill = true;
-            // 
             // chart3Title
             // 
             this.chart3Title.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -387,12 +371,19 @@ namespace SmartMES_Giroei
             this.tableLayoutPanel2.Size = new System.Drawing.Size(1715, 666);
             this.tableLayoutPanel2.TabIndex = 18;
             // 
-            // 검사기록IDDataGridViewTextBoxColumn
+            // dataSetP1C
             // 
-            this.검사기록IDDataGridViewTextBoxColumn.DataPropertyName = "검사기록ID";
-            this.검사기록IDDataGridViewTextBoxColumn.HeaderText = "검사기록ID";
-            this.검사기록IDDataGridViewTextBoxColumn.Name = "검사기록IDDataGridViewTextBoxColumn";
-            this.검사기록IDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.dataSetP1C.DataSetName = "DataSetP1C";
+            this.dataSetP1C.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sPAoiChartBindingSource
+            // 
+            this.sPAoiChartBindingSource.DataMember = "SP_Aoi_Chart";
+            this.sPAoiChartBindingSource.DataSource = this.dataSetP1C;
+            // 
+            // sP_Aoi_ChartTableAdapter
+            // 
+            this.sP_Aoi_ChartTableAdapter.ClearBeforeFill = true;
             // 
             // 작지번호DataGridViewTextBoxColumn
             // 
@@ -404,7 +395,6 @@ namespace SmartMES_Giroei
             // 검사시작시간DataGridViewTextBoxColumn
             // 
             this.검사시작시간DataGridViewTextBoxColumn.DataPropertyName = "검사시작시간";
-            this.검사시작시간DataGridViewTextBoxColumn.FillWeight = 150F;
             this.검사시작시간DataGridViewTextBoxColumn.HeaderText = "검사시작시간";
             this.검사시작시간DataGridViewTextBoxColumn.Name = "검사시작시간DataGridViewTextBoxColumn";
             this.검사시작시간DataGridViewTextBoxColumn.ReadOnly = true;
@@ -412,7 +402,6 @@ namespace SmartMES_Giroei
             // 검사종료시간DataGridViewTextBoxColumn
             // 
             this.검사종료시간DataGridViewTextBoxColumn.DataPropertyName = "검사종료시간";
-            this.검사종료시간DataGridViewTextBoxColumn.FillWeight = 150F;
             this.검사종료시간DataGridViewTextBoxColumn.HeaderText = "검사종료시간";
             this.검사종료시간DataGridViewTextBoxColumn.Name = "검사종료시간DataGridViewTextBoxColumn";
             this.검사종료시간DataGridViewTextBoxColumn.ReadOnly = true;
@@ -440,7 +429,7 @@ namespace SmartMES_Giroei
             dataGridViewCellStyle3.Format = "N0";
             dataGridViewCellStyle3.NullValue = null;
             this.소납DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.소납DataGridViewTextBoxColumn.FillWeight = 80F;
+            this.소납DataGridViewTextBoxColumn.FillWeight = 75F;
             this.소납DataGridViewTextBoxColumn.HeaderText = "소납";
             this.소납DataGridViewTextBoxColumn.Name = "소납DataGridViewTextBoxColumn";
             this.소납DataGridViewTextBoxColumn.ReadOnly = true;
@@ -450,8 +439,9 @@ namespace SmartMES_Giroei
             this.냉땜DataGridViewTextBoxColumn.DataPropertyName = "냉땜";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle4.Format = "N0";
+            dataGridViewCellStyle4.NullValue = null;
             this.냉땜DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.냉땜DataGridViewTextBoxColumn.FillWeight = 80F;
+            this.냉땜DataGridViewTextBoxColumn.FillWeight = 75F;
             this.냉땜DataGridViewTextBoxColumn.HeaderText = "냉땜";
             this.냉땜DataGridViewTextBoxColumn.Name = "냉땜DataGridViewTextBoxColumn";
             this.냉땜DataGridViewTextBoxColumn.ReadOnly = true;
@@ -461,8 +451,9 @@ namespace SmartMES_Giroei
             this.미삽DataGridViewTextBoxColumn.DataPropertyName = "미삽";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle5.Format = "N0";
+            dataGridViewCellStyle5.NullValue = null;
             this.미삽DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.미삽DataGridViewTextBoxColumn.FillWeight = 80F;
+            this.미삽DataGridViewTextBoxColumn.FillWeight = 75F;
             this.미삽DataGridViewTextBoxColumn.HeaderText = "미삽";
             this.미삽DataGridViewTextBoxColumn.Name = "미삽DataGridViewTextBoxColumn";
             this.미삽DataGridViewTextBoxColumn.ReadOnly = true;
@@ -473,7 +464,7 @@ namespace SmartMES_Giroei
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle6.Format = "N0";
             this.뒤집힘DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.뒤집힘DataGridViewTextBoxColumn.FillWeight = 80F;
+            this.뒤집힘DataGridViewTextBoxColumn.FillWeight = 75F;
             this.뒤집힘DataGridViewTextBoxColumn.HeaderText = "뒤집힘";
             this.뒤집힘DataGridViewTextBoxColumn.Name = "뒤집힘DataGridViewTextBoxColumn";
             this.뒤집힘DataGridViewTextBoxColumn.ReadOnly = true;
@@ -484,21 +475,21 @@ namespace SmartMES_Giroei
             dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle7.Format = "N0";
             this.리드뜸DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.리드뜸DataGridViewTextBoxColumn.FillWeight = 80F;
+            this.리드뜸DataGridViewTextBoxColumn.FillWeight = 75F;
             this.리드뜸DataGridViewTextBoxColumn.HeaderText = "리드뜸";
             this.리드뜸DataGridViewTextBoxColumn.Name = "리드뜸DataGridViewTextBoxColumn";
             this.리드뜸DataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // 미납
+            // dataGridViewTextBoxColumn1
             // 
-            this.미납.DataPropertyName = "미납";
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "미납";
             dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle8.Format = "N0";
-            this.미납.DefaultCellStyle = dataGridViewCellStyle8;
-            this.미납.FillWeight = 80F;
-            this.미납.HeaderText = "미납";
-            this.미납.Name = "미납";
-            this.미납.ReadOnly = true;
+            this.dataGridViewTextBoxColumn1.DefaultCellStyle = dataGridViewCellStyle8;
+            this.dataGridViewTextBoxColumn1.FillWeight = 75F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "미납";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // 쇼트DataGridViewTextBoxColumn
             // 
@@ -506,7 +497,7 @@ namespace SmartMES_Giroei
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle9.Format = "N0";
             this.쇼트DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
-            this.쇼트DataGridViewTextBoxColumn.FillWeight = 80F;
+            this.쇼트DataGridViewTextBoxColumn.FillWeight = 75F;
             this.쇼트DataGridViewTextBoxColumn.HeaderText = "쇼트";
             this.쇼트DataGridViewTextBoxColumn.Name = "쇼트DataGridViewTextBoxColumn";
             this.쇼트DataGridViewTextBoxColumn.ReadOnly = true;
@@ -517,7 +508,7 @@ namespace SmartMES_Giroei
             dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle10.Format = "N0";
             this.역삽DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
-            this.역삽DataGridViewTextBoxColumn.FillWeight = 80F;
+            this.역삽DataGridViewTextBoxColumn.FillWeight = 75F;
             this.역삽DataGridViewTextBoxColumn.HeaderText = "역삽";
             this.역삽DataGridViewTextBoxColumn.Name = "역삽DataGridViewTextBoxColumn";
             this.역삽DataGridViewTextBoxColumn.ReadOnly = true;
@@ -528,7 +519,7 @@ namespace SmartMES_Giroei
             dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle11.Format = "N0";
             this.맨하탄DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
-            this.맨하탄DataGridViewTextBoxColumn.FillWeight = 80F;
+            this.맨하탄DataGridViewTextBoxColumn.FillWeight = 75F;
             this.맨하탄DataGridViewTextBoxColumn.HeaderText = "맨하탄";
             this.맨하탄DataGridViewTextBoxColumn.Name = "맨하탄DataGridViewTextBoxColumn";
             this.맨하탄DataGridViewTextBoxColumn.ReadOnly = true;
@@ -539,7 +530,7 @@ namespace SmartMES_Giroei
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle12.Format = "N0";
             this.틀어짐DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
-            this.틀어짐DataGridViewTextBoxColumn.FillWeight = 80F;
+            this.틀어짐DataGridViewTextBoxColumn.FillWeight = 75F;
             this.틀어짐DataGridViewTextBoxColumn.HeaderText = "틀어짐";
             this.틀어짐DataGridViewTextBoxColumn.Name = "틀어짐DataGridViewTextBoxColumn";
             this.틀어짐DataGridViewTextBoxColumn.ReadOnly = true;
@@ -549,8 +540,9 @@ namespace SmartMES_Giroei
             this.기타DataGridViewTextBoxColumn.DataPropertyName = "기타";
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
             dataGridViewCellStyle13.Format = "N0";
+            dataGridViewCellStyle13.NullValue = null;
             this.기타DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
-            this.기타DataGridViewTextBoxColumn.FillWeight = 80F;
+            this.기타DataGridViewTextBoxColumn.FillWeight = 75F;
             this.기타DataGridViewTextBoxColumn.HeaderText = "기타";
             this.기타DataGridViewTextBoxColumn.Name = "기타DataGridViewTextBoxColumn";
             this.기타DataGridViewTextBoxColumn.ReadOnly = true;
@@ -558,6 +550,7 @@ namespace SmartMES_Giroei
             // 비고DataGridViewTextBoxColumn
             // 
             this.비고DataGridViewTextBoxColumn.DataPropertyName = "비고";
+            this.비고DataGridViewTextBoxColumn.FillWeight = 75F;
             this.비고DataGridViewTextBoxColumn.HeaderText = "비고";
             this.비고DataGridViewTextBoxColumn.Name = "비고DataGridViewTextBoxColumn";
             this.비고DataGridViewTextBoxColumn.ReadOnly = true;
@@ -612,9 +605,9 @@ namespace SmartMES_Giroei
             this.panSearch.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chart2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPAoiChartBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).EndInit();
             this.tableLayoutPanel2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPAoiChartBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -628,9 +621,6 @@ namespace SmartMES_Giroei
         public System.Windows.Forms.DateTimePicker dtpFromDate;
         public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn 미납DataGridViewTextBoxColumn;
-        private System.Windows.Forms.BindingSource sPAoiChartBindingSource;
-        private P1C.DataSetP1C dataSetP1C;
-        private P1C.DataSetP1CTableAdapters.SP_Aoi_ChartTableAdapter sP_Aoi_ChartTableAdapter;
         public System.Windows.Forms.DataVisualization.Charting.Chart chart1;
         private System.Windows.Forms.Label chartTitle;
         public System.Windows.Forms.DataVisualization.Charting.Chart chart2;
@@ -639,6 +629,9 @@ namespace SmartMES_Giroei
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.DataGridViewTextBoxColumn 검사기록IDDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource sPAoiChartBindingSource;
+        private P1C.DataSetP1C dataSetP1C;
+        private P1C.DataSetP1CTableAdapters.SP_Aoi_ChartTableAdapter sP_Aoi_ChartTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn 작지번호DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 검사시작시간DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 검사종료시간DataGridViewTextBoxColumn;
@@ -649,7 +642,7 @@ namespace SmartMES_Giroei
         private System.Windows.Forms.DataGridViewTextBoxColumn 미삽DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 뒤집힘DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 리드뜸DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 미납;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn 쇼트DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 역삽DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 맨하탄DataGridViewTextBoxColumn;
