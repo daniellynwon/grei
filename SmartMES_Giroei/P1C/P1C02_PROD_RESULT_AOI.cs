@@ -175,7 +175,7 @@ namespace SmartMES_Giroei
                         sManhattan + "," + sTwisted + "," + sEtcerror + ",'" + fname1 + "','" + fname2 + "', @File1, @File2,'" + sContents + "','" + sMan + "')" 
                         + " on duplicate key update" + " insp_start_time = '" + sInspFromTime + "', insp_end_time = '" + sInspToTime + "'," 
                         + " insp_qty = " + sInspCount + ", defect_count = " + sTotalDefect + ", sonap = " + sSonap + ", nengttem = " + sNengttem 
-                        + ", misap = " + sMisap + ", short = " + sShort + ", reverse = " + sReverse
+                        + ", misap = " + sMisap + ", overturned = " + sOverturned + ", leadopen = " + sLeadopen + ", minap = " + sMinap + ", short = " + sShort + ", reverse = " + sReverse
                         + ", manhattan = " + sManhattan + ", twisted = " + sTwisted + ", etc_error = " + sEtcerror
                         +  ", file1_name = '" + fname1 + "', file2_name ='" + fname2 + "', file1 = @File1, file2 = @File2"
                         + ", contents = '" + sContents + "', enter_man = '" + sMan + "'";
