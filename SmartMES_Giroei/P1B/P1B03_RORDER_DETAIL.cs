@@ -238,6 +238,7 @@ namespace SmartMES_Giroei
                             ON DUPLICATE KEY UPDATE 
                                 cust_id = '{pcbComp}', cost = {pcbCost}, dtPayment = '{pcbPayDate}', dtOrder = '{pcbOrderDate}', dtDueDate = '{pcbDueDate}', qty = {pcbQty}, unit = '{pcbUnit}', layer = {pcbLayer}, thickness = {pcbThickness}, 
                                 material = '{pcbMaterial}', size_W = '{pcbSizeW}', size_L = '{pcbSizeL}', out_copper = {pcbOCopper}, in_copper = {pcbICopper}, surface = '{pcbSurface}',  PSR = '{pcbPSR}',  SILK = '{pcbSILK}', model = '{pcbModel}', impidance = '{pcbImp}', metaldata = '{pcbMetalData}', bigo = '{pcbBigo}'";
+                m.dbCUD(sql, ref msg);
 
             {
                 string maskComp = cbMaskComp.SelectedValue.ToString();
@@ -260,6 +261,7 @@ namespace SmartMES_Giroei
                             ON DUPLICATE KEY UPDATE 
                                 cust_id = '{maskComp}', cost = {maskCost}, zig_cost = {maskZigCost}, dtPayment = '{maskPayDate}', dtOrder = '{maskOrderDate}', dtDueDate = '{maskDueDate}', qty = {maskQty}, unit = '{maskUnit}', TOP = '{maskTOP}', BOTTOM = '{maskBOT}', 
                                 ZIG = '{maskZig}', size_W = '{maskSizeW}', size_L = '{maskSizeL}', bigo = '{maskBigo}'";
+                m.dbCUD(sql, ref msg);
             }
             {
                 string dsnComp = cbDesignComp.SelectedValue.ToString();
@@ -286,6 +288,7 @@ namespace SmartMES_Giroei
                             ON DUPLICATE KEY UPDATE 
                                 cust_id = '{dsnComp}', cost = {dsnCost}, dtPayment = '{dsnPayDate}', dtOrder = '{dsnOrderDate}', dtDueDate = '{dsnDueDate}', designer = {maskQty}, esti_time = '{dsnEstiTime}', work_time = '{dsnWorkTime}', design_gubun = '{dsnGubun}', 
                                 SMDpoint = {dsnSMDpoint}, DIPpoint = {dsnDIPpoint}, SMDpin = {dsnSMDpin}, DIPpin = {dsnDIPpin},  TP = {dsnTP}, size_W = '{dsnSizeW}', size_L = '{dsnSizeL}', bigo = '{dsnBigo}'";
+                m.dbCUD(sql, ref msg);
             }
             {
                 string purComp = cbPuchseComp.SelectedValue.ToString();
@@ -298,6 +301,7 @@ namespace SmartMES_Giroei
                                 VALUES('{@sOrderID}', {@sSeq}, 4, '{purComp}', {purCost}, '{purPayDate}', '{purBigo}')
                             ON DUPLICATE KEY UPDATE 
                                 cust_id = '{purComp}', cost = {purCost}, dtPayment = '{purPayDate}', bigo = '{purBigo}'";
+                m.dbCUD(sql, ref msg);
             }
             {
                 string etcComp = cbEtcComp.SelectedValue.ToString();
