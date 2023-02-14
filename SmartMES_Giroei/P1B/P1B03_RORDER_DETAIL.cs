@@ -194,32 +194,30 @@ namespace SmartMES_Giroei
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            string sOrderID = parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
-            string sSeq = parentWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
+                string sOrderID = parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
+                string sSeq = parentWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
 
-            string pcbQty = tbPcbQty.Text;
-            string maskQty = tbMaskQty.Text;
-            string dsnCost = tbDesignCost.Text;
-            string purCost = tbPurchseCost.Text;
-            string etcCost = tbEtcCost.Text;
+                string pcbQty = tbPcbQty.Text.Trim() == "" ? "0" : tbPcbQty.Text.Trim();
+                string maskQty = tbMaskQty.Text.Trim() == "" ? "0" : tbMaskQty.Text.Trim();
+                string dsnCost = tbDesignCost.Text.Trim() == "" ? "0" : tbDesignCost.Text.Trim();
+                string purCost = tbPurchseCost.Text.Trim() == "" ? "0" : tbPurchseCost.Text.Trim();
+                string etcCost = tbEtcCost.Text.Trim() == "" ? "0" : tbEtcCost.Text.Trim();
 
 
-            string sql = string.Empty;
-            string msg = string.Empty;
-            MariaCRUD m = new MariaCRUD();
+                string sql = string.Empty;
+                string msg = string.Empty;
+                MariaCRUD m = new MariaCRUD();
 
-            if (!(string.IsNullOrEmpty(pcbQty) || pcbQty == "0"))
-            {
                 string pcbComp = cbPcbComp.SelectedValue.ToString();
-                string pcbCost = tbPcbCost.Text;
+                string pcbCost = tbPcbCost.Text.Trim() == "" ? "0" : tbPcbCost.Text.Trim();
                 string pcbPayDate = dtPcbPay.Value.ToString("yyyy-MM-dd");
                 string pcbOrderDate = dtPcbOrder.Value.ToString("yyyy-MM-dd");
                 string pcbDueDate = dtPcbDuedate.Value.ToString("yyyy-MM-dd");
-                string pcbLayer = tbPcbLayer.Text;
-                string pcbThickness = tbPcbTinkness.Text;
+                string pcbLayer = tbPcbLayer.Text.Trim() == "" ? "0" : tbPcbLayer.Text.Trim();
+                string pcbThickness = tbPcbTinkness.Text.Trim() == "" ? "0" : tbPcbTinkness.Text.Trim();
                 string pcbMaterial = tbPcbMaterial.Text;
-                string pcbOCopper = tbPcbOCopper.Text;
-                string pcbICopper = tbPcbICopper.Text;
+                string pcbOCopper = tbPcbOCopper.Text.Trim() == "" ? "0" : tbPcbOCopper.Text.Trim();
+                string pcbICopper = tbPcbICopper.Text.Trim() == "" ? "0" : tbPcbICopper.Text.Trim();
                 string pcbSurface = tbPcbSurface.Text;
                 string pcbPSR = tbPcbPSR.Text;
                 string pcbSILK = tbPcbSILK.Text;
@@ -232,28 +230,27 @@ namespace SmartMES_Giroei
                 string pcbMetalData = tbPcbMetalData.Text;
                 string pcbBigo = rtbPcbBigo.Text;
 
+                string iidx = tabControl1.SelectedTab.ToString();
+
                 sql = $@"INSERT INTO SAL_order_sub_detail (order_id, order_seq, proc_id, cust_id, cost, dtPayment, dtOrder, dtDueDate, qty, unit, layer, thickness, material, size_W, size_L, out_copper, in_copper, surface, PSR, SILK, model, impidance, metaldata, bigo) 
                                 VALUES('{@sOrderID}', {@sSeq}, 1, '{pcbComp}', {pcbCost}, '{pcbPayDate}', '{pcbOrderDate}', '{pcbDueDate}', {pcbQty}, '{pcbUnit}', {pcbLayer}, {pcbThickness}, '{pcbMaterial}', '{pcbSizeW}', '{pcbSizeL}', {pcbOCopper}, 
                                         {pcbICopper}, '{pcbSurface}', '{pcbModel}', '{pcbPSR}', '{pcbSILK}', '{pcbImp}', '{pcbMetalData}', '{pcbBigo}')
                             ON DUPLICATE KEY UPDATE 
                                 cust_id = '{pcbComp}', cost = {pcbCost}, dtPayment = '{pcbPayDate}', dtOrder = '{pcbOrderDate}', dtDueDate = '{pcbDueDate}', qty = {pcbQty}, unit = '{pcbUnit}', layer = {pcbLayer}, thickness = {pcbThickness}, 
                                 material = '{pcbMaterial}', size_W = '{pcbSizeW}', size_L = '{pcbSizeL}', out_copper = {pcbOCopper}, in_copper = {pcbICopper}, surface = '{pcbSurface}',  PSR = '{pcbPSR}',  SILK = '{pcbSILK}', model = '{pcbModel}', impidance = '{pcbImp}', metaldata = '{pcbMetalData}', bigo = '{pcbBigo}'";
-                m.dbCUD(sql, ref msg);
 
-            }
-            if (!(string.IsNullOrEmpty(maskQty) || maskQty == "0"))
             {
                 string maskComp = cbMaskComp.SelectedValue.ToString();
-                string maskCost = tbMaskCost.Text;
-                string maskZigCost = tbMaskZigCost.Text;
+                string maskCost = tbMaskCost.Text.Trim() == "" ? "0" : tbMaskCost.Text.Trim();
+                string maskZigCost = tbMaskZigCost.Text.Trim() == "" ? "0" : tbMaskZigCost.Text.Trim();
                 string maskPayDate = dtMaskPay.Value.ToString("yyyy-MM-dd");
                 string maskOrderDate = dtMaskOrder.Value.ToString("yyyy-MM-dd");
                 string maskDueDate = dtMaskDueDate.Value.ToString("yyyy-MM-dd");
                 string maskTOP = tbMaskTOP.Text;
                 string maskBOT = tbMaskBOT.Text;
                 string maskZig = tbMaskZig.Text;
-                string maskSizeW = tbMaskSizeW.Text;
-                string maskSizeL = tbMaskSizeL.Text;
+                string maskSizeW = tbMaskSizeW.Text.Trim() == "" ? "0" : tbMaskSizeW.Text.Trim();
+                string maskSizeL = tbMaskSizeL.Text.Trim() == "" ? "0" : tbMaskSizeL.Text.Trim();
                 //string maskQty = tbMaskQty.Text;
                 string maskUnit = tbMaskUnit.Text;
                 string maskBigo = rtbMaskBigo.Text;
@@ -263,13 +260,7 @@ namespace SmartMES_Giroei
                             ON DUPLICATE KEY UPDATE 
                                 cust_id = '{maskComp}', cost = {maskCost}, zig_cost = {maskZigCost}, dtPayment = '{maskPayDate}', dtOrder = '{maskOrderDate}', dtDueDate = '{maskDueDate}', qty = {maskQty}, unit = '{maskUnit}', TOP = '{maskTOP}', BOTTOM = '{maskBOT}', 
                                 ZIG = '{maskZig}', size_W = '{maskSizeW}', size_L = '{maskSizeL}', bigo = '{maskBigo}'";
-                m.dbCUD(sql, ref msg);
-
-                if (msg == "OK")
-                    lbNotice.Text = "저장되었습니다.";
-
             }
-            if (!(string.IsNullOrEmpty(dsnCost) || dsnCost == "0"))
             {
                 string dsnComp = cbDesignComp.SelectedValue.ToString();
                 //string dsnCost = tbDesignCost.Text;
@@ -280,11 +271,11 @@ namespace SmartMES_Giroei
                 string dsnEstiTime = tbDesignEstiTime.Text;
                 string dsnWorkTime = tbDesignWorkTime.Text;
                 string dsnGubun = tbDesignGubun.Text;
-                string dsnSMDpoint = tbSMDpoint.Text;
-                string dsnDIPpoint = tbDIPpoint.Text;
-                string dsnSMDpin = tbSMDPinCount.Text;
-                string dsnDIPpin = tbDIPPinCount.Text;
-                string dsnTP = tbDesignTP.Text;
+                string dsnSMDpoint = tbSMDpoint.Text.Trim() == "" ? "0" : tbSMDpoint.Text.Trim();
+                string dsnDIPpoint = tbDIPpoint.Text.Trim() == "" ? "0" : tbDIPpoint.Text.Trim();
+                string dsnSMDpin = tbSMDPinCount.Text.Trim() == "" ? "0" : tbSMDPinCount.Text.Trim();
+                string dsnDIPpin = tbDIPPinCount.Text.Trim() == "" ? "0" : tbDIPPinCount.Text.Trim();
+                string dsnTP = tbDesignTP.Text.Trim() == "" ? "0" : tbDesignTP.Text.Trim();
                 string dsnSizeW = tbDesignSizeW.Text;
                 string dsnSizeL = tbDesignSizeL.Text;
                 string dsnBigo = rtbDesignBogo.Text;
@@ -295,10 +286,7 @@ namespace SmartMES_Giroei
                             ON DUPLICATE KEY UPDATE 
                                 cust_id = '{dsnComp}', cost = {dsnCost}, dtPayment = '{dsnPayDate}', dtOrder = '{dsnOrderDate}', dtDueDate = '{dsnDueDate}', designer = {maskQty}, esti_time = '{dsnEstiTime}', work_time = '{dsnWorkTime}', design_gubun = '{dsnGubun}', 
                                 SMDpoint = {dsnSMDpoint}, DIPpoint = {dsnDIPpoint}, SMDpin = {dsnSMDpin}, DIPpin = {dsnDIPpin},  TP = {dsnTP}, size_W = '{dsnSizeW}', size_L = '{dsnSizeL}', bigo = '{dsnBigo}'";
-                m.dbCUD(sql, ref msg);
-
             }
-            if (!(string.IsNullOrEmpty(purCost) || purCost == "0"))
             {
                 string purComp = cbPuchseComp.SelectedValue.ToString();
                 //string purCost = tbPurchseCost.Text;
@@ -310,10 +298,7 @@ namespace SmartMES_Giroei
                                 VALUES('{@sOrderID}', {@sSeq}, 4, '{purComp}', {purCost}, '{purPayDate}', '{purBigo}')
                             ON DUPLICATE KEY UPDATE 
                                 cust_id = '{purComp}', cost = {purCost}, dtPayment = '{purPayDate}', bigo = '{purBigo}'";
-                m.dbCUD(sql, ref msg);
-
             }
-            if (!(string.IsNullOrEmpty(etcCost) || etcCost == "0"))
             {
                 string etcComp = cbEtcComp.SelectedValue.ToString();
                 //string etcCost = tbEtcCost.Text;
@@ -326,8 +311,133 @@ namespace SmartMES_Giroei
                             ON DUPLICATE KEY UPDATE 
                                 cust_id = '{etcComp}', cost = {etcCost}, dtPayment = '{etcPayDate}', bigo = '{etcBigo}'";
                 m.dbCUD(sql, ref msg);
-
+                if (msg == "OK")
+                lbNotice.Text = "저장되었습니다.";
+                ListSearch();
             }
+
+
+
+            //////if (!(string.IsNullOrEmpty(pcbQty) || pcbQty == "0"))
+            //////{
+            //////    string pcbComp = cbPcbComp.SelectedValue.ToString();
+            //////    string pcbCost = tbPcbCost.Text;
+            //////    string pcbPayDate = dtPcbPay.Value.ToString("yyyy-MM-dd");
+            //////    string pcbOrderDate = dtPcbOrder.Value.ToString("yyyy-MM-dd");
+            //////    string pcbDueDate = dtPcbDuedate.Value.ToString("yyyy-MM-dd");
+            //////    string pcbLayer = tbPcbLayer.Text;
+            //////    string pcbThickness = tbPcbTinkness.Text;
+            //////    string pcbMaterial = tbPcbMaterial.Text;
+            //////    string pcbOCopper = tbPcbOCopper.Text;
+            //////    string pcbICopper = tbPcbICopper.Text;
+            //////    string pcbSurface = tbPcbSurface.Text;
+            //////    string pcbPSR = tbPcbPSR.Text;
+            //////    string pcbSILK = tbPcbSILK.Text;
+            //////    string pcbSizeW = tbPcbSizeW.Text;
+            //////    string pcbSizeL = tbPcbSizeL.Text;
+            //////    //string pcbQty = tbPcbQty.Text;
+            //////    string pcbUnit = tbPcbUnit.Text;
+            //////    string pcbModel = tbPcbModel.Text;
+            //////    string pcbImp = tbPcbImp.Text;
+            //////    string pcbMetalData = tbPcbMetalData.Text;
+            //////    string pcbBigo = rtbPcbBigo.Text;
+
+            //////    sql = $@"INSERT INTO SAL_order_sub_detail (order_id, order_seq, proc_id, cust_id, cost, dtPayment, dtOrder, dtDueDate, qty, unit, layer, thickness, material, size_W, size_L, out_copper, in_copper, surface, PSR, SILK, model, impidance, metaldata, bigo) 
+            //////                    VALUES('{@sOrderID}', {@sSeq}, 1, '{pcbComp}', {pcbCost}, '{pcbPayDate}', '{pcbOrderDate}', '{pcbDueDate}', {pcbQty}, '{pcbUnit}', {pcbLayer}, {pcbThickness}, '{pcbMaterial}', '{pcbSizeW}', '{pcbSizeL}', {pcbOCopper}, 
+            //////                            {pcbICopper}, '{pcbSurface}', '{pcbModel}', '{pcbPSR}', '{pcbSILK}', '{pcbImp}', '{pcbMetalData}', '{pcbBigo}')
+            //////                ON DUPLICATE KEY UPDATE 
+            //////                    cust_id = '{pcbComp}', cost = {pcbCost}, dtPayment = '{pcbPayDate}', dtOrder = '{pcbOrderDate}', dtDueDate = '{pcbDueDate}', qty = {pcbQty}, unit = '{pcbUnit}', layer = {pcbLayer}, thickness = {pcbThickness}, 
+            //////                    material = '{pcbMaterial}', size_W = '{pcbSizeW}', size_L = '{pcbSizeL}', out_copper = {pcbOCopper}, in_copper = {pcbICopper}, surface = '{pcbSurface}',  PSR = '{pcbPSR}',  SILK = '{pcbSILK}', model = '{pcbModel}', impidance = '{pcbImp}', metaldata = '{pcbMetalData}', bigo = '{pcbBigo}'";
+            //////    m.dbCUD(sql, ref msg);
+
+            //////}
+            //////if (!(string.IsNullOrEmpty(maskQty) || maskQty == "0"))
+            //////{
+            //////    string maskComp = cbMaskComp.SelectedValue.ToString();
+            //////    string maskCost = tbMaskCost.Text;
+            //////    string maskZigCost = tbMaskZigCost.Text;
+            //////    string maskPayDate = dtMaskPay.Value.ToString("yyyy-MM-dd");
+            //////    string maskOrderDate = dtMaskOrder.Value.ToString("yyyy-MM-dd");
+            //////    string maskDueDate = dtMaskDueDate.Value.ToString("yyyy-MM-dd");
+            //////    string maskTOP = tbMaskTOP.Text;
+            //////    string maskBOT = tbMaskBOT.Text;
+            //////    string maskZig = tbMaskZig.Text;
+            //////    string maskSizeW = tbMaskSizeW.Text;
+            //////    string maskSizeL = tbMaskSizeL.Text;
+            //////    //string maskQty = tbMaskQty.Text;
+            //////    string maskUnit = tbMaskUnit.Text;
+            //////    string maskBigo = rtbMaskBigo.Text;
+
+            //////    sql = $@"INSERT INTO SAL_order_sub_detail (order_id, order_seq, proc_id, cust_id, cost, zig_cost, dtPayment, dtOrder, dtDueDate, qty, unit, TOP, BOTTOM, ZIG, size_W, size_L, bigo) 
+            //////                    VALUES('{@sOrderID}', {@sSeq}, 2, '{maskComp}', {maskCost}, {maskZigCost}, '{maskPayDate}', '{maskOrderDate}', '{maskDueDate}', {maskQty}, '{maskUnit}', '{maskTOP}', '{maskBOT}',  '{maskZig}', {maskSizeW}, {maskSizeL},'{maskBigo}')
+            //////                ON DUPLICATE KEY UPDATE 
+            //////                    cust_id = '{maskComp}', cost = {maskCost}, zig_cost = {maskZigCost}, dtPayment = '{maskPayDate}', dtOrder = '{maskOrderDate}', dtDueDate = '{maskDueDate}', qty = {maskQty}, unit = '{maskUnit}', TOP = '{maskTOP}', BOTTOM = '{maskBOT}', 
+            //////                    ZIG = '{maskZig}', size_W = '{maskSizeW}', size_L = '{maskSizeL}', bigo = '{maskBigo}'";
+            //////    m.dbCUD(sql, ref msg);
+
+            //////    if (msg == "OK")
+            //////        lbNotice.Text = "저장되었습니다.";
+
+            //////}
+            //////if (!(string.IsNullOrEmpty(dsnCost) || dsnCost == "0"))
+            //////{
+            //////    string dsnComp = cbDesignComp.SelectedValue.ToString();
+            //////    //string dsnCost = tbDesignCost.Text;
+            //////    string dsnPayDate = dtDesignPay.Value.ToString("yyyy-MM-dd");
+            //////    string dsnOrderDate = dtDesignStart.Value.ToString("yyyy-MM-dd");
+            //////    string dsnDueDate = dtDesignDone.Value.ToString("yyyy-MM-dd");
+            //////    string dsnDesigner = tbDesigner.Text;
+            //////    string dsnEstiTime = tbDesignEstiTime.Text;
+            //////    string dsnWorkTime = tbDesignWorkTime.Text;
+            //////    string dsnGubun = tbDesignGubun.Text;
+            //////    string dsnSMDpoint = tbSMDpoint.Text;
+            //////    string dsnDIPpoint = tbDIPpoint.Text;
+            //////    string dsnSMDpin = tbSMDPinCount.Text;
+            //////    string dsnDIPpin = tbDIPPinCount.Text;
+            //////    string dsnTP = tbDesignTP.Text;
+            //////    string dsnSizeW = tbDesignSizeW.Text;
+            //////    string dsnSizeL = tbDesignSizeL.Text;
+            //////    string dsnBigo = rtbDesignBogo.Text;
+
+            //////    sql = $@"INSERT INTO SAL_order_sub_detail (order_id, order_seq, proc_id, cust_id, cost, dtPayment, dtOrder, dtDueDate, designer, esti_time, work_time, design_gubun, SMDpoint, DIPpoint, SMDpin, DIPpin, TP, size_W, size_L, bigo) 
+            //////                    VALUES('{@sOrderID}', {@sSeq}, 3, '{dsnComp}', {dsnCost}, '{dsnPayDate}', '{dsnOrderDate}', '{dsnDueDate}', '{dsnDesigner}', '{dsnEstiTime}', '{dsnWorkTime}', '{dsnGubun}',  {dsnSMDpoint}, {dsnDIPpoint}, {dsnTP},
+            //////                            {dsnSMDpin}, {dsnDIPpin}, '{dsnSizeW}', '{dsnSizeL}','{dsnBigo}')
+            //////                ON DUPLICATE KEY UPDATE 
+            //////                    cust_id = '{dsnComp}', cost = {dsnCost}, dtPayment = '{dsnPayDate}', dtOrder = '{dsnOrderDate}', dtDueDate = '{dsnDueDate}', designer = {maskQty}, esti_time = '{dsnEstiTime}', work_time = '{dsnWorkTime}', design_gubun = '{dsnGubun}', 
+            //////                    SMDpoint = {dsnSMDpoint}, DIPpoint = {dsnDIPpoint}, SMDpin = {dsnSMDpin}, DIPpin = {dsnDIPpin},  TP = {dsnTP}, size_W = '{dsnSizeW}', size_L = '{dsnSizeL}', bigo = '{dsnBigo}'";
+            //////    m.dbCUD(sql, ref msg);
+
+            //////}
+            //////if (!(string.IsNullOrEmpty(purCost) || purCost == "0"))
+            //////{
+            //////    string purComp = cbPuchseComp.SelectedValue.ToString();
+            //////    //string purCost = tbPurchseCost.Text;
+            //////    string purPayDate = dtPurchase.Value.ToString("yyyy-MM-dd");
+
+            //////    string purBigo = rtbPuchaseBigo.Text;
+
+            //////    sql = $@"INSERT INTO SAL_order_sub_detail (order_id, order_seq, proc_id, cust_id, cost, dtPayment, bigo) 
+            //////                    VALUES('{@sOrderID}', {@sSeq}, 4, '{purComp}', {purCost}, '{purPayDate}', '{purBigo}')
+            //////                ON DUPLICATE KEY UPDATE 
+            //////                    cust_id = '{purComp}', cost = {purCost}, dtPayment = '{purPayDate}', bigo = '{purBigo}'";
+            //////    m.dbCUD(sql, ref msg);
+
+            //////}
+            //////if (!(string.IsNullOrEmpty(etcCost) || etcCost == "0"))
+            //////{
+            //////    string etcComp = cbEtcComp.SelectedValue.ToString();
+            //////    //string etcCost = tbEtcCost.Text;
+            //////    string etcPayDate = dtEtcPay.Value.ToString("yyyy-MM-dd");
+
+            //////    string etcBigo = rtbEtcBigo.Text;
+
+            //////    sql = $@"INSERT INTO SAL_order_sub_detail (order_id, order_seq, proc_id, cust_id, cost, dtPayment, bigo) 
+            //////                    VALUES('{@sOrderID}', {@sSeq}, 5, '{etcComp}', {etcCost}, '{etcPayDate}', '{etcBigo}')
+            //////                ON DUPLICATE KEY UPDATE 
+            //////                    cust_id = '{etcComp}', cost = {etcCost}, dtPayment = '{etcPayDate}', bigo = '{etcBigo}'";
+            //////    m.dbCUD(sql, ref msg);
+
+            //////}
 
 
         }
