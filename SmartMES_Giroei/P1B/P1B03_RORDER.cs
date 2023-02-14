@@ -246,7 +246,8 @@ namespace SmartMES_Giroei
             string sql = string.Empty;
             string msg = string.Empty;
             MariaCRUD m = new MariaCRUD();
-            string sNewNo = getROrderNo();
+            string sDate = string.Empty;
+            string sNewNo = getROrderNo(sDate);
 
             sql = "insert into SAL_order_main (order_id, plant, order_date, cust_id, project, deli_date, cust_man, cust_contact, warehouse, estimate_id, enter_man) " +
                   "select '" + sNewNo + "','" + G.Pos + "', CURDATE(), cust_id, project, CURDATE(), '" + G.UserID + "' " +
@@ -872,7 +873,7 @@ namespace SmartMES_Giroei
                 //    }
                 //}
 
-                sNo = getROrderNo();
+                sNo = getROrderNo(sDate);
                 sql = "insert into SAL_order_main (order_id, plant, order_date, cust_id, project, deli_date, contents, estimate_id, enter_man) " +
                     "values('" + sNo + "','" + G.Pos + "','" + sDate + "','" + sCust + "','" + sProject + "','" + sDeliDate + "','" + sContents + "','" + sEstiNo + "','" + G.UserID + "')";
 
@@ -1109,9 +1110,9 @@ namespace SmartMES_Giroei
         #endregion
 
         #region 수주번호 생성
-        private string getROrderNo()
+        private string getROrderNo(string sDate)
         {
-            string sql = @"select UF_ROrderNoGenerator()";
+            string sql = @"select UF_ROrderNoGenerator('" + sDate + "')";
 
             MariaCRUD m = new MariaCRUD();
 
