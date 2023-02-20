@@ -1,5 +1,7 @@
-﻿using SmartFactory;
+﻿using Microsoft.Reporting.WinForms;
+using SmartFactory;
 using System;
+using System.Data;
 using System.Drawing;
 using System.Windows.Forms;
 
@@ -59,15 +61,17 @@ namespace SmartMES_Giroei
             if (e.RowIndex < 0) return;
             if (e.ColumnIndex != 7) return;
 
+            DateTime dtToDate = Convert.ToDateTime(DateTime.Now); // 현재날짜
+            //           DateTime dtToDate = Convert.ToDateTime(tbDeliDate.Text);
+            //DateTime dtToDate = DateTime.Parse(dtpToDate.Value.ToString("yyyy-MM-dd"));
             tbProdName.Text = dataGridView1.Rows[e.RowIndex].Cells[7].Value.ToString();
-
             string sProdID = dataGridView1.Rows[e.RowIndex].Cells[6].Value.ToString();
 
             try
             {
                 Cursor.Current = Cursors.WaitCursor;
 
-                sP_ROrderList_Sub2TableAdapter.Fill(dataSetP1B.SP_ROrderList_Sub2, sSujuNo, sProdID);
+                sP_ROrderList_Sub2TableAdapter.Fill(dataSetP1B.SP_ROrderList_Sub2, sSujuNo, sProdID, dtToDate);
 
                 var data = dataSetP1B.SP_ROrderList_Sub2;
                 var result = await Logger.ApiLog(G.UserID, "수주별 품목정보의 BOM 및 재고정보", ActionType.조회, data);

@@ -355,7 +355,6 @@
             dataGridViewCellStyle3.Format = "N0";
             dataGridViewCellStyle3.NullValue = null;
             this.기초재고DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.기초재고DataGridViewTextBoxColumn.FillWeight = 50F;
             this.기초재고DataGridViewTextBoxColumn.HeaderText = "기초재고";
             this.기초재고DataGridViewTextBoxColumn.Name = "기초재고DataGridViewTextBoxColumn";
             this.기초재고DataGridViewTextBoxColumn.ReadOnly = true;
@@ -367,7 +366,6 @@
             dataGridViewCellStyle4.Format = "N0";
             dataGridViewCellStyle4.NullValue = null;
             this.이전재고DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.이전재고DataGridViewTextBoxColumn.FillWeight = 50F;
             this.이전재고DataGridViewTextBoxColumn.HeaderText = "이전재고";
             this.이전재고DataGridViewTextBoxColumn.Name = "이전재고DataGridViewTextBoxColumn";
             this.이전재고DataGridViewTextBoxColumn.ReadOnly = true;
@@ -379,7 +377,6 @@
             dataGridViewCellStyle5.Format = "N0";
             dataGridViewCellStyle5.NullValue = null;
             this.입고량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.입고량DataGridViewTextBoxColumn.FillWeight = 50F;
             this.입고량DataGridViewTextBoxColumn.HeaderText = "입고량";
             this.입고량DataGridViewTextBoxColumn.Name = "입고량DataGridViewTextBoxColumn";
             this.입고량DataGridViewTextBoxColumn.ReadOnly = true;
@@ -391,7 +388,6 @@
             dataGridViewCellStyle6.Format = "N0";
             dataGridViewCellStyle6.NullValue = null;
             this.출고량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.출고량DataGridViewTextBoxColumn.FillWeight = 50F;
             this.출고량DataGridViewTextBoxColumn.HeaderText = "출고량";
             this.출고량DataGridViewTextBoxColumn.Name = "출고량DataGridViewTextBoxColumn";
             this.출고량DataGridViewTextBoxColumn.ReadOnly = true;
@@ -403,7 +399,6 @@
             dataGridViewCellStyle7.Format = "N0";
             dataGridViewCellStyle7.NullValue = null;
             this.현재고DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.현재고DataGridViewTextBoxColumn.FillWeight = 50F;
             this.현재고DataGridViewTextBoxColumn.HeaderText = "현재고";
             this.현재고DataGridViewTextBoxColumn.Name = "현재고DataGridViewTextBoxColumn";
             this.현재고DataGridViewTextBoxColumn.ReadOnly = true;

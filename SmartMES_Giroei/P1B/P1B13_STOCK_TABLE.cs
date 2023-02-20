@@ -66,7 +66,7 @@ namespace SmartMES_Giroei
                 string sDepot = cbDepot.SelectedValue == null ? String.Empty : cbDepot.SelectedValue.ToString();
 
                 //sP_StockTable_QueryTableAdapter.Fill(dataSetP1B.SP_StockTable_Query, dtFromDate, dtToDate, sKind, sDepot, sSearch);
-                sP_RealStock_QueryTableAdapter.Fill(dataSetP1B.SP_RealStock_Query, dtFromDate, dtToDate);
+                sP_RealStock_QueryTableAdapter.Fill(dataSetP1B.SP_RealStock_Query, dtFromDate, dtToDate, sSearch);
 
                 dataGridView1.CurrentCell = null;
                 dataGridView1.ClearSelection();

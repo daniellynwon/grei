@@ -35,12 +35,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.순번DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +59,11 @@
             this.lbDeliDate = new System.Windows.Forms.Label();
             this.lbDate = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.lbSujuNo = new System.Windows.Forms.Label();
+            this.sP_ROrderList_Sub1TableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_ROrderList_Sub1TableAdapter();
+            this.sPROrderListSub2BindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sP_ROrderList_Sub2TableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_ROrderList_Sub2TableAdapter();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.순번DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.품목코드DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -74,18 +75,13 @@
             this.총필요수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.현재고DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.재고상황DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPROrderListSub2BindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.lbSujuNo = new System.Windows.Forms.Label();
-            this.sP_ROrderList_Sub1TableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_ROrderList_Sub1TableAdapter();
-            this.sP_ROrderList_Sub2TableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_ROrderList_Sub2TableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPROrderListSub1BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPROrderListSub2BindingSource)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sPROrderListSub2BindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -101,7 +97,7 @@
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -123,7 +119,7 @@
             this.dataGridView1.DataSource = this.sPROrderListSub1BindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tomato;
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -136,7 +132,7 @@
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
@@ -260,7 +256,7 @@
             // 
             this.lbProdName.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbProdName.AutoSize = true;
-            this.lbProdName.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbProdName.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbProdName.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbProdName.Location = new System.Drawing.Point(7, 93);
             this.lbProdName.Name = "lbProdName";
@@ -295,7 +291,7 @@
             this.lbCust.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbCust.AutoSize = true;
             this.lbCust.Cursor = System.Windows.Forms.Cursors.Default;
-            this.lbCust.Font = new System.Drawing.Font("Malgun Gothic", 12F);
+            this.lbCust.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.lbCust.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbCust.Location = new System.Drawing.Point(7, 13);
             this.lbCust.Name = "lbCust";
@@ -318,7 +314,7 @@
             // 
             this.lbDeliDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbDeliDate.AutoSize = true;
-            this.lbDeliDate.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbDeliDate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbDeliDate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbDeliDate.Location = new System.Drawing.Point(306, 53);
             this.lbDeliDate.Name = "lbDeliDate";
@@ -330,7 +326,7 @@
             // 
             this.lbDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.lbDate.AutoSize = true;
-            this.lbDate.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbDate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbDate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.lbDate.Location = new System.Drawing.Point(7, 53);
             this.lbDate.Name = "lbDate";
@@ -351,7 +347,7 @@
             this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -373,27 +369,27 @@
             this.재고상황DataGridViewTextBoxColumn});
             this.dataGridView2.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView2.DataSource = this.sPROrderListSub2BindingSource;
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle7;
             this.dataGridView2.EnableHeadersVisualStyles = false;
             this.dataGridView2.Location = new System.Drawing.Point(5, 194);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView2.MultiSelect = false;
             this.dataGridView2.Name = "dataGridView2";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle12.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView2.RowHeadersVisible = false;
             this.dataGridView2.RowHeadersWidth = 35;
             this.dataGridView2.RowTemplate.Height = 35;
@@ -401,6 +397,40 @@
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView2.Size = new System.Drawing.Size(920, 458);
             this.dataGridView2.TabIndex = 15;
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(205)))), ((int)(((byte)(219)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lbSujuNo);
+            this.panel2.Location = new System.Drawing.Point(5, 6);
+            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(614, 40);
+            this.panel2.TabIndex = 16;
+            // 
+            // lbSujuNo
+            // 
+            this.lbSujuNo.AutoSize = true;
+            this.lbSujuNo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbSujuNo.Location = new System.Drawing.Point(7, 9);
+            this.lbSujuNo.Name = "lbSujuNo";
+            this.lbSujuNo.Size = new System.Drawing.Size(112, 21);
+            this.lbSujuNo.TabIndex = 15;
+            this.lbSujuNo.Text = "수주번호 라벨";
+            // 
+            // sP_ROrderList_Sub1TableAdapter
+            // 
+            this.sP_ROrderList_Sub1TableAdapter.ClearBeforeFill = true;
+            // 
+            // sPROrderListSub2BindingSource
+            // 
+            this.sPROrderListSub2BindingSource.DataMember = "SP_ROrderList_Sub2";
+            this.sPROrderListSub2BindingSource.DataSource = this.dataSetP1B;
+            // 
+            // sP_ROrderList_Sub2TableAdapter
+            // 
+            this.sP_ROrderList_Sub2TableAdapter.ClearBeforeFill = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -432,11 +462,6 @@
             // 수주수량DataGridViewTextBoxColumn
             // 
             this.수주수량DataGridViewTextBoxColumn.DataPropertyName = "수주수량";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "N0";
-            dataGridViewCellStyle7.NullValue = null;
-            this.수주수량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.수주수량DataGridViewTextBoxColumn.FillWeight = 80F;
             this.수주수량DataGridViewTextBoxColumn.HeaderText = "수주수량";
             this.수주수량DataGridViewTextBoxColumn.Name = "수주수량DataGridViewTextBoxColumn";
             // 
@@ -450,80 +475,32 @@
             // 원자재명DataGridViewTextBoxColumn
             // 
             this.원자재명DataGridViewTextBoxColumn.DataPropertyName = "원자재명";
-            this.원자재명DataGridViewTextBoxColumn.FillWeight = 120F;
             this.원자재명DataGridViewTextBoxColumn.HeaderText = "원자재명";
             this.원자재명DataGridViewTextBoxColumn.Name = "원자재명DataGridViewTextBoxColumn";
             // 
             // 필요수량DataGridViewTextBoxColumn
             // 
             this.필요수량DataGridViewTextBoxColumn.DataPropertyName = "필요수량";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "N0";
-            this.필요수량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.필요수량DataGridViewTextBoxColumn.FillWeight = 70F;
             this.필요수량DataGridViewTextBoxColumn.HeaderText = "필요수량";
             this.필요수량DataGridViewTextBoxColumn.Name = "필요수량DataGridViewTextBoxColumn";
             // 
             // 총필요수량DataGridViewTextBoxColumn
             // 
             this.총필요수량DataGridViewTextBoxColumn.DataPropertyName = "총필요수량";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "N0";
-            this.총필요수량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
-            this.총필요수량DataGridViewTextBoxColumn.FillWeight = 80F;
             this.총필요수량DataGridViewTextBoxColumn.HeaderText = "총필요수량";
             this.총필요수량DataGridViewTextBoxColumn.Name = "총필요수량DataGridViewTextBoxColumn";
             // 
             // 현재고DataGridViewTextBoxColumn
             // 
             this.현재고DataGridViewTextBoxColumn.DataPropertyName = "현재고";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "N0";
-            this.현재고DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle10;
-            this.현재고DataGridViewTextBoxColumn.FillWeight = 70F;
             this.현재고DataGridViewTextBoxColumn.HeaderText = "현재고";
             this.현재고DataGridViewTextBoxColumn.Name = "현재고DataGridViewTextBoxColumn";
             // 
             // 재고상황DataGridViewTextBoxColumn
             // 
             this.재고상황DataGridViewTextBoxColumn.DataPropertyName = "재고상황";
-            this.재고상황DataGridViewTextBoxColumn.FillWeight = 70F;
             this.재고상황DataGridViewTextBoxColumn.HeaderText = "재고상황";
             this.재고상황DataGridViewTextBoxColumn.Name = "재고상황DataGridViewTextBoxColumn";
-            // 
-            // sPROrderListSub2BindingSource
-            // 
-            this.sPROrderListSub2BindingSource.DataMember = "SP_ROrderList_Sub2";
-            this.sPROrderListSub2BindingSource.DataSource = this.dataSetP1B;
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(205)))), ((int)(((byte)(219)))));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.lbSujuNo);
-            this.panel2.Location = new System.Drawing.Point(5, 6);
-            this.panel2.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(614, 40);
-            this.panel2.TabIndex = 16;
-            // 
-            // lbSujuNo
-            // 
-            this.lbSujuNo.AutoSize = true;
-            this.lbSujuNo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbSujuNo.Location = new System.Drawing.Point(7, 9);
-            this.lbSujuNo.Name = "lbSujuNo";
-            this.lbSujuNo.Size = new System.Drawing.Size(112, 21);
-            this.lbSujuNo.TabIndex = 15;
-            this.lbSujuNo.Text = "수주번호 라벨";
-            // 
-            // sP_ROrderList_Sub1TableAdapter
-            // 
-            this.sP_ROrderList_Sub1TableAdapter.ClearBeforeFill = true;
-            // 
-            // sP_ROrderList_Sub2TableAdapter
-            // 
-            this.sP_ROrderList_Sub2TableAdapter.ClearBeforeFill = true;
             // 
             // P1B04_RORDER_LIST_SUB
             // 
@@ -535,7 +512,7 @@
             this.Controls.Add(this.dataGridView2);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
@@ -551,9 +528,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPROrderListSub2BindingSource)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sPROrderListSub2BindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -595,8 +572,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 품목코드DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewLinkColumn 품목명DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수주수량;
-        private System.Windows.Forms.BindingSource sPROrderListSub2BindingSource;
-        private P1B.DataSetP1BTableAdapters.SP_ROrderList_Sub2TableAdapter sP_ROrderList_Sub2TableAdapter;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label lbSujuNo;
         private System.Windows.Forms.Label lbProdName;
@@ -612,5 +587,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 총필요수량DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 현재고DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 재고상황DataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource sPROrderListSub2BindingSource;
+        private P1B.DataSetP1BTableAdapters.SP_ROrderList_Sub2TableAdapter sP_ROrderList_Sub2TableAdapter;
     }
 }
