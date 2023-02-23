@@ -152,9 +152,14 @@ namespace SmartMES_Giroei
             bool rePrint = false;
             if (rePrint = CheckRePrint(barcodePrefix))
             {
-                if (MessageBox.Show("이미 발행된 바코드입니다. 재 발행하겠습니까?", "YesOrNO", MessageBoxButtons.YesNo) == DialogResult.No)
+                if (MessageBox.Show("바코드를 발행하겠습니까?", "YesOrNO", MessageBoxButtons.YesNo) == DialogResult.No)
                     return false;
             }
+            //if (rePrint = CheckRePrint(barcodePrefix))
+            //{
+            //    if (MessageBox.Show("이미 발행된 바코드입니다. 재 발행하겠습니까?", "YesOrNO", MessageBoxButtons.YesNo) == DialogResult.No)
+            //        return false;
+            //}
 
             int iPackageCount = int.Parse(sPackageCount);
             int iQty = int.Parse(sQty);
@@ -407,22 +412,7 @@ namespace SmartMES_Giroei
                             return;
                         }
 
-                        //sql = $@"INSERT INTO INV_material_in (mbarcode, cust_id, prod_id, plant, input_date, order_id, order_seq, qty, pack_type, pack_qty, reason_code,  enter_man) 
-                        //    VALUES ('{barcodePrefix}', '{@sCustID}', '{@sSubProd}', 'A', '{@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}', '{@sSujuNo}', {@sSujuSeq}, {@sQty}, '{@sPackType}', {@sPackQty}, '0010', '{@G.UserID}');";
-
-                        //m.dbCUD(sql, ref msg);
-
-                        //if (msg != "OK")
-                        //{
-                        //    lblMsg.Text = msg;
-                        //    MessageBox.Show(msg);
-                        //    return;
-                        //}
-
-                        //var data = sql;
-                        //Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);
-
-                        sql = $@"SELECT basestock_qty, partin_total, partout_total, current_qty FROM INV_real_stock WHERE prod_id = '{@sSubProd}' ORDER BY input_date DESC LIMIT 1";
+                        sql = $@"SELECT basestock_qty, partin_total, partout_total, current_qty FROM INV_real_stock WHERE prod_id = '{@sSubProd}' AND cust_id = '{@sCustID}' AND input_date = '{@DateTime.Now.ToString("yyyy-MM-dd")}' ORDER BY input_date DESC LIMIT 1";
 
                         table = m.dbDataTable(sql, ref msg);
 
@@ -431,13 +421,27 @@ namespace SmartMES_Giroei
 
                         if (table.Rows.Count == 0)
                         {
-                            sql = $@"INSERT INTO INV_real_stock(prod_id, basestock_qty, partin_total, partout_total, current_qty, update_man) 
-                                VALUES('{@sSubProd}', 0, 0, 0, 0, '{@G.UserID}')";
+                            sql = $@"INSERT INTO INV_real_stock(prod_id, basestock_qty, partin_total, partout_total, current_qty, update_man, cust_id, input_date) 
+                                VALUES('{@sSubProd}', 0, 0, 0, 0, '{@G.UserID}' ,'{@sCustID}' , '{@DateTime.Now.ToString("yyyy-MM-dd")}')";
 
                             m.dbCUD(sql, ref msg);
 
                             string data = sql;
                             Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);
+
+                            string sBar_surfix = (i + 1).ToString("D3") + "-" + iQty.ToString("D4");
+
+                            sql = $@"INSERT INTO INV_material_in (mbarcode, barcode_surfix, cust_id, prod_id, plant, input_date, order_id, order_seq, qty, pack_type, pack_qty, reason_code,  enter_man) 
+                                VALUES ('{barcodePrefix}', '{sBar_surfix}','{@sCustID}', '{@sSubProd}', 'A', '{@DateTime.Now.ToString("yyyy-MM-dd")}', '{@sSujuNo}', {@sSujuSeq}, {@sQty}, '{@sPackType}', {@sPackQty}, '0010', '{@G.UserID}');";
+
+                            m.dbCUD(sql, ref msg);
+
+                            if (msg != "OK")
+                            {
+                                lblMsg.Text = msg;
+                                MessageBox.Show(msg);
+                                return;
+                            }
 
                             sql = $@"SELECT basestock_qty, partin_total, partout_total, current_qty FROM INV_real_stock WHERE prod_id = '{@sSubProd}' ORDER BY input_date DESC LIMIT 1";
 
@@ -446,7 +450,7 @@ namespace SmartMES_Giroei
                             sNewPartInQTY = sQty;
                             sNewQTY = sQty;
 
-                            sql = $@"UPDATE INV_real_stock SET partin_total = {@sQty}, current_qty = {@sQty}, update_man = '{@G.UserID}', update_dt = '{@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}' WHERE prod_id = '{@sSubProd}'";
+                            sql = $@"UPDATE INV_real_stock SET partin_total = {@sQty}, current_qty = {@sQty}, update_man = '{@G.UserID}', update_dt = '{@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}' WHERE prod_id = '{@sSubProd}' AND  cust_id = '{@sCustID}'AND input_date = '{@DateTime.Now.ToString("yyyy-MM-dd")}'";
                             //sql = $@"INSERT INTO INV_real_stock(prod_id, basestock_qty, partin_total, partout_total, current_qty, update_man) 
                             //    VALUES('{@sSubProd}', 0, {@sQty}, 0, {@sQty}, '{@G.UserID}')";
 
@@ -464,10 +468,25 @@ namespace SmartMES_Giroei
                         }
                         else
                         {
+
+                            string sBar_surfix =  (i + 1).ToString("D3") + "-" + iQty.ToString("D4");
+
+                            sql = $@"INSERT INTO INV_material_in (mbarcode, barcode_surfix, cust_id, prod_id, plant, input_date, order_id, order_seq, qty, pack_type, pack_qty, reason_code,  enter_man) 
+                                VALUES ('{barcodePrefix}', '{sBar_surfix}','{@sCustID}', '{@sSubProd}', 'A', '{@DateTime.Now.ToString("yyyy-MM-dd")}', '{@sSujuNo}', {@sSujuSeq}, {@sQty}, '{@sPackType}', {@sPackQty}, '0010', '{@G.UserID}');";
+
+                            m.dbCUD(sql, ref msg);
+
+                            if (msg != "OK")
+                            {
+                                lblMsg.Text = msg;
+                                MessageBox.Show(msg);
+                                return;
+                            }
+
                             sNewPartInQTY = (Convert.ToInt64(table.Rows[0][1].ToString()) + Convert.ToInt64(sQty)).ToString();
                             sNewQTY = (Convert.ToInt64(table.Rows[0][3].ToString()) + Convert.ToInt64(sQty)).ToString();
 
-                            sql = $@"UPDATE INV_real_stock SET partin_total = {@sNewPartInQTY}, current_qty = {@sNewQTY}, update_man = '{@G.UserID}', update_dt = '{@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}' WHERE prod_id = '{@sSubProd}'";
+                            sql = $@"UPDATE INV_real_stock SET partin_total = {@sNewPartInQTY}, current_qty = {@sNewQTY}, update_man = '{@G.UserID}', update_dt = '{@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}' WHERE prod_id = '{@sSubProd}' AND  cust_id = '{@sCustID}'AND input_date = '{@DateTime.Now.ToString("yyyy-MM-dd")}'";
                             //sql = $@"INSERT INTO INV_real_stock(prod_id, basestock_qty, partin_total, partout_total, current_qty, update_man) 
                             //    VALUES('{@sSubProd}', {@table.Rows[0][0].ToString()}, {@sQty}, 0, {@sNewQTY}, '{@G.UserID}')";
 

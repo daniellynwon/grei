@@ -47,9 +47,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.sPPurchaseRawMatINBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
-            this.sP_PurchaseRawMat_INTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseRawMat_INTableAdapter();
             this.수주번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수주순번DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.거래처코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -66,6 +63,9 @@
             this.포장단위DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.포장수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.입고수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.sPPurchaseRawMatINBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
+            this.sP_PurchaseRawMat_INTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseRawMat_INTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -271,20 +271,6 @@
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
-            // sPPurchaseRawMatINBindingSource
-            // 
-            this.sPPurchaseRawMatINBindingSource.DataMember = "SP_PurchaseRawMat_IN";
-            this.sPPurchaseRawMatINBindingSource.DataSource = this.dataSetP1B;
-            // 
-            // dataSetP1B
-            // 
-            this.dataSetP1B.DataSetName = "DataSetP1B";
-            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_PurchaseRawMat_INTableAdapter
-            // 
-            this.sP_PurchaseRawMat_INTableAdapter.ClearBeforeFill = true;
-            // 
             // 수주번호DataGridViewTextBoxColumn
             // 
             this.수주번호DataGridViewTextBoxColumn.DataPropertyName = "수주번호";
@@ -424,6 +410,20 @@
             this.입고수량DataGridViewTextBoxColumn.HeaderText = "입고수량";
             this.입고수량DataGridViewTextBoxColumn.Name = "입고수량DataGridViewTextBoxColumn";
             this.입고수량DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // sPPurchaseRawMatINBindingSource
+            // 
+            this.sPPurchaseRawMatINBindingSource.DataMember = "SP_PurchaseRawMat_IN";
+            this.sPPurchaseRawMatINBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // dataSetP1B
+            // 
+            this.dataSetP1B.DataSetName = "DataSetP1B";
+            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_PurchaseRawMat_INTableAdapter
+            // 
+            this.sP_PurchaseRawMat_INTableAdapter.ClearBeforeFill = true;
             // 
             // P1B11_PURCHASE_RAW_MAT
             // 
