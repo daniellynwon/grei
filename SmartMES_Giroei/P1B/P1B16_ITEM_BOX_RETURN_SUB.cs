@@ -81,8 +81,8 @@ namespace SmartMES_Giroei
                     string mbarcode = dataGridView1.Rows[i].Cells[21].Value.ToString();
                     if (string.Equals(pre_mbarcode, mbarcode))
                     {
-                        dataGridView1.Rows[i].Cells[13].Style.ForeColor = Color.Transparent;
-                        dataGridView1.Rows[i].Cells[16].Style.ForeColor = Color.Transparent;
+                        //dataGridView1.Rows[i].Cells[13].Style.ForeColor = Color.Transparent;
+                        //dataGridView1.Rows[i].Cells[16].Style.ForeColor = Color.Transparent;
                     }
                     pre_mbarcode = mbarcode;
                 }

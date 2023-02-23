@@ -47,6 +47,9 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sPPurchaseRawMatINBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
+            this.sP_PurchaseRawMat_INTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseRawMat_INTableAdapter();
             this.수주번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수주순번DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.거래처코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,9 +66,6 @@
             this.포장단위DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.포장수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.입고수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPPurchaseRawMatINBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
-            this.sP_PurchaseRawMat_INTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseRawMat_INTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -271,6 +271,20 @@
             this.dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(this.dataGridView1_CellFormatting);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             // 
+            // sPPurchaseRawMatINBindingSource
+            // 
+            this.sPPurchaseRawMatINBindingSource.DataMember = "SP_PurchaseRawMat_IN";
+            this.sPPurchaseRawMatINBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // dataSetP1B
+            // 
+            this.dataSetP1B.DataSetName = "DataSetP1B";
+            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_PurchaseRawMat_INTableAdapter
+            // 
+            this.sP_PurchaseRawMat_INTableAdapter.ClearBeforeFill = true;
+            // 
             // 수주번호DataGridViewTextBoxColumn
             // 
             this.수주번호DataGridViewTextBoxColumn.DataPropertyName = "수주번호";
@@ -278,6 +292,7 @@
             this.수주번호DataGridViewTextBoxColumn.HeaderText = "수주번호";
             this.수주번호DataGridViewTextBoxColumn.Name = "수주번호DataGridViewTextBoxColumn";
             this.수주번호DataGridViewTextBoxColumn.ReadOnly = true;
+            this.수주번호DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // 수주순번DataGridViewTextBoxColumn
             // 
@@ -286,6 +301,7 @@
             this.수주순번DataGridViewTextBoxColumn.HeaderText = "수주순번";
             this.수주순번DataGridViewTextBoxColumn.Name = "수주순번DataGridViewTextBoxColumn";
             this.수주순번DataGridViewTextBoxColumn.ReadOnly = true;
+            this.수주순번DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // 거래처코드DataGridViewTextBoxColumn
             // 
@@ -301,6 +317,7 @@
             this.거래처DataGridViewTextBoxColumn.HeaderText = "거래처";
             this.거래처DataGridViewTextBoxColumn.Name = "거래처DataGridViewTextBoxColumn";
             this.거래처DataGridViewTextBoxColumn.ReadOnly = true;
+            this.거래처DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // 품목코드DataGridViewTextBoxColumn
             // 
@@ -316,6 +333,7 @@
             this.품목명DataGridViewTextBoxColumn.HeaderText = "품목명";
             this.품목명DataGridViewTextBoxColumn.Name = "품목명DataGridViewTextBoxColumn";
             this.품목명DataGridViewTextBoxColumn.ReadOnly = true;
+            this.품목명DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // 원자재코드DataGridViewTextBoxColumn
             // 
@@ -324,6 +342,7 @@
             this.원자재코드DataGridViewTextBoxColumn.HeaderText = "원자재코드";
             this.원자재코드DataGridViewTextBoxColumn.Name = "원자재코드DataGridViewTextBoxColumn";
             this.원자재코드DataGridViewTextBoxColumn.ReadOnly = true;
+            this.원자재코드DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // 원자재DataGridViewTextBoxColumn
             // 
@@ -331,6 +350,7 @@
             this.원자재DataGridViewTextBoxColumn.HeaderText = "원자재";
             this.원자재DataGridViewTextBoxColumn.Name = "원자재DataGridViewTextBoxColumn";
             this.원자재DataGridViewTextBoxColumn.ReadOnly = true;
+            this.원자재DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // 자재구분DataGridViewTextBoxColumn
             // 
@@ -339,6 +359,7 @@
             this.자재구분DataGridViewTextBoxColumn.HeaderText = "자재구분";
             this.자재구분DataGridViewTextBoxColumn.Name = "자재구분DataGridViewTextBoxColumn";
             this.자재구분DataGridViewTextBoxColumn.ReadOnly = true;
+            this.자재구분DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // 필요수량DataGridViewTextBoxColumn
             // 
@@ -350,6 +371,7 @@
             this.필요수량DataGridViewTextBoxColumn.HeaderText = "필요수량";
             this.필요수량DataGridViewTextBoxColumn.Name = "필요수량DataGridViewTextBoxColumn";
             this.필요수량DataGridViewTextBoxColumn.ReadOnly = true;
+            this.필요수량DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // 수주수량DataGridViewTextBoxColumn
             // 
@@ -361,6 +383,7 @@
             this.수주수량DataGridViewTextBoxColumn.HeaderText = "수주수량";
             this.수주수량DataGridViewTextBoxColumn.Name = "수주수량DataGridViewTextBoxColumn";
             this.수주수량DataGridViewTextBoxColumn.ReadOnly = true;
+            this.수주수량DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // 총필요수량DataGridViewTextBoxColumn
             // 
@@ -372,6 +395,7 @@
             this.총필요수량DataGridViewTextBoxColumn.HeaderText = "총필요수량";
             this.총필요수량DataGridViewTextBoxColumn.Name = "총필요수량DataGridViewTextBoxColumn";
             this.총필요수량DataGridViewTextBoxColumn.ReadOnly = true;
+            this.총필요수량DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // 포장단위코드DataGridViewTextBoxColumn
             // 
@@ -388,6 +412,7 @@
             this.포장단위DataGridViewTextBoxColumn.HeaderText = "포장단위";
             this.포장단위DataGridViewTextBoxColumn.Name = "포장단위DataGridViewTextBoxColumn";
             this.포장단위DataGridViewTextBoxColumn.ReadOnly = true;
+            this.포장단위DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // 포장수량DataGridViewTextBoxColumn
             // 
@@ -399,6 +424,7 @@
             this.포장수량DataGridViewTextBoxColumn.HeaderText = "포장수량";
             this.포장수량DataGridViewTextBoxColumn.Name = "포장수량DataGridViewTextBoxColumn";
             this.포장수량DataGridViewTextBoxColumn.ReadOnly = true;
+            this.포장수량DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // 입고수량DataGridViewTextBoxColumn
             // 
@@ -410,20 +436,7 @@
             this.입고수량DataGridViewTextBoxColumn.HeaderText = "입고수량";
             this.입고수량DataGridViewTextBoxColumn.Name = "입고수량DataGridViewTextBoxColumn";
             this.입고수량DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // sPPurchaseRawMatINBindingSource
-            // 
-            this.sPPurchaseRawMatINBindingSource.DataMember = "SP_PurchaseRawMat_IN";
-            this.sPPurchaseRawMatINBindingSource.DataSource = this.dataSetP1B;
-            // 
-            // dataSetP1B
-            // 
-            this.dataSetP1B.DataSetName = "DataSetP1B";
-            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_PurchaseRawMat_INTableAdapter
-            // 
-            this.sP_PurchaseRawMat_INTableAdapter.ClearBeforeFill = true;
+            this.입고수량DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
             // 
             // P1B11_PURCHASE_RAW_MAT
             // 
