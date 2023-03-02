@@ -452,7 +452,10 @@ namespace SmartMES_Giroei
 
                 if ((range.Cells[4, 4] as Excel.Range).Value2.ToString().Trim() != sProdName)
                 {
-                    MessageBox.Show("해당 품목의 BOM 엑셀 파일이 아닙니다.");
+                    if (DialogResult.OK == MessageBox.Show("해당 품목의 BOM 엑셀 파일이 아니거나,\r품목명이 일치하지 않습니다.", "엑셀 파일 확인이 필요합니다", MessageBoxButtons.OK, MessageBoxIcon.Warning))
+                    {
+                        return;
+                    }
                     workBook.Close();
                     excelApp.Quit();
                     return;
