@@ -20624,7 +20624,7 @@ namespace SmartMES_Giroei.P1B {
                 this.column품목코드.MaxLength = 10;
                 this.column품목명.MaxLength = 50;
                 this.column자재코드.MaxLength = 10;
-                this.column자재명.MaxLength = 50;
+                this.column자재명.MaxLength = 500;
                 this.column박스ID.AutoIncrement = true;
                 this.column박스ID.AutoIncrementSeed = -1;
                 this.column박스ID.AutoIncrementStep = -1;

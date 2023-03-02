@@ -532,14 +532,14 @@ namespace SmartMES_Giroei
                         string Misap = "N", Susap = "N";
                         if (sMisap == "미삽" && string.IsNullOrEmpty(sSusap))
                         {
-                            Susap = "Y";
+                            Misap = "Y";
                         }
                         else if (sSusap == "수삽" && (string.IsNullOrEmpty(sMisap) || sMisap != "미삽"))
                         {
-                            Misap = "Y";
+                            Susap = "Y";
                         }
 
-                        sql = $@"INSERT INTO BOM_bomlist (seq, prod_id, parent_id, req_qty, IsSusap, IsMiSap, contents) VALUES ('{@sSeq}', '{@_sProdID}', '{@sProdIDSub}', '{@sQty}', '{Susap}', '{Misap}','" + sContents + "');";
+                        sql = $@"INSERT INTO BOM_bomlist (seq, prod_id, parent_id, req_qty, IsSusap, IsMiSap, contents, consignedYN) VALUES ('{@sSeq}', '{@_sProdID}', '{@sProdIDSub}', '{@sQty}', '{Susap}', '{Misap}', '{sContents}', '{@sConsign}');";
                         m.dbCUD(sql, ref msg);
                     }
                     else
@@ -554,7 +554,7 @@ namespace SmartMES_Giroei
                             Susap = "Y";
                         }
 
-                        sql = $@"UPDATE BOM_bomlist SET consignedYN = '{@sConsign}', IsSusap = '{Susap}', IsMiSap = '{Misap}', contents = '" + sContents + "'  WHERE prod_id = '{@_sProdID}' AND parent_id = '{@sProdIDSub}'";
+                        sql = $@"UPDATE BOM_bomlist SET consignedYN = '{@sConsign}', IsSusap = '{Susap}', IsMiSap = '{Misap}', contents = '{sContents}' WHERE prod_id = '{@_sProdID}' AND parent_id = '{@sProdIDSub}'";
                         m.dbCUD(sql, ref msg);
                     }
                     int ratio = (int)Math.Round((count * 100) / ((double)range.Rows.Count - 8.0));
