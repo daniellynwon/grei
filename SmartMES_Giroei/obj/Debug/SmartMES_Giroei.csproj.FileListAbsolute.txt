@@ -1173,7 +1173,6 @@ C:\Project\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES
 C:\Project\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.exe
 C:\Project\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.pdb
 E:\worksapce\INNOBE\SmartMES_Geroei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.g.resources
-C:\Project\(유지보수)지로이아이\grei\SmartMES_Giroei\bin\Debug\Giroel(BOM).xlsx
 C:\Project\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1A06_BOM_Excel.resources
 C:\Project\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1C02_PROD_RESULT_AOI_DOC.resources
 C:\Project\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1C11_AOI_CHART.resources
@@ -1466,3 +1465,4 @@ C:\Users\yycho\Source\Repos\SmartMES_Giroei\SmartMES_Giroei\obj\Debug\SmartMES_G
 C:\Users\yycho\Source\Repos\SmartMES_Giroei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.exe
 C:\Users\yycho\Source\Repos\SmartMES_Giroei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.pdb
 C:\Project\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.csproj.AssemblyReference.cache
+C:\Project\(유지보수)지로이아이\grei\SmartMES_Giroei\bin\Debug\Giroel(BOM).xlsx

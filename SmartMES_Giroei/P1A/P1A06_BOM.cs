@@ -450,7 +450,7 @@ namespace SmartMES_Giroei
                 workSheet = workBook.Worksheets.get_Item(1) as Excel.Worksheet; // 엑셀 첫번째 워크시트 가져오기 
                 range = workSheet.UsedRange; // 사용중인 셀 범위를 가져오기
 
-                if ((range.Cells[4, 5] as Excel.Range).Value2.ToString().Trim() != sProdName)
+                if ((range.Cells[4, 4] as Excel.Range).Value2.ToString().Trim() != sProdName)
                 {
                     MessageBox.Show("해당 품목의 BOM 엑셀 파일이 아닙니다.");
                     workBook.Close();
@@ -464,19 +464,31 @@ namespace SmartMES_Giroei
 
                 for (int row = 8; row <= range.Rows.Count; row++) // 가져온 행 만큼 반복
                 {
-                    if ((range.Cells[row, 6] as Excel.Range).Value2 == null || string.IsNullOrEmpty((range.Cells[row, 6] as Excel.Range).Value2.ToString().Trim())) break;
+                    if ((range.Cells[row, 5] as Excel.Range).Value2 == null || string.IsNullOrEmpty((range.Cells[row, 5] as Excel.Range).Value2.ToString().Trim())) break;
                     
+                    //sSeq = (range.Cells[row, 1] as Excel.Range).Value2.ToString().Trim();  // 순번
+                    //sKind = (range.Cells[row, 4] as Excel.Range).Value2.ToString().Trim();  // 품목구분
+                    //if ((range.Cells[row, 4] as Excel.Range).Value2.ToString().Trim() == "-") sKind = "S";
+                    //sProdKind = (range.Cells[row, 2] as Excel.Range).Value2.ToString().Trim();  // 품목분류
+                    //sProdNameSub = (range.Cells[row, 6] as Excel.Range).Value2.ToString().Trim();   // 자재명
+                    //sProdSize = (range.Cells[row, 7] as Excel.Range).Value2.ToString().Trim();
+                    //sQty = (range.Cells[row, 8] as Excel.Range).Value2.ToString().Trim();
+                    //sContents = ((range.Cells[row, 15] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 15] as Excel.Range).Value2.ToString().Trim();
+                    //sMisap = ((range.Cells[row, 14] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 14] as Excel.Range).Value2.ToString().Trim();   // 미삽
+                    //sSusap = ((range.Cells[row, 18] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 18] as Excel.Range).Value2.ToString().Trim();    // 수삽
+                    //string sSageop = ((range.Cells[row, 17] as Excel.Range).Value2 == null) ? "도급" : (range.Cells[row, 17] as Excel.Range).Value2.ToString().Trim();    // 사급
+
                     sSeq = (range.Cells[row, 1] as Excel.Range).Value2.ToString().Trim();  // 순번
-                    sKind = (range.Cells[row, 4] as Excel.Range).Value2.ToString().Trim();  // 품목구분
-                    if ((range.Cells[row, 4] as Excel.Range).Value2.ToString().Trim() == "-") sKind = "S";
+                    sKind = (range.Cells[row, 3] as Excel.Range).Value2.ToString().Trim();  // 품목구분
+                    if ((range.Cells[row, 3] as Excel.Range).Value2.ToString().Trim() == "-") sKind = "S";
                     sProdKind = (range.Cells[row, 2] as Excel.Range).Value2.ToString().Trim();  // 품목분류
-                    sProdNameSub = (range.Cells[row, 6] as Excel.Range).Value2.ToString().Trim();   // 자재명
-                    sProdSize = (range.Cells[row, 7] as Excel.Range).Value2.ToString().Trim();
-                    sQty = (range.Cells[row, 8] as Excel.Range).Value2.ToString().Trim();
-                    sContents = ((range.Cells[row, 15] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 15] as Excel.Range).Value2.ToString().Trim();
-                    sMisap = ((range.Cells[row, 14] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 14] as Excel.Range).Value2.ToString().Trim();   // 미삽
-                    sSusap = ((range.Cells[row, 18] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 18] as Excel.Range).Value2.ToString().Trim();    // 수삽
-                    string sSageop = ((range.Cells[row, 17] as Excel.Range).Value2 == null) ? "도급" : (range.Cells[row, 17] as Excel.Range).Value2.ToString().Trim();    // 사급
+                    sProdNameSub = (range.Cells[row, 5] as Excel.Range).Value2.ToString().Trim();   // 자재명
+                    sProdSize = (range.Cells[row, 6] as Excel.Range).Value2.ToString().Trim();
+                    sQty = (range.Cells[row, 7] as Excel.Range).Value2.ToString().Trim();
+                    sContents = ((range.Cells[row, 14] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 14] as Excel.Range).Value2.ToString().Trim();
+                    sMisap = ((range.Cells[row, 13] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 13] as Excel.Range).Value2.ToString().Trim();   // 미삽
+                    sSusap = ((range.Cells[row, 17] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 17] as Excel.Range).Value2.ToString().Trim();    // 수삽
+                    string sSageop = ((range.Cells[row, 16] as Excel.Range).Value2 == null) ? "도급" : (range.Cells[row, 16] as Excel.Range).Value2.ToString().Trim();    // 사급
                     //sConsign = (range.Cells[row, 17] as Excel.Range).Value2.ToString().Trim();    // 도급(N)/사급(Y)
                     if (sSageop == "사급") 
                         sConsign = "Y";
