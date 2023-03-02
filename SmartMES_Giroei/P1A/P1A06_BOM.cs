@@ -621,7 +621,7 @@ namespace SmartMES_Giroei
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
-            string srcFile = @"Giroel(BOM).xlsx";
+            string srcFile = @"Giroel_BOM.xlsx";
             string destFile = string.Empty;
 
             saveFileDialog1.FileName = "Giroel_BOM" + ".xlsx"; //초기 파일명을 지정할 때 사용
@@ -641,7 +641,7 @@ namespace SmartMES_Giroei
             saveFileDialog1.Dispose();
             File.Copy(srcFile, destFile, true);
 
-            MessageBox.Show("설정하신 경로로 BOM 엑셀 파일이 저장 되었습니다.");
+            MessageBox.Show("설정하신 경로로 BOM 엑셀 파일이 저장 되었습니다."); //새로 엑셀파일 교체 후 배포버전에서 양식다운로드가 되지 않는다면 항상복사 및 빌드작업 내용을 설정헀는지 확인이 필요합니다.
         }
 
         private void dataGridView_ExportToExcel(string fileName, DataGridView dgv) 
