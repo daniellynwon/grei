@@ -1708,7 +1708,7 @@ namespace SmartMES_Giroei.P1C {
                 this.column자재코드.MaxLength = 8;
                 this.column분류.MaxLength = 50;
                 this.column자재명.AllowDBNull = false;
-                this.column자재명.MaxLength = 50;
+                this.column자재명.MaxLength = 500;
                 this.column규격.MaxLength = 50;
                 this.column단위.MaxLength = 10;
                 this.column소모량.AllowDBNull = false;
@@ -2343,7 +2343,7 @@ namespace SmartMES_Giroei.P1C {
                 this.column자재코드.AllowDBNull = false;
                 this.column자재코드.MaxLength = 8;
                 this.column자재명.AllowDBNull = false;
-                this.column자재명.MaxLength = 50;
+                this.column자재명.MaxLength = 500;
                 this.column규격.MaxLength = 50;
             }
             

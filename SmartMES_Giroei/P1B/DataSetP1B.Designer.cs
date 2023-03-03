@@ -3070,7 +3070,7 @@ namespace SmartMES_Giroei.P1B {
                 this.column품목코드.MaxLength = 8;
                 this.column품목명.AllowDBNull = false;
                 this.column품목명.MaxLength = 50;
-                this.column자재명.MaxLength = 50;
+                this.column자재명.MaxLength = 500;
                 this.column규격.MaxLength = 50;
                 this.column창고ID.MaxLength = 4;
                 this.column입고창고.MaxLength = 50;
@@ -14217,7 +14217,7 @@ namespace SmartMES_Giroei.P1B {
                 this.column자재코드.AllowDBNull = false;
                 this.column자재코드.MaxLength = 10;
                 this.column자재명.AllowDBNull = false;
-                this.column자재명.MaxLength = 50;
+                this.column자재명.MaxLength = 500;
                 this.column포장단위.MaxLength = 50;
                 this.column포장수량.AllowDBNull = false;
                 this.column수량.AllowDBNull = false;
@@ -15121,7 +15121,7 @@ namespace SmartMES_Giroei.P1B {
                 this.column자재구분.MaxLength = 50;
                 this.column자재코드.AllowDBNull = false;
                 this.column자재코드.MaxLength = 10;
-                this.column자재명.MaxLength = 50;
+                this.column자재명.MaxLength = 500;
                 this.column필요수량.AllowDBNull = false;
                 this.column현재고.AllowDBNull = false;
             }
@@ -20638,7 +20638,7 @@ namespace SmartMES_Giroei.P1B {
                 this.column품목코드.MaxLength = 10;
                 this.column품목명.MaxLength = 50;
                 this.column자재코드.MaxLength = 10;
-                this.column자재명.MaxLength = 50;
+                this.column자재명.MaxLength = 500;
                 this.column박스ID.AutoIncrement = true;
                 this.column박스ID.AutoIncrementSeed = -1;
                 this.column박스ID.AutoIncrementStep = -1;
@@ -22104,7 +22104,7 @@ namespace SmartMES_Giroei.P1B {
                 this.column품목코드.MaxLength = 10;
                 this.column품목명.MaxLength = 50;
                 this.column자재코드.MaxLength = 10;
-                this.column자재명.MaxLength = 50;
+                this.column자재명.MaxLength = 500;
                 this.column입고량.AllowDBNull = false;
                 this.column박스ID.AutoIncrement = true;
                 this.column박스ID.AutoIncrementSeed = -1;
@@ -23133,7 +23133,7 @@ namespace SmartMES_Giroei.P1B {
                 this.column자재코드.AllowDBNull = false;
                 this.column자재코드.MaxLength = 10;
                 this.column자재명.AllowDBNull = false;
-                this.column자재명.MaxLength = 50;
+                this.column자재명.MaxLength = 500;
                 this.column포장단위.MaxLength = 50;
                 this.column포장수량.AllowDBNull = false;
                 this.column수량.AllowDBNull = false;
