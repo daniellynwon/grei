@@ -35,15 +35,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.거래처코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.거래처DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.품목코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.품목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.사급DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColumnCheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             this.sPPurchaseRawMatINSUBBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -52,6 +43,16 @@
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.sP_PurchaseRawMat_IN_SUBTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseRawMat_IN_SUBTableAdapter();
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.거래처코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.거래처DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.품목코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.품목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.사급DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColumnCheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.BOM등록일자 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseRawMatINSUBBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).BeginInit();
@@ -89,6 +90,7 @@
             this.품목명DataGridViewTextBoxColumn,
             this.사급DataGridViewTextBoxColumn,
             this.ColumnCheckBox,
+            this.BOM등록일자,
             this.Column1});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPPurchaseRawMatINSUBBindingSource;
@@ -123,77 +125,6 @@
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "수주번호";
-            this.dataGridViewTextBoxColumn1.FillWeight = 90F;
-            this.dataGridViewTextBoxColumn1.HeaderText = "수주번호";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "수주순번";
-            this.dataGridViewTextBoxColumn2.FillWeight = 30F;
-            this.dataGridViewTextBoxColumn2.HeaderText = "순번";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // 거래처코드DataGridViewTextBoxColumn
-            // 
-            this.거래처코드DataGridViewTextBoxColumn.DataPropertyName = "거래처코드";
-            this.거래처코드DataGridViewTextBoxColumn.HeaderText = "거래처코드";
-            this.거래처코드DataGridViewTextBoxColumn.Name = "거래처코드DataGridViewTextBoxColumn";
-            this.거래처코드DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 거래처DataGridViewTextBoxColumn
-            // 
-            this.거래처DataGridViewTextBoxColumn.DataPropertyName = "거래처";
-            this.거래처DataGridViewTextBoxColumn.FillWeight = 130F;
-            this.거래처DataGridViewTextBoxColumn.HeaderText = "거래처";
-            this.거래처DataGridViewTextBoxColumn.Name = "거래처DataGridViewTextBoxColumn";
-            this.거래처DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 품목코드DataGridViewTextBoxColumn
-            // 
-            this.품목코드DataGridViewTextBoxColumn.DataPropertyName = "품목코드";
-            this.품목코드DataGridViewTextBoxColumn.HeaderText = "품목코드";
-            this.품목코드DataGridViewTextBoxColumn.Name = "품목코드DataGridViewTextBoxColumn";
-            this.품목코드DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 품목명DataGridViewTextBoxColumn
-            // 
-            this.품목명DataGridViewTextBoxColumn.DataPropertyName = "품목명";
-            this.품목명DataGridViewTextBoxColumn.HeaderText = "품목명";
-            this.품목명DataGridViewTextBoxColumn.Name = "품목명DataGridViewTextBoxColumn";
-            this.품목명DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 사급DataGridViewTextBoxColumn
-            // 
-            this.사급DataGridViewTextBoxColumn.DataPropertyName = "사급";
-            this.사급DataGridViewTextBoxColumn.HeaderText = "사급";
-            this.사급DataGridViewTextBoxColumn.Name = "사급DataGridViewTextBoxColumn";
-            this.사급DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // ColumnCheckBox
-            // 
-            this.ColumnCheckBox.FalseValue = "0";
-            this.ColumnCheckBox.FillWeight = 30F;
-            this.ColumnCheckBox.HeaderText = "사급";
-            this.ColumnCheckBox.Name = "ColumnCheckBox";
-            this.ColumnCheckBox.ReadOnly = true;
-            this.ColumnCheckBox.TrueValue = "1";
-            this.ColumnCheckBox.Visible = false;
-            // 
-            // Column1
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = "BOM";
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column1.FillWeight = 30F;
-            this.Column1.HeaderText = "BOM";
-            this.Column1.Name = "Column1";
             // 
             // sPPurchaseRawMatINSUBBindingSource
             // 
@@ -267,6 +198,83 @@
             // 
             this.sP_PurchaseRawMat_IN_SUBTableAdapter.ClearBeforeFill = true;
             // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "수주번호";
+            this.dataGridViewTextBoxColumn1.FillWeight = 90F;
+            this.dataGridViewTextBoxColumn1.HeaderText = "수주번호";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "수주순번";
+            this.dataGridViewTextBoxColumn2.FillWeight = 30F;
+            this.dataGridViewTextBoxColumn2.HeaderText = "순번";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // 거래처코드DataGridViewTextBoxColumn
+            // 
+            this.거래처코드DataGridViewTextBoxColumn.DataPropertyName = "거래처코드";
+            this.거래처코드DataGridViewTextBoxColumn.HeaderText = "거래처코드";
+            this.거래처코드DataGridViewTextBoxColumn.Name = "거래처코드DataGridViewTextBoxColumn";
+            this.거래처코드DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 거래처DataGridViewTextBoxColumn
+            // 
+            this.거래처DataGridViewTextBoxColumn.DataPropertyName = "거래처";
+            this.거래처DataGridViewTextBoxColumn.FillWeight = 130F;
+            this.거래처DataGridViewTextBoxColumn.HeaderText = "거래처";
+            this.거래처DataGridViewTextBoxColumn.Name = "거래처DataGridViewTextBoxColumn";
+            this.거래처DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 품목코드DataGridViewTextBoxColumn
+            // 
+            this.품목코드DataGridViewTextBoxColumn.DataPropertyName = "품목코드";
+            this.품목코드DataGridViewTextBoxColumn.HeaderText = "품목코드";
+            this.품목코드DataGridViewTextBoxColumn.Name = "품목코드DataGridViewTextBoxColumn";
+            this.품목코드DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 품목명DataGridViewTextBoxColumn
+            // 
+            this.품목명DataGridViewTextBoxColumn.DataPropertyName = "품목명";
+            this.품목명DataGridViewTextBoxColumn.HeaderText = "품목명";
+            this.품목명DataGridViewTextBoxColumn.Name = "품목명DataGridViewTextBoxColumn";
+            this.품목명DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 사급DataGridViewTextBoxColumn
+            // 
+            this.사급DataGridViewTextBoxColumn.DataPropertyName = "사급";
+            this.사급DataGridViewTextBoxColumn.HeaderText = "사급";
+            this.사급DataGridViewTextBoxColumn.Name = "사급DataGridViewTextBoxColumn";
+            this.사급DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // ColumnCheckBox
+            // 
+            this.ColumnCheckBox.FalseValue = "0";
+            this.ColumnCheckBox.FillWeight = 30F;
+            this.ColumnCheckBox.HeaderText = "사급";
+            this.ColumnCheckBox.Name = "ColumnCheckBox";
+            this.ColumnCheckBox.ReadOnly = true;
+            this.ColumnCheckBox.TrueValue = "1";
+            this.ColumnCheckBox.Visible = false;
+            // 
+            // BOM등록일자
+            // 
+            this.BOM등록일자.DataPropertyName = "BOM등록일자";
+            this.BOM등록일자.HeaderText = "BOM등록일자";
+            this.BOM등록일자.Name = "BOM등록일자";
+            // 
+            // Column1
+            // 
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = "BOM";
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Column1.FillWeight = 30F;
+            this.Column1.HeaderText = "BOM";
+            this.Column1.Name = "Column1";
+            // 
             // P1B11_PURCHASE_RAW_MAT_SUB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -328,6 +336,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 품목명DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 사급DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnCheckBox;
+        private System.Windows.Forms.DataGridViewTextBoxColumn BOM등록일자;
         private System.Windows.Forms.DataGridViewButtonColumn Column1;
     }
 }

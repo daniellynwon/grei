@@ -71,7 +71,7 @@ namespace SmartMES_Giroei
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex < 0) return;
-            if (e.ColumnIndex != 8) return;
+            if (e.ColumnIndex != 9) return;
 
             string sSujuNo = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
             string sSujuSeq = dataGridView1.Rows[e.RowIndex].Cells[1].Value.ToString();

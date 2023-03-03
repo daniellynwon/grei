@@ -16081,6 +16081,8 @@ namespace SmartMES_Giroei.P1B {
             
             private global::System.Data.DataColumn column사급;
             
+            private global::System.Data.DataColumn columnBOM등록일자;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_PurchaseRawMat_IN_SUBDataTable() {
@@ -16172,6 +16174,14 @@ namespace SmartMES_Giroei.P1B {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn BOM등록일자Column {
+                get {
+                    return this.columnBOM등록일자;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -16207,7 +16217,7 @@ namespace SmartMES_Giroei.P1B {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_PurchaseRawMat_IN_SUBRow AddSP_PurchaseRawMat_IN_SUBRow(string 수주번호, uint 수주순번, string 거래처코드, string 거래처, string 품목코드, string 품목명, string 사급) {
+            public SP_PurchaseRawMat_IN_SUBRow AddSP_PurchaseRawMat_IN_SUBRow(string 수주번호, uint 수주순번, string 거래처코드, string 거래처, string 품목코드, string 품목명, string 사급, System.DateTime BOM등록일자) {
                 SP_PurchaseRawMat_IN_SUBRow rowSP_PurchaseRawMat_IN_SUBRow = ((SP_PurchaseRawMat_IN_SUBRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         수주번호,
@@ -16216,7 +16226,8 @@ namespace SmartMES_Giroei.P1B {
                         거래처,
                         품목코드,
                         품목명,
-                        사급};
+                        사급,
+                        BOM등록일자};
                 rowSP_PurchaseRawMat_IN_SUBRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_PurchaseRawMat_IN_SUBRow);
                 return rowSP_PurchaseRawMat_IN_SUBRow;
@@ -16254,6 +16265,7 @@ namespace SmartMES_Giroei.P1B {
                 this.column품목코드 = base.Columns["품목코드"];
                 this.column품목명 = base.Columns["품목명"];
                 this.column사급 = base.Columns["사급"];
+                this.columnBOM등록일자 = base.Columns["BOM등록일자"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -16273,6 +16285,8 @@ namespace SmartMES_Giroei.P1B {
                 base.Columns.Add(this.column품목명);
                 this.column사급 = new global::System.Data.DataColumn("사급", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column사급);
+                this.columnBOM등록일자 = new global::System.Data.DataColumn("BOM등록일자", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBOM등록일자);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.column수주번호,
                                 this.column수주순번}, true));
@@ -20624,7 +20638,7 @@ namespace SmartMES_Giroei.P1B {
                 this.column품목코드.MaxLength = 10;
                 this.column품목명.MaxLength = 50;
                 this.column자재코드.MaxLength = 10;
-                this.column자재명.MaxLength = 500;
+                this.column자재명.MaxLength = 50;
                 this.column박스ID.AutoIncrement = true;
                 this.column박스ID.AutoIncrementSeed = -1;
                 this.column박스ID.AutoIncrementStep = -1;
@@ -35010,6 +35024,22 @@ namespace SmartMES_Giroei.P1B {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime BOM등록일자 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_PurchaseRawMat_IN_SUB.BOM등록일자Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_PurchaseRawMat_IN_SUB\' 테이블의 \'BOM등록일자\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_PurchaseRawMat_IN_SUB.BOM등록일자Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is거래처Null() {
                 return this.IsNull(this.tableSP_PurchaseRawMat_IN_SUB.거래처Column);
             }
@@ -35042,6 +35072,18 @@ namespace SmartMES_Giroei.P1B {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set사급Null() {
                 this[this.tableSP_PurchaseRawMat_IN_SUB.사급Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsBOM등록일자Null() {
+                return this.IsNull(this.tableSP_PurchaseRawMat_IN_SUB.BOM등록일자Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetBOM등록일자Null() {
+                this[this.tableSP_PurchaseRawMat_IN_SUB.BOM등록일자Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -50490,6 +50532,7 @@ namespace SmartMES_Giroei.P1B.DataSetP1BTableAdapters {
             tableMapping.ColumnMappings.Add("품목코드", "품목코드");
             tableMapping.ColumnMappings.Add("품목명", "품목명");
             tableMapping.ColumnMappings.Add("사급", "사급");
+            tableMapping.ColumnMappings.Add("BOM등록일자", "BOM등록일자");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

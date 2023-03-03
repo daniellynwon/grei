@@ -145,7 +145,7 @@ namespace SmartMES_Giroei
             if (dr == DialogResult.No) return;
 
             MariaCRUD m = new MariaCRUD();
-            string sql = "delete from tb_qc_claim where claim_id = '" + sID + "'";
+            string sql = "delete from SRV_claims where claim_id = '" + sID + "'";
             string msg = string.Empty;
             m.dbCUD(sql, ref msg);
 
