@@ -21,6 +21,7 @@ namespace SmartMES_Giroei
         public string sCustName = string.Empty;
         public string sProd = string.Empty;
         public string sProdName = string.Empty;
+        public string sOrder = string.Empty;
         public static int rowIndex = 0;
 
         public P1B11_PURCHASE_RAW_MAT_BOM()
@@ -35,6 +36,7 @@ namespace SmartMES_Giroei
             lbProdName.Text = "품목명 : " + sProdName;
 
             rowIndex = parentWin.dataGridView1.CurrentCell.RowIndex;
+            sOrder = parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString(); //수주번호
             sCustID = parentWin.dataGridView1.Rows[rowIndex].Cells[2].Value.ToString();     // 거래처ID
             sProd = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();       // 제품품목ID
             sCustName = parentWin.dataGridView1.Rows[rowIndex].Cells[3].Value.ToString();     // 거래처명
@@ -52,7 +54,7 @@ namespace SmartMES_Giroei
 
                 string sSearch = tbSearch.Text.Trim();
 
-                sP_PurchaseRawMat_BOMTableAdapter.Fill(dataSetP1B.SP_PurchaseRawMat_BOM, sProd, sSearch);
+                sP_PurchaseRawMat_BOMTableAdapter.Fill(dataSetP1B.SP_PurchaseRawMat_BOM, sProd, sSearch, sOrder);
 
                 var data = dataSetP1B.SP_PurchaseRawMat_BOM;
                 Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.조회, data);
@@ -97,36 +99,36 @@ namespace SmartMES_Giroei
         {
             lblMsg.Text = "";
         }
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex < 0) return;
-            //if (e.ColumnIndex != 0) return;
+        //private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        //{
+        //    if (e.RowIndex < 0) return;
+        //    //if (e.ColumnIndex != 0) return;
 
-            lblMsg.Text = "";
+        //    lblMsg.Text = "";
 
-            if (e.ColumnIndex == 1)
-            {
+        //    if (e.ColumnIndex == 1)
+        //    {
 
-                dataGridView1.Rows[e.RowIndex].Cells[8].Value = string.Empty;
-                dataGridView1.Rows[e.RowIndex].Cells[9].Value = string.Empty;
+        //        dataGridView1.Rows[e.RowIndex].Cells[8].Value = string.Empty;
+        //        dataGridView1.Rows[e.RowIndex].Cells[9].Value = string.Empty;
 
-                //if (dataGridView1.Rows[e.RowIndex].Cells[0].Value != null)
-                //{
-                //    if (dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() == "1")
-                //    {
-                //        dataGridView1.Rows[e.RowIndex].Cells[8].Value = string.Empty;
-                //        dataGridView1.Rows[e.RowIndex].Cells[9].Value = string.Empty;
-                //    }
-                //}
-            }
-            else if (e.ColumnIndex == 11)         // 바코드 인쇄
-            {
-                if (printBarcode(e.RowIndex) == false)
-                {
+        //        //if (dataGridView1.Rows[e.RowIndex].Cells[0].Value != null)
+        //        //{
+        //        //    if (dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() == "1")
+        //        //    {
+        //        //        dataGridView1.Rows[e.RowIndex].Cells[8].Value = string.Empty;
+        //        //        dataGridView1.Rows[e.RowIndex].Cells[9].Value = string.Empty;
+        //        //    }
+        //        //}
+        //    }
+        //    else if (e.ColumnIndex == 11)         // 바코드 인쇄
+        //    {
+        //        if (printBarcode(e.RowIndex) == false)
+        //        {
 
-                }
-            }
-        }
+        //        }
+        //    }
+        //}
 
         private bool printBarcode(int rowindex)
         {
@@ -150,11 +152,11 @@ namespace SmartMES_Giroei
                 return false;
             }
             bool rePrint = false;
-            if (rePrint = CheckRePrint(barcodePrefix))
-            {
-                if (MessageBox.Show("바코드를 발행하겠습니까?", "YesOrNO", MessageBoxButtons.YesNo) == DialogResult.No)
-                    return false;
-            }
+            //if (rePrint = CheckRePrint(barcodePrefix))
+            //{
+            //    if (MessageBox.Show("바코드를 발행하겠습니까?", "YesOrNO", MessageBoxButtons.YesNo) == DialogResult.No)
+            //        return false;
+            //}
             //if (rePrint = CheckRePrint(barcodePrefix))
             //{
             //    if (MessageBox.Show("이미 발행된 바코드입니다. 재 발행하겠습니까?", "YesOrNO", MessageBoxButtons.YesNo) == DialogResult.No)
@@ -171,10 +173,12 @@ namespace SmartMES_Giroei
 
             string str = string.Empty;
 
-            PrintDialog pd = new PrintDialog();
-            pd.PrinterSettings = new PrinterSettings();
+            //PrintDialog pd = new PrintDialog();
+            //pd.PrinterSettings = new PrinterSettings();
 
-            if (DialogResult.OK == pd.ShowDialog(this))
+            //if (DialogResult.OK /*== pd.ShowDialog(this)*/)
+
+            if (rowindex >= 0)
             {
                 for (int i = 0; i < index; i++)
                 {
@@ -182,6 +186,7 @@ namespace SmartMES_Giroei
                         iQtyInPackage = remain;
                     string Barcode = barcodePrefix + "-" + (i + 1).ToString("D3") + "-" + iQtyInPackage.ToString("D4");
                     string[] aBarcode = Barcode.Split('-');
+                    save2InvBarcode(Barcode, barcodePrefix, iQtyInPackage, rowindex);
                     // 한글문제
 
                     str = "^XA^BY2,2.5^FS";
@@ -202,21 +207,19 @@ namespace SmartMES_Giroei
                     var bytes = Encoding.Default.GetBytes(str);
 
                     try {
-                        RawPrinterHelper.SendBytesToPrinter(pd.PrinterSettings.PrinterName, bytes, bytes.Length);
+                        //RawPrinterHelper.SendBytesToPrinter(pd.PrinterSettings.PrinterName, bytes, bytes.Length);
                     }
                     catch (Exception ex) {
                         MessageBox.Show(ex.Message);
                     }
-
-                    if (rePrint == false)
-                        save2InvBarcode(Barcode, barcodePrefix, iQtyInPackage, rowindex);
+                    //if (rePrint == false)
+                    //    save2InvBarcode(Barcode, barcodePrefix, iQtyInPackage, rowindex);
                 }
                 dataGridView1.Rows[rowindex].Cells[0].Value = "1";
                 return true;
             }
             else
                 return false;
-
         }
 
         private bool CheckRePrint(string barcodePrefix)
@@ -276,32 +279,32 @@ namespace SmartMES_Giroei
                 return;
             }
 
-            sql = $@"INSERT INTO INV_material_in (mbarcode, barcode_surfix, cust_id, prod_id, plant, input_date, order_id, order_seq, qty, pack_type, pack_qty, reason_code,  enter_man) 
-                            VALUES ('{mBarcode}', '{surfix}', '{@sCustID}', '{sMatCode}', 'A', '{@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}', '{@sSujuNo}', {@sSujuSeq}, {@sQty}, '{@sPackType}', {@sPackQty}, '0010', '{@G.UserID}');";
+            //sql = $@"INSERT INTO INV_material_in (mbarcode, barcode_surfix, cust_id, prod_id, plant, input_date, order_id, order_seq, qty, pack_type, pack_qty, reason_code,  enter_man) 
+            //                VALUES ('{mBarcode}', '{surfix}', '{@sCustID}', '{sMatCode}', 'A', '{@DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")}', '{@sSujuNo}', {@sSujuSeq}, {@sQty}, '{@sPackType}', {@sPackQty}, '0010', '{@G.UserID}');";
 
-            m.dbCUD(sql, ref msg);
+            //m.dbCUD(sql, ref msg);
 
-            if (msg != "OK")
-            {
-                lblMsg.Text = msg;
-                MessageBox.Show(msg);
-                return;
-            }
-            var data = sql;
-            Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);
+            //if (msg != "OK")
+            //{
+            //    lblMsg.Text = msg;
+            //    MessageBox.Show(msg);
+            //    return;
+            //}
+            //var data = sql;
+            //Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);
         }
-        private void btTagPrint_Click(object sender, EventArgs e)
-        {
-            int rowcnt = dataGridView1.Rows.Count;
+        //private void btTagPrint_Click(object sender, EventArgs e)
+        //{
+        //    int rowcnt = dataGridView1.Rows.Count;
 
-            for (int rowindex = 0; rowindex < rowcnt; rowindex++)
-            {
-                if (dataGridView1.Rows[rowindex].Cells[0].Value != null && dataGridView1.Rows[rowindex].Cells[0].Value.ToString() == "1")
-                {
-                    printBarcode(rowindex);
-                }
-            }
-        }
+        //    for (int rowindex = 0; rowindex < rowcnt; rowindex++)
+        //    {
+        //        if (dataGridView1.Rows[rowindex].Cells[0].Value == null || dataGridView1.Rows[rowindex].Cells[0].Value.ToString() == "0")
+        //        {
+        //            printBarcode(rowindex);
+        //        }
+        //    }
+        //}
 
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
@@ -353,6 +356,7 @@ namespace SmartMES_Giroei
             {
                 if (dataGridView1.Rows[i].Cells[0].Value != null && dataGridView1.Rows[i].Cells[0].Value.ToString() == "1")
                 {
+                    printBarcode(i);
                     CheckCount++;
                 }
             }
@@ -502,7 +506,6 @@ namespace SmartMES_Giroei
                             string data = sql;
                             Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.수정, data);
                         }
-
                     }
                 }
             }
