@@ -22911,6 +22911,8 @@ namespace SmartMES_Giroei.P1B {
             
             private global::System.Data.DataColumn column수주수량;
             
+            private global::System.Data.DataColumn columnBOM등록일자;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_Item_Box_NewDataTable() {
@@ -22986,6 +22988,14 @@ namespace SmartMES_Giroei.P1B {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn BOM등록일자Column {
+                get {
+                    return this.columnBOM등록일자;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -23021,14 +23031,15 @@ namespace SmartMES_Giroei.P1B {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_Item_Box_NewRow AddSP_Item_Box_NewRow(string 수주번호, uint 수주순번, string 품목코드, string 품목명, int 수주수량) {
+            public SP_Item_Box_NewRow AddSP_Item_Box_NewRow(string 수주번호, uint 수주순번, string 품목코드, string 품목명, int 수주수량, System.DateTime BOM등록일자) {
                 SP_Item_Box_NewRow rowSP_Item_Box_NewRow = ((SP_Item_Box_NewRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         수주번호,
                         수주순번,
                         품목코드,
                         품목명,
-                        수주수량};
+                        수주수량,
+                        BOM등록일자};
                 rowSP_Item_Box_NewRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_Item_Box_NewRow);
                 return rowSP_Item_Box_NewRow;
@@ -23064,6 +23075,7 @@ namespace SmartMES_Giroei.P1B {
                 this.column품목코드 = base.Columns["품목코드"];
                 this.column품목명 = base.Columns["품목명"];
                 this.column수주수량 = base.Columns["수주수량"];
+                this.columnBOM등록일자 = base.Columns["BOM등록일자"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -23079,6 +23091,8 @@ namespace SmartMES_Giroei.P1B {
                 base.Columns.Add(this.column품목명);
                 this.column수주수량 = new global::System.Data.DataColumn("수주수량", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column수주수량);
+                this.columnBOM등록일자 = new global::System.Data.DataColumn("BOM등록일자", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBOM등록일자);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.column수주번호,
                                 this.column수주순번}, true));
@@ -40679,6 +40693,22 @@ namespace SmartMES_Giroei.P1B {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime BOM등록일자 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_Item_Box_New.BOM등록일자Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_Item_Box_New\' 테이블의 \'BOM등록일자\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Item_Box_New.BOM등록일자Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is수주수량Null() {
                 return this.IsNull(this.tableSP_Item_Box_New.수주수량Column);
             }
@@ -40687,6 +40717,18 @@ namespace SmartMES_Giroei.P1B {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set수주수량Null() {
                 this[this.tableSP_Item_Box_New.수주수량Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsBOM등록일자Null() {
+                return this.IsNull(this.tableSP_Item_Box_New.BOM등록일자Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetBOM등록일자Null() {
+                this[this.tableSP_Item_Box_New.BOM등록일자Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -53738,6 +53780,7 @@ namespace SmartMES_Giroei.P1B.DataSetP1BTableAdapters {
             tableMapping.ColumnMappings.Add("품목코드", "품목코드");
             tableMapping.ColumnMappings.Add("품목명", "품목명");
             tableMapping.ColumnMappings.Add("수주수량", "수주수량");
+            tableMapping.ColumnMappings.Add("BOM등록일자", "BOM등록일자");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
