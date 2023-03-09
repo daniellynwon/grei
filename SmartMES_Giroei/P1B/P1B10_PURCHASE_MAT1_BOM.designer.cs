@@ -49,18 +49,18 @@
             this.포장수량 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수량 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.sPPurchaseRawMatBOMBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.sPPurchaseMatBOMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
             this.lblMsg = new System.Windows.Forms.Label();
             this.lblProd = new System.Windows.Forms.Label();
+            this.sPPurchaseRawMatBOMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sP_PurchaseRawMat_BOMTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseRawMat_BOMTableAdapter();
-            this.sPPurchaseMatBOMBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sP_PurchaseMat_BOMTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_PurchaseMat_BOMTableAdapter();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseRawMatBOMBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseMatBOMBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseRawMatBOMBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -96,7 +96,6 @@
             this.btAllCheck.TabIndex = 39;
             this.btAllCheck.Text = "일괄선택";
             this.btAllCheck.UseVisualStyleBackColor = true;
-            this.btAllCheck.Visible = false;
             this.btAllCheck.Click += new System.EventHandler(this.btAllCheck_Click);
             // 
             // dataGridView1
@@ -111,7 +110,7 @@
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -135,7 +134,7 @@
             this.dataGridView1.DataSource = this.sPPurchaseMatBOMBindingSource;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Tomato;
             dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -147,7 +146,7 @@
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
@@ -252,14 +251,15 @@
             this.Column1.Name = "Column1";
             this.Column1.Visible = false;
             // 
-            // sPPurchaseRawMatBOMBindingSource
+            // sPPurchaseMatBOMBindingSource
             // 
-            this.sPPurchaseRawMatBOMBindingSource.DataMember = "SP_PurchaseRawMat_BOM";
-            this.sPPurchaseRawMatBOMBindingSource.DataSource = this.dataSetP1B;
+            this.sPPurchaseMatBOMBindingSource.DataMember = "SP_PurchaseMat_BOM";
+            this.sPPurchaseMatBOMBindingSource.DataSource = this.dataSetP1B;
             // 
             // dataSetP1B
             // 
             this.dataSetP1B.DataSetName = "DataSetP1B";
+            this.dataSetP1B.EnforceConstraints = false;
             this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblMsg
@@ -283,14 +283,14 @@
             this.lblProd.TabIndex = 10;
             this.lblProd.Text = "lblProd";
             // 
+            // sPPurchaseRawMatBOMBindingSource
+            // 
+            this.sPPurchaseRawMatBOMBindingSource.DataMember = "SP_PurchaseRawMat_BOM";
+            this.sPPurchaseRawMatBOMBindingSource.DataSource = this.dataSetP1B;
+            // 
             // sP_PurchaseRawMat_BOMTableAdapter
             // 
             this.sP_PurchaseRawMat_BOMTableAdapter.ClearBeforeFill = true;
-            // 
-            // sPPurchaseMatBOMBindingSource
-            // 
-            this.sPPurchaseMatBOMBindingSource.DataMember = "SP_PurchaseMat_BOM";
-            this.sPPurchaseMatBOMBindingSource.DataSource = this.dataSetP1B;
             // 
             // sP_PurchaseMat_BOMTableAdapter
             // 
@@ -303,7 +303,7 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1010, 556);
             this.Controls.Add(this.panel1);
-            this.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.MaximizeBox = false;
@@ -316,9 +316,9 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseRawMatBOMBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseMatBOMBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseRawMatBOMBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

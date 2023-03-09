@@ -493,18 +493,24 @@ namespace SmartMES_Giroei
                     sSusap = ((range.Cells[row, 17] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 17] as Excel.Range).Value2.ToString().Trim();    // 수삽
                     string sSageop = ((range.Cells[row, 16] as Excel.Range).Value2 == null) ? "도급" : (range.Cells[row, 16] as Excel.Range).Value2.ToString().Trim();    // 사급
                     //sConsign = (range.Cells[row, 17] as Excel.Range).Value2.ToString().Trim();    // 도급(N)/사급(Y)
-                    if (sSageop == "사급") 
+                    if (sSageop == "사급")
+                    {
                         sConsign = "Y";
+                    }
+                    else
+                    {
+                        sConsign = "N";
+                    }
 
-                     //if (sProcess == "수삽") sProcess = "S";
-                     //else if (sProcess == "미삽") sProcess = "M";
-                     //else sProcess = "X";
-                     // SELECT c.co_code, c.co_item, p.prod_id, p.prod_kind FROM BAS_common c LEFT JOIN BAS_product p ON p.prod_kind = c.co_code WHERE c.co_kind = 'C' AND c.co_item = 'TR'
-                     //sql = $@"SELECT co_code, co_item FROM BAS_common WHERE co_kind = 'C' AND prod_name = '{@sProdKind}' ORDER BY prod_id DESC LIMIT 1";
+                    //if (sProcess == "수삽") sProcess = "S";
+                    //else if (sProcess == "미삽") sProcess = "M";
+                    //else sProcess = "X";
+                    // SELECT c.co_code, c.co_item, p.prod_id, p.prod_kind FROM BAS_common c LEFT JOIN BAS_product p ON p.prod_kind = c.co_code WHERE c.co_kind = 'C' AND c.co_item = 'TR'
+                    //sql = $@"SELECT co_code, co_item FROM BAS_common WHERE co_kind = 'C' AND prod_name = '{@sProdKind}' ORDER BY prod_id DESC LIMIT 1";
 
-                     //if (m.dbDataTable(sql, ref msg).Rows.Count == 0)
+                    //if (m.dbDataTable(sql, ref msg).Rows.Count == 0)
 
-                     sql = $@"SELECT prod_name FROM BAS_product WHERE gubun = 'M' AND prod_name = '{@sProdNameSub}' ORDER BY prod_id DESC LIMIT 1";
+                    sql = $@"SELECT prod_name FROM BAS_product WHERE gubun = 'M' AND prod_name = '{@sProdNameSub}' ORDER BY prod_id DESC LIMIT 1";
 
                     if (m.dbDataTable(sql, ref msg).Rows.Count == 0)
                     {
