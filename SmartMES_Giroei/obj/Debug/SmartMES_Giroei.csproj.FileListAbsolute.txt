@@ -1514,7 +1514,6 @@ C:\ProJect(유지보수)\(유지보수)지로이아이\0224지로이아이\Smart
 C:\ProJect(유지보수)\(유지보수)지로이아이\0224지로이아이\SmartMES_Giroei\bin\Debug\dll\x64\opencv_video2410.dll
 C:\ProJect(유지보수)\(유지보수)지로이아이\0224지로이아이\SmartMES_Giroei\bin\Debug\dll\x64\opencv_videostab2410.dll
 C:\ProJect(유지보수)\(유지보수)지로이아이\0224지로이아이\SmartMES_Giroei\bin\Debug\dll\x64\OpenCvSharpExtern.dll
-C:\ProJect(유지보수)\(유지보수)지로이아이\0224지로이아이\SmartMES_Giroei\bin\Debug\Giroel(BOM).xlsx
 C:\ProJect(유지보수)\(유지보수)지로이아이\0224지로이아이\SmartMES_Giroei\bin\Debug\LogHelper\ApiKeyFile.txt
 C:\ProJect(유지보수)\(유지보수)지로이아이\0224지로이아이\SmartMES_Giroei\bin\Debug\Font\LibreBarcode39ExtendedText-Regular.ttf
 C:\ProJect(유지보수)\(유지보수)지로이아이\0224지로이아이\SmartMES_Giroei\bin\Debug\Resources\LibreBarcode39ExtendedText-Regular.ttf
@@ -1756,3 +1755,4 @@ C:\ProJect(유지보수)\(유지보수)지로이아이\0224지로이아이\Smart
 C:\ProJect(유지보수)\(유지보수)지로이아이\0224지로이아이\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.csproj.CopyComplete
 C:\ProJect(유지보수)\(유지보수)지로이아이\0224지로이아이\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.exe
 C:\ProJect(유지보수)\(유지보수)지로이아이\0224지로이아이\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.pdb
+C:\ProJect(유지보수)\(유지보수)지로이아이\0224지로이아이\SmartMES_Giroei\bin\Debug\Giroel_BOM.xlsx
