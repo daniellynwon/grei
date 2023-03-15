@@ -77,16 +77,16 @@ namespace SmartMES_Giroei
             dataGridView1.Rows[rowIndex].DefaultCellStyle.SelectionBackColor = Color.FromArgb(93, 123, 157);
             dataGridView1.Rows[rowIndex].DefaultCellStyle.ForeColor = Color.White;
 
-            dataGridView1[11, rowIndex].Value = rowIndex.ToString() + "건";
+            dataGridView1[3, rowIndex].Value = rowIndex.ToString() + "건";
 
             long iSum = 0;
 
             for (int i = 0; i < rowIndex; i++)
             {
-                iSum += long.Parse(dataGridView1.Rows[i].Cells[9].Value.ToString());
+                iSum += long.Parse(dataGridView1.Rows[i].Cells[10].Value.ToString());
             }
 
-            dataGridView1[9, rowIndex].Value = iSum;
+            dataGridView1[10, rowIndex].Value = iSum;
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -125,7 +125,7 @@ namespace SmartMES_Giroei
             {
                 index = dataGridView1.CurrentRow.Index;
                 sID = dataGridView1.Rows[index].Cells[0].Value.ToString();
-                sDate = DateTime.Parse(dataGridView1.Rows[index].Cells[5].Value.ToString()).ToString("yyyy-MM-dd");
+                sDate = DateTime.Parse(dataGridView1.Rows[index].Cells[6].Value.ToString()).ToString("yyyy-MM-dd");
                 sCustName = dataGridView1.Rows[index].Cells[2].Value.ToString();
 
                 if (dataGridView1.Rows[index].Selected != true)
@@ -145,7 +145,7 @@ namespace SmartMES_Giroei
             if (dr == DialogResult.No) return;
 
             MariaCRUD m = new MariaCRUD();
-            string sql = "delete from tb_qc_claim where claim_id = '" + sID + "'";
+            string sql = "delete from SRV_claims where claim_id = '" + sID + "'";
             string msg = string.Empty;
             m.dbCUD(sql, ref msg);
 

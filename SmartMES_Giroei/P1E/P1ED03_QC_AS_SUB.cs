@@ -44,15 +44,15 @@ namespace SmartMES_Giroei
                     rowIndex = parentWin.dataGridView1.CurrentCell.RowIndex;
 
                     tbNo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
-                    cbState.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[12].Value.ToString();
-                    tbDeli.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value.ToString();
-                    tbQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
-                    dtpClaimDate.Value = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString());
-                    tbClaimContents.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString();
-                    dtpActionDate.Value = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString());
-                    tbActionContents.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString();
-                    tbMoney.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString();
-                    cbCharge.SelectedValue = parentWin.dataGridView1.Rows[rowIndex].Cells[10].Value.ToString();
+                    cbState.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value.ToString();
+                    tbDeli.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
+                    tbQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString();
+                    dtpClaimDate.Value = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[6].Value.ToString());
+                    tbClaimContents.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[7].Value.ToString();
+                    dtpActionDate.Value = DateTime.Parse(parentWin.dataGridView1.Rows[rowIndex].Cells[8].Value.ToString());
+                    tbActionContents.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[9].Value.ToString();
+                    tbMoney.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[10].Value.ToString();
+                    cbCharge.SelectedValue = parentWin.dataGridView1.Rows[rowIndex].Cells[11].Value.ToString();
 
                     this.ActiveControl = btnSave;
                 }
@@ -62,7 +62,6 @@ namespace SmartMES_Giroei
                 }
             }
         }
-
         private void Save()
         {
             lblMsg.Text = "";
@@ -103,7 +102,7 @@ namespace SmartMES_Giroei
             {
                 sCode = getCode();
 
-                sql = "insert into tb_qc_claim (claim_id, deli_id, claim_qty, claim_date, claim_contents, action_date, action_contents, claim_money, charge, state_flag, enter_man) " +
+                sql = "insert into SRV_claims (claim_id, deli_id, claim_qty, claim_date, claim_contents, action_date, action_contents, claim_money, charge, state_flag, enter_man) " +
                     "values('" + sCode + "','" + sDeliID + "'," + sQty + ",'" + sClaimDate + "','" + sClaimContents + "', IF('" + sActionContents + "' = '',null,'" + sActionDate + "'),'" + sActionContents + "'," + sMoney + ",'" + sCharge + "'," + sState + ",'" + G.UserID + "')";
 
                 m.dbCUD(sql, ref msg);
@@ -123,11 +122,14 @@ namespace SmartMES_Giroei
 
                 for (int i = 0; i < parentWin.dataGridView1.Rows.Count; i++)
                 {
-                    if (parentWin.dataGridView1.Rows[i].Cells[0].Value.ToString() == sCode)
+                    if (parentWin.dataGridView1.Rows[i].Cells[0].Value != null)
                     {
-                        parentWin.dataGridView1.CurrentCell = parentWin.dataGridView1[0, i];
-                        parentWin.dataGridView1.CurrentCell.Selected = true;
-                        break;
+                        if (parentWin.dataGridView1.Rows[i].Cells[0].Value.ToString() == sCode)
+                        {
+                            parentWin.dataGridView1.CurrentCell = parentWin.dataGridView1[0, i];
+                            parentWin.dataGridView1.CurrentCell.Selected = true;
+                            break;
+                        }
                     }
                 }
 
@@ -139,7 +141,7 @@ namespace SmartMES_Giroei
             }
             else
             {
-                sql = "update tb_qc_claim " +
+                sql = "update SRV_claims " +
                     "set deli_id = '" + sDeliID + "', claim_qty = " + sQty + ", claim_date = '" + sClaimDate + "', claim_contents = '" + sClaimContents + "', action_date = IF('" + sActionContents + "' = '',null,'" + sActionDate + "'), action_contents = '" + sActionContents + "', claim_money = " + sMoney + ", charge = '" + sCharge + "', state_flag = " + sState +
                     " where claim_id = '" + sCode + "'";
 
@@ -163,6 +165,106 @@ namespace SmartMES_Giroei
             }
         }
 
+        //private void Save()
+        //{
+        //    lblMsg.Text = "";
+
+        //    if (string.IsNullOrEmpty(tbDeli.Text))
+        //    {
+        //        lblMsg.Text = "출하(전표)번호를 입력해 주세요.";
+        //        lblDeliID.Focus();
+        //        return;
+        //    }
+
+        //    if (cbCharge.SelectedValue == null
+        //        || string.IsNullOrEmpty(cbCharge.SelectedValue.ToString()))
+        //    {
+        //        lblMsg.Text = "책임자를 선택해 주세요.";
+        //        cbCharge.Focus();
+        //        return;
+        //    }
+
+        //    string sCode = tbNo.Text;
+        //    string sDeliID = tbDeli.Text;
+        //    string sQty = tbQty.Text.Replace(",", "").Trim();
+        //    if (string.IsNullOrEmpty(sQty)) sQty = "NULL";
+        //    string sClaimDate = dtpClaimDate.Value.ToString("yyyy-MM-dd");
+        //    string sClaimContents = tbClaimContents.Text.Trim();
+        //    string sActionDate = dtpActionDate.Value.ToString("yyyy-MM-dd");
+        //    string sActionContents = tbActionContents.Text.Trim();
+        //    string sMoney = tbMoney.Text.Replace(",", "").Trim();
+        //    if (string.IsNullOrEmpty(sMoney)) sMoney = "0";
+        //    string sCharge = cbCharge.SelectedValue.ToString();
+        //    string sState = cbState.Text.Substring(0, 1);
+
+        //    string sql = string.Empty;
+        //    string msg = string.Empty;
+        //    MariaCRUD m = new MariaCRUD();
+
+        //    if (lblTitle.Text.Substring(lblTitle.Text.Length - 4, 4) == "[추가]")
+        //    {
+        //        sCode = getCode();
+
+        //        sql = "insert into tb_qc_claim (claim_id, deli_id, claim_qty, claim_date, claim_contents, action_date, action_contents, claim_money, charge, state_flag, enter_man) " +
+        //            "values('" + sCode + "','" + sDeliID + "'," + sQty + ",'" + sClaimDate + "','" + sClaimContents + "', IF('" + sActionContents + "' = '',null,'" + sActionDate + "'),'" + sActionContents + "'," + sMoney + ",'" + sCharge + "'," + sState + ",'" + G.UserID + "')";
+
+        //        m.dbCUD(sql, ref msg);
+
+        //        if (msg != "OK")
+        //        {
+        //            lblMsg.Text = msg;
+        //            return;
+        //        }
+
+        //        var data = sql;
+        //        Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.등록, data);
+
+        //        lblMsg.Text = "저장되었습니다.";
+
+        //        parentWin.ListSearch();
+
+        //        for (int i = 0; i < parentWin.dataGridView1.Rows.Count; i++)
+        //        {
+        //            if (parentWin.dataGridView1.Rows[i].Cells[0].Value.ToString() == sCode)
+        //            {
+        //                parentWin.dataGridView1.CurrentCell = parentWin.dataGridView1[0, i];
+        //                parentWin.dataGridView1.CurrentCell.Selected = true;
+        //                break;
+        //            }
+        //        }
+
+        //        tbDeli.Text = string.Empty;
+        //        tbQty.Text = string.Empty;
+        //        tbClaimContents.Text = string.Empty;
+        //        tbActionContents.Text = string.Empty;
+        //        tbMoney.Text = string.Empty;
+        //    }
+        //    else
+        //    {
+        //        sql = "update tb_qc_claim " +
+        //            "set deli_id = '" + sDeliID + "', claim_qty = " + sQty + ", claim_date = '" + sClaimDate + "', claim_contents = '" + sClaimContents + "', action_date = IF('" + sActionContents + "' = '',null,'" + sActionDate + "'), action_contents = '" + sActionContents + "', claim_money = " + sMoney + ", charge = '" + sCharge + "', state_flag = " + sState +
+        //            " where claim_id = '" + sCode + "'";
+
+        //        m.dbCUD(sql, ref msg);
+
+        //        if (msg != "OK")
+        //        {
+        //            lblMsg.Text = msg;
+        //            return;
+        //        }
+
+        //        m.TransLogCreate(G.Authority, G.UserID, "M", this.Name, lblTitle.Text, sCode + " - " + sDeliID);
+
+        //        var data = sql;
+        //        Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.수정, data);
+
+        //        parentWin.ListSearch();
+        //        parentWin.dataGridView1.CurrentCell = parentWin.dataGridView1[0, rowIndex];
+        //        parentWin.dataGridView1.Rows[rowIndex].Selected = true;
+        //        this.DialogResult = DialogResult.OK;
+        //    }
+        //}
+
         #region 사후관리 접수번호 생성
         private string getCode()
         {
@@ -184,7 +286,7 @@ namespace SmartMES_Giroei
             pop.FormSendEvent += new P1ED03_QC_AS_DELI.FormSendDataHandler(DeliEventMethod);
 
             pop.ShowDialog();
-        }
+        }  
         private void DeliEventMethod(object sender)
         {
             string sNo = sender.ToString();

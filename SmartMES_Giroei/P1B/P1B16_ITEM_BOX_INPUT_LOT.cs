@@ -104,6 +104,18 @@ namespace SmartMES_Giroei
             //}
             barcodeSearch();
         }
+
+        private void btAllCheck_Click(object sender, EventArgs e)
+        {
+            lblMsg.Text = "";
+
+            for (int i = 0; i < dataGridView1.Rows.Count; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[0].Value == null || dataGridView1.Rows[i].Cells[0].Value == "0") dataGridView1.Rows[i].Cells[0].Value = "1";
+                else dataGridView1.Rows[i].Cells[0].Value = "0";
+            }
+        }
+
         private void barcodeSearch()
         {
             string sSurfix = "";

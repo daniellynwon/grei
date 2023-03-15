@@ -1921,7 +1921,7 @@ namespace SmartMES_Giroei.P1A {
                 this.columnLotNo.MaxLength = 10;
                 this.column레시피.MaxLength = 4;
                 this.column자재코드.MaxLength = 8;
-                this.column자재명.MaxLength = 50;
+                this.column자재명.MaxLength = 500;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

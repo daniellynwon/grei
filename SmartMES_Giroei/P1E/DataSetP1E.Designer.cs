@@ -26,8 +26,6 @@ namespace SmartMES_Giroei.P1E {
         
         private SP_QcFinalList_QueryDataTable tableSP_QcFinalList_Query;
         
-        private SP_QcAS_QueryDataTable tableSP_QcAS_Query;
-        
         private SP_QcAs_DeliDataTable tableSP_QcAs_Deli;
         
         private SP_QualityInspection_Chart_QueryDataTable tableSP_QualityInspection_Chart_Query;
@@ -47,6 +45,8 @@ namespace SmartMES_Giroei.P1E {
         private SP_Machine_IdleinfoDataTable tableSP_Machine_Idleinfo;
         
         private SP_Machine_Idleinfo2DataTable tableSP_Machine_Idleinfo2;
+        
+        private SP_QcAS_QueryDataTable tableSP_QcAS_Query;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
@@ -79,9 +79,6 @@ namespace SmartMES_Giroei.P1E {
                 if ((ds.Tables["SP_QcFinalList_Query"] != null)) {
                     base.Tables.Add(new SP_QcFinalList_QueryDataTable(ds.Tables["SP_QcFinalList_Query"]));
                 }
-                if ((ds.Tables["SP_QcAS_Query"] != null)) {
-                    base.Tables.Add(new SP_QcAS_QueryDataTable(ds.Tables["SP_QcAS_Query"]));
-                }
                 if ((ds.Tables["SP_QcAs_Deli"] != null)) {
                     base.Tables.Add(new SP_QcAs_DeliDataTable(ds.Tables["SP_QcAs_Deli"]));
                 }
@@ -112,6 +109,9 @@ namespace SmartMES_Giroei.P1E {
                 if ((ds.Tables["SP_Machine_Idleinfo2"] != null)) {
                     base.Tables.Add(new SP_Machine_Idleinfo2DataTable(ds.Tables["SP_Machine_Idleinfo2"]));
                 }
+                if ((ds.Tables["SP_QcAS_Query"] != null)) {
+                    base.Tables.Add(new SP_QcAS_QueryDataTable(ds.Tables["SP_QcAS_Query"]));
+                }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
                 this.Namespace = ds.Namespace;
@@ -137,16 +137,6 @@ namespace SmartMES_Giroei.P1E {
         public SP_QcFinalList_QueryDataTable SP_QcFinalList_Query {
             get {
                 return this.tableSP_QcFinalList_Query;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Browsable(false)]
-        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public SP_QcAS_QueryDataTable SP_QcAS_Query {
-            get {
-                return this.tableSP_QcAS_Query;
             }
         }
         
@@ -252,6 +242,16 @@ namespace SmartMES_Giroei.P1E {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Browsable(false)]
+        [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
+        public SP_QcAS_QueryDataTable SP_QcAS_Query {
+            get {
+                return this.tableSP_QcAS_Query;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.BrowsableAttribute(true)]
         [global::System.ComponentModel.DesignerSerializationVisibilityAttribute(global::System.ComponentModel.DesignerSerializationVisibility.Visible)]
         public override global::System.Data.SchemaSerializationMode SchemaSerializationMode {
@@ -320,9 +320,6 @@ namespace SmartMES_Giroei.P1E {
                 if ((ds.Tables["SP_QcFinalList_Query"] != null)) {
                     base.Tables.Add(new SP_QcFinalList_QueryDataTable(ds.Tables["SP_QcFinalList_Query"]));
                 }
-                if ((ds.Tables["SP_QcAS_Query"] != null)) {
-                    base.Tables.Add(new SP_QcAS_QueryDataTable(ds.Tables["SP_QcAS_Query"]));
-                }
                 if ((ds.Tables["SP_QcAs_Deli"] != null)) {
                     base.Tables.Add(new SP_QcAs_DeliDataTable(ds.Tables["SP_QcAs_Deli"]));
                 }
@@ -352,6 +349,9 @@ namespace SmartMES_Giroei.P1E {
                 }
                 if ((ds.Tables["SP_Machine_Idleinfo2"] != null)) {
                     base.Tables.Add(new SP_Machine_Idleinfo2DataTable(ds.Tables["SP_Machine_Idleinfo2"]));
+                }
+                if ((ds.Tables["SP_QcAS_Query"] != null)) {
+                    base.Tables.Add(new SP_QcAS_QueryDataTable(ds.Tables["SP_QcAS_Query"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -390,12 +390,6 @@ namespace SmartMES_Giroei.P1E {
             if ((initTable == true)) {
                 if ((this.tableSP_QcFinalList_Query != null)) {
                     this.tableSP_QcFinalList_Query.InitVars();
-                }
-            }
-            this.tableSP_QcAS_Query = ((SP_QcAS_QueryDataTable)(base.Tables["SP_QcAS_Query"]));
-            if ((initTable == true)) {
-                if ((this.tableSP_QcAS_Query != null)) {
-                    this.tableSP_QcAS_Query.InitVars();
                 }
             }
             this.tableSP_QcAs_Deli = ((SP_QcAs_DeliDataTable)(base.Tables["SP_QcAs_Deli"]));
@@ -458,6 +452,12 @@ namespace SmartMES_Giroei.P1E {
                     this.tableSP_Machine_Idleinfo2.InitVars();
                 }
             }
+            this.tableSP_QcAS_Query = ((SP_QcAS_QueryDataTable)(base.Tables["SP_QcAS_Query"]));
+            if ((initTable == true)) {
+                if ((this.tableSP_QcAS_Query != null)) {
+                    this.tableSP_QcAS_Query.InitVars();
+                }
+            }
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -470,8 +470,6 @@ namespace SmartMES_Giroei.P1E {
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableSP_QcFinalList_Query = new SP_QcFinalList_QueryDataTable();
             base.Tables.Add(this.tableSP_QcFinalList_Query);
-            this.tableSP_QcAS_Query = new SP_QcAS_QueryDataTable();
-            base.Tables.Add(this.tableSP_QcAS_Query);
             this.tableSP_QcAs_Deli = new SP_QcAs_DeliDataTable();
             base.Tables.Add(this.tableSP_QcAs_Deli);
             this.tableSP_QualityInspection_Chart_Query = new SP_QualityInspection_Chart_QueryDataTable();
@@ -492,17 +490,13 @@ namespace SmartMES_Giroei.P1E {
             base.Tables.Add(this.tableSP_Machine_Idleinfo);
             this.tableSP_Machine_Idleinfo2 = new SP_Machine_Idleinfo2DataTable();
             base.Tables.Add(this.tableSP_Machine_Idleinfo2);
+            this.tableSP_QcAS_Query = new SP_QcAS_QueryDataTable();
+            base.Tables.Add(this.tableSP_QcAS_Query);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private bool ShouldSerializeSP_QcFinalList_Query() {
-            return false;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private bool ShouldSerializeSP_QcAS_Query() {
             return false;
         }
         
@@ -568,6 +562,12 @@ namespace SmartMES_Giroei.P1E {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private bool ShouldSerializeSP_QcAS_Query() {
+            return false;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         private void SchemaChanged(object sender, global::System.ComponentModel.CollectionChangeEventArgs e) {
             if ((e.Action == global::System.ComponentModel.CollectionChangeAction.Remove)) {
                 this.InitVars();
@@ -625,9 +625,6 @@ namespace SmartMES_Giroei.P1E {
         public delegate void SP_QcFinalList_QueryRowChangeEventHandler(object sender, SP_QcFinalList_QueryRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public delegate void SP_QcAS_QueryRowChangeEventHandler(object sender, SP_QcAS_QueryRowChangeEvent e);
-        
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void SP_QcAs_DeliRowChangeEventHandler(object sender, SP_QcAs_DeliRowChangeEvent e);
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -656,6 +653,9 @@ namespace SmartMES_Giroei.P1E {
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         public delegate void SP_Machine_Idleinfo2RowChangeEventHandler(object sender, SP_Machine_Idleinfo2RowChangeEvent e);
+        
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public delegate void SP_QcAS_QueryRowChangeEventHandler(object sender, SP_QcAS_QueryRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
@@ -1072,462 +1072,6 @@ namespace SmartMES_Giroei.P1E {
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
                 attribute2.FixedValue = "SP_QcFinalList_QueryDataTable";
-                type.Attributes.Add(attribute2);
-                type.Particle = sequence;
-                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
-                if (xs.Contains(dsSchema.TargetNamespace)) {
-                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
-                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
-                    try {
-                        global::System.Xml.Schema.XmlSchema schema = null;
-                        dsSchema.Write(s1);
-                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
-                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
-                            s2.SetLength(0);
-                            schema.Write(s2);
-                            if ((s1.Length == s2.Length)) {
-                                s1.Position = 0;
-                                s2.Position = 0;
-                                for (; ((s1.Position != s1.Length) 
-                                            && (s1.ReadByte() == s2.ReadByte())); ) {
-                                    ;
-                                }
-                                if ((s1.Position == s1.Length)) {
-                                    return type;
-                                }
-                            }
-                        }
-                    }
-                    finally {
-                        if ((s1 != null)) {
-                            s1.Close();
-                        }
-                        if ((s2 != null)) {
-                            s2.Close();
-                        }
-                    }
-                }
-                xs.Add(dsSchema);
-                return type;
-            }
-        }
-        
-        /// <summary>
-        ///Represents the strongly named DataTable class.
-        ///</summary>
-        [global::System.Serializable()]
-        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class SP_QcAS_QueryDataTable : global::System.Data.TypedTableBase<SP_QcAS_QueryRow> {
-            
-            private global::System.Data.DataColumn column접수번호;
-            
-            private global::System.Data.DataColumn column전표번호;
-            
-            private global::System.Data.DataColumn column거래처ID;
-            
-            private global::System.Data.DataColumn column거래처명;
-            
-            private global::System.Data.DataColumn column출하;
-            
-            private global::System.Data.DataColumn column대상수량;
-            
-            private global::System.Data.DataColumn column발생일자;
-            
-            private global::System.Data.DataColumn column발생내역;
-            
-            private global::System.Data.DataColumn column조치일자;
-            
-            private global::System.Data.DataColumn column조치내역;
-            
-            private global::System.Data.DataColumn column처리비용;
-            
-            private global::System.Data.DataColumn column책임자ID;
-            
-            private global::System.Data.DataColumn column책임자;
-            
-            private global::System.Data.DataColumn column진행;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_QcAS_QueryDataTable() {
-                this.TableName = "SP_QcAS_Query";
-                this.BeginInit();
-                this.InitClass();
-                this.EndInit();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SP_QcAS_QueryDataTable(global::System.Data.DataTable table) {
-                this.TableName = table.TableName;
-                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
-                    this.CaseSensitive = table.CaseSensitive;
-                }
-                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
-                    this.Locale = table.Locale;
-                }
-                if ((table.Namespace != table.DataSet.Namespace)) {
-                    this.Namespace = table.Namespace;
-                }
-                this.Prefix = table.Prefix;
-                this.MinimumCapacity = table.MinimumCapacity;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected SP_QcAS_QueryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
-                    base(info, context) {
-                this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 접수번호Column {
-                get {
-                    return this.column접수번호;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 전표번호Column {
-                get {
-                    return this.column전표번호;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 거래처IDColumn {
-                get {
-                    return this.column거래처ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 거래처명Column {
-                get {
-                    return this.column거래처명;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 출하Column {
-                get {
-                    return this.column출하;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 대상수량Column {
-                get {
-                    return this.column대상수량;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 발생일자Column {
-                get {
-                    return this.column발생일자;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 발생내역Column {
-                get {
-                    return this.column발생내역;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 조치일자Column {
-                get {
-                    return this.column조치일자;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 조치내역Column {
-                get {
-                    return this.column조치내역;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 처리비용Column {
-                get {
-                    return this.column처리비용;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 책임자IDColumn {
-                get {
-                    return this.column책임자ID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 책임자Column {
-                get {
-                    return this.column책임자;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 진행Column {
-                get {
-                    return this.column진행;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            [global::System.ComponentModel.Browsable(false)]
-            public int Count {
-                get {
-                    return this.Rows.Count;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_QcAS_QueryRow this[int index] {
-                get {
-                    return ((SP_QcAS_QueryRow)(this.Rows[index]));
-                }
-            }
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_QcAS_QueryRowChangeEventHandler SP_QcAS_QueryRowChanging;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_QcAS_QueryRowChangeEventHandler SP_QcAS_QueryRowChanged;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_QcAS_QueryRowChangeEventHandler SP_QcAS_QueryRowDeleting;
-            
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public event SP_QcAS_QueryRowChangeEventHandler SP_QcAS_QueryRowDeleted;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void AddSP_QcAS_QueryRow(SP_QcAS_QueryRow row) {
-                this.Rows.Add(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_QcAS_QueryRow AddSP_QcAS_QueryRow(string 접수번호, string 전표번호, string 거래처ID, string 거래처명, System.DateTime 출하, int 대상수량, System.DateTime 발생일자, string 발생내역, System.DateTime 조치일자, string 조치내역, long 처리비용, string 책임자ID, string 책임자, string 진행) {
-                SP_QcAS_QueryRow rowSP_QcAS_QueryRow = ((SP_QcAS_QueryRow)(this.NewRow()));
-                object[] columnValuesArray = new object[] {
-                        접수번호,
-                        전표번호,
-                        거래처ID,
-                        거래처명,
-                        출하,
-                        대상수량,
-                        발생일자,
-                        발생내역,
-                        조치일자,
-                        조치내역,
-                        처리비용,
-                        책임자ID,
-                        책임자,
-                        진행};
-                rowSP_QcAS_QueryRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowSP_QcAS_QueryRow);
-                return rowSP_QcAS_QueryRow;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_QcAS_QueryRow FindBy접수번호거래처ID(string 접수번호, string 거래처ID) {
-                return ((SP_QcAS_QueryRow)(this.Rows.Find(new object[] {
-                            접수번호,
-                            거래처ID})));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public override global::System.Data.DataTable Clone() {
-                SP_QcAS_QueryDataTable cln = ((SP_QcAS_QueryDataTable)(base.Clone()));
-                cln.InitVars();
-                return cln;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataTable CreateInstance() {
-                return new SP_QcAS_QueryDataTable();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal void InitVars() {
-                this.column접수번호 = base.Columns["접수번호"];
-                this.column전표번호 = base.Columns["전표번호"];
-                this.column거래처ID = base.Columns["거래처ID"];
-                this.column거래처명 = base.Columns["거래처명"];
-                this.column출하 = base.Columns["출하"];
-                this.column대상수량 = base.Columns["대상수량"];
-                this.column발생일자 = base.Columns["발생일자"];
-                this.column발생내역 = base.Columns["발생내역"];
-                this.column조치일자 = base.Columns["조치일자"];
-                this.column조치내역 = base.Columns["조치내역"];
-                this.column처리비용 = base.Columns["처리비용"];
-                this.column책임자ID = base.Columns["책임자ID"];
-                this.column책임자 = base.Columns["책임자"];
-                this.column진행 = base.Columns["진행"];
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            private void InitClass() {
-                this.column접수번호 = new global::System.Data.DataColumn("접수번호", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column접수번호);
-                this.column전표번호 = new global::System.Data.DataColumn("전표번호", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column전표번호);
-                this.column거래처ID = new global::System.Data.DataColumn("거래처ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column거래처ID);
-                this.column거래처명 = new global::System.Data.DataColumn("거래처명", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column거래처명);
-                this.column출하 = new global::System.Data.DataColumn("출하", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column출하);
-                this.column대상수량 = new global::System.Data.DataColumn("대상수량", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column대상수량);
-                this.column발생일자 = new global::System.Data.DataColumn("발생일자", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column발생일자);
-                this.column발생내역 = new global::System.Data.DataColumn("발생내역", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column발생내역);
-                this.column조치일자 = new global::System.Data.DataColumn("조치일자", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column조치일자);
-                this.column조치내역 = new global::System.Data.DataColumn("조치내역", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column조치내역);
-                this.column처리비용 = new global::System.Data.DataColumn("처리비용", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column처리비용);
-                this.column책임자ID = new global::System.Data.DataColumn("책임자ID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column책임자ID);
-                this.column책임자 = new global::System.Data.DataColumn("책임자", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column책임자);
-                this.column진행 = new global::System.Data.DataColumn("진행", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column진행);
-                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.column접수번호,
-                                this.column거래처ID}, true));
-                this.column접수번호.AllowDBNull = false;
-                this.column접수번호.MaxLength = 9;
-                this.column전표번호.AllowDBNull = false;
-                this.column전표번호.MaxLength = 17;
-                this.column거래처ID.AllowDBNull = false;
-                this.column거래처ID.MaxLength = 7;
-                this.column거래처명.AllowDBNull = false;
-                this.column거래처명.MaxLength = 50;
-                this.column출하.AllowDBNull = false;
-                this.column발생일자.AllowDBNull = false;
-                this.column발생내역.MaxLength = 1000;
-                this.column조치내역.MaxLength = 1000;
-                this.column책임자ID.MaxLength = 50;
-                this.column책임자.MaxLength = 50;
-                this.column진행.AllowDBNull = false;
-                this.column진행.MaxLength = 5;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_QcAS_QueryRow NewSP_QcAS_QueryRow() {
-                return ((SP_QcAS_QueryRow)(this.NewRow()));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new SP_QcAS_QueryRow(builder);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override global::System.Type GetRowType() {
-                return typeof(SP_QcAS_QueryRow);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanged(e);
-                if ((this.SP_QcAS_QueryRowChanged != null)) {
-                    this.SP_QcAS_QueryRowChanged(this, new SP_QcAS_QueryRowChangeEvent(((SP_QcAS_QueryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowChanging(e);
-                if ((this.SP_QcAS_QueryRowChanging != null)) {
-                    this.SP_QcAS_QueryRowChanging(this, new SP_QcAS_QueryRowChangeEvent(((SP_QcAS_QueryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleted(e);
-                if ((this.SP_QcAS_QueryRowDeleted != null)) {
-                    this.SP_QcAS_QueryRowDeleted(this, new SP_QcAS_QueryRowChangeEvent(((SP_QcAS_QueryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
-                base.OnRowDeleting(e);
-                if ((this.SP_QcAS_QueryRowDeleting != null)) {
-                    this.SP_QcAS_QueryRowDeleting(this, new SP_QcAS_QueryRowChangeEvent(((SP_QcAS_QueryRow)(e.Row)), e.Action));
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void RemoveSP_QcAS_QueryRow(SP_QcAS_QueryRow row) {
-                this.Rows.Remove(row);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
-                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                DataSetP1E ds = new DataSetP1E();
-                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
-                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
-                any1.MinOccurs = new decimal(0);
-                any1.MaxOccurs = decimal.MaxValue;
-                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any1);
-                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
-                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
-                any2.MinOccurs = new decimal(1);
-                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
-                sequence.Items.Add(any2);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute1.Name = "namespace";
-                attribute1.FixedValue = ds.Namespace;
-                type.Attributes.Add(attribute1);
-                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
-                attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "SP_QcAS_QueryDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -5230,6 +4774,462 @@ namespace SmartMES_Giroei.P1E {
         }
         
         /// <summary>
+        ///Represents the strongly named DataTable class.
+        ///</summary>
+        [global::System.Serializable()]
+        [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
+        public partial class SP_QcAS_QueryDataTable : global::System.Data.TypedTableBase<SP_QcAS_QueryRow> {
+            
+            private global::System.Data.DataColumn column접수번호;
+            
+            private global::System.Data.DataColumn column전표번호;
+            
+            private global::System.Data.DataColumn column거래처ID;
+            
+            private global::System.Data.DataColumn column거래처명;
+            
+            private global::System.Data.DataColumn column출하;
+            
+            private global::System.Data.DataColumn column대상수량;
+            
+            private global::System.Data.DataColumn column발생일자;
+            
+            private global::System.Data.DataColumn column발생내역;
+            
+            private global::System.Data.DataColumn column조치일자;
+            
+            private global::System.Data.DataColumn column조치내역;
+            
+            private global::System.Data.DataColumn column처리비용;
+            
+            private global::System.Data.DataColumn column책임자ID;
+            
+            private global::System.Data.DataColumn column책임자;
+            
+            private global::System.Data.DataColumn column진행;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_QcAS_QueryDataTable() {
+                this.TableName = "SP_QcAS_Query";
+                this.BeginInit();
+                this.InitClass();
+                this.EndInit();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal SP_QcAS_QueryDataTable(global::System.Data.DataTable table) {
+                this.TableName = table.TableName;
+                if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
+                    this.CaseSensitive = table.CaseSensitive;
+                }
+                if ((table.Locale.ToString() != table.DataSet.Locale.ToString())) {
+                    this.Locale = table.Locale;
+                }
+                if ((table.Namespace != table.DataSet.Namespace)) {
+                    this.Namespace = table.Namespace;
+                }
+                this.Prefix = table.Prefix;
+                this.MinimumCapacity = table.MinimumCapacity;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected SP_QcAS_QueryDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+                    base(info, context) {
+                this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 접수번호Column {
+                get {
+                    return this.column접수번호;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 전표번호Column {
+                get {
+                    return this.column전표번호;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 거래처IDColumn {
+                get {
+                    return this.column거래처ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 거래처명Column {
+                get {
+                    return this.column거래처명;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 출하Column {
+                get {
+                    return this.column출하;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 대상수량Column {
+                get {
+                    return this.column대상수량;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 발생일자Column {
+                get {
+                    return this.column발생일자;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 발생내역Column {
+                get {
+                    return this.column발생내역;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 조치일자Column {
+                get {
+                    return this.column조치일자;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 조치내역Column {
+                get {
+                    return this.column조치내역;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 처리비용Column {
+                get {
+                    return this.column처리비용;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 책임자IDColumn {
+                get {
+                    return this.column책임자ID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 책임자Column {
+                get {
+                    return this.column책임자;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 진행Column {
+                get {
+                    return this.column진행;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            [global::System.ComponentModel.Browsable(false)]
+            public int Count {
+                get {
+                    return this.Rows.Count;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_QcAS_QueryRow this[int index] {
+                get {
+                    return ((SP_QcAS_QueryRow)(this.Rows[index]));
+                }
+            }
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_QcAS_QueryRowChangeEventHandler SP_QcAS_QueryRowChanging;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_QcAS_QueryRowChangeEventHandler SP_QcAS_QueryRowChanged;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_QcAS_QueryRowChangeEventHandler SP_QcAS_QueryRowDeleting;
+            
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public event SP_QcAS_QueryRowChangeEventHandler SP_QcAS_QueryRowDeleted;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void AddSP_QcAS_QueryRow(SP_QcAS_QueryRow row) {
+                this.Rows.Add(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_QcAS_QueryRow AddSP_QcAS_QueryRow(string 접수번호, string 전표번호, string 거래처ID, string 거래처명, System.DateTime 출하, int 대상수량, System.DateTime 발생일자, string 발생내역, System.DateTime 조치일자, string 조치내역, long 처리비용, string 책임자ID, string 책임자, string 진행) {
+                SP_QcAS_QueryRow rowSP_QcAS_QueryRow = ((SP_QcAS_QueryRow)(this.NewRow()));
+                object[] columnValuesArray = new object[] {
+                        접수번호,
+                        전표번호,
+                        거래처ID,
+                        거래처명,
+                        출하,
+                        대상수량,
+                        발생일자,
+                        발생내역,
+                        조치일자,
+                        조치내역,
+                        처리비용,
+                        책임자ID,
+                        책임자,
+                        진행};
+                rowSP_QcAS_QueryRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowSP_QcAS_QueryRow);
+                return rowSP_QcAS_QueryRow;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_QcAS_QueryRow FindBy접수번호거래처ID(string 접수번호, string 거래처ID) {
+                return ((SP_QcAS_QueryRow)(this.Rows.Find(new object[] {
+                            접수번호,
+                            거래처ID})));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public override global::System.Data.DataTable Clone() {
+                SP_QcAS_QueryDataTable cln = ((SP_QcAS_QueryDataTable)(base.Clone()));
+                cln.InitVars();
+                return cln;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataTable CreateInstance() {
+                return new SP_QcAS_QueryDataTable();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal void InitVars() {
+                this.column접수번호 = base.Columns["접수번호"];
+                this.column전표번호 = base.Columns["전표번호"];
+                this.column거래처ID = base.Columns["거래처ID"];
+                this.column거래처명 = base.Columns["거래처명"];
+                this.column출하 = base.Columns["출하"];
+                this.column대상수량 = base.Columns["대상수량"];
+                this.column발생일자 = base.Columns["발생일자"];
+                this.column발생내역 = base.Columns["발생내역"];
+                this.column조치일자 = base.Columns["조치일자"];
+                this.column조치내역 = base.Columns["조치내역"];
+                this.column처리비용 = base.Columns["처리비용"];
+                this.column책임자ID = base.Columns["책임자ID"];
+                this.column책임자 = base.Columns["책임자"];
+                this.column진행 = base.Columns["진행"];
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            private void InitClass() {
+                this.column접수번호 = new global::System.Data.DataColumn("접수번호", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column접수번호);
+                this.column전표번호 = new global::System.Data.DataColumn("전표번호", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column전표번호);
+                this.column거래처ID = new global::System.Data.DataColumn("거래처ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column거래처ID);
+                this.column거래처명 = new global::System.Data.DataColumn("거래처명", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column거래처명);
+                this.column출하 = new global::System.Data.DataColumn("출하", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column출하);
+                this.column대상수량 = new global::System.Data.DataColumn("대상수량", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column대상수량);
+                this.column발생일자 = new global::System.Data.DataColumn("발생일자", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column발생일자);
+                this.column발생내역 = new global::System.Data.DataColumn("발생내역", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column발생내역);
+                this.column조치일자 = new global::System.Data.DataColumn("조치일자", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column조치일자);
+                this.column조치내역 = new global::System.Data.DataColumn("조치내역", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column조치내역);
+                this.column처리비용 = new global::System.Data.DataColumn("처리비용", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column처리비용);
+                this.column책임자ID = new global::System.Data.DataColumn("책임자ID", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column책임자ID);
+                this.column책임자 = new global::System.Data.DataColumn("책임자", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column책임자);
+                this.column진행 = new global::System.Data.DataColumn("진행", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column진행);
+                this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.column접수번호,
+                                this.column거래처ID}, true));
+                this.column접수번호.AllowDBNull = false;
+                this.column접수번호.MaxLength = 9;
+                this.column전표번호.AllowDBNull = false;
+                this.column전표번호.MaxLength = 17;
+                this.column거래처ID.AllowDBNull = false;
+                this.column거래처ID.MaxLength = 7;
+                this.column거래처명.AllowDBNull = false;
+                this.column거래처명.MaxLength = 50;
+                this.column출하.AllowDBNull = false;
+                this.column발생일자.AllowDBNull = false;
+                this.column발생내역.MaxLength = 1000;
+                this.column조치내역.MaxLength = 1000;
+                this.column책임자ID.MaxLength = 50;
+                this.column책임자.MaxLength = 50;
+                this.column진행.AllowDBNull = false;
+                this.column진행.MaxLength = 5;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_QcAS_QueryRow NewSP_QcAS_QueryRow() {
+                return ((SP_QcAS_QueryRow)(this.NewRow()));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
+                return new SP_QcAS_QueryRow(builder);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override global::System.Type GetRowType() {
+                return typeof(SP_QcAS_QueryRow);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanged(e);
+                if ((this.SP_QcAS_QueryRowChanged != null)) {
+                    this.SP_QcAS_QueryRowChanged(this, new SP_QcAS_QueryRowChangeEvent(((SP_QcAS_QueryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowChanging(e);
+                if ((this.SP_QcAS_QueryRowChanging != null)) {
+                    this.SP_QcAS_QueryRowChanging(this, new SP_QcAS_QueryRowChangeEvent(((SP_QcAS_QueryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleted(e);
+                if ((this.SP_QcAS_QueryRowDeleted != null)) {
+                    this.SP_QcAS_QueryRowDeleted(this, new SP_QcAS_QueryRowChangeEvent(((SP_QcAS_QueryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
+                base.OnRowDeleting(e);
+                if ((this.SP_QcAS_QueryRowDeleting != null)) {
+                    this.SP_QcAS_QueryRowDeleting(this, new SP_QcAS_QueryRowChangeEvent(((SP_QcAS_QueryRow)(e.Row)), e.Action));
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void RemoveSP_QcAS_QueryRow(SP_QcAS_QueryRow row) {
+                this.Rows.Remove(row);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
+                global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
+                global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
+                DataSetP1E ds = new DataSetP1E();
+                global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
+                any1.Namespace = "http://www.w3.org/2001/XMLSchema";
+                any1.MinOccurs = new decimal(0);
+                any1.MaxOccurs = decimal.MaxValue;
+                any1.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any1);
+                global::System.Xml.Schema.XmlSchemaAny any2 = new global::System.Xml.Schema.XmlSchemaAny();
+                any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1";
+                any2.MinOccurs = new decimal(1);
+                any2.ProcessContents = global::System.Xml.Schema.XmlSchemaContentProcessing.Lax;
+                sequence.Items.Add(any2);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute1 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute1.Name = "namespace";
+                attribute1.FixedValue = ds.Namespace;
+                type.Attributes.Add(attribute1);
+                global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
+                attribute2.Name = "tableTypeName";
+                attribute2.FixedValue = "SP_QcAS_QueryDataTable";
+                type.Attributes.Add(attribute2);
+                type.Particle = sequence;
+                global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
+                if (xs.Contains(dsSchema.TargetNamespace)) {
+                    global::System.IO.MemoryStream s1 = new global::System.IO.MemoryStream();
+                    global::System.IO.MemoryStream s2 = new global::System.IO.MemoryStream();
+                    try {
+                        global::System.Xml.Schema.XmlSchema schema = null;
+                        dsSchema.Write(s1);
+                        for (global::System.Collections.IEnumerator schemas = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator(); schemas.MoveNext(); ) {
+                            schema = ((global::System.Xml.Schema.XmlSchema)(schemas.Current));
+                            s2.SetLength(0);
+                            schema.Write(s2);
+                            if ((s1.Length == s2.Length)) {
+                                s1.Position = 0;
+                                s2.Position = 0;
+                                for (; ((s1.Position != s1.Length) 
+                                            && (s1.ReadByte() == s2.ReadByte())); ) {
+                                    ;
+                                }
+                                if ((s1.Position == s1.Length)) {
+                                    return type;
+                                }
+                            }
+                        }
+                    }
+                    finally {
+                        if ((s1 != null)) {
+                            s1.Close();
+                        }
+                        if ((s2 != null)) {
+                            s2.Close();
+                        }
+                    }
+                }
+                xs.Add(dsSchema);
+                return type;
+            }
+        }
+        
+        /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
         public partial class SP_QcFinalList_QueryRow : global::System.Data.DataRow {
@@ -5576,294 +5576,6 @@ namespace SmartMES_Giroei.P1E {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set의견Null() {
                 this[this.tableSP_QcFinalList_Query.의견Column] = global::System.Convert.DBNull;
-            }
-        }
-        
-        /// <summary>
-        ///Represents strongly named DataRow class.
-        ///</summary>
-        public partial class SP_QcAS_QueryRow : global::System.Data.DataRow {
-            
-            private SP_QcAS_QueryDataTable tableSP_QcAS_Query;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            internal SP_QcAS_QueryRow(global::System.Data.DataRowBuilder rb) : 
-                    base(rb) {
-                this.tableSP_QcAS_Query = ((SP_QcAS_QueryDataTable)(this.Table));
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 접수번호 {
-                get {
-                    return ((string)(this[this.tableSP_QcAS_Query.접수번호Column]));
-                }
-                set {
-                    this[this.tableSP_QcAS_Query.접수번호Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 전표번호 {
-                get {
-                    return ((string)(this[this.tableSP_QcAS_Query.전표번호Column]));
-                }
-                set {
-                    this[this.tableSP_QcAS_Query.전표번호Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 거래처ID {
-                get {
-                    return ((string)(this[this.tableSP_QcAS_Query.거래처IDColumn]));
-                }
-                set {
-                    this[this.tableSP_QcAS_Query.거래처IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 거래처명 {
-                get {
-                    return ((string)(this[this.tableSP_QcAS_Query.거래처명Column]));
-                }
-                set {
-                    this[this.tableSP_QcAS_Query.거래처명Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime 출하 {
-                get {
-                    return ((global::System.DateTime)(this[this.tableSP_QcAS_Query.출하Column]));
-                }
-                set {
-                    this[this.tableSP_QcAS_Query.출하Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public int 대상수량 {
-                get {
-                    try {
-                        return ((int)(this[this.tableSP_QcAS_Query.대상수량Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_QcAS_Query\' 테이블의 \'대상수량\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_QcAS_Query.대상수량Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime 발생일자 {
-                get {
-                    return ((global::System.DateTime)(this[this.tableSP_QcAS_Query.발생일자Column]));
-                }
-                set {
-                    this[this.tableSP_QcAS_Query.발생일자Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 발생내역 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_QcAS_Query.발생내역Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_QcAS_Query\' 테이블의 \'발생내역\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_QcAS_Query.발생내역Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public System.DateTime 조치일자 {
-                get {
-                    try {
-                        return ((global::System.DateTime)(this[this.tableSP_QcAS_Query.조치일자Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_QcAS_Query\' 테이블의 \'조치일자\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_QcAS_Query.조치일자Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 조치내역 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_QcAS_Query.조치내역Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_QcAS_Query\' 테이블의 \'조치내역\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_QcAS_Query.조치내역Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long 처리비용 {
-                get {
-                    try {
-                        return ((long)(this[this.tableSP_QcAS_Query.처리비용Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_QcAS_Query\' 테이블의 \'처리비용\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_QcAS_Query.처리비용Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 책임자ID {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_QcAS_Query.책임자IDColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_QcAS_Query\' 테이블의 \'책임자ID\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_QcAS_Query.책임자IDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 책임자 {
-                get {
-                    try {
-                        return ((string)(this[this.tableSP_QcAS_Query.책임자Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_QcAS_Query\' 테이블의 \'책임자\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_QcAS_Query.책임자Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 진행 {
-                get {
-                    return ((string)(this[this.tableSP_QcAS_Query.진행Column]));
-                }
-                set {
-                    this[this.tableSP_QcAS_Query.진행Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is대상수량Null() {
-                return this.IsNull(this.tableSP_QcAS_Query.대상수량Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set대상수량Null() {
-                this[this.tableSP_QcAS_Query.대상수량Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is발생내역Null() {
-                return this.IsNull(this.tableSP_QcAS_Query.발생내역Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set발생내역Null() {
-                this[this.tableSP_QcAS_Query.발생내역Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is조치일자Null() {
-                return this.IsNull(this.tableSP_QcAS_Query.조치일자Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set조치일자Null() {
-                this[this.tableSP_QcAS_Query.조치일자Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is조치내역Null() {
-                return this.IsNull(this.tableSP_QcAS_Query.조치내역Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set조치내역Null() {
-                this[this.tableSP_QcAS_Query.조치내역Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is처리비용Null() {
-                return this.IsNull(this.tableSP_QcAS_Query.처리비용Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set처리비용Null() {
-                this[this.tableSP_QcAS_Query.처리비용Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is책임자IDNull() {
-                return this.IsNull(this.tableSP_QcAS_Query.책임자IDColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set책임자IDNull() {
-                this[this.tableSP_QcAS_Query.책임자IDColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is책임자Null() {
-                return this.IsNull(this.tableSP_QcAS_Query.책임자Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set책임자Null() {
-                this[this.tableSP_QcAS_Query.책임자Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -8170,6 +7882,294 @@ namespace SmartMES_Giroei.P1E {
         }
         
         /// <summary>
+        ///Represents strongly named DataRow class.
+        ///</summary>
+        public partial class SP_QcAS_QueryRow : global::System.Data.DataRow {
+            
+            private SP_QcAS_QueryDataTable tableSP_QcAS_Query;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            internal SP_QcAS_QueryRow(global::System.Data.DataRowBuilder rb) : 
+                    base(rb) {
+                this.tableSP_QcAS_Query = ((SP_QcAS_QueryDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 접수번호 {
+                get {
+                    return ((string)(this[this.tableSP_QcAS_Query.접수번호Column]));
+                }
+                set {
+                    this[this.tableSP_QcAS_Query.접수번호Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 전표번호 {
+                get {
+                    return ((string)(this[this.tableSP_QcAS_Query.전표번호Column]));
+                }
+                set {
+                    this[this.tableSP_QcAS_Query.전표번호Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 거래처ID {
+                get {
+                    return ((string)(this[this.tableSP_QcAS_Query.거래처IDColumn]));
+                }
+                set {
+                    this[this.tableSP_QcAS_Query.거래처IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 거래처명 {
+                get {
+                    return ((string)(this[this.tableSP_QcAS_Query.거래처명Column]));
+                }
+                set {
+                    this[this.tableSP_QcAS_Query.거래처명Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime 출하 {
+                get {
+                    return ((global::System.DateTime)(this[this.tableSP_QcAS_Query.출하Column]));
+                }
+                set {
+                    this[this.tableSP_QcAS_Query.출하Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 대상수량 {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_QcAS_Query.대상수량Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QcAS_Query\' 테이블의 \'대상수량\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QcAS_Query.대상수량Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime 발생일자 {
+                get {
+                    return ((global::System.DateTime)(this[this.tableSP_QcAS_Query.발생일자Column]));
+                }
+                set {
+                    this[this.tableSP_QcAS_Query.발생일자Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 발생내역 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_QcAS_Query.발생내역Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QcAS_Query\' 테이블의 \'발생내역\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QcAS_Query.발생내역Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime 조치일자 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_QcAS_Query.조치일자Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QcAS_Query\' 테이블의 \'조치일자\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QcAS_Query.조치일자Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 조치내역 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_QcAS_Query.조치내역Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QcAS_Query\' 테이블의 \'조치내역\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QcAS_Query.조치내역Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public long 처리비용 {
+                get {
+                    try {
+                        return ((long)(this[this.tableSP_QcAS_Query.처리비용Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QcAS_Query\' 테이블의 \'처리비용\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QcAS_Query.처리비용Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 책임자ID {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_QcAS_Query.책임자IDColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QcAS_Query\' 테이블의 \'책임자ID\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QcAS_Query.책임자IDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 책임자 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_QcAS_Query.책임자Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_QcAS_Query\' 테이블의 \'책임자\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_QcAS_Query.책임자Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 진행 {
+                get {
+                    return ((string)(this[this.tableSP_QcAS_Query.진행Column]));
+                }
+                set {
+                    this[this.tableSP_QcAS_Query.진행Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is대상수량Null() {
+                return this.IsNull(this.tableSP_QcAS_Query.대상수량Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set대상수량Null() {
+                this[this.tableSP_QcAS_Query.대상수량Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is발생내역Null() {
+                return this.IsNull(this.tableSP_QcAS_Query.발생내역Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set발생내역Null() {
+                this[this.tableSP_QcAS_Query.발생내역Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is조치일자Null() {
+                return this.IsNull(this.tableSP_QcAS_Query.조치일자Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set조치일자Null() {
+                this[this.tableSP_QcAS_Query.조치일자Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is조치내역Null() {
+                return this.IsNull(this.tableSP_QcAS_Query.조치내역Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set조치내역Null() {
+                this[this.tableSP_QcAS_Query.조치내역Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is처리비용Null() {
+                return this.IsNull(this.tableSP_QcAS_Query.처리비용Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set처리비용Null() {
+                this[this.tableSP_QcAS_Query.처리비용Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is책임자IDNull() {
+                return this.IsNull(this.tableSP_QcAS_Query.책임자IDColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set책임자IDNull() {
+                this[this.tableSP_QcAS_Query.책임자IDColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is책임자Null() {
+                return this.IsNull(this.tableSP_QcAS_Query.책임자Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set책임자Null() {
+                this[this.tableSP_QcAS_Query.책임자Column] = global::System.Convert.DBNull;
+            }
+        }
+        
+        /// <summary>
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -8189,40 +8189,6 @@ namespace SmartMES_Giroei.P1E {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_QcFinalList_QueryRow Row {
-                get {
-                    return this.eventRow;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataRowAction Action {
-                get {
-                    return this.eventAction;
-                }
-            }
-        }
-        
-        /// <summary>
-        ///Row event argument class
-        ///</summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public class SP_QcAS_QueryRowChangeEvent : global::System.EventArgs {
-            
-            private SP_QcAS_QueryRow eventRow;
-            
-            private global::System.Data.DataRowAction eventAction;
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_QcAS_QueryRowChangeEvent(SP_QcAS_QueryRow row, global::System.Data.DataRowAction action) {
-                this.eventRow = row;
-                this.eventAction = action;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_QcAS_QueryRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -8576,6 +8542,40 @@ namespace SmartMES_Giroei.P1E {
                 }
             }
         }
+        
+        /// <summary>
+        ///Row event argument class
+        ///</summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public class SP_QcAS_QueryRowChangeEvent : global::System.EventArgs {
+            
+            private SP_QcAS_QueryRow eventRow;
+            
+            private global::System.Data.DataRowAction eventAction;
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_QcAS_QueryRowChangeEvent(SP_QcAS_QueryRow row, global::System.Data.DataRowAction action) {
+                this.eventRow = row;
+                this.eventAction = action;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public SP_QcAS_QueryRow Row {
+                get {
+                    return this.eventRow;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataRowAction Action {
+                get {
+                    return this.eventAction;
+                }
+            }
+        }
     }
 }
 namespace SmartMES_Giroei.P1E.DataSetP1ETableAdapters {
@@ -8753,7 +8753,6 @@ namespace SmartMES_Giroei.P1E.DataSetP1ETableAdapters {
             this._commandCollection[0].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "_search";
-            param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.Size = 50;
             param.IsNullable = true;
@@ -8817,266 +8816,6 @@ namespace SmartMES_Giroei.P1E.DataSetP1ETableAdapters {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(_search));
             }
             DataSetP1E.SP_QcFinalList_QueryDataTable dataTable = new DataSetP1E.SP_QcFinalList_QueryDataTable();
-            this.Adapter.Fill(dataTable);
-            return dataTable;
-        }
-    }
-    
-    /// <summary>
-    ///Represents the connection and commands used to retrieve and save data.
-    ///</summary>
-    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
-    [global::System.ComponentModel.ToolboxItem(true)]
-    [global::System.ComponentModel.DataObjectAttribute(true)]
-    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
-        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
-    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class SP_QcAS_QueryTableAdapter : global::System.ComponentModel.Component {
-        
-        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
-        
-        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
-        
-        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
-        
-        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
-        
-        private bool _clearBeforeFill;
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public SP_QcAS_QueryTableAdapter() {
-            this.ClearBeforeFill = true;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
-            get {
-                if ((this._adapter == null)) {
-                    this.InitAdapter();
-                }
-                return this._adapter;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
-            get {
-                if ((this._connection == null)) {
-                    this.InitConnection();
-                }
-                return this._connection;
-            }
-            set {
-                this._connection = value;
-                if ((this.Adapter.InsertCommand != null)) {
-                    this.Adapter.InsertCommand.Connection = value;
-                }
-                if ((this.Adapter.DeleteCommand != null)) {
-                    this.Adapter.DeleteCommand.Connection = value;
-                }
-                if ((this.Adapter.UpdateCommand != null)) {
-                    this.Adapter.UpdateCommand.Connection = value;
-                }
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    if ((this.CommandCollection[i] != null)) {
-                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
-                    }
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
-            get {
-                return this._transaction;
-            }
-            set {
-                this._transaction = value;
-                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
-                    this.CommandCollection[i].Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.DeleteCommand != null))) {
-                    this.Adapter.DeleteCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.InsertCommand != null))) {
-                    this.Adapter.InsertCommand.Transaction = this._transaction;
-                }
-                if (((this.Adapter != null) 
-                            && (this.Adapter.UpdateCommand != null))) {
-                    this.Adapter.UpdateCommand.Transaction = this._transaction;
-                }
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
-            get {
-                if ((this._commandCollection == null)) {
-                    this.InitCommandCollection();
-                }
-                return this._commandCollection;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        public bool ClearBeforeFill {
-            get {
-                return this._clearBeforeFill;
-            }
-            set {
-                this._clearBeforeFill = value;
-            }
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitAdapter() {
-            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
-            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
-            tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "SP_QcAS_Query";
-            tableMapping.ColumnMappings.Add("접수번호", "접수번호");
-            tableMapping.ColumnMappings.Add("전표번호", "전표번호");
-            tableMapping.ColumnMappings.Add("거래처ID", "거래처ID");
-            tableMapping.ColumnMappings.Add("거래처명", "거래처명");
-            tableMapping.ColumnMappings.Add("출하", "출하");
-            tableMapping.ColumnMappings.Add("대상수량", "대상수량");
-            tableMapping.ColumnMappings.Add("발생일자", "발생일자");
-            tableMapping.ColumnMappings.Add("발생내역", "발생내역");
-            tableMapping.ColumnMappings.Add("조치일자", "조치일자");
-            tableMapping.ColumnMappings.Add("조치내역", "조치내역");
-            tableMapping.ColumnMappings.Add("처리비용", "처리비용");
-            tableMapping.ColumnMappings.Add("책임자ID", "책임자ID");
-            tableMapping.ColumnMappings.Add("책임자", "책임자");
-            tableMapping.ColumnMappings.Add("진행", "진행");
-            this._adapter.TableMappings.Add(tableMapping);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitConnection() {
-            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
-            this._connection.ConnectionString = global::SmartMES_Giroei.Properties.Settings.Default.jiroei_mesConnectionString;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        private void InitCommandCollection() {
-            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
-            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
-            this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "`jiroei_mes`.`SP_QcAS_Query`";
-            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
-            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "_fromDate";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.Size = 2147483647;
-            param.IsNullable = true;
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[0].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "_toDate";
-            param.DbType = global::System.Data.DbType.DateTime;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
-            param.Size = 2147483647;
-            param.IsNullable = true;
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[0].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "_search";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
-            param.Size = 50;
-            param.IsNullable = true;
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[0].Parameters.Add(param);
-            param = new global::MySql.Data.MySqlClient.MySqlParameter();
-            param.ParameterName = "_state";
-            param.DbType = global::System.Data.DbType.String;
-            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
-            param.Size = 1;
-            param.IsNullable = true;
-            param.SourceVersion = global::System.Data.DataRowVersion.Current;
-            this._commandCollection[0].Parameters.Add(param);
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetP1E.SP_QcAS_QueryDataTable dataTable, global::System.Nullable<global::System.DateTime> _fromDate, global::System.Nullable<global::System.DateTime> _toDate, string _search, string _state) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((_fromDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(_fromDate.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((_toDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(_toDate.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((_search == null)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(_search));
-            }
-            if ((_state == null)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(_state));
-            }
-            if ((this.ClearBeforeFill == true)) {
-                dataTable.Clear();
-            }
-            int returnValue = this.Adapter.Fill(dataTable);
-            return returnValue;
-        }
-        
-        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetP1E.SP_QcAS_QueryDataTable GetData(global::System.Nullable<global::System.DateTime> _fromDate, global::System.Nullable<global::System.DateTime> _toDate, string _search, string _state) {
-            this.Adapter.SelectCommand = this.CommandCollection[0];
-            if ((_fromDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(_fromDate.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
-            }
-            if ((_toDate.HasValue == true)) {
-                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(_toDate.Value));
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
-            }
-            if ((_search == null)) {
-                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(_search));
-            }
-            if ((_state == null)) {
-                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
-            }
-            else {
-                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(_state));
-            }
-            DataSetP1E.SP_QcAS_QueryDataTable dataTable = new DataSetP1E.SP_QcAS_QueryDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -9248,7 +8987,6 @@ namespace SmartMES_Giroei.P1E.DataSetP1ETableAdapters {
             this._commandCollection[0].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "_search";
-            param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.Size = 50;
             param.IsNullable = true;
@@ -9872,7 +9610,6 @@ namespace SmartMES_Giroei.P1E.DataSetP1ETableAdapters {
             this._commandCollection[0].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "_search";
-            param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.Size = 50;
             param.IsNullable = true;
@@ -10107,7 +9844,6 @@ namespace SmartMES_Giroei.P1E.DataSetP1ETableAdapters {
             this._commandCollection[0].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "_search1";
-            param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.Size = 50;
             param.IsNullable = true;
@@ -10115,7 +9851,6 @@ namespace SmartMES_Giroei.P1E.DataSetP1ETableAdapters {
             this._commandCollection[0].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "_search2";
-            param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.Size = 50;
             param.IsNullable = true;
@@ -10347,7 +10082,6 @@ namespace SmartMES_Giroei.P1E.DataSetP1ETableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "_rorder";
-            param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
             param.Size = 10;
             param.IsNullable = true;
@@ -10355,7 +10089,6 @@ namespace SmartMES_Giroei.P1E.DataSetP1ETableAdapters {
             this._commandCollection[0].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "_code";
-            param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.Size = 1;
             param.IsNullable = true;
@@ -10584,7 +10317,6 @@ namespace SmartMES_Giroei.P1E.DataSetP1ETableAdapters {
             this._commandCollection[0].Parameters.Add(param);
             param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "_search";
-            param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
             param.Size = 50;
             param.IsNullable = true;
@@ -10806,7 +10538,6 @@ namespace SmartMES_Giroei.P1E.DataSetP1ETableAdapters {
             this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
             global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
             param.ParameterName = "_no";
-            param.DbType = global::System.Data.DbType.String;
             param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
             param.Size = 10;
             param.IsNullable = true;
@@ -11226,6 +10957,264 @@ namespace SmartMES_Giroei.P1E.DataSetP1ETableAdapters {
                 this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
             }
             DataSetP1E.SP_Machine_Idleinfo2DataTable dataTable = new DataSetP1E.SP_Machine_Idleinfo2DataTable();
+            this.Adapter.Fill(dataTable);
+            return dataTable;
+        }
+    }
+    
+    /// <summary>
+    ///Represents the connection and commands used to retrieve and save data.
+    ///</summary>
+    [global::System.ComponentModel.DesignerCategoryAttribute("code")]
+    [global::System.ComponentModel.ToolboxItem(true)]
+    [global::System.ComponentModel.DataObjectAttribute(true)]
+    [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
+        ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
+    [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+    public partial class SP_QcAS_QueryTableAdapter : global::System.ComponentModel.Component {
+        
+        private global::MySql.Data.MySqlClient.MySqlDataAdapter _adapter;
+        
+        private global::MySql.Data.MySqlClient.MySqlConnection _connection;
+        
+        private global::MySql.Data.MySqlClient.MySqlTransaction _transaction;
+        
+        private global::MySql.Data.MySqlClient.MySqlCommand[] _commandCollection;
+        
+        private bool _clearBeforeFill;
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public SP_QcAS_QueryTableAdapter() {
+            this.ClearBeforeFill = true;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected internal global::MySql.Data.MySqlClient.MySqlDataAdapter Adapter {
+            get {
+                if ((this._adapter == null)) {
+                    this.InitAdapter();
+                }
+                return this._adapter;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlConnection Connection {
+            get {
+                if ((this._connection == null)) {
+                    this.InitConnection();
+                }
+                return this._connection;
+            }
+            set {
+                this._connection = value;
+                if ((this.Adapter.InsertCommand != null)) {
+                    this.Adapter.InsertCommand.Connection = value;
+                }
+                if ((this.Adapter.DeleteCommand != null)) {
+                    this.Adapter.DeleteCommand.Connection = value;
+                }
+                if ((this.Adapter.UpdateCommand != null)) {
+                    this.Adapter.UpdateCommand.Connection = value;
+                }
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    if ((this.CommandCollection[i] != null)) {
+                        ((global::MySql.Data.MySqlClient.MySqlCommand)(this.CommandCollection[i])).Connection = value;
+                    }
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        internal global::MySql.Data.MySqlClient.MySqlTransaction Transaction {
+            get {
+                return this._transaction;
+            }
+            set {
+                this._transaction = value;
+                for (int i = 0; (i < this.CommandCollection.Length); i = (i + 1)) {
+                    this.CommandCollection[i].Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.DeleteCommand != null))) {
+                    this.Adapter.DeleteCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.InsertCommand != null))) {
+                    this.Adapter.InsertCommand.Transaction = this._transaction;
+                }
+                if (((this.Adapter != null) 
+                            && (this.Adapter.UpdateCommand != null))) {
+                    this.Adapter.UpdateCommand.Transaction = this._transaction;
+                }
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        protected global::MySql.Data.MySqlClient.MySqlCommand[] CommandCollection {
+            get {
+                if ((this._commandCollection == null)) {
+                    this.InitCommandCollection();
+                }
+                return this._commandCollection;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        public bool ClearBeforeFill {
+            get {
+                return this._clearBeforeFill;
+            }
+            set {
+                this._clearBeforeFill = value;
+            }
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitAdapter() {
+            this._adapter = new global::MySql.Data.MySqlClient.MySqlDataAdapter();
+            global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
+            tableMapping.SourceTable = "Table";
+            tableMapping.DataSetTable = "SP_QcAS_Query";
+            tableMapping.ColumnMappings.Add("접수번호", "접수번호");
+            tableMapping.ColumnMappings.Add("전표번호", "전표번호");
+            tableMapping.ColumnMappings.Add("거래처ID", "거래처ID");
+            tableMapping.ColumnMappings.Add("거래처명", "거래처명");
+            tableMapping.ColumnMappings.Add("출하", "출하");
+            tableMapping.ColumnMappings.Add("대상수량", "대상수량");
+            tableMapping.ColumnMappings.Add("발생일자", "발생일자");
+            tableMapping.ColumnMappings.Add("발생내역", "발생내역");
+            tableMapping.ColumnMappings.Add("조치일자", "조치일자");
+            tableMapping.ColumnMappings.Add("조치내역", "조치내역");
+            tableMapping.ColumnMappings.Add("처리비용", "처리비용");
+            tableMapping.ColumnMappings.Add("책임자ID", "책임자ID");
+            tableMapping.ColumnMappings.Add("책임자", "책임자");
+            tableMapping.ColumnMappings.Add("진행", "진행");
+            this._adapter.TableMappings.Add(tableMapping);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitConnection() {
+            this._connection = new global::MySql.Data.MySqlClient.MySqlConnection();
+            this._connection.ConnectionString = global::SmartMES_Giroei.Properties.Settings.Default.jiroei_mesConnectionString;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        private void InitCommandCollection() {
+            this._commandCollection = new global::MySql.Data.MySqlClient.MySqlCommand[1];
+            this._commandCollection[0] = new global::MySql.Data.MySqlClient.MySqlCommand();
+            this._commandCollection[0].Connection = this.Connection;
+            this._commandCollection[0].CommandText = "`jiroei_mes`.`SP_QcAS_Query`";
+            this._commandCollection[0].CommandType = global::System.Data.CommandType.StoredProcedure;
+            global::MySql.Data.MySqlClient.MySqlParameter param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "_fromDate";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[0].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "_toDate";
+            param.DbType = global::System.Data.DbType.DateTime;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Date;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[0].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "_search";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.VarChar;
+            param.Size = 50;
+            param.IsNullable = true;
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[0].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "_state";
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.String;
+            param.Size = 1;
+            param.IsNullable = true;
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[0].Parameters.Add(param);
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
+        public virtual int Fill(DataSetP1E.SP_QcAS_QueryDataTable dataTable, global::System.Nullable<global::System.DateTime> _fromDate, global::System.Nullable<global::System.DateTime> _toDate, string _search, string _state) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((_fromDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(_fromDate.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((_toDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(_toDate.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((_search == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(_search));
+            }
+            if ((_state == null)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(_state));
+            }
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
+        public virtual DataSetP1E.SP_QcAS_QueryDataTable GetData(global::System.Nullable<global::System.DateTime> _fromDate, global::System.Nullable<global::System.DateTime> _toDate, string _search, string _state) {
+            this.Adapter.SelectCommand = this.CommandCollection[0];
+            if ((_fromDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(_fromDate.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[0].Value = global::System.DBNull.Value;
+            }
+            if ((_toDate.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[1].Value = ((System.DateTime)(_toDate.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[1].Value = global::System.DBNull.Value;
+            }
+            if ((_search == null)) {
+                this.Adapter.SelectCommand.Parameters[2].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[2].Value = ((string)(_search));
+            }
+            if ((_state == null)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((string)(_state));
+            }
+            DataSetP1E.SP_QcAS_QueryDataTable dataTable = new DataSetP1E.SP_QcAS_QueryDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }

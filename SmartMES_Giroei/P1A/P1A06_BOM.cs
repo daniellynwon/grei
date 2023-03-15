@@ -450,9 +450,12 @@ namespace SmartMES_Giroei
                 workSheet = workBook.Worksheets.get_Item(1) as Excel.Worksheet; // 엑셀 첫번째 워크시트 가져오기 
                 range = workSheet.UsedRange; // 사용중인 셀 범위를 가져오기
 
-                if ((range.Cells[4, 5] as Excel.Range).Value2.ToString().Trim() != sProdName)
+                if ((range.Cells[4, 4] as Excel.Range).Value2.ToString().Trim() != sProdName)
                 {
-                    MessageBox.Show("해당 품목의 BOM 엑셀 파일이 아닙니다.");
+                    if (DialogResult.OK == MessageBox.Show("해당 품목의 BOM 엑셀 파일이 아니거나,\r품목명이 일치하지 않습니다.", "엑셀 파일 확인이 필요합니다", MessageBoxButtons.OK, MessageBoxIcon.Warning))
+                    {
+                        return;
+                    }
                     workBook.Close();
                     excelApp.Quit();
                     return;
@@ -464,32 +467,50 @@ namespace SmartMES_Giroei
 
                 for (int row = 8; row <= range.Rows.Count; row++) // 가져온 행 만큼 반복
                 {
-                    if ((range.Cells[row, 6] as Excel.Range).Value2 == null || string.IsNullOrEmpty((range.Cells[row, 6] as Excel.Range).Value2.ToString().Trim())) break;
+                    if ((range.Cells[row, 5] as Excel.Range).Value2 == null || string.IsNullOrEmpty((range.Cells[row, 5] as Excel.Range).Value2.ToString().Trim())) break;
                     
+                    //sSeq = (range.Cells[row, 1] as Excel.Range).Value2.ToString().Trim();  // 순번
+                    //sKind = (range.Cells[row, 4] as Excel.Range).Value2.ToString().Trim();  // 품목구분
+                    //if ((range.Cells[row, 4] as Excel.Range).Value2.ToString().Trim() == "-") sKind = "S";
+                    //sProdKind = (range.Cells[row, 2] as Excel.Range).Value2.ToString().Trim();  // 품목분류
+                    //sProdNameSub = (range.Cells[row, 6] as Excel.Range).Value2.ToString().Trim();   // 자재명
+                    //sProdSize = (range.Cells[row, 7] as Excel.Range).Value2.ToString().Trim();
+                    //sQty = (range.Cells[row, 8] as Excel.Range).Value2.ToString().Trim();
+                    //sContents = ((range.Cells[row, 15] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 15] as Excel.Range).Value2.ToString().Trim();
+                    //sMisap = ((range.Cells[row, 14] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 14] as Excel.Range).Value2.ToString().Trim();   // 미삽
+                    //sSusap = ((range.Cells[row, 18] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 18] as Excel.Range).Value2.ToString().Trim();    // 수삽
+                    //string sSageop = ((range.Cells[row, 17] as Excel.Range).Value2 == null) ? "도급" : (range.Cells[row, 17] as Excel.Range).Value2.ToString().Trim();    // 사급
+
                     sSeq = (range.Cells[row, 1] as Excel.Range).Value2.ToString().Trim();  // 순번
-                    sKind = (range.Cells[row, 4] as Excel.Range).Value2.ToString().Trim();  // 품목구분
-                    if ((range.Cells[row, 4] as Excel.Range).Value2.ToString().Trim() == "-") sKind = "S";
+                    sKind = (range.Cells[row, 3] as Excel.Range).Value2.ToString().Trim();  // 품목구분
+                    if ((range.Cells[row, 3] as Excel.Range).Value2.ToString().Trim() == "-") sKind = "S";
                     sProdKind = (range.Cells[row, 2] as Excel.Range).Value2.ToString().Trim();  // 품목분류
-                    sProdNameSub = (range.Cells[row, 6] as Excel.Range).Value2.ToString().Trim();   // 자재명
-                    sProdSize = (range.Cells[row, 7] as Excel.Range).Value2.ToString().Trim();
-                    sQty = (range.Cells[row, 8] as Excel.Range).Value2.ToString().Trim();
-                    sContents = ((range.Cells[row, 15] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 15] as Excel.Range).Value2.ToString().Trim();
-                    sMisap = ((range.Cells[row, 14] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 14] as Excel.Range).Value2.ToString().Trim();   // 미삽
-                    sSusap = ((range.Cells[row, 18] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 18] as Excel.Range).Value2.ToString().Trim();    // 수삽
-                    string sSageop = ((range.Cells[row, 17] as Excel.Range).Value2 == null) ? "도급" : (range.Cells[row, 17] as Excel.Range).Value2.ToString().Trim();    // 사급
+                    sProdNameSub = (range.Cells[row, 5] as Excel.Range).Value2.ToString().Trim();   // 자재명
+                    sProdSize = (range.Cells[row, 6] as Excel.Range).Value2.ToString().Trim();
+                    sQty = (range.Cells[row, 7] as Excel.Range).Value2.ToString().Trim();
+                    sContents = ((range.Cells[row, 14] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 14] as Excel.Range).Value2.ToString().Trim();
+                    sMisap = ((range.Cells[row, 13] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 13] as Excel.Range).Value2.ToString().Trim();   // 미삽
+                    sSusap = ((range.Cells[row, 17] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 17] as Excel.Range).Value2.ToString().Trim();    // 수삽
+                    string sSageop = ((range.Cells[row, 16] as Excel.Range).Value2 == null) ? "도급" : (range.Cells[row, 16] as Excel.Range).Value2.ToString().Trim();    // 사급
                     //sConsign = (range.Cells[row, 17] as Excel.Range).Value2.ToString().Trim();    // 도급(N)/사급(Y)
-                    if (sSageop == "사급") 
+                    if (sSageop == "사급")
+                    {
                         sConsign = "Y";
+                    }
+                    else
+                    {
+                        sConsign = "N";
+                    }
 
-                     //if (sProcess == "수삽") sProcess = "S";
-                     //else if (sProcess == "미삽") sProcess = "M";
-                     //else sProcess = "X";
-                     // SELECT c.co_code, c.co_item, p.prod_id, p.prod_kind FROM BAS_common c LEFT JOIN BAS_product p ON p.prod_kind = c.co_code WHERE c.co_kind = 'C' AND c.co_item = 'TR'
-                     //sql = $@"SELECT co_code, co_item FROM BAS_common WHERE co_kind = 'C' AND prod_name = '{@sProdKind}' ORDER BY prod_id DESC LIMIT 1";
+                    //if (sProcess == "수삽") sProcess = "S";
+                    //else if (sProcess == "미삽") sProcess = "M";
+                    //else sProcess = "X";
+                    // SELECT c.co_code, c.co_item, p.prod_id, p.prod_kind FROM BAS_common c LEFT JOIN BAS_product p ON p.prod_kind = c.co_code WHERE c.co_kind = 'C' AND c.co_item = 'TR'
+                    //sql = $@"SELECT co_code, co_item FROM BAS_common WHERE co_kind = 'C' AND prod_name = '{@sProdKind}' ORDER BY prod_id DESC LIMIT 1";
 
-                     //if (m.dbDataTable(sql, ref msg).Rows.Count == 0)
+                    //if (m.dbDataTable(sql, ref msg).Rows.Count == 0)
 
-                     sql = $@"SELECT prod_name FROM BAS_product WHERE gubun = 'M' AND prod_name = '{@sProdNameSub}' ORDER BY prod_id DESC LIMIT 1";
+                    sql = $@"SELECT prod_name FROM BAS_product WHERE gubun = 'M' AND prod_name = '{@sProdNameSub}' ORDER BY prod_id DESC LIMIT 1";
 
                     if (m.dbDataTable(sql, ref msg).Rows.Count == 0)
                     {
@@ -517,14 +538,14 @@ namespace SmartMES_Giroei
                         string Misap = "N", Susap = "N";
                         if (sMisap == "미삽" && string.IsNullOrEmpty(sSusap))
                         {
-                            Susap = "Y";
+                            Misap = "Y";
                         }
                         else if (sSusap == "수삽" && (string.IsNullOrEmpty(sMisap) || sMisap != "미삽"))
                         {
-                            Misap = "Y";
+                            Susap = "Y";
                         }
 
-                        sql = $@"INSERT INTO BOM_bomlist (seq, prod_id, parent_id, req_qty, IsSusap, IsMiSap, contents) VALUES ('{@sSeq}', '{@_sProdID}', '{@sProdIDSub}', '{@sQty}', '{Susap}', '{Misap}','" + sContents + "');";
+                        sql = $@"INSERT INTO BOM_bomlist (seq, prod_id, parent_id, req_qty, IsSusap, IsMiSap, contents, consignedYN) VALUES ('{@sSeq}', '{@_sProdID}', '{@sProdIDSub}', '{@sQty}', '{Susap}', '{Misap}', '{sContents}', '{@sConsign}');";
                         m.dbCUD(sql, ref msg);
                     }
                     else
@@ -539,7 +560,7 @@ namespace SmartMES_Giroei
                             Susap = "Y";
                         }
 
-                        sql = $@"UPDATE BOM_bomlist SET consignedYN = '{@sConsign}', IsSusap = '{Susap}', IsMiSap = '{Misap}', contents = '" + sContents + "'  WHERE prod_id = '{@_sProdID}' AND parent_id = '{@sProdIDSub}'";
+                        sql = $@"UPDATE BOM_bomlist SET consignedYN = '{@sConsign}', IsSusap = '{Susap}', IsMiSap = '{Misap}', contents = '{sContents}' WHERE prod_id = '{@_sProdID}' AND parent_id = '{@sProdIDSub}'";
                         m.dbCUD(sql, ref msg);
                     }
                     int ratio = (int)Math.Round((count * 100) / ((double)range.Rows.Count - 8.0));
@@ -606,7 +627,7 @@ namespace SmartMES_Giroei
         {
             SaveFileDialog saveFileDialog1 = new SaveFileDialog();
 
-            string srcFile = @"Giroel(BOM).xlsx";
+            string srcFile = @"Giroel_BOM.xlsx";
             string destFile = string.Empty;
 
             saveFileDialog1.FileName = "Giroel_BOM" + ".xlsx"; //초기 파일명을 지정할 때 사용
@@ -626,7 +647,7 @@ namespace SmartMES_Giroei
             saveFileDialog1.Dispose();
             File.Copy(srcFile, destFile, true);
 
-            MessageBox.Show("설정하신 경로로 BOM 엑셀 파일이 저장 되었습니다.");
+            MessageBox.Show("설정하신 경로로 BOM 엑셀 파일이 저장 되었습니다."); //새로 엑셀파일 교체 후 배포버전에서 양식다운로드가 되지 않는다면 항상복사 및 빌드작업 내용을 설정헀는지 확인이 필요합니다.
         }
 
         private void dataGridView_ExportToExcel(string fileName, DataGridView dgv) 
