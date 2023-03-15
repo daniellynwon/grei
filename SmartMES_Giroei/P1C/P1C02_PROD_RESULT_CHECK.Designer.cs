@@ -51,6 +51,7 @@
             this.수주번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.검사시작시간DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.검사종료시간DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.경과시간 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.baking실시여부DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPI실시여부DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.극성자재확인DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -218,6 +219,7 @@
             this.수주번호,
             this.검사시작시간DataGridViewTextBoxColumn,
             this.검사종료시간DataGridViewTextBoxColumn,
+            this.경과시간,
             this.baking실시여부DataGridViewTextBoxColumn,
             this.sPI실시여부DataGridViewTextBoxColumn,
             this.극성자재확인DataGridViewTextBoxColumn,
@@ -308,6 +310,13 @@
             this.검사종료시간DataGridViewTextBoxColumn.HeaderText = "검사종료시간";
             this.검사종료시간DataGridViewTextBoxColumn.Name = "검사종료시간DataGridViewTextBoxColumn";
             this.검사종료시간DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 경과시간
+            // 
+            this.경과시간.DataPropertyName = "경과시간";
+            this.경과시간.HeaderText = "경과시간";
+            this.경과시간.Name = "경과시간";
+            this.경과시간.ReadOnly = true;
             // 
             // baking실시여부DataGridViewTextBoxColumn
             // 
@@ -424,6 +433,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 수주번호;
         private System.Windows.Forms.DataGridViewTextBoxColumn 검사시작시간DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 검사종료시간DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 경과시간;
         private System.Windows.Forms.DataGridViewTextBoxColumn baking실시여부DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn sPI실시여부DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 극성자재확인DataGridViewTextBoxColumn;

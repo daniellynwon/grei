@@ -9311,6 +9311,8 @@ namespace SmartMES_Giroei.P1C {
             
             private global::System.Data.DataColumn column수주번호;
             
+            private global::System.Data.DataColumn column경과시간;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_Prod_Result_CheckDataTable() {
@@ -9442,6 +9444,14 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 경과시간Column {
+                get {
+                    return this.column경과시간;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9477,7 +9487,7 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_Prod_Result_CheckRow AddSP_Prod_Result_CheckRow(string 작업지시번호, System.DateTime 검사시작시간, System.DateTime 검사종료시간, string Baking실시여부, string SPI실시여부, string 극성자재확인, string 원자재유실확인, string 피드백, string 미삽POINT점검, string 납땜상태확인, string 점검자, string 수주번호) {
+            public SP_Prod_Result_CheckRow AddSP_Prod_Result_CheckRow(string 작업지시번호, System.DateTime 검사시작시간, System.DateTime 검사종료시간, string Baking실시여부, string SPI실시여부, string 극성자재확인, string 원자재유실확인, string 피드백, string 미삽POINT점검, string 납땜상태확인, string 점검자, string 수주번호, System.TimeSpan 경과시간) {
                 SP_Prod_Result_CheckRow rowSP_Prod_Result_CheckRow = ((SP_Prod_Result_CheckRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         작업지시번호,
@@ -9491,7 +9501,8 @@ namespace SmartMES_Giroei.P1C {
                         미삽POINT점검,
                         납땜상태확인,
                         점검자,
-                        수주번호};
+                        수주번호,
+                        경과시간};
                 rowSP_Prod_Result_CheckRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_Prod_Result_CheckRow);
                 return rowSP_Prod_Result_CheckRow;
@@ -9526,6 +9537,7 @@ namespace SmartMES_Giroei.P1C {
                 this.column납땜상태확인 = base.Columns["납땜상태확인"];
                 this.column점검자 = base.Columns["점검자"];
                 this.column수주번호 = base.Columns["수주번호"];
+                this.column경과시간 = base.Columns["경과시간"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -9555,6 +9567,8 @@ namespace SmartMES_Giroei.P1C {
                 base.Columns.Add(this.column점검자);
                 this.column수주번호 = new global::System.Data.DataColumn("수주번호", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column수주번호);
+                this.column경과시간 = new global::System.Data.DataColumn("경과시간", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column경과시간);
                 this.column작업지시번호.AllowDBNull = false;
                 this.column작업지시번호.MaxLength = 13;
                 this.column검사시작시간.AllowDBNull = false;
@@ -10264,6 +10278,8 @@ namespace SmartMES_Giroei.P1C {
             
             private global::System.Data.DataColumn column작업라인;
             
+            private global::System.Data.DataColumn column경과시간;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_ProdOrder_QueryDataTable() {
@@ -10539,6 +10555,14 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 경과시간Column {
+                get {
+                    return this.column경과시간;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -10604,7 +10628,8 @@ namespace SmartMES_Giroei.P1C {
                         System.DateTime 작업종료, 
                         int 양품수량, 
                         int 불량수량, 
-                        string 작업라인) {
+                        string 작업라인, 
+                        System.TimeSpan 경과시간) {
                 SP_ProdOrder_QueryRow rowSP_ProdOrder_QueryRow = ((SP_ProdOrder_QueryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         일자,
@@ -10636,7 +10661,8 @@ namespace SmartMES_Giroei.P1C {
                         작업종료,
                         양품수량,
                         불량수량,
-                        작업라인};
+                        작업라인,
+                        경과시간};
                 rowSP_ProdOrder_QueryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_ProdOrder_QueryRow);
                 return rowSP_ProdOrder_QueryRow;
@@ -10689,6 +10715,7 @@ namespace SmartMES_Giroei.P1C {
                 this.column양품수량 = base.Columns["양품수량"];
                 this.column불량수량 = base.Columns["불량수량"];
                 this.column작업라인 = base.Columns["작업라인"];
+                this.column경과시간 = base.Columns["경과시간"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10754,6 +10781,8 @@ namespace SmartMES_Giroei.P1C {
                 base.Columns.Add(this.column불량수량);
                 this.column작업라인 = new global::System.Data.DataColumn("작업라인", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column작업라인);
+                this.column경과시간 = new global::System.Data.DataColumn("경과시간", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column경과시간);
                 this.column일자.AllowDBNull = false;
                 this.columnLotNo.AllowDBNull = false;
                 this.columnLotNo.MaxLength = 13;
@@ -18922,6 +18951,22 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.TimeSpan 경과시간 {
+                get {
+                    try {
+                        return ((global::System.TimeSpan)(this[this.tableSP_Prod_Result_Check.경과시간Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_Prod_Result_Check\' 테이블의 \'경과시간\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Prod_Result_Check.경과시간Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is점검자Null() {
                 return this.IsNull(this.tableSP_Prod_Result_Check.점검자Column);
             }
@@ -18942,6 +18987,18 @@ namespace SmartMES_Giroei.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set수주번호Null() {
                 this[this.tableSP_Prod_Result_Check.수주번호Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is경과시간Null() {
+                return this.IsNull(this.tableSP_Prod_Result_Check.경과시간Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set경과시간Null() {
+                this[this.tableSP_Prod_Result_Check.경과시간Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -19699,6 +19756,22 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.TimeSpan 경과시간 {
+                get {
+                    try {
+                        return ((global::System.TimeSpan)(this[this.tableSP_ProdOrder_Query.경과시간Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdOrder_Query\' 테이블의 \'경과시간\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdOrder_Query.경과시간Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is수주번호Null() {
                 return this.IsNull(this.tableSP_ProdOrder_Query.수주번호Column);
             }
@@ -19971,6 +20044,18 @@ namespace SmartMES_Giroei.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set작업라인Null() {
                 this[this.tableSP_ProdOrder_Query.작업라인Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is경과시간Null() {
+                return this.IsNull(this.tableSP_ProdOrder_Query.경과시간Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set경과시간Null() {
+                this[this.tableSP_ProdOrder_Query.경과시간Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -27019,6 +27104,7 @@ namespace SmartMES_Giroei.P1C.DataSetP1CTableAdapters {
             tableMapping.ColumnMappings.Add("납땜상태확인", "납땜상태확인");
             tableMapping.ColumnMappings.Add("점검자", "점검자");
             tableMapping.ColumnMappings.Add("수주번호", "수주번호");
+            tableMapping.ColumnMappings.Add("경과시간", "경과시간");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -27515,6 +27601,7 @@ namespace SmartMES_Giroei.P1C.DataSetP1CTableAdapters {
             tableMapping.ColumnMappings.Add("양품수량", "양품수량");
             tableMapping.ColumnMappings.Add("불량수량", "불량수량");
             tableMapping.ColumnMappings.Add("작업라인", "작업라인");
+            tableMapping.ColumnMappings.Add("경과시간", "경과시간");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

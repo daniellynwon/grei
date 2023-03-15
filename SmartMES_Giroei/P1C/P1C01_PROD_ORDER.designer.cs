@@ -44,6 +44,9 @@
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sPProdOrderQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1C = new SmartMES_Giroei.P1C.DataSetP1C();
+            this.sP_ProdOrder_QueryTableAdapter = new SmartMES_Giroei.P1C.DataSetP1CTableAdapters.SP_ProdOrder_QueryTableAdapter();
             this.일자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lotNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.거래처코드 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -68,15 +71,13 @@
             this.수주일자 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.책임자ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.책임자 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.경과시간 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.완료여부 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.작업시작 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.작업종료 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.양품수량 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.불량수량 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPProdOrderQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1C = new SmartMES_Giroei.P1C.DataSetP1C();
-            this.sP_ProdOrder_QueryTableAdapter = new SmartMES_Giroei.P1C.DataSetP1CTableAdapters.SP_ProdOrder_QueryTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -269,6 +270,7 @@
             this.수주일자,
             this.책임자ID,
             this.책임자,
+            this.경과시간,
             this.완료여부,
             this.작업시작,
             this.작업종료,
@@ -307,6 +309,20 @@
             this.dataGridView1.TabIndex = 11;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // sPProdOrderQueryBindingSource
+            // 
+            this.sPProdOrderQueryBindingSource.DataMember = "SP_ProdOrder_Query";
+            this.sPProdOrderQueryBindingSource.DataSource = this.dataSetP1C;
+            // 
+            // dataSetP1C
+            // 
+            this.dataSetP1C.DataSetName = "DataSetP1C";
+            this.dataSetP1C.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_ProdOrder_QueryTableAdapter
+            // 
+            this.sP_ProdOrder_QueryTableAdapter.ClearBeforeFill = true;
             // 
             // 일자DataGridViewTextBoxColumn
             // 
@@ -508,6 +524,14 @@
             this.책임자.Name = "책임자";
             this.책임자.ReadOnly = true;
             // 
+            // 경과시간
+            // 
+            this.경과시간.DataPropertyName = "경과시간";
+            this.경과시간.FillWeight = 75F;
+            this.경과시간.HeaderText = "경과시간";
+            this.경과시간.Name = "경과시간";
+            this.경과시간.ReadOnly = true;
+            // 
             // 완료여부
             // 
             this.완료여부.DataPropertyName = "완료여부";
@@ -555,20 +579,6 @@
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
-            // 
-            // sPProdOrderQueryBindingSource
-            // 
-            this.sPProdOrderQueryBindingSource.DataMember = "SP_ProdOrder_Query";
-            this.sPProdOrderQueryBindingSource.DataSource = this.dataSetP1C;
-            // 
-            // dataSetP1C
-            // 
-            this.dataSetP1C.DataSetName = "DataSetP1C";
-            this.dataSetP1C.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_ProdOrder_QueryTableAdapter
-            // 
-            this.sP_ProdOrder_QueryTableAdapter.ClearBeforeFill = true;
             // 
             // P1C01_PROD_ORDER
             // 
@@ -648,6 +658,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 수주일자;
         private System.Windows.Forms.DataGridViewTextBoxColumn 책임자ID;
         private System.Windows.Forms.DataGridViewTextBoxColumn 책임자;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 경과시간;
         private System.Windows.Forms.DataGridViewTextBoxColumn 완료여부;
         private System.Windows.Forms.DataGridViewTextBoxColumn 작업시작;
         private System.Windows.Forms.DataGridViewTextBoxColumn 작업종료;
