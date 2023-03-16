@@ -68,7 +68,7 @@ namespace SmartMES_Giroei
 
             if (string.IsNullOrEmpty(tbDeli.Text))
             {
-                lblMsg.Text = "출하(전표)번호를 입력해 주세요.";
+                lblMsg.Text = "수주번호를 입력해 주세요.";
                 lblDeliID.Focus();
                 return;
             }
@@ -102,7 +102,7 @@ namespace SmartMES_Giroei
             {
                 sCode = getCode();
 
-                sql = "insert into SRV_claims (claim_id, deli_id, claim_qty, claim_date, claim_contents, action_date, action_contents, claim_money, charge, state_flag, enter_man) " +
+                sql = "insert into SRV_claims (claim_id, order_id, claim_qty, claim_date, claim_contents, action_date, action_contents, claim_money, charge, state_flag, enter_man) " +
                     "values('" + sCode + "','" + sDeliID + "'," + sQty + ",'" + sClaimDate + "','" + sClaimContents + "', IF('" + sActionContents + "' = '',null,'" + sActionDate + "'),'" + sActionContents + "'," + sMoney + ",'" + sCharge + "'," + sState + ",'" + G.UserID + "')";
 
                 m.dbCUD(sql, ref msg);
@@ -142,7 +142,7 @@ namespace SmartMES_Giroei
             else
             {
                 sql = "update SRV_claims " +
-                    "set deli_id = '" + sDeliID + "', claim_qty = " + sQty + ", claim_date = '" + sClaimDate + "', claim_contents = '" + sClaimContents + "', action_date = IF('" + sActionContents + "' = '',null,'" + sActionDate + "'), action_contents = '" + sActionContents + "', claim_money = " + sMoney + ", charge = '" + sCharge + "', state_flag = " + sState +
+                    "set order_id = '" + sDeliID + "', claim_qty = " + sQty + ", claim_date = '" + sClaimDate + "', claim_contents = '" + sClaimContents + "', action_date = IF('" + sActionContents + "' = '',null,'" + sActionDate + "'), action_contents = '" + sActionContents + "', claim_money = " + sMoney + ", charge = '" + sCharge + "', state_flag = " + sState +
                     " where claim_id = '" + sCode + "'";
 
                 m.dbCUD(sql, ref msg);

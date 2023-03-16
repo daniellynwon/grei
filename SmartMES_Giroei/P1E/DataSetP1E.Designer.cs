@@ -1119,8 +1119,6 @@ namespace SmartMES_Giroei.P1E {
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
         public partial class SP_QcAs_DeliDataTable : global::System.Data.TypedTableBase<SP_QcAs_DeliRow> {
             
-            private global::System.Data.DataColumn column전표번호;
-            
             private global::System.Data.DataColumn column출하;
             
             private global::System.Data.DataColumn column거래처명;
@@ -1136,6 +1134,8 @@ namespace SmartMES_Giroei.P1E {
             private global::System.Data.DataColumn column금액;
             
             private global::System.Data.DataColumn column생산;
+            
+            private global::System.Data.DataColumn column수주번호;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -1168,14 +1168,6 @@ namespace SmartMES_Giroei.P1E {
             protected SP_QcAs_DeliDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 전표번호Column {
-                get {
-                    return this.column전표번호;
-                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1244,6 +1236,14 @@ namespace SmartMES_Giroei.P1E {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 수주번호Column {
+                get {
+                    return this.column수주번호;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1279,10 +1279,9 @@ namespace SmartMES_Giroei.P1E {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_QcAs_DeliRow AddSP_QcAs_DeliRow(string 전표번호, System.DateTime 출하, string 거래처명, string 현장정보, string 영업담당, long 건수, decimal 수량, decimal 금액, string 생산) {
+            public SP_QcAs_DeliRow AddSP_QcAs_DeliRow(System.DateTime 출하, string 거래처명, string 현장정보, string 영업담당, long 건수, decimal 수량, decimal 금액, string 생산, string 수주번호) {
                 SP_QcAs_DeliRow rowSP_QcAs_DeliRow = ((SP_QcAs_DeliRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
-                        전표번호,
                         출하,
                         거래처명,
                         현장정보,
@@ -1290,7 +1289,8 @@ namespace SmartMES_Giroei.P1E {
                         건수,
                         수량,
                         금액,
-                        생산};
+                        생산,
+                        수주번호};
                 rowSP_QcAs_DeliRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_QcAs_DeliRow);
                 return rowSP_QcAs_DeliRow;
@@ -1313,7 +1313,6 @@ namespace SmartMES_Giroei.P1E {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
-                this.column전표번호 = base.Columns["전표번호"];
                 this.column출하 = base.Columns["출하"];
                 this.column거래처명 = base.Columns["거래처명"];
                 this.column현장정보 = base.Columns["현장정보"];
@@ -1322,13 +1321,12 @@ namespace SmartMES_Giroei.P1E {
                 this.column수량 = base.Columns["수량"];
                 this.column금액 = base.Columns["금액"];
                 this.column생산 = base.Columns["생산"];
+                this.column수주번호 = base.Columns["수주번호"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             private void InitClass() {
-                this.column전표번호 = new global::System.Data.DataColumn("전표번호", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column전표번호);
                 this.column출하 = new global::System.Data.DataColumn("출하", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column출하);
                 this.column거래처명 = new global::System.Data.DataColumn("거래처명", typeof(string), null, global::System.Data.MappingType.Element);
@@ -1345,14 +1343,16 @@ namespace SmartMES_Giroei.P1E {
                 base.Columns.Add(this.column금액);
                 this.column생산 = new global::System.Data.DataColumn("생산", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column생산);
-                this.column전표번호.AllowDBNull = false;
-                this.column전표번호.MaxLength = 17;
+                this.column수주번호 = new global::System.Data.DataColumn("수주번호", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column수주번호);
                 this.column출하.AllowDBNull = false;
                 this.column거래처명.AllowDBNull = false;
                 this.column거래처명.MaxLength = 50;
                 this.column현장정보.MaxLength = 50;
                 this.column영업담당.MaxLength = 50;
                 this.column건수.AllowDBNull = false;
+                this.column수주번호.AllowDBNull = false;
+                this.column수주번호.MaxLength = 13;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -4782,8 +4782,6 @@ namespace SmartMES_Giroei.P1E {
             
             private global::System.Data.DataColumn column접수번호;
             
-            private global::System.Data.DataColumn column전표번호;
-            
             private global::System.Data.DataColumn column거래처ID;
             
             private global::System.Data.DataColumn column거래처명;
@@ -4807,6 +4805,8 @@ namespace SmartMES_Giroei.P1E {
             private global::System.Data.DataColumn column책임자;
             
             private global::System.Data.DataColumn column진행;
+            
+            private global::System.Data.DataColumn column수주번호;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -4846,14 +4846,6 @@ namespace SmartMES_Giroei.P1E {
             public global::System.Data.DataColumn 접수번호Column {
                 get {
                     return this.column접수번호;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 전표번호Column {
-                get {
-                    return this.column전표번호;
                 }
             }
             
@@ -4955,6 +4947,14 @@ namespace SmartMES_Giroei.P1E {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 수주번호Column {
+                get {
+                    return this.column수주번호;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -4990,11 +4990,10 @@ namespace SmartMES_Giroei.P1E {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_QcAS_QueryRow AddSP_QcAS_QueryRow(string 접수번호, string 전표번호, string 거래처ID, string 거래처명, System.DateTime 출하, int 대상수량, System.DateTime 발생일자, string 발생내역, System.DateTime 조치일자, string 조치내역, long 처리비용, string 책임자ID, string 책임자, string 진행) {
+            public SP_QcAS_QueryRow AddSP_QcAS_QueryRow(string 접수번호, string 거래처ID, string 거래처명, System.DateTime 출하, int 대상수량, System.DateTime 발생일자, string 발생내역, System.DateTime 조치일자, string 조치내역, long 처리비용, string 책임자ID, string 책임자, string 진행, string 수주번호) {
                 SP_QcAS_QueryRow rowSP_QcAS_QueryRow = ((SP_QcAS_QueryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         접수번호,
-                        전표번호,
                         거래처ID,
                         거래처명,
                         출하,
@@ -5006,7 +5005,8 @@ namespace SmartMES_Giroei.P1E {
                         처리비용,
                         책임자ID,
                         책임자,
-                        진행};
+                        진행,
+                        수주번호};
                 rowSP_QcAS_QueryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_QcAS_QueryRow);
                 return rowSP_QcAS_QueryRow;
@@ -5038,7 +5038,6 @@ namespace SmartMES_Giroei.P1E {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             internal void InitVars() {
                 this.column접수번호 = base.Columns["접수번호"];
-                this.column전표번호 = base.Columns["전표번호"];
                 this.column거래처ID = base.Columns["거래처ID"];
                 this.column거래처명 = base.Columns["거래처명"];
                 this.column출하 = base.Columns["출하"];
@@ -5051,6 +5050,7 @@ namespace SmartMES_Giroei.P1E {
                 this.column책임자ID = base.Columns["책임자ID"];
                 this.column책임자 = base.Columns["책임자"];
                 this.column진행 = base.Columns["진행"];
+                this.column수주번호 = base.Columns["수주번호"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5058,8 +5058,6 @@ namespace SmartMES_Giroei.P1E {
             private void InitClass() {
                 this.column접수번호 = new global::System.Data.DataColumn("접수번호", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column접수번호);
-                this.column전표번호 = new global::System.Data.DataColumn("전표번호", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column전표번호);
                 this.column거래처ID = new global::System.Data.DataColumn("거래처ID", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column거래처ID);
                 this.column거래처명 = new global::System.Data.DataColumn("거래처명", typeof(string), null, global::System.Data.MappingType.Element);
@@ -5084,13 +5082,13 @@ namespace SmartMES_Giroei.P1E {
                 base.Columns.Add(this.column책임자);
                 this.column진행 = new global::System.Data.DataColumn("진행", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column진행);
+                this.column수주번호 = new global::System.Data.DataColumn("수주번호", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column수주번호);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.column접수번호,
                                 this.column거래처ID}, true));
                 this.column접수번호.AllowDBNull = false;
                 this.column접수번호.MaxLength = 9;
-                this.column전표번호.AllowDBNull = false;
-                this.column전표번호.MaxLength = 17;
                 this.column거래처ID.AllowDBNull = false;
                 this.column거래처ID.MaxLength = 7;
                 this.column거래처명.AllowDBNull = false;
@@ -5103,6 +5101,8 @@ namespace SmartMES_Giroei.P1E {
                 this.column책임자.MaxLength = 50;
                 this.column진행.AllowDBNull = false;
                 this.column진행.MaxLength = 5;
+                this.column수주번호.AllowDBNull = false;
+                this.column수주번호.MaxLength = 13;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5595,17 +5595,6 @@ namespace SmartMES_Giroei.P1E {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 전표번호 {
-                get {
-                    return ((string)(this[this.tableSP_QcAs_Deli.전표번호Column]));
-                }
-                set {
-                    this[this.tableSP_QcAs_Deli.전표번호Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public System.DateTime 출하 {
                 get {
                     return ((global::System.DateTime)(this[this.tableSP_QcAs_Deli.출하Column]));
@@ -5714,6 +5703,17 @@ namespace SmartMES_Giroei.P1E {
                 }
                 set {
                     this[this.tableSP_QcAs_Deli.생산Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 수주번호 {
+                get {
+                    return ((string)(this[this.tableSP_QcAs_Deli.수주번호Column]));
+                }
+                set {
+                    this[this.tableSP_QcAs_Deli.수주번호Column] = value;
                 }
             }
             
@@ -7908,17 +7908,6 @@ namespace SmartMES_Giroei.P1E {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public string 전표번호 {
-                get {
-                    return ((string)(this[this.tableSP_QcAS_Query.전표번호Column]));
-                }
-                set {
-                    this[this.tableSP_QcAS_Query.전표번호Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string 거래처ID {
                 get {
                     return ((string)(this[this.tableSP_QcAS_Query.거래처IDColumn]));
@@ -8081,6 +8070,17 @@ namespace SmartMES_Giroei.P1E {
                 }
                 set {
                     this[this.tableSP_QcAS_Query.진행Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 수주번호 {
+                get {
+                    return ((string)(this[this.tableSP_QcAS_Query.수주번호Column]));
+                }
+                set {
+                    this[this.tableSP_QcAS_Query.수주번호Column] = value;
                 }
             }
             
@@ -8942,15 +8942,14 @@ namespace SmartMES_Giroei.P1E.DataSetP1ETableAdapters {
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "SP_QcAs_Deli";
-            tableMapping.ColumnMappings.Add("전표번호", "전표번호");
             tableMapping.ColumnMappings.Add("출하", "출하");
             tableMapping.ColumnMappings.Add("거래처명", "거래처명");
             tableMapping.ColumnMappings.Add("현장정보", "현장정보");
             tableMapping.ColumnMappings.Add("영업담당", "영업담당");
             tableMapping.ColumnMappings.Add("건수", "건수");
             tableMapping.ColumnMappings.Add("수량", "수량");
-            tableMapping.ColumnMappings.Add("금액", "금액");
             tableMapping.ColumnMappings.Add("생산", "생산");
+            tableMapping.ColumnMappings.Add("수주번호", "수주번호");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -11084,7 +11083,6 @@ namespace SmartMES_Giroei.P1E.DataSetP1ETableAdapters {
             tableMapping.SourceTable = "Table";
             tableMapping.DataSetTable = "SP_QcAS_Query";
             tableMapping.ColumnMappings.Add("접수번호", "접수번호");
-            tableMapping.ColumnMappings.Add("전표번호", "전표번호");
             tableMapping.ColumnMappings.Add("거래처ID", "거래처ID");
             tableMapping.ColumnMappings.Add("거래처명", "거래처명");
             tableMapping.ColumnMappings.Add("출하", "출하");
@@ -11097,6 +11095,7 @@ namespace SmartMES_Giroei.P1E.DataSetP1ETableAdapters {
             tableMapping.ColumnMappings.Add("책임자ID", "책임자ID");
             tableMapping.ColumnMappings.Add("책임자", "책임자");
             tableMapping.ColumnMappings.Add("진행", "진행");
+            tableMapping.ColumnMappings.Add("수주번호", "수주번호");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

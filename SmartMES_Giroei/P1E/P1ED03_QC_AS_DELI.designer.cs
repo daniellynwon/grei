@@ -41,15 +41,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.전표번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.출하DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.거래처명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.현장정보DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.영업담당DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.건수DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.금액DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.생산DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sPQcAsDeliBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetP1E = new SmartMES_Giroei.P1E.DataSetP1E();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -60,6 +51,16 @@
             this.dtpToDate = new System.Windows.Forms.DateTimePicker();
             this.dtpFromDate = new System.Windows.Forms.DateTimePicker();
             this.sP_QcAs_DeliTableAdapter = new SmartMES_Giroei.P1E.DataSetP1ETableAdapters.SP_QcAs_DeliTableAdapter();
+            this.수주번호 = new System.Windows.Forms.DataGridViewLinkColumn();
+            this.전표번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.출하DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.거래처명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.현장정보DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.영업담당DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.건수DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.금액DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.생산DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPQcAsDeliBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1E)).BeginInit();
@@ -88,6 +89,7 @@
             this.dataGridView1.ColumnHeadersHeight = 35;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.수주번호,
             this.전표번호DataGridViewTextBoxColumn,
             this.출하DataGridViewTextBoxColumn,
             this.거래처명DataGridViewTextBoxColumn,
@@ -130,95 +132,6 @@
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
-            // 
-            // 전표번호DataGridViewTextBoxColumn
-            // 
-            this.전표번호DataGridViewTextBoxColumn.DataPropertyName = "전표번호";
-            this.전표번호DataGridViewTextBoxColumn.HeaderText = "전표번호";
-            this.전표번호DataGridViewTextBoxColumn.Name = "전표번호DataGridViewTextBoxColumn";
-            this.전표번호DataGridViewTextBoxColumn.ReadOnly = true;
-            this.전표번호DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.전표번호DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            // 
-            // 출하DataGridViewTextBoxColumn
-            // 
-            this.출하DataGridViewTextBoxColumn.DataPropertyName = "출하";
-            dataGridViewCellStyle3.Format = "MM\\/dd";
-            this.출하DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
-            this.출하DataGridViewTextBoxColumn.FillWeight = 40F;
-            this.출하DataGridViewTextBoxColumn.HeaderText = "출하";
-            this.출하DataGridViewTextBoxColumn.Name = "출하DataGridViewTextBoxColumn";
-            this.출하DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 거래처명DataGridViewTextBoxColumn
-            // 
-            this.거래처명DataGridViewTextBoxColumn.DataPropertyName = "거래처명";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.거래처명DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.거래처명DataGridViewTextBoxColumn.HeaderText = "거래처명";
-            this.거래처명DataGridViewTextBoxColumn.Name = "거래처명DataGridViewTextBoxColumn";
-            this.거래처명DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 현장정보DataGridViewTextBoxColumn
-            // 
-            this.현장정보DataGridViewTextBoxColumn.DataPropertyName = "현장정보";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.현장정보DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
-            this.현장정보DataGridViewTextBoxColumn.HeaderText = "현장정보";
-            this.현장정보DataGridViewTextBoxColumn.Name = "현장정보DataGridViewTextBoxColumn";
-            this.현장정보DataGridViewTextBoxColumn.ReadOnly = true;
-            this.현장정보DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 영업담당DataGridViewTextBoxColumn
-            // 
-            this.영업담당DataGridViewTextBoxColumn.DataPropertyName = "영업담당";
-            this.영업담당DataGridViewTextBoxColumn.FillWeight = 60F;
-            this.영업담당DataGridViewTextBoxColumn.HeaderText = "영업담당";
-            this.영업담당DataGridViewTextBoxColumn.Name = "영업담당DataGridViewTextBoxColumn";
-            this.영업담당DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 건수DataGridViewTextBoxColumn
-            // 
-            this.건수DataGridViewTextBoxColumn.DataPropertyName = "건수";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "#,##0";
-            this.건수DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
-            this.건수DataGridViewTextBoxColumn.FillWeight = 50F;
-            this.건수DataGridViewTextBoxColumn.HeaderText = "건수";
-            this.건수DataGridViewTextBoxColumn.Name = "건수DataGridViewTextBoxColumn";
-            this.건수DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 수량DataGridViewTextBoxColumn
-            // 
-            this.수량DataGridViewTextBoxColumn.DataPropertyName = "수량";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "#,##0";
-            this.수량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
-            this.수량DataGridViewTextBoxColumn.FillWeight = 50F;
-            this.수량DataGridViewTextBoxColumn.HeaderText = "수량";
-            this.수량DataGridViewTextBoxColumn.Name = "수량DataGridViewTextBoxColumn";
-            this.수량DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 금액DataGridViewTextBoxColumn
-            // 
-            this.금액DataGridViewTextBoxColumn.DataPropertyName = "금액";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "#,##0";
-            this.금액DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
-            this.금액DataGridViewTextBoxColumn.FillWeight = 70F;
-            this.금액DataGridViewTextBoxColumn.HeaderText = "금액";
-            this.금액DataGridViewTextBoxColumn.Name = "금액DataGridViewTextBoxColumn";
-            this.금액DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 생산DataGridViewTextBoxColumn
-            // 
-            this.생산DataGridViewTextBoxColumn.DataPropertyName = "생산";
-            dataGridViewCellStyle9.Format = "MM\\/dd";
-            this.생산DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
-            this.생산DataGridViewTextBoxColumn.FillWeight = 40F;
-            this.생산DataGridViewTextBoxColumn.HeaderText = "생산";
-            this.생산DataGridViewTextBoxColumn.Name = "생산DataGridViewTextBoxColumn";
-            this.생산DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sPQcAsDeliBindingSource
             // 
@@ -322,6 +235,104 @@
             // 
             this.sP_QcAs_DeliTableAdapter.ClearBeforeFill = true;
             // 
+            // 수주번호
+            // 
+            this.수주번호.DataPropertyName = "수주번호";
+            this.수주번호.HeaderText = "수주번호";
+            this.수주번호.Name = "수주번호";
+            this.수주번호.ReadOnly = true;
+            this.수주번호.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.수주번호.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            // 
+            // 전표번호DataGridViewTextBoxColumn
+            // 
+            this.전표번호DataGridViewTextBoxColumn.DataPropertyName = "전표번호";
+            this.전표번호DataGridViewTextBoxColumn.HeaderText = "전표번호";
+            this.전표번호DataGridViewTextBoxColumn.Name = "전표번호DataGridViewTextBoxColumn";
+            this.전표번호DataGridViewTextBoxColumn.ReadOnly = true;
+            this.전표번호DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.전표번호DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 출하DataGridViewTextBoxColumn
+            // 
+            this.출하DataGridViewTextBoxColumn.DataPropertyName = "출하";
+            dataGridViewCellStyle3.Format = "MM\\/dd";
+            this.출하DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
+            this.출하DataGridViewTextBoxColumn.FillWeight = 40F;
+            this.출하DataGridViewTextBoxColumn.HeaderText = "출하";
+            this.출하DataGridViewTextBoxColumn.Name = "출하DataGridViewTextBoxColumn";
+            this.출하DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 거래처명DataGridViewTextBoxColumn
+            // 
+            this.거래처명DataGridViewTextBoxColumn.DataPropertyName = "거래처명";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.거래처명DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
+            this.거래처명DataGridViewTextBoxColumn.HeaderText = "거래처명";
+            this.거래처명DataGridViewTextBoxColumn.Name = "거래처명DataGridViewTextBoxColumn";
+            this.거래처명DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 현장정보DataGridViewTextBoxColumn
+            // 
+            this.현장정보DataGridViewTextBoxColumn.DataPropertyName = "현장정보";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.현장정보DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            this.현장정보DataGridViewTextBoxColumn.HeaderText = "현장정보";
+            this.현장정보DataGridViewTextBoxColumn.Name = "현장정보DataGridViewTextBoxColumn";
+            this.현장정보DataGridViewTextBoxColumn.ReadOnly = true;
+            this.현장정보DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 영업담당DataGridViewTextBoxColumn
+            // 
+            this.영업담당DataGridViewTextBoxColumn.DataPropertyName = "영업담당";
+            this.영업담당DataGridViewTextBoxColumn.FillWeight = 60F;
+            this.영업담당DataGridViewTextBoxColumn.HeaderText = "영업담당";
+            this.영업담당DataGridViewTextBoxColumn.Name = "영업담당DataGridViewTextBoxColumn";
+            this.영업담당DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 건수DataGridViewTextBoxColumn
+            // 
+            this.건수DataGridViewTextBoxColumn.DataPropertyName = "건수";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "#,##0";
+            this.건수DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
+            this.건수DataGridViewTextBoxColumn.FillWeight = 50F;
+            this.건수DataGridViewTextBoxColumn.HeaderText = "건수";
+            this.건수DataGridViewTextBoxColumn.Name = "건수DataGridViewTextBoxColumn";
+            this.건수DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 수량DataGridViewTextBoxColumn
+            // 
+            this.수량DataGridViewTextBoxColumn.DataPropertyName = "수량";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "#,##0";
+            this.수량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
+            this.수량DataGridViewTextBoxColumn.FillWeight = 50F;
+            this.수량DataGridViewTextBoxColumn.HeaderText = "수량";
+            this.수량DataGridViewTextBoxColumn.Name = "수량DataGridViewTextBoxColumn";
+            this.수량DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 금액DataGridViewTextBoxColumn
+            // 
+            this.금액DataGridViewTextBoxColumn.DataPropertyName = "금액";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "#,##0";
+            this.금액DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle8;
+            this.금액DataGridViewTextBoxColumn.FillWeight = 70F;
+            this.금액DataGridViewTextBoxColumn.HeaderText = "금액";
+            this.금액DataGridViewTextBoxColumn.Name = "금액DataGridViewTextBoxColumn";
+            this.금액DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 생산DataGridViewTextBoxColumn
+            // 
+            this.생산DataGridViewTextBoxColumn.DataPropertyName = "생산";
+            dataGridViewCellStyle9.Format = "MM\\/dd";
+            this.생산DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle9;
+            this.생산DataGridViewTextBoxColumn.FillWeight = 40F;
+            this.생산DataGridViewTextBoxColumn.HeaderText = "생산";
+            this.생산DataGridViewTextBoxColumn.Name = "생산DataGridViewTextBoxColumn";
+            this.생산DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
             // P1ED03_QC_AS_DELI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -350,15 +361,6 @@
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridViewLinkColumn 전표번호DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 출하DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 거래처명DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 현장정보DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 영업담당DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 건수DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 수량DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 금액DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 생산DataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource sPQcAsDeliBindingSource;
         private P1E.DataSetP1E dataSetP1E;
         private P1E.DataSetP1ETableAdapters.SP_QcAs_DeliTableAdapter sP_QcAs_DeliTableAdapter;
@@ -369,5 +371,15 @@
         private System.Windows.Forms.DateTimePicker dtpToDate;
         private System.Windows.Forms.DateTimePicker dtpFromDate;
         private System.Windows.Forms.TextBox tbSearch;
+        private System.Windows.Forms.DataGridViewLinkColumn 수주번호;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 전표번호DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 출하DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 거래처명DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 현장정보DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 영업담당DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 건수DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 수량DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 금액DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 생산DataGridViewTextBoxColumn;
     }
 }

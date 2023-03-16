@@ -43,7 +43,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_QcAs_DeliTableAdapter" GeneratorDataComponentClassName="SP_QcAs_DeliTableAdapter" Name="SP_QcAs_Deli" UserDataComponentName="SP_QcAs_DeliTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="jiroei_mesConnectionString (Settings)" DbObjectName="`jiroei_mes`.`SP_QcAs_Deli`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="jiroei_mesConnectionString (Settings)" DbObjectName="`jiroei_mes`.`SP_QcAs_Deli`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>`jiroei_mes`.`SP_QcAs_Deli`</CommandText>
@@ -57,15 +57,14 @@
               </DbSource>
             </MainSource>
             <Mappings>
-              <Mapping SourceColumn="전표번호" DataSetColumn="전표번호" />
               <Mapping SourceColumn="출하" DataSetColumn="출하" />
               <Mapping SourceColumn="거래처명" DataSetColumn="거래처명" />
               <Mapping SourceColumn="현장정보" DataSetColumn="현장정보" />
               <Mapping SourceColumn="영업담당" DataSetColumn="영업담당" />
               <Mapping SourceColumn="건수" DataSetColumn="건수" />
               <Mapping SourceColumn="수량" DataSetColumn="수량" />
-              <Mapping SourceColumn="금액" DataSetColumn="금액" />
               <Mapping SourceColumn="생산" DataSetColumn="생산" />
+              <Mapping SourceColumn="수주번호" DataSetColumn="수주번호" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -311,7 +310,7 @@
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="SP_QcAS_QueryTableAdapter" GeneratorDataComponentClassName="SP_QcAS_QueryTableAdapter" Name="SP_QcAS_Query" UserDataComponentName="SP_QcAS_QueryTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="jiroei_mesConnectionString (Settings)" DbObjectName="`jiroei_mes`.`SP_QcAS_Query`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="jiroei_mesConnectionString (Settings)" DbObjectName="`jiroei_mes`.`SP_QcAS_Query`" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="StoredProcedure" ModifiedByUser="false">
                     <CommandText>`jiroei_mes`.`SP_QcAS_Query`</CommandText>
@@ -327,7 +326,6 @@
             </MainSource>
             <Mappings>
               <Mapping SourceColumn="접수번호" DataSetColumn="접수번호" />
-              <Mapping SourceColumn="전표번호" DataSetColumn="전표번호" />
               <Mapping SourceColumn="거래처ID" DataSetColumn="거래처ID" />
               <Mapping SourceColumn="거래처명" DataSetColumn="거래처명" />
               <Mapping SourceColumn="출하" DataSetColumn="출하" />
@@ -340,6 +338,7 @@
               <Mapping SourceColumn="책임자ID" DataSetColumn="책임자ID" />
               <Mapping SourceColumn="책임자" DataSetColumn="책임자" />
               <Mapping SourceColumn="진행" DataSetColumn="진행" />
+              <Mapping SourceColumn="수주번호" DataSetColumn="수주번호" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -417,13 +416,6 @@
         <xs:element name="SP_QcAs_Deli" msprop:Generator_TableClassName="SP_QcAs_DeliDataTable" msprop:Generator_TableVarName="tableSP_QcAs_Deli" msprop:Generator_RowChangedName="SP_QcAs_DeliRowChanged" msprop:Generator_TablePropName="SP_QcAs_Deli" msprop:Generator_RowDeletingName="SP_QcAs_DeliRowDeleting" msprop:Generator_RowChangingName="SP_QcAs_DeliRowChanging" msprop:Generator_RowEvHandlerName="SP_QcAs_DeliRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_QcAs_DeliRowDeleted" msprop:Generator_RowClassName="SP_QcAs_DeliRow" msprop:Generator_UserTableName="SP_QcAs_Deli" msprop:Generator_RowEvArgName="SP_QcAs_DeliRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="전표번호" msprop:Generator_ColumnVarNameInTable="column전표번호" msprop:Generator_ColumnPropNameInRow="전표번호" msprop:Generator_ColumnPropNameInTable="전표번호Column" msprop:Generator_UserColumnName="전표번호">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="17" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="출하" msprop:Generator_ColumnVarNameInTable="column출하" msprop:Generator_ColumnPropNameInRow="출하" msprop:Generator_ColumnPropNameInTable="출하Column" msprop:Generator_UserColumnName="출하" type="xs:dateTime" />
               <xs:element name="거래처명" msprop:Generator_ColumnVarNameInTable="column거래처명" msprop:Generator_ColumnPropNameInRow="거래처명" msprop:Generator_ColumnPropNameInTable="거래처명Column" msprop:Generator_UserColumnName="거래처명">
                 <xs:simpleType>
@@ -450,6 +442,13 @@
               <xs:element name="수량" msprop:Generator_ColumnVarNameInTable="column수량" msprop:Generator_ColumnPropNameInRow="수량" msprop:Generator_ColumnPropNameInTable="수량Column" msprop:Generator_UserColumnName="수량" type="xs:decimal" minOccurs="0" />
               <xs:element name="금액" msprop:Generator_ColumnVarNameInTable="column금액" msprop:Generator_ColumnPropNameInRow="금액" msprop:Generator_ColumnPropNameInTable="금액Column" msprop:Generator_UserColumnName="금액" type="xs:decimal" minOccurs="0" />
               <xs:element name="생산" msprop:Generator_ColumnVarNameInTable="column생산" msprop:Generator_ColumnPropNameInRow="생산" msprop:Generator_ColumnPropNameInTable="생산Column" msprop:Generator_UserColumnName="생산" type="xs:string" minOccurs="0" />
+              <xs:element name="수주번호" msprop:Generator_ColumnVarNameInTable="column수주번호" msprop:Generator_ColumnPropNameInRow="수주번호" msprop:Generator_ColumnPropNameInTable="수주번호Column" msprop:Generator_UserColumnName="수주번호">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -963,13 +962,6 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="전표번호" msprop:Generator_ColumnVarNameInTable="column전표번호" msprop:Generator_ColumnPropNameInRow="전표번호" msprop:Generator_ColumnPropNameInTable="전표번호Column" msprop:Generator_UserColumnName="전표번호">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="17" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
               <xs:element name="거래처ID" msprop:Generator_ColumnVarNameInTable="column거래처ID" msprop:Generator_ColumnPropNameInRow="거래처ID" msprop:Generator_ColumnPropNameInTable="거래처IDColumn" msprop:Generator_UserColumnName="거래처ID">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -1021,6 +1013,13 @@
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="수주번호" msprop:Generator_ColumnVarNameInTable="column수주번호" msprop:Generator_ColumnPropNameInRow="수주번호" msprop:Generator_ColumnPropNameInTable="수주번호Column" msprop:Generator_UserColumnName="수주번호">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="13" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>

@@ -51,7 +51,7 @@
             this.dataSetP1E = new SmartMES_Giroei.P1E.DataSetP1E();
             this.sP_QcAS_QueryTableAdapter = new SmartMES_Giroei.P1E.DataSetP1ETableAdapters.SP_QcAS_QueryTableAdapter();
             this.접수번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewLinkColumn();
-            this.전표번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.수주번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.거래처IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.거래처명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.출하DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -250,7 +250,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.접수번호DataGridViewTextBoxColumn,
-            this.전표번호DataGridViewTextBoxColumn,
+            this.수주번호,
             this.거래처IDDataGridViewTextBoxColumn,
             this.거래처명DataGridViewTextBoxColumn,
             this.출하DataGridViewTextBoxColumn,
@@ -320,14 +320,13 @@
             this.접수번호DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.접수번호DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
-            // 전표번호DataGridViewTextBoxColumn
+            // 수주번호
             // 
-            this.전표번호DataGridViewTextBoxColumn.DataPropertyName = "전표번호";
-            this.전표번호DataGridViewTextBoxColumn.FillWeight = 20F;
-            this.전표번호DataGridViewTextBoxColumn.HeaderText = "전표번호";
-            this.전표번호DataGridViewTextBoxColumn.Name = "전표번호DataGridViewTextBoxColumn";
-            this.전표번호DataGridViewTextBoxColumn.ReadOnly = true;
-            this.전표번호DataGridViewTextBoxColumn.Visible = false;
+            this.수주번호.DataPropertyName = "수주번호";
+            this.수주번호.FillWeight = 30F;
+            this.수주번호.HeaderText = "수주번호";
+            this.수주번호.Name = "수주번호";
+            this.수주번호.ReadOnly = true;
             // 
             // 거래처IDDataGridViewTextBoxColumn
             // 
@@ -341,7 +340,7 @@
             // 거래처명DataGridViewTextBoxColumn
             // 
             this.거래처명DataGridViewTextBoxColumn.DataPropertyName = "거래처명";
-            this.거래처명DataGridViewTextBoxColumn.FillWeight = 20F;
+            this.거래처명DataGridViewTextBoxColumn.FillWeight = 25F;
             this.거래처명DataGridViewTextBoxColumn.HeaderText = "거래처명";
             this.거래처명DataGridViewTextBoxColumn.Name = "거래처명DataGridViewTextBoxColumn";
             this.거래처명DataGridViewTextBoxColumn.ReadOnly = true;
@@ -479,7 +478,7 @@
         private P1E.DataSetP1E dataSetP1E;
         private P1E.DataSetP1ETableAdapters.SP_QcAS_QueryTableAdapter sP_QcAS_QueryTableAdapter;
         private System.Windows.Forms.DataGridViewLinkColumn 접수번호DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 전표번호DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 수주번호;
         private System.Windows.Forms.DataGridViewTextBoxColumn 거래처IDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 거래처명DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 출하DataGridViewTextBoxColumn;

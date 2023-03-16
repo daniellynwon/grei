@@ -38,8 +38,6 @@
             this.label5 = new System.Windows.Forms.Label();
             this.tbDeli = new System.Windows.Forms.TextBox();
             this.lblDeliID = new System.Windows.Forms.Label();
-            this.btnClose = new SmartMES_Giroei.UserButtonA();
-            this.btnSave = new SmartMES_Giroei.UserButtonA();
             this.dtpClaimDate = new System.Windows.Forms.DateTimePicker();
             this.tbNo = new System.Windows.Forms.TextBox();
             this.lblHo = new System.Windows.Forms.Label();
@@ -53,6 +51,8 @@
             this.tbMoney = new System.Windows.Forms.TextBox();
             this.cbCharge = new System.Windows.Forms.ComboBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.btnClose = new SmartMES_Giroei.UserButtonA();
+            this.btnSave = new SmartMES_Giroei.UserButtonA();
             this.panTitle.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -166,40 +166,12 @@
             this.lblDeliID.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lblDeliID.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Underline);
             this.lblDeliID.ForeColor = System.Drawing.Color.Blue;
-            this.lblDeliID.Location = new System.Drawing.Point(18, 197);
+            this.lblDeliID.Location = new System.Drawing.Point(57, 196);
             this.lblDeliID.Name = "lblDeliID";
-            this.lblDeliID.Size = new System.Drawing.Size(116, 21);
+            this.lblDeliID.Size = new System.Drawing.Size(74, 21);
             this.lblDeliID.TabIndex = 0;
-            this.lblDeliID.Text = "출하(전표)번호";
+            this.lblDeliID.Text = "수주번호";
             this.lblDeliID.Click += new System.EventHandler(this.lblDeliID_Click);
-            // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.close;
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnClose.buttonImage = global::SmartMES_Giroei.Properties.Resources.close;
-            this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnClose.Location = new System.Drawing.Point(435, 631);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(100, 27);
-            this.btnClose.TabIndex = 11;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.save;
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSave.buttonImage = global::SmartMES_Giroei.Properties.Resources.save;
-            this.btnSave.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSave.Location = new System.Drawing.Point(279, 631);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 27);
-            this.btnSave.TabIndex = 10;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // dtpClaimDate
             // 
@@ -339,6 +311,34 @@
             this.label8.Size = new System.Drawing.Size(70, 21);
             this.label8.TabIndex = 0;
             this.label8.Text = "책 임 자";
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.close;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnClose.buttonImage = global::SmartMES_Giroei.Properties.Resources.close;
+            this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnClose.Location = new System.Drawing.Point(435, 631);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(100, 27);
+            this.btnClose.TabIndex = 11;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.save;
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSave.buttonImage = global::SmartMES_Giroei.Properties.Resources.save;
+            this.btnSave.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSave.Location = new System.Drawing.Point(279, 631);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(100, 27);
+            this.btnSave.TabIndex = 10;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // P1ED03_QC_AS_SUB
             // 
