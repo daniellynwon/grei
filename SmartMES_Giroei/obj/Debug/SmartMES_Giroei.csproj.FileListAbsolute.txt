@@ -1908,7 +1908,6 @@ C:\ProJect(유지보수)\(유지보수)지로이아이\grei\SmartMES_Giroei\bin\
 C:\ProJect(유지보수)\(유지보수)지로이아이\grei\SmartMES_Giroei\bin\Debug\ru\Microsoft.ReportViewer.WinForms.resources.dll
 C:\ProJect(유지보수)\(유지보수)지로이아이\grei\SmartMES_Giroei\bin\Debug\zh-CHS\Microsoft.ReportViewer.WinForms.resources.dll
 C:\ProJect(유지보수)\(유지보수)지로이아이\grei\SmartMES_Giroei\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
-C:\ProJect(유지보수)\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.csproj.AssemblyReference.cache
 C:\ProJect(유지보수)\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.csproj.ResolveComReference.cache
 C:\ProJect(유지보수)\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.CustFinder.resources
 C:\ProJect(유지보수)\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.MachineFinder.resources
@@ -2046,3 +2045,5 @@ C:\ProJect(유지보수)\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\
 C:\ProJect(유지보수)\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.csproj.CopyComplete
 C:\ProJect(유지보수)\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.exe
 C:\ProJect(유지보수)\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.pdb
+C:\ProJect(유지보수)\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.csproj.AssemblyReference.cache
+C:\ProJect(유지보수)\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1C02_PROD_RESULT_AOI_DOC2.resources

@@ -667,6 +667,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetP1C.xsd</DependentUpon>
     </Compile>
+    <Compile Include="P1C\P1C02_PROD_RESULT_AOI_DOC2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1C\P1C02_PROD_RESULT_AOI_DOC2.designer.cs">
+      <DependentUpon>P1C02_PROD_RESULT_AOI_DOC2.cs</DependentUpon>
+    </Compile>
     <Compile Include="P1C\P1C01_PROD_ORDER_SUB2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1238,6 +1244,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P1B\P1B14_UNIT_COST.resx">
       <DependentUpon>P1B14_UNIT_COST.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C02_PROD_RESULT_AOI_DOC2.resx">
+      <DependentUpon>P1C02_PROD_RESULT_AOI_DOC2.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P1C\P1C01_PROD_ORDER_SUB2.resx">
       <DependentUpon>P1C01_PROD_ORDER_SUB2.cs</DependentUpon>

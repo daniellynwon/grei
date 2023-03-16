@@ -117,16 +117,41 @@ namespace SmartMES_Giroei
             long lMoney = 0;
             int iSeq = 0;
 
-            for (int i = 0; i < dataGridView1.RowCount; i++)
+            if (parentWin.dataGridView1.Rows.Count > 1)
             {
-                if (dataGridView1.Rows[i].Cells[0].Value != null && dataGridView1.Rows[i].Cells[0].Value.ToString() == "1")
+                for (int i = 0; i < dataGridView1.RowCount; i++)
                 {
-                    parentWin.sPPurchaseMatSubQueryBindingSource.AddNew();
-                    parentWin.dataGridView1.Rows[iSeq].Cells[3].Value = dataGridView1.Rows[i].Cells[5].Value; //자재코드
-                    parentWin.dataGridView1.Rows[iSeq].Cells[4].Value = dataGridView1.Rows[i].Cells[6].Value; //자재명
-                    iSeq++;
+
+                    if (parentWin.dataGridView1.Rows[iSeq].Cells[3].Value.ToString() == dataGridView1.Rows[i].Cells[5].Value.ToString())
+                    {
+                        parentWin.lblMsg.Text = "등록된 자재를 제외하고 등록 되었습니다.";
+                        iSeq++;
+                        continue;
+                    }
+
+                    if (dataGridView1.Rows[i].Cells[0].Value != null && dataGridView1.Rows[i].Cells[0].Value.ToString() == "1")
+                    {
+                        parentWin.sPPurchaseMatSubQueryBindingSource.AddNew();
+                        parentWin.dataGridView1.Rows[iSeq].Cells[3].Value = dataGridView1.Rows[i].Cells[5].Value; //자재코드
+                        parentWin.dataGridView1.Rows[iSeq].Cells[4].Value = dataGridView1.Rows[i].Cells[6].Value; //자재명
+                        iSeq++;
+                    }
                 }
             }
+            else
+            {
+                for (int i = 0; i < dataGridView1.RowCount; i++)
+                {
+                    if (dataGridView1.Rows[i].Cells[0].Value != null && dataGridView1.Rows[i].Cells[0].Value.ToString() == "1")
+                    {
+                        parentWin.sPPurchaseMatSubQueryBindingSource.AddNew();
+                        parentWin.dataGridView1.Rows[iSeq].Cells[3].Value = dataGridView1.Rows[i].Cells[5].Value; //자재코드
+                        parentWin.dataGridView1.Rows[iSeq].Cells[4].Value = dataGridView1.Rows[i].Cells[6].Value; //자재명
+                        iSeq++;
+                    }
+                }
+            }
+
             this.Dispose();
         }
         private void dataGridView1_SelectionChanged(object sender, EventArgs e)
@@ -143,7 +168,7 @@ namespace SmartMES_Giroei
         #region Button Events
         private void btAllCheck_Click(object sender, EventArgs e)
         {
-            lblMsg.Text = "";
+              lblMsg.Text = "";
 
             for (int i = 0; i < dataGridView1.Rows.Count; i++)
             {

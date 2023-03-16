@@ -233,15 +233,15 @@ namespace SmartMES_Giroei
         }
         private void btnFile1_Click(object sender, EventArgs e)
         {
-            P1C02_PROD_RESULT_AOI_DOC newdoc = new P1C02_PROD_RESULT_AOI_DOC();
+            P1C02_PROD_RESULT_AOI_DOC2 newdoc = new P1C02_PROD_RESULT_AOI_DOC2();
             newdoc.sNo = job_no;
-            newdoc.filename = lbFname1.Text;
-            newdoc.index = 1;
+            newdoc.sFileName = lbFname1.Text;
+            newdoc.rowIdx = 1;
             newdoc.ShowDialog();
 
-            if (newdoc.filename != lbFname1.Text)
+            if (newdoc.sFileName != lbFname1.Text)
             {
-                lbFname1.Text = newdoc.filename;
+                lbFname1.Text = newdoc.sFileName;
                 changedFname1 = true;
             } else
             {
@@ -252,15 +252,15 @@ namespace SmartMES_Giroei
 
         private void btnFile2_Click(object sender, EventArgs e)
         {
-            P1C02_PROD_RESULT_AOI_DOC newdoc = new P1C02_PROD_RESULT_AOI_DOC();
+            P1C02_PROD_RESULT_AOI_DOC2 newdoc = new P1C02_PROD_RESULT_AOI_DOC2();
             newdoc.sNo = job_no;
-            newdoc.filename = lbFname2.Text;
-            newdoc.index = 2;
+            newdoc.sFileName = lbFname2.Text;
+            newdoc.rowIdx = 2;
             newdoc.ShowDialog();
 
-            if (newdoc.filename != lbFname2.Text)
+            if (newdoc.sFileName != lbFname2.Text)
             {
-                lbFname2.Text = newdoc.filename;
+                lbFname2.Text = newdoc.sFileName;
                 changedFname2 = true;
             }
             else
