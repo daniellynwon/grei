@@ -146,7 +146,8 @@ namespace SmartMES_Giroei
             string sEtcerror = tbEtcError.Text;
             string sContents = rtbContents.Text;
             string sMan = cbMan.SelectedValue.ToString();
-
+            string sWorkline = cbWorkLine.Text.Trim();
+                
             string sFname1 = lbFname1.Text;
             string sFname2 = lbFname2.Text;
             string sInspFromTime = dTFromTime.Value.ToString("yyyy-MM-dd HH:mm:ss");
@@ -199,14 +200,14 @@ namespace SmartMES_Giroei
             MySqlCommand cmd = new MySqlCommand();
             con.Open();
 
-            sql = "insert into QLT_inspection_AOI (job_no, insp_start_time, insp_end_time, insp_qty, defect_count, sonap, nengttem, misap, overturned, leadopen, minap, short, reverse, manhattan, twisted, etc_error, contents, enter_man)" +
+            sql = "insert into QLT_inspection_AOI (job_no, insp_start_time, insp_end_time, insp_qty, defect_count, sonap, nengttem, misap, overturned, leadopen, minap, short, reverse, manhattan, twisted, etc_error, contents, workline, enter_man)" +
                     " values('" + job_no + "','" + sInspFromTime + "','" + sInspToTime + "'," + sInspCount + "," + sTotalDefect + "," + sSonap + "," + sNengttem + "," + sMisap + "," + sOverturned + "," + sLeadopen + "," + sMinap + "," + sShort + "," + sReverse + "," + 
-                        sManhattan + "," + sTwisted + "," + sEtcerror + ",'" + sContents + "','" + sMan + "')" 
+                        sManhattan + "," + sTwisted + "," + sEtcerror + ",'" + sContents + "','" + sWorkline + "','" + sMan + "')" 
                         + " on duplicate key update" + " insp_start_time = '" + sInspFromTime + "', insp_end_time = '" + sInspToTime + "'," 
                         + " insp_qty = " + sInspCount + ", defect_count = " + sTotalDefect + ", sonap = " + sSonap + ", nengttem = " + sNengttem 
                         + ", misap = " + sMisap + ", overturned = " + sOverturned + ", leadopen = " + sLeadopen + ", minap = " + sMinap + ", short = " + sShort + ", reverse = " + sReverse
                         + ", manhattan = " + sManhattan + ", twisted = " + sTwisted + ", etc_error = " + sEtcerror
-                        + ", contents = '" + sContents + "', enter_man = '" + sMan + "'";
+                        + ", contents = '" + sContents + "', workline ='" + sWorkline + "', enter_man = '" + sMan + "'";
             cmd.Connection = con;
             cmd.CommandText = sql;
             cmd.ExecuteNonQuery();
@@ -275,6 +276,21 @@ namespace SmartMES_Giroei
             sub.sParentCode = tbJobNo.Text;
             sub.sFileName = doc2.Tag.ToString();
             sub.ShowDialog();
+        }
+
+        private void P1C02_PROD_RESULT_AOI_Shown(object sender, EventArgs e)
+        {
+            string sql = @"select co_code, co_item from BAS_common where co_kind = 'D' order by co_code";
+            MariaCRUD m = new MariaCRUD();
+            string msg = string.Empty;
+            DataTable table = m.dbDataTable(sql, ref msg);
+
+            if (msg == "OK")
+            {
+                cbWorkLine.DataSource = table;
+                cbWorkLine.ValueMember = "co_code";
+                cbWorkLine.DisplayMember = "co_item";
+            }
         }
         #endregion
 

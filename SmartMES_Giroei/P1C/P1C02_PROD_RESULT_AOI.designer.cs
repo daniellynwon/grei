@@ -71,13 +71,15 @@
             this.dTFromTime = new System.Windows.Forms.DateTimePicker();
             this.tbProdName = new System.Windows.Forms.TextBox();
             this.dTToTime = new System.Windows.Forms.DateTimePicker();
-            this.btnClose = new SmartMES_Giroei.UserButtonA();
-            this.btnSave = new SmartMES_Giroei.UserButtonA();
-            this.doc1 = new SmartMES_Giroei.UserButtonA();
-            this.doc2 = new SmartMES_Giroei.UserButtonA();
             this.tbjob = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label21 = new System.Windows.Forms.Label();
+            this.doc2 = new SmartMES_Giroei.UserButtonA();
+            this.doc1 = new SmartMES_Giroei.UserButtonA();
+            this.btnClose = new SmartMES_Giroei.UserButtonA();
+            this.btnSave = new SmartMES_Giroei.UserButtonA();
+            this.cbWorkLine = new System.Windows.Forms.ComboBox();
+            this.label22 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -564,72 +566,12 @@
             this.dTToTime.Size = new System.Drawing.Size(200, 29);
             this.dTToTime.TabIndex = 128;
             // 
-            // btnClose
-            // 
-            this.btnClose.BackColor = System.Drawing.Color.Transparent;
-            this.btnClose.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.close;
-            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnClose.buttonImage = global::SmartMES_Giroei.Properties.Resources.close;
-            this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnClose.Location = new System.Drawing.Point(437, 595);
-            this.btnClose.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(100, 27);
-            this.btnClose.TabIndex = 31;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
-            // 
-            // btnSave
-            // 
-            this.btnSave.BackColor = System.Drawing.Color.Transparent;
-            this.btnSave.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.save;
-            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnSave.buttonImage = global::SmartMES_Giroei.Properties.Resources.save;
-            this.btnSave.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btnSave.Location = new System.Drawing.Point(268, 595);
-            this.btnSave.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
-            this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(100, 27);
-            this.btnSave.TabIndex = 30;
-            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
-            // 
-            // doc1
-            // 
-            this.doc1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.doc1.BackColor = System.Drawing.Color.Transparent;
-            this.doc1.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.doc1.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.doc1.Location = new System.Drawing.Point(147, 463);
-            this.doc1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.doc1.Name = "doc1";
-            this.doc1.Size = new System.Drawing.Size(60, 45);
-            this.doc1.TabIndex = 129;
-            this.doc1.Tag = "";
-            this.doc1.Click += new System.EventHandler(this.userButtonA1_Click);
-            // 
-            // doc2
-            // 
-            this.doc2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.doc2.BackColor = System.Drawing.Color.Transparent;
-            this.doc2.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.doc2.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.doc2.Location = new System.Drawing.Point(147, 519);
-            this.doc2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.doc2.Name = "doc2";
-            this.doc2.Size = new System.Drawing.Size(60, 45);
-            this.doc2.TabIndex = 130;
-            this.doc2.Tag = "";
-            this.doc2.Click += new System.EventHandler(this.userButtonA2_Click);
-            // 
             // tbjob
             // 
             this.tbjob.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbjob.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbjob.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbjob.Location = new System.Drawing.Point(420, 324);
+            this.tbjob.Location = new System.Drawing.Point(147, 181);
             this.tbjob.Name = "tbjob";
             this.tbjob.ReadOnly = true;
             this.tbjob.Size = new System.Drawing.Size(203, 29);
@@ -661,12 +603,96 @@
             this.label21.TabIndex = 133;
             this.label21.Text = "파일2";
             // 
+            // doc2
+            // 
+            this.doc2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.doc2.BackColor = System.Drawing.Color.Transparent;
+            this.doc2.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.doc2.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.doc2.Location = new System.Drawing.Point(147, 519);
+            this.doc2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.doc2.Name = "doc2";
+            this.doc2.Size = new System.Drawing.Size(60, 45);
+            this.doc2.TabIndex = 130;
+            this.doc2.Tag = "";
+            this.doc2.Click += new System.EventHandler(this.userButtonA2_Click);
+            // 
+            // doc1
+            // 
+            this.doc1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.doc1.BackColor = System.Drawing.Color.Transparent;
+            this.doc1.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.doc1.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.doc1.Location = new System.Drawing.Point(147, 463);
+            this.doc1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.doc1.Name = "doc1";
+            this.doc1.Size = new System.Drawing.Size(60, 45);
+            this.doc1.TabIndex = 129;
+            this.doc1.Tag = "";
+            this.doc1.Click += new System.EventHandler(this.userButtonA1_Click);
+            // 
+            // btnClose
+            // 
+            this.btnClose.BackColor = System.Drawing.Color.Transparent;
+            this.btnClose.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.close;
+            this.btnClose.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnClose.buttonImage = global::SmartMES_Giroei.Properties.Resources.close;
+            this.btnClose.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnClose.Location = new System.Drawing.Point(437, 595);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(100, 27);
+            this.btnClose.TabIndex = 31;
+            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Transparent;
+            this.btnSave.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.save;
+            this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnSave.buttonImage = global::SmartMES_Giroei.Properties.Resources.save;
+            this.btnSave.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btnSave.Location = new System.Drawing.Point(268, 595);
+            this.btnSave.Margin = new System.Windows.Forms.Padding(5, 8, 5, 8);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(100, 27);
+            this.btnSave.TabIndex = 30;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // cbWorkLine
+            // 
+            this.cbWorkLine.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbWorkLine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbWorkLine.FormattingEnabled = true;
+            this.cbWorkLine.Location = new System.Drawing.Point(481, 315);
+            this.cbWorkLine.Name = "cbWorkLine";
+            this.cbWorkLine.Size = new System.Drawing.Size(200, 29);
+            this.cbWorkLine.TabIndex = 135;
+            // 
+            // label22
+            // 
+            this.label22.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label22.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label22.Location = new System.Drawing.Point(400, 318);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(74, 21);
+            this.label22.TabIndex = 134;
+            this.label22.Text = "작업라인";
+            // 
             // P1C02_PROD_RESULT_AOI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(742, 639);
+            this.Controls.Add(this.cbWorkLine);
+            this.Controls.Add(this.label22);
             this.Controls.Add(this.label21);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.tbjob);
@@ -724,6 +750,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Smart Factory MES";
             this.Load += new System.EventHandler(this.P1C02_PROD_RESULT_AOI_Load);
+            this.Shown += new System.EventHandler(this.P1C02_PROD_RESULT_AOI_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -783,5 +810,7 @@
         public System.Windows.Forms.TextBox tbjob;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.ComboBox cbWorkLine;
+        private System.Windows.Forms.Label label22;
     }
 }
