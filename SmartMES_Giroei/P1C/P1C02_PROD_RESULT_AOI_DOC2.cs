@@ -302,16 +302,16 @@ namespace SmartMES_Giroei
                     MessageBox.Show(msg);
                     return;
                 }
-                //if (sNo == "1")
-                //{
-                //    parentWin.doc1.buttonImage = Properties.Resources.clipB;
-                //    parentWin.doc1.Tag = "";
-                //}
-                //else if (sNo == "2")
-                //{
-                //    parentWin.doc2.buttonImage = Properties.Resources.clipB;
-                //    parentWin.doc2.Tag = "";
-                //}
+                if (sNo == "0")
+                {
+                    parentWin.doc1.buttonImage = Properties.Resources.clipB;
+                    parentWin.doc1.Tag = "";
+                }
+                else if (sNo == "5")
+                {
+                    parentWin.doc2.buttonImage = Properties.Resources.clipB;
+                    parentWin.doc2.Tag = "";
+                }
                 //else if (sNo == "3")
                 //{
                 //    parentWin.doc3.buttonImage = Properties.Resources.clipB;

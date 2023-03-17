@@ -62,8 +62,6 @@
             this.label18 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.rtbContents = new System.Windows.Forms.RichTextBox();
-            this.btnFile1 = new System.Windows.Forms.Button();
-            this.btnFile2 = new System.Windows.Forms.Button();
             this.lbFname1 = new System.Windows.Forms.Label();
             this.lbFname2 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
@@ -75,6 +73,11 @@
             this.dTToTime = new System.Windows.Forms.DateTimePicker();
             this.btnClose = new SmartMES_Giroei.UserButtonA();
             this.btnSave = new SmartMES_Giroei.UserButtonA();
+            this.doc1 = new SmartMES_Giroei.UserButtonA();
+            this.doc2 = new SmartMES_Giroei.UserButtonA();
+            this.tbjob = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -464,33 +467,6 @@
             this.rtbContents.TabIndex = 19;
             this.rtbContents.Text = "";
             // 
-            // btnFile1
-            // 
-            this.btnFile1.Image = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.btnFile1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFile1.Location = new System.Drawing.Point(147, 472);
-            this.btnFile1.Name = "btnFile1";
-            this.btnFile1.Size = new System.Drawing.Size(108, 46);
-            this.btnFile1.TabIndex = 20;
-            this.btnFile1.Text = "파일1";
-            this.btnFile1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFile1.UseVisualStyleBackColor = true;
-            this.btnFile1.Click += new System.EventHandler(this.btnFile1_Click);
-            // 
-            // btnFile2
-            // 
-            this.btnFile2.BackColor = System.Drawing.SystemColors.Info;
-            this.btnFile2.Image = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.btnFile2.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFile2.Location = new System.Drawing.Point(147, 528);
-            this.btnFile2.Name = "btnFile2";
-            this.btnFile2.Size = new System.Drawing.Size(108, 46);
-            this.btnFile2.TabIndex = 21;
-            this.btnFile2.Text = "파일2";
-            this.btnFile2.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnFile2.UseVisualStyleBackColor = false;
-            this.btnFile2.Click += new System.EventHandler(this.btnFile2_Click);
-            // 
             // lbFname1
             // 
             this.lbFname1.AutoSize = true;
@@ -541,9 +517,9 @@
             this.label20.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
             this.label20.Location = new System.Drawing.Point(73, 79);
             this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(68, 21);
+            this.label20.Size = new System.Drawing.Size(74, 21);
             this.label20.TabIndex = 125;
-            this.label20.Text = "Job No.";
+            this.label20.Text = "수주번호";
             // 
             // tbJobNo
             // 
@@ -616,12 +592,86 @@
             this.btnSave.TabIndex = 30;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
+            // doc1
+            // 
+            this.doc1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.doc1.BackColor = System.Drawing.Color.Transparent;
+            this.doc1.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.doc1.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.doc1.Location = new System.Drawing.Point(147, 463);
+            this.doc1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.doc1.Name = "doc1";
+            this.doc1.Size = new System.Drawing.Size(60, 45);
+            this.doc1.TabIndex = 129;
+            this.doc1.Tag = "";
+            this.doc1.Click += new System.EventHandler(this.userButtonA1_Click);
+            // 
+            // doc2
+            // 
+            this.doc2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.doc2.BackColor = System.Drawing.Color.Transparent;
+            this.doc2.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.doc2.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.doc2.Location = new System.Drawing.Point(147, 519);
+            this.doc2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.doc2.Name = "doc2";
+            this.doc2.Size = new System.Drawing.Size(60, 45);
+            this.doc2.TabIndex = 130;
+            this.doc2.Tag = "";
+            this.doc2.Click += new System.EventHandler(this.userButtonA2_Click);
+            // 
+            // tbjob
+            // 
+            this.tbjob.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbjob.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbjob.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbjob.Location = new System.Drawing.Point(420, 324);
+            this.tbjob.Name = "tbjob";
+            this.tbjob.ReadOnly = true;
+            this.tbjob.Size = new System.Drawing.Size(203, 29);
+            this.tbjob.TabIndex = 131;
+            this.tbjob.TabStop = false;
+            this.tbjob.Tag = "";
+            this.tbjob.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbjob.Visible = false;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label10.Location = new System.Drawing.Point(66, 487);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(51, 21);
+            this.label10.TabIndex = 132;
+            this.label10.Text = "파일1";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label21.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label21.Location = new System.Drawing.Point(66, 543);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(51, 21);
+            this.label21.TabIndex = 133;
+            this.label21.Text = "파일2";
+            // 
             // P1C02_PROD_RESULT_AOI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Info;
             this.ClientSize = new System.Drawing.Size(742, 639);
+            this.Controls.Add(this.label21);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.tbjob);
+            this.Controls.Add(this.doc2);
+            this.Controls.Add(this.doc1);
             this.Controls.Add(this.dTToTime);
             this.Controls.Add(this.dTFromTime);
             this.Controls.Add(this.tbJobNo);
@@ -630,8 +680,6 @@
             this.Controls.Add(this.label19);
             this.Controls.Add(this.lbFname2);
             this.Controls.Add(this.lbFname1);
-            this.Controls.Add(this.btnFile2);
-            this.Controls.Add(this.btnFile1);
             this.Controls.Add(this.rtbContents);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.tbEtcError);
@@ -721,8 +769,6 @@
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.RichTextBox rtbContents;
-        private System.Windows.Forms.Button btnFile1;
-        private System.Windows.Forms.Button btnFile2;
         private System.Windows.Forms.Label lbFname1;
         private System.Windows.Forms.Label lbFname2;
         private System.Windows.Forms.Label label19;
@@ -732,5 +778,10 @@
         private System.Windows.Forms.DateTimePicker dTFromTime;
         public System.Windows.Forms.TextBox tbProdName;
         private System.Windows.Forms.DateTimePicker dTToTime;
+        public UserButtonA doc1;
+        public UserButtonA doc2;
+        public System.Windows.Forms.TextBox tbjob;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label label21;
     }
 }

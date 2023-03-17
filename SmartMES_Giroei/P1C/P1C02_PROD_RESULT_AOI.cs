@@ -13,6 +13,7 @@ namespace SmartMES_Giroei
         private int rowIndex = 0;
         public string rorderID, rorderSeq;
         public string job_no;
+        public string job_num;
         private bool isNew;
         private bool changedFname1 = false;
         private bool changedFname2 = false;
@@ -41,7 +42,35 @@ namespace SmartMES_Giroei
 
             tbProdName.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString(); // 품목명
             tbProdName.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();  // 품목코드
-            string sJobNo = job_no = tbJobNo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString(); // JobNo
+            //string sJobNo = job_no = tbJobNo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[45].Value.ToString(); // JobNo
+            //string sJob = job_num = tbjob.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString(); // JobNo
+            string sJobNo = job_no = tbjob.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[45].Value.ToString(); // JobNo
+            string sJob = job_num = tbJobNo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString(); // JobNo
+
+            string sFile1 = parentWin.dataGridView1.Rows[rowIndex].Cells[47].Value.ToString();
+            string sFile2 = parentWin.dataGridView1.Rows[rowIndex].Cells[48].Value.ToString();
+
+            // clip icon 처리 - 파일 있으면 파란색, 없으면 회색 클립
+            if (string.IsNullOrEmpty(sFile1))
+            {
+                doc1.buttonImage = Properties.Resources.clipB;
+                doc1.Tag = "";
+            }
+            else
+            {
+                doc1.buttonImage = Properties.Resources.clipA;
+                doc1.Tag = sFile1;
+            }
+            if (string.IsNullOrEmpty(sFile2))
+            {
+                doc2.buttonImage = Properties.Resources.clipB;
+                doc2.Tag = "";
+            }
+            else
+            {
+                doc2.buttonImage = Properties.Resources.clipA;
+                doc2.Tag = sFile2;
+            }
 
             sql = "select * from QLT_inspection_AOI where job_no = '" + sJobNo + "' limit 1";
             table = m.dbDataTable(sql, ref msg);
@@ -131,58 +160,55 @@ namespace SmartMES_Giroei
             byte[] rawdata1 = new byte[0];
             byte[] rawdata2 = new byte[0];
 
-            if (!string.IsNullOrEmpty(lbFname1.Text))
-            {
-                if (changedFname1) {
-                    string[] fnames = sFname1.Split('\\');
-                    fname1 = fnames[fnames.Length - 1];
-                    FileStream fs1 = new FileStream(sFname1, FileMode.Open);
-                    BinaryReader br1 = new BinaryReader(fs1);
-                    fs1.Position = 0;
-                    UInt32 FileSize1 = (UInt32)fs1.Length;
-                    rawdata1 = br1.ReadBytes((int)fs1.Length);
+            //if (!string.IsNullOrEmpty(lbFname1.Text))
+            //{
+            //    if (changedFname1) {
+            //        string[] fnames = sFname1.Split('\\');
+            //        fname1 = fnames[fnames.Length - 1];
+            //        FileStream fs1 = new FileStream(sFname1, FileMode.Open);
+            //        BinaryReader br1 = new BinaryReader(fs1);
+            //        fs1.Position = 0;
+            //        UInt32 FileSize1 = (UInt32)fs1.Length;
+            //        rawdata1 = br1.ReadBytes((int)fs1.Length);
 
-                    br1.Close();
-                } else {
-                    fname1 = lbFname1.Text;
-                    rawdata1 = get_file_data(lbFname1.Text, job_no);
-                }
-            }
-            if (!string.IsNullOrEmpty(lbFname2.Text))
-            {
-                if (changedFname2) {
-                    string[] fnames = sFname2.Split('\\');
-                    fname2 = fnames[fnames.Length - 1];
-                    FileStream fs2 = new FileStream(sFname2, FileMode.Open);
-                    BinaryReader br2 = new BinaryReader(fs2);
-                    fs2.Position = 0;
-                    UInt32 FileSize2 = (UInt32)fs2.Length;
-                    rawdata2 = br2.ReadBytes((int)fs2.Length);
+            //        br1.Close();
+            //    } else {
+            //        fname1 = lbFname1.Text;
+            //        rawdata1 = get_file_data(lbFname1.Text, job_no);
+            //    }
+            //}
+            //if (!string.IsNullOrEmpty(lbFname2.Text))
+            //{
+            //    if (changedFname2) {
+            //        string[] fnames = sFname2.Split('\\');
+            //        fname2 = fnames[fnames.Length - 1];
+            //        FileStream fs2 = new FileStream(sFname2, FileMode.Open);
+            //        BinaryReader br2 = new BinaryReader(fs2);
+            //        fs2.Position = 0;
+            //        UInt32 FileSize2 = (UInt32)fs2.Length;
+            //        rawdata2 = br2.ReadBytes((int)fs2.Length);
 
-                    br2.Close();
-                } else {
-                    fname2 = lbFname2.Text;
-                    rawdata2 = get_file_data(lbFname2.Text, job_no);
-                }
-            }
+            //        br2.Close();
+            //    } else {
+            //        fname2 = lbFname2.Text;
+            //        rawdata2 = get_file_data(lbFname2.Text, job_no);
+            //    }
+            //}
 
             MySqlConnection con = new MySqlConnection(G.conStr);
             MySqlCommand cmd = new MySqlCommand();
             con.Open();
 
-            sql = "insert into QLT_inspection_AOI (job_no, insp_start_time, insp_end_time, insp_qty, defect_count, sonap, nengttem, misap, overturned, leadopen, minap, short, reverse, manhattan, twisted, etc_error, file1_name, file2_name, file1, file2, contents, enter_man)" +
+            sql = "insert into QLT_inspection_AOI (job_no, insp_start_time, insp_end_time, insp_qty, defect_count, sonap, nengttem, misap, overturned, leadopen, minap, short, reverse, manhattan, twisted, etc_error, contents, enter_man)" +
                     " values('" + job_no + "','" + sInspFromTime + "','" + sInspToTime + "'," + sInspCount + "," + sTotalDefect + "," + sSonap + "," + sNengttem + "," + sMisap + "," + sOverturned + "," + sLeadopen + "," + sMinap + "," + sShort + "," + sReverse + "," + 
-                        sManhattan + "," + sTwisted + "," + sEtcerror + ",'" + fname1 + "','" + fname2 + "', @File1, @File2,'" + sContents + "','" + sMan + "')" 
+                        sManhattan + "," + sTwisted + "," + sEtcerror + ",'" + sContents + "','" + sMan + "')" 
                         + " on duplicate key update" + " insp_start_time = '" + sInspFromTime + "', insp_end_time = '" + sInspToTime + "'," 
                         + " insp_qty = " + sInspCount + ", defect_count = " + sTotalDefect + ", sonap = " + sSonap + ", nengttem = " + sNengttem 
                         + ", misap = " + sMisap + ", overturned = " + sOverturned + ", leadopen = " + sLeadopen + ", minap = " + sMinap + ", short = " + sShort + ", reverse = " + sReverse
                         + ", manhattan = " + sManhattan + ", twisted = " + sTwisted + ", etc_error = " + sEtcerror
-                        +  ", file1_name = '" + fname1 + "', file2_name ='" + fname2 + "', file1 = @File1, file2 = @File2"
                         + ", contents = '" + sContents + "', enter_man = '" + sMan + "'";
             cmd.Connection = con;
             cmd.CommandText = sql;
-            cmd.Parameters.AddWithValue("@File1", rawdata1);
-            cmd.Parameters.AddWithValue("@File2", rawdata2);
             cmd.ExecuteNonQuery();
 
             con.Close();
@@ -190,21 +216,21 @@ namespace SmartMES_Giroei
             lblMsg.Text = "저장되었습니다.";
         }
 
-        public byte[] get_file_data(string fname, string job_no)
-        {
-            byte[] rawdata = new byte[0];
-            string sql = "select file1 from QLT_inspection_AOI where job_no = '" + job_no + "' and file1_name = '" + fname + "'";
-            MySqlConnection con = new MySqlConnection(G.conStr);
-            MySqlCommand cmd = new MySqlCommand(sql, con);
-            con.Open();
-            MySqlDataReader rdr = cmd.ExecuteReader();
-            while (rdr.Read())
-            {
-                rawdata = (byte[])rdr[0];
-            }
-            con.Close();
-            return rawdata;
-        }
+        //public byte[] get_file_data(string fname, string job_no)
+        //{
+        //    byte[] rawdata = new byte[0];
+        //    string sql = "select file1 from QLT_inspection_AOI where job_no = '" + job_no + "' and file1_name = '" + fname + "'";
+        //    MySqlConnection con = new MySqlConnection(G.conStr);
+        //    MySqlCommand cmd = new MySqlCommand(sql, con);
+        //    con.Open();
+        //    MySqlDataReader rdr = cmd.ExecuteReader();
+        //    while (rdr.Read())
+        //    {
+        //        rawdata = (byte[])rdr[0];
+        //    }
+        //    con.Close();
+        //    return rawdata;
+        //}
 
         #region 엔터키로 포커스 이동
         public bool NextFocus(object sender, KeyEventArgs e)
@@ -231,42 +257,24 @@ namespace SmartMES_Giroei
         {
             Save();
         }
-        private void btnFile1_Click(object sender, EventArgs e)
+
+        public void userButtonA1_Click(object sender, EventArgs e)
         {
-            P1C02_PROD_RESULT_AOI_DOC2 newdoc = new P1C02_PROD_RESULT_AOI_DOC2();
-            newdoc.sNo = job_no;
-            newdoc.sFileName = lbFname1.Text;
-            newdoc.rowIdx = 1;
-            newdoc.ShowDialog();
-
-            if (newdoc.sFileName != lbFname1.Text)
-            {
-                lbFname1.Text = newdoc.sFileName;
-                changedFname1 = true;
-            } else
-            {
-                changedFname1 = false;
-            }
-
+            P1C02_PROD_RESULT_AOI_DOC2 sub = new P1C02_PROD_RESULT_AOI_DOC2();
+            sub.parentWin = this;
+            sub.sNo = "0";
+            sub.sParentCode = tbJobNo.Text;
+            sub.sFileName = doc1.Tag.ToString();
+            sub.ShowDialog();
         }
-
-        private void btnFile2_Click(object sender, EventArgs e)
+        public void userButtonA2_Click(object sender, EventArgs e)
         {
-            P1C02_PROD_RESULT_AOI_DOC2 newdoc = new P1C02_PROD_RESULT_AOI_DOC2();
-            newdoc.sNo = job_no;
-            newdoc.sFileName = lbFname2.Text;
-            newdoc.rowIdx = 2;
-            newdoc.ShowDialog();
-
-            if (newdoc.sFileName != lbFname2.Text)
-            {
-                lbFname2.Text = newdoc.sFileName;
-                changedFname2 = true;
-            }
-            else
-            {
-                changedFname2 = false;
-            }
+            P1C02_PROD_RESULT_AOI_DOC2 sub = new P1C02_PROD_RESULT_AOI_DOC2();
+            sub.parentWin = this;
+            sub.sNo = "5";
+            sub.sParentCode = tbJobNo.Text;
+            sub.sFileName = doc2.Tag.ToString();
+            sub.ShowDialog();
         }
         #endregion
 
