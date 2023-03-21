@@ -1224,7 +1224,6 @@ C:\Users\yycho\Source\Repos\SmartMES_Giroei\SmartMES_Giroei\bin\Debug\dll\x64\op
 C:\Users\yycho\Source\Repos\SmartMES_Giroei\SmartMES_Giroei\bin\Debug\dll\x64\opencv_video2410.dll
 C:\Users\yycho\Source\Repos\SmartMES_Giroei\SmartMES_Giroei\bin\Debug\dll\x64\opencv_videostab2410.dll
 C:\Users\yycho\Source\Repos\SmartMES_Giroei\SmartMES_Giroei\bin\Debug\dll\x64\OpenCvSharpExtern.dll
-C:\Users\yycho\Source\Repos\SmartMES_Giroei\SmartMES_Giroei\bin\Debug\Giroel(BOM).xlsx
 C:\Users\yycho\Source\Repos\SmartMES_Giroei\SmartMES_Giroei\bin\Debug\LogHelper\ApiKeyFile.txt
 C:\Users\yycho\Source\Repos\SmartMES_Giroei\SmartMES_Giroei\bin\Debug\Font\LibreBarcode39ExtendedText-Regular.ttf
 C:\Users\yycho\Source\Repos\SmartMES_Giroei\SmartMES_Giroei\bin\Debug\Resources\LibreBarcode39ExtendedText-Regular.ttf
@@ -2047,3 +2046,7 @@ C:\ProJect(유지보수)\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\
 C:\ProJect(유지보수)\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.csproj.AssemblyReference.cache
 C:\ProJect(유지보수)\(유지보수)지로이아이\grei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1C02_PROD_RESULT_AOI_DOC2.resources
 C:\ProJect(유지보수)\(유지보수)지로이아이\0224지로이아이\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1C02_PROD_RESULT_AOI_DOC2.resources
+C:\Users\yycho\source\repos\SmartMES_Giroei\SmartMES_Giroei\bin\Debug\Giroel_BOM.xlsx
+C:\Users\yycho\source\repos\SmartMES_Giroei\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1C02_PROD_RESULT_AOI_DOC2.resources
+C:\Users\yycho\source\repos\SmartMES_Giroei\SmartMES_Giroei\obj\Debug\RdlCompile.cache
+C:\Users\yycho\source\repos\SmartMES_Giroei\SmartMES_Giroei\obj\Debug\RdlCompile.compiled

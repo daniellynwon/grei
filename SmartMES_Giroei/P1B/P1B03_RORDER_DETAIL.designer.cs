@@ -165,6 +165,8 @@
             this.btnClose = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.lbNotice = new System.Windows.Forms.Label();
+            this.tbSolderSpec = new System.Windows.Forms.TextBox();
+            this.label63 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.sPROrderEstBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).BeginInit();
             this.tabControl1.SuspendLayout();
@@ -183,6 +185,7 @@
             // dataSetP1B
             // 
             this.dataSetP1B.DataSetName = "DataSetP1B";
+            this.dataSetP1B.EnforceConstraints = false;
             this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // sP_ROrder_EstTableAdapter
@@ -697,6 +700,8 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(245)))), ((int)(((byte)(232)))));
+            this.tabPage2.Controls.Add(this.tbSolderSpec);
+            this.tabPage2.Controls.Add(this.label63);
             this.tabPage2.Controls.Add(this.dtMaskDueDate);
             this.tabPage2.Controls.Add(this.dtMaskOrder);
             this.tabPage2.Controls.Add(this.dtMaskPay);
@@ -927,7 +932,7 @@
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.label31.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label31.Location = new System.Drawing.Point(21, 205);
+            this.label31.Location = new System.Drawing.Point(23, 208);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(76, 21);
             this.label31.TabIndex = 116;
@@ -1694,6 +1699,27 @@
             this.lbNotice.Size = new System.Drawing.Size(0, 21);
             this.lbNotice.TabIndex = 202;
             // 
+            // tbSolderSpec
+            // 
+            this.tbSolderSpec.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbSolderSpec.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbSolderSpec.Location = new System.Drawing.Point(103, 249);
+            this.tbSolderSpec.Name = "tbSolderSpec";
+            this.tbSolderSpec.Size = new System.Drawing.Size(81, 29);
+            this.tbSolderSpec.TabIndex = 143;
+            this.tbSolderSpec.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label63
+            // 
+            this.label63.AutoSize = true;
+            this.label63.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.label63.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label63.Location = new System.Drawing.Point(23, 252);
+            this.label63.Name = "label63";
+            this.label63.Size = new System.Drawing.Size(74, 21);
+            this.label63.TabIndex = 144;
+            this.label63.Text = "솔더사양";
+            // 
             // P1B03_RORDER_DETAIL
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -1873,5 +1899,7 @@
         private System.Windows.Forms.DateTimePicker dtPurchase;
         private System.Windows.Forms.DateTimePicker dtEtcPay;
         private System.Windows.Forms.Label lbNotice;
+        private System.Windows.Forms.TextBox tbSolderSpec;
+        private System.Windows.Forms.Label label63;
     }
 }

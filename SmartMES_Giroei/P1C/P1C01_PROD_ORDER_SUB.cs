@@ -21,6 +21,29 @@ namespace SmartMES_Giroei
         private string SellectedProcess = string.Empty;
         private int[] ProcessFlag = new int[4];
 
+        public class POrderProcess
+        {
+            public string order_id;
+            public string order_seq;
+            public string prod_id;
+            public string prod_name;
+            public string cust_id;
+            public string cust_name;
+            public string deli_date;
+            public string smtYN;
+            public string pcbYN;
+            public string AssemYN;
+            public string SusapYN;
+            public string smtOX;
+            public string pcbOX;
+            public string AssemOX;
+            public string SusapOX;
+            public string qty;
+            public string Solder;
+            public string orderNum;
+            public string jig;
+        }
+
         public P1C01_PROD_ORDER_SUB()
         {
             InitializeComponent();
@@ -67,7 +90,8 @@ namespace SmartMES_Giroei
             {
                 rowIndex = parentWin.dataGridView1.CurrentCell.RowIndex;
                 label1.Visible = false; tbSearch.Visible = false;           // 그리드뷰 안보이게 (수정이니까)
-                dataGridView2.Visible = false; dataGridView3.Visible = false;
+                //dataGridView2.Visible = false; 
+                dataGridView3.Visible = false;
 
                 dtpDate.Value = (DateTime)parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value;    // 생산계획일
                 tbJobNo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();    // JobNo
@@ -80,7 +104,7 @@ namespace SmartMES_Giroei
                 tbQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[10].Value.ToString();      // 지시수량
                 tbSolder.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[15].Value.ToString();      // 솔더
                 tbMask.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[16].Value.ToString();      // 마스크
-                cbMan.SelectedValue = parentWin.dataGridView1.Rows[rowIndex].Cells[22].Value;      // 책임자ID
+                cbMan.SelectedValue = parentWin.dataGridView1.Rows[rowIndex].Cells[21].Value;      // 책임자ID
                 //tbJobTimeStart.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[25].Value.ToString();      // 작업시작
                 tbJobTimeFinish.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[26].Value.ToString();      // 작업종료
                 tbGdQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[27].Value.ToString();      // 양품수량
@@ -88,11 +112,91 @@ namespace SmartMES_Giroei
                 cbWorkLine.SelectedValue = parentWin.dataGridView1.Rows[rowIndex].Cells[29].Value;      // 생산라인
                 tbRorderNo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value.ToString();    // 수주번호
                 tbRorderNo.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[14].Value.ToString();    // 수주순번
-                tbContents.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[20].Value.ToString();    // 지시사항
+                tbContents.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[19].Value.ToString();    // 지시사항
+                tbJig.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[30].Value.ToString();    // 지그
 
                 if (string.IsNullOrEmpty(tbJobTimeStart.Text) == false)
                     btnStart.Enabled = false;
                 this.ActiveControl = btnSave;
+            }
+
+
+            using (MySqlConnection conn = new MySqlConnection(G.conStr))
+            {
+                MySqlCommand cmd = new MySqlCommand();
+                DataSet ds = new DataSet();
+                string sFromDate = DateTime.Today.ToString("yyyy-MM-01");
+                string sToDate = DateTime.Today.ToString("yyyy-MM-dd");
+
+                string sSearch = (tbSearch.Text.Trim() == "") ? "%" : tbSearch.Text.Trim();
+                try
+                {
+                    conn.Open();
+                    cmd.Connection = conn;
+
+                    cmd.CommandText = "SP_ProdOrder_Process";
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    cmd.Parameters.Add(new MySqlParameter("_fromDate", MySqlDbType.Date));
+                    cmd.Parameters.Add(new MySqlParameter("_toDate", MySqlDbType.Date));
+                    cmd.Parameters.Add(new MySqlParameter("_search", MySqlDbType.VarChar));
+                    cmd.Parameters["_fromDate"].Value = DateTime.Parse(sFromDate);
+                    cmd.Parameters["_toDate"].Value = DateTime.Parse(sToDate);
+                    cmd.Parameters["_search"].Value = sSearch;
+
+                    cmd.ExecuteNonQuery();
+
+                    MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+
+                    // Fill the DataSet using default values for DataTable names, etc
+                    da.Fill(ds);
+
+                    POrderProcess od = new POrderProcess();
+                    int dataGridView3RowCount = 0;
+
+                    foreach (DataRow r in ds.Tables[0].Rows)
+                    {
+                        od.order_id = r["수주번호"].ToString();
+                        od.order_seq = r["수주순번"].ToString();
+                        od.prod_id = r["품목코드"].ToString();
+                        od.prod_name = r["품목명"].ToString();
+                        od.cust_id = r["거래처코드"].ToString();
+                        od.cust_name = r["거래처명"].ToString();
+                        od.deli_date = r["납기요청일"].ToString();
+                        od.smtYN = r["SMT여부"].ToString();
+                        od.pcbYN = r["PCB여부"].ToString();
+                        od.AssemYN = r["조립여부"].ToString();
+                        od.SusapYN = r["수삽여부"].ToString();
+                        od.smtOX = r["SMT진행여부"].ToString();
+                        od.pcbOX = r["PCB진행여부"].ToString();
+                        od.AssemOX = r["조립진행여부"].ToString();
+                        od.SusapOX = r["수삽진행여부"].ToString();
+                        od.qty = r["수주수량"].ToString();
+                        od.Solder = r["솔더"].ToString();
+                        od.orderNum = r["발주번호"].ToString();
+                        od.jig = r["ZIG"].ToString();
+
+                        if (od.smtYN == "Y" && od.smtOX == "X")
+                            dataGridView3.Rows.Add(od.order_id, od.order_seq, od.prod_id, od.prod_name, od.cust_id, od.cust_name, od.deli_date, "SMT", od.qty, od.Solder, od.orderNum, od.jig);
+                        if (od.pcbYN == "Y" && od.pcbOX == "X")
+                            dataGridView3.Rows.Add(od.order_id, od.order_seq, od.prod_id, od.prod_name, od.cust_id, od.cust_name, od.deli_date, "PCB", od.qty, od.Solder, od.orderNum, od.jig);
+                        if (od.AssemYN == "Y" && od.AssemOX == "X")
+                            dataGridView3.Rows.Add(od.order_id, od.order_seq, od.prod_id, od.prod_name, od.cust_id, od.cust_name, od.deli_date, "조립", od.qty, od.Solder, od.orderNum, od.jig);
+                        if (od.SusapYN == "Y" && od.SusapOX == "X")
+                            dataGridView3.Rows.Add(od.order_id, od.order_seq, od.prod_id, od.prod_name, od.cust_id, od.cust_name, od.deli_date, "수삽", od.qty, od.Solder, od.orderNum, od.jig);
+
+                        dataGridView3RowCount++;
+                    }
+                    //lblMsg.Text = "생산실적이 반영되었습니다.";   주석처리 -> 삭제할때도 뜸.
+                }
+                catch (Exception ex)
+                {
+                    {
+                        MessageBox.Show(ex.Message);
+                    }
+                }
+                conn.Close();
+                conn.Dispose();
             }
         }
         public void ListSearch()
@@ -204,97 +308,97 @@ namespace SmartMES_Giroei
         #endregion
 
         #region gridView Events
-        private void dataGridView2_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
-        {
-            if (dataGridView2.RowCount < 1) return;
+        //private void dataGridView2_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        //{
+        //    if (dataGridView2.RowCount < 1) return;
 
-            string sSujuNo = string.Empty;
-            string sSujuSeq = string.Empty;
-            string sProdID = string.Empty;
-            string sProdName = string.Empty;
-            string sCustID = string.Empty;
-            string sCustName = string.Empty;
-            string sDeliDate = string.Empty;
-            string sQty = string.Empty;
+        //    string sSujuNo = string.Empty;
+        //    string sSujuSeq = string.Empty;
+        //    string sProdID = string.Empty;
+        //    string sProdName = string.Empty;
+        //    string sCustID = string.Empty;
+        //    string sCustName = string.Empty;
+        //    string sDeliDate = string.Empty;
+        //    string sQty = string.Empty;
 
-            string sProcess = string.Empty;
+        //    string sProcess = string.Empty;
 
-            int dataGridView3RowCount = 0;
+        //    int dataGridView3RowCount = 0;
 
-            if (dataGridView3.Rows.Count > 0)
-            {
-                int RowCount = dataGridView3.Rows.Count;
+        //    if (dataGridView3.Rows.Count > 0)
+        //    {
+        //        int RowCount = dataGridView3.Rows.Count;
 
-                for (int i = 0; i < RowCount; i++)
-                {
-                    dataGridView3.Rows.Remove(dataGridView3.Rows[0]);
-                }
-            }
+        //        for (int i = 0; i < RowCount; i++)
+        //        {
+        //            dataGridView3.Rows.Remove(dataGridView3.Rows[0]);
+        //        }
+        //    }
 
-            for (int i = 0; i < dataGridView2.Rows.Count; i++)
-            {
-                if (dataGridView2.Rows[i].Cells[7].Value.ToString() == "Y" && dataGridView2.Rows[i].Cells[11].Value.ToString() == "X")
-                {
-                    sSujuNo = dataGridView2.Rows[i].Cells[0].Value.ToString();
-                    sSujuSeq = dataGridView2.Rows[i].Cells[1].Value.ToString();
-                    sProdID = dataGridView2.Rows[i].Cells[2].Value.ToString();
-                    sProdName = dataGridView2.Rows[i].Cells[3].Value.ToString();
-                    sCustID = dataGridView2.Rows[i].Cells[4].Value.ToString();
-                    sCustName = dataGridView2.Rows[i].Cells[5].Value.ToString();
-                    sDeliDate = Convert.ToDateTime(dataGridView2.Rows[i].Cells[6].Value.ToString()).ToString("yyyy-MM-dd");
+        //    for (int i = 0; i < dataGridView2.Rows.Count; i++)
+        //    {
+        //        if (dataGridView2.Rows[i].Cells[7].Value.ToString() == "Y" && dataGridView2.Rows[i].Cells[11].Value.ToString() == "X") // SMT
+        //        {
+        //            sSujuNo = dataGridView2.Rows[i].Cells[0].Value.ToString();
+        //            sSujuSeq = dataGridView2.Rows[i].Cells[1].Value.ToString();
+        //            sProdID = dataGridView2.Rows[i].Cells[2].Value.ToString();
+        //            sProdName = dataGridView2.Rows[i].Cells[3].Value.ToString();
+        //            sCustID = dataGridView2.Rows[i].Cells[4].Value.ToString();
+        //            sCustName = dataGridView2.Rows[i].Cells[5].Value.ToString();
+        //            sDeliDate = Convert.ToDateTime(dataGridView2.Rows[i].Cells[6].Value.ToString()).ToString("yyyy-MM-dd");
 
-                    sQty = dataGridView2.Rows[i].Cells[15].Value.ToString();
+        //            sQty = dataGridView2.Rows[i].Cells[15].Value.ToString();
 
-                    dataGridView3.Rows.Add(sSujuNo, sSujuSeq, sProdID, sProdName, sCustID, sCustName, sDeliDate, "SMT", sQty);
-                    dataGridView3RowCount++;
-                }
-                if (dataGridView2.Rows[i].Cells[8].Value.ToString() == "Y" && dataGridView2.Rows[i].Cells[12].Value.ToString() == "X")
-                {
-                    sSujuNo = dataGridView2.Rows[i].Cells[0].Value.ToString();
-                    sSujuSeq = dataGridView2.Rows[i].Cells[1].Value.ToString();
-                    sProdID = dataGridView2.Rows[i].Cells[2].Value.ToString();
-                    sProdName = dataGridView2.Rows[i].Cells[3].Value.ToString();
-                    sCustID = dataGridView2.Rows[i].Cells[4].Value.ToString();
-                    sCustName = dataGridView2.Rows[i].Cells[5].Value.ToString();
-                    sDeliDate = Convert.ToDateTime(dataGridView2.Rows[i].Cells[6].Value.ToString()).ToString("yyyy-MM-dd");
+        //            dataGridView3.Rows.Add(sSujuNo, sSujuSeq, sProdID, sProdName, sCustID, sCustName, sDeliDate, "SMT", sQty);
+        //            dataGridView3RowCount++;
+        //        }
+        //        if (dataGridView2.Rows[i].Cells[8].Value.ToString() == "Y" && dataGridView2.Rows[i].Cells[12].Value.ToString() == "X") // PCB
+        //        {
+        //            sSujuNo = dataGridView2.Rows[i].Cells[0].Value.ToString();
+        //            sSujuSeq = dataGridView2.Rows[i].Cells[1].Value.ToString();
+        //            sProdID = dataGridView2.Rows[i].Cells[2].Value.ToString();
+        //            sProdName = dataGridView2.Rows[i].Cells[3].Value.ToString();
+        //            sCustID = dataGridView2.Rows[i].Cells[4].Value.ToString();
+        //            sCustName = dataGridView2.Rows[i].Cells[5].Value.ToString();
+        //            sDeliDate = Convert.ToDateTime(dataGridView2.Rows[i].Cells[6].Value.ToString()).ToString("yyyy-MM-dd");
 
-                    sQty = dataGridView2.Rows[i].Cells[15].Value.ToString();
+        //            sQty = dataGridView2.Rows[i].Cells[15].Value.ToString();
 
-                    dataGridView3.Rows.Add(sSujuNo, sSujuSeq, sProdID, sProdName, sCustID, sCustName, sDeliDate, "PCB", sQty);
-                    dataGridView3RowCount++;
-                }
-                if (dataGridView2.Rows[i].Cells[9].Value.ToString() == "Y" && dataGridView2.Rows[i].Cells[13].Value.ToString() == "X")
-                {
-                    sSujuNo = dataGridView2.Rows[i].Cells[0].Value.ToString();
-                    sSujuSeq = dataGridView2.Rows[i].Cells[1].Value.ToString();
-                    sProdID = dataGridView2.Rows[i].Cells[2].Value.ToString();
-                    sProdName = dataGridView2.Rows[i].Cells[3].Value.ToString();
-                    sCustID = dataGridView2.Rows[i].Cells[4].Value.ToString();
-                    sCustName = dataGridView2.Rows[i].Cells[5].Value.ToString();
-                    sDeliDate = Convert.ToDateTime(dataGridView2.Rows[i].Cells[6].Value.ToString()).ToString("yyyy-MM-dd");
+        //            dataGridView3.Rows.Add(sSujuNo, sSujuSeq, sProdID, sProdName, sCustID, sCustName, sDeliDate, "PCB", sQty);
+        //            dataGridView3RowCount++;
+        //        }
+        //        if (dataGridView2.Rows[i].Cells[9].Value.ToString() == "Y" && dataGridView2.Rows[i].Cells[13].Value.ToString() == "X") // Assem
+        //        {
+        //            sSujuNo = dataGridView2.Rows[i].Cells[0].Value.ToString();
+        //            sSujuSeq = dataGridView2.Rows[i].Cells[1].Value.ToString();
+        //            sProdID = dataGridView2.Rows[i].Cells[2].Value.ToString();
+        //            sProdName = dataGridView2.Rows[i].Cells[3].Value.ToString();
+        //            sCustID = dataGridView2.Rows[i].Cells[4].Value.ToString();
+        //            sCustName = dataGridView2.Rows[i].Cells[5].Value.ToString();
+        //            sDeliDate = Convert.ToDateTime(dataGridView2.Rows[i].Cells[6].Value.ToString()).ToString("yyyy-MM-dd");
 
-                    sQty = dataGridView2.Rows[i].Cells[15].Value.ToString();
+        //            sQty = dataGridView2.Rows[i].Cells[15].Value.ToString();
 
-                    dataGridView3.Rows.Add(sSujuNo, sSujuSeq, sProdID, sProdName, sCustID, sCustName, sDeliDate, "조립", sQty);
-                    dataGridView3RowCount++;
-                }
-                if (dataGridView2.Rows[i].Cells[10].Value.ToString() == "Y" && dataGridView2.Rows[i].Cells[14].Value.ToString() == "X")
-                {
-                    sSujuNo = dataGridView2.Rows[i].Cells[0].Value.ToString();
-                    sSujuSeq = dataGridView2.Rows[i].Cells[1].Value.ToString();
-                    sProdID = dataGridView2.Rows[i].Cells[2].Value.ToString();
-                    sProdName = dataGridView2.Rows[i].Cells[3].Value.ToString();
-                    sCustID = dataGridView2.Rows[i].Cells[4].Value.ToString();
-                    sCustName = dataGridView2.Rows[i].Cells[5].Value.ToString();
-                    sDeliDate = Convert.ToDateTime(dataGridView2.Rows[i].Cells[6].Value.ToString()).ToString("yyyy-MM-dd");
+        //            dataGridView3.Rows.Add(sSujuNo, sSujuSeq, sProdID, sProdName, sCustID, sCustName, sDeliDate, "조립", sQty);
+        //            dataGridView3RowCount++;
+        //        }
+        //        if (dataGridView2.Rows[i].Cells[10].Value.ToString() == "Y" && dataGridView2.Rows[i].Cells[14].Value.ToString() == "X") // Susap
+        //        {
+        //            sSujuNo = dataGridView2.Rows[i].Cells[0].Value.ToString();
+        //            sSujuSeq = dataGridView2.Rows[i].Cells[1].Value.ToString();
+        //            sProdID = dataGridView2.Rows[i].Cells[2].Value.ToString();
+        //            sProdName = dataGridView2.Rows[i].Cells[3].Value.ToString();
+        //            sCustID = dataGridView2.Rows[i].Cells[4].Value.ToString();
+        //            sCustName = dataGridView2.Rows[i].Cells[5].Value.ToString();
+        //            sDeliDate = Convert.ToDateTime(dataGridView2.Rows[i].Cells[6].Value.ToString()).ToString("yyyy-MM-dd");
 
-                    sQty = dataGridView2.Rows[i].Cells[15].Value.ToString();
+        //            sQty = dataGridView2.Rows[i].Cells[15].Value.ToString();
 
-                    dataGridView3.Rows.Add(sSujuNo, sSujuSeq, sProdID, sProdName, sCustID, sCustName, sDeliDate, "수삽", sQty);
-                    dataGridView3RowCount++;
-                }
-            }
-        }
+        //            dataGridView3.Rows.Add(sSujuNo, sSujuSeq, sProdID, sProdName, sCustID, sCustName, sDeliDate, "수삽", sQty);
+        //            dataGridView3RowCount++;
+        //        }
+        //    }
+        //}
         private void dataGridView3_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.ColumnIndex == 3)    // 품목명
@@ -308,6 +412,9 @@ namespace SmartMES_Giroei
                 dtpDeli.Value = DateTime.Parse(dataGridView3.Rows[e.RowIndex].Cells[6].Value.ToString());
                 SellectedProcess = dataGridView3.Rows[e.RowIndex].Cells[7].Value.ToString();
                 tbQty.Text = dataGridView3.Rows[e.RowIndex].Cells[8].Value.ToString();
+                tbSolder.Text = dataGridView3.Rows[e.RowIndex].Cells[9].Value.ToString();
+                tbMask.Text = dataGridView3.Rows[e.RowIndex].Cells[10].Value.ToString();
+                tbJig.Text = dataGridView3.Rows[e.RowIndex].Cells[11].Value.ToString();
 
                 //for (int i = 0; i < dataGridView3.RowCount; i++)
                 //{
@@ -359,8 +466,9 @@ namespace SmartMES_Giroei
             if (rbB.Checked) sRework = "B";
             string sSolder = tbSolder.Text.Trim();
             string sMask = tbMask.Text.Trim();
-            string sNum = tbNum.Text.Trim();
-            if (string.IsNullOrEmpty(tbNum.Text.Trim())) sNum = "0";
+            //string sNum = tbJig.Text.Trim();
+            //if (string.IsNullOrEmpty(tbJig.Text.Trim())) sNum = "0";
+            string sNum = "0";
             string sConts = tbContents.Text.Trim();
             string sJobTimeA = ""; string sJobTimeB = "";
 
@@ -419,102 +527,79 @@ namespace SmartMES_Giroei
             //            dataGridView2.Rows[i].Cells[11].Value = Convert.ToByte(dataGridView2.Rows[i].Cells[11].Value.ToString()) & 0b1110;
             //    }
             //}
-
-            for (int i = 0; i < dataGridView2.Rows.Count; i++)
+            if (SellectedProcess == "SMT")
             {
-                if (dataGridView2.Rows[i].Cells[0].Value.ToString() == rorderID
-                    && dataGridView2.Rows[i].Cells[1].Value.ToString() == rorderSeq)
+                sql = $@"UPDATE SAL_order_sub SET SMTProcessOX = 'O' WHERE order_id = '{@rorderID}' AND order_seq = {@rorderSeq}";
+                m.dbCUD(sql, ref msg);
+
+                if (msg != "OK")
                 {
-                    if (SellectedProcess == "SMT")
-                    {
-                        sql = $@"UPDATE SAL_order_sub SET SMTProcessOX = 'O' WHERE order_id = '{@rorderID}' AND order_seq = {@rorderSeq}";
-                        m.dbCUD(sql, ref msg);
-
-                        if (msg != "OK")
-                        {
-                            lblMsg.Text = msg;
-                            return;
-                        }
-
-                        data = sql;
-                        Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.수정, data);
-
-                        break;
-                    }
-                    if (SellectedProcess == "PCB")
-                    {
-                        sql = $@"UPDATE SAL_order_sub SET PCBProcessOX = 'O' WHERE order_id = '{@rorderID}' AND order_seq = {@rorderSeq}";
-                        m.dbCUD(sql, ref msg);
-
-                        if (msg != "OK")
-                        {
-                            lblMsg.Text = msg;
-                            return;
-                        }
-
-                        data = sql;
-                        Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.수정, data);
-
-                        break;
-                    }
-                    if (SellectedProcess == "조립")
-                    {
-                        sql = $@"UPDATE SAL_order_sub SET AssembleProcessOX = 'O' WHERE order_id = '{@rorderID}' AND order_seq = {@rorderSeq}";
-                        m.dbCUD(sql, ref msg);
-
-                        if (msg != "OK")
-                        {
-                            lblMsg.Text = msg;
-                            return;
-                        }
-
-                        data = sql;
-                        Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.수정, data);
-
-                        break;
-                    }
-                    if (SellectedProcess == "수삽")
-                    {
-                        sql = $@"UPDATE SAL_order_sub SET SusapProcessOX = 'O' WHERE order_id = '{@rorderID}' AND order_seq = {@rorderSeq}";
-                        m.dbCUD(sql, ref msg);
-
-                        if (msg != "OK")
-                        {
-                            lblMsg.Text = msg;
-                            return;
-                        }
-
-                        data = sql;
-                        Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.수정, data);
-
-                        break;
-                    }
+                    lblMsg.Text = msg;
+                    return;
                 }
+
+                data = sql;
+                Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.수정, data);
+            }
+            if (SellectedProcess == "PCB")
+            {
+                sql = $@"UPDATE SAL_order_sub SET PCBProcessOX = 'O' WHERE order_id = '{@rorderID}' AND order_seq = {@rorderSeq}";
+                m.dbCUD(sql, ref msg);
+
+                if (msg != "OK")
+                {
+                    lblMsg.Text = msg;
+                    return;
+                }
+
+                data = sql;
+                Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.수정, data);
+            }
+            if (SellectedProcess == "조립")
+            {
+                sql = $@"UPDATE SAL_order_sub SET AssembleProcessOX = 'O' WHERE order_id = '{@rorderID}' AND order_seq = {@rorderSeq}";
+                m.dbCUD(sql, ref msg);
+
+                if (msg != "OK")
+                {
+                    lblMsg.Text = msg;
+                    return;
+                }
+
+                data = sql;
+                Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.수정, data);
+            }
+            if (SellectedProcess == "수삽")
+            {
+                sql = $@"UPDATE SAL_order_sub SET SusapProcessOX = 'O' WHERE order_id = '{@rorderID}' AND order_seq = {@rorderSeq}";
+                m.dbCUD(sql, ref msg);
+
+                if (msg != "OK")
+                {
+                    lblMsg.Text = msg;
+                    return;
+                }
+
+                data = sql;
+                Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.수정, data);
             }
 
-            for (int i = 0; i < dataGridView2.Rows.Count; i++)
-            {
-                if (dataGridView2.Rows[i].Cells[0].Value.ToString() == rorderID
-                    && dataGridView2.Rows[i].Cells[1].Value.ToString() == rorderSeq)
-                {
-                    sql = $@"SELECT SMTProcessYN, SMTProcessOX, PCBProcessYN, PCBProcessOX, AssembleProcessYN, AssembleProcessOX, SusapProcessYN, SusapProcessOX
-                            FROM SAL_order_sub WHERE order_id = '{@rorderID}' AND order_seq = {@rorderSeq}";
+            sql = $@"SELECT SMTProcessYN, SMTProcessOX, PCBProcessYN, PCBProcessOX, AssembleProcessYN, AssembleProcessOX, SusapProcessYN, SusapProcessOX
+                    FROM SAL_order_sub WHERE order_id = '{@rorderID}' AND order_seq = {@rorderSeq}";
 
-                    DataTable table = m.dbDataTable(sql, ref msg);
+            DataTable table = m.dbDataTable(sql, ref msg);
 
-                    if (table.Rows[0][0].ToString() == "N") ProcessFlag[0] = 1;
-                    else if (table.Rows[0][0].ToString() == "Y") ProcessFlag[0] = table.Rows[0][1].ToString() == "O" ? 1 : 0;
+            if (table.Rows[0][0].ToString() == "N") ProcessFlag[0] = 1;
+            else if (table.Rows[0][0].ToString() == "Y") ProcessFlag[0] = table.Rows[0][1].ToString() == "O" ? 1 : 0;
 
-                    if (table.Rows[0][2].ToString() == "N") ProcessFlag[1] = 1;
-                    else if (table.Rows[0][2].ToString() == "Y") ProcessFlag[1] = table.Rows[0][3].ToString() == "O" ? 1 : 0;
+            if (table.Rows[0][2].ToString() == "N") ProcessFlag[1] = 1;
+            else if (table.Rows[0][2].ToString() == "Y") ProcessFlag[1] = table.Rows[0][3].ToString() == "O" ? 1 : 0;
 
-                    if (table.Rows[0][4].ToString() == "N") ProcessFlag[2] = 1;
-                    else if (table.Rows[0][4].ToString() == "Y") ProcessFlag[2] = table.Rows[0][5].ToString() == "O" ? 1 : 0;
+            if (table.Rows[0][4].ToString() == "N") ProcessFlag[2] = 1;
+            else if (table.Rows[0][4].ToString() == "Y") ProcessFlag[2] = table.Rows[0][5].ToString() == "O" ? 1 : 0;
 
-                    if (table.Rows[0][6].ToString() == "N") ProcessFlag[3] = 1;
-                    else if (table.Rows[0][6].ToString() == "Y") ProcessFlag[3] = table.Rows[0][7].ToString() == "O" ? 1 : 0;
-                }
-            }
+            if (table.Rows[0][6].ToString() == "N") ProcessFlag[3] = 1;
+            else if (table.Rows[0][6].ToString() == "Y") ProcessFlag[3] = table.Rows[0][7].ToString() == "O" ? 1 : 0;
 
             if (ProcessFlag[0] * ProcessFlag[1] * ProcessFlag[2] * ProcessFlag[3] > 0)
             {
@@ -709,9 +794,9 @@ namespace SmartMES_Giroei
             if (rbB.Checked)sRework = "B";
             string sSolder = tbSolder.Text.Trim();
             string sMask = tbMask.Text.Trim();
-            string sUserCnt = tbNum.Text.Trim();
-            if (string.IsNullOrEmpty(tbNum.Text.Trim()))
-                sUserCnt = "0";
+            //string sUserCnt = tbJig.Text.Trim();
+            //if (string.IsNullOrEmpty(tbJig.Text.Trim()))
+            string sUserCnt = "0";
             string sContents = tbContents.Text.Trim();
             string sJobTimeA = "";
             string sJobTimeB = "";
@@ -780,8 +865,8 @@ namespace SmartMES_Giroei
             if (rbB.Checked) sRework = "B";
             string sSolder = tbSolder.Text.Trim();
             string sMask = tbMask.Text.Trim();
-            string sUserCnt = tbNum.Text.Trim();
-            if (string.IsNullOrEmpty(tbNum.Text.Trim())) sUserCnt = "0";
+            string sUserCnt = tbJig.Text.Trim();
+            if (string.IsNullOrEmpty(tbJig.Text.Trim())) sUserCnt = "0";
             string sContents = tbContents.Text.Trim();
             string sJobTimeA = ""; string sJobTimeB = "";
             string sGdQty = tbGdQty.Text.Replace(",", "").Trim(); string sNgQty = tbNgQty.Text.Replace(",", "").Trim();
@@ -920,9 +1005,9 @@ namespace SmartMES_Giroei
             }
 
             string sDate = dtpDate.Value.ToString("yyyy-MM-dd");
-            string sUserCnt = tbNum.Text;
-            if (string.IsNullOrEmpty(sUserCnt)) sUserCnt = "0";
-
+            //string sUserCnt = tbJig.Text;
+            //if (string.IsNullOrEmpty(sUserCnt)) sUserCnt = "0";
+            string sUserCnt = "0";
             string msg = string.Empty;
             MariaCRUD m = new MariaCRUD();
             string sql = string.Empty;
@@ -965,8 +1050,9 @@ namespace SmartMES_Giroei
             if (rbB.Checked) sRework = "B";
             string sSolder = tbSolder.Text.Trim();
             string sMask = tbMask.Text.Trim();
-            string sUserCnt = tbNum.Text.Trim();
-            if (string.IsNullOrEmpty(tbNum.Text.Trim())) sUserCnt = "0";
+            //string sUserCnt = tbJig.Text.Trim();
+            //if (string.IsNullOrEmpty(tbJig.Text.Trim())) sUserCnt = "0";
+            string sUserCnt = "0";
             string sContents = tbContents.Text.Trim();
             string sJobTimeA = ""; string sJobTimeB = "";
             string sQty = tbQty.Text.Replace(",", "").Trim();

@@ -66,7 +66,6 @@
             this.MM번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.시작시간 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.종료시간 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.작업자 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.지시사항 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수주일자 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.책임자ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -78,6 +77,7 @@
             this.양품수량 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.불량수량 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ZIG = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -265,7 +265,6 @@
             this.MM번호,
             this.시작시간,
             this.종료시간,
-            this.작업자,
             this.지시사항,
             this.수주일자,
             this.책임자ID,
@@ -276,7 +275,8 @@
             this.작업종료,
             this.양품수량,
             this.불량수량,
-            this.Column1});
+            this.Column1,
+            this.ZIG});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPProdOrderQueryBindingSource;
             dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -484,14 +484,6 @@
             this.종료시간.ReadOnly = true;
             this.종료시간.Visible = false;
             // 
-            // 작업자
-            // 
-            this.작업자.DataPropertyName = "작업자";
-            this.작업자.HeaderText = "작업자";
-            this.작업자.Name = "작업자";
-            this.작업자.ReadOnly = true;
-            this.작업자.Visible = false;
-            // 
             // 지시사항
             // 
             this.지시사항.DataPropertyName = "지시사항";
@@ -580,6 +572,14 @@
             this.Column1.ReadOnly = true;
             this.Column1.Visible = false;
             // 
+            // ZIG
+            // 
+            this.ZIG.DataPropertyName = "ZIG";
+            this.ZIG.HeaderText = "ZIG";
+            this.ZIG.Name = "ZIG";
+            this.ZIG.ReadOnly = true;
+            this.ZIG.Visible = false;
+            // 
             // P1C01_PROD_ORDER
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -653,7 +653,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn MM번호;
         private System.Windows.Forms.DataGridViewTextBoxColumn 시작시간;
         private System.Windows.Forms.DataGridViewTextBoxColumn 종료시간;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 작업자;
         private System.Windows.Forms.DataGridViewTextBoxColumn 지시사항;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수주일자;
         private System.Windows.Forms.DataGridViewTextBoxColumn 책임자ID;
@@ -665,5 +664,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 양품수량;
         private System.Windows.Forms.DataGridViewTextBoxColumn 불량수량;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ZIG;
     }
 }

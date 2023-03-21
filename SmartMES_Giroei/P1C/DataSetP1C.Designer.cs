@@ -9754,6 +9754,12 @@ namespace SmartMES_Giroei.P1C {
             
             private global::System.Data.DataColumn column수주수량;
             
+            private global::System.Data.DataColumn column솔더;
+            
+            private global::System.Data.DataColumn column발주번호;
+            
+            private global::System.Data.DataColumn columnZIG;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_ProdOrder_ProcessDataTable() {
@@ -9917,6 +9923,30 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 솔더Column {
+                get {
+                    return this.column솔더;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 발주번호Column {
+                get {
+                    return this.column발주번호;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ZIGColumn {
+                get {
+                    return this.columnZIG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -9968,7 +9998,10 @@ namespace SmartMES_Giroei.P1C {
                         string PCB진행여부, 
                         string 조립진행여부, 
                         string 수삽진행여부, 
-                        int 수주수량) {
+                        int 수주수량, 
+                        string 솔더, 
+                        string 발주번호, 
+                        string ZIG) {
                 SP_ProdOrder_ProcessRow rowSP_ProdOrder_ProcessRow = ((SP_ProdOrder_ProcessRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         수주번호,
@@ -9986,7 +10019,10 @@ namespace SmartMES_Giroei.P1C {
                         PCB진행여부,
                         조립진행여부,
                         수삽진행여부,
-                        수주수량};
+                        수주수량,
+                        솔더,
+                        발주번호,
+                        ZIG};
                 rowSP_ProdOrder_ProcessRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_ProdOrder_ProcessRow);
                 return rowSP_ProdOrder_ProcessRow;
@@ -10025,6 +10061,9 @@ namespace SmartMES_Giroei.P1C {
                 this.column조립진행여부 = base.Columns["조립진행여부"];
                 this.column수삽진행여부 = base.Columns["수삽진행여부"];
                 this.column수주수량 = base.Columns["수주수량"];
+                this.column솔더 = base.Columns["솔더"];
+                this.column발주번호 = base.Columns["발주번호"];
+                this.columnZIG = base.Columns["ZIG"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10062,6 +10101,12 @@ namespace SmartMES_Giroei.P1C {
                 base.Columns.Add(this.column수삽진행여부);
                 this.column수주수량 = new global::System.Data.DataColumn("수주수량", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column수주수량);
+                this.column솔더 = new global::System.Data.DataColumn("솔더", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column솔더);
+                this.column발주번호 = new global::System.Data.DataColumn("발주번호", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column발주번호);
+                this.columnZIG = new global::System.Data.DataColumn("ZIG", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnZIG);
                 this.column수주번호.AllowDBNull = false;
                 this.column수주번호.MaxLength = 13;
                 this.column수주순번.AllowDBNull = false;
@@ -10085,6 +10130,9 @@ namespace SmartMES_Giroei.P1C {
                 this.columnPCB진행여부.MaxLength = 1;
                 this.column조립진행여부.MaxLength = 1;
                 this.column수삽진행여부.MaxLength = 1;
+                this.column솔더.MaxLength = 50;
+                this.column발주번호.MaxLength = 13;
+                this.columnZIG.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10279,6 +10327,8 @@ namespace SmartMES_Giroei.P1C {
             private global::System.Data.DataColumn column작업라인;
             
             private global::System.Data.DataColumn column경과시간;
+            
+            private global::System.Data.DataColumn columnZIG;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -10563,6 +10613,14 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn ZIGColumn {
+                get {
+                    return this.columnZIG;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -10629,7 +10687,8 @@ namespace SmartMES_Giroei.P1C {
                         int 양품수량, 
                         int 불량수량, 
                         string 작업라인, 
-                        System.TimeSpan 경과시간) {
+                        System.TimeSpan 경과시간, 
+                        string ZIG) {
                 SP_ProdOrder_QueryRow rowSP_ProdOrder_QueryRow = ((SP_ProdOrder_QueryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         일자,
@@ -10662,7 +10721,8 @@ namespace SmartMES_Giroei.P1C {
                         양품수량,
                         불량수량,
                         작업라인,
-                        경과시간};
+                        경과시간,
+                        ZIG};
                 rowSP_ProdOrder_QueryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_ProdOrder_QueryRow);
                 return rowSP_ProdOrder_QueryRow;
@@ -10716,6 +10776,7 @@ namespace SmartMES_Giroei.P1C {
                 this.column불량수량 = base.Columns["불량수량"];
                 this.column작업라인 = base.Columns["작업라인"];
                 this.column경과시간 = base.Columns["경과시간"];
+                this.columnZIG = base.Columns["ZIG"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -10783,6 +10844,8 @@ namespace SmartMES_Giroei.P1C {
                 base.Columns.Add(this.column작업라인);
                 this.column경과시간 = new global::System.Data.DataColumn("경과시간", typeof(global::System.TimeSpan), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column경과시간);
+                this.columnZIG = new global::System.Data.DataColumn("ZIG", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnZIG);
                 this.column일자.AllowDBNull = false;
                 this.columnLotNo.AllowDBNull = false;
                 this.columnLotNo.MaxLength = 13;
@@ -10808,6 +10871,7 @@ namespace SmartMES_Giroei.P1C {
                 this.column책임자.MaxLength = 50;
                 this.column완료여부.MaxLength = 3;
                 this.column작업라인.MaxLength = 4;
+                this.columnZIG.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19256,6 +19320,54 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 솔더 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdOrder_Process.솔더Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdOrder_Process\' 테이블의 \'솔더\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdOrder_Process.솔더Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 발주번호 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdOrder_Process.발주번호Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdOrder_Process\' 테이블의 \'발주번호\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdOrder_Process.발주번호Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string ZIG {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdOrder_Process.ZIGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdOrder_Process\' 테이블의 \'ZIG\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdOrder_Process.ZIGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is납기요청일Null() {
                 return this.IsNull(this.tableSP_ProdOrder_Process.납기요청일Column);
             }
@@ -19324,6 +19436,42 @@ namespace SmartMES_Giroei.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set수주수량Null() {
                 this[this.tableSP_ProdOrder_Process.수주수량Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is솔더Null() {
+                return this.IsNull(this.tableSP_ProdOrder_Process.솔더Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set솔더Null() {
+                this[this.tableSP_ProdOrder_Process.솔더Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is발주번호Null() {
+                return this.IsNull(this.tableSP_ProdOrder_Process.발주번호Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set발주번호Null() {
+                this[this.tableSP_ProdOrder_Process.발주번호Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsZIGNull() {
+                return this.IsNull(this.tableSP_ProdOrder_Process.ZIGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetZIGNull() {
+                this[this.tableSP_ProdOrder_Process.ZIGColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -19804,6 +19952,22 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string ZIG {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdOrder_Query.ZIGColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdOrder_Query\' 테이블의 \'ZIG\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdOrder_Query.ZIGColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is수주번호Null() {
                 return this.IsNull(this.tableSP_ProdOrder_Query.수주번호Column);
             }
@@ -20088,6 +20252,18 @@ namespace SmartMES_Giroei.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set경과시간Null() {
                 this[this.tableSP_ProdOrder_Query.경과시간Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsZIGNull() {
+                return this.IsNull(this.tableSP_ProdOrder_Query.ZIGColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetZIGNull() {
+                this[this.tableSP_ProdOrder_Query.ZIGColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -27434,6 +27610,9 @@ namespace SmartMES_Giroei.P1C.DataSetP1CTableAdapters {
             tableMapping.ColumnMappings.Add("조립진행여부", "조립진행여부");
             tableMapping.ColumnMappings.Add("수삽진행여부", "수삽진행여부");
             tableMapping.ColumnMappings.Add("수주수량", "수주수량");
+            tableMapping.ColumnMappings.Add("솔더", "솔더");
+            tableMapping.ColumnMappings.Add("발주번호", "발주번호");
+            tableMapping.ColumnMappings.Add("ZIG", "ZIG");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -27690,6 +27869,7 @@ namespace SmartMES_Giroei.P1C.DataSetP1CTableAdapters {
             tableMapping.ColumnMappings.Add("불량수량", "불량수량");
             tableMapping.ColumnMappings.Add("작업라인", "작업라인");
             tableMapping.ColumnMappings.Add("경과시간", "경과시간");
+            tableMapping.ColumnMappings.Add("ZIG", "ZIG");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
