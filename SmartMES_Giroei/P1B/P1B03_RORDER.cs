@@ -343,8 +343,6 @@ namespace SmartMES_Giroei
         #region GridView Events
         private void dataGridViewList_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            string sNo = tbNo.Text;
-
             if (e.RowIndex < 0) return;
 
             int index = dataGridViewList.CurrentRow.Index;
@@ -352,16 +350,6 @@ namespace SmartMES_Giroei
             ListSearch2(index);
             ListSearch3();
             ListSearch4();
-
-            if (MessageBox.Show("상세정보를 입력하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            {
-                tbNo.Text = sNo;
-                P1B03_RORDER_DETAIL rd = new P1B03_RORDER_DETAIL();
-                rd.rowIndex = 0;
-                rd.parentWin = this;
-
-                rd.ShowDialog();
-            }
         }
         private void dataGridView1_KeyDown(object sender, KeyEventArgs e)
         {
@@ -1051,17 +1039,17 @@ namespace SmartMES_Giroei
                 }
             }
 
-            //if (MessageBox.Show("상세정보를 입력하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
-            //{
-            //    tbNo.Text = sNo;
-            //    P1B03_RORDER_DETAIL rd = new P1B03_RORDER_DETAIL();
-            //    rd.rowIndex = 0;
-            //    rd.parentWin = this;
-
-            //    rd.ShowDialog();
-            //}
-            //tbSearch.Text = "sNo";
-            tbSearch.Text = sNo;
+            if (MessageBox.Show("상세정보를 입력하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                tbNo.Text = sNo;
+                P1B03_RORDER_DETAIL rd = new P1B03_RORDER_DETAIL();
+                rd.rowIndex = 0;
+                rd.parentWin = this;
+                rd._sNo = sNo;
+                rd._sSeq = sSeq;
+                rd.ShowDialog();
+            }
+            tbSearch.Text = "";
             ListSearch1();
 
             for (int i = 0; i < dataGridViewList.Rows.Count; i++)

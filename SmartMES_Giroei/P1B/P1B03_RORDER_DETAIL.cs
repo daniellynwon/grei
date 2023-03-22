@@ -10,6 +10,8 @@ namespace SmartMES_Giroei
     {
         public P1B03_RORDER parentWin;
         public int rowIndex;
+        public string _sNo;
+        public string _sSeq;
 
         public P1B03_RORDER_DETAIL()
         {
@@ -18,8 +20,6 @@ namespace SmartMES_Giroei
 
         private void P1B03_RORDER_DETAIL_Load(object sender, EventArgs e)
         {
-            ListSearch();
-
             DataTable table;
 
             string sql = string.Empty;
@@ -197,8 +197,8 @@ namespace SmartMES_Giroei
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-                string sOrderID = parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString();
-                string sSeq = parentWin.dataGridView1.Rows[rowIndex].Cells[1].Value.ToString();
+            string sOrderID = _sNo;
+            string sSeq = _sSeq;
 
                 string pcbQty = tbPcbQty.Text.Trim() == "" ? "0" : tbPcbQty.Text.Trim();
                 string maskQty = tbMaskQty.Text.Trim() == "" ? "0" : tbMaskQty.Text.Trim();
@@ -322,7 +322,7 @@ namespace SmartMES_Giroei
                 m.dbCUD(sql, ref msg);
                 if (msg == "OK")
                 lbNotice.Text = "저장되었습니다.";
-                ListSearch();
+                //ListSearch();
             }
 
 
