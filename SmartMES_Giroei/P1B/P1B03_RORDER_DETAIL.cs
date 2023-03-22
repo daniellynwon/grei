@@ -146,8 +146,9 @@ namespace SmartMES_Giroei
                         tbMaskSizeL.Text = row[i][15].ToString();
                         tbMaskQty.Text = row[i][9].ToString();
                         tbMaskUnit.Text = row[i][10].ToString();
-                        tbMaskOerderNum.Text = row[i][27].ToString();
+                        tbMaskOerderNum.Text = row[i][39].ToString();
                         rtbMaskBigo.Text = row[i][37].ToString();
+                        tbSolderSpec.Text = row[i][38].ToString();
                     }
                     if (gubun == "3")
                     {
@@ -255,12 +256,14 @@ namespace SmartMES_Giroei
                 //string maskQty = tbMaskQty.Text;
                 string maskUnit = tbMaskUnit.Text;
                 string maskBigo = rtbMaskBigo.Text;
+                string maskSolder = tbSolderSpec.Text;
+                string maskNum = tbMaskOerderNum.Text;
 
-                sql = $@"INSERT INTO SAL_order_sub_detail (order_id, order_seq, proc_id, cust_id, cost, zig_cost, dtPayment, dtOrder, dtDueDate, qty, unit, TOP, BOTTOM, ZIG, size_W, size_L, bigo) 
-                                VALUES('{@sOrderID}', {@sSeq}, 2, '{maskComp}', {maskCost}, {maskZigCost}, '{maskPayDate}', '{maskOrderDate}', '{maskDueDate}', {maskQty}, '{maskUnit}', '{maskTOP}', '{maskBOT}',  '{maskZig}', {maskSizeW}, {maskSizeL},'{maskBigo}')
+                sql = $@"INSERT INTO SAL_order_sub_detail (order_id, order_seq, proc_id, cust_id, cost, zig_cost, dtPayment, dtOrder, dtDueDate, qty, unit, TOP, BOTTOM, ZIG, Solder, OerderNum, size_W, size_L, bigo) 
+                                VALUES('{@sOrderID}', {@sSeq}, 2, '{maskComp}', {maskCost}, {maskZigCost}, '{maskPayDate}', '{maskOrderDate}', '{maskDueDate}', {maskQty}, '{maskUnit}', '{maskTOP}', '{maskBOT}', '{maskZig}', '{maskNum}', '{maskSolder}', {maskSizeW}, {maskSizeL},'{maskBigo}')
                             ON DUPLICATE KEY UPDATE 
                                 cust_id = '{maskComp}', cost = {maskCost}, zig_cost = {maskZigCost}, dtPayment = '{maskPayDate}', dtOrder = '{maskOrderDate}', dtDueDate = '{maskDueDate}', qty = {maskQty}, unit = '{maskUnit}', TOP = '{maskTOP}', BOTTOM = '{maskBOT}', 
-                                ZIG = '{maskZig}', size_W = '{maskSizeW}', size_L = '{maskSizeL}', bigo = '{maskBigo}'";
+                                ZIG = '{maskZig}', Solder = '{maskSolder}', OerderNum = '{maskNum}' , size_W = '{maskSizeW}', size_L = '{maskSizeL}', bigo = '{maskBigo}'";
                 m.dbCUD(sql, ref msg);
             }
             {

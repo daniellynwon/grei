@@ -103,7 +103,8 @@ namespace SmartMES_Giroei
                 tbMatptbot.Text = dataGridView.Rows[rowIndex].Cells[12].Value.ToString();
                 tbInstTop.Text = dataGridView.Rows[rowIndex].Cells[13].Value.ToString();
                 tbInstBot.Text = dataGridView.Rows[rowIndex].Cells[14].Value.ToString();
-                if (tbGdQty.Text == "0") tbGdQty.Text = ""; if (tbNgQty.Text == "0") tbNgQty.Text = "";
+                tbJobNo.Text = dataGridView.Rows[rowIndex].Cells[45].Value.ToString();
+                tbMakeQty.Text = dataGridView.Rows[rowIndex].Cells[49].Value.ToString();
 
                 if (dataGridView.Rows[rowIndex].Cells[15].Value == null || string.IsNullOrEmpty(dataGridView.Rows[rowIndex].Cells[15].Value.ToString()))
                     tbJobTimeStart.Text = "";
@@ -408,9 +409,9 @@ namespace SmartMES_Giroei
             if (string.IsNullOrEmpty(sPtt)) sPtt = "0"; if (string.IsNullOrEmpty(sPtb)) sPtb = "0";
             if (string.IsNullOrEmpty(sInstt)) sInstt = "0"; if (string.IsNullOrEmpty(sInstb)) sInstb = "0";
 
-            sql = "update PRD_prod_result set work_line = '" + sWork + "', good_qty = " + sGdQty + ", bad_qty = " + sNgQty + ", mat_num_top = " + sNumt + "mat_num_bot = " + sNumb + ", mat_point_top = " + sPtt +
+            sql = "update PRD_prod_result set work_line = '" + sWork + "', good_qty = " + sGdQty + ", bad_qty = " + sNgQty + ", mat_num_top = " + sNumt + ", mat_num_bot = " + sNumb + ", mat_point_top = " + sPtt +
                 ", mat_point_bot = " + sPtb + ", manual_insert_top = " + sInstt + ", manual_insert_bot = " + sInstb + ", num_workers = " + sUserCnt + ", contents = '" + tbContents.Text.Trim() + "'" +
-                    " where job_no = '" + lblLotNo.Text + "'";
+                    " where job_no = '" + tbJobNo.Text + "'";
 
             m.dbCUD(sql, ref msg);
 

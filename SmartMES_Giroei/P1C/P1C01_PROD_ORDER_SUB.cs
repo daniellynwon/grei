@@ -107,7 +107,7 @@ namespace SmartMES_Giroei
                 cbMan.SelectedValue = parentWin.dataGridView1.Rows[rowIndex].Cells[21].Value;      // 책임자ID
                 //tbJobTimeStart.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[25].Value.ToString();      // 작업시작
                 tbJobTimeFinish.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[26].Value.ToString();      // 작업종료
-                tbGdQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[27].Value.ToString();      // 양품수량
+                tbMakeQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[27].Value.ToString();      // 양품수량
                 tbNgQty.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[28].Value.ToString();      // 불량수량
                 cbWorkLine.SelectedValue = parentWin.dataGridView1.Rows[rowIndex].Cells[29].Value;      // 생산라인
                 tbRorderNo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[13].Value.ToString();    // 수주번호
@@ -493,7 +493,7 @@ namespace SmartMES_Giroei
 
                 //if (msgQty == "OK") sSujuQty = com;
             }
-            string sql = "insert into PRD_prod_order (job_no, prod_id, prod_name, order_id, order_seq, job_type, plant, work_line, lot_date, order_qty, solder_type, mmask_id, " +
+            string sql = "insert into PRD_prod_order (job_no, prod_id, prod_name, order_id, order_seq, job_type, plant, work_line, lot_date, order_qty, solder_type, mj_orderid, " +
                                                 "job_start_time, job_end_time, num_workers, job_comment, work_man_id, enter_man) " +
                 "values('" + sJobNo + "','" + sProd + "','" + sProdName + "','" + rorderID + "'," + rorderSeq + ",'" + sRework + "','" + G.Pos + "','" + sProdLine + "','" + sDate + "'," + sQty + ",'"
                 + sSolder + "','" + sMask + "',now(),now()," + sNum + ",'" + sConts + "','" + sMan + "','" + G.UserID + "')";
@@ -800,19 +800,15 @@ namespace SmartMES_Giroei
             string sContents = tbContents.Text.Trim();
             string sJobTimeA = "";
             string sJobTimeB = "";
-            string sGdQty = tbGdQty.Text.Replace(",", "").Trim();
-            string sNgQty = tbNgQty.Text.Replace(",", "").Trim();
-            if (string.IsNullOrEmpty(sGdQty))
-                sGdQty = "0";
-            if (string.IsNullOrEmpty(sNgQty))
-                sNgQty = "0";
+            string sMakeQty = tbMakeQty.Text.Replace(",", "").Trim(); string sNgQty = tbNgQty.Text = "0"; string sGdQty = tbGdQty.Text = "0";
+            if (string.IsNullOrEmpty(sMakeQty)) sMakeQty = "0";
 
             string msg = string.Empty;
             MariaCRUD m = new MariaCRUD();
             string sql = string.Empty;
 
-            sql = "insert into PRD_prod_result (job_no, plant, work_line, prod_date, good_qty, bad_qty, job_part, num_workers, contents, enter_man) " +
-                    "values('" + tbJobNo.Text + "','" + G.Pos + "','" + sProdLine + "','" + sDate + "'," + sGdQty + "," + sNgQty + ",'A'," + sUserCnt + ",'" + sContents + "','" + G.UserID + "') ";
+            sql = "insert into PRD_prod_result (job_no, plant, work_line, prod_date, make_qty, good_qty, bad_qty, job_part, num_workers, contents, enter_man) " +
+                    "values('" + tbJobNo.Text + "','" + G.Pos + "','" + sProdLine + "','" + sDate + "'," + sMakeQty + "," + sGdQty + "," + sNgQty + ",'A'," + sUserCnt + ",'" + sContents + "','" + G.UserID + "') ";
             m.dbCUD(sql, ref msg);
 
             if (msg != "OK")
@@ -869,8 +865,8 @@ namespace SmartMES_Giroei
             if (string.IsNullOrEmpty(tbJig.Text.Trim())) sUserCnt = "0";
             string sContents = tbContents.Text.Trim();
             string sJobTimeA = ""; string sJobTimeB = "";
-            string sGdQty = tbGdQty.Text.Replace(",", "").Trim(); string sNgQty = tbNgQty.Text.Replace(",", "").Trim();
-            if (string.IsNullOrEmpty(sGdQty)) sGdQty = "0"; if (string.IsNullOrEmpty(sNgQty)) sNgQty = "0";
+            string sMakeQty = tbMakeQty.Text.Replace(",", "").Trim(); string sNgQty = tbNgQty.Text = "0"; string sGdQty = tbGdQty.Text = "0";
+            if (string.IsNullOrEmpty(sMakeQty)) sMakeQty = "0";
 
             string msg = string.Empty;
             MariaCRUD m = new MariaCRUD();
@@ -998,9 +994,14 @@ namespace SmartMES_Giroei
                 //else Update();
                 return;
             }
-            if (string.IsNullOrEmpty(tbGdQty.Text) || tbGdQty.Text == "0")
+            if (string.IsNullOrEmpty(tbQty.Text) || tbQty.Text == "0")
             {
-                lblMsg.Text = "양품수량이 입력되지 않았습니다.";
+                lblMsg.Text = "지시수량이 입력되지 않았습니다.";
+                return;
+            }
+            if (string.IsNullOrEmpty(tbMakeQty.Text) || tbMakeQty.Text == "0")
+            {
+                lblMsg.Text = "생산수량이 입력되지 않았습니다.";
                 return;
             }
 
@@ -1014,13 +1015,13 @@ namespace SmartMES_Giroei
 
             string sWork = cbWorkLine.SelectedValue.ToString();
             string sQty = tbQty.Text.Replace(",", "").Trim();
-            string sGdQty = tbGdQty.Text.Replace(",", "").Trim(); string sNgQty = tbNgQty.Text.Replace(",", "").Trim();
-            if (string.IsNullOrEmpty(sGdQty)) sGdQty = "0"; if (string.IsNullOrEmpty(sNgQty)) sNgQty = "0";
+            string sMakeQty = tbMakeQty.Text.Replace(",", "").Trim(); string sNgQty = tbNgQty.Text = "0"; string sGdQty = tbGdQty.Text = "0";
+            if (string.IsNullOrEmpty(sMakeQty)) sMakeQty = "0";
 
             sql = "update PRD_prod_order set order_qty = " + sQty + " where job_no = '" + tbJobNo.Text + "'";   // 지시수량 update
             m.dbCUD(sql, ref msg);
 
-            sql = "update PRD_prod_result set work_line = '" + sWork + "', good_qty = " + sGdQty + ", bad_qty = " + sNgQty + ", job_end_time = now(), num_workers = " + sUserCnt + ", contents = '" + tbContents.Text.Trim() + "', jobendYN = 'Y'" +
+            sql = "update PRD_prod_result set work_line = '" + sWork + "', make_qty = " + sMakeQty + ", good_qty = " + sGdQty + ", bad_qty = " + sNgQty + ", job_end_time = now(), num_workers = " + sUserCnt + ", contents = '" + tbContents.Text.Trim() + "', jobendYN = 'Y'" +
                     " where job_no = '" + tbJobNo.Text + "'";
             m.dbCUD(sql, ref msg);
 
@@ -1056,8 +1057,8 @@ namespace SmartMES_Giroei
             string sContents = tbContents.Text.Trim();
             string sJobTimeA = ""; string sJobTimeB = "";
             string sQty = tbQty.Text.Replace(",", "").Trim();
-            string sGdQty = tbGdQty.Text.Replace(",", "").Trim(); string sNgQty = tbNgQty.Text.Replace(",", "").Trim();
-            if (string.IsNullOrEmpty(sGdQty)) sGdQty = "0"; if (string.IsNullOrEmpty(sNgQty)) sNgQty = "0";
+            string sMakeQty = tbMakeQty.Text.Replace(",", "").Trim(); string sNgQty = tbNgQty.Text = "0"; string sGdQty = tbGdQty.Text = "0";
+            if (string.IsNullOrEmpty(sMakeQty)) sMakeQty = "0";
             if (string.IsNullOrEmpty(rorderSeq)) rorderSeq = "null";
 
 
@@ -1069,7 +1070,7 @@ namespace SmartMES_Giroei
             m.dbCUD(sql, ref msg);
 
             // update로 변경..
-            sql = "update PRD_prod_result set work_line = '" + sProdLine + "', prod_date = '" + sDate + "', good_qty = " + sGdQty + ", bad_qty = " + sNgQty + ", job_part = 'A', num_workers = " + sUserCnt + ", contents = '" + sContents + "', enter_man = '" + G.UserID + "'" +
+            sql = "update PRD_prod_result set work_line = '" + sProdLine + "', prod_date = '" + sDate + "',make_qty = " + sMakeQty + ", good_qty = " + sGdQty + ", bad_qty = " + sNgQty + ", job_part = 'A', num_workers = " + sUserCnt + ", contents = '" + sContents + "', enter_man = '" + G.UserID + "'" +
                 " where job_no = '" + sJobNo + "'";
 
             m.dbCUD(sql, ref msg);
