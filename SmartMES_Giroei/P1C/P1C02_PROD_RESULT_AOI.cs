@@ -78,7 +78,7 @@ namespace SmartMES_Giroei
             if (table.Rows.Count < 1) {
                 lblMsg.Text = "저장된 Detail정보가 없습니다.";
                 isNew = true;
-                dTFromTime.Value = dTToTime.Value = DateTime.Now;
+                dTFromTime.Text = dTToTime.Text = "";
                 tbInspCount.Text = "0";
                 tbTotalDefect.Text = "0";
                 tbSonap.Text = "0";
@@ -99,8 +99,8 @@ namespace SmartMES_Giroei
                 {
                     //dTFromTime.Text = row[0][2].ToString();
                     //dTToTime.Text = row[0][3].ToString();
-                    dTFromTime.Value = Convert.ToDateTime(row[0][1].ToString());
-                    dTToTime.Value = Convert.ToDateTime(row[0][2].ToString());
+                    dTFromTime.Text = (row[0][1].ToString());
+                    dTToTime.Text = (row[0][2].ToString());
                     tbInspCount.Text = row[0][3].ToString();
                     tbTotalDefect.Text = row[0][4].ToString();
                     tbSonap.Text = row[0][5].ToString();
@@ -150,8 +150,8 @@ namespace SmartMES_Giroei
                 
             string sFname1 = lbFname1.Text;
             string sFname2 = lbFname2.Text;
-            string sInspFromTime = dTFromTime.Value.ToString("yyyy-MM-dd HH:mm:ss");
-            string sInspToTime = dTToTime.Value.ToString("yyyy-MM-dd HH:mm:ss");
+            string sInspFromTime = dTFromTime.Text;
+            string sInspToTime = dTToTime.Text;
 
 
             string sql = string.Empty;
@@ -304,6 +304,38 @@ namespace SmartMES_Giroei
         }
         #endregion
 
+        #region 검사시작/검사종료
+        private void btnStart_Click(object sender, EventArgs e)
+        {
+            //if (!string.IsNullOrEmpty(dTFromTime.Text))
+            //{
+            //    lblMsg.Text = "이미 시작된 검사입니다.";
+            //    return;
+            //}
+            //if (!string.IsNullOrEmpty(dTToTime.Text))
+            //{
+            //    lblMsg.Text = "이미 종료된 검사입니다.";
+            //    return;
+            //}
 
+            dTFromTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+
+        }
+        private void btnFinish_Click(object sender, EventArgs e)
+        {
+            //if (string.IsNullOrEmpty(dTFromTime.Text))
+            //{
+            //    lblMsg.Text = "검사가 시작되지 않았습니다.";
+            //    return;
+            //}
+            //if (!string.IsNullOrEmpty(dTToTime.Text))
+            //{
+            //    lblMsg.Text = "이미 종료된 검사입니다.";
+            //    return;
+            //}
+
+            dTToTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
+        }
+        #endregion
     }
 }

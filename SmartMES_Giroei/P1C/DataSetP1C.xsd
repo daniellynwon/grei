@@ -866,7 +866,7 @@
       </DataSource>
     </xs:appinfo>
   </xs:annotation>
-  <xs:element name="DataSetP1C" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetP1C" msprop:Generator_UserDSName="DataSetP1C">
+  <xs:element name="DataSetP1C" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msdata:EnforceConstraints="False" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetP1C" msprop:Generator_UserDSName="DataSetP1C">
     <xs:complexType>
       <xs:choice minOccurs="0" maxOccurs="unbounded">
         <xs:element name="SP_Z_Common_ID" msprop:Generator_TableClassName="SP_Z_Common_IDDataTable" msprop:Generator_TableVarName="tableSP_Z_Common_ID" msprop:Generator_TablePropName="SP_Z_Common_ID" msprop:Generator_RowDeletingName="SP_Z_Common_IDRowDeleting" msprop:Generator_RowChangingName="SP_Z_Common_IDRowChanging" msprop:Generator_RowEvHandlerName="SP_Z_Common_IDRowChangeEventHandler" msprop:Generator_RowDeletedName="SP_Z_Common_IDRowDeleted" msprop:Generator_UserTableName="SP_Z_Common_ID" msprop:Generator_RowChangedName="SP_Z_Common_IDRowChanged" msprop:Generator_RowEvArgName="SP_Z_Common_IDRowChangeEvent" msprop:Generator_RowClassName="SP_Z_Common_IDRow">
@@ -2205,35 +2205,35 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="수주번호" msprop:Generator_ColumnVarNameInTable="column수주번호" msprop:Generator_ColumnPropNameInRow="수주번호" msprop:Generator_ColumnPropNameInTable="수주번호Column" msprop:Generator_UserColumnName="수주번호" minOccurs="0">
+              <xs:element name="수주번호" msprop:Generator_ColumnVarNameInTable="column수주번호" msprop:Generator_ColumnPropNameInRow="수주번호" msprop:Generator_ColumnPropNameInTable="수주번호Column" msprop:Generator_UserColumnName="수주번호">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="13" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="거래처코드" msprop:Generator_ColumnVarNameInTable="column거래처코드" msprop:Generator_ColumnPropNameInRow="거래처코드" msprop:Generator_ColumnPropNameInTable="거래처코드Column" msprop:Generator_UserColumnName="거래처코드" minOccurs="0">
+              <xs:element name="거래처코드" msprop:Generator_ColumnVarNameInTable="column거래처코드" msprop:Generator_ColumnPropNameInRow="거래처코드" msprop:Generator_ColumnPropNameInTable="거래처코드Column" msprop:Generator_UserColumnName="거래처코드">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="7" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="거래처명" msprop:Generator_ColumnVarNameInTable="column거래처명" msprop:Generator_ColumnPropNameInRow="거래처명" msprop:Generator_ColumnPropNameInTable="거래처명Column" msprop:Generator_UserColumnName="거래처명" minOccurs="0">
+              <xs:element name="거래처명" msprop:Generator_ColumnVarNameInTable="column거래처명" msprop:Generator_ColumnPropNameInRow="거래처명" msprop:Generator_ColumnPropNameInTable="거래처명Column" msprop:Generator_UserColumnName="거래처명">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="프로젝트명" msprop:Generator_ColumnVarNameInTable="column프로젝트명" msprop:Generator_ColumnPropNameInRow="프로젝트명" msprop:Generator_ColumnPropNameInTable="프로젝트명Column" msprop:Generator_UserColumnName="프로젝트명" minOccurs="0">
+              <xs:element name="프로젝트명" msprop:Generator_ColumnVarNameInTable="column프로젝트명" msprop:Generator_ColumnPropNameInRow="프로젝트명" msprop:Generator_ColumnPropNameInTable="프로젝트명Column" msprop:Generator_UserColumnName="프로젝트명">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="납기" msprop:Generator_ColumnVarNameInTable="column납기" msprop:Generator_ColumnPropNameInRow="납기" msprop:Generator_ColumnPropNameInTable="납기Column" msprop:Generator_UserColumnName="납기" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="납기" msprop:Generator_ColumnVarNameInTable="column납기" msprop:Generator_ColumnPropNameInRow="납기" msprop:Generator_ColumnPropNameInTable="납기Column" msprop:Generator_UserColumnName="납기" type="xs:dateTime" />
               <xs:element name="품목코드" msprop:Generator_ColumnVarNameInTable="column품목코드" msprop:Generator_ColumnPropNameInRow="품목코드" msprop:Generator_ColumnPropNameInTable="품목코드Column" msprop:Generator_UserColumnName="품목코드">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -2248,44 +2248,44 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="규격" msprop:Generator_ColumnVarNameInTable="column규격" msprop:Generator_ColumnPropNameInRow="규격" msprop:Generator_ColumnPropNameInTable="규격Column" msprop:Generator_UserColumnName="규격" minOccurs="0">
+              <xs:element name="규격" msprop:Generator_ColumnVarNameInTable="column규격" msprop:Generator_ColumnPropNameInRow="규격" msprop:Generator_ColumnPropNameInTable="규격Column" msprop:Generator_UserColumnName="규격">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="유형" msprop:Generator_ColumnVarNameInTable="column유형" msprop:Generator_ColumnPropNameInRow="유형" msprop:Generator_ColumnPropNameInTable="유형Column" msprop:Generator_UserColumnName="유형" minOccurs="0">
+              <xs:element name="유형" msprop:Generator_ColumnVarNameInTable="column유형" msprop:Generator_ColumnPropNameInRow="유형" msprop:Generator_ColumnPropNameInTable="유형Column" msprop:Generator_UserColumnName="유형">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="3" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="공정명" msprop:Generator_ColumnVarNameInTable="column공정명" msprop:Generator_ColumnPropNameInRow="공정명" msprop:Generator_ColumnPropNameInTable="공정명Column" msprop:Generator_UserColumnName="공정명" minOccurs="0">
+              <xs:element name="공정명" msprop:Generator_ColumnVarNameInTable="column공정명" msprop:Generator_ColumnPropNameInRow="공정명" msprop:Generator_ColumnPropNameInTable="공정명Column" msprop:Generator_UserColumnName="공정명">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="단위" msprop:Generator_ColumnVarNameInTable="column단위" msprop:Generator_ColumnPropNameInRow="단위" msprop:Generator_ColumnPropNameInTable="단위Column" msprop:Generator_UserColumnName="단위" minOccurs="0">
+              <xs:element name="단위" msprop:Generator_ColumnVarNameInTable="column단위" msprop:Generator_ColumnPropNameInRow="단위" msprop:Generator_ColumnPropNameInTable="단위Column" msprop:Generator_UserColumnName="단위">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="수주순번" msprop:Generator_ColumnVarNameInTable="column수주순번" msprop:Generator_ColumnPropNameInRow="수주순번" msprop:Generator_ColumnPropNameInTable="수주순번Column" msprop:Generator_UserColumnName="수주순번" type="xs:int" minOccurs="0" />
+              <xs:element name="수주순번" msprop:Generator_ColumnVarNameInTable="column수주순번" msprop:Generator_ColumnPropNameInRow="수주순번" msprop:Generator_ColumnPropNameInTable="수주순번Column" msprop:Generator_UserColumnName="수주순번" type="xs:int" />
               <xs:element name="지시수량" msprop:Generator_ColumnVarNameInTable="column지시수량" msprop:Generator_ColumnPropNameInRow="지시수량" msprop:Generator_ColumnPropNameInTable="지시수량Column" msprop:Generator_UserColumnName="지시수량" type="xs:int" />
-              <xs:element name="솔더사양" msprop:Generator_ColumnVarNameInTable="column솔더사양" msprop:Generator_ColumnPropNameInRow="솔더사양" msprop:Generator_ColumnPropNameInTable="솔더사양Column" msprop:Generator_UserColumnName="솔더사양" minOccurs="0">
+              <xs:element name="솔더사양" msprop:Generator_ColumnVarNameInTable="column솔더사양" msprop:Generator_ColumnPropNameInRow="솔더사양" msprop:Generator_ColumnPropNameInTable="솔더사양Column" msprop:Generator_UserColumnName="솔더사양">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="MM번호" msprop:Generator_ColumnVarNameInTable="columnMM번호" msprop:Generator_ColumnPropNameInRow="MM번호" msprop:Generator_ColumnPropNameInTable="MM번호Column" msprop:Generator_UserColumnName="MM번호" minOccurs="0">
+              <xs:element name="MM번호" msprop:Generator_ColumnVarNameInTable="columnMM번호" msprop:Generator_ColumnPropNameInRow="MM번호" msprop:Generator_ColumnPropNameInTable="MM번호Column" msprop:Generator_UserColumnName="MM번호">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
@@ -2293,16 +2293,16 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="시작시간" msprop:Generator_ColumnVarNameInTable="column시작시간" msprop:Generator_ColumnPropNameInRow="시작시간" msprop:Generator_ColumnPropNameInTable="시작시간Column" msprop:Generator_UserColumnName="시작시간" type="xs:dateTime" />
-              <xs:element name="종료시간" msprop:Generator_ColumnVarNameInTable="column종료시간" msprop:Generator_ColumnPropNameInRow="종료시간" msprop:Generator_ColumnPropNameInTable="종료시간Column" msprop:Generator_UserColumnName="종료시간" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="작업자" msprop:Generator_ColumnVarNameInTable="column작업자" msprop:Generator_ColumnPropNameInRow="작업자" msprop:Generator_ColumnPropNameInTable="작업자Column" msprop:Generator_UserColumnName="작업자" type="xs:double" minOccurs="0" />
-              <xs:element name="지시사항" msprop:Generator_ColumnVarNameInTable="column지시사항" msprop:Generator_ColumnPropNameInRow="지시사항" msprop:Generator_ColumnPropNameInTable="지시사항Column" msprop:Generator_UserColumnName="지시사항" minOccurs="0">
+              <xs:element name="종료시간" msprop:Generator_ColumnVarNameInTable="column종료시간" msprop:Generator_ColumnPropNameInRow="종료시간" msprop:Generator_ColumnPropNameInTable="종료시간Column" msprop:Generator_UserColumnName="종료시간" type="xs:dateTime" />
+              <xs:element name="작업자" msprop:Generator_ColumnVarNameInTable="column작업자" msprop:Generator_ColumnPropNameInRow="작업자" msprop:Generator_ColumnPropNameInTable="작업자Column" msprop:Generator_UserColumnName="작업자" type="xs:double" />
+              <xs:element name="지시사항" msprop:Generator_ColumnVarNameInTable="column지시사항" msprop:Generator_ColumnPropNameInRow="지시사항" msprop:Generator_ColumnPropNameInTable="지시사항Column" msprop:Generator_UserColumnName="지시사항">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="1000" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="수주일자" msprop:Generator_ColumnVarNameInTable="column수주일자" msprop:Generator_ColumnPropNameInRow="수주일자" msprop:Generator_ColumnPropNameInTable="수주일자Column" msprop:Generator_UserColumnName="수주일자" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="수주일자" msprop:Generator_ColumnVarNameInTable="column수주일자" msprop:Generator_ColumnPropNameInRow="수주일자" msprop:Generator_ColumnPropNameInTable="수주일자Column" msprop:Generator_UserColumnName="수주일자" type="xs:dateTime" />
               <xs:element name="책임자ID" msprop:Generator_ColumnVarNameInTable="column책임자ID" msprop:Generator_ColumnPropNameInRow="책임자ID" msprop:Generator_ColumnPropNameInTable="책임자IDColumn" msprop:Generator_UserColumnName="책임자ID">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
@@ -2310,33 +2310,33 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="책임자" msprop:Generator_ColumnVarNameInTable="column책임자" msprop:Generator_ColumnPropNameInRow="책임자" msprop:Generator_ColumnPropNameInTable="책임자Column" msprop:Generator_UserColumnName="책임자" minOccurs="0">
+              <xs:element name="책임자" msprop:Generator_ColumnVarNameInTable="column책임자" msprop:Generator_ColumnPropNameInRow="책임자" msprop:Generator_ColumnPropNameInTable="책임자Column" msprop:Generator_UserColumnName="책임자">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="완료여부" msprop:Generator_ColumnVarNameInTable="column완료여부" msprop:Generator_ColumnPropNameInRow="완료여부" msprop:Generator_ColumnPropNameInTable="완료여부Column" msprop:Generator_UserColumnName="완료여부" minOccurs="0">
+              <xs:element name="완료여부" msprop:Generator_ColumnVarNameInTable="column완료여부" msprop:Generator_ColumnPropNameInRow="완료여부" msprop:Generator_ColumnPropNameInTable="완료여부Column" msprop:Generator_UserColumnName="완료여부">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="3" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="작업시작" msprop:Generator_ColumnVarNameInTable="column작업시작" msprop:Generator_ColumnPropNameInRow="작업시작" msprop:Generator_ColumnPropNameInTable="작업시작Column" msprop:Generator_UserColumnName="작업시작" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="작업종료" msprop:Generator_ColumnVarNameInTable="column작업종료" msprop:Generator_ColumnPropNameInRow="작업종료" msprop:Generator_ColumnPropNameInTable="작업종료Column" msprop:Generator_UserColumnName="작업종료" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="양품수량" msprop:Generator_ColumnVarNameInTable="column양품수량" msprop:Generator_ColumnPropNameInRow="양품수량" msprop:Generator_ColumnPropNameInTable="양품수량Column" msprop:Generator_UserColumnName="양품수량" type="xs:int" minOccurs="0" />
-              <xs:element name="불량수량" msprop:Generator_ColumnVarNameInTable="column불량수량" msprop:Generator_ColumnPropNameInRow="불량수량" msprop:Generator_ColumnPropNameInTable="불량수량Column" msprop:Generator_UserColumnName="불량수량" type="xs:int" minOccurs="0" />
-              <xs:element name="작업라인" msprop:Generator_ColumnVarNameInTable="column작업라인" msprop:Generator_ColumnPropNameInRow="작업라인" msprop:Generator_ColumnPropNameInTable="작업라인Column" msprop:Generator_UserColumnName="작업라인" minOccurs="0">
+              <xs:element name="작업시작" msprop:Generator_ColumnVarNameInTable="column작업시작" msprop:Generator_ColumnPropNameInRow="작업시작" msprop:Generator_ColumnPropNameInTable="작업시작Column" msprop:Generator_UserColumnName="작업시작" type="xs:dateTime" />
+              <xs:element name="작업종료" msprop:Generator_ColumnVarNameInTable="column작업종료" msprop:Generator_ColumnPropNameInRow="작업종료" msprop:Generator_ColumnPropNameInTable="작업종료Column" msprop:Generator_UserColumnName="작업종료" type="xs:dateTime" />
+              <xs:element name="양품수량" msprop:Generator_ColumnVarNameInTable="column양품수량" msprop:Generator_ColumnPropNameInRow="양품수량" msprop:Generator_ColumnPropNameInTable="양품수량Column" msprop:Generator_UserColumnName="양품수량" type="xs:int" />
+              <xs:element name="불량수량" msprop:Generator_ColumnVarNameInTable="column불량수량" msprop:Generator_ColumnPropNameInRow="불량수량" msprop:Generator_ColumnPropNameInTable="불량수량Column" msprop:Generator_UserColumnName="불량수량" type="xs:int" />
+              <xs:element name="작업라인" msprop:Generator_ColumnVarNameInTable="column작업라인" msprop:Generator_ColumnPropNameInRow="작업라인" msprop:Generator_ColumnPropNameInTable="작업라인Column" msprop:Generator_UserColumnName="작업라인">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="4" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="경과시간" msprop:Generator_ColumnVarNameInTable="column경과시간" msprop:Generator_ColumnPropNameInRow="경과시간" msprop:Generator_ColumnPropNameInTable="경과시간Column" msprop:Generator_UserColumnName="경과시간" type="xs:duration" minOccurs="0" />
-              <xs:element name="ZIG" msprop:Generator_ColumnVarNameInTable="columnZIG" msprop:Generator_ColumnPropNameInRow="ZIG" msprop:Generator_ColumnPropNameInTable="ZIGColumn" msprop:Generator_UserColumnName="ZIG" minOccurs="0">
+              <xs:element name="경과시간" msprop:Generator_ColumnVarNameInTable="column경과시간" msprop:Generator_ColumnPropNameInRow="경과시간" msprop:Generator_ColumnPropNameInTable="경과시간Column" msprop:Generator_UserColumnName="경과시간" type="xs:duration" />
+              <xs:element name="ZIG" msprop:Generator_ColumnVarNameInTable="columnZIG" msprop:Generator_ColumnPropNameInRow="ZIG" msprop:Generator_ColumnPropNameInTable="ZIGColumn" msprop:Generator_UserColumnName="ZIG">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
