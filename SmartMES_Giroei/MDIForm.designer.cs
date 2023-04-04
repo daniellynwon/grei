@@ -72,6 +72,8 @@
             this.tvMenu.Size = new System.Drawing.Size(210, 516);
             this.tvMenu.TabIndex = 0;
             this.tvMenu.AfterSelect += new System.Windows.Forms.TreeViewEventHandler(this.tvMenu_AfterSelect);
+            this.tvMenu.Enter += new System.EventHandler(this.tvMenu_Enter);
+            this.tvMenu.Leave += new System.EventHandler(this.tvMenu_Leave);
             // 
             // pbLogo
             // 

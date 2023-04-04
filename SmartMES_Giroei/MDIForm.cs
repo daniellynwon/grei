@@ -228,7 +228,7 @@ namespace SmartMES_Giroei
                 }
 
                 //tvMenu.SelectedNode = rootNode;
-                tvMenu.SelectedNode = tvMenu.SelectedNode.Parent;
+                //tvMenu.SelectedNode = tvMenu.SelectedNode.Parent;
             }
             catch (ArgumentNullException)
             {
@@ -333,6 +333,24 @@ namespace SmartMES_Giroei
                 return false;
             else
                 return true;
+        }
+
+        private void tvMenu_Enter(object sender, EventArgs e)
+        {
+            if (tvMenu.SelectedNode != null)
+            {
+                tvMenu.SelectedNode.BackColor = Color.Empty;
+                tvMenu.SelectedNode.ForeColor = Color.Empty;
+            }
+        }
+
+        private void tvMenu_Leave(object sender, EventArgs e)
+        {
+            if (tvMenu.SelectedNode != null)
+            {
+                tvMenu.SelectedNode.BackColor = SystemColors.Highlight;
+                tvMenu.SelectedNode.ForeColor = Color.White;
+            }
         }
     }
 }
