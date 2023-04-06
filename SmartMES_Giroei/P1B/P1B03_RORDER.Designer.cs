@@ -33,15 +33,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -51,14 +42,54 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle21 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle22 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.수주번호DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.순번DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnColumn = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.품목코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.품목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.공정코드 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.sPZCommonIDBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
+            this.생산형태 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.관리번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.적용점수 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.면수 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.작업시간 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.작업MM = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.부품수 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.기준단가 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.금액DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.부가세 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.화폐 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.비고DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.견적번호DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.견적순번DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.생산여부DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.출하여부DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.표준공정명 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SMT = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.PCB = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.조립 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.수삽 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.Detail = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.ColumnDel = new System.Windows.Forms.DataGridViewButtonColumn();
             this.sPROrderSubQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label4 = new System.Windows.Forms.Label();
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.panSearch = new System.Windows.Forms.Panel();
+            this.cbSuju = new System.Windows.Forms.CheckBox();
             this.btnDetail = new System.Windows.Forms.Button();
             this.doc4 = new SmartMES_Giroei.UserButtonA();
             this.doc3 = new SmartMES_Giroei.UserButtonA();
@@ -108,36 +139,6 @@
             this.sP_ROrderMain_QueryTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_ROrderMain_QueryTableAdapter();
             this.sP_ROrderSub_QueryTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_ROrderSub_QueryTableAdapter();
             this.sP_Z_Common_IDTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_Z_Common_IDTableAdapter();
-            this.수주번호DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.순번DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnColumn = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.품목코드DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.품목명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.공정코드 = new System.Windows.Forms.DataGridViewComboBoxColumn();
-            this.생산형태 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.관리번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.적용점수 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.면수 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.작업시간 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.작업MM = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.부품수 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.기준단가 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.금액DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.부가세 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.화폐 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.비고DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.견적번호DataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.견적순번DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.생산여부DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.출하여부DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.표준공정명 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SMT = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.PCB = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.조립 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.수삽 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
-            this.Detail = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.ColumnDel = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -198,7 +199,7 @@
             this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -241,7 +242,7 @@
             this.dataGridView1.DataSource = this.sPROrderSubQueryBindingSource;
             dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.Tomato;
             dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -253,7 +254,7 @@
             this.dataGridView1.Name = "dataGridView1";
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
             dataGridViewCellStyle13.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle13.SelectionForeColor = System.Drawing.Color.White;
@@ -274,661 +275,6 @@
             this.dataGridView1.KeyDown += new System.Windows.Forms.KeyEventHandler(this.dataGridView1_KeyDown);
             this.dataGridView1.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.dataGridView1_KeyPress);
             // 
-            // sPZCommonIDBindingSource
-            // 
-            this.sPZCommonIDBindingSource.DataMember = "SP_Z_Common_ID";
-            this.sPZCommonIDBindingSource.DataSource = this.dataSetP1B;
-            // 
-            // dataSetP1B
-            // 
-            this.dataSetP1B.DataSetName = "DataSetP1B";
-            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sPROrderSubQueryBindingSource
-            // 
-            this.sPROrderSubQueryBindingSource.DataMember = "SP_ROrderSub_Query";
-            this.sPROrderSubQueryBindingSource.DataSource = this.dataSetP1B;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(205)))), ((int)(((byte)(219)))));
-            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.tbSearch);
-            this.panel1.Location = new System.Drawing.Point(2, 58);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(302, 71);
-            this.panel1.TabIndex = 0;
-            // 
-            // label4
-            // 
-            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(9, 7);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(128, 21);
-            this.label4.TabIndex = 2;
-            this.label4.Text = "수주번호/모델명";
-            // 
-            // tbSearch
-            // 
-            this.tbSearch.Location = new System.Drawing.Point(9, 32);
-            this.tbSearch.Name = "tbSearch";
-            this.tbSearch.Size = new System.Drawing.Size(280, 29);
-            this.tbSearch.TabIndex = 1;
-            this.tbSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearch_KeyUp);
-            // 
-            // panSearch
-            // 
-            this.panSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panSearch.AutoSize = true;
-            this.panSearch.BackColor = System.Drawing.SystemColors.Info;
-            this.panSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panSearch.Controls.Add(this.btnDetail);
-            this.panSearch.Controls.Add(this.doc4);
-            this.panSearch.Controls.Add(this.doc3);
-            this.panSearch.Controls.Add(this.doc2);
-            this.panSearch.Controls.Add(this.doc1);
-            this.panSearch.Controls.Add(this.tbPlace);
-            this.panSearch.Controls.Add(this.label5);
-            this.panSearch.Controls.Add(this.cbIsEstimate);
-            this.panSearch.Controls.Add(this.label3);
-            this.panSearch.Controls.Add(this.tbEstiNo);
-            this.panSearch.Controls.Add(this.dtpDeliDate);
-            this.panSearch.Controls.Add(this.lblCust);
-            this.panSearch.Controls.Add(this.btnCopy);
-            this.panSearch.Controls.Add(this.tbProject);
-            this.panSearch.Controls.Add(this.tbCust);
-            this.panSearch.Controls.Add(this.dtpDate);
-            this.panSearch.Controls.Add(this.tbNo);
-            this.panSearch.Controls.Add(this.label10);
-            this.panSearch.Controls.Add(this.label7);
-            this.panSearch.Controls.Add(this.tbContents);
-            this.panSearch.Controls.Add(this.label2);
-            this.panSearch.Controls.Add(this.label1);
-            this.panSearch.Controls.Add(this.cbNo);
-            this.panSearch.Location = new System.Drawing.Point(310, 58);
-            this.panSearch.Name = "panSearch";
-            this.panSearch.Size = new System.Drawing.Size(1011, 225);
-            this.panSearch.TabIndex = 0;
-            // 
-            // btnDetail
-            // 
-            this.btnDetail.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnDetail.Location = new System.Drawing.Point(693, 187);
-            this.btnDetail.Name = "btnDetail";
-            this.btnDetail.Size = new System.Drawing.Size(188, 33);
-            this.btnDetail.TabIndex = 37;
-            this.btnDetail.Text = "상세정보입력";
-            this.btnDetail.UseVisualStyleBackColor = true;
-            this.btnDetail.Visible = false;
-            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
-            // 
-            // doc4
-            // 
-            this.doc4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.doc4.BackColor = System.Drawing.Color.Transparent;
-            this.doc4.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.doc4.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc4.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.doc4.Location = new System.Drawing.Point(881, 58);
-            this.doc4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.doc4.Name = "doc4";
-            this.doc4.Size = new System.Drawing.Size(29, 26);
-            this.doc4.TabIndex = 36;
-            this.doc4.Tag = "";
-            this.doc4.Click += new System.EventHandler(this.userButtonA4_Click);
-            // 
-            // doc3
-            // 
-            this.doc3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.doc3.BackColor = System.Drawing.Color.Transparent;
-            this.doc3.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.doc3.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc3.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.doc3.Location = new System.Drawing.Point(852, 58);
-            this.doc3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.doc3.Name = "doc3";
-            this.doc3.Size = new System.Drawing.Size(29, 26);
-            this.doc3.TabIndex = 35;
-            this.doc3.Tag = "";
-            this.doc3.Click += new System.EventHandler(this.userButtonA3_Click);
-            // 
-            // doc2
-            // 
-            this.doc2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.doc2.BackColor = System.Drawing.Color.Transparent;
-            this.doc2.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.doc2.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.doc2.Location = new System.Drawing.Point(825, 58);
-            this.doc2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.doc2.Name = "doc2";
-            this.doc2.Size = new System.Drawing.Size(29, 26);
-            this.doc2.TabIndex = 34;
-            this.doc2.Tag = "";
-            this.doc2.Click += new System.EventHandler(this.userButtonA2_Click);
-            // 
-            // doc1
-            // 
-            this.doc1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.doc1.BackColor = System.Drawing.Color.Transparent;
-            this.doc1.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.doc1.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc1.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.doc1.Location = new System.Drawing.Point(795, 58);
-            this.doc1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.doc1.Name = "doc1";
-            this.doc1.Size = new System.Drawing.Size(29, 26);
-            this.doc1.TabIndex = 33;
-            this.doc1.Tag = "";
-            this.doc1.Click += new System.EventHandler(this.userButtonA1_Click);
-            // 
-            // tbPlace
-            // 
-            this.tbPlace.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbPlace.Location = new System.Drawing.Point(795, 7);
-            this.tbPlace.Name = "tbPlace";
-            this.tbPlace.Size = new System.Drawing.Size(211, 29);
-            this.tbPlace.TabIndex = 19;
-            this.tbPlace.Text = " ";
-            this.tbPlace.Visible = false;
-            // 
-            // label5
-            // 
-            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(715, 9);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(74, 21);
-            this.label5.TabIndex = 18;
-            this.label5.Text = "현장정보";
-            this.label5.Visible = false;
-            // 
-            // cbIsEstimate
-            // 
-            this.cbIsEstimate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbIsEstimate.AutoSize = true;
-            this.cbIsEstimate.Checked = true;
-            this.cbIsEstimate.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.cbIsEstimate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.cbIsEstimate.Location = new System.Drawing.Point(364, 28);
-            this.cbIsEstimate.Name = "cbIsEstimate";
-            this.cbIsEstimate.Size = new System.Drawing.Size(93, 25);
-            this.cbIsEstimate.TabIndex = 17;
-            this.cbIsEstimate.Text = "견적여부";
-            this.cbIsEstimate.UseVisualStyleBackColor = true;
-            this.cbIsEstimate.CheckedChanged += new System.EventHandler(this.cbIsEstimate_CheckedChanged);
-            // 
-            // label3
-            // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(380, 120);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(74, 21);
-            this.label3.TabIndex = 16;
-            this.label3.Text = "견적번호";
-            // 
-            // tbEstiNo
-            // 
-            this.tbEstiNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbEstiNo.Location = new System.Drawing.Point(460, 114);
-            this.tbEstiNo.Name = "tbEstiNo";
-            this.tbEstiNo.ReadOnly = true;
-            this.tbEstiNo.Size = new System.Drawing.Size(211, 29);
-            this.tbEstiNo.TabIndex = 15;
-            this.tbEstiNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // dtpDeliDate
-            // 
-            this.dtpDeliDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpDeliDate.CalendarFont = new System.Drawing.Font("Malgun Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dtpDeliDate.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dtpDeliDate.Location = new System.Drawing.Point(145, 114);
-            this.dtpDeliDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dtpDeliDate.Name = "dtpDeliDate";
-            this.dtpDeliDate.Size = new System.Drawing.Size(211, 29);
-            this.dtpDeliDate.TabIndex = 10;
-            this.dtpDeliDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nextFocus_KeyDown);
-            // 
-            // lblCust
-            // 
-            this.lblCust.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblCust.AutoSize = true;
-            this.lblCust.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lblCust.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Underline);
-            this.lblCust.ForeColor = System.Drawing.Color.Blue;
-            this.lblCust.Location = new System.Drawing.Point(383, 75);
-            this.lblCust.Name = "lblCust";
-            this.lblCust.Size = new System.Drawing.Size(74, 21);
-            this.lblCust.TabIndex = 6;
-            this.lblCust.Text = "거래처명";
-            this.lblCust.Click += new System.EventHandler(this.lblCust_Click);
-            // 
-            // btnCopy
-            // 
-            this.btnCopy.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.btnCopy.Location = new System.Drawing.Point(460, 25);
-            this.btnCopy.Name = "btnCopy";
-            this.btnCopy.Size = new System.Drawing.Size(211, 29);
-            this.btnCopy.TabIndex = 5;
-            this.btnCopy.Text = "수주복사";
-            this.btnCopy.UseVisualStyleBackColor = true;
-            this.btnCopy.Visible = false;
-            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
-            // 
-            // tbProject
-            // 
-            this.tbProject.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbProject.Location = new System.Drawing.Point(145, 157);
-            this.tbProject.Name = "tbProject";
-            this.tbProject.Size = new System.Drawing.Size(526, 29);
-            this.tbProject.TabIndex = 9;
-            this.tbProject.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nextFocus_KeyDown);
-            // 
-            // tbCust
-            // 
-            this.tbCust.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbCust.Location = new System.Drawing.Point(460, 71);
-            this.tbCust.Name = "tbCust";
-            this.tbCust.ReadOnly = true;
-            this.tbCust.Size = new System.Drawing.Size(211, 29);
-            this.tbCust.TabIndex = 7;
-            this.tbCust.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbCust.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nextFocus_KeyDown);
-            // 
-            // dtpDate
-            // 
-            this.dtpDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpDate.CalendarFont = new System.Drawing.Font("Malgun Gothic", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dtpDate.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dtpDate.Location = new System.Drawing.Point(145, 71);
-            this.dtpDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(211, 29);
-            this.dtpDate.TabIndex = 5;
-            this.dtpDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nextFocus_KeyDown);
-            // 
-            // tbNo
-            // 
-            this.tbNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbNo.Location = new System.Drawing.Point(145, 26);
-            this.tbNo.Name = "tbNo";
-            this.tbNo.ReadOnly = true;
-            this.tbNo.Size = new System.Drawing.Size(211, 29);
-            this.tbNo.TabIndex = 4;
-            this.tbNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nextFocus_KeyDown);
-            // 
-            // label10
-            // 
-            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(54, 118);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(74, 21);
-            this.label10.TabIndex = 0;
-            this.label10.Text = "납기일자";
-            // 
-            // label7
-            // 
-            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(54, 161);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(58, 21);
-            this.label7.TabIndex = 0;
-            this.label7.Text = "모델명";
-            // 
-            // tbContents
-            // 
-            this.tbContents.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbContents.Location = new System.Drawing.Point(693, 54);
-            this.tbContents.Multiline = true;
-            this.tbContents.Name = "tbContents";
-            this.tbContents.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbContents.Size = new System.Drawing.Size(275, 132);
-            this.tbContents.TabIndex = 13;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(696, 30);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(48, 21);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "비 고";
-            // 
-            // label1
-            // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label1.Location = new System.Drawing.Point(54, 75);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(74, 21);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "접수일자";
-            // 
-            // cbNo
-            // 
-            this.cbNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbNo.AutoSize = true;
-            this.cbNo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.cbNo.Location = new System.Drawing.Point(39, 28);
-            this.cbNo.Name = "cbNo";
-            this.cbNo.Size = new System.Drawing.Size(93, 25);
-            this.cbNo.TabIndex = 3;
-            this.cbNo.Text = "수주번호";
-            this.cbNo.UseVisualStyleBackColor = true;
-            // 
-            // dataGridViewList
-            // 
-            this.dataGridViewList.AllowUserToAddRows = false;
-            this.dataGridViewList.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
-            this.dataGridViewList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
-            this.dataGridViewList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.dataGridViewList.AutoGenerateColumns = false;
-            this.dataGridViewList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridViewList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.dataGridViewList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle15.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
-            this.dataGridViewList.ColumnHeadersHeight = 35;
-            this.dataGridViewList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
-            this.dataGridViewList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.사업장DataGridViewTextBoxColumn,
-            this.접수일자DataGridViewTextBoxColumn,
-            this.수주번호DataGridViewTextBoxColumn,
-            this.거래처IDDataGridViewTextBoxColumn,
-            this.거래처명DataGridViewTextBoxColumn,
-            this.프로젝트명DataGridViewTextBoxColumn,
-            this.납기일자DataGridViewTextBoxColumn,
-            this.발주담당자,
-            this.발주연락처,
-            this.비고DataGridViewTextBoxColumn,
-            this.견적번호DataGridViewTextBoxColumn,
-            this.출하DataGridViewTextBoxColumn,
-            this.작성자,
-            this.첨부물1,
-            this.첨부물2,
-            this.첨부물3,
-            this.첨부물4});
-            this.dataGridViewList.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.dataGridViewList.DataSource = this.sPROrderMainQueryBindingSource;
-            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle21.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridViewList.DefaultCellStyle = dataGridViewCellStyle21;
-            this.dataGridViewList.EnableHeadersVisualStyles = false;
-            this.dataGridViewList.Location = new System.Drawing.Point(2, 132);
-            this.dataGridViewList.MultiSelect = false;
-            this.dataGridViewList.Name = "dataGridViewList";
-            this.dataGridViewList.ReadOnly = true;
-            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle22.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridViewList.RowHeadersDefaultCellStyle = dataGridViewCellStyle22;
-            this.dataGridViewList.RowHeadersVisible = false;
-            this.dataGridViewList.RowHeadersWidth = 35;
-            this.dataGridViewList.RowTemplate.Height = 35;
-            this.dataGridViewList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridViewList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewList.Size = new System.Drawing.Size(302, 851);
-            this.dataGridViewList.TabIndex = 2;
-            this.dataGridViewList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewList_CellClick);
-            // 
-            // 사업장DataGridViewTextBoxColumn
-            // 
-            this.사업장DataGridViewTextBoxColumn.DataPropertyName = "사업장";
-            this.사업장DataGridViewTextBoxColumn.HeaderText = "사업장";
-            this.사업장DataGridViewTextBoxColumn.Name = "사업장DataGridViewTextBoxColumn";
-            this.사업장DataGridViewTextBoxColumn.ReadOnly = true;
-            this.사업장DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 접수일자DataGridViewTextBoxColumn
-            // 
-            this.접수일자DataGridViewTextBoxColumn.DataPropertyName = "접수일자";
-            dataGridViewCellStyle16.Format = "yy\\/MM\\/dd";
-            this.접수일자DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
-            this.접수일자DataGridViewTextBoxColumn.FillWeight = 50F;
-            this.접수일자DataGridViewTextBoxColumn.HeaderText = "일자";
-            this.접수일자DataGridViewTextBoxColumn.Name = "접수일자DataGridViewTextBoxColumn";
-            this.접수일자DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 수주번호DataGridViewTextBoxColumn
-            // 
-            this.수주번호DataGridViewTextBoxColumn.DataPropertyName = "수주번호";
-            this.수주번호DataGridViewTextBoxColumn.FillWeight = 70F;
-            this.수주번호DataGridViewTextBoxColumn.HeaderText = "수주번호";
-            this.수주번호DataGridViewTextBoxColumn.Name = "수주번호DataGridViewTextBoxColumn";
-            this.수주번호DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 거래처IDDataGridViewTextBoxColumn
-            // 
-            this.거래처IDDataGridViewTextBoxColumn.DataPropertyName = "거래처ID";
-            this.거래처IDDataGridViewTextBoxColumn.HeaderText = "거래처ID";
-            this.거래처IDDataGridViewTextBoxColumn.Name = "거래처IDDataGridViewTextBoxColumn";
-            this.거래처IDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.거래처IDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 거래처명DataGridViewTextBoxColumn
-            // 
-            this.거래처명DataGridViewTextBoxColumn.DataPropertyName = "거래처명";
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.거래처명DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
-            this.거래처명DataGridViewTextBoxColumn.FillWeight = 50F;
-            this.거래처명DataGridViewTextBoxColumn.HeaderText = "거래처명";
-            this.거래처명DataGridViewTextBoxColumn.Name = "거래처명DataGridViewTextBoxColumn";
-            this.거래처명DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // 프로젝트명DataGridViewTextBoxColumn
-            // 
-            this.프로젝트명DataGridViewTextBoxColumn.DataPropertyName = "프로젝트명";
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.프로젝트명DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
-            this.프로젝트명DataGridViewTextBoxColumn.FillWeight = 90F;
-            this.프로젝트명DataGridViewTextBoxColumn.HeaderText = "프로젝트명";
-            this.프로젝트명DataGridViewTextBoxColumn.Name = "프로젝트명DataGridViewTextBoxColumn";
-            this.프로젝트명DataGridViewTextBoxColumn.ReadOnly = true;
-            this.프로젝트명DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 납기일자DataGridViewTextBoxColumn
-            // 
-            this.납기일자DataGridViewTextBoxColumn.DataPropertyName = "납기일자";
-            dataGridViewCellStyle19.Format = "M\\/d";
-            this.납기일자DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle19;
-            this.납기일자DataGridViewTextBoxColumn.FillWeight = 40F;
-            this.납기일자DataGridViewTextBoxColumn.HeaderText = "납기";
-            this.납기일자DataGridViewTextBoxColumn.Name = "납기일자DataGridViewTextBoxColumn";
-            this.납기일자DataGridViewTextBoxColumn.ReadOnly = true;
-            this.납기일자DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 발주담당자
-            // 
-            this.발주담당자.DataPropertyName = "발주담당자";
-            this.발주담당자.HeaderText = "발주담당자";
-            this.발주담당자.Name = "발주담당자";
-            this.발주담당자.ReadOnly = true;
-            this.발주담당자.Visible = false;
-            // 
-            // 발주연락처
-            // 
-            this.발주연락처.DataPropertyName = "발주연락처";
-            this.발주연락처.HeaderText = "발주연락처";
-            this.발주연락처.Name = "발주연락처";
-            this.발주연락처.ReadOnly = true;
-            this.발주연락처.Visible = false;
-            // 
-            // 비고DataGridViewTextBoxColumn
-            // 
-            this.비고DataGridViewTextBoxColumn.DataPropertyName = "비고";
-            this.비고DataGridViewTextBoxColumn.HeaderText = "비고";
-            this.비고DataGridViewTextBoxColumn.Name = "비고DataGridViewTextBoxColumn";
-            this.비고DataGridViewTextBoxColumn.ReadOnly = true;
-            this.비고DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 견적번호DataGridViewTextBoxColumn
-            // 
-            this.견적번호DataGridViewTextBoxColumn.DataPropertyName = "견적번호";
-            this.견적번호DataGridViewTextBoxColumn.HeaderText = "견적번호";
-            this.견적번호DataGridViewTextBoxColumn.Name = "견적번호DataGridViewTextBoxColumn";
-            this.견적번호DataGridViewTextBoxColumn.ReadOnly = true;
-            this.견적번호DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 출하DataGridViewTextBoxColumn
-            // 
-            this.출하DataGridViewTextBoxColumn.DataPropertyName = "출하";
-            dataGridViewCellStyle20.Format = "M\\/d";
-            this.출하DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle20;
-            this.출하DataGridViewTextBoxColumn.FillWeight = 40F;
-            this.출하DataGridViewTextBoxColumn.HeaderText = "출하";
-            this.출하DataGridViewTextBoxColumn.Name = "출하DataGridViewTextBoxColumn";
-            this.출하DataGridViewTextBoxColumn.ReadOnly = true;
-            this.출하DataGridViewTextBoxColumn.Visible = false;
-            // 
-            // 작성자
-            // 
-            this.작성자.DataPropertyName = "작성자";
-            this.작성자.HeaderText = "작성자";
-            this.작성자.Name = "작성자";
-            this.작성자.ReadOnly = true;
-            this.작성자.Visible = false;
-            // 
-            // 첨부물1
-            // 
-            this.첨부물1.DataPropertyName = "첨부물1";
-            this.첨부물1.HeaderText = "첨부물1";
-            this.첨부물1.Name = "첨부물1";
-            this.첨부물1.ReadOnly = true;
-            this.첨부물1.Visible = false;
-            // 
-            // 첨부물2
-            // 
-            this.첨부물2.DataPropertyName = "첨부물2";
-            this.첨부물2.HeaderText = "첨부물2";
-            this.첨부물2.Name = "첨부물2";
-            this.첨부물2.ReadOnly = true;
-            this.첨부물2.Visible = false;
-            // 
-            // 첨부물3
-            // 
-            this.첨부물3.DataPropertyName = "첨부물3";
-            this.첨부물3.HeaderText = "첨부물3";
-            this.첨부물3.Name = "첨부물3";
-            this.첨부물3.ReadOnly = true;
-            this.첨부물3.Visible = false;
-            // 
-            // 첨부물4
-            // 
-            this.첨부물4.DataPropertyName = "첨부물4";
-            this.첨부물4.HeaderText = "첨부물4";
-            this.첨부물4.Name = "첨부물4";
-            this.첨부물4.ReadOnly = true;
-            this.첨부물4.Visible = false;
-            // 
-            // sPROrderMainQueryBindingSource
-            // 
-            this.sPROrderMainQueryBindingSource.DataMember = "SP_ROrderMain_Query";
-            this.sPROrderMainQueryBindingSource.DataSource = this.dataSetP1B;
-            // 
-            // panel2
-            // 
-            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(205)))), ((int)(((byte)(219)))));
-            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panel2.Controls.Add(this.lblMsg);
-            this.panel2.Controls.Add(this.lblCnt);
-            this.panel2.Controls.Add(this.lblSumMoney);
-            this.panel2.Location = new System.Drawing.Point(310, 281);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(1011, 38);
-            this.panel2.TabIndex = 0;
-            // 
-            // lblMsg
-            // 
-            this.lblMsg.AutoSize = true;
-            this.lblMsg.Font = new System.Drawing.Font("Malgun Gothic", 12F);
-            this.lblMsg.ForeColor = System.Drawing.Color.Red;
-            this.lblMsg.Location = new System.Drawing.Point(7, 9);
-            this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(148, 21);
-            this.lblMsg.TabIndex = 0;
-            this.lblMsg.Text = "메시지 라벨입니다.";
-            // 
-            // lblCnt
-            // 
-            this.lblCnt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblCnt.AutoSize = true;
-            this.lblCnt.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblCnt.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblCnt.Location = new System.Drawing.Point(920, 9);
-            this.lblCnt.Name = "lblCnt";
-            this.lblCnt.Size = new System.Drawing.Size(35, 21);
-            this.lblCnt.TabIndex = 0;
-            this.lblCnt.Text = "0건";
-            // 
-            // lblSumMoney
-            // 
-            this.lblSumMoney.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblSumMoney.AutoSize = true;
-            this.lblSumMoney.Font = new System.Drawing.Font("Malgun Gothic", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblSumMoney.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblSumMoney.Location = new System.Drawing.Point(538, 9);
-            this.lblSumMoney.Name = "lblSumMoney";
-            this.lblSumMoney.Size = new System.Drawing.Size(115, 21);
-            this.lblSumMoney.TabIndex = 0;
-            this.lblSumMoney.Text = "합계금액 : 0원";
-            // 
-            // sP_ROrderMain_QueryTableAdapter
-            // 
-            this.sP_ROrderMain_QueryTableAdapter.ClearBeforeFill = true;
-            // 
-            // sP_ROrderSub_QueryTableAdapter
-            // 
-            this.sP_ROrderSub_QueryTableAdapter.ClearBeforeFill = true;
-            // 
-            // sP_Z_Common_IDTableAdapter
-            // 
-            this.sP_Z_Common_IDTableAdapter.ClearBeforeFill = true;
-            // 
             // 수주번호DataGridViewTextBoxColumn1
             // 
             this.수주번호DataGridViewTextBoxColumn1.DataPropertyName = "수주번호";
@@ -946,7 +292,7 @@
             // btnColumn
             // 
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Gulim", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("굴림", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             dataGridViewCellStyle3.NullValue = "품목";
             this.btnColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.btnColumn.FillWeight = 26.94585F;
@@ -981,6 +327,17 @@
             this.공정코드.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.공정코드.ValueMember = "co_code";
             this.공정코드.Visible = false;
+            // 
+            // sPZCommonIDBindingSource
+            // 
+            this.sPZCommonIDBindingSource.DataMember = "SP_Z_Common_ID";
+            this.sPZCommonIDBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // dataSetP1B
+            // 
+            this.dataSetP1B.DataSetName = "DataSetP1B";
+            this.dataSetP1B.EnforceConstraints = false;
+            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // 생산형태
             // 
@@ -1192,6 +549,662 @@
             this.ColumnDel.Name = "ColumnDel";
             this.ColumnDel.Text = "X";
             // 
+            // sPROrderSubQueryBindingSource
+            // 
+            this.sPROrderSubQueryBindingSource.DataMember = "SP_ROrderSub_Query";
+            this.sPROrderSubQueryBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(205)))), ((int)(((byte)(219)))));
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.tbSearch);
+            this.panel1.Location = new System.Drawing.Point(2, 58);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(302, 71);
+            this.panel1.TabIndex = 0;
+            // 
+            // label4
+            // 
+            this.label4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label4.Location = new System.Drawing.Point(9, 7);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(128, 21);
+            this.label4.TabIndex = 2;
+            this.label4.Text = "수주번호/모델명";
+            // 
+            // tbSearch
+            // 
+            this.tbSearch.Location = new System.Drawing.Point(9, 32);
+            this.tbSearch.Name = "tbSearch";
+            this.tbSearch.Size = new System.Drawing.Size(280, 29);
+            this.tbSearch.TabIndex = 1;
+            this.tbSearch.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbSearch_KeyUp);
+            // 
+            // panSearch
+            // 
+            this.panSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panSearch.AutoSize = true;
+            this.panSearch.BackColor = System.Drawing.SystemColors.Info;
+            this.panSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panSearch.Controls.Add(this.cbSuju);
+            this.panSearch.Controls.Add(this.btnDetail);
+            this.panSearch.Controls.Add(this.doc4);
+            this.panSearch.Controls.Add(this.doc3);
+            this.panSearch.Controls.Add(this.doc2);
+            this.panSearch.Controls.Add(this.doc1);
+            this.panSearch.Controls.Add(this.tbPlace);
+            this.panSearch.Controls.Add(this.label5);
+            this.panSearch.Controls.Add(this.cbIsEstimate);
+            this.panSearch.Controls.Add(this.label3);
+            this.panSearch.Controls.Add(this.tbEstiNo);
+            this.panSearch.Controls.Add(this.dtpDeliDate);
+            this.panSearch.Controls.Add(this.lblCust);
+            this.panSearch.Controls.Add(this.btnCopy);
+            this.panSearch.Controls.Add(this.tbProject);
+            this.panSearch.Controls.Add(this.tbCust);
+            this.panSearch.Controls.Add(this.dtpDate);
+            this.panSearch.Controls.Add(this.tbNo);
+            this.panSearch.Controls.Add(this.label10);
+            this.panSearch.Controls.Add(this.label7);
+            this.panSearch.Controls.Add(this.tbContents);
+            this.panSearch.Controls.Add(this.label2);
+            this.panSearch.Controls.Add(this.label1);
+            this.panSearch.Controls.Add(this.cbNo);
+            this.panSearch.Location = new System.Drawing.Point(310, 58);
+            this.panSearch.Name = "panSearch";
+            this.panSearch.Size = new System.Drawing.Size(1011, 225);
+            this.panSearch.TabIndex = 0;
+            // 
+            // cbSuju
+            // 
+            this.cbSuju.AutoSize = true;
+            this.cbSuju.Location = new System.Drawing.Point(24, 191);
+            this.cbSuju.Name = "cbSuju";
+            this.cbSuju.Size = new System.Drawing.Size(131, 25);
+            this.cbSuju.TabIndex = 38;
+            this.cbSuju.Text = "동일 수주작업";
+            this.cbSuju.UseVisualStyleBackColor = true;
+            // 
+            // btnDetail
+            // 
+            this.btnDetail.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnDetail.Location = new System.Drawing.Point(693, 187);
+            this.btnDetail.Name = "btnDetail";
+            this.btnDetail.Size = new System.Drawing.Size(188, 33);
+            this.btnDetail.TabIndex = 37;
+            this.btnDetail.Text = "상세정보입력";
+            this.btnDetail.UseVisualStyleBackColor = true;
+            this.btnDetail.Visible = false;
+            this.btnDetail.Click += new System.EventHandler(this.btnDetail_Click);
+            // 
+            // doc4
+            // 
+            this.doc4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.doc4.BackColor = System.Drawing.Color.Transparent;
+            this.doc4.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.doc4.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.doc4.Location = new System.Drawing.Point(881, 58);
+            this.doc4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.doc4.Name = "doc4";
+            this.doc4.Size = new System.Drawing.Size(29, 26);
+            this.doc4.TabIndex = 36;
+            this.doc4.Tag = "";
+            this.doc4.Click += new System.EventHandler(this.userButtonA4_Click);
+            // 
+            // doc3
+            // 
+            this.doc3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.doc3.BackColor = System.Drawing.Color.Transparent;
+            this.doc3.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.doc3.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.doc3.Location = new System.Drawing.Point(852, 58);
+            this.doc3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.doc3.Name = "doc3";
+            this.doc3.Size = new System.Drawing.Size(29, 26);
+            this.doc3.TabIndex = 35;
+            this.doc3.Tag = "";
+            this.doc3.Click += new System.EventHandler(this.userButtonA3_Click);
+            // 
+            // doc2
+            // 
+            this.doc2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.doc2.BackColor = System.Drawing.Color.Transparent;
+            this.doc2.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.doc2.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.doc2.Location = new System.Drawing.Point(825, 58);
+            this.doc2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.doc2.Name = "doc2";
+            this.doc2.Size = new System.Drawing.Size(29, 26);
+            this.doc2.TabIndex = 34;
+            this.doc2.Tag = "";
+            this.doc2.Click += new System.EventHandler(this.userButtonA2_Click);
+            // 
+            // doc1
+            // 
+            this.doc1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.doc1.BackColor = System.Drawing.Color.Transparent;
+            this.doc1.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.doc1.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.doc1.Location = new System.Drawing.Point(795, 58);
+            this.doc1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.doc1.Name = "doc1";
+            this.doc1.Size = new System.Drawing.Size(29, 26);
+            this.doc1.TabIndex = 33;
+            this.doc1.Tag = "";
+            this.doc1.Click += new System.EventHandler(this.userButtonA1_Click);
+            // 
+            // tbPlace
+            // 
+            this.tbPlace.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbPlace.Location = new System.Drawing.Point(795, 7);
+            this.tbPlace.Name = "tbPlace";
+            this.tbPlace.Size = new System.Drawing.Size(211, 29);
+            this.tbPlace.TabIndex = 19;
+            this.tbPlace.Text = " ";
+            this.tbPlace.Visible = false;
+            // 
+            // label5
+            // 
+            this.label5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label5.Location = new System.Drawing.Point(715, 9);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(74, 21);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "현장정보";
+            this.label5.Visible = false;
+            // 
+            // cbIsEstimate
+            // 
+            this.cbIsEstimate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbIsEstimate.AutoSize = true;
+            this.cbIsEstimate.Checked = true;
+            this.cbIsEstimate.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.cbIsEstimate.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cbIsEstimate.Location = new System.Drawing.Point(364, 28);
+            this.cbIsEstimate.Name = "cbIsEstimate";
+            this.cbIsEstimate.Size = new System.Drawing.Size(93, 25);
+            this.cbIsEstimate.TabIndex = 17;
+            this.cbIsEstimate.Text = "견적여부";
+            this.cbIsEstimate.UseVisualStyleBackColor = true;
+            this.cbIsEstimate.CheckedChanged += new System.EventHandler(this.cbIsEstimate_CheckedChanged);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(380, 120);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(74, 21);
+            this.label3.TabIndex = 16;
+            this.label3.Text = "견적번호";
+            // 
+            // tbEstiNo
+            // 
+            this.tbEstiNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbEstiNo.Location = new System.Drawing.Point(460, 114);
+            this.tbEstiNo.Name = "tbEstiNo";
+            this.tbEstiNo.ReadOnly = true;
+            this.tbEstiNo.Size = new System.Drawing.Size(211, 29);
+            this.tbEstiNo.TabIndex = 15;
+            this.tbEstiNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // dtpDeliDate
+            // 
+            this.dtpDeliDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dtpDeliDate.CalendarFont = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpDeliDate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpDeliDate.Location = new System.Drawing.Point(145, 114);
+            this.dtpDeliDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtpDeliDate.Name = "dtpDeliDate";
+            this.dtpDeliDate.Size = new System.Drawing.Size(211, 29);
+            this.dtpDeliDate.TabIndex = 10;
+            this.dtpDeliDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nextFocus_KeyDown);
+            // 
+            // lblCust
+            // 
+            this.lblCust.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblCust.AutoSize = true;
+            this.lblCust.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lblCust.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Underline);
+            this.lblCust.ForeColor = System.Drawing.Color.Blue;
+            this.lblCust.Location = new System.Drawing.Point(383, 75);
+            this.lblCust.Name = "lblCust";
+            this.lblCust.Size = new System.Drawing.Size(74, 21);
+            this.lblCust.TabIndex = 6;
+            this.lblCust.Text = "거래처명";
+            this.lblCust.Click += new System.EventHandler(this.lblCust_Click);
+            // 
+            // btnCopy
+            // 
+            this.btnCopy.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.btnCopy.Location = new System.Drawing.Point(460, 25);
+            this.btnCopy.Name = "btnCopy";
+            this.btnCopy.Size = new System.Drawing.Size(211, 29);
+            this.btnCopy.TabIndex = 5;
+            this.btnCopy.Text = "수주복사";
+            this.btnCopy.UseVisualStyleBackColor = true;
+            this.btnCopy.Visible = false;
+            this.btnCopy.Click += new System.EventHandler(this.btnCopy_Click);
+            // 
+            // tbProject
+            // 
+            this.tbProject.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbProject.Location = new System.Drawing.Point(145, 157);
+            this.tbProject.Name = "tbProject";
+            this.tbProject.Size = new System.Drawing.Size(526, 29);
+            this.tbProject.TabIndex = 9;
+            this.tbProject.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nextFocus_KeyDown);
+            // 
+            // tbCust
+            // 
+            this.tbCust.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbCust.Location = new System.Drawing.Point(460, 71);
+            this.tbCust.Name = "tbCust";
+            this.tbCust.ReadOnly = true;
+            this.tbCust.Size = new System.Drawing.Size(211, 29);
+            this.tbCust.TabIndex = 7;
+            this.tbCust.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbCust.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nextFocus_KeyDown);
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dtpDate.CalendarFont = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpDate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpDate.Location = new System.Drawing.Point(145, 71);
+            this.dtpDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(211, 29);
+            this.dtpDate.TabIndex = 5;
+            this.dtpDate.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nextFocus_KeyDown);
+            // 
+            // tbNo
+            // 
+            this.tbNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbNo.Location = new System.Drawing.Point(145, 26);
+            this.tbNo.Name = "tbNo";
+            this.tbNo.ReadOnly = true;
+            this.tbNo.Size = new System.Drawing.Size(211, 29);
+            this.tbNo.TabIndex = 4;
+            this.tbNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbNo.KeyDown += new System.Windows.Forms.KeyEventHandler(this.nextFocus_KeyDown);
+            // 
+            // label10
+            // 
+            this.label10.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label10.Location = new System.Drawing.Point(54, 118);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(74, 21);
+            this.label10.TabIndex = 0;
+            this.label10.Text = "납기일자";
+            // 
+            // label7
+            // 
+            this.label7.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label7.Location = new System.Drawing.Point(54, 161);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(58, 21);
+            this.label7.TabIndex = 0;
+            this.label7.Text = "모델명";
+            // 
+            // tbContents
+            // 
+            this.tbContents.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbContents.Location = new System.Drawing.Point(693, 54);
+            this.tbContents.Multiline = true;
+            this.tbContents.Name = "tbContents";
+            this.tbContents.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbContents.Size = new System.Drawing.Size(275, 132);
+            this.tbContents.TabIndex = 13;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(696, 30);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(48, 21);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "비 고";
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label1.Location = new System.Drawing.Point(54, 75);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(74, 21);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "접수일자";
+            // 
+            // cbNo
+            // 
+            this.cbNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbNo.AutoSize = true;
+            this.cbNo.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.cbNo.Location = new System.Drawing.Point(39, 28);
+            this.cbNo.Name = "cbNo";
+            this.cbNo.Size = new System.Drawing.Size(93, 25);
+            this.cbNo.TabIndex = 3;
+            this.cbNo.Text = "수주번호";
+            this.cbNo.UseVisualStyleBackColor = true;
+            // 
+            // dataGridViewList
+            // 
+            this.dataGridViewList.AllowUserToAddRows = false;
+            this.dataGridViewList.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Control;
+            this.dataGridViewList.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle14;
+            this.dataGridViewList.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.dataGridViewList.AutoGenerateColumns = false;
+            this.dataGridViewList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewList.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dataGridViewList.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewList.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.dataGridViewList.ColumnHeadersHeight = 35;
+            this.dataGridViewList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridViewList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.사업장DataGridViewTextBoxColumn,
+            this.접수일자DataGridViewTextBoxColumn,
+            this.수주번호DataGridViewTextBoxColumn,
+            this.거래처IDDataGridViewTextBoxColumn,
+            this.거래처명DataGridViewTextBoxColumn,
+            this.프로젝트명DataGridViewTextBoxColumn,
+            this.납기일자DataGridViewTextBoxColumn,
+            this.발주담당자,
+            this.발주연락처,
+            this.비고DataGridViewTextBoxColumn,
+            this.견적번호DataGridViewTextBoxColumn,
+            this.출하DataGridViewTextBoxColumn,
+            this.작성자,
+            this.첨부물1,
+            this.첨부물2,
+            this.첨부물3,
+            this.첨부물4});
+            this.dataGridViewList.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.dataGridViewList.DataSource = this.sPROrderMainQueryBindingSource;
+            dataGridViewCellStyle21.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle21.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle21.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle21.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle21.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle21.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle21.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridViewList.DefaultCellStyle = dataGridViewCellStyle21;
+            this.dataGridViewList.EnableHeadersVisualStyles = false;
+            this.dataGridViewList.Location = new System.Drawing.Point(2, 132);
+            this.dataGridViewList.MultiSelect = false;
+            this.dataGridViewList.Name = "dataGridViewList";
+            this.dataGridViewList.ReadOnly = true;
+            dataGridViewCellStyle22.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle22.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle22.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle22.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle22.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle22.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridViewList.RowHeadersDefaultCellStyle = dataGridViewCellStyle22;
+            this.dataGridViewList.RowHeadersVisible = false;
+            this.dataGridViewList.RowHeadersWidth = 35;
+            this.dataGridViewList.RowTemplate.Height = 35;
+            this.dataGridViewList.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridViewList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewList.Size = new System.Drawing.Size(302, 851);
+            this.dataGridViewList.TabIndex = 2;
+            this.dataGridViewList.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewList_CellClick);
+            // 
+            // 사업장DataGridViewTextBoxColumn
+            // 
+            this.사업장DataGridViewTextBoxColumn.DataPropertyName = "사업장";
+            this.사업장DataGridViewTextBoxColumn.HeaderText = "사업장";
+            this.사업장DataGridViewTextBoxColumn.Name = "사업장DataGridViewTextBoxColumn";
+            this.사업장DataGridViewTextBoxColumn.ReadOnly = true;
+            this.사업장DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 접수일자DataGridViewTextBoxColumn
+            // 
+            this.접수일자DataGridViewTextBoxColumn.DataPropertyName = "접수일자";
+            dataGridViewCellStyle16.Format = "yy\\/MM\\/dd";
+            this.접수일자DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle16;
+            this.접수일자DataGridViewTextBoxColumn.FillWeight = 50F;
+            this.접수일자DataGridViewTextBoxColumn.HeaderText = "일자";
+            this.접수일자DataGridViewTextBoxColumn.Name = "접수일자DataGridViewTextBoxColumn";
+            this.접수일자DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 수주번호DataGridViewTextBoxColumn
+            // 
+            this.수주번호DataGridViewTextBoxColumn.DataPropertyName = "수주번호";
+            this.수주번호DataGridViewTextBoxColumn.FillWeight = 70F;
+            this.수주번호DataGridViewTextBoxColumn.HeaderText = "수주번호";
+            this.수주번호DataGridViewTextBoxColumn.Name = "수주번호DataGridViewTextBoxColumn";
+            this.수주번호DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 거래처IDDataGridViewTextBoxColumn
+            // 
+            this.거래처IDDataGridViewTextBoxColumn.DataPropertyName = "거래처ID";
+            this.거래처IDDataGridViewTextBoxColumn.HeaderText = "거래처ID";
+            this.거래처IDDataGridViewTextBoxColumn.Name = "거래처IDDataGridViewTextBoxColumn";
+            this.거래처IDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.거래처IDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 거래처명DataGridViewTextBoxColumn
+            // 
+            this.거래처명DataGridViewTextBoxColumn.DataPropertyName = "거래처명";
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.거래처명DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle17;
+            this.거래처명DataGridViewTextBoxColumn.FillWeight = 50F;
+            this.거래처명DataGridViewTextBoxColumn.HeaderText = "거래처명";
+            this.거래처명DataGridViewTextBoxColumn.Name = "거래처명DataGridViewTextBoxColumn";
+            this.거래처명DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 프로젝트명DataGridViewTextBoxColumn
+            // 
+            this.프로젝트명DataGridViewTextBoxColumn.DataPropertyName = "프로젝트명";
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            this.프로젝트명DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle18;
+            this.프로젝트명DataGridViewTextBoxColumn.FillWeight = 90F;
+            this.프로젝트명DataGridViewTextBoxColumn.HeaderText = "프로젝트명";
+            this.프로젝트명DataGridViewTextBoxColumn.Name = "프로젝트명DataGridViewTextBoxColumn";
+            this.프로젝트명DataGridViewTextBoxColumn.ReadOnly = true;
+            this.프로젝트명DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 납기일자DataGridViewTextBoxColumn
+            // 
+            this.납기일자DataGridViewTextBoxColumn.DataPropertyName = "납기일자";
+            dataGridViewCellStyle19.Format = "M\\/d";
+            this.납기일자DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle19;
+            this.납기일자DataGridViewTextBoxColumn.FillWeight = 40F;
+            this.납기일자DataGridViewTextBoxColumn.HeaderText = "납기";
+            this.납기일자DataGridViewTextBoxColumn.Name = "납기일자DataGridViewTextBoxColumn";
+            this.납기일자DataGridViewTextBoxColumn.ReadOnly = true;
+            this.납기일자DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 발주담당자
+            // 
+            this.발주담당자.DataPropertyName = "발주담당자";
+            this.발주담당자.HeaderText = "발주담당자";
+            this.발주담당자.Name = "발주담당자";
+            this.발주담당자.ReadOnly = true;
+            this.발주담당자.Visible = false;
+            // 
+            // 발주연락처
+            // 
+            this.발주연락처.DataPropertyName = "발주연락처";
+            this.발주연락처.HeaderText = "발주연락처";
+            this.발주연락처.Name = "발주연락처";
+            this.발주연락처.ReadOnly = true;
+            this.발주연락처.Visible = false;
+            // 
+            // 비고DataGridViewTextBoxColumn
+            // 
+            this.비고DataGridViewTextBoxColumn.DataPropertyName = "비고";
+            this.비고DataGridViewTextBoxColumn.HeaderText = "비고";
+            this.비고DataGridViewTextBoxColumn.Name = "비고DataGridViewTextBoxColumn";
+            this.비고DataGridViewTextBoxColumn.ReadOnly = true;
+            this.비고DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 견적번호DataGridViewTextBoxColumn
+            // 
+            this.견적번호DataGridViewTextBoxColumn.DataPropertyName = "견적번호";
+            this.견적번호DataGridViewTextBoxColumn.HeaderText = "견적번호";
+            this.견적번호DataGridViewTextBoxColumn.Name = "견적번호DataGridViewTextBoxColumn";
+            this.견적번호DataGridViewTextBoxColumn.ReadOnly = true;
+            this.견적번호DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 출하DataGridViewTextBoxColumn
+            // 
+            this.출하DataGridViewTextBoxColumn.DataPropertyName = "출하";
+            dataGridViewCellStyle20.Format = "M\\/d";
+            this.출하DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle20;
+            this.출하DataGridViewTextBoxColumn.FillWeight = 40F;
+            this.출하DataGridViewTextBoxColumn.HeaderText = "출하";
+            this.출하DataGridViewTextBoxColumn.Name = "출하DataGridViewTextBoxColumn";
+            this.출하DataGridViewTextBoxColumn.ReadOnly = true;
+            this.출하DataGridViewTextBoxColumn.Visible = false;
+            // 
+            // 작성자
+            // 
+            this.작성자.DataPropertyName = "작성자";
+            this.작성자.HeaderText = "작성자";
+            this.작성자.Name = "작성자";
+            this.작성자.ReadOnly = true;
+            this.작성자.Visible = false;
+            // 
+            // 첨부물1
+            // 
+            this.첨부물1.DataPropertyName = "첨부물1";
+            this.첨부물1.HeaderText = "첨부물1";
+            this.첨부물1.Name = "첨부물1";
+            this.첨부물1.ReadOnly = true;
+            this.첨부물1.Visible = false;
+            // 
+            // 첨부물2
+            // 
+            this.첨부물2.DataPropertyName = "첨부물2";
+            this.첨부물2.HeaderText = "첨부물2";
+            this.첨부물2.Name = "첨부물2";
+            this.첨부물2.ReadOnly = true;
+            this.첨부물2.Visible = false;
+            // 
+            // 첨부물3
+            // 
+            this.첨부물3.DataPropertyName = "첨부물3";
+            this.첨부물3.HeaderText = "첨부물3";
+            this.첨부물3.Name = "첨부물3";
+            this.첨부물3.ReadOnly = true;
+            this.첨부물3.Visible = false;
+            // 
+            // 첨부물4
+            // 
+            this.첨부물4.DataPropertyName = "첨부물4";
+            this.첨부물4.HeaderText = "첨부물4";
+            this.첨부물4.Name = "첨부물4";
+            this.첨부물4.ReadOnly = true;
+            this.첨부물4.Visible = false;
+            // 
+            // sPROrderMainQueryBindingSource
+            // 
+            this.sPROrderMainQueryBindingSource.DataMember = "SP_ROrderMain_Query";
+            this.sPROrderMainQueryBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // panel2
+            // 
+            this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(205)))), ((int)(((byte)(219)))));
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel2.Controls.Add(this.lblMsg);
+            this.panel2.Controls.Add(this.lblCnt);
+            this.panel2.Controls.Add(this.lblSumMoney);
+            this.panel2.Location = new System.Drawing.Point(310, 281);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(1011, 38);
+            this.panel2.TabIndex = 0;
+            // 
+            // lblMsg
+            // 
+            this.lblMsg.AutoSize = true;
+            this.lblMsg.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.lblMsg.ForeColor = System.Drawing.Color.Red;
+            this.lblMsg.Location = new System.Drawing.Point(7, 9);
+            this.lblMsg.Name = "lblMsg";
+            this.lblMsg.Size = new System.Drawing.Size(148, 21);
+            this.lblMsg.TabIndex = 0;
+            this.lblMsg.Text = "메시지 라벨입니다.";
+            // 
+            // lblCnt
+            // 
+            this.lblCnt.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblCnt.AutoSize = true;
+            this.lblCnt.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblCnt.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblCnt.Location = new System.Drawing.Point(920, 9);
+            this.lblCnt.Name = "lblCnt";
+            this.lblCnt.Size = new System.Drawing.Size(35, 21);
+            this.lblCnt.TabIndex = 0;
+            this.lblCnt.Text = "0건";
+            // 
+            // lblSumMoney
+            // 
+            this.lblSumMoney.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblSumMoney.AutoSize = true;
+            this.lblSumMoney.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblSumMoney.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblSumMoney.Location = new System.Drawing.Point(538, 9);
+            this.lblSumMoney.Name = "lblSumMoney";
+            this.lblSumMoney.Size = new System.Drawing.Size(115, 21);
+            this.lblSumMoney.TabIndex = 0;
+            this.lblSumMoney.Text = "합계금액 : 0원";
+            // 
+            // sP_ROrderMain_QueryTableAdapter
+            // 
+            this.sP_ROrderMain_QueryTableAdapter.ClearBeforeFill = true;
+            // 
+            // sP_ROrderSub_QueryTableAdapter
+            // 
+            this.sP_ROrderSub_QueryTableAdapter.ClearBeforeFill = true;
+            // 
+            // sP_Z_Common_IDTableAdapter
+            // 
+            this.sP_Z_Common_IDTableAdapter.ClearBeforeFill = true;
+            // 
             // P1B03_RORDER
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -1323,5 +1336,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn 수삽;
         private System.Windows.Forms.DataGridViewButtonColumn Detail;
         private System.Windows.Forms.DataGridViewButtonColumn ColumnDel;
+        private System.Windows.Forms.CheckBox cbSuju;
     }
 }

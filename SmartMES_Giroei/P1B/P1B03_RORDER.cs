@@ -195,15 +195,22 @@ namespace SmartMES_Giroei
         public async void ListInit()
         {
             lblMsg.Text = "";
-
-            cbNo.Checked = false;
             tbNo.Text = string.Empty;
-            dtpDate.Value = DateTime.Today;
-            tbCust.Tag = string.Empty;
-            tbCust.Text = string.Empty;
-            tbProject.Text = string.Empty;
-            dtpDeliDate.Value = DateTime.Today;
-            tbContents.Text = string.Empty;
+
+            if (cbSuju.Checked == true)
+            {
+
+            }
+            else 
+            {
+                cbNo.Checked = false;
+                dtpDate.Value = DateTime.Today;
+                tbCust.Tag = string.Empty;
+                tbCust.Text = string.Empty;
+                tbProject.Text = string.Empty;
+                dtpDeliDate.Value = DateTime.Today;
+                tbContents.Text = string.Empty;
+            }
 
             sP_ROrderSub_QueryTableAdapter.Fill(dataSetP1B.SP_ROrderSub_Query, "");
 
@@ -1192,11 +1199,27 @@ namespace SmartMES_Giroei
 
         private void btnDetail_Click(object sender, EventArgs e)
         {
-            P1B03_RORDER_DETAIL rd = new P1B03_RORDER_DETAIL();
-            rd.rowIndex = 0;
-            rd.parentWin = this;
+            string sSeq = string.Empty;
+            string sNo = tbNo.Text;
+            int seq = 0;
+            seq = seq + 1;
+            sSeq = seq.ToString();
 
-            rd.ShowDialog();
+            if (tbNo.Text.Length == 0)
+            {
+                MessageBox.Show("수주등록 후 상세정보 입력 부탁드립니다.", "", MessageBoxButtons.OK);
+            }
+            else
+            {
+                P1B03_RORDER_DETAIL rd = new P1B03_RORDER_DETAIL();
+                rd.rowIndex = 0;
+                rd.parentWin = this;
+                tbNo.Text = sNo;
+                rd._sNo = sNo;
+                rd._sSeq = sSeq;
+
+                rd.ShowDialog();
+            }
         }
     }
 }

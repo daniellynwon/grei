@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Microsoft.Reporting.WinForms;
+using MySql.Data.MySqlClient;
 using SmartFactory;
 using System;
 using System.Data;
@@ -280,18 +281,19 @@ namespace SmartMES_Giroei
 
         private void P1C02_PROD_RESULT_AOI_Shown(object sender, EventArgs e)
         {
-            string sql = @"select co_code, co_item from BAS_common where co_kind = 'D' order by co_code";
+            string sql = @"select co_code, co_item from BAS_common where co_kind = 'O' order by co_code";
             MariaCRUD m = new MariaCRUD();
             string msg = string.Empty;
             DataTable table = m.dbDataTable(sql, ref msg);
 
             if (msg == "OK")
             {
-                cbWorkLine.DataSource = table;
+                //cbWorkLine.DataSource = table;
                 cbWorkLine.ValueMember = "co_code";
                 cbWorkLine.DisplayMember = "co_item";
             }
         }
+
         #endregion
 
         #region 텍스트 박스 숫자 처리

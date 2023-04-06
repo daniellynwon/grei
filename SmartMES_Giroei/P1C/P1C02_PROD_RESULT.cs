@@ -4,6 +4,7 @@ using System;
 using System.Data;
 using System.Linq;
 using System.Windows.Forms;
+using Microsoft.Reporting.WinForms;
 
 namespace SmartMES_Giroei
 {
@@ -19,7 +20,7 @@ namespace SmartMES_Giroei
         }
         private void P1C02_PROD_RESULT_Shown(object sender, EventArgs e)
         {
-            string sql = @"select co_code, co_item from BAS_common where co_kind = 'D' order by co_code";
+            string sql = @"select co_code, co_item from BAS_common where co_kind = 'O' order by co_code";
             MariaCRUD m = new MariaCRUD();
             string msg = string.Empty;
             DataTable table = m.dbDataTable(sql, ref msg);
@@ -91,7 +92,7 @@ namespace SmartMES_Giroei
             {
                 lblMsg.Text = "";
                 lblLotNo.Text = dataGridView.Rows[rowIndex].Cells[0].Value.ToString();   // tbJobNo.Text
-                cbWorkLine.SelectedValue = dataGridView.Rows[rowIndex].Cells[2].Value;
+                //cbWorkLine.SelectedValue = dataGridView.Rows[rowIndex].Cells[2].Value;
                 tbProd.Tag = dataGridView.Rows[rowIndex].Cells[4].Value.ToString();
                 tbProd.Text = dataGridView.Rows[rowIndex].Cells[5].Value.ToString();
                 tbQty.Text = dataGridView.Rows[rowIndex].Cells[6].Value.ToString();
@@ -105,6 +106,12 @@ namespace SmartMES_Giroei
                 tbInstBot.Text = dataGridView.Rows[rowIndex].Cells[14].Value.ToString();
                 tbJobNo.Text = dataGridView.Rows[rowIndex].Cells[45].Value.ToString();
                 tbMakeQty.Text = dataGridView.Rows[rowIndex].Cells[49].Value.ToString();
+                tbShowQty.Text = dataGridView.Rows[rowIndex].Cells[50].Value.ToString(); //검사수
+                tbCust.Text = dataGridView.Rows[rowIndex].Cells[52].Value.ToString(); //업체명
+                if (dataGridView.Rows[rowIndex].Cells[51].Value == null || string.IsNullOrEmpty(dataGridView.Rows[rowIndex].Cells[51].Value.ToString())) //AOI완료시간
+                    tbAOITimeFinish.Text = "";
+                else
+                    tbAOITimeFinish.Text = DateTime.Parse(dataGridView.Rows[rowIndex].Cells[51].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
 
                 if (dataGridView.Rows[rowIndex].Cells[15].Value == null || string.IsNullOrEmpty(dataGridView.Rows[rowIndex].Cells[15].Value.ToString()))
                     tbJobTimeStart.Text = "";
@@ -446,7 +453,46 @@ namespace SmartMES_Giroei
         }
         private void pbPrint_Click(object sender, EventArgs e)
         {
-            //
+                string reportFileName = "SmartMES_Giroei.Reports.P1C02_PROD_RESULT_AOI.rdlc";
+
+            string reportParm1 = "";
+            string reportParm2 = "";
+            string reportParm3 = "";
+            string reportParm4 = "";
+            string reportParm5 = "";
+            string reportParm6 = "";
+            string reportParm7 = "임시조치";
+            string reportParm8 = "";
+
+            reportParm1 = reportParm1 + lblLotNo.Text; // 수주번호
+            reportParm2 = reportParm2 + tbCust.Text; //업체명
+            reportParm3 = reportParm3 + tbProd.Text; //모델명
+            reportParm4 = reportParm4 + tbJobNo.Text; // LOT No
+            reportParm5 = reportParm5 + tbMakeQty.Text + " pcs"; //생산수
+            reportParm6 = reportParm6 + tbAOITimeFinish.Text; //검사일
+            reportParm7 = reportParm7 + ""; //검사자
+            reportParm8 = reportParm8 + tbShowQty.Text; //검사수
+
+            ViewReport_V viewReport = new ViewReport_V();
+                viewReport.reportViewer1.ProcessingMode = ProcessingMode.Local;
+                viewReport.reportViewer1.LocalReport.ReportEmbeddedResource = reportFileName;
+
+            ReportParameter rp1 = new ReportParameter("ReportParameter1", reportParm1);
+            ReportParameter rp2 = new ReportParameter("ReportParameter2", reportParm2);
+            ReportParameter rp3 = new ReportParameter("ReportParameter3", reportParm3);
+            ReportParameter rp4 = new ReportParameter("ReportParameter4", reportParm4);
+            ReportParameter rp5 = new ReportParameter("ReportParameter5", reportParm5);
+            ReportParameter rp6 = new ReportParameter("ReportParameter6", reportParm6);
+            ReportParameter rp7 = new ReportParameter("ReportParameter7", reportParm7);
+            ReportParameter rp8 = new ReportParameter("ReportParameter8", reportParm8);
+
+            viewReport.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rp1, rp2, rp3, rp4, rp5, rp6, rp7, rp8 });
+
+            ReportDataSource rds = new ReportDataSource("DataSet1", sPProdResultQueryBindingSource);
+                viewReport.reportViewer1.LocalReport.DataSources.Add(rds);
+                viewReport.reportViewer1.LocalReport.Refresh();
+
+                viewReport.ShowDialog();
         }
         #endregion
 

@@ -11128,6 +11128,12 @@ namespace SmartMES_Giroei.P1C {
             
             private global::System.Data.DataColumn column생산수량;
             
+            private global::System.Data.DataColumn column검사수;
+            
+            private global::System.Data.DataColumn columnAOI검사완료시간;
+            
+            private global::System.Data.DataColumn column업체명;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public SP_ProdResult_QueryDataTable() {
@@ -11555,6 +11561,30 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 검사수Column {
+                get {
+                    return this.column검사수;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn AOI검사완료시간Column {
+                get {
+                    return this.columnAOI검사완료시간;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 업체명Column {
+                get {
+                    return this.column업체명;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -11639,7 +11669,10 @@ namespace SmartMES_Giroei.P1C {
                         int 수주순번, 
                         string 첨부물1, 
                         string 첨부물2, 
-                        int 생산수량) {
+                        int 생산수량, 
+                        int 검사수, 
+                        System.DateTime AOI검사완료시간, 
+                        string 업체명) {
                 SP_ProdResult_QueryRow rowSP_ProdResult_QueryRow = ((SP_ProdResult_QueryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         JobNo,
@@ -11690,7 +11723,10 @@ namespace SmartMES_Giroei.P1C {
                         수주순번,
                         첨부물1,
                         첨부물2,
-                        생산수량};
+                        생산수량,
+                        검사수,
+                        AOI검사완료시간,
+                        업체명};
                 rowSP_ProdResult_QueryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_ProdResult_QueryRow);
                 return rowSP_ProdResult_QueryRow;
@@ -11762,6 +11798,9 @@ namespace SmartMES_Giroei.P1C {
                 this.column첨부물1 = base.Columns["첨부물1"];
                 this.column첨부물2 = base.Columns["첨부물2"];
                 this.column생산수량 = base.Columns["생산수량"];
+                this.column검사수 = base.Columns["검사수"];
+                this.columnAOI검사완료시간 = base.Columns["AOI검사완료시간"];
+                this.column업체명 = base.Columns["업체명"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -11865,6 +11904,12 @@ namespace SmartMES_Giroei.P1C {
                 base.Columns.Add(this.column첨부물2);
                 this.column생산수량 = new global::System.Data.DataColumn("생산수량", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column생산수량);
+                this.column검사수 = new global::System.Data.DataColumn("검사수", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column검사수);
+                this.columnAOI검사완료시간 = new global::System.Data.DataColumn("AOI검사완료시간", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAOI검사완료시간);
+                this.column업체명 = new global::System.Data.DataColumn("업체명", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column업체명);
                 this.columnJobNo.AllowDBNull = false;
                 this.columnJobNo.MaxLength = 13;
                 this.column공정명.MaxLength = 50;
@@ -11907,6 +11952,7 @@ namespace SmartMES_Giroei.P1C {
                 this.column수주번호.MaxLength = 13;
                 this.column첨부물1.MaxLength = 50;
                 this.column첨부물2.MaxLength = 50;
+                this.column업체명.MaxLength = 50;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -20597,6 +20643,54 @@ namespace SmartMES_Giroei.P1C {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public int 검사수 {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_ProdResult_Query.검사수Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'검사수\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query.검사수Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public System.DateTime AOI검사완료시간 {
+                get {
+                    try {
+                        return ((global::System.DateTime)(this[this.tableSP_ProdResult_Query.AOI검사완료시간Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'AOI검사완료시간\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query.AOI검사완료시간Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public string 업체명 {
+                get {
+                    try {
+                        return ((string)(this[this.tableSP_ProdResult_Query.업체명Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_ProdResult_Query\' 테이블의 \'업체명\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_ProdResult_Query.업체명Column] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is공정명Null() {
                 return this.IsNull(this.tableSP_ProdResult_Query.공정명Column);
             }
@@ -20977,6 +21071,42 @@ namespace SmartMES_Giroei.P1C {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set생산수량Null() {
                 this[this.tableSP_ProdResult_Query.생산수량Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is검사수Null() {
+                return this.IsNull(this.tableSP_ProdResult_Query.검사수Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set검사수Null() {
+                this[this.tableSP_ProdResult_Query.검사수Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool IsAOI검사완료시간Null() {
+                return this.IsNull(this.tableSP_ProdResult_Query.AOI검사완료시간Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void SetAOI검사완료시간Null() {
+                this[this.tableSP_ProdResult_Query.AOI검사완료시간Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is업체명Null() {
+                return this.IsNull(this.tableSP_ProdResult_Query.업체명Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set업체명Null() {
+                this[this.tableSP_ProdResult_Query.업체명Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -27787,6 +27917,9 @@ namespace SmartMES_Giroei.P1C.DataSetP1CTableAdapters {
             tableMapping.ColumnMappings.Add("첨부물1", "첨부물1");
             tableMapping.ColumnMappings.Add("첨부물2", "첨부물2");
             tableMapping.ColumnMappings.Add("생산수량", "생산수량");
+            tableMapping.ColumnMappings.Add("검사수", "검사수");
+            tableMapping.ColumnMappings.Add("AOI검사완료시간", "AOI검사완료시간");
+            tableMapping.ColumnMappings.Add("업체명", "업체명");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

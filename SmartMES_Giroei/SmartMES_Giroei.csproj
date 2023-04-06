@@ -1439,6 +1439,7 @@
     <EmbeddedResource Include="Reports\P1D03_MAINTENANCE.rdlc" />
     <EmbeddedResource Include="Reports\P1D04_MAINTENANCE_RATE.rdlc" />
     <EmbeddedResource Include="Reports\P1D04_MAINTENANCE_RATE1.rdlc" />
+    <EmbeddedResource Include="Reports\P1C02_PROD_RESULT_AOI.rdlc" />
     <EmbeddedResource Include="Reports\P1ED01_QC_FINAL.rdlc" />
     <EmbeddedResource Include="Reports\P1ED03_QC_AS.rdlc" />
     <EmbeddedResource Include="Reports\P1ED02_QC_FINAL_LIST.rdlc" />
@@ -1661,6 +1662,7 @@
     <None Include="Resources\empty.jpg" />
     <Content Include="Resources\exit_A.jpg" />
     <None Include="Resources\GiroeiLogo.png" />
+    <Content Include="Resources\GIRO_ICON.png" />
     <Content Include="Resources\ico_No.ico" />
     <Content Include="Resources\ico_Refresh.ico" />
     <Content Include="Resources\ico_Yes.ico" />
