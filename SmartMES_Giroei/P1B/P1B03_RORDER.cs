@@ -412,25 +412,25 @@ namespace SmartMES_Giroei
                     ListSearch4();
                 }
 
-                if (columnIndex == 4)       // 품목명
-                {
-                    if (!checkProdName(dataGridView1.Rows[rowIndex].Cells[4].Value.ToString()))
-                    {
-                        ProdFinder pop = new ProdFinder();
-                        pop.cbGubun.SelectedIndex = 1;
-                        pop._kind = "%";
-                        pop._stockFlag = "%";
-                        pop.btnAdd.Visible = true;
-                        pop._prodName = dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
-                        pop.FormSendEvent += new ProdFinder.FormSendDataHandler(ProdEventMethod);
-                        pop.cbGubun.Enabled = false;
-                        pop.ShowDialog();
-                    }
-                    else
-                    {
-                        //
-                    }
-                }
+                //if (columnIndex == 4)       // 품목명
+                //{
+                //    if (!checkProdName(dataGridView1.Rows[rowIndex].Cells[4].Value.ToString()))
+                //    {
+                //        ProdFinder pop = new ProdFinder();
+                //        pop.cbGubun.SelectedIndex = 1;
+                //        pop._kind = "%";
+                //        pop._stockFlag = "%";
+                //        pop.btnAdd.Visible = true;
+                //        pop._prodName = dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();
+                //        pop.FormSendEvent += new ProdFinder.FormSendDataHandler(ProdEventMethod);
+                //        pop.cbGubun.Enabled = false;
+                //        pop.ShowDialog();
+                //    }
+                //    else
+                //    {
+                //        //
+                //    }
+                //}
             }
             catch(Exception)
             {
@@ -451,7 +451,7 @@ namespace SmartMES_Giroei
                     //if (columnIndex == dataGridView1.Columns.Count - 1)
                     if (columnIndex == 15)
                         dataGridView1.CurrentCell = dataGridView1[4, rowIndex + 1];
-                    else
+                    else if (columnIndex < 24)
                         dataGridView1.CurrentCell = dataGridView1[columnIndex + 1, rowIndex];
 
                     endEdit = false;
@@ -586,11 +586,14 @@ namespace SmartMES_Giroei
                 int rowIndex = dataGridView1.CurrentCell.RowIndex;
                 if (rowIndex < 0) return;
 
+                string pointNum = sProd.Substring(sProd.IndexOf("#5/") + 3, sProd.IndexOf("#6/") - (sProd.IndexOf("#5/") + 3));
+                string price = sProd.Substring(sProd.IndexOf("#7/") + 3, sProd.Length - (sProd.IndexOf("#7/") + 3));
+
                 dataGridView1.Rows[rowIndex].Cells[3].Value = sProd.Substring(0, sProd.IndexOf("#1/"));
                 dataGridView1.Rows[rowIndex].Cells[4].Value = sProd.Substring(sProd.IndexOf("#1/") + 3, sProd.IndexOf("#2/") - (sProd.IndexOf("#1/") + 3));
                 //dataGridView1.Rows[rowIndex].Cells[6].Value = sProd.Substring(sProd.IndexOf("#2/") + 3, sProd.IndexOf("#3/") - (sProd.IndexOf("#2/") + 3));
-                dataGridView1.Rows[rowIndex].Cells[8].Value = sProd.Substring(sProd.IndexOf("#5/") + 3, sProd.IndexOf("#6/") - (sProd.IndexOf("#5/") + 3)); //점수
-                dataGridView1.Rows[rowIndex].Cells[14].Value = sProd.Substring(sProd.IndexOf("#7/") + 3, sProd.Length - (sProd.IndexOf("#7/") + 3)); //기준단가
+                dataGridView1.Rows[rowIndex].Cells[8].Value = string.IsNullOrEmpty(pointNum) ? "0" : pointNum; //점수
+                dataGridView1.Rows[rowIndex].Cells[14].Value = string.IsNullOrEmpty(price) ? "0" : price; //기준단가
                 dataGridView1.CurrentCell = dataGridView1[7, rowIndex];
 
                 //if (rowIndex < 1)

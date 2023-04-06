@@ -1402,7 +1402,7 @@ namespace SmartMES_Giroei.P1B {
             this.DataSetName = "DataSetP1B";
             this.Prefix = "";
             this.Namespace = "http://tempuri.org/DataSetP1B.xsd";
-            this.EnforceConstraints = false; //true에서 발주등록 임시조치 
+            this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
             this.tableSP_Z_Common_ID = new SP_Z_Common_IDDataTable();
             base.Tables.Add(this.tableSP_Z_Common_ID);
@@ -11135,7 +11135,7 @@ namespace SmartMES_Giroei.P1B {
                 base.Columns.Add(this.column수삽);
                 this.column수주번호.MaxLength = 13;
                 this.column품목코드.MaxLength = 10;
-                this.column품목명.MaxLength = 50;
+                this.column품목명.MaxLength = 100;
                 this.column공정코드.MaxLength = 5;
                 this.column생산형태.MaxLength = 5;
                 this.column관리번호.MaxLength = 16;
