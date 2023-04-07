@@ -2106,7 +2106,7 @@ namespace SmartMES_Giroei.P1A {
             
             private global::System.Data.DataColumn column번호;
             
-            private global::System.Data.DataColumn column수주수;
+            private global::System.Data.DataColumn column총수주;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -2207,9 +2207,9 @@ namespace SmartMES_Giroei.P1A {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 수주수Column {
+            public global::System.Data.DataColumn 총수주Column {
                 get {
-                    return this.column수주수;
+                    return this.column총수주;
                 }
             }
             
@@ -2250,7 +2250,7 @@ namespace SmartMES_Giroei.P1A {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public SP_BOM_QueryRow AddSP_BOM_QueryRow(string 품목코드, string 품목명, string 규격, string 단위, long 등록, System.DateTime 등록일자, string 분류, double 번호, long 수주수) {
+            public SP_BOM_QueryRow AddSP_BOM_QueryRow(string 품목코드, string 품목명, string 규격, string 단위, long 등록, System.DateTime 등록일자, string 분류, double 번호, long 총수주) {
                 SP_BOM_QueryRow rowSP_BOM_QueryRow = ((SP_BOM_QueryRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         품목코드,
@@ -2261,7 +2261,7 @@ namespace SmartMES_Giroei.P1A {
                         등록일자,
                         분류,
                         번호,
-                        수주수};
+                        총수주};
                 rowSP_BOM_QueryRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_BOM_QueryRow);
                 return rowSP_BOM_QueryRow;
@@ -2299,7 +2299,7 @@ namespace SmartMES_Giroei.P1A {
                 this.column등록일자 = base.Columns["등록일자"];
                 this.column분류 = base.Columns["분류"];
                 this.column번호 = base.Columns["번호"];
-                this.column수주수 = base.Columns["수주수"];
+                this.column총수주 = base.Columns["총수주"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -2321,8 +2321,8 @@ namespace SmartMES_Giroei.P1A {
                 base.Columns.Add(this.column분류);
                 this.column번호 = new global::System.Data.DataColumn("번호", typeof(double), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column번호);
-                this.column수주수 = new global::System.Data.DataColumn("수주수", typeof(long), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column수주수);
+                this.column총수주 = new global::System.Data.DataColumn("총수주", typeof(long), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column총수주);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.column품목코드}, true));
                 this.column품목코드.AllowDBNull = false;
@@ -2334,7 +2334,6 @@ namespace SmartMES_Giroei.P1A {
                 this.column단위.MaxLength = 4;
                 this.column분류.AllowDBNull = false;
                 this.column분류.MaxLength = 50;
-                this.column수주수.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5546,12 +5545,17 @@ namespace SmartMES_Giroei.P1A {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public long 수주수 {
+            public long 총수주 {
                 get {
-                    return ((long)(this[this.tableSP_BOM_Query.수주수Column]));
+                    try {
+                        return ((long)(this[this.tableSP_BOM_Query.총수주Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_BOM_Query\' 테이블의 \'총수주\' 열의 값이 DBNull입니다.", e);
+                    }
                 }
                 set {
-                    this[this.tableSP_BOM_Query.수주수Column] = value;
+                    this[this.tableSP_BOM_Query.총수주Column] = value;
                 }
             }
             
@@ -5613,6 +5617,18 @@ namespace SmartMES_Giroei.P1A {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set번호Null() {
                 this[this.tableSP_BOM_Query.번호Column] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is총수주Null() {
+                return this.IsNull(this.tableSP_BOM_Query.총수주Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set총수주Null() {
+                this[this.tableSP_BOM_Query.총수주Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -8652,7 +8668,7 @@ namespace SmartMES_Giroei.P1A.DataSetP1ATableAdapters {
             tableMapping.ColumnMappings.Add("등록일자", "등록일자");
             tableMapping.ColumnMappings.Add("분류", "분류");
             tableMapping.ColumnMappings.Add("번호", "번호");
-            tableMapping.ColumnMappings.Add("수주수", "수주수");
+            tableMapping.ColumnMappings.Add("총수주", "총수주");
             this._adapter.TableMappings.Add(tableMapping);
         }
         

@@ -137,7 +137,7 @@
               <Mapping SourceColumn="등록일자" DataSetColumn="등록일자" />
               <Mapping SourceColumn="분류" DataSetColumn="분류" />
               <Mapping SourceColumn="번호" DataSetColumn="번호" />
-              <Mapping SourceColumn="수주수" DataSetColumn="수주수" />
+              <Mapping SourceColumn="총수주" DataSetColumn="총수주" />
             </Mappings>
             <Sources />
           </TableAdapter>
@@ -560,7 +560,7 @@
                 </xs:simpleType>
               </xs:element>
               <xs:element name="번호" msprop:Generator_ColumnVarNameInTable="column번호" msprop:Generator_ColumnPropNameInRow="번호" msprop:Generator_ColumnPropNameInTable="번호Column" msprop:Generator_UserColumnName="번호" type="xs:double" minOccurs="0" />
-              <xs:element name="수주수" msprop:Generator_ColumnVarNameInTable="column수주수" msprop:Generator_ColumnPropNameInRow="수주수" msprop:Generator_ColumnPropNameInTable="수주수Column" msprop:Generator_UserColumnName="수주수" type="xs:long" />
+              <xs:element name="총수주" msprop:Generator_ColumnVarNameInTable="column총수주" msprop:Generator_ColumnPropNameInRow="총수주" msprop:Generator_ColumnPropNameInTable="총수주Column" msprop:Generator_UserColumnName="총수주" type="xs:long" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
