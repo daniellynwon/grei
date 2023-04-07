@@ -24,6 +24,7 @@ namespace SmartMES_Giroei
 
         string sProdID = string.Empty;
         string sProdName = string.Empty;
+        string sSuju = string.Empty;
 
         public P1A06_BOM()
         {
@@ -693,6 +694,21 @@ namespace SmartMES_Giroei
 
 
             //MessageBox.Show(fileName + " 엑셀 내보내기 완료");
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.ColumnIndex == 8)
+            {
+                CurrentCellRowIndex = e.RowIndex;
+
+                sSuju = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
+
+                P1A06_BOM_Suju sub = new P1A06_BOM_Suju();
+                sub.rowIndex = e.RowIndex;
+                sub.parentWin = this;
+                sub.ShowDialog();
+            }
         }
     }
 }

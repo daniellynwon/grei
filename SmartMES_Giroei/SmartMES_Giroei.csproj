@@ -357,6 +357,12 @@
     <Compile Include="P1A\P1A06_BOM_SUB.designer.cs">
       <DependentUpon>P1A06_BOM_SUB.cs</DependentUpon>
     </Compile>
+    <Compile Include="P1A\P1A06_BOM_Suju.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="P1A\P1A06_BOM_Suju.designer.cs">
+      <DependentUpon>P1A06_BOM_Suju.cs</DependentUpon>
+    </Compile>
     <Compile Include="P1B\DataSetP1B.cs">
       <DependentUpon>DataSetP1B.xsd</DependentUpon>
     </Compile>
@@ -1096,6 +1102,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="P1A\P1A06_BOM_SUB.resx">
       <DependentUpon>P1A06_BOM_SUB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="P1A\P1A06_BOM_Suju.resx">
+      <DependentUpon>P1A06_BOM_Suju.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="P1B\P1B01_ESTIMATE.resx">
       <DependentUpon>P1B01_ESTIMATE.cs</DependentUpon>
