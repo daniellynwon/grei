@@ -2051,3 +2051,4 @@ C:\Users\yycho\source\repos\SmartMES_Giroei\SmartMES_Giroei\obj\Debug\SmartMES_G
 C:\Users\yycho\source\repos\SmartMES_Giroei\SmartMES_Giroei\obj\Debug\RdlCompile.cache
 C:\Users\yycho\source\repos\SmartMES_Giroei\SmartMES_Giroei\obj\Debug\RdlCompile.compiled
 C:\ProJect(유지보수)\(유지보수)지로이아이\0224지로이아이\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.P1A06_BOM_Suju.resources
+C:\ProJect(유지보수)\(유지보수)지로이아이\0224지로이아이\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.csproj.AssemblyReference.cache

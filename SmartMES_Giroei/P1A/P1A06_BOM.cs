@@ -246,7 +246,7 @@ namespace SmartMES_Giroei
         #region GridView Events
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex < 0) return;
+            if (e.RowIndex < 0 || e.ColumnIndex == 8) return;
 
             CurrentCellRowIndex = e.RowIndex;
 
