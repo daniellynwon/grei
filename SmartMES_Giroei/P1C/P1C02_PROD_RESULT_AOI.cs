@@ -39,6 +39,18 @@ namespace SmartMES_Giroei
                 cbMan.DisplayMember = "user_name";
             }
 
+            sql = @"select co_code, co_item from BAS_common where co_kind = 'O' order by co_code";
+            m = new MariaCRUD();
+            msg = string.Empty;
+            table = m.dbDataTable(sql, ref msg);
+
+            if (msg == "OK")
+            {
+                cbWorkLine.DataSource = table;
+                cbWorkLine.ValueMember = "co_code";
+                cbWorkLine.DisplayMember = "co_item";
+            }
+
             rowIndex = parentWin.dataGridView1.CurrentCell.RowIndex;
 
             tbProdName.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString(); // 품목명
@@ -116,8 +128,12 @@ namespace SmartMES_Giroei
                     tbTwisted.Text = row[0][14].ToString();
                     tbEtcError.Text = row[0][15].ToString();
                     rtbContents.Text = row[0][20].ToString();
-                    cbMan.SelectedItem = row[0][21].ToString();
-                    cbWorkLine.SelectedItem = row[0][23].ToString();
+
+                    // cbMan.SelectedItem = row[0][21].ToString();
+                    cbMan.SelectedValue = row[0][21].ToString();
+                    // cbWorkLine.SelectedItem = row[0][23].ToString();
+                    string line = row[0][23].ToString();
+                    cbWorkLine.SelectedValue = row[0][23].ToString();
 
                     lbFname1.Text = row[0][16].ToString();
                     lbFname2.Text = row[0][17].ToString();
@@ -289,7 +305,7 @@ namespace SmartMES_Giroei
 
             if (msg == "OK")
             {
-                //cbWorkLine.DataSource = table;
+                cbWorkLine.DataSource = table;
                 cbWorkLine.ValueMember = "co_code";
                 cbWorkLine.DisplayMember = "co_item";
             }

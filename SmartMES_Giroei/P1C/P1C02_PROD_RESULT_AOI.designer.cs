@@ -786,7 +786,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "Smart Factory MES";
             this.Load += new System.EventHandler(this.P1C02_PROD_RESULT_AOI_Load);
-            this.Shown += new System.EventHandler(this.P1C02_PROD_RESULT_AOI_Shown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
