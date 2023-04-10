@@ -159,6 +159,7 @@
             // 
             // cbMan
             // 
+            this.cbMan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMan.FormattingEnabled = true;
             this.cbMan.Location = new System.Drawing.Point(481, 106);
             this.cbMan.Name = "cbMan";

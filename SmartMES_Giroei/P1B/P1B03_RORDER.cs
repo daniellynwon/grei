@@ -1156,7 +1156,11 @@ namespace SmartMES_Giroei
         #region 파일 첨부
         public void userButtonA1_Click(object sender, EventArgs e)
         {
-            if (dataGridViewList.CurrentRow == null || dataGridViewList.CurrentRow.Index < 0) return;
+            if (dataGridViewList.CurrentRow == null || dataGridViewList.CurrentRow.Index < 0)
+            {
+                MessageBox.Show("수주등록 후 첨부 부탁드립니다.", "", MessageBoxButtons.OK);
+                return;
+            }
 
             P1B03_RORDER_DOC sub = new P1B03_RORDER_DOC();
             sub.parentWin = this;
@@ -1167,8 +1171,11 @@ namespace SmartMES_Giroei
         }
         public void userButtonA2_Click(object sender, EventArgs e)
         {
-            if (dataGridViewList.CurrentRow == null || dataGridViewList.CurrentRow.Index < 0) return;
-
+            if (dataGridViewList.CurrentRow == null || dataGridViewList.CurrentRow.Index < 0)
+            {
+                MessageBox.Show("수주등록 후 첨부 부탁드립니다.", "", MessageBoxButtons.OK);
+                return;
+            }
             P1B03_RORDER_DOC sub = new P1B03_RORDER_DOC();
             sub.parentWin = this;
             sub.sNo = "2";
@@ -1178,8 +1185,11 @@ namespace SmartMES_Giroei
         }
         public void userButtonA3_Click(object sender, EventArgs e)
         {
-            if (dataGridViewList.CurrentRow == null || dataGridViewList.CurrentRow.Index < 0) return;
-
+            if (dataGridViewList.CurrentRow == null || dataGridViewList.CurrentRow.Index < 0)
+            {
+                MessageBox.Show("수주등록 후 첨부 부탁드립니다.", "", MessageBoxButtons.OK);
+                return;
+            }
             P1B03_RORDER_DOC sub = new P1B03_RORDER_DOC();
             sub.parentWin = this;
             sub.sNo = "3";
@@ -1189,8 +1199,11 @@ namespace SmartMES_Giroei
         }
         public void userButtonA4_Click(object sender, EventArgs e)
         {
-            if (dataGridViewList.CurrentRow == null || dataGridViewList.CurrentRow.Index < 0) return;
-
+            if (dataGridViewList.CurrentRow == null || dataGridViewList.CurrentRow.Index < 0)
+            {
+                MessageBox.Show("수주등록 후 첨부 부탁드립니다.", "", MessageBoxButtons.OK);
+                return;
+            }
             P1B03_RORDER_DOC sub = new P1B03_RORDER_DOC();
             sub.parentWin = this;
             sub.sNo = "4";

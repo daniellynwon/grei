@@ -143,6 +143,7 @@
             this.pictureBoxIpl1.Location = new System.Drawing.Point(12, 57);
             this.pictureBoxIpl1.Name = "pictureBoxIpl1";
             this.pictureBoxIpl1.Size = new System.Drawing.Size(640, 480);
+            this.pictureBoxIpl1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBoxIpl1.TabIndex = 14;
             this.pictureBoxIpl1.TabStop = false;
             // 
@@ -151,7 +152,7 @@
             this.timer1.Interval = 33;
             this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
-            // P1B03_RORDER_DOC
+            // P1C02_PROD_RESULT_AOI_DOC2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -164,7 +165,7 @@
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnRun);
             this.Controls.Add(this.txtPath);
-            this.Name = "P1B03_RORDER_DOC";
+            this.Name = "P1C02_PROD_RESULT_AOI_DOC2";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
             this.Text = "자료관리";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.P1B03_RORDER_DOC_FormClosing);

@@ -116,7 +116,8 @@ namespace SmartMES_Giroei
                     tbTwisted.Text = row[0][14].ToString();
                     tbEtcError.Text = row[0][15].ToString();
                     rtbContents.Text = row[0][20].ToString();
-                    cbMan.SelectedValue = row[0][21].ToString();
+                    cbMan.SelectedItem = row[0][21].ToString();
+                    cbWorkLine.SelectedItem = row[0][23].ToString();
 
                     lbFname1.Text = row[0][16].ToString();
                     lbFname2.Text = row[0][17].ToString();
@@ -147,8 +148,8 @@ namespace SmartMES_Giroei
             string sEtcerror = tbEtcError.Text;
             string sContents = rtbContents.Text;
             string sMan = cbMan.SelectedValue.ToString();
-            string sWorkline = cbWorkLine.Text.Trim();
-                
+            string sWorkline = cbWorkLine.SelectedValue.ToString();
+
             string sFname1 = lbFname1.Text;
             string sFname2 = lbFname2.Text;
             string sInspFromTime = dTFromTime.Text;
