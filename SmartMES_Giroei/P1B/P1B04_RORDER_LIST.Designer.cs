@@ -32,8 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P1B04_RORDER_LIST));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -46,7 +46,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panSearch = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -55,13 +54,15 @@
             this.tbSearch = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.sPROrderListQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
+            this.sP_ROrderList_QueryTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_ROrderList_QueryTableAdapter();
             this.수주번호DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.접수일자DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.거래처IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.거래처명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewLinkColumn();
             this.영업담당DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.프로젝트명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.품목수DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.견적금액 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.설계 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -73,9 +74,7 @@
             this.납기DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.출하DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.sPROrderListQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1B = new SmartMES_Giroei.P1B.DataSetP1B();
-            this.sP_ROrderList_QueryTableAdapter = new SmartMES_Giroei.P1B.DataSetP1BTableAdapters.SP_ROrderList_QueryTableAdapter();
+
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -238,7 +237,6 @@
             this.거래처명DataGridViewTextBoxColumn,
             this.영업담당DataGridViewTextBoxColumn,
             this.프로젝트명DataGridViewTextBoxColumn,
-            this.품목수DataGridViewTextBoxColumn,
             this.수량DataGridViewTextBoxColumn,
             this.견적금액,
             this.설계,
@@ -252,27 +250,27 @@
             this.Column1});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPROrderListQueryBindingSource;
-            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle16.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle16.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle16.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle15;
             this.dataGridView1.EnableHeadersVisualStyles = false;
             this.dataGridView1.Location = new System.Drawing.Point(2, 131);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle16.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle16.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle16.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle16;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 35;
             this.dataGridView1.RowTemplate.Height = 35;
@@ -282,6 +280,20 @@
             this.dataGridView1.TabIndex = 10;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
+            // 
+            // sPROrderListQueryBindingSource
+            // 
+            this.sPROrderListQueryBindingSource.DataMember = "SP_ROrderList_Query";
+            this.sPROrderListQueryBindingSource.DataSource = this.dataSetP1B;
+            // 
+            // dataSetP1B
+            // 
+            this.dataSetP1B.DataSetName = "DataSetP1B";
+            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sP_ROrderList_QueryTableAdapter
+            // 
+            this.sP_ROrderList_QueryTableAdapter.ClearBeforeFill = true;
             // 
             // 수주번호DataGridViewTextBoxColumn
             // 
@@ -337,24 +349,12 @@
             this.프로젝트명DataGridViewTextBoxColumn.ReadOnly = true;
             this.프로젝트명DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             // 
-            // 품목수DataGridViewTextBoxColumn
-            // 
-            this.품목수DataGridViewTextBoxColumn.DataPropertyName = "품목수";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "N0";
-            dataGridViewCellStyle4.NullValue = null;
-            this.품목수DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
-            this.품목수DataGridViewTextBoxColumn.FillWeight = 43.36695F;
-            this.품목수DataGridViewTextBoxColumn.HeaderText = "품목수";
-            this.품목수DataGridViewTextBoxColumn.Name = "품목수DataGridViewTextBoxColumn";
-            this.품목수DataGridViewTextBoxColumn.ReadOnly = true;
-            // 
             // 수량DataGridViewTextBoxColumn
             // 
             this.수량DataGridViewTextBoxColumn.DataPropertyName = "수량";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "N0";
-            this.수량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "N0";
+            this.수량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.수량DataGridViewTextBoxColumn.FillWeight = 54.20869F;
             this.수량DataGridViewTextBoxColumn.HeaderText = "수량";
             this.수량DataGridViewTextBoxColumn.Name = "수량DataGridViewTextBoxColumn";
@@ -363,9 +363,9 @@
             // 견적금액
             // 
             this.견적금액.DataPropertyName = "견적금액";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Format = "N0";
-            this.견적금액.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "N0";
+            this.견적금액.DefaultCellStyle = dataGridViewCellStyle5;
             this.견적금액.FillWeight = 65F;
             this.견적금액.HeaderText = "견적금액";
             this.견적금액.Name = "견적금액";
@@ -374,10 +374,10 @@
             // 설계
             // 
             this.설계.DataPropertyName = "설계";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle7.Format = "N0";
-            dataGridViewCellStyle7.NullValue = null;
-            this.설계.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = null;
+            this.설계.DefaultCellStyle = dataGridViewCellStyle6;
             this.설계.FillWeight = 50F;
             this.설계.HeaderText = "설계비용";
             this.설계.Name = "설계";
@@ -386,9 +386,9 @@
             // 제작
             // 
             this.제작.DataPropertyName = "제작";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle8.Format = "N0";
-            this.제작.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "N0";
+            this.제작.DefaultCellStyle = dataGridViewCellStyle7;
             this.제작.FillWeight = 50F;
             this.제작.HeaderText = "제작비용";
             this.제작.Name = "제작";
@@ -397,9 +397,9 @@
             // 조립
             // 
             this.조립.DataPropertyName = "조립";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle9.Format = "N0";
-            this.조립.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "N0";
+            this.조립.DefaultCellStyle = dataGridViewCellStyle8;
             this.조립.FillWeight = 50F;
             this.조립.HeaderText = "조립비용";
             this.조립.Name = "조립";
@@ -408,9 +408,9 @@
             // 구매수삽
             // 
             this.구매수삽.DataPropertyName = "구매수삽";
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle10.Format = "N0";
-            this.구매수삽.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle9.Format = "N0";
+            this.구매수삽.DefaultCellStyle = dataGridViewCellStyle9;
             this.구매수삽.FillWeight = 50F;
             this.구매수삽.HeaderText = "구매/수삽비용";
             this.구매수삽.Name = "구매수삽";
@@ -419,9 +419,9 @@
             // 기타METAL
             // 
             this.기타METAL.DataPropertyName = "기타METAL";
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.Format = "N0";
-            this.기타METAL.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle10.Format = "N0";
+            this.기타METAL.DefaultCellStyle = dataGridViewCellStyle10;
             this.기타METAL.FillWeight = 65F;
             this.기타METAL.HeaderText = "기타(METAL)비용";
             this.기타METAL.Name = "기타METAL";
@@ -430,19 +430,20 @@
             // 합계금액DataGridViewTextBoxColumn
             // 
             this.합계금액DataGridViewTextBoxColumn.DataPropertyName = "합계금액";
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle12.Format = "N0";
-            this.합계금액DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle11.Format = "N0";
+            this.합계금액DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle11;
             this.합계금액DataGridViewTextBoxColumn.FillWeight = 75F;
             this.합계금액DataGridViewTextBoxColumn.HeaderText = "합계금액";
             this.합계금액DataGridViewTextBoxColumn.Name = "합계금액DataGridViewTextBoxColumn";
             this.합계금액DataGridViewTextBoxColumn.ReadOnly = true;
+            this.합계금액DataGridViewTextBoxColumn.Visible = false;
             // 
             // 납기DataGridViewTextBoxColumn
             // 
             this.납기DataGridViewTextBoxColumn.DataPropertyName = "납기";
-            dataGridViewCellStyle13.Format = "M\\/d";
-            this.납기DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle12.Format = "M\\/d";
+            this.납기DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle12;
             this.납기DataGridViewTextBoxColumn.FillWeight = 43.36695F;
             this.납기DataGridViewTextBoxColumn.HeaderText = "납기";
             this.납기DataGridViewTextBoxColumn.Name = "납기DataGridViewTextBoxColumn";
@@ -451,8 +452,8 @@
             // 출하DataGridViewTextBoxColumn
             // 
             this.출하DataGridViewTextBoxColumn.DataPropertyName = "출하";
-            dataGridViewCellStyle14.Format = "M\\/d";
-            this.출하DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle13.Format = "M\\/d";
+            this.출하DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle13;
             this.출하DataGridViewTextBoxColumn.FillWeight = 43.36695F;
             this.출하DataGridViewTextBoxColumn.HeaderText = "출하";
             this.출하DataGridViewTextBoxColumn.Name = "출하DataGridViewTextBoxColumn";
@@ -460,27 +461,13 @@
             // 
             // Column1
             // 
-            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle15.NullValue = "조회";
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.NullValue = "조회";
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle14;
             this.Column1.FillWeight = 21.68348F;
             this.Column1.HeaderText = "BOM";
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
-            // 
-            // sPROrderListQueryBindingSource
-            // 
-            this.sPROrderListQueryBindingSource.DataMember = "SP_ROrderList_Query";
-            this.sPROrderListQueryBindingSource.DataSource = this.dataSetP1B;
-            // 
-            // dataSetP1B
-            // 
-            this.dataSetP1B.DataSetName = "DataSetP1B";
-            this.dataSetP1B.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // sP_ROrderList_QueryTableAdapter
-            // 
-            this.sP_ROrderList_QueryTableAdapter.ClearBeforeFill = true;
             // 
             // P1B04_RORDER_LIST
             // 
@@ -524,13 +511,13 @@
         private P1B.DataSetP1B dataSetP1B;
         private P1B.DataSetP1BTableAdapters.SP_ROrderList_QueryTableAdapter sP_ROrderList_QueryTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn 현장정보DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 품목수DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수주번호DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 접수일자DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 거래처IDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewLinkColumn 거래처명DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 영업담당DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 프로젝트명DataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn 품목수DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수량DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 견적금액;
         private System.Windows.Forms.DataGridViewTextBoxColumn 설계;

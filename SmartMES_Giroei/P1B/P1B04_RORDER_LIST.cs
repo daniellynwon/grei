@@ -70,7 +70,6 @@ namespace SmartMES_Giroei
         {
             int rowIndex = dataGridView1.Rows.GetLastRow(DataGridViewElementStates.Visible);
             if (rowIndex <= 0) return;
-            
             try
             {
                 dataGridView1.Rows[rowIndex].DefaultCellStyle.BackColor = Color.FromArgb(93, 123, 157);
@@ -78,8 +77,10 @@ namespace SmartMES_Giroei
                 dataGridView1.Rows[rowIndex].DefaultCellStyle.ForeColor = Color.White;
 
                 dataGridView1[0, rowIndex].Value = rowIndex.ToString() + "건";
+                dataGridView1[16, rowIndex] = new DataGridViewTextBoxCell();
+                dataGridView1[16, rowIndex].Value = "";
 
-                long iSum1 = 0, iSum2 = 0, iSum3 = 0, iSum4 = 0, iSum5 = 0, iSum6 = 0, iSum7 = 0, iSum8 = 0, iSum9 = 0;
+                long iSum1 = 0, iSum2 = 0, iSum3 = 0, iSum4 = 0, iSum5 = 0, iSum6 = 0, iSum7 = 0, iSum8 = 0;
 
                 for (int i = 0; i < rowIndex; i++)
                 {
@@ -91,7 +92,6 @@ namespace SmartMES_Giroei
                     iSum6 += long.Parse(dataGridView1.Rows[i].Cells[11].Value.ToString());
                     iSum7 += long.Parse(dataGridView1.Rows[i].Cells[12].Value.ToString());
                     iSum8 += long.Parse(dataGridView1.Rows[i].Cells[13].Value.ToString());
-                    iSum9 += long.Parse(dataGridView1.Rows[i].Cells[14].Value.ToString());
                 }
 
                 dataGridView1[6, rowIndex].Value = iSum1;
@@ -102,10 +102,7 @@ namespace SmartMES_Giroei
                 dataGridView1[11, rowIndex].Value = iSum6;
                 dataGridView1[12, rowIndex].Value = iSum7;
                 dataGridView1[13, rowIndex].Value = iSum8;
-                dataGridView1[14, rowIndex].Value = iSum9;
 
-                dataGridView1[17, rowIndex] = new DataGridViewTextBoxCell();
-                dataGridView1[17, rowIndex].Value = "";
             }
             catch (NullReferenceException)
             {
@@ -197,7 +194,7 @@ namespace SmartMES_Giroei
             //    dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex].ToolTipText = sText;
 
             //}
-            else if(e.ColumnIndex == 17)
+            else if(e.ColumnIndex == 16)
             {
                 P1B04_RORDER_LIST_SUB sub = new P1B04_RORDER_LIST_SUB();
                 sub.parentWin = this;
