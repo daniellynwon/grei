@@ -216,5 +216,10 @@ namespace SmartMES_Giroei
             if (dataGridView1.RowCount < 2) return;
         }
         #endregion
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

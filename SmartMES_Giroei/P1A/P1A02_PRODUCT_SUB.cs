@@ -81,7 +81,7 @@ namespace SmartMES_Giroei
                     cbKind.DisplayMember = "co_item";
                 }
             }
-            else
+            else if (cbGubun.SelectedIndex == 1)
             {
                 tbLayers.ReadOnly = true;
                 tbSMDPins.ReadOnly = true;
@@ -91,6 +91,26 @@ namespace SmartMES_Giroei
                 tbQty4Array.ReadOnly = true;
 
                 sql = @"SELECT co_code, co_item FROM BAS_common WHERE co_kind = 'C' AND co_code <> '' ORDER BY co_code";
+
+                table = m.dbDataTable(sql, ref msg);
+
+                if (msg == "OK")
+                {
+                    cbKind.DataSource = table;
+                    cbKind.ValueMember = "co_code";
+                    cbKind.DisplayMember = "co_item";
+                }
+            }
+            else if (cbGubun.SelectedIndex == 2)
+            {
+                tbLayers.ReadOnly = true;
+                tbSMDPins.ReadOnly = true;
+                tbDIPPins.ReadOnly = true;
+                tbMountPins.ReadOnly = true;
+                tbMetalMasks.ReadOnly = true;
+                tbQty4Array.ReadOnly = true;
+
+                sql = @"SELECT co_code, co_item FROM BAS_common WHERE co_kind = 'S' AND co_code <> '' ORDER BY co_code";
 
                 table = m.dbDataTable(sql, ref msg);
 
@@ -222,7 +242,7 @@ namespace SmartMES_Giroei
             string sGubun = string.Empty;
             if (cbGubun.SelectedIndex == 0) sGubun = "P";
             else if (cbGubun.SelectedIndex == 1) sGubun = "M";
-            else if (cbGubun.SelectedIndex == 1) sGubun = "S";
+            else if (cbGubun.SelectedIndex == 2) sGubun = "S";
 
             string sKind = cbKind.SelectedValue.ToString();
 
@@ -289,7 +309,12 @@ namespace SmartMES_Giroei
                         VALUES('{@sGubun}', '{@sKind}', '{@sProdCode}', '{@sProdName}', '{@sSize}', '{@sUnit}', {@sQty}, {@sDanga}, '{@sCertification}', '{@sUseFlag}', '{@G.UserID}',
                         '{@sLayers}', '{@sSMDPins}', '{@sDIPPins}', '{@sMountPins}', '{@sMetalMasks}', '{@sQty4Array}', '{@sConsigned}')";
                 }
-                else
+                else if (cbGubun.Text == "원자재")
+                {
+                    sql = $@"INSERT INTO BAS_product ( gubun, prod_kind, prod_id, prod_name, prod_size, pack_type, qty, stock_money, certification, useYN, enter_man, consignedYN )
+                        VALUES('{@sGubun}', '{@sKind}', '{@sProdCode}', '{@sProdName}', '{@sSize}', '{@sUnit}', {@sQty}, {@sDanga}, '{@sCertification}', '{@sUseFlag}', '{@G.UserID}', '{@sConsigned}' )";
+                }
+                else if (cbGubun.Text == "부자재")
                 {
                     sql = $@"INSERT INTO BAS_product ( gubun, prod_kind, prod_id, prod_name, prod_size, pack_type, qty, stock_money, certification, useYN, enter_man, consignedYN )
                         VALUES('{@sGubun}', '{@sKind}', '{@sProdCode}', '{@sProdName}', '{@sSize}', '{@sUnit}', {@sQty}, {@sDanga}, '{@sCertification}', '{@sUseFlag}', '{@G.UserID}', '{@sConsigned}' )";
@@ -364,7 +389,13 @@ namespace SmartMES_Giroei
                             layers = '{@sLayers}', smd_pins = '{@sSMDPins}', dip_pins = '{@sDIPPins}', mount_pins = '{@sMountPins}', metalmasks = '{@sMetalMasks}', qty4array = '{@sQty4Array}', consignedYN = '{@sConsigned}'
                             WHERE prod_id = '{@sProdCode}';";
                 }
-                else
+                else if (cbGubun.Text == "원자재")
+                {
+                    sql = $@"UPDATE BAS_product 
+                            SET prod_name = '{@sProdName}', prod_size = '{@sSize}', pack_type = '{@sUnit}', qty = {@sQty}, stock_money = {@sDanga}, certification = '{@sCertification}',useYN = '{@sUseFlag}', enter_man = '{@G.UserID}', consignedYN = '{@sConsigned}'
+                            WHERE prod_id = '{@sProdCode}';";
+                }
+                else if (cbGubun.Text == "부자재")
                 {
                     sql = $@"UPDATE BAS_product 
                             SET prod_name = '{@sProdName}', prod_size = '{@sSize}', pack_type = '{@sUnit}', qty = {@sQty}, stock_money = {@sDanga}, certification = '{@sCertification}',useYN = '{@sUseFlag}', enter_man = '{@G.UserID}', consignedYN = '{@sConsigned}'
@@ -449,7 +480,27 @@ namespace SmartMES_Giroei
                     cbKind.DisplayMember = "co_item";
                 }
             }
-            else
+            else if (cbGubun.Text == "원자재")
+            {
+                tbLayers.Text = string.Empty;
+                tbSMDPins.Text = string.Empty;
+                tbDIPPins.Text = string.Empty;
+                tbMountPins.Text = string.Empty;
+                tbMetalMasks.Text = string.Empty;
+                tbQty4Array.Text = string.Empty;
+
+                sql = @"SELECT co_code, co_item FROM BAS_common WHERE co_kind = 'C' AND co_code <> '' ORDER BY co_code";
+
+                table = m.dbDataTable(sql, ref msg);
+
+                if (msg == "OK")
+                {
+                    cbKind.DataSource = table;
+                    cbKind.ValueMember = "co_code";
+                    cbKind.DisplayMember = "co_item";
+                }
+            }
+            else if (cbGubun.Text == "부자재")
             {
                 tbLayers.Text = string.Empty;
                 tbSMDPins.Text = string.Empty;

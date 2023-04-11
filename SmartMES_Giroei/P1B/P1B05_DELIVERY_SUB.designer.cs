@@ -128,6 +128,7 @@
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle9.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -143,6 +144,7 @@
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
             this.dataGridView1.Size = new System.Drawing.Size(1010, 646);
             this.dataGridView1.TabIndex = 2;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.DataBindingComplete += new System.Windows.Forms.DataGridViewBindingCompleteEventHandler(this.dataGridView1_DataBindingComplete);
             this.dataGridView1.SelectionChanged += new System.EventHandler(this.dataGridView1_SelectionChanged);
@@ -152,12 +154,14 @@
             this.지시번호DataGridViewTextBoxColumn.DataPropertyName = "지시번호";
             this.지시번호DataGridViewTextBoxColumn.HeaderText = "지시번호";
             this.지시번호DataGridViewTextBoxColumn.Name = "지시번호DataGridViewTextBoxColumn";
+            this.지시번호DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 수주번호DataGridViewTextBoxColumn
             // 
             this.수주번호DataGridViewTextBoxColumn.DataPropertyName = "수주번호";
             this.수주번호DataGridViewTextBoxColumn.HeaderText = "수주번호";
             this.수주번호DataGridViewTextBoxColumn.Name = "수주번호DataGridViewTextBoxColumn";
+            this.수주번호DataGridViewTextBoxColumn.ReadOnly = true;
             this.수주번호DataGridViewTextBoxColumn.Visible = false;
             // 
             // 거래처IDDataGridViewTextBoxColumn
@@ -165,6 +169,7 @@
             this.거래처IDDataGridViewTextBoxColumn.DataPropertyName = "거래처ID";
             this.거래처IDDataGridViewTextBoxColumn.HeaderText = "거래처ID";
             this.거래처IDDataGridViewTextBoxColumn.Name = "거래처IDDataGridViewTextBoxColumn";
+            this.거래처IDDataGridViewTextBoxColumn.ReadOnly = true;
             this.거래처IDDataGridViewTextBoxColumn.Visible = false;
             // 
             // 거래처명DataGridViewTextBoxColumn
@@ -172,6 +177,7 @@
             this.거래처명DataGridViewTextBoxColumn.DataPropertyName = "거래처명";
             this.거래처명DataGridViewTextBoxColumn.HeaderText = "거래처명";
             this.거래처명DataGridViewTextBoxColumn.Name = "거래처명DataGridViewTextBoxColumn";
+            this.거래처명DataGridViewTextBoxColumn.ReadOnly = true;
             this.거래처명DataGridViewTextBoxColumn.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.거래처명DataGridViewTextBoxColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             // 
@@ -180,6 +186,7 @@
             this.영업담당DataGridViewTextBoxColumn.DataPropertyName = "영업담당";
             this.영업담당DataGridViewTextBoxColumn.HeaderText = "영업담당";
             this.영업담당DataGridViewTextBoxColumn.Name = "영업담당DataGridViewTextBoxColumn";
+            this.영업담당DataGridViewTextBoxColumn.ReadOnly = true;
             this.영업담당DataGridViewTextBoxColumn.Visible = false;
             // 
             // 프로젝트명DataGridViewTextBoxColumn
@@ -187,6 +194,7 @@
             this.프로젝트명DataGridViewTextBoxColumn.DataPropertyName = "프로젝트명";
             this.프로젝트명DataGridViewTextBoxColumn.HeaderText = "프로젝트명";
             this.프로젝트명DataGridViewTextBoxColumn.Name = "프로젝트명DataGridViewTextBoxColumn";
+            this.프로젝트명DataGridViewTextBoxColumn.ReadOnly = true;
             this.프로젝트명DataGridViewTextBoxColumn.Visible = false;
             // 
             // 납기DataGridViewTextBoxColumn
@@ -194,6 +202,7 @@
             this.납기DataGridViewTextBoxColumn.DataPropertyName = "납기";
             this.납기DataGridViewTextBoxColumn.HeaderText = "납기";
             this.납기DataGridViewTextBoxColumn.Name = "납기DataGridViewTextBoxColumn";
+            this.납기DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // ColumnCheckBox
             // 
@@ -201,6 +210,7 @@
             this.ColumnCheckBox.FillWeight = 20F;
             this.ColumnCheckBox.HeaderText = "";
             this.ColumnCheckBox.Name = "ColumnCheckBox";
+            this.ColumnCheckBox.ReadOnly = true;
             this.ColumnCheckBox.TrueValue = "1";
             // 
             // 수주순번DataGridViewTextBoxColumn
@@ -208,6 +218,7 @@
             this.수주순번DataGridViewTextBoxColumn.DataPropertyName = "수주순번";
             this.수주순번DataGridViewTextBoxColumn.HeaderText = "수주순번";
             this.수주순번DataGridViewTextBoxColumn.Name = "수주순번DataGridViewTextBoxColumn";
+            this.수주순번DataGridViewTextBoxColumn.ReadOnly = true;
             this.수주순번DataGridViewTextBoxColumn.Visible = false;
             // 
             // 품목코드DataGridViewTextBoxColumn
@@ -215,6 +226,7 @@
             this.품목코드DataGridViewTextBoxColumn.DataPropertyName = "품목코드";
             this.품목코드DataGridViewTextBoxColumn.HeaderText = "품목코드";
             this.품목코드DataGridViewTextBoxColumn.Name = "품목코드DataGridViewTextBoxColumn";
+            this.품목코드DataGridViewTextBoxColumn.ReadOnly = true;
             this.품목코드DataGridViewTextBoxColumn.Visible = false;
             // 
             // 품목명DataGridViewTextBoxColumn
@@ -222,12 +234,14 @@
             this.품목명DataGridViewTextBoxColumn.DataPropertyName = "품목명";
             this.품목명DataGridViewTextBoxColumn.HeaderText = "품목명";
             this.품목명DataGridViewTextBoxColumn.Name = "품목명DataGridViewTextBoxColumn";
+            this.품목명DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 규격DataGridViewTextBoxColumn
             // 
             this.규격DataGridViewTextBoxColumn.DataPropertyName = "규격";
             this.규격DataGridViewTextBoxColumn.HeaderText = "규격";
             this.규격DataGridViewTextBoxColumn.Name = "규격DataGridViewTextBoxColumn";
+            this.규격DataGridViewTextBoxColumn.ReadOnly = true;
             this.규격DataGridViewTextBoxColumn.Visible = false;
             // 
             // 단위DataGridViewTextBoxColumn
@@ -235,6 +249,7 @@
             this.단위DataGridViewTextBoxColumn.DataPropertyName = "단위";
             this.단위DataGridViewTextBoxColumn.HeaderText = "단위";
             this.단위DataGridViewTextBoxColumn.Name = "단위DataGridViewTextBoxColumn";
+            this.단위DataGridViewTextBoxColumn.ReadOnly = true;
             this.단위DataGridViewTextBoxColumn.Visible = false;
             // 
             // 수량DataGridViewTextBoxColumn
@@ -246,6 +261,7 @@
             this.수량DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle3;
             this.수량DataGridViewTextBoxColumn.HeaderText = "수량";
             this.수량DataGridViewTextBoxColumn.Name = "수량DataGridViewTextBoxColumn";
+            this.수량DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 단가DataGridViewTextBoxColumn
             // 
@@ -256,6 +272,7 @@
             this.단가DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle4;
             this.단가DataGridViewTextBoxColumn.HeaderText = "단가";
             this.단가DataGridViewTextBoxColumn.Name = "단가DataGridViewTextBoxColumn";
+            this.단가DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 공급가액DataGridViewTextBoxColumn
             // 
@@ -266,6 +283,7 @@
             this.공급가액DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle5;
             this.공급가액DataGridViewTextBoxColumn.HeaderText = "공급가액";
             this.공급가액DataGridViewTextBoxColumn.Name = "공급가액DataGridViewTextBoxColumn";
+            this.공급가액DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 부가세DataGridViewTextBoxColumn
             // 
@@ -276,6 +294,7 @@
             this.부가세DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle6;
             this.부가세DataGridViewTextBoxColumn.HeaderText = "부가세";
             this.부가세DataGridViewTextBoxColumn.Name = "부가세DataGridViewTextBoxColumn";
+            this.부가세DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // 합계금액DataGridViewTextBoxColumn
             // 
@@ -286,6 +305,7 @@
             this.합계금액DataGridViewTextBoxColumn.DefaultCellStyle = dataGridViewCellStyle7;
             this.합계금액DataGridViewTextBoxColumn.HeaderText = "합계금액";
             this.합계금액DataGridViewTextBoxColumn.Name = "합계금액DataGridViewTextBoxColumn";
+            this.합계금액DataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // sPDeliveryROderBindingSource
             // 
