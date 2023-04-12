@@ -673,6 +673,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSetP1C.xsd</DependentUpon>
     </Compile>
+    <Compile Include="P1C\P1C02_PROD_RESULT_BACKUP.cs" />
+    <Compile Include="P1C\P1C02_PROD_RESULT_BACKUP.Designer.cs">
+      <DependentUpon>P1C02_PROD_RESULT_BACKUP.cs</DependentUpon>
+    </Compile>
     <Compile Include="P1C\P1C02_PROD_RESULT_AOI_DOC2.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1254,6 +1258,9 @@
     <EmbeddedResource Include="P1B\P1B14_UNIT_COST.resx">
       <DependentUpon>P1B14_UNIT_COST.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="P1C\P1C02_PROD_RESULT_BACKUP.resx">
+      <DependentUpon>P1C02_PROD_RESULT_BACKUP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="P1C\P1C02_PROD_RESULT_AOI_DOC2.resx">
       <DependentUpon>P1C02_PROD_RESULT_AOI_DOC2.cs</DependentUpon>
     </EmbeddedResource>
@@ -1665,10 +1672,12 @@
     <None Include="Resources\clipB.jpg" />
     <Content Include="Resources\close.jpg" />
     <Content Include="Resources\ComLogo.png" />
+    <Content Include="Resources\AOI_Continue.png" />
     <Content Include="Resources\del_A.jpg" />
     <Content Include="Resources\del_B.jpg" />
     <None Include="Resources\eraser.bmp" />
     <None Include="Resources\empty.jpg" />
+    <Content Include="Resources\AOI_End.png" />
     <Content Include="Resources\exit_A.jpg" />
     <None Include="Resources\GiroeiLogo.png" />
     <Content Include="Resources\GIRO_ICON.png" />
@@ -1682,12 +1691,15 @@
     <Content Include="Resources\login_connect.bmp" />
     <Content Include="Resources\main.jpg" />
     <Content Include="Resources\minus.ico" />
+    <Content Include="Resources\AOI_Minus.png" />
     <Content Include="Resources\notify.jpg" />
     <Content Include="Resources\ok.jpg" />
     <Content Include="Resources\out_A.jpg" />
     <Content Include="Resources\out_B.jpg" />
+    <Content Include="Resources\AOI_Pause.png" />
     <Content Include="Resources\photo_background.jpg" />
     <None Include="Resources\plus_add.png" />
+    <Content Include="Resources\AOI_Plus.png" />
     <Content Include="Resources\post.png" />
     <Content Include="Resources\PowerOff1.ico" />
     <Content Include="Resources\print.jpg" />
@@ -1699,6 +1711,7 @@
     <Content Include="Resources\search.bmp" />
     <None Include="Resources\search.png" />
     <Content Include="Resources\sear_A.jpg" />
+    <Content Include="Resources\AOI_Start.png" />
     <Content Include="Resources\subbar.jpg" />
     <Content Include="Resources\subtitlebar.jpg" />
     <Content Include="Resources\불량보고.jpg" />

@@ -13,6 +13,8 @@ namespace SmartMES_Giroei
         public bool bMoltD = true;
         public bool bPunch1D = true;
         public bool bPunch2D = true;
+        public DateTime SDT1 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+        public DateTime SDT2 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
         public P1C02_PROD_RESULT()
         {
@@ -594,6 +596,50 @@ namespace SmartMES_Giroei
             sub.parentWin = this;
             sub.job_no = lblLotNo.Text;
             sub.ShowDialog();
+        }
+        //private void timer3_Tick(object sender, EventArgs e)
+        //{
+        //    //// 현재시간 -- Load 시점에 설정으로 변경
+        //    //DateTime SDT1 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+
+        //    // 비가동 시작시간
+        //    DateTime SDT2 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")); // DateTime.Parse(dtpDate.Value.ToString("yyyy-MM-dd HH:mm:ss")); 
+
+        //    // 시간 차이 구함
+        //    TimeSpan gapTime = SDT1 - SDT2;
+
+        //    mtProcessDt.Text = gapTime.ToString();
+        //}
+        private void timer3_Tick(object sender, EventArgs e)
+        {
+            //lbIngtime.Text = DateTime.Now.ToString("hh:MM:dd mm:ss");
+
+            // 현재시간 -- Load 시점에 설정으로 변경
+            //DateTime SDT1 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+
+            //비가동 시작시간
+            DateTime SDT2 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")); // DateTime.Parse(dtpDate.Value.ToString("yyyy-MM-dd HH:mm:ss")); 
+
+            //시간 차이 구함
+            TimeSpan gapTime = SDT1 - SDT2;
+
+            mstbStarttime.Text = SDT1.ToString();
+            mstbEndtime.Text = SDT2.ToString();
+            mstbIngtime.Text = gapTime.ToString();
+        }
+
+        private void btStart_Click(object sender, EventArgs e)
+        {
+            // 시작 버튼
+
+            DateTime SDT1 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            timer3.Start();
+        }
+
+        private void btEnd_Click(object sender, EventArgs e)
+        {
+            // 멈춤 버튼
+            timer3.Stop();
         }
     }
 }
