@@ -15,6 +15,7 @@ namespace SmartMES_Giroei
         public bool bPunch2D = true;
         public DateTime SDT1 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
         public DateTime SDT2 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+        private bool isTimeStarted = false;
 
         
 
@@ -619,7 +620,11 @@ namespace SmartMES_Giroei
 
             // 현재시간 -- Load 시점에 설정으로 변경
             //DateTime SDT1 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-
+            if (isTimeStarted == false)
+            {
+                isTimeStarted = true;
+                SDT1 = DateTime.Now;
+            }
             //비가동 시작시간
             DateTime SDT2 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")); // DateTime.Parse(dtpDate.Value.ToString("yyyy-MM-dd HH:mm:ss")); 
 
@@ -641,6 +646,7 @@ namespace SmartMES_Giroei
         private void btEnd_Click(object sender, EventArgs e)
         {
             // 멈춤 버튼
+            isTimeStarted = false;
             timer3.Enabled = false;
         }
     }
