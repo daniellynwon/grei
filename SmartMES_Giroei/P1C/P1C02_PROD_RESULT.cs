@@ -16,6 +16,8 @@ namespace SmartMES_Giroei
         public DateTime SDT1 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
         public DateTime SDT2 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
+        
+
         public P1C02_PROD_RESULT()
         {
             InitializeComponent();
@@ -41,6 +43,7 @@ namespace SmartMES_Giroei
         {
             ListSearch();
             InitControls();
+            timer3.Enabled = false;
         }
         public void ListSearch()
         {
@@ -610,7 +613,7 @@ namespace SmartMES_Giroei
 
         //    mtProcessDt.Text = gapTime.ToString();
         //}
-        private void timer3_Tick(object sender, EventArgs e)
+        public void timer3_Tick(object sender, EventArgs e)
         {
             //lbIngtime.Text = DateTime.Now.ToString("hh:MM:dd mm:ss");
 
@@ -631,15 +634,14 @@ namespace SmartMES_Giroei
         private void btStart_Click(object sender, EventArgs e)
         {
             // 시작 버튼
-
-            DateTime SDT1 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-            timer3.Start();
+            timer3.Enabled = true;
+            timer3.Tick += new EventHandler(timer3_Tick);
         }
 
         private void btEnd_Click(object sender, EventArgs e)
         {
             // 멈춤 버튼
-            timer3.Stop();
+            timer3.Enabled = false;
         }
     }
 }
