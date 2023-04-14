@@ -29,6 +29,18 @@ namespace SmartMES_Giroei
             string msg = string.Empty;
             DataTable table = m.dbDataTable(sql, ref msg);
 
+            sql = @"select co_code, co_item from BAS_common where co_kind = 'M' order by co_code";
+            m = new MariaCRUD();
+            msg = string.Empty;
+            table = m.dbDataTable(sql, ref msg);
+
+            if (msg == "OK")
+            {
+                cbPause.DataSource = table;
+                cbPause.ValueMember = "co_code";
+                cbPause.DisplayMember = "co_item";
+            }
+
             if (msg == "OK")
             {
                 cbWorkLine.DataSource = table;
@@ -640,14 +652,22 @@ namespace SmartMES_Giroei
             timer3.Enabled = true;
             timer3.Tick += new EventHandler(timer3_Tick);
             mstbIngtime.Visible = true;
+            gpResult.Visible = false;
         }
 
         private void btEnd_Click(object sender, EventArgs e)
         {
-            // 멈춤 버튼
-            isTimeStarted = false;
-            timer3.Enabled = false;
-            gpResult.Visible = true;
+            if (timer4.Enabled == true)
+            {
+                MessageBox.Show("다시 시작을 누른 후 종료해주세요.");
+            }
+            else
+            {
+                // 멈춤 버튼
+                isTimeStarted = false;
+                timer3.Enabled = false;
+                gpResult.Visible = true;
+            }
         }
         public void timer4_Tick(object sender, EventArgs e)
         {
@@ -673,16 +693,28 @@ namespace SmartMES_Giroei
 
         private void btPause_Click(object sender, EventArgs e)
         {
-            isTimeStarted = false;
+            if (timer3.Enabled == false)
+            {
+                MessageBox.Show("검사가 끝난 제품은 중지 할 수 없습니다.");
+            }
+            else 
+            {
+                lbPause.Visible = true;
+                cbPause.Visible = true;
+                isTimeStarted = false;
 
-            timer4.Enabled = true;
-            timer4.Tick += new EventHandler(timer4_Tick);
-            mstbIngtime2.Visible = true;
+                timer4.Enabled = true;
+                timer4.Tick += new EventHandler(timer4_Tick);
+                mstbIngtime2.Visible = true;
+            }
         }
 
         private void btContinue_Click(object sender, EventArgs e)
         {
             timer4.Enabled = false;
+            lbPause.Visible = false;
+            cbPause.Visible = false;
+            mstbIngtime2.Visible = false;
 
             ////lblMsg.Text = "";
 
