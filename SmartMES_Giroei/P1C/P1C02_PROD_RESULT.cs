@@ -674,7 +674,6 @@ namespace SmartMES_Giroei
         private void btPause_Click(object sender, EventArgs e)
         {
             isTimeStarted = false;
-            timer3.Enabled = false;
 
             timer4.Enabled = true;
             timer4.Tick += new EventHandler(timer4_Tick);
@@ -683,11 +682,6 @@ namespace SmartMES_Giroei
 
         private void btContinue_Click(object sender, EventArgs e)
         {
-            //timer3.Enabled = true;
-            timer3.Enabled = true;
-            timer3.Tick += new EventHandler(timer3_Tick);
-
-            isTimeStarted = false;
             timer4.Enabled = false;
 
             ////lblMsg.Text = "";
