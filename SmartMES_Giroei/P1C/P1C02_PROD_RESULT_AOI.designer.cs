@@ -205,7 +205,7 @@
             this.tbSonap.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbSonap.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbSonap.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbSonap.Location = new System.Drawing.Point(147, 226);
+            this.tbSonap.Location = new System.Drawing.Point(229, 468);
             this.tbSonap.Name = "tbSonap";
             this.tbSonap.Size = new System.Drawing.Size(59, 29);
             this.tbSonap.TabIndex = 7;
@@ -217,7 +217,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label3.Location = new System.Drawing.Point(99, 229);
+            this.label3.Location = new System.Drawing.Point(181, 471);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(42, 21);
             this.label3.TabIndex = 95;
@@ -228,7 +228,7 @@
             this.tbnengttem.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbnengttem.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbnengttem.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbnengttem.Location = new System.Drawing.Point(291, 226);
+            this.tbnengttem.Location = new System.Drawing.Point(373, 468);
             this.tbnengttem.Name = "tbnengttem";
             this.tbnengttem.Size = new System.Drawing.Size(59, 29);
             this.tbnengttem.TabIndex = 8;
@@ -240,7 +240,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(232, 229);
+            this.label4.Location = new System.Drawing.Point(314, 471);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(42, 21);
             this.label4.TabIndex = 97;
@@ -251,7 +251,7 @@
             this.tbOverTurned.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbOverTurned.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbOverTurned.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbOverTurned.Location = new System.Drawing.Point(578, 226);
+            this.tbOverTurned.Location = new System.Drawing.Point(660, 468);
             this.tbOverTurned.Name = "tbOverTurned";
             this.tbOverTurned.Size = new System.Drawing.Size(59, 29);
             this.tbOverTurned.TabIndex = 10;
@@ -263,7 +263,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(506, 229);
+            this.label5.Location = new System.Drawing.Point(588, 471);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 21);
             this.label5.TabIndex = 101;
@@ -274,7 +274,7 @@
             this.tbMiSap.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbMiSap.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbMiSap.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbMiSap.Location = new System.Drawing.Point(424, 226);
+            this.tbMiSap.Location = new System.Drawing.Point(506, 468);
             this.tbMiSap.Name = "tbMiSap";
             this.tbMiSap.Size = new System.Drawing.Size(59, 29);
             this.tbMiSap.TabIndex = 9;
@@ -286,7 +286,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label7.Location = new System.Drawing.Point(369, 229);
+            this.label7.Location = new System.Drawing.Point(451, 471);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(42, 21);
             this.label7.TabIndex = 99;
@@ -297,7 +297,7 @@
             this.tbReverse.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbReverse.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbReverse.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbReverse.Location = new System.Drawing.Point(578, 261);
+            this.tbReverse.Location = new System.Drawing.Point(660, 503);
             this.tbReverse.Name = "tbReverse";
             this.tbReverse.Size = new System.Drawing.Size(59, 29);
             this.tbReverse.TabIndex = 14;
@@ -309,7 +309,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label8.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label8.Location = new System.Drawing.Point(522, 264);
+            this.label8.Location = new System.Drawing.Point(604, 506);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(42, 21);
             this.label8.TabIndex = 109;
@@ -320,7 +320,7 @@
             this.tbShort.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbShort.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbShort.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbShort.Location = new System.Drawing.Point(424, 261);
+            this.tbShort.Location = new System.Drawing.Point(506, 503);
             this.tbShort.Name = "tbShort";
             this.tbShort.Size = new System.Drawing.Size(59, 29);
             this.tbShort.TabIndex = 13;
@@ -332,7 +332,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label9.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label9.Location = new System.Drawing.Point(369, 264);
+            this.label9.Location = new System.Drawing.Point(451, 506);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 21);
             this.label9.TabIndex = 107;
@@ -343,7 +343,7 @@
             this.tbMiNap.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbMiNap.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbMiNap.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbMiNap.Location = new System.Drawing.Point(291, 261);
+            this.tbMiNap.Location = new System.Drawing.Point(373, 503);
             this.tbMiNap.Name = "tbMiNap";
             this.tbMiNap.Size = new System.Drawing.Size(59, 29);
             this.tbMiNap.TabIndex = 12;
@@ -355,7 +355,7 @@
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label11.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label11.Location = new System.Drawing.Point(232, 264);
+            this.label11.Location = new System.Drawing.Point(314, 506);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(42, 21);
             this.label11.TabIndex = 105;
@@ -366,7 +366,7 @@
             this.tbLeadOpen.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbLeadOpen.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbLeadOpen.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbLeadOpen.Location = new System.Drawing.Point(147, 261);
+            this.tbLeadOpen.Location = new System.Drawing.Point(229, 503);
             this.tbLeadOpen.Name = "tbLeadOpen";
             this.tbLeadOpen.Size = new System.Drawing.Size(59, 29);
             this.tbLeadOpen.TabIndex = 11;
@@ -378,7 +378,7 @@
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label14.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label14.Location = new System.Drawing.Point(83, 261);
+            this.label14.Location = new System.Drawing.Point(165, 503);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(58, 21);
             this.label14.TabIndex = 103;
@@ -389,7 +389,7 @@
             this.tbEtcError.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbEtcError.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbEtcError.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbEtcError.Location = new System.Drawing.Point(424, 296);
+            this.tbEtcError.Location = new System.Drawing.Point(506, 538);
             this.tbEtcError.Name = "tbEtcError";
             this.tbEtcError.Size = new System.Drawing.Size(59, 29);
             this.tbEtcError.TabIndex = 17;
@@ -401,7 +401,7 @@
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label16.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label16.Location = new System.Drawing.Point(369, 299);
+            this.label16.Location = new System.Drawing.Point(451, 541);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(42, 21);
             this.label16.TabIndex = 115;
@@ -412,7 +412,7 @@
             this.tbTwisted.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbTwisted.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbTwisted.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbTwisted.Location = new System.Drawing.Point(291, 296);
+            this.tbTwisted.Location = new System.Drawing.Point(373, 538);
             this.tbTwisted.Name = "tbTwisted";
             this.tbTwisted.Size = new System.Drawing.Size(59, 29);
             this.tbTwisted.TabIndex = 16;
@@ -424,7 +424,7 @@
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label17.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label17.Location = new System.Drawing.Point(232, 299);
+            this.label17.Location = new System.Drawing.Point(314, 541);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(58, 21);
             this.label17.TabIndex = 113;
@@ -435,7 +435,7 @@
             this.tbManhattan.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbManhattan.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbManhattan.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbManhattan.Location = new System.Drawing.Point(147, 296);
+            this.tbManhattan.Location = new System.Drawing.Point(229, 538);
             this.tbManhattan.Name = "tbManhattan";
             this.tbManhattan.Size = new System.Drawing.Size(59, 29);
             this.tbManhattan.TabIndex = 15;
@@ -447,7 +447,7 @@
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label18.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label18.Location = new System.Drawing.Point(83, 299);
+            this.label18.Location = new System.Drawing.Point(165, 541);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(58, 21);
             this.label18.TabIndex = 111;
@@ -477,7 +477,7 @@
             this.lbFname1.AutoSize = true;
             this.lbFname1.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbFname1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbFname1.Location = new System.Drawing.Point(261, 480);
+            this.lbFname1.Location = new System.Drawing.Point(199, 480);
             this.lbFname1.Name = "lbFname1";
             this.lbFname1.Size = new System.Drawing.Size(0, 17);
             this.lbFname1.TabIndex = 121;
@@ -487,7 +487,7 @@
             this.lbFname2.AutoSize = true;
             this.lbFname2.Font = new System.Drawing.Font("맑은 고딕", 9.75F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.lbFname2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbFname2.Location = new System.Drawing.Point(261, 541);
+            this.lbFname2.Location = new System.Drawing.Point(199, 541);
             this.lbFname2.Name = "lbFname2";
             this.lbFname2.Size = new System.Drawing.Size(0, 17);
             this.lbFname2.TabIndex = 122;
@@ -557,7 +557,7 @@
             this.tbjob.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbjob.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbjob.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbjob.Location = new System.Drawing.Point(489, 296);
+            this.tbjob.Location = new System.Drawing.Point(571, 538);
             this.tbjob.Name = "tbjob";
             this.tbjob.ReadOnly = true;
             this.tbjob.Size = new System.Drawing.Size(203, 29);
@@ -572,7 +572,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label10.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label10.Location = new System.Drawing.Point(66, 487);
+            this.label10.Location = new System.Drawing.Point(4, 487);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(51, 21);
             this.label10.TabIndex = 132;
@@ -583,7 +583,7 @@
             this.label21.AutoSize = true;
             this.label21.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label21.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label21.Location = new System.Drawing.Point(66, 543);
+            this.label21.Location = new System.Drawing.Point(4, 543);
             this.label21.Name = "label21";
             this.label21.Size = new System.Drawing.Size(51, 21);
             this.label21.TabIndex = 133;
@@ -594,7 +594,7 @@
             this.cbWorkLine.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbWorkLine.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbWorkLine.FormattingEnabled = true;
-            this.cbWorkLine.Location = new System.Drawing.Point(147, 178);
+            this.cbWorkLine.Location = new System.Drawing.Point(147, 316);
             this.cbWorkLine.Name = "cbWorkLine";
             this.cbWorkLine.Size = new System.Drawing.Size(203, 29);
             this.cbWorkLine.TabIndex = 135;
@@ -605,11 +605,11 @@
             this.label22.AutoSize = true;
             this.label22.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label22.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label22.Location = new System.Drawing.Point(66, 181);
+            this.label22.Location = new System.Drawing.Point(66, 319);
             this.label22.Name = "label22";
             this.label22.Size = new System.Drawing.Size(74, 21);
             this.label22.TabIndex = 134;
-            this.label22.Text = "작업라인";
+            this.label22.Text = "중지사유";
             // 
             // btnStart
             // 
@@ -667,7 +667,7 @@
             this.doc2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.doc2.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
             this.doc2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.doc2.Location = new System.Drawing.Point(147, 519);
+            this.doc2.Location = new System.Drawing.Point(85, 519);
             this.doc2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.doc2.Name = "doc2";
             this.doc2.Size = new System.Drawing.Size(60, 45);
@@ -683,7 +683,7 @@
             this.doc1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.doc1.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
             this.doc1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.doc1.Location = new System.Drawing.Point(147, 463);
+            this.doc1.Location = new System.Drawing.Point(85, 463);
             this.doc1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.doc1.Name = "doc1";
             this.doc1.Size = new System.Drawing.Size(60, 45);

@@ -58,17 +58,24 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.userButtonA3 = new SmartMES_Giroei.UserButtonA();
-            this.userButtonA26 = new SmartMES_Giroei.UserButtonA();
-            this.doc2 = new SmartMES_Giroei.UserButtonA();
-            this.doc1 = new SmartMES_Giroei.UserButtonA();
-            this.mstbEndtime = new System.Windows.Forms.MaskedTextBox();
-            this.mstbStarttime = new System.Windows.Forms.MaskedTextBox();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.userButtonA3 = new SmartMES_Giroei.UserButtonA();
             this.tbContents = new System.Windows.Forms.TextBox();
+            this.userButtonA26 = new SmartMES_Giroei.UserButtonA();
+            this.doc1 = new SmartMES_Giroei.UserButtonA();
+            this.doc2 = new SmartMES_Giroei.UserButtonA();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.mstbContinuetime = new System.Windows.Forms.MaskedTextBox();
+            this.mstbIngtime2 = new System.Windows.Forms.MaskedTextBox();
+            this.mstbPausetime = new System.Windows.Forms.MaskedTextBox();
             this.mstbIngtime = new System.Windows.Forms.MaskedTextBox();
+            this.mstbEndtime = new System.Windows.Forms.MaskedTextBox();
             this.lbIngtime = new System.Windows.Forms.Label();
+            this.mstbStarttime = new System.Windows.Forms.MaskedTextBox();
             this.btEnd = new SmartMES_Giroei.UserButtonA();
             this.btContinue = new SmartMES_Giroei.UserButtonA();
             this.btPause = new SmartMES_Giroei.UserButtonA();
@@ -78,39 +85,39 @@
             this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.userButtonA24 = new SmartMES_Giroei.UserButtonA();
-            this.userButtonA25 = new SmartMES_Giroei.UserButtonA();
-            this.userButtonA22 = new SmartMES_Giroei.UserButtonA();
-            this.userButtonA23 = new SmartMES_Giroei.UserButtonA();
-            this.userButtonA20 = new SmartMES_Giroei.UserButtonA();
-            this.userButtonA21 = new SmartMES_Giroei.UserButtonA();
-            this.tbTwisted = new System.Windows.Forms.TextBox();
-            this.tbEtcError = new System.Windows.Forms.TextBox();
-            this.tbReverse = new System.Windows.Forms.TextBox();
-            this.userButtonA18 = new SmartMES_Giroei.UserButtonA();
+            this.Mbt6 = new SmartMES_Giroei.UserButtonA();
+            this.Pbt6 = new SmartMES_Giroei.UserButtonA();
+            this.Mbt11 = new SmartMES_Giroei.UserButtonA();
+            this.Pbt11 = new SmartMES_Giroei.UserButtonA();
+            this.Mbt10 = new SmartMES_Giroei.UserButtonA();
+            this.Pbt10 = new SmartMES_Giroei.UserButtonA();
             this.tbMiNap = new System.Windows.Forms.TextBox();
-            this.userButtonA19 = new SmartMES_Giroei.UserButtonA();
-            this.tbOverTurned = new System.Windows.Forms.TextBox();
-            this.tbManhattan = new System.Windows.Forms.TextBox();
+            this.tbEtcError = new System.Windows.Forms.TextBox();
             this.tbnengttem = new System.Windows.Forms.TextBox();
-            this.userButtonA16 = new SmartMES_Giroei.UserButtonA();
-            this.userButtonA17 = new SmartMES_Giroei.UserButtonA();
-            this.tbShort = new System.Windows.Forms.TextBox();
-            this.userButtonA14 = new SmartMES_Giroei.UserButtonA();
-            this.userButtonA15 = new SmartMES_Giroei.UserButtonA();
-            this.tbLeadOpen = new System.Windows.Forms.TextBox();
-            this.userButtonA12 = new SmartMES_Giroei.UserButtonA();
-            this.userButtonA13 = new SmartMES_Giroei.UserButtonA();
-            this.tbMiSap = new System.Windows.Forms.TextBox();
-            this.userButtonA10 = new SmartMES_Giroei.UserButtonA();
-            this.userButtonA11 = new SmartMES_Giroei.UserButtonA();
+            this.Mbt9 = new SmartMES_Giroei.UserButtonA();
+            this.tbReverse = new System.Windows.Forms.TextBox();
+            this.Pbt9 = new SmartMES_Giroei.UserButtonA();
             this.tbSonap = new System.Windows.Forms.TextBox();
-            this.userButtonA8 = new SmartMES_Giroei.UserButtonA();
-            this.userButtonA9 = new SmartMES_Giroei.UserButtonA();
-            this.userButtonA6 = new SmartMES_Giroei.UserButtonA();
-            this.userButtonA7 = new SmartMES_Giroei.UserButtonA();
-            this.userButtonA5 = new SmartMES_Giroei.UserButtonA();
-            this.userButtonA4 = new SmartMES_Giroei.UserButtonA();
+            this.tbManhattan = new System.Windows.Forms.TextBox();
+            this.tbMiSap = new System.Windows.Forms.TextBox();
+            this.Mbt8 = new SmartMES_Giroei.UserButtonA();
+            this.Pbt8 = new SmartMES_Giroei.UserButtonA();
+            this.tbShort = new System.Windows.Forms.TextBox();
+            this.Mbt7 = new SmartMES_Giroei.UserButtonA();
+            this.Pbt7 = new SmartMES_Giroei.UserButtonA();
+            this.tbLeadOpen = new System.Windows.Forms.TextBox();
+            this.Mbt5 = new SmartMES_Giroei.UserButtonA();
+            this.Pbt5 = new SmartMES_Giroei.UserButtonA();
+            this.tbOverTurned = new System.Windows.Forms.TextBox();
+            this.Mbt4 = new SmartMES_Giroei.UserButtonA();
+            this.Pbt4 = new SmartMES_Giroei.UserButtonA();
+            this.tbTwisted = new System.Windows.Forms.TextBox();
+            this.Mbt3 = new SmartMES_Giroei.UserButtonA();
+            this.Pbt3 = new SmartMES_Giroei.UserButtonA();
+            this.Mbt2 = new SmartMES_Giroei.UserButtonA();
+            this.Pbt2 = new SmartMES_Giroei.UserButtonA();
+            this.Mbt1 = new SmartMES_Giroei.UserButtonA();
+            this.Pbt1 = new SmartMES_Giroei.UserButtonA();
             this.label24 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
             this.label27 = new System.Windows.Forms.Label();
@@ -240,6 +247,7 @@
             this.userButtonA2 = new SmartMES_Giroei.UserButtonA();
             this.panSearch = new System.Windows.Forms.Panel();
             this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.timer4 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -506,8 +514,6 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Info;
-            this.tabPage1.Controls.Add(this.mstbEndtime);
-            this.tabPage1.Controls.Add(this.mstbStarttime);
             this.tabPage1.Controls.Add(this.groupBox5);
             this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.groupBox3);
@@ -522,6 +528,21 @@
             this.tabPage1.Size = new System.Drawing.Size(882, 688);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "1라인 검사기";
+            // 
+            // groupBox5
+            // 
+            this.groupBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox5.Controls.Add(this.userButtonA3);
+            this.groupBox5.Controls.Add(this.tbContents);
+            this.groupBox5.Controls.Add(this.userButtonA26);
+            this.groupBox5.Controls.Add(this.doc1);
+            this.groupBox5.Controls.Add(this.doc2);
+            this.groupBox5.Location = new System.Drawing.Point(577, 408);
+            this.groupBox5.Name = "groupBox5";
+            this.groupBox5.Size = new System.Drawing.Size(302, 264);
+            this.groupBox5.TabIndex = 182;
+            this.groupBox5.TabStop = false;
+            this.groupBox5.Text = "AOI 상세 검사 결과";
             // 
             // userButtonA3
             // 
@@ -538,6 +559,18 @@
             this.userButtonA3.TabIndex = 188;
             this.userButtonA3.Tag = "";
             // 
+            // tbContents
+            // 
+            this.tbContents.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbContents.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbContents.Location = new System.Drawing.Point(18, 29);
+            this.tbContents.Multiline = true;
+            this.tbContents.Name = "tbContents";
+            this.tbContents.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbContents.Size = new System.Drawing.Size(284, 229);
+            this.tbContents.TabIndex = 182;
+            this.tbContents.Visible = false;
+            // 
             // userButtonA26
             // 
             this.userButtonA26.Anchor = System.Windows.Forms.AnchorStyles.Top;
@@ -552,21 +585,6 @@
             this.userButtonA26.Size = new System.Drawing.Size(25, 25);
             this.userButtonA26.TabIndex = 187;
             this.userButtonA26.Tag = "";
-            // 
-            // doc2
-            // 
-            this.doc2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.doc2.BackColor = System.Drawing.Color.Transparent;
-            this.doc2.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.doc2.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.doc2.Location = new System.Drawing.Point(203, 0);
-            this.doc2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.doc2.Name = "doc2";
-            this.doc2.Size = new System.Drawing.Size(25, 25);
-            this.doc2.TabIndex = 186;
-            this.doc2.Tag = "";
             // 
             // doc1
             // 
@@ -583,60 +601,35 @@
             this.doc1.TabIndex = 185;
             this.doc1.Tag = "";
             // 
-            // mstbEndtime
+            // doc2
             // 
-            this.mstbEndtime.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.mstbEndtime.Font = new System.Drawing.Font("휴먼둥근헤드라인", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.mstbEndtime.Location = new System.Drawing.Point(430, 64);
-            this.mstbEndtime.Name = "mstbEndtime";
-            this.mstbEndtime.Size = new System.Drawing.Size(408, 32);
-            this.mstbEndtime.TabIndex = 184;
-            this.mstbEndtime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mstbEndtime.ValidatingType = typeof(System.DateTime);
-            // 
-            // mstbStarttime
-            // 
-            this.mstbStarttime.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.mstbStarttime.Font = new System.Drawing.Font("휴먼둥근헤드라인", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.mstbStarttime.Location = new System.Drawing.Point(430, 26);
-            this.mstbStarttime.Name = "mstbStarttime";
-            this.mstbStarttime.Size = new System.Drawing.Size(408, 32);
-            this.mstbStarttime.TabIndex = 183;
-            this.mstbStarttime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mstbStarttime.ValidatingType = typeof(System.DateTime);
-            // 
-            // groupBox5
-            // 
-            this.groupBox5.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox5.Controls.Add(this.userButtonA3);
-            this.groupBox5.Controls.Add(this.tbContents);
-            this.groupBox5.Controls.Add(this.userButtonA26);
-            this.groupBox5.Controls.Add(this.doc1);
-            this.groupBox5.Controls.Add(this.doc2);
-            this.groupBox5.Location = new System.Drawing.Point(577, 391);
-            this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(302, 264);
-            this.groupBox5.TabIndex = 182;
-            this.groupBox5.TabStop = false;
-            this.groupBox5.Text = "AOI 상세 검사 결과";
-            // 
-            // tbContents
-            // 
-            this.tbContents.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbContents.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbContents.Location = new System.Drawing.Point(18, 29);
-            this.tbContents.Multiline = true;
-            this.tbContents.Name = "tbContents";
-            this.tbContents.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbContents.Size = new System.Drawing.Size(284, 229);
-            this.tbContents.TabIndex = 182;
-            this.tbContents.Visible = false;
+            this.doc2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.doc2.BackColor = System.Drawing.Color.Transparent;
+            this.doc2.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.doc2.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.doc2.Location = new System.Drawing.Point(203, 0);
+            this.doc2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.doc2.Name = "doc2";
+            this.doc2.Size = new System.Drawing.Size(25, 25);
+            this.doc2.TabIndex = 186;
+            this.doc2.Tag = "";
             // 
             // groupBox4
             // 
             this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.groupBox4.Controls.Add(this.label43);
+            this.groupBox4.Controls.Add(this.label42);
+            this.groupBox4.Controls.Add(this.label41);
+            this.groupBox4.Controls.Add(this.label40);
+            this.groupBox4.Controls.Add(this.mstbContinuetime);
+            this.groupBox4.Controls.Add(this.mstbIngtime2);
+            this.groupBox4.Controls.Add(this.mstbPausetime);
             this.groupBox4.Controls.Add(this.mstbIngtime);
+            this.groupBox4.Controls.Add(this.mstbEndtime);
             this.groupBox4.Controls.Add(this.lbIngtime);
+            this.groupBox4.Controls.Add(this.mstbStarttime);
             this.groupBox4.Controls.Add(this.btEnd);
             this.groupBox4.Controls.Add(this.btContinue);
             this.groupBox4.Controls.Add(this.btPause);
@@ -647,22 +640,115 @@
             this.groupBox4.Controls.Add(this.label36);
             this.groupBox4.Location = new System.Drawing.Point(16, 136);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(547, 249);
+            this.groupBox4.Size = new System.Drawing.Size(853, 268);
             this.groupBox4.TabIndex = 181;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "작업시간";
+            // 
+            // label43
+            // 
+            this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label43.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label43.Location = new System.Drawing.Point(510, 198);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(218, 21);
+            this.label43.TabIndex = 218;
+            this.label43.Text = "다시시작시간(사용자 미표기)";
+            // 
+            // label42
+            // 
+            this.label42.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label42.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label42.Location = new System.Drawing.Point(510, 79);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(186, 21);
+            this.label42.TabIndex = 217;
+            this.label42.Text = "종료시간(사용자 미표기)";
+            // 
+            // label41
+            // 
+            this.label41.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label41.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label41.Location = new System.Drawing.Point(510, 139);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(218, 21);
+            this.label41.TabIndex = 216;
+            this.label41.Text = "중지시작시간(사용자 미표기)";
+            // 
+            // label40
+            // 
+            this.label40.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label40.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label40.Location = new System.Drawing.Point(510, 20);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(218, 21);
+            this.label40.TabIndex = 215;
+            this.label40.Text = "작업시작시간(사용자 미표기)";
+            // 
+            // mstbContinuetime
+            // 
+            this.mstbContinuetime.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.mstbContinuetime.Font = new System.Drawing.Font("휴먼둥근헤드라인", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.mstbContinuetime.Location = new System.Drawing.Point(513, 222);
+            this.mstbContinuetime.Name = "mstbContinuetime";
+            this.mstbContinuetime.Size = new System.Drawing.Size(333, 32);
+            this.mstbContinuetime.TabIndex = 186;
+            this.mstbContinuetime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mstbContinuetime.ValidatingType = typeof(System.DateTime);
+            // 
+            // mstbIngtime2
+            // 
+            this.mstbIngtime2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.mstbIngtime2.Font = new System.Drawing.Font("휴먼둥근헤드라인", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.mstbIngtime2.Location = new System.Drawing.Point(58, 206);
+            this.mstbIngtime2.Mask = "90:90:00";
+            this.mstbIngtime2.Name = "mstbIngtime2";
+            this.mstbIngtime2.Size = new System.Drawing.Size(408, 44);
+            this.mstbIngtime2.TabIndex = 214;
+            this.mstbIngtime2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mstbIngtime2.ValidatingType = typeof(System.DateTime);
+            // 
+            // mstbPausetime
+            // 
+            this.mstbPausetime.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.mstbPausetime.Font = new System.Drawing.Font("휴먼둥근헤드라인", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.mstbPausetime.Location = new System.Drawing.Point(513, 163);
+            this.mstbPausetime.Name = "mstbPausetime";
+            this.mstbPausetime.Size = new System.Drawing.Size(333, 32);
+            this.mstbPausetime.TabIndex = 185;
+            this.mstbPausetime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mstbPausetime.ValidatingType = typeof(System.DateTime);
             // 
             // mstbIngtime
             // 
             this.mstbIngtime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.mstbIngtime.Font = new System.Drawing.Font("휴먼둥근헤드라인", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.mstbIngtime.Location = new System.Drawing.Point(84, 161);
+            this.mstbIngtime.Location = new System.Drawing.Point(59, 160);
             this.mstbIngtime.Mask = "90:90:00";
             this.mstbIngtime.Name = "mstbIngtime";
             this.mstbIngtime.Size = new System.Drawing.Size(408, 44);
             this.mstbIngtime.TabIndex = 182;
             this.mstbIngtime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.mstbIngtime.ValidatingType = typeof(System.DateTime);
+            // 
+            // mstbEndtime
+            // 
+            this.mstbEndtime.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.mstbEndtime.Font = new System.Drawing.Font("휴먼둥근헤드라인", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.mstbEndtime.Location = new System.Drawing.Point(514, 102);
+            this.mstbEndtime.Name = "mstbEndtime";
+            this.mstbEndtime.Size = new System.Drawing.Size(332, 32);
+            this.mstbEndtime.TabIndex = 184;
+            this.mstbEndtime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mstbEndtime.ValidatingType = typeof(System.DateTime);
             // 
             // lbIngtime
             // 
@@ -673,6 +759,17 @@
             this.lbIngtime.Size = new System.Drawing.Size(0, 34);
             this.lbIngtime.TabIndex = 213;
             // 
+            // mstbStarttime
+            // 
+            this.mstbStarttime.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.mstbStarttime.Font = new System.Drawing.Font("휴먼둥근헤드라인", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.mstbStarttime.Location = new System.Drawing.Point(513, 44);
+            this.mstbStarttime.Name = "mstbStarttime";
+            this.mstbStarttime.Size = new System.Drawing.Size(333, 32);
+            this.mstbStarttime.TabIndex = 183;
+            this.mstbStarttime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mstbStarttime.ValidatingType = typeof(System.DateTime);
+            // 
             // btEnd
             // 
             this.btEnd.BackColor = System.Drawing.Color.Transparent;
@@ -680,7 +777,7 @@
             this.btEnd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btEnd.buttonImage = ((System.Drawing.Image)(resources.GetObject("btEnd.buttonImage")));
             this.btEnd.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btEnd.Location = new System.Drawing.Point(389, 37);
+            this.btEnd.Location = new System.Drawing.Point(356, 46);
             this.btEnd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btEnd.Name = "btEnd";
             this.btEnd.Size = new System.Drawing.Size(102, 100);
@@ -694,11 +791,12 @@
             this.btContinue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btContinue.buttonImage = ((System.Drawing.Image)(resources.GetObject("btContinue.buttonImage")));
             this.btContinue.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btContinue.Location = new System.Drawing.Point(287, 37);
+            this.btContinue.Location = new System.Drawing.Point(254, 46);
             this.btContinue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btContinue.Name = "btContinue";
             this.btContinue.Size = new System.Drawing.Size(102, 100);
             this.btContinue.TabIndex = 161;
+            this.btContinue.Click += new System.EventHandler(this.btContinue_Click);
             // 
             // btPause
             // 
@@ -707,11 +805,12 @@
             this.btPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btPause.buttonImage = ((System.Drawing.Image)(resources.GetObject("btPause.buttonImage")));
             this.btPause.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btPause.Location = new System.Drawing.Point(185, 37);
+            this.btPause.Location = new System.Drawing.Point(152, 46);
             this.btPause.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btPause.Name = "btPause";
             this.btPause.Size = new System.Drawing.Size(102, 100);
             this.btPause.TabIndex = 160;
+            this.btPause.Click += new System.EventHandler(this.btPause_Click);
             // 
             // btStart
             // 
@@ -720,7 +819,7 @@
             this.btStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btStart.buttonImage = ((System.Drawing.Image)(resources.GetObject("btStart.buttonImage")));
             this.btStart.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btStart.Location = new System.Drawing.Point(83, 37);
+            this.btStart.Location = new System.Drawing.Point(50, 46);
             this.btStart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btStart.Name = "btStart";
             this.btStart.Size = new System.Drawing.Size(102, 100);
@@ -733,7 +832,7 @@
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label39.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label39.Location = new System.Drawing.Point(420, 11);
+            this.label39.Location = new System.Drawing.Point(386, 20);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(42, 21);
             this.label39.TabIndex = 158;
@@ -745,7 +844,7 @@
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label38.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label38.Location = new System.Drawing.Point(211, 11);
+            this.label38.Location = new System.Drawing.Point(177, 20);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(42, 21);
             this.label38.TabIndex = 156;
@@ -757,7 +856,7 @@
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label37.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label37.Location = new System.Drawing.Point(301, 11);
+            this.label37.Location = new System.Drawing.Point(267, 20);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(74, 21);
             this.label37.TabIndex = 157;
@@ -769,7 +868,7 @@
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label36.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label36.Location = new System.Drawing.Point(114, 11);
+            this.label36.Location = new System.Drawing.Point(80, 20);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(42, 21);
             this.label36.TabIndex = 155;
@@ -778,39 +877,39 @@
             // groupBox3
             // 
             this.groupBox3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox3.Controls.Add(this.userButtonA24);
-            this.groupBox3.Controls.Add(this.userButtonA25);
-            this.groupBox3.Controls.Add(this.userButtonA22);
-            this.groupBox3.Controls.Add(this.userButtonA23);
-            this.groupBox3.Controls.Add(this.userButtonA20);
-            this.groupBox3.Controls.Add(this.userButtonA21);
-            this.groupBox3.Controls.Add(this.tbTwisted);
-            this.groupBox3.Controls.Add(this.tbEtcError);
-            this.groupBox3.Controls.Add(this.tbReverse);
-            this.groupBox3.Controls.Add(this.userButtonA18);
+            this.groupBox3.Controls.Add(this.Mbt6);
+            this.groupBox3.Controls.Add(this.Pbt6);
+            this.groupBox3.Controls.Add(this.Mbt11);
+            this.groupBox3.Controls.Add(this.Pbt11);
+            this.groupBox3.Controls.Add(this.Mbt10);
+            this.groupBox3.Controls.Add(this.Pbt10);
             this.groupBox3.Controls.Add(this.tbMiNap);
-            this.groupBox3.Controls.Add(this.userButtonA19);
-            this.groupBox3.Controls.Add(this.tbOverTurned);
-            this.groupBox3.Controls.Add(this.tbManhattan);
+            this.groupBox3.Controls.Add(this.tbEtcError);
             this.groupBox3.Controls.Add(this.tbnengttem);
-            this.groupBox3.Controls.Add(this.userButtonA16);
-            this.groupBox3.Controls.Add(this.userButtonA17);
-            this.groupBox3.Controls.Add(this.tbShort);
-            this.groupBox3.Controls.Add(this.userButtonA14);
-            this.groupBox3.Controls.Add(this.userButtonA15);
-            this.groupBox3.Controls.Add(this.tbLeadOpen);
-            this.groupBox3.Controls.Add(this.userButtonA12);
-            this.groupBox3.Controls.Add(this.userButtonA13);
-            this.groupBox3.Controls.Add(this.tbMiSap);
-            this.groupBox3.Controls.Add(this.userButtonA10);
-            this.groupBox3.Controls.Add(this.userButtonA11);
+            this.groupBox3.Controls.Add(this.Mbt9);
+            this.groupBox3.Controls.Add(this.tbReverse);
+            this.groupBox3.Controls.Add(this.Pbt9);
             this.groupBox3.Controls.Add(this.tbSonap);
-            this.groupBox3.Controls.Add(this.userButtonA8);
-            this.groupBox3.Controls.Add(this.userButtonA9);
-            this.groupBox3.Controls.Add(this.userButtonA6);
-            this.groupBox3.Controls.Add(this.userButtonA7);
-            this.groupBox3.Controls.Add(this.userButtonA5);
-            this.groupBox3.Controls.Add(this.userButtonA4);
+            this.groupBox3.Controls.Add(this.tbManhattan);
+            this.groupBox3.Controls.Add(this.tbMiSap);
+            this.groupBox3.Controls.Add(this.Mbt8);
+            this.groupBox3.Controls.Add(this.Pbt8);
+            this.groupBox3.Controls.Add(this.tbShort);
+            this.groupBox3.Controls.Add(this.Mbt7);
+            this.groupBox3.Controls.Add(this.Pbt7);
+            this.groupBox3.Controls.Add(this.tbLeadOpen);
+            this.groupBox3.Controls.Add(this.Mbt5);
+            this.groupBox3.Controls.Add(this.Pbt5);
+            this.groupBox3.Controls.Add(this.tbOverTurned);
+            this.groupBox3.Controls.Add(this.Mbt4);
+            this.groupBox3.Controls.Add(this.Pbt4);
+            this.groupBox3.Controls.Add(this.tbTwisted);
+            this.groupBox3.Controls.Add(this.Mbt3);
+            this.groupBox3.Controls.Add(this.Pbt3);
+            this.groupBox3.Controls.Add(this.Mbt2);
+            this.groupBox3.Controls.Add(this.Pbt2);
+            this.groupBox3.Controls.Add(this.Mbt1);
+            this.groupBox3.Controls.Add(this.Pbt1);
             this.groupBox3.Controls.Add(this.label24);
             this.groupBox3.Controls.Add(this.label26);
             this.groupBox3.Controls.Add(this.label27);
@@ -822,102 +921,110 @@
             this.groupBox3.Controls.Add(this.label33);
             this.groupBox3.Controls.Add(this.label34);
             this.groupBox3.Controls.Add(this.label35);
-            this.groupBox3.Location = new System.Drawing.Point(16, 391);
+            this.groupBox3.Location = new System.Drawing.Point(16, 408);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(540, 264);
             this.groupBox3.TabIndex = 180;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "검사내역";
+            this.groupBox3.Visible = false;
             // 
-            // userButtonA24
+            // Mbt6
             // 
-            this.userButtonA24.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA24.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA24.BackgroundImage")));
-            this.userButtonA24.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA24.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA24.buttonImage")));
-            this.userButtonA24.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA24.Location = new System.Drawing.Point(215, 225);
-            this.userButtonA24.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA24.Name = "userButtonA24";
-            this.userButtonA24.Size = new System.Drawing.Size(48, 29);
-            this.userButtonA24.TabIndex = 212;
+            this.Mbt6.BackColor = System.Drawing.Color.Transparent;
+            this.Mbt6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Mbt6.BackgroundImage")));
+            this.Mbt6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Mbt6.buttonImage = ((System.Drawing.Image)(resources.GetObject("Mbt6.buttonImage")));
+            this.Mbt6.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Mbt6.Location = new System.Drawing.Point(215, 225);
+            this.Mbt6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Mbt6.Name = "Mbt6";
+            this.Mbt6.Size = new System.Drawing.Size(48, 29);
+            this.Mbt6.TabIndex = 212;
+            this.Mbt6.Click += new System.EventHandler(this.Mbt6_Click);
             // 
-            // userButtonA25
+            // Pbt6
             // 
-            this.userButtonA25.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA25.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA25.BackgroundImage")));
-            this.userButtonA25.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA25.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA25.buttonImage")));
-            this.userButtonA25.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA25.Location = new System.Drawing.Point(154, 225);
-            this.userButtonA25.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA25.Name = "userButtonA25";
-            this.userButtonA25.Size = new System.Drawing.Size(53, 29);
-            this.userButtonA25.TabIndex = 211;
+            this.Pbt6.BackColor = System.Drawing.Color.Transparent;
+            this.Pbt6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Pbt6.BackgroundImage")));
+            this.Pbt6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pbt6.buttonImage = ((System.Drawing.Image)(resources.GetObject("Pbt6.buttonImage")));
+            this.Pbt6.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Pbt6.Location = new System.Drawing.Point(154, 225);
+            this.Pbt6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Pbt6.Name = "Pbt6";
+            this.Pbt6.Size = new System.Drawing.Size(53, 29);
+            this.Pbt6.TabIndex = 211;
+            this.Pbt6.Click += new System.EventHandler(this.Pbt6_Click);
             // 
-            // userButtonA22
+            // Mbt11
             // 
-            this.userButtonA22.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA22.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA22.BackgroundImage")));
-            this.userButtonA22.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA22.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA22.buttonImage")));
-            this.userButtonA22.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA22.Location = new System.Drawing.Point(475, 186);
-            this.userButtonA22.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA22.Name = "userButtonA22";
-            this.userButtonA22.Size = new System.Drawing.Size(48, 29);
-            this.userButtonA22.TabIndex = 210;
+            this.Mbt11.BackColor = System.Drawing.Color.Transparent;
+            this.Mbt11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Mbt11.BackgroundImage")));
+            this.Mbt11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Mbt11.buttonImage = ((System.Drawing.Image)(resources.GetObject("Mbt11.buttonImage")));
+            this.Mbt11.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Mbt11.Location = new System.Drawing.Point(475, 186);
+            this.Mbt11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Mbt11.Name = "Mbt11";
+            this.Mbt11.Size = new System.Drawing.Size(48, 29);
+            this.Mbt11.TabIndex = 210;
+            this.Mbt11.Click += new System.EventHandler(this.Mbt11_Click);
             // 
-            // userButtonA23
+            // Pbt11
             // 
-            this.userButtonA23.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA23.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA23.BackgroundImage")));
-            this.userButtonA23.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA23.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA23.buttonImage")));
-            this.userButtonA23.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA23.Location = new System.Drawing.Point(414, 186);
-            this.userButtonA23.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA23.Name = "userButtonA23";
-            this.userButtonA23.Size = new System.Drawing.Size(53, 29);
-            this.userButtonA23.TabIndex = 209;
+            this.Pbt11.BackColor = System.Drawing.Color.Transparent;
+            this.Pbt11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Pbt11.BackgroundImage")));
+            this.Pbt11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pbt11.buttonImage = ((System.Drawing.Image)(resources.GetObject("Pbt11.buttonImage")));
+            this.Pbt11.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Pbt11.Location = new System.Drawing.Point(414, 186);
+            this.Pbt11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Pbt11.Name = "Pbt11";
+            this.Pbt11.Size = new System.Drawing.Size(53, 29);
+            this.Pbt11.TabIndex = 209;
+            this.Pbt11.Click += new System.EventHandler(this.Pbt11_Click);
             // 
-            // userButtonA20
+            // Mbt10
             // 
-            this.userButtonA20.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA20.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA20.BackgroundImage")));
-            this.userButtonA20.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA20.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA20.buttonImage")));
-            this.userButtonA20.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA20.Location = new System.Drawing.Point(475, 146);
-            this.userButtonA20.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA20.Name = "userButtonA20";
-            this.userButtonA20.Size = new System.Drawing.Size(48, 29);
-            this.userButtonA20.TabIndex = 208;
+            this.Mbt10.BackColor = System.Drawing.Color.Transparent;
+            this.Mbt10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Mbt10.BackgroundImage")));
+            this.Mbt10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Mbt10.buttonImage = ((System.Drawing.Image)(resources.GetObject("Mbt10.buttonImage")));
+            this.Mbt10.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Mbt10.Location = new System.Drawing.Point(475, 146);
+            this.Mbt10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Mbt10.Name = "Mbt10";
+            this.Mbt10.Size = new System.Drawing.Size(48, 29);
+            this.Mbt10.TabIndex = 208;
+            this.Mbt10.Click += new System.EventHandler(this.Mbt10_Click);
             // 
-            // userButtonA21
+            // Pbt10
             // 
-            this.userButtonA21.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA21.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA21.BackgroundImage")));
-            this.userButtonA21.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA21.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA21.buttonImage")));
-            this.userButtonA21.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA21.Location = new System.Drawing.Point(414, 146);
-            this.userButtonA21.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA21.Name = "userButtonA21";
-            this.userButtonA21.Size = new System.Drawing.Size(53, 29);
-            this.userButtonA21.TabIndex = 207;
+            this.Pbt10.BackColor = System.Drawing.Color.Transparent;
+            this.Pbt10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Pbt10.BackgroundImage")));
+            this.Pbt10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pbt10.buttonImage = ((System.Drawing.Image)(resources.GetObject("Pbt10.buttonImage")));
+            this.Pbt10.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Pbt10.Location = new System.Drawing.Point(414, 146);
+            this.Pbt10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Pbt10.Name = "Pbt10";
+            this.Pbt10.Size = new System.Drawing.Size(53, 29);
+            this.Pbt10.TabIndex = 207;
+            this.Pbt10.Click += new System.EventHandler(this.Pbt10_Click);
             // 
-            // tbTwisted
+            // tbMiNap
             // 
-            this.tbTwisted.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbTwisted.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbTwisted.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbTwisted.Location = new System.Drawing.Point(345, 106);
-            this.tbTwisted.Name = "tbTwisted";
-            this.tbTwisted.Size = new System.Drawing.Size(59, 29);
-            this.tbTwisted.TabIndex = 125;
-            this.tbTwisted.Tag = "";
-            this.tbTwisted.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbMiNap.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbMiNap.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbMiNap.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbMiNap.Location = new System.Drawing.Point(345, 106);
+            this.tbMiNap.Name = "tbMiNap";
+            this.tbMiNap.Size = new System.Drawing.Size(59, 29);
+            this.tbMiNap.TabIndex = 125;
+            this.tbMiNap.Tag = "";
+            this.tbMiNap.Text = "0";
+            this.tbMiNap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbEtcError
             // 
@@ -929,69 +1036,75 @@
             this.tbEtcError.Size = new System.Drawing.Size(59, 29);
             this.tbEtcError.TabIndex = 126;
             this.tbEtcError.Tag = "";
+            this.tbEtcError.Text = "0";
             this.tbEtcError.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // tbnengttem
+            // 
+            this.tbnengttem.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbnengttem.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbnengttem.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbnengttem.Location = new System.Drawing.Point(345, 186);
+            this.tbnengttem.Name = "tbnengttem";
+            this.tbnengttem.Size = new System.Drawing.Size(59, 29);
+            this.tbnengttem.TabIndex = 123;
+            this.tbnengttem.Tag = "";
+            this.tbnengttem.Text = "0";
+            this.tbnengttem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // Mbt9
+            // 
+            this.Mbt9.BackColor = System.Drawing.Color.Transparent;
+            this.Mbt9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Mbt9.BackgroundImage")));
+            this.Mbt9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Mbt9.buttonImage = ((System.Drawing.Image)(resources.GetObject("Mbt9.buttonImage")));
+            this.Mbt9.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Mbt9.Location = new System.Drawing.Point(475, 106);
+            this.Mbt9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Mbt9.Name = "Mbt9";
+            this.Mbt9.Size = new System.Drawing.Size(48, 29);
+            this.Mbt9.TabIndex = 206;
+            this.Mbt9.Click += new System.EventHandler(this.Mbt9_Click);
             // 
             // tbReverse
             // 
             this.tbReverse.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbReverse.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbReverse.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbReverse.Location = new System.Drawing.Point(345, 186);
+            this.tbReverse.Location = new System.Drawing.Point(345, 66);
             this.tbReverse.Name = "tbReverse";
             this.tbReverse.Size = new System.Drawing.Size(59, 29);
-            this.tbReverse.TabIndex = 123;
+            this.tbReverse.TabIndex = 121;
             this.tbReverse.Tag = "";
+            this.tbReverse.Text = "0";
             this.tbReverse.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // userButtonA18
+            // Pbt9
             // 
-            this.userButtonA18.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA18.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA18.BackgroundImage")));
-            this.userButtonA18.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA18.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA18.buttonImage")));
-            this.userButtonA18.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA18.Location = new System.Drawing.Point(475, 106);
-            this.userButtonA18.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA18.Name = "userButtonA18";
-            this.userButtonA18.Size = new System.Drawing.Size(48, 29);
-            this.userButtonA18.TabIndex = 206;
+            this.Pbt9.BackColor = System.Drawing.Color.Transparent;
+            this.Pbt9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Pbt9.BackgroundImage")));
+            this.Pbt9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pbt9.buttonImage = ((System.Drawing.Image)(resources.GetObject("Pbt9.buttonImage")));
+            this.Pbt9.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Pbt9.Location = new System.Drawing.Point(414, 106);
+            this.Pbt9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Pbt9.Name = "Pbt9";
+            this.Pbt9.Size = new System.Drawing.Size(53, 29);
+            this.Pbt9.TabIndex = 205;
+            this.Pbt9.Click += new System.EventHandler(this.Pbt9_Click);
             // 
-            // tbMiNap
+            // tbSonap
             // 
-            this.tbMiNap.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbMiNap.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbMiNap.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbMiNap.Location = new System.Drawing.Point(345, 66);
-            this.tbMiNap.Name = "tbMiNap";
-            this.tbMiNap.Size = new System.Drawing.Size(59, 29);
-            this.tbMiNap.TabIndex = 121;
-            this.tbMiNap.Tag = "";
-            this.tbMiNap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // userButtonA19
-            // 
-            this.userButtonA19.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA19.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA19.BackgroundImage")));
-            this.userButtonA19.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA19.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA19.buttonImage")));
-            this.userButtonA19.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA19.Location = new System.Drawing.Point(414, 106);
-            this.userButtonA19.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA19.Name = "userButtonA19";
-            this.userButtonA19.Size = new System.Drawing.Size(53, 29);
-            this.userButtonA19.TabIndex = 205;
-            // 
-            // tbOverTurned
-            // 
-            this.tbOverTurned.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbOverTurned.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbOverTurned.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbOverTurned.Location = new System.Drawing.Point(345, 146);
-            this.tbOverTurned.Name = "tbOverTurned";
-            this.tbOverTurned.Size = new System.Drawing.Size(59, 29);
-            this.tbOverTurned.TabIndex = 119;
-            this.tbOverTurned.Tag = "";
-            this.tbOverTurned.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbSonap.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbSonap.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbSonap.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbSonap.Location = new System.Drawing.Point(345, 146);
+            this.tbSonap.Name = "tbSonap";
+            this.tbSonap.Size = new System.Drawing.Size(59, 29);
+            this.tbSonap.TabIndex = 119;
+            this.tbSonap.Tag = "";
+            this.tbSonap.Text = "0";
+            this.tbSonap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // tbManhattan
             // 
@@ -1003,45 +1116,49 @@
             this.tbManhattan.Size = new System.Drawing.Size(59, 29);
             this.tbManhattan.TabIndex = 124;
             this.tbManhattan.Tag = "";
+            this.tbManhattan.Text = "0";
             this.tbManhattan.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // tbnengttem
+            // tbMiSap
             // 
-            this.tbnengttem.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbnengttem.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbnengttem.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbnengttem.Location = new System.Drawing.Point(345, 27);
-            this.tbnengttem.Name = "tbnengttem";
-            this.tbnengttem.Size = new System.Drawing.Size(59, 29);
-            this.tbnengttem.TabIndex = 117;
-            this.tbnengttem.Tag = "";
-            this.tbnengttem.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbMiSap.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbMiSap.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbMiSap.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbMiSap.Location = new System.Drawing.Point(345, 27);
+            this.tbMiSap.Name = "tbMiSap";
+            this.tbMiSap.Size = new System.Drawing.Size(59, 29);
+            this.tbMiSap.TabIndex = 117;
+            this.tbMiSap.Tag = "";
+            this.tbMiSap.Text = "0";
+            this.tbMiSap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // userButtonA16
+            // Mbt8
             // 
-            this.userButtonA16.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA16.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA16.BackgroundImage")));
-            this.userButtonA16.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA16.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA16.buttonImage")));
-            this.userButtonA16.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA16.Location = new System.Drawing.Point(475, 66);
-            this.userButtonA16.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA16.Name = "userButtonA16";
-            this.userButtonA16.Size = new System.Drawing.Size(48, 29);
-            this.userButtonA16.TabIndex = 204;
+            this.Mbt8.BackColor = System.Drawing.Color.Transparent;
+            this.Mbt8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Mbt8.BackgroundImage")));
+            this.Mbt8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Mbt8.buttonImage = ((System.Drawing.Image)(resources.GetObject("Mbt8.buttonImage")));
+            this.Mbt8.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Mbt8.Location = new System.Drawing.Point(475, 66);
+            this.Mbt8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Mbt8.Name = "Mbt8";
+            this.Mbt8.Size = new System.Drawing.Size(48, 29);
+            this.Mbt8.TabIndex = 204;
+            this.Mbt8.Click += new System.EventHandler(this.Mbt8_Click);
             // 
-            // userButtonA17
+            // Pbt8
             // 
-            this.userButtonA17.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA17.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA17.BackgroundImage")));
-            this.userButtonA17.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA17.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA17.buttonImage")));
-            this.userButtonA17.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA17.Location = new System.Drawing.Point(414, 66);
-            this.userButtonA17.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA17.Name = "userButtonA17";
-            this.userButtonA17.Size = new System.Drawing.Size(53, 29);
-            this.userButtonA17.TabIndex = 203;
+            this.Pbt8.BackColor = System.Drawing.Color.Transparent;
+            this.Pbt8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Pbt8.BackgroundImage")));
+            this.Pbt8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pbt8.buttonImage = ((System.Drawing.Image)(resources.GetObject("Pbt8.buttonImage")));
+            this.Pbt8.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Pbt8.Location = new System.Drawing.Point(414, 66);
+            this.Pbt8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Pbt8.Name = "Pbt8";
+            this.Pbt8.Size = new System.Drawing.Size(53, 29);
+            this.Pbt8.TabIndex = 203;
+            this.Pbt8.Click += new System.EventHandler(this.Pbt8_Click);
             // 
             // tbShort
             // 
@@ -1053,33 +1170,36 @@
             this.tbShort.Size = new System.Drawing.Size(59, 29);
             this.tbShort.TabIndex = 122;
             this.tbShort.Tag = "";
+            this.tbShort.Text = "0";
             this.tbShort.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // userButtonA14
+            // Mbt7
             // 
-            this.userButtonA14.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA14.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA14.BackgroundImage")));
-            this.userButtonA14.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA14.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA14.buttonImage")));
-            this.userButtonA14.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA14.Location = new System.Drawing.Point(475, 27);
-            this.userButtonA14.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA14.Name = "userButtonA14";
-            this.userButtonA14.Size = new System.Drawing.Size(48, 29);
-            this.userButtonA14.TabIndex = 202;
+            this.Mbt7.BackColor = System.Drawing.Color.Transparent;
+            this.Mbt7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Mbt7.BackgroundImage")));
+            this.Mbt7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Mbt7.buttonImage = ((System.Drawing.Image)(resources.GetObject("Mbt7.buttonImage")));
+            this.Mbt7.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Mbt7.Location = new System.Drawing.Point(475, 27);
+            this.Mbt7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Mbt7.Name = "Mbt7";
+            this.Mbt7.Size = new System.Drawing.Size(48, 29);
+            this.Mbt7.TabIndex = 202;
+            this.Mbt7.Click += new System.EventHandler(this.Mbt7_Click);
             // 
-            // userButtonA15
+            // Pbt7
             // 
-            this.userButtonA15.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA15.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA15.BackgroundImage")));
-            this.userButtonA15.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA15.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA15.buttonImage")));
-            this.userButtonA15.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA15.Location = new System.Drawing.Point(414, 27);
-            this.userButtonA15.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA15.Name = "userButtonA15";
-            this.userButtonA15.Size = new System.Drawing.Size(53, 29);
-            this.userButtonA15.TabIndex = 201;
+            this.Pbt7.BackColor = System.Drawing.Color.Transparent;
+            this.Pbt7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Pbt7.BackgroundImage")));
+            this.Pbt7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pbt7.buttonImage = ((System.Drawing.Image)(resources.GetObject("Pbt7.buttonImage")));
+            this.Pbt7.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Pbt7.Location = new System.Drawing.Point(414, 27);
+            this.Pbt7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Pbt7.Name = "Pbt7";
+            this.Pbt7.Size = new System.Drawing.Size(53, 29);
+            this.Pbt7.TabIndex = 201;
+            this.Pbt7.Click += new System.EventHandler(this.Pbt7_Click);
             // 
             // tbLeadOpen
             // 
@@ -1091,161 +1211,174 @@
             this.tbLeadOpen.Size = new System.Drawing.Size(59, 29);
             this.tbLeadOpen.TabIndex = 120;
             this.tbLeadOpen.Tag = "";
+            this.tbLeadOpen.Text = "0";
             this.tbLeadOpen.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // userButtonA12
+            // Mbt5
             // 
-            this.userButtonA12.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA12.BackgroundImage")));
-            this.userButtonA12.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA12.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA12.buttonImage")));
-            this.userButtonA12.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA12.Location = new System.Drawing.Point(215, 186);
-            this.userButtonA12.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA12.Name = "userButtonA12";
-            this.userButtonA12.Size = new System.Drawing.Size(48, 29);
-            this.userButtonA12.TabIndex = 200;
+            this.Mbt5.BackColor = System.Drawing.Color.Transparent;
+            this.Mbt5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Mbt5.BackgroundImage")));
+            this.Mbt5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Mbt5.buttonImage = ((System.Drawing.Image)(resources.GetObject("Mbt5.buttonImage")));
+            this.Mbt5.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Mbt5.Location = new System.Drawing.Point(215, 186);
+            this.Mbt5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Mbt5.Name = "Mbt5";
+            this.Mbt5.Size = new System.Drawing.Size(48, 29);
+            this.Mbt5.TabIndex = 200;
+            this.Mbt5.Click += new System.EventHandler(this.Mbt5_Click);
             // 
-            // userButtonA13
+            // Pbt5
             // 
-            this.userButtonA13.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA13.BackgroundImage")));
-            this.userButtonA13.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA13.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA13.buttonImage")));
-            this.userButtonA13.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA13.Location = new System.Drawing.Point(154, 186);
-            this.userButtonA13.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA13.Name = "userButtonA13";
-            this.userButtonA13.Size = new System.Drawing.Size(53, 29);
-            this.userButtonA13.TabIndex = 199;
+            this.Pbt5.BackColor = System.Drawing.Color.Transparent;
+            this.Pbt5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Pbt5.BackgroundImage")));
+            this.Pbt5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pbt5.buttonImage = ((System.Drawing.Image)(resources.GetObject("Pbt5.buttonImage")));
+            this.Pbt5.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Pbt5.Location = new System.Drawing.Point(154, 186);
+            this.Pbt5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Pbt5.Name = "Pbt5";
+            this.Pbt5.Size = new System.Drawing.Size(53, 29);
+            this.Pbt5.TabIndex = 199;
+            this.Pbt5.Click += new System.EventHandler(this.Pbt5_Click);
             // 
-            // tbMiSap
+            // tbOverTurned
             // 
-            this.tbMiSap.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbMiSap.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbMiSap.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbMiSap.Location = new System.Drawing.Point(84, 146);
-            this.tbMiSap.Name = "tbMiSap";
-            this.tbMiSap.Size = new System.Drawing.Size(59, 29);
-            this.tbMiSap.TabIndex = 118;
-            this.tbMiSap.Tag = "";
-            this.tbMiSap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbOverTurned.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbOverTurned.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbOverTurned.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbOverTurned.Location = new System.Drawing.Point(84, 146);
+            this.tbOverTurned.Name = "tbOverTurned";
+            this.tbOverTurned.Size = new System.Drawing.Size(59, 29);
+            this.tbOverTurned.TabIndex = 118;
+            this.tbOverTurned.Tag = "";
+            this.tbOverTurned.Text = "0";
+            this.tbOverTurned.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // userButtonA10
+            // Mbt4
             // 
-            this.userButtonA10.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA10.BackgroundImage")));
-            this.userButtonA10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA10.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA10.buttonImage")));
-            this.userButtonA10.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA10.Location = new System.Drawing.Point(215, 146);
-            this.userButtonA10.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA10.Name = "userButtonA10";
-            this.userButtonA10.Size = new System.Drawing.Size(48, 29);
-            this.userButtonA10.TabIndex = 198;
+            this.Mbt4.BackColor = System.Drawing.Color.Transparent;
+            this.Mbt4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Mbt4.BackgroundImage")));
+            this.Mbt4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Mbt4.buttonImage = ((System.Drawing.Image)(resources.GetObject("Mbt4.buttonImage")));
+            this.Mbt4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Mbt4.Location = new System.Drawing.Point(215, 146);
+            this.Mbt4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Mbt4.Name = "Mbt4";
+            this.Mbt4.Size = new System.Drawing.Size(48, 29);
+            this.Mbt4.TabIndex = 198;
+            this.Mbt4.Click += new System.EventHandler(this.Mbt4_Click);
             // 
-            // userButtonA11
+            // Pbt4
             // 
-            this.userButtonA11.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA11.BackgroundImage")));
-            this.userButtonA11.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA11.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA11.buttonImage")));
-            this.userButtonA11.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA11.Location = new System.Drawing.Point(154, 146);
-            this.userButtonA11.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA11.Name = "userButtonA11";
-            this.userButtonA11.Size = new System.Drawing.Size(53, 29);
-            this.userButtonA11.TabIndex = 197;
+            this.Pbt4.BackColor = System.Drawing.Color.Transparent;
+            this.Pbt4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Pbt4.BackgroundImage")));
+            this.Pbt4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pbt4.buttonImage = ((System.Drawing.Image)(resources.GetObject("Pbt4.buttonImage")));
+            this.Pbt4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Pbt4.Location = new System.Drawing.Point(154, 146);
+            this.Pbt4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Pbt4.Name = "Pbt4";
+            this.Pbt4.Size = new System.Drawing.Size(53, 29);
+            this.Pbt4.TabIndex = 197;
+            this.Pbt4.Click += new System.EventHandler(this.Pbt4_Click);
             // 
-            // tbSonap
+            // tbTwisted
             // 
-            this.tbSonap.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbSonap.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbSonap.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbSonap.Location = new System.Drawing.Point(84, 27);
-            this.tbSonap.Name = "tbSonap";
-            this.tbSonap.Size = new System.Drawing.Size(59, 29);
-            this.tbSonap.TabIndex = 116;
-            this.tbSonap.Tag = "";
-            this.tbSonap.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbTwisted.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbTwisted.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbTwisted.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbTwisted.Location = new System.Drawing.Point(84, 27);
+            this.tbTwisted.Name = "tbTwisted";
+            this.tbTwisted.Size = new System.Drawing.Size(59, 29);
+            this.tbTwisted.TabIndex = 116;
+            this.tbTwisted.Tag = "";
+            this.tbTwisted.Text = "0";
+            this.tbTwisted.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // userButtonA8
+            // Mbt3
             // 
-            this.userButtonA8.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA8.BackgroundImage")));
-            this.userButtonA8.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA8.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA8.buttonImage")));
-            this.userButtonA8.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA8.Location = new System.Drawing.Point(215, 106);
-            this.userButtonA8.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA8.Name = "userButtonA8";
-            this.userButtonA8.Size = new System.Drawing.Size(48, 29);
-            this.userButtonA8.TabIndex = 196;
+            this.Mbt3.BackColor = System.Drawing.Color.Transparent;
+            this.Mbt3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Mbt3.BackgroundImage")));
+            this.Mbt3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Mbt3.buttonImage = ((System.Drawing.Image)(resources.GetObject("Mbt3.buttonImage")));
+            this.Mbt3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Mbt3.Location = new System.Drawing.Point(215, 106);
+            this.Mbt3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Mbt3.Name = "Mbt3";
+            this.Mbt3.Size = new System.Drawing.Size(48, 29);
+            this.Mbt3.TabIndex = 196;
+            this.Mbt3.Click += new System.EventHandler(this.Mbt3_Click);
             // 
-            // userButtonA9
+            // Pbt3
             // 
-            this.userButtonA9.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA9.BackgroundImage")));
-            this.userButtonA9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA9.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA9.buttonImage")));
-            this.userButtonA9.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA9.Location = new System.Drawing.Point(154, 106);
-            this.userButtonA9.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA9.Name = "userButtonA9";
-            this.userButtonA9.Size = new System.Drawing.Size(53, 29);
-            this.userButtonA9.TabIndex = 195;
+            this.Pbt3.BackColor = System.Drawing.Color.Transparent;
+            this.Pbt3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Pbt3.BackgroundImage")));
+            this.Pbt3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pbt3.buttonImage = ((System.Drawing.Image)(resources.GetObject("Pbt3.buttonImage")));
+            this.Pbt3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Pbt3.Location = new System.Drawing.Point(154, 106);
+            this.Pbt3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Pbt3.Name = "Pbt3";
+            this.Pbt3.Size = new System.Drawing.Size(53, 29);
+            this.Pbt3.TabIndex = 195;
+            this.Pbt3.Click += new System.EventHandler(this.Pbt3_Click);
             // 
-            // userButtonA6
+            // Mbt2
             // 
-            this.userButtonA6.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA6.BackgroundImage")));
-            this.userButtonA6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA6.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA6.buttonImage")));
-            this.userButtonA6.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA6.Location = new System.Drawing.Point(215, 66);
-            this.userButtonA6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA6.Name = "userButtonA6";
-            this.userButtonA6.Size = new System.Drawing.Size(48, 29);
-            this.userButtonA6.TabIndex = 194;
+            this.Mbt2.BackColor = System.Drawing.Color.Transparent;
+            this.Mbt2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Mbt2.BackgroundImage")));
+            this.Mbt2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Mbt2.buttonImage = ((System.Drawing.Image)(resources.GetObject("Mbt2.buttonImage")));
+            this.Mbt2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Mbt2.Location = new System.Drawing.Point(215, 66);
+            this.Mbt2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Mbt2.Name = "Mbt2";
+            this.Mbt2.Size = new System.Drawing.Size(48, 29);
+            this.Mbt2.TabIndex = 194;
+            this.Mbt2.Click += new System.EventHandler(this.Mbt2_Click);
             // 
-            // userButtonA7
+            // Pbt2
             // 
-            this.userButtonA7.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA7.BackgroundImage")));
-            this.userButtonA7.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA7.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA7.buttonImage")));
-            this.userButtonA7.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA7.Location = new System.Drawing.Point(154, 66);
-            this.userButtonA7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA7.Name = "userButtonA7";
-            this.userButtonA7.Size = new System.Drawing.Size(53, 29);
-            this.userButtonA7.TabIndex = 193;
+            this.Pbt2.BackColor = System.Drawing.Color.Transparent;
+            this.Pbt2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Pbt2.BackgroundImage")));
+            this.Pbt2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pbt2.buttonImage = ((System.Drawing.Image)(resources.GetObject("Pbt2.buttonImage")));
+            this.Pbt2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Pbt2.Location = new System.Drawing.Point(154, 66);
+            this.Pbt2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Pbt2.Name = "Pbt2";
+            this.Pbt2.Size = new System.Drawing.Size(53, 29);
+            this.Pbt2.TabIndex = 193;
+            this.Pbt2.Click += new System.EventHandler(this.Pbt2_Click);
             // 
-            // userButtonA5
+            // Mbt1
             // 
-            this.userButtonA5.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA5.BackgroundImage")));
-            this.userButtonA5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA5.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA5.buttonImage")));
-            this.userButtonA5.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA5.Location = new System.Drawing.Point(215, 27);
-            this.userButtonA5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA5.Name = "userButtonA5";
-            this.userButtonA5.Size = new System.Drawing.Size(48, 29);
-            this.userButtonA5.TabIndex = 192;
+            this.Mbt1.BackColor = System.Drawing.Color.Transparent;
+            this.Mbt1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Mbt1.BackgroundImage")));
+            this.Mbt1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Mbt1.buttonImage = ((System.Drawing.Image)(resources.GetObject("Mbt1.buttonImage")));
+            this.Mbt1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Mbt1.Location = new System.Drawing.Point(215, 27);
+            this.Mbt1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Mbt1.Name = "Mbt1";
+            this.Mbt1.Size = new System.Drawing.Size(48, 29);
+            this.Mbt1.TabIndex = 192;
+            this.Mbt1.Click += new System.EventHandler(this.Mbt1_Click);
             // 
-            // userButtonA4
+            // Pbt1
             // 
-            this.userButtonA4.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("userButtonA4.BackgroundImage")));
-            this.userButtonA4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA4.buttonImage = ((System.Drawing.Image)(resources.GetObject("userButtonA4.buttonImage")));
-            this.userButtonA4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA4.Location = new System.Drawing.Point(154, 27);
-            this.userButtonA4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA4.Name = "userButtonA4";
-            this.userButtonA4.Size = new System.Drawing.Size(53, 29);
-            this.userButtonA4.TabIndex = 191;
+            this.Pbt1.BackColor = System.Drawing.Color.Transparent;
+            this.Pbt1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("Pbt1.BackgroundImage")));
+            this.Pbt1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Pbt1.buttonImage = ((System.Drawing.Image)(resources.GetObject("Pbt1.buttonImage")));
+            this.Pbt1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.Pbt1.Location = new System.Drawing.Point(154, 27);
+            this.Pbt1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.Pbt1.Name = "Pbt1";
+            this.Pbt1.Size = new System.Drawing.Size(53, 29);
+            this.Pbt1.TabIndex = 191;
+            this.Pbt1.Click += new System.EventHandler(this.Pbt1_Click);
             // 
             // label24
             // 
@@ -3000,16 +3133,16 @@
         private UserButtonA userButtonA2;
         private System.Windows.Forms.Panel panSearch;
         public System.Windows.Forms.TextBox tbEtcError;
-        public System.Windows.Forms.TextBox tbTwisted;
-        public System.Windows.Forms.TextBox tbManhattan;
-        public System.Windows.Forms.TextBox tbReverse;
-        public System.Windows.Forms.TextBox tbShort;
         public System.Windows.Forms.TextBox tbMiNap;
+        public System.Windows.Forms.TextBox tbManhattan;
+        public System.Windows.Forms.TextBox tbnengttem;
+        public System.Windows.Forms.TextBox tbShort;
+        public System.Windows.Forms.TextBox tbReverse;
         public System.Windows.Forms.TextBox tbLeadOpen;
+        public System.Windows.Forms.TextBox tbSonap;
         public System.Windows.Forms.TextBox tbOverTurned;
         public System.Windows.Forms.TextBox tbMiSap;
-        public System.Windows.Forms.TextBox tbnengttem;
-        public System.Windows.Forms.TextBox tbSonap;
+        public System.Windows.Forms.TextBox tbTwisted;
         public System.Windows.Forms.TextBox tbMakeQty;
         private System.Windows.Forms.Label label19;
         public System.Windows.Forms.TextBox tbProd;
@@ -3024,28 +3157,28 @@
         private System.Windows.Forms.Label label37;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.GroupBox groupBox3;
-        private UserButtonA userButtonA24;
-        private UserButtonA userButtonA25;
-        private UserButtonA userButtonA22;
-        private UserButtonA userButtonA23;
-        private UserButtonA userButtonA20;
-        private UserButtonA userButtonA21;
-        private UserButtonA userButtonA18;
-        private UserButtonA userButtonA19;
-        private UserButtonA userButtonA16;
-        private UserButtonA userButtonA17;
-        private UserButtonA userButtonA14;
-        private UserButtonA userButtonA15;
-        private UserButtonA userButtonA12;
-        private UserButtonA userButtonA13;
-        private UserButtonA userButtonA10;
-        private UserButtonA userButtonA11;
-        private UserButtonA userButtonA8;
-        private UserButtonA userButtonA9;
-        private UserButtonA userButtonA6;
-        private UserButtonA userButtonA7;
-        private UserButtonA userButtonA5;
-        private UserButtonA userButtonA4;
+        private UserButtonA Mbt6;
+        private UserButtonA Pbt6;
+        private UserButtonA Mbt11;
+        private UserButtonA Pbt11;
+        private UserButtonA Mbt10;
+        private UserButtonA Pbt10;
+        private UserButtonA Mbt9;
+        private UserButtonA Pbt9;
+        private UserButtonA Mbt8;
+        private UserButtonA Pbt8;
+        private UserButtonA Mbt7;
+        private UserButtonA Pbt7;
+        private UserButtonA Mbt5;
+        private UserButtonA Pbt5;
+        private UserButtonA Mbt4;
+        private UserButtonA Pbt4;
+        private UserButtonA Mbt3;
+        private UserButtonA Pbt3;
+        private UserButtonA Mbt2;
+        private UserButtonA Pbt2;
+        private UserButtonA Mbt1;
+        private UserButtonA Pbt1;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label27;
@@ -3068,5 +3201,13 @@
         public UserButtonA userButtonA26;
         public UserButtonA doc2;
         public UserButtonA doc1;
+        private System.Windows.Forms.MaskedTextBox mstbContinuetime;
+        private System.Windows.Forms.MaskedTextBox mstbPausetime;
+        public System.Windows.Forms.MaskedTextBox mstbIngtime2;
+        private System.Windows.Forms.Timer timer4;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label40;
     }
 }

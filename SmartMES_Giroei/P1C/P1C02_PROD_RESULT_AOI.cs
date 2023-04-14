@@ -39,7 +39,7 @@ namespace SmartMES_Giroei
                 cbMan.DisplayMember = "user_name";
             }
 
-            sql = @"select co_code, co_item from BAS_common where co_kind = 'O' order by co_code";
+            sql = @"select co_code, co_item from BAS_common where co_kind = 'M' order by co_code";
             m = new MariaCRUD();
             msg = string.Empty;
             table = m.dbDataTable(sql, ref msg);
@@ -298,7 +298,7 @@ namespace SmartMES_Giroei
 
         private void P1C02_PROD_RESULT_AOI_Shown(object sender, EventArgs e)
         {
-            string sql = @"select co_code, co_item from BAS_common where co_kind = 'O' order by co_code";
+            string sql = @"select co_code, co_item from BAS_common where co_kind = 'M' order by co_code";
             MariaCRUD m = new MariaCRUD();
             string msg = string.Empty;
             DataTable table = m.dbDataTable(sql, ref msg);

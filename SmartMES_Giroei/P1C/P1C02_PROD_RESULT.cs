@@ -13,11 +13,10 @@ namespace SmartMES_Giroei
         public bool bMoltD = true;
         public bool bPunch1D = true;
         public bool bPunch2D = true;
-        public DateTime SDT1 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
-        public DateTime SDT2 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+        private DateTime SDT1 = DateTime.Now;
+        private DateTime SDT3 = DateTime.Now;
         private bool isTimeStarted = false;
 
-        
 
         public P1C02_PROD_RESULT()
         {
@@ -44,7 +43,6 @@ namespace SmartMES_Giroei
         {
             ListSearch();
             InitControls();
-            timer3.Enabled = false;
         }
         public void ListSearch()
         {
@@ -648,7 +646,270 @@ namespace SmartMES_Giroei
             // 멈춤 버튼
             isTimeStarted = false;
             timer3.Enabled = false;
+            groupBox3.Visible = true;
         }
+        public void timer4_Tick(object sender, EventArgs e)
+        {
+            //lbIngtime.Text = DateTime.Now.ToString("hh:MM:dd mm:ss");
+
+            // 현재시간 -- Load 시점에 설정으로 변경
+            //DateTime SDT1 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            if (isTimeStarted == false)
+            {
+                isTimeStarted = true;
+                SDT3 = DateTime.Now;
+            }
+            //비가동 시작시간
+            DateTime SDT4 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")); // DateTime.Parse(dtpDate.Value.ToString("yyyy-MM-dd HH:mm:ss")); 
+
+            //시간 차이 구함
+            TimeSpan gapTime = SDT3 - SDT4;
+
+            mstbPausetime.Text = SDT3.ToString();
+            mstbContinuetime.Text = SDT4.ToString();
+            mstbIngtime2.Text = gapTime.ToString();
+        }
+
+        private void btPause_Click(object sender, EventArgs e)
+        {
+            isTimeStarted = false;
+            timer3.Enabled = false;
+
+            timer4.Enabled = true;
+            timer4.Tick += new EventHandler(timer4_Tick);
+        }
+
+        private void btContinue_Click(object sender, EventArgs e)
+        {
+            //timer3.Enabled = true;
+            timer3.Start();
+
+            isTimeStarted = false;
+            timer4.Enabled = false;
+
+            //lblMsg.Text = "";
+
+            //if (string.IsNullOrEmpty(lblLotNo.Text))
+            //{
+            //    lblMsg.Text = "LotNo.가 선택되지 않았습니다.";
+            //    return;
+            //}
+
+            P1C02_PROD_RESULT_AOI sub = new P1C02_PROD_RESULT_AOI();
+            sub.parentWin = this;
+            sub.job_no = lblLotNo.Text;
+            sub.ShowDialog();
+        }
+        #region 검사내역 +-버튼
+        private void Pbt1_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbTwisted.Text);
+            i = i + 1;
+            tbTwisted.Text = i.ToString();
+        }
+
+        private void Mbt1_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbTwisted.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbTwisted.Text = i.ToString();
+            }
+        }
+
+        private void Pbt2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbLeadOpen.Text);
+            i = i + 1;
+            tbLeadOpen.Text = i.ToString();
+        }
+
+        private void Mbt2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbLeadOpen.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbLeadOpen.Text = i.ToString();
+            }
+        }
+
+        private void Pbt3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbManhattan.Text);
+            i = i + 1;
+            tbManhattan.Text = i.ToString();
+        }
+
+        private void Mbt3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbManhattan.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbManhattan.Text = i.ToString();
+            }
+        }
+        
+        private void Pbt4_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbOverTurned.Text);
+            i = i + 1;
+            tbOverTurned.Text = i.ToString();
+        }
+
+        private void Mbt4_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbOverTurned.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbOverTurned.Text = i.ToString();
+            }
+        }
+        
+        private void Pbt5_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbShort.Text);
+            i = i + 1;
+            tbShort.Text = i.ToString();
+        }
+
+        private void Mbt5_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbShort.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbShort.Text = i.ToString();
+            }
+        }
+
+        private void Pbt6_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbEtcError.Text);
+            i = i + 1;
+            tbEtcError.Text = i.ToString();
+        }
+
+        private void Mbt6_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbEtcError.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbEtcError.Text = i.ToString();
+            }
+        }
+        
+        private void Pbt7_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbMiSap.Text);
+            i = i + 1;
+            tbMiSap.Text = i.ToString();
+        }
+
+        private void Mbt7_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbMiSap.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbMiSap.Text = i.ToString();
+            }
+        }
+        
+        private void Pbt8_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbReverse.Text);
+            i = i + 1;
+            tbReverse.Text = i.ToString();
+        }
+
+        private void Mbt8_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbReverse.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbReverse.Text = i.ToString();
+            }
+        }
+        
+        private void Pbt9_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbMiNap.Text);
+            i = i + 1;
+            tbMiNap.Text = i.ToString();
+        }
+
+        private void Mbt9_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbMiNap.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbMiNap.Text = i.ToString();
+            }
+        }
+        
+        private void Pbt10_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbSonap.Text);
+            i = i + 1;
+            tbSonap.Text = i.ToString();
+        }
+
+        private void Mbt10_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbSonap.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbSonap.Text = i.ToString();
+            }
+        }
+        
+        private void Pbt11_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbnengttem.Text);
+            i = i + 1;
+            tbnengttem.Text = i.ToString();
+        }
+
+        private void Mbt11_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbnengttem.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbnengttem.Text = i.ToString();
+            }
+        }
+        #endregion
     }
 }
 
