@@ -32,13 +32,6 @@ namespace SmartMES_Giroei
             string msg = string.Empty;
             DataTable table = m.dbDataTable(sql, ref msg);
 
-            if (msg == "OK")
-            {
-                cbMan.DataSource = table;
-                cbMan.ValueMember = "user_id";
-                cbMan.DisplayMember = "user_name";
-            }
-
             sql = @"select co_code, co_item from BAS_common where co_kind = 'M' order by co_code";
             m = new MariaCRUD();
             msg = string.Empty;
@@ -53,12 +46,6 @@ namespace SmartMES_Giroei
 
             rowIndex = parentWin.dataGridView1.CurrentCell.RowIndex;
 
-            tbProdName.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[5].Value.ToString(); // 품목명
-            tbProdName.Tag = parentWin.dataGridView1.Rows[rowIndex].Cells[4].Value.ToString();  // 품목코드
-            //string sJobNo = job_no = tbJobNo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[45].Value.ToString(); // JobNo
-            //string sJob = job_num = tbjob.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString(); // JobNo
-            string sJobNo = job_no = tbjob.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[45].Value.ToString(); // JobNo
-            string sJob = job_num = tbJobNo.Text = parentWin.dataGridView1.Rows[rowIndex].Cells[0].Value.ToString(); // JobNo
 
             string sFile1 = parentWin.dataGridView1.Rows[rowIndex].Cells[47].Value.ToString();
             string sFile2 = parentWin.dataGridView1.Rows[rowIndex].Cells[48].Value.ToString();
@@ -85,93 +72,11 @@ namespace SmartMES_Giroei
                 doc2.Tag = sFile2;
             }
 
-            sql = "select * from QLT_inspection_AOI where job_no = '" + sJobNo + "' limit 1";
-            table = m.dbDataTable(sql, ref msg);
-
-            if (table.Rows.Count < 1) {
-                lblMsg.Text = "저장된 Detail정보가 없습니다.";
-                isNew = true;
-                dTFromTime.Text = dTToTime.Text = "";
-                tbInspCount.Text = "0";
-                tbTotalDefect.Text = "0";
-                tbSonap.Text = "0";
-                tbnengttem.Text = "0";
-                tbMiSap.Text = "0";
-                tbOverTurned.Text = "0";
-                tbLeadOpen.Text = "0";
-                tbMiNap.Text = "0";
-                tbShort.Text = "0";
-                tbReverse.Text = "0";
-                tbManhattan.Text = "0";
-                tbTwisted.Text = "0";
-                tbEtcError.Text = "0";
-            } else
-            {
-                DataRow[] row = table.Select();
-                if (row.Length > 0) 
-                {
-                    //dTFromTime.Text = row[0][2].ToString();
-                    //dTToTime.Text = row[0][3].ToString();
-                    dTFromTime.Text = (row[0][1].ToString());
-                    dTToTime.Text = (row[0][2].ToString());
-                    tbInspCount.Text = row[0][3].ToString();
-                    tbTotalDefect.Text = row[0][4].ToString();
-                    tbSonap.Text = row[0][5].ToString();
-                    tbnengttem.Text = row[0][6].ToString();
-                    tbMiSap.Text = row[0][7].ToString();
-                    tbOverTurned.Text = row[0][8].ToString();
-                    tbLeadOpen.Text = row[0][9].ToString();
-                    tbMiNap.Text = row[0][10].ToString();
-                    tbShort.Text = row[0][11].ToString();
-                    tbReverse.Text = row[0][12].ToString();
-                    tbManhattan.Text = row[0][13].ToString();
-                    tbTwisted.Text = row[0][14].ToString();
-                    tbEtcError.Text = row[0][15].ToString();
-                    rtbContents.Text = row[0][20].ToString();
-
-                    // cbMan.SelectedItem = row[0][21].ToString();
-                    cbMan.SelectedValue = row[0][21].ToString();
-                    // cbWorkLine.SelectedItem = row[0][23].ToString();
-                    string line = row[0][23].ToString();
-                    cbWorkLine.SelectedValue = row[0][23].ToString();
-
-                    lbFname1.Text = row[0][16].ToString();
-                    lbFname2.Text = row[0][17].ToString();
-
-                    isNew = false;
-
-                }
-
-            }
-
             this.ActiveControl = btnSave;
         }
 
         private void Save()
         {
-             string sInspCount =  tbInspCount.Text;
-            string sTotalDefect = tbTotalDefect.Text;
-            string sSonap = tbSonap.Text;
-            string sNengttem = tbnengttem.Text;
-            string sMisap = tbMiSap.Text;
-            string sOverturned = tbOverTurned.Text;
-            string sLeadopen = tbLeadOpen.Text;
-            string sMinap = tbMiNap.Text;
-            string sShort = tbShort.Text;
-            string sReverse = tbReverse.Text;
-            string sManhattan = tbManhattan.Text;
-            string sTwisted = tbTwisted.Text;
-            string sEtcerror = tbEtcError.Text;
-            string sContents = rtbContents.Text;
-            string sMan = cbMan.SelectedValue.ToString();
-            string sWorkline = cbWorkLine.SelectedValue.ToString();
-
-            string sFname1 = lbFname1.Text;
-            string sFname2 = lbFname2.Text;
-            string sInspFromTime = dTFromTime.Text;
-            string sInspToTime = dTToTime.Text;
-
-
             string sql = string.Empty;
 
             string fname1 = string.Empty;
@@ -217,15 +122,6 @@ namespace SmartMES_Giroei
             MySqlConnection con = new MySqlConnection(G.conStr);
             MySqlCommand cmd = new MySqlCommand();
             con.Open();
-
-            sql = "insert into QLT_inspection_AOI (job_no, insp_start_time, insp_end_time, insp_qty, defect_count, sonap, nengttem, misap, overturned, leadopen, minap, short, reverse, manhattan, twisted, etc_error, contents, workline, enter_man)" +
-                    " values('" + job_no + "','" + sInspFromTime + "','" + sInspToTime + "'," + sInspCount + "," + sTotalDefect + "," + sSonap + "," + sNengttem + "," + sMisap + "," + sOverturned + "," + sLeadopen + "," + sMinap + "," + sShort + "," + sReverse + "," + 
-                        sManhattan + "," + sTwisted + "," + sEtcerror + ",'" + sContents + "','" + sWorkline + "','" + sMan + "')" 
-                        + " on duplicate key update" + " insp_start_time = '" + sInspFromTime + "', insp_end_time = '" + sInspToTime + "'," 
-                        + " insp_qty = " + sInspCount + ", defect_count = " + sTotalDefect + ", sonap = " + sSonap + ", nengttem = " + sNengttem 
-                        + ", misap = " + sMisap + ", overturned = " + sOverturned + ", leadopen = " + sLeadopen + ", minap = " + sMinap + ", short = " + sShort + ", reverse = " + sReverse
-                        + ", manhattan = " + sManhattan + ", twisted = " + sTwisted + ", etc_error = " + sEtcerror
-                        + ", contents = '" + sContents + "', workline ='" + sWorkline + "', enter_man = '" + sMan + "'";
             cmd.Connection = con;
             cmd.CommandText = sql;
             cmd.ExecuteNonQuery();
@@ -279,21 +175,11 @@ namespace SmartMES_Giroei
 
         public void userButtonA1_Click(object sender, EventArgs e)
         {
-            P1C02_PROD_RESULT_AOI_DOC2 sub = new P1C02_PROD_RESULT_AOI_DOC2();
-            sub.parentWin = this;
-            sub.sNo = "0";
-            sub.sParentCode = tbJobNo.Text;
-            sub.sFileName = doc1.Tag.ToString();
-            sub.ShowDialog();
+
         }
         public void userButtonA2_Click(object sender, EventArgs e)
         {
-            P1C02_PROD_RESULT_AOI_DOC2 sub = new P1C02_PROD_RESULT_AOI_DOC2();
-            sub.parentWin = this;
-            sub.sNo = "5";
-            sub.sParentCode = tbJobNo.Text;
-            sub.sFileName = doc2.Tag.ToString();
-            sub.ShowDialog();
+
         }
 
         private void P1C02_PROD_RESULT_AOI_Shown(object sender, EventArgs e)
@@ -337,8 +223,6 @@ namespace SmartMES_Giroei
             //    return;
             //}
 
-            dTFromTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
-
         }
         private void btnFinish_Click(object sender, EventArgs e)
         {
@@ -353,7 +237,6 @@ namespace SmartMES_Giroei
             //    return;
             //}
 
-            dTToTime.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
         #endregion
     }

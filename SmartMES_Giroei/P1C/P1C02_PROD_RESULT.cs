@@ -639,6 +639,7 @@ namespace SmartMES_Giroei
             // 시작 버튼
             timer3.Enabled = true;
             timer3.Tick += new EventHandler(timer3_Tick);
+            mstbIngtime.Visible = true;
         }
 
         private void btEnd_Click(object sender, EventArgs e)
@@ -646,7 +647,7 @@ namespace SmartMES_Giroei
             // 멈춤 버튼
             isTimeStarted = false;
             timer3.Enabled = false;
-            groupBox3.Visible = true;
+            gpResult.Visible = true;
         }
         public void timer4_Tick(object sender, EventArgs e)
         {
@@ -677,28 +678,30 @@ namespace SmartMES_Giroei
 
             timer4.Enabled = true;
             timer4.Tick += new EventHandler(timer4_Tick);
+            mstbIngtime2.Visible = true;
         }
 
         private void btContinue_Click(object sender, EventArgs e)
         {
             //timer3.Enabled = true;
-            timer3.Start();
+            timer3.Enabled = true;
+            timer3.Tick += new EventHandler(timer3_Tick);
 
             isTimeStarted = false;
             timer4.Enabled = false;
 
-            //lblMsg.Text = "";
+            ////lblMsg.Text = "";
 
-            //if (string.IsNullOrEmpty(lblLotNo.Text))
-            //{
-            //    lblMsg.Text = "LotNo.가 선택되지 않았습니다.";
-            //    return;
-            //}
+            ////if (string.IsNullOrEmpty(lblLotNo.Text))
+            ////{
+            ////    lblMsg.Text = "LotNo.가 선택되지 않았습니다.";
+            ////    return;
+            ////}
 
-            P1C02_PROD_RESULT_AOI sub = new P1C02_PROD_RESULT_AOI();
-            sub.parentWin = this;
-            sub.job_no = lblLotNo.Text;
-            sub.ShowDialog();
+            //P1C02_PROD_RESULT_AOI sub = new P1C02_PROD_RESULT_AOI();
+            //sub.parentWin = this;
+            //sub.job_no = lblLotNo.Text;
+            //sub.ShowDialog();
         }
         #region 검사내역 +-버튼
         private void Pbt1_Click(object sender, EventArgs e)
