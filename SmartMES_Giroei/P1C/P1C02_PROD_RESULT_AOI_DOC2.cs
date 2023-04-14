@@ -10,7 +10,7 @@ namespace SmartMES_Giroei
 {
     public partial class P1C02_PROD_RESULT_AOI_DOC2 : Form
     {
-        public P1C02_PROD_RESULT_AOI parentWin;
+        public P1C02_PROD_RESULT parentWin;
         public string sNo;
         public string sParentCode;
         public string sFileName;
@@ -156,16 +156,16 @@ namespace SmartMES_Giroei
                     cmd.Parameters.AddWithValue("@FileName", FileName);
                     cmd.ExecuteNonQuery();
 
-                    //if (sNo == "1")
-                    //{
-                    //    parentWin.doc1.buttonImage = Properties.Resources.clipA;
-                    //    parentWin.doc1.Tag = FileName;
-                    //}
-                    //else if (sNo == "2")
-                    //{
-                    //    parentWin.doc2.buttonImage = Properties.Resources.clipA;
-                    //    parentWin.doc2.Tag = FileName;
-                    //}
+                    if (sNo == "1")
+                    {
+                        parentWin.doc1.buttonImage = Properties.Resources.clipA;
+                        parentWin.doc1.Tag = FileName;
+                    }
+                    else if (sNo == "2")
+                    {
+                        parentWin.doc2.buttonImage = Properties.Resources.clipA;
+                        parentWin.doc2.Tag = FileName;
+                    }
                     //else if (sNo == "3")
                     //{
                     //    parentWin.doc3.buttonImage = Properties.Resources.clipA;
