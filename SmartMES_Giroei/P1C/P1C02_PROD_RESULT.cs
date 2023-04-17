@@ -35,8 +35,8 @@ namespace SmartMES_Giroei
                 cbPause.ValueMember = "co_code";
                 cbPause.DisplayMember = "co_item";
             }
-            
-            sql = @"select co_code, co_item from BAS_common where co_kind = 'N' order by co_code";
+
+            sql = "select user_id, user_name from SYS_user where authority in ('A','B','C') and useYN = 'Y'";
             m = new MariaCRUD();
             msg = string.Empty;
             table = m.dbDataTable(sql, ref msg);
@@ -44,12 +44,24 @@ namespace SmartMES_Giroei
             if (msg == "OK")
             {
                 cbMan.DataSource = table;
-                cbMan.ValueMember = "co_code";
-                cbMan.DisplayMember = "co_item";
+                cbMan.ValueMember = "user_id";
+                cbMan.DisplayMember = "user_name";
             }
 
-            dataGridView1.CurrentCell = null;
-            dataGridView1.ClearSelection();
+            //sql = @"select co_code, co_item from BAS_common where co_kind = 'N' order by co_code";
+            //m = new MariaCRUD();
+            //msg = string.Empty;
+            //table = m.dbDataTable(sql, ref msg);
+
+            //if (msg == "OK")
+            //{
+            //    cbMan.DataSource = table;
+            //    cbMan.ValueMember = "co_code";
+            //    cbMan.DisplayMember = "co_item";
+            //}
+
+            //dataGridView1.CurrentCell = null;
+            //dataGridView1.ClearSelection();
         }
         private void P1C02_PROD_RESULT_Load(object sender, EventArgs e)
         {
@@ -99,9 +111,11 @@ namespace SmartMES_Giroei
             {
                 //lblMsg.Text = "";
                 //lblLotNo.Text = dataGridView.Rows[rowIndex].Cells[0].Value.ToString();   // tbJobNo.Text
-                ////cbWorkLine.SelectedValue = dataGridView.Rows[rowIndex].Cells[2].Value;
+                ////cbWorkLine.SelectedValue = dataGridView.Rows[rowIndex].Cells[2].Value; 
                 tbProd.Tag = dataGridView.Rows[rowIndex].Cells[4].Value.ToString();
                 tbProd.Text = dataGridView.Rows[rowIndex].Cells[5].Value.ToString();
+                tbContents.Text = dataGridView.Rows[rowIndex].Cells[18].Value.ToString();
+                cbMan.Text = dataGridView.Rows[rowIndex].Cells[34].Value.ToString();
                 tbJobNo.Text = dataGridView.Rows[rowIndex].Cells[45].Value.ToString();
                 tbMakeQty.Text = dataGridView.Rows[rowIndex].Cells[49].Value.ToString();
                 //tbQty.Text = dataGridView.Rows[rowIndex].Cells[6].Value.ToString();
@@ -131,7 +145,6 @@ namespace SmartMES_Giroei
                 //    tbJobTimeFinish.Text = DateTime.Parse(dataGridView.Rows[rowIndex].Cells[16].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
 
                 //tbUserCnt.Text = dataGridView.Rows[rowIndex].Cells[17].Value.ToString();
-                tbContents.Text = dataGridView.Rows[rowIndex].Cells[18].Value.ToString();
             }
 
             //    if (dataGridView.Rows[rowIndex].Cells[22].Value == null || string.IsNullOrEmpty(dataGridView.Rows[rowIndex].Cells[22].Value.ToString()))
@@ -150,8 +163,8 @@ namespace SmartMES_Giroei
             }
         }
 
-        #region Condition Bar Events1
-        private void userButtonA1_Click(object sender, EventArgs e)
+        #region Condition Bar Events1 
+        private void userButtonA1_Click(object sender, EventArgs e) // 날짜변경
         {
             dtpDate.Value = dtpDate.Value.AddDays(-1);
             ListSearch();
@@ -203,6 +216,21 @@ namespace SmartMES_Giroei
             SettingValues(dgv, rowIndex);
             TabControl1.Visible = true;
             //set_production_result();
+        }
+        public byte[] get_file_data(string fname, string job_no)
+        {
+            byte[] rawdata = new byte[0];
+            string sql = "select file1 from QLT_inspection_AOI where job_no = '" + job_no + "' and file1_name = '" + fname + "'";
+            MySqlConnection con = new MySqlConnection(G.conStr);
+            MySqlCommand cmd = new MySqlCommand(sql, con);
+            con.Open();
+            MySqlDataReader rdr = cmd.ExecuteReader();
+            while (rdr.Read())
+            {
+                rawdata = (byte[])rdr[0];
+            }
+            con.Close();
+            return rawdata;
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -395,18 +423,70 @@ namespace SmartMES_Giroei
         }
         private void pbSave_Click(object sender, EventArgs e)
         {
-            //lblMsg.Text = "";
+            lblMsg.Text = "";
 
-            //if (string.IsNullOrEmpty(lblLotNo.Text)) // tbJobNo.Text
-            //{
-            //    lblMsg.Text = "대상 Lot가 존재하지 않습니다.";
-            //    return;
-            //}
-            //if (string.IsNullOrEmpty(tbJobTimeStart.Text))
-            //{
-            //    lblMsg.Text = "작업시작된 Lot만 저장할 수 있습니다.";
-            //    return;
-            //}
+            if (string.IsNullOrEmpty(tbJobNo.Text)) // tbJobNo.Text
+            {
+                lblMsg.Text = "검사리스트가 선택되지 않았습니다.";
+                return;
+            }
+            if (string.IsNullOrEmpty(mstbEndtime.Text))
+            {
+                lblMsg.Text = "작업이 종료되어야 저장할 수 있습니다.";
+                return;
+            }
+
+            string sJob = tbJobNo.Text; // 작지번호
+            string sInspCount = tbMakeQty.Text; //검사수량
+            string sTotalDefect = tbDefectCount.Text; //총불량수
+            string sContents = tbContents.Text; //상세결과
+            string sMan = cbMan.SelectedValue.ToString(); //검사자
+            string sWorkline = tbWorkline1.Text.ToString(); //작업라인
+            string sSonap = tbSonap.Text;
+            string sNengttem = tbnengttem.Text;
+            string sMisap = tbMiSap.Text;
+            string sOverturned = tbOverTurned.Text;
+            string sLeadopen = tbLeadOpen.Text;
+            string sMinap = tbMiNap.Text;
+            string sShort = tbShort.Text;
+            string sReverse = tbReverse.Text;
+            string sManhattan = tbManhattan.Text;
+            string sTwisted = tbTwisted.Text;
+            string sEtcerror = tbEtcError.Text;
+
+            //string sFname1 = lbFname1.Text;
+            //string sFname2 = lbFname2.Text;
+
+            string sInspFromTime = mstbStarttime.Text; //검사시작시간 insp_start_time 
+            string sInspToTime = mstbEndtime.Text; //검사종료시간 insp_end_time
+            string sInspIngTime = mstbIngtime.Text; //경과시간 insp_ing_time
+
+            string sql = string.Empty;
+
+            string fname1 = string.Empty;
+            string fname2 = string.Empty;
+            byte[] rawdata1 = new byte[0];
+            byte[] rawdata2 = new byte[0];
+
+            MySqlConnection con = new MySqlConnection(G.conStr);
+            MySqlCommand cmd = new MySqlCommand();
+            con.Open();
+
+            sql = "insert into QLT_inspection_AOI (job_no, insp_start_time, insp_end_time, insp_ing_time, insp_qty, defect_count, sonap, nengttem, misap, overturned, leadopen, minap, short, reverse, manhattan, twisted, etc_error, contents, workline, enter_man)" +
+                    " values('" + sJob + "','" + sInspFromTime + "','" + sInspToTime + "','" + sInspIngTime + "'," + sInspCount + "," + sTotalDefect + "," + sSonap + "," + sNengttem + "," + sMisap + "," + sOverturned + "," + sLeadopen + "," + sMinap + "," + sShort + "," + sReverse + "," +
+                        sManhattan + "," + sTwisted + "," + sEtcerror + ",'" + sContents + "','" + sWorkline + "','" + sMan + "')"
+                        + " on duplicate key update" + " insp_start_time = '" + sInspFromTime + "', insp_end_time = '" + sInspToTime + "', insp_ing_time = '" + sInspIngTime + "',"
+                        + " insp_qty = " + sInspCount + ", defect_count = " + sTotalDefect + ", sonap = " + sSonap + ", nengttem = " + sNengttem
+                        + ", misap = " + sMisap + ", overturned = " + sOverturned + ", leadopen = " + sLeadopen + ", minap = " + sMinap + ", short = " + sShort + ", reverse = " + sReverse
+                        + ", manhattan = " + sManhattan + ", twisted = " + sTwisted + ", etc_error = " + sEtcerror
+                        + ", contents = '" + sContents + "', workline ='" + sWorkline + "', enter_man = '" + sMan + "'";
+            cmd.Connection = con;
+            cmd.CommandText = sql;
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            lblMsg.Text = "저장되었습니다.";
 
             //string sDate = dtpDate.Value.ToString("yyyy-MM-dd");
             //string sUserCnt = tbUserCnt.Text;
@@ -606,19 +686,7 @@ namespace SmartMES_Giroei
             //sub.job_no = lblLotNo.Text;
             //sub.ShowDialog();
         }
-        //private void timer3_Tick(object sender, EventArgs e)
-        //{
-        //    //// 현재시간 -- Load 시점에 설정으로 변경
-        //    //DateTime SDT1 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
 
-        //    // 비가동 시작시간
-        //    DateTime SDT2 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")); // DateTime.Parse(dtpDate.Value.ToString("yyyy-MM-dd HH:mm:ss")); 
-
-        //    // 시간 차이 구함
-        //    TimeSpan gapTime = SDT1 - SDT2;
-
-        //    mtProcessDt.Text = gapTime.ToString();
-        //}
         public void timer3_Tick(object sender, EventArgs e)
         {
             //lbIngtime.Text = DateTime.Now.ToString("hh:MM:dd mm:ss");
@@ -662,6 +730,7 @@ namespace SmartMES_Giroei
                 isTimeStarted = false;
                 timer3.Enabled = false;
                 gpResult.Visible = true;
+                gpAOI.Visible = true;
             }
         }
         public void timer4_Tick(object sender, EventArgs e)
@@ -734,6 +803,11 @@ namespace SmartMES_Giroei
             i = Convert.ToInt32(tbTwisted.Text);
             i = i + 1;
             tbTwisted.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            l = l + 1;
+            tbDefectCount.Text = l.ToString();
         }
 
         private void Mbt1_Click(object sender, EventArgs e)
@@ -745,6 +819,14 @@ namespace SmartMES_Giroei
                 i = i - 1;
                 tbTwisted.Text = i.ToString();
             }
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount.Text = l.ToString();
+            }
         }
 
         private void Pbt2_Click(object sender, EventArgs e)
@@ -753,6 +835,11 @@ namespace SmartMES_Giroei
             i = Convert.ToInt32(tbLeadOpen.Text);
             i = i + 1;
             tbLeadOpen.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            l = l + 1;
+            tbDefectCount.Text = l.ToString();
         }
 
         private void Mbt2_Click(object sender, EventArgs e)
@@ -764,6 +851,14 @@ namespace SmartMES_Giroei
                 i = i - 1;
                 tbLeadOpen.Text = i.ToString();
             }
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount.Text = l.ToString();
+            }
         }
 
         private void Pbt3_Click(object sender, EventArgs e)
@@ -772,6 +867,11 @@ namespace SmartMES_Giroei
             i = Convert.ToInt32(tbManhattan.Text);
             i = i + 1;
             tbManhattan.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            l = l + 1;
+            tbDefectCount.Text = l.ToString();
         }
 
         private void Mbt3_Click(object sender, EventArgs e)
@@ -783,6 +883,14 @@ namespace SmartMES_Giroei
                 i = i - 1;
                 tbManhattan.Text = i.ToString();
             }
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount.Text = l.ToString();
+            }
         }
         
         private void Pbt4_Click(object sender, EventArgs e)
@@ -791,6 +899,11 @@ namespace SmartMES_Giroei
             i = Convert.ToInt32(tbOverTurned.Text);
             i = i + 1;
             tbOverTurned.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            l = l + 1;
+            tbDefectCount.Text = l.ToString();
         }
 
         private void Mbt4_Click(object sender, EventArgs e)
@@ -802,6 +915,14 @@ namespace SmartMES_Giroei
                 i = i - 1;
                 tbOverTurned.Text = i.ToString();
             }
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount.Text = l.ToString();
+            }
         }
         
         private void Pbt5_Click(object sender, EventArgs e)
@@ -810,6 +931,11 @@ namespace SmartMES_Giroei
             i = Convert.ToInt32(tbShort.Text);
             i = i + 1;
             tbShort.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            l = l + 1;
+            tbDefectCount.Text = l.ToString();
         }
 
         private void Mbt5_Click(object sender, EventArgs e)
@@ -821,6 +947,14 @@ namespace SmartMES_Giroei
                 i = i - 1;
                 tbShort.Text = i.ToString();
             }
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount.Text = l.ToString();
+            }
         }
 
         private void Pbt6_Click(object sender, EventArgs e)
@@ -829,6 +963,11 @@ namespace SmartMES_Giroei
             i = Convert.ToInt32(tbEtcError.Text);
             i = i + 1;
             tbEtcError.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            l = l + 1;
+            tbDefectCount.Text = l.ToString();
         }
 
         private void Mbt6_Click(object sender, EventArgs e)
@@ -840,6 +979,14 @@ namespace SmartMES_Giroei
                 i = i - 1;
                 tbEtcError.Text = i.ToString();
             }
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount.Text = l.ToString();
+            }
         }
         
         private void Pbt7_Click(object sender, EventArgs e)
@@ -848,6 +995,11 @@ namespace SmartMES_Giroei
             i = Convert.ToInt32(tbMiSap.Text);
             i = i + 1;
             tbMiSap.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            l = l + 1;
+            tbDefectCount.Text = l.ToString();
         }
 
         private void Mbt7_Click(object sender, EventArgs e)
@@ -859,6 +1011,14 @@ namespace SmartMES_Giroei
                 i = i - 1;
                 tbMiSap.Text = i.ToString();
             }
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount.Text = l.ToString();
+            }
         }
         
         private void Pbt8_Click(object sender, EventArgs e)
@@ -867,6 +1027,11 @@ namespace SmartMES_Giroei
             i = Convert.ToInt32(tbReverse.Text);
             i = i + 1;
             tbReverse.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            l = l + 1;
+            tbDefectCount.Text = l.ToString();
         }
 
         private void Mbt8_Click(object sender, EventArgs e)
@@ -878,6 +1043,14 @@ namespace SmartMES_Giroei
                 i = i - 1;
                 tbReverse.Text = i.ToString();
             }
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount.Text = l.ToString();
+            }
         }
         
         private void Pbt9_Click(object sender, EventArgs e)
@@ -886,6 +1059,11 @@ namespace SmartMES_Giroei
             i = Convert.ToInt32(tbMiNap.Text);
             i = i + 1;
             tbMiNap.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            l = l + 1;
+            tbDefectCount.Text = l.ToString();
         }
 
         private void Mbt9_Click(object sender, EventArgs e)
@@ -897,6 +1075,14 @@ namespace SmartMES_Giroei
                 i = i - 1;
                 tbMiNap.Text = i.ToString();
             }
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount.Text = l.ToString();
+            }
         }
         
         private void Pbt10_Click(object sender, EventArgs e)
@@ -905,6 +1091,11 @@ namespace SmartMES_Giroei
             i = Convert.ToInt32(tbSonap.Text);
             i = i + 1;
             tbSonap.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            l = l + 1;
+            tbDefectCount.Text = l.ToString();
         }
 
         private void Mbt10_Click(object sender, EventArgs e)
@@ -916,6 +1107,14 @@ namespace SmartMES_Giroei
                 i = i - 1;
                 tbSonap.Text = i.ToString();
             }
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount.Text = l.ToString();
+            }
         }
         
         private void Pbt11_Click(object sender, EventArgs e)
@@ -924,6 +1123,11 @@ namespace SmartMES_Giroei
             i = Convert.ToInt32(tbnengttem.Text);
             i = i + 1;
             tbnengttem.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            l = l + 1;
+            tbDefectCount.Text = l.ToString();
         }
 
         private void Mbt11_Click(object sender, EventArgs e)
@@ -934,6 +1138,14 @@ namespace SmartMES_Giroei
             {
                 i = i - 1;
                 tbnengttem.Text = i.ToString();
+            }
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount.Text = l.ToString();
             }
         }
         #endregion
