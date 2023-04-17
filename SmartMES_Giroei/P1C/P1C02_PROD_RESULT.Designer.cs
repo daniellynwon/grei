@@ -32,9 +32,13 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(P1C02_PROD_RESULT));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.jobNoDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.공정명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.작업자IDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -53,45 +57,49 @@
             this.외봉투탈피일시 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.양품수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.불량수량DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panel1 = new System.Windows.Forms.Panel();
+            this.sPAOILossBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetP1C = new SmartMES_Giroei.P1C.DataSetP1C();
+            this.sPProdResultQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.timer2 = new System.Windows.Forms.Timer(this.components);
+            this.sP_ProdResult_QueryTableAdapter = new SmartMES_Giroei.P1C.DataSetP1CTableAdapters.SP_ProdResult_QueryTableAdapter();
+            this.dtpDate = new System.Windows.Forms.DateTimePicker();
+            this.label2 = new System.Windows.Forms.Label();
+            this.userButtonA1 = new SmartMES_Giroei.UserButtonA();
+            this.userButtonA2 = new SmartMES_Giroei.UserButtonA();
+            this.panSearch = new System.Windows.Forms.Panel();
+            this.timer3 = new System.Windows.Forms.Timer(this.components);
+            this.timer4 = new System.Windows.Forms.Timer(this.components);
+            this.sP_AOI_LossTableAdapter = new SmartMES_Giroei.P1C.DataSetP1CTableAdapters.SP_AOI_LossTableAdapter();
             this.TabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.lblMsg = new System.Windows.Forms.Label();
+            this.BtPrint = new SmartMES_Giroei.UserButtonA();
+            this.label3 = new System.Windows.Forms.Label();
+            this.tbCust = new System.Windows.Forms.TextBox();
+            this.label43 = new System.Windows.Forms.Label();
+            this.lbIngtime = new System.Windows.Forms.Label();
+            this.lbPause = new System.Windows.Forms.Label();
             this.tbWorkline1 = new System.Windows.Forms.TextBox();
             this.cbMan = new System.Windows.Forms.ComboBox();
-            this.cbPause = new System.Windows.Forms.ComboBox();
-            this.lbPause = new System.Windows.Forms.Label();
-            this.gpAOI = new System.Windows.Forms.GroupBox();
-            this.doc4 = new SmartMES_Giroei.UserButtonA();
-            this.tbContents = new System.Windows.Forms.TextBox();
-            this.tbJobNo = new System.Windows.Forms.TextBox();
-            this.doc3 = new SmartMES_Giroei.UserButtonA();
-            this.doc1 = new SmartMES_Giroei.UserButtonA();
-            this.doc2 = new SmartMES_Giroei.UserButtonA();
-            this.groupBox4 = new System.Windows.Forms.GroupBox();
-            this.label46 = new System.Windows.Forms.Label();
-            this.label45 = new System.Windows.Forms.Label();
-            this.label43 = new System.Windows.Forms.Label();
-            this.mstbIngtime2 = new System.Windows.Forms.MaskedTextBox();
-            this.mstbIngtime = new System.Windows.Forms.MaskedTextBox();
-            this.lbIngtime = new System.Windows.Forms.Label();
             this.label42 = new System.Windows.Forms.Label();
+            this.groupBox4 = new System.Windows.Forms.GroupBox();
+            this.lblMsg = new System.Windows.Forms.Label();
+            this.lblmstbIngtime2 = new System.Windows.Forms.Label();
+            this.lblmstbIngtime = new System.Windows.Forms.Label();
+            this.lblSeq = new System.Windows.Forms.Label();
+            this.mstbIngtime2 = new System.Windows.Forms.MaskedTextBox();
+            this.tbSeq = new System.Windows.Forms.TextBox();
+            this.mstbIngtime = new System.Windows.Forms.MaskedTextBox();
             this.btEnd = new SmartMES_Giroei.UserButtonA();
             this.btContinue = new SmartMES_Giroei.UserButtonA();
             this.btPause = new SmartMES_Giroei.UserButtonA();
-            this.label41 = new System.Windows.Forms.Label();
             this.btStart = new SmartMES_Giroei.UserButtonA();
             this.label39 = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
             this.label37 = new System.Windows.Forms.Label();
             this.label36 = new System.Windows.Forms.Label();
-            this.mstbStarttime = new System.Windows.Forms.MaskedTextBox();
-            this.mstbContinuetime = new System.Windows.Forms.MaskedTextBox();
-            this.mstbPausetime = new System.Windows.Forms.MaskedTextBox();
-            this.mstbEndtime = new System.Windows.Forms.MaskedTextBox();
             this.gpResult = new System.Windows.Forms.GroupBox();
             this.tbDefectCount = new System.Windows.Forms.TextBox();
             this.Mbt6 = new SmartMES_Giroei.UserButtonA();
@@ -139,11 +147,31 @@
             this.label33 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
+            this.cbPause = new System.Windows.Forms.ComboBox();
             this.tbMakeQty = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
             this.tbProd = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.mstbEndtime = new System.Windows.Forms.MaskedTextBox();
+            this.mstbPausetime = new System.Windows.Forms.MaskedTextBox();
+            this.mstbContinuetime = new System.Windows.Forms.MaskedTextBox();
+            this.mstbStarttime = new System.Windows.Forms.MaskedTextBox();
+            this.gpAOI = new System.Windows.Forms.GroupBox();
+            this.doc4 = new SmartMES_Giroei.UserButtonA();
+            this.tbContents = new System.Windows.Forms.TextBox();
+            this.tbJobNo = new System.Windows.Forms.TextBox();
+            this.doc3 = new SmartMES_Giroei.UserButtonA();
+            this.doc1 = new SmartMES_Giroei.UserButtonA();
+            this.doc2 = new SmartMES_Giroei.UserButtonA();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.순번DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.중지DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.다시시작DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.loss시간DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.중지사유DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.수주번호 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.공정명DataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -198,34 +226,26 @@
             this.검사수 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.AOI검사완료시간 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.업체명 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.sPProdResultQueryBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataSetP1C = new SmartMES_Giroei.P1C.DataSetP1C();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.timer2 = new System.Windows.Forms.Timer(this.components);
-            this.sP_ProdResult_QueryTableAdapter = new SmartMES_Giroei.P1C.DataSetP1CTableAdapters.SP_ProdResult_QueryTableAdapter();
-            this.dtpDate = new System.Windows.Forms.DateTimePicker();
-            this.label2 = new System.Windows.Forms.Label();
-            this.userButtonA1 = new SmartMES_Giroei.UserButtonA();
-            this.userButtonA2 = new SmartMES_Giroei.UserButtonA();
-            this.panSearch = new System.Windows.Forms.Panel();
-            this.timer3 = new System.Windows.Forms.Timer(this.components);
-            this.timer4 = new System.Windows.Forms.Timer(this.components);
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.lblPrint = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).BeginInit();
-            this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sPAOILossBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPProdResultQueryBindingSource)).BeginInit();
+            this.panSearch.SuspendLayout();
             this.TabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
-            this.gpAOI.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.gpResult.SuspendLayout();
+            this.gpAOI.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPProdResultQueryBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).BeginInit();
-            this.panSearch.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblTitle
@@ -236,7 +256,7 @@
             // 
             this.pbPrint.Enabled = true;
             this.pbPrint.Image = global::SmartMES_Giroei.Properties.Resources.out_B;
-            this.pbPrint.Click += new System.EventHandler(this.pbPrint_Click);
+            this.pbPrint.Visible = false;
             // 
             // pbSave
             // 
@@ -386,31 +406,125 @@
             this.불량수량DataGridViewTextBoxColumn.Name = "불량수량DataGridViewTextBoxColumn";
             this.불량수량DataGridViewTextBoxColumn.Visible = false;
             // 
-            // panel1
+            // sPAOILossBindingSource
             // 
-            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.sPAOILossBindingSource.DataMember = "SP_AOI_Loss";
+            this.sPAOILossBindingSource.DataSource = this.dataSetP1C;
+            // 
+            // dataSetP1C
+            // 
+            this.dataSetP1C.DataSetName = "DataSetP1C";
+            this.dataSetP1C.EnforceConstraints = false;
+            this.dataSetP1C.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // sPProdResultQueryBindingSource
+            // 
+            this.sPProdResultQueryBindingSource.DataMember = "SP_ProdResult_Query";
+            this.sPProdResultQueryBindingSource.DataSource = this.dataSetP1C;
+            // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            // 
+            // timer2
+            // 
+            this.timer2.Interval = 1000;
+            // 
+            // sP_ProdResult_QueryTableAdapter
+            // 
+            this.sP_ProdResult_QueryTableAdapter.ClearBeforeFill = true;
+            // 
+            // dtpDate
+            // 
+            this.dtpDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.dtpDate.CalendarFont = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpDate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.dtpDate.Location = new System.Drawing.Point(581, 20);
+            this.dtpDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.dtpDate.Name = "dtpDate";
+            this.dtpDate.Size = new System.Drawing.Size(211, 29);
+            this.dtpDate.TabIndex = 2;
+            this.dtpDate.ValueChanged += new System.EventHandler(this.dtpDate_ValueChanged);
+            // 
+            // label2
+            // 
+            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label2.Location = new System.Drawing.Point(436, 24);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(74, 21);
+            this.label2.TabIndex = 0;
+            this.label2.Text = "작업일자";
+            // 
+            // userButtonA1
+            // 
+            this.userButtonA1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.userButtonA1.BackColor = System.Drawing.Color.Transparent;
+            this.userButtonA1.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.left2;
+            this.userButtonA1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.userButtonA1.buttonImage = global::SmartMES_Giroei.Properties.Resources.left2;
+            this.userButtonA1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.userButtonA1.Location = new System.Drawing.Point(516, 24);
+            this.userButtonA1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.userButtonA1.Name = "userButtonA1";
+            this.userButtonA1.Size = new System.Drawing.Size(60, 20);
+            this.userButtonA1.TabIndex = 1;
+            this.userButtonA1.Click += new System.EventHandler(this.userButtonA1_Click);
+            // 
+            // userButtonA2
+            // 
+            this.userButtonA2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.userButtonA2.BackColor = System.Drawing.Color.Transparent;
+            this.userButtonA2.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.right2;
+            this.userButtonA2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.userButtonA2.buttonImage = global::SmartMES_Giroei.Properties.Resources.right2;
+            this.userButtonA2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.userButtonA2.Location = new System.Drawing.Point(797, 24);
+            this.userButtonA2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.userButtonA2.Name = "userButtonA2";
+            this.userButtonA2.Size = new System.Drawing.Size(60, 20);
+            this.userButtonA2.TabIndex = 3;
+            this.userButtonA2.Click += new System.EventHandler(this.userButtonA2_Click);
+            // 
+            // panSearch
+            // 
+            this.panSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(205)))), ((int)(((byte)(219)))));
-            this.panel1.Controls.Add(this.TabControl1);
-            this.panel1.Controls.Add(this.dataGridView1);
-            this.panel1.Location = new System.Drawing.Point(2, 135);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1319, 843);
-            this.panel1.TabIndex = 1;
+            this.panSearch.AutoSize = true;
+            this.panSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(205)))), ((int)(((byte)(219)))));
+            this.panSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panSearch.Controls.Add(this.userButtonA2);
+            this.panSearch.Controls.Add(this.userButtonA1);
+            this.panSearch.Controls.Add(this.label2);
+            this.panSearch.Controls.Add(this.dtpDate);
+            this.panSearch.Location = new System.Drawing.Point(2, 58);
+            this.panSearch.Name = "panSearch";
+            this.panSearch.Size = new System.Drawing.Size(1319, 71);
+            this.panSearch.TabIndex = 0;
+            // 
+            // timer3
+            // 
+            this.timer3.Interval = 1000;
+            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            // 
+            // sP_AOI_LossTableAdapter
+            // 
+            this.sP_AOI_LossTableAdapter.ClearBeforeFill = true;
             // 
             // TabControl1
             // 
-            this.TabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
+            this.TabControl1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.TabControl1.Controls.Add(this.tabPage2);
             this.TabControl1.Controls.Add(this.tabPage3);
             this.TabControl1.Controls.Add(this.tabPage1);
-            this.TabControl1.Location = new System.Drawing.Point(420, 19);
+            this.TabControl1.Enabled = false;
+            this.TabControl1.Location = new System.Drawing.Point(7, 296);
             this.TabControl1.Name = "TabControl1";
             this.TabControl1.SelectedIndex = 0;
-            this.TabControl1.Size = new System.Drawing.Size(890, 722);
+            this.TabControl1.Size = new System.Drawing.Size(1308, 699);
             this.TabControl1.TabIndex = 88;
             this.TabControl1.Visible = false;
             // 
@@ -419,7 +533,7 @@
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(205)))), ((int)(((byte)(219)))));
             this.tabPage2.Location = new System.Drawing.Point(4, 30);
             this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Size = new System.Drawing.Size(882, 688);
+            this.tabPage2.Size = new System.Drawing.Size(1300, 665);
             this.tabPage2.TabIndex = 3;
             this.tabPage2.Text = "2라인 검사기";
             // 
@@ -429,48 +543,123 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 30);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(882, 688);
+            this.tabPage3.Size = new System.Drawing.Size(1300, 665);
             this.tabPage3.TabIndex = 7;
             this.tabPage3.Text = "육안검사";
             // 
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.SystemColors.Info;
-            this.tabPage1.Controls.Add(this.lblMsg);
+            this.tabPage1.Controls.Add(this.lblPrint);
+            this.tabPage1.Controls.Add(this.BtPrint);
+            this.tabPage1.Controls.Add(this.label3);
+            this.tabPage1.Controls.Add(this.tbCust);
+            this.tabPage1.Controls.Add(this.label43);
+            this.tabPage1.Controls.Add(this.lbIngtime);
+            this.tabPage1.Controls.Add(this.lbPause);
             this.tabPage1.Controls.Add(this.tbWorkline1);
             this.tabPage1.Controls.Add(this.cbMan);
-            this.tabPage1.Controls.Add(this.cbPause);
-            this.tabPage1.Controls.Add(this.lbPause);
-            this.tabPage1.Controls.Add(this.gpAOI);
+            this.tabPage1.Controls.Add(this.label42);
             this.tabPage1.Controls.Add(this.groupBox4);
             this.tabPage1.Controls.Add(this.gpResult);
+            this.tabPage1.Controls.Add(this.cbPause);
             this.tabPage1.Controls.Add(this.tbMakeQty);
             this.tabPage1.Controls.Add(this.label19);
+            this.tabPage1.Controls.Add(this.label41);
             this.tabPage1.Controls.Add(this.tbProd);
             this.tabPage1.Controls.Add(this.label4);
             this.tabPage1.Controls.Add(this.label5);
+            this.tabPage1.Controls.Add(this.label40);
+            this.tabPage1.Controls.Add(this.mstbEndtime);
+            this.tabPage1.Controls.Add(this.mstbPausetime);
+            this.tabPage1.Controls.Add(this.mstbContinuetime);
+            this.tabPage1.Controls.Add(this.mstbStarttime);
+            this.tabPage1.Controls.Add(this.gpAOI);
             this.tabPage1.Location = new System.Drawing.Point(4, 30);
             this.tabPage1.Name = "tabPage1";
-            this.tabPage1.Size = new System.Drawing.Size(882, 688);
+            this.tabPage1.Size = new System.Drawing.Size(1300, 665);
             this.tabPage1.TabIndex = 2;
             this.tabPage1.Text = "1라인 검사기";
             // 
-            // lblMsg
+            // BtPrint
             // 
-            this.lblMsg.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblMsg.AutoSize = true;
-            this.lblMsg.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lblMsg.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lblMsg.Location = new System.Drawing.Point(362, 103);
-            this.lblMsg.Name = "lblMsg";
-            this.lblMsg.Size = new System.Drawing.Size(0, 21);
-            this.lblMsg.TabIndex = 187;
+            this.BtPrint.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.BtPrint.BackColor = System.Drawing.Color.Transparent;
+            this.BtPrint.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtPrint.BackgroundImage")));
+            this.BtPrint.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtPrint.buttonImage = ((System.Drawing.Image)(resources.GetObject("BtPrint.buttonImage")));
+            this.BtPrint.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.BtPrint.Location = new System.Drawing.Point(637, 24);
+            this.BtPrint.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.BtPrint.Name = "BtPrint";
+            this.BtPrint.Size = new System.Drawing.Size(113, 102);
+            this.BtPrint.TabIndex = 222;
+            this.BtPrint.Visible = false;
+            this.BtPrint.Click += new System.EventHandler(this.pbPrint_Click);
+            // 
+            // label3
+            // 
+            this.label3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(355, 8);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(58, 21);
+            this.label3.TabIndex = 223;
+            this.label3.Text = "업체명";
+            // 
+            // tbCust
+            // 
+            this.tbCust.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbCust.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbCust.Location = new System.Drawing.Point(430, 5);
+            this.tbCust.Name = "tbCust";
+            this.tbCust.ReadOnly = true;
+            this.tbCust.Size = new System.Drawing.Size(200, 29);
+            this.tbCust.TabIndex = 222;
+            this.tbCust.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label43
+            // 
+            this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label43.AutoSize = true;
+            this.label43.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label43.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label43.Location = new System.Drawing.Point(773, 557);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(218, 21);
+            this.label43.TabIndex = 218;
+            this.label43.Text = "다시시작시간(사용자 미표기)";
+            this.label43.Visible = false;
+            // 
+            // lbIngtime
+            // 
+            this.lbIngtime.AutoSize = true;
+            this.lbIngtime.Font = new System.Drawing.Font("휴먼둥근헤드라인", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbIngtime.Location = new System.Drawing.Point(8, 277);
+            this.lbIngtime.Name = "lbIngtime";
+            this.lbIngtime.Size = new System.Drawing.Size(0, 34);
+            this.lbIngtime.TabIndex = 213;
+            // 
+            // lbPause
+            // 
+            this.lbPause.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lbPause.AutoSize = true;
+            this.lbPause.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbPause.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lbPause.Location = new System.Drawing.Point(348, 81);
+            this.lbPause.Name = "lbPause";
+            this.lbPause.Size = new System.Drawing.Size(74, 21);
+            this.lbPause.TabIndex = 219;
+            this.lbPause.Text = "중지사유";
+            this.lbPause.Visible = false;
             // 
             // tbWorkline1
             // 
             this.tbWorkline1.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbWorkline1.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbWorkline1.Location = new System.Drawing.Point(669, 22);
+            this.tbWorkline1.Location = new System.Drawing.Point(124, 5);
             this.tbWorkline1.Name = "tbWorkline1";
             this.tbWorkline1.ReadOnly = true;
             this.tbWorkline1.Size = new System.Drawing.Size(200, 29);
@@ -483,209 +672,104 @@
             this.cbMan.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.cbMan.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMan.FormattingEnabled = true;
-            this.cbMan.Location = new System.Drawing.Point(129, 95);
+            this.cbMan.Location = new System.Drawing.Point(430, 39);
             this.cbMan.Name = "cbMan";
-            this.cbMan.Size = new System.Drawing.Size(200, 29);
+            this.cbMan.Size = new System.Drawing.Size(202, 29);
             this.cbMan.TabIndex = 185;
             // 
-            // cbPause
+            // label42
             // 
-            this.cbPause.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.cbPause.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbPause.FormattingEnabled = true;
-            this.cbPause.Location = new System.Drawing.Point(432, 22);
-            this.cbPause.Name = "cbPause";
-            this.cbPause.Size = new System.Drawing.Size(203, 29);
-            this.cbPause.TabIndex = 184;
-            this.cbPause.Visible = false;
-            // 
-            // lbPause
-            // 
-            this.lbPause.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lbPause.AutoSize = true;
-            this.lbPause.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbPause.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.lbPause.Location = new System.Drawing.Point(351, 25);
-            this.lbPause.Name = "lbPause";
-            this.lbPause.Size = new System.Drawing.Size(74, 21);
-            this.lbPause.TabIndex = 183;
-            this.lbPause.Text = "중지사유";
-            this.lbPause.Visible = false;
-            // 
-            // gpAOI
-            // 
-            this.gpAOI.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.gpAOI.Controls.Add(this.doc4);
-            this.gpAOI.Controls.Add(this.tbContents);
-            this.gpAOI.Controls.Add(this.tbJobNo);
-            this.gpAOI.Controls.Add(this.doc3);
-            this.gpAOI.Controls.Add(this.doc1);
-            this.gpAOI.Controls.Add(this.doc2);
-            this.gpAOI.Location = new System.Drawing.Point(577, 408);
-            this.gpAOI.Name = "gpAOI";
-            this.gpAOI.Size = new System.Drawing.Size(302, 264);
-            this.gpAOI.TabIndex = 182;
-            this.gpAOI.TabStop = false;
-            this.gpAOI.Text = "AOI 상세 검사 결과";
-            this.gpAOI.Visible = false;
-            // 
-            // doc4
-            // 
-            this.doc4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.doc4.BackColor = System.Drawing.Color.Transparent;
-            this.doc4.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.doc4.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.doc4.Location = new System.Drawing.Point(267, 0);
-            this.doc4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.doc4.Name = "doc4";
-            this.doc4.Size = new System.Drawing.Size(25, 25);
-            this.doc4.TabIndex = 188;
-            this.doc4.Tag = "";
-            // 
-            // tbContents
-            // 
-            this.tbContents.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbContents.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbContents.Location = new System.Drawing.Point(18, 29);
-            this.tbContents.Multiline = true;
-            this.tbContents.Name = "tbContents";
-            this.tbContents.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbContents.Size = new System.Drawing.Size(284, 229);
-            this.tbContents.TabIndex = 182;
-            // 
-            // tbJobNo
-            // 
-            this.tbJobNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.tbJobNo.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbJobNo.Location = new System.Drawing.Point(147, 210);
-            this.tbJobNo.Name = "tbJobNo";
-            this.tbJobNo.ReadOnly = true;
-            this.tbJobNo.Size = new System.Drawing.Size(122, 29);
-            this.tbJobNo.TabIndex = 186;
-            this.tbJobNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.tbJobNo.Visible = false;
-            // 
-            // doc3
-            // 
-            this.doc3.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.doc3.BackColor = System.Drawing.Color.Transparent;
-            this.doc3.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.doc3.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.doc3.Location = new System.Drawing.Point(236, 0);
-            this.doc3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.doc3.Name = "doc3";
-            this.doc3.Size = new System.Drawing.Size(25, 25);
-            this.doc3.TabIndex = 187;
-            this.doc3.Tag = "";
-            // 
-            // doc1
-            // 
-            this.doc1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.doc1.BackColor = System.Drawing.Color.Transparent;
-            this.doc1.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.doc1.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.doc1.Location = new System.Drawing.Point(170, 0);
-            this.doc1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.doc1.Name = "doc1";
-            this.doc1.Size = new System.Drawing.Size(25, 25);
-            this.doc1.TabIndex = 185;
-            this.doc1.Tag = "";
-            this.doc1.Click += new System.EventHandler(this.doc1_Click);
-            // 
-            // doc2
-            // 
-            this.doc2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.doc2.BackColor = System.Drawing.Color.Transparent;
-            this.doc2.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.doc2.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
-            this.doc2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.doc2.Location = new System.Drawing.Point(203, 0);
-            this.doc2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.doc2.Name = "doc2";
-            this.doc2.Size = new System.Drawing.Size(25, 25);
-            this.doc2.TabIndex = 186;
-            this.doc2.Tag = "";
-            this.doc2.Click += new System.EventHandler(this.doc2_Click);
+            this.label42.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label42.AutoSize = true;
+            this.label42.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label42.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label42.Location = new System.Drawing.Point(773, 438);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(186, 21);
+            this.label42.TabIndex = 217;
+            this.label42.Text = "종료시간(사용자 미표기)";
+            this.label42.Visible = false;
             // 
             // groupBox4
             // 
             this.groupBox4.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.groupBox4.Controls.Add(this.label46);
-            this.groupBox4.Controls.Add(this.label45);
-            this.groupBox4.Controls.Add(this.label43);
+            this.groupBox4.Controls.Add(this.lblMsg);
+            this.groupBox4.Controls.Add(this.lblmstbIngtime2);
+            this.groupBox4.Controls.Add(this.lblmstbIngtime);
+            this.groupBox4.Controls.Add(this.lblSeq);
             this.groupBox4.Controls.Add(this.mstbIngtime2);
+            this.groupBox4.Controls.Add(this.tbSeq);
             this.groupBox4.Controls.Add(this.mstbIngtime);
-            this.groupBox4.Controls.Add(this.lbIngtime);
-            this.groupBox4.Controls.Add(this.label42);
             this.groupBox4.Controls.Add(this.btEnd);
             this.groupBox4.Controls.Add(this.btContinue);
             this.groupBox4.Controls.Add(this.btPause);
-            this.groupBox4.Controls.Add(this.label41);
             this.groupBox4.Controls.Add(this.btStart);
             this.groupBox4.Controls.Add(this.label39);
             this.groupBox4.Controls.Add(this.label38);
-            this.groupBox4.Controls.Add(this.label40);
             this.groupBox4.Controls.Add(this.label37);
             this.groupBox4.Controls.Add(this.label36);
-            this.groupBox4.Controls.Add(this.mstbStarttime);
-            this.groupBox4.Controls.Add(this.mstbContinuetime);
-            this.groupBox4.Controls.Add(this.mstbPausetime);
-            this.groupBox4.Controls.Add(this.mstbEndtime);
-            this.groupBox4.Location = new System.Drawing.Point(16, 136);
+            this.groupBox4.Location = new System.Drawing.Point(11, 118);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(853, 268);
+            this.groupBox4.Size = new System.Drawing.Size(748, 155);
             this.groupBox4.TabIndex = 181;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "작업시간";
             // 
-            // label46
+            // lblMsg
             // 
-            this.label46.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label46.AutoSize = true;
-            this.label46.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label46.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label46.Location = new System.Drawing.Point(95, 211);
-            this.label46.Name = "label46";
-            this.label46.Size = new System.Drawing.Size(74, 21);
-            this.label46.TabIndex = 220;
-            this.label46.Text = "유실시간";
+            this.lblMsg.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblMsg.AutoSize = true;
+            this.lblMsg.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblMsg.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblMsg.Location = new System.Drawing.Point(198, 175);
+            this.lblMsg.Name = "lblMsg";
+            this.lblMsg.Size = new System.Drawing.Size(0, 21);
+            this.lblMsg.TabIndex = 187;
             // 
-            // label45
+            // lblmstbIngtime2
             // 
-            this.label45.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label45.AutoSize = true;
-            this.label45.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label45.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label45.Location = new System.Drawing.Point(95, 163);
-            this.label45.Name = "label45";
-            this.label45.Size = new System.Drawing.Size(74, 21);
-            this.label45.TabIndex = 219;
-            this.label45.Text = "경과시간";
+            this.lblmstbIngtime2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblmstbIngtime2.AutoSize = true;
+            this.lblmstbIngtime2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblmstbIngtime2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblmstbIngtime2.Location = new System.Drawing.Point(415, 85);
+            this.lblmstbIngtime2.Name = "lblmstbIngtime2";
+            this.lblmstbIngtime2.Size = new System.Drawing.Size(74, 21);
+            this.lblmstbIngtime2.TabIndex = 220;
+            this.lblmstbIngtime2.Text = "유실시간";
+            this.lblmstbIngtime2.Visible = false;
             // 
-            // label43
+            // lblmstbIngtime
             // 
-            this.label43.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label43.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label43.Location = new System.Drawing.Point(494, 197);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(218, 21);
-            this.label43.TabIndex = 218;
-            this.label43.Text = "다시시작시간(사용자 미표기)";
+            this.lblmstbIngtime.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblmstbIngtime.AutoSize = true;
+            this.lblmstbIngtime.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblmstbIngtime.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblmstbIngtime.Location = new System.Drawing.Point(417, 30);
+            this.lblmstbIngtime.Name = "lblmstbIngtime";
+            this.lblmstbIngtime.Size = new System.Drawing.Size(74, 21);
+            this.lblmstbIngtime.TabIndex = 219;
+            this.lblmstbIngtime.Text = "경과시간";
+            this.lblmstbIngtime.Visible = false;
+            // 
+            // lblSeq
+            // 
+            this.lblSeq.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblSeq.AutoSize = true;
+            this.lblSeq.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblSeq.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblSeq.Location = new System.Drawing.Point(417, 124);
+            this.lblSeq.Name = "lblSeq";
+            this.lblSeq.Size = new System.Drawing.Size(74, 21);
+            this.lblSeq.TabIndex = 221;
+            this.lblSeq.Text = "중지횟수";
+            this.lblSeq.Visible = false;
             // 
             // mstbIngtime2
             // 
             this.mstbIngtime2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.mstbIngtime2.Font = new System.Drawing.Font("휴먼둥근헤드라인", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.mstbIngtime2.Location = new System.Drawing.Point(184, 197);
+            this.mstbIngtime2.Location = new System.Drawing.Point(506, 71);
             this.mstbIngtime2.Mask = "90:90:00";
             this.mstbIngtime2.Name = "mstbIngtime2";
             this.mstbIngtime2.ReadOnly = true;
@@ -695,11 +779,26 @@
             this.mstbIngtime2.ValidatingType = typeof(System.DateTime);
             this.mstbIngtime2.Visible = false;
             // 
+            // tbSeq
+            // 
+            this.tbSeq.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbSeq.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbSeq.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbSeq.Location = new System.Drawing.Point(506, 121);
+            this.tbSeq.Name = "tbSeq";
+            this.tbSeq.ReadOnly = true;
+            this.tbSeq.Size = new System.Drawing.Size(59, 29);
+            this.tbSeq.TabIndex = 188;
+            this.tbSeq.Tag = "";
+            this.tbSeq.Text = "0";
+            this.tbSeq.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbSeq.Visible = false;
+            // 
             // mstbIngtime
             // 
             this.mstbIngtime.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.mstbIngtime.Font = new System.Drawing.Font("휴먼둥근헤드라인", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.mstbIngtime.Location = new System.Drawing.Point(184, 151);
+            this.mstbIngtime.Location = new System.Drawing.Point(506, 16);
             this.mstbIngtime.Mask = "90:90:00";
             this.mstbIngtime.Name = "mstbIngtime";
             this.mstbIngtime.ReadOnly = true;
@@ -709,27 +808,6 @@
             this.mstbIngtime.ValidatingType = typeof(System.DateTime);
             this.mstbIngtime.Visible = false;
             // 
-            // lbIngtime
-            // 
-            this.lbIngtime.AutoSize = true;
-            this.lbIngtime.Font = new System.Drawing.Font("휴먼둥근헤드라인", 24F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.lbIngtime.Location = new System.Drawing.Point(93, 161);
-            this.lbIngtime.Name = "lbIngtime";
-            this.lbIngtime.Size = new System.Drawing.Size(0, 34);
-            this.lbIngtime.TabIndex = 213;
-            // 
-            // label42
-            // 
-            this.label42.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label42.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label42.Location = new System.Drawing.Point(494, 78);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(186, 21);
-            this.label42.TabIndex = 217;
-            this.label42.Text = "종료시간(사용자 미표기)";
-            // 
             // btEnd
             // 
             this.btEnd.BackColor = System.Drawing.Color.Transparent;
@@ -737,7 +815,7 @@
             this.btEnd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btEnd.buttonImage = ((System.Drawing.Image)(resources.GetObject("btEnd.buttonImage")));
             this.btEnd.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btEnd.Location = new System.Drawing.Point(356, 46);
+            this.btEnd.Location = new System.Drawing.Point(309, 53);
             this.btEnd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btEnd.Name = "btEnd";
             this.btEnd.Size = new System.Drawing.Size(93, 87);
@@ -751,7 +829,7 @@
             this.btContinue.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btContinue.buttonImage = ((System.Drawing.Image)(resources.GetObject("btContinue.buttonImage")));
             this.btContinue.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btContinue.Location = new System.Drawing.Point(254, 46);
+            this.btContinue.Location = new System.Drawing.Point(207, 53);
             this.btContinue.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btContinue.Name = "btContinue";
             this.btContinue.Size = new System.Drawing.Size(93, 87);
@@ -765,24 +843,12 @@
             this.btPause.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btPause.buttonImage = ((System.Drawing.Image)(resources.GetObject("btPause.buttonImage")));
             this.btPause.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btPause.Location = new System.Drawing.Point(152, 46);
+            this.btPause.Location = new System.Drawing.Point(105, 53);
             this.btPause.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btPause.Name = "btPause";
             this.btPause.Size = new System.Drawing.Size(93, 87);
             this.btPause.TabIndex = 160;
             this.btPause.Click += new System.EventHandler(this.btPause_Click);
-            // 
-            // label41
-            // 
-            this.label41.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label41.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label41.Location = new System.Drawing.Point(494, 138);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(218, 21);
-            this.label41.TabIndex = 216;
-            this.label41.Text = "중지시작시간(사용자 미표기)";
             // 
             // btStart
             // 
@@ -791,7 +857,7 @@
             this.btStart.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btStart.buttonImage = ((System.Drawing.Image)(resources.GetObject("btStart.buttonImage")));
             this.btStart.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.btStart.Location = new System.Drawing.Point(50, 46);
+            this.btStart.Location = new System.Drawing.Point(3, 53);
             this.btStart.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btStart.Name = "btStart";
             this.btStart.Size = new System.Drawing.Size(93, 87);
@@ -804,7 +870,7 @@
             this.label39.AutoSize = true;
             this.label39.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label39.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label39.Location = new System.Drawing.Point(386, 20);
+            this.label39.Location = new System.Drawing.Point(337, 27);
             this.label39.Name = "label39";
             this.label39.Size = new System.Drawing.Size(42, 21);
             this.label39.TabIndex = 158;
@@ -816,23 +882,11 @@
             this.label38.AutoSize = true;
             this.label38.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label38.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label38.Location = new System.Drawing.Point(177, 20);
+            this.label38.Location = new System.Drawing.Point(128, 27);
             this.label38.Name = "label38";
             this.label38.Size = new System.Drawing.Size(42, 21);
             this.label38.TabIndex = 156;
             this.label38.Text = "중지";
-            // 
-            // label40
-            // 
-            this.label40.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label40.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label40.Location = new System.Drawing.Point(494, 19);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(218, 21);
-            this.label40.TabIndex = 215;
-            this.label40.Text = "작업시작시간(사용자 미표기)";
             // 
             // label37
             // 
@@ -840,7 +894,7 @@
             this.label37.AutoSize = true;
             this.label37.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label37.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label37.Location = new System.Drawing.Point(267, 20);
+            this.label37.Location = new System.Drawing.Point(218, 27);
             this.label37.Name = "label37";
             this.label37.Size = new System.Drawing.Size(74, 21);
             this.label37.TabIndex = 157;
@@ -852,54 +906,11 @@
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label36.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label36.Location = new System.Drawing.Point(80, 20);
+            this.label36.Location = new System.Drawing.Point(31, 27);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(42, 21);
             this.label36.TabIndex = 155;
             this.label36.Text = "시작";
-            // 
-            // mstbStarttime
-            // 
-            this.mstbStarttime.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.mstbStarttime.Font = new System.Drawing.Font("휴먼둥근헤드라인", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.mstbStarttime.Location = new System.Drawing.Point(497, 43);
-            this.mstbStarttime.Name = "mstbStarttime";
-            this.mstbStarttime.Size = new System.Drawing.Size(333, 32);
-            this.mstbStarttime.TabIndex = 183;
-            this.mstbStarttime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            // 
-            // mstbContinuetime
-            // 
-            this.mstbContinuetime.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.mstbContinuetime.Font = new System.Drawing.Font("휴먼둥근헤드라인", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.mstbContinuetime.Location = new System.Drawing.Point(497, 221);
-            this.mstbContinuetime.Name = "mstbContinuetime";
-            this.mstbContinuetime.Size = new System.Drawing.Size(333, 32);
-            this.mstbContinuetime.TabIndex = 186;
-            this.mstbContinuetime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mstbContinuetime.ValidatingType = typeof(System.DateTime);
-            // 
-            // mstbPausetime
-            // 
-            this.mstbPausetime.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.mstbPausetime.Font = new System.Drawing.Font("휴먼둥근헤드라인", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.mstbPausetime.Location = new System.Drawing.Point(497, 162);
-            this.mstbPausetime.Name = "mstbPausetime";
-            this.mstbPausetime.Size = new System.Drawing.Size(333, 32);
-            this.mstbPausetime.TabIndex = 185;
-            this.mstbPausetime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mstbPausetime.ValidatingType = typeof(System.DateTime);
-            // 
-            // mstbEndtime
-            // 
-            this.mstbEndtime.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.mstbEndtime.Font = new System.Drawing.Font("휴먼둥근헤드라인", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.mstbEndtime.Location = new System.Drawing.Point(498, 101);
-            this.mstbEndtime.Name = "mstbEndtime";
-            this.mstbEndtime.Size = new System.Drawing.Size(332, 32);
-            this.mstbEndtime.TabIndex = 184;
-            this.mstbEndtime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.mstbEndtime.ValidatingType = typeof(System.DateTime);
             // 
             // gpResult
             // 
@@ -950,7 +961,7 @@
             this.gpResult.Controls.Add(this.label33);
             this.gpResult.Controls.Add(this.label34);
             this.gpResult.Controls.Add(this.label35);
-            this.gpResult.Location = new System.Drawing.Point(16, 408);
+            this.gpResult.Location = new System.Drawing.Point(760, 9);
             this.gpResult.Name = "gpResult";
             this.gpResult.Size = new System.Drawing.Size(540, 264);
             this.gpResult.TabIndex = 180;
@@ -1566,12 +1577,23 @@
             this.label35.TabIndex = 180;
             this.label35.Text = "미 납";
             // 
+            // cbPause
+            // 
+            this.cbPause.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.cbPause.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbPause.FormattingEnabled = true;
+            this.cbPause.Location = new System.Drawing.Point(430, 78);
+            this.cbPause.Name = "cbPause";
+            this.cbPause.Size = new System.Drawing.Size(202, 29);
+            this.cbPause.TabIndex = 184;
+            this.cbPause.Visible = false;
+            // 
             // tbMakeQty
             // 
             this.tbMakeQty.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbMakeQty.Font = new System.Drawing.Font("맑은 고딕", 12F);
             this.tbMakeQty.ImeMode = System.Windows.Forms.ImeMode.Hangul;
-            this.tbMakeQty.Location = new System.Drawing.Point(129, 57);
+            this.tbMakeQty.Location = new System.Drawing.Point(124, 78);
             this.tbMakeQty.Name = "tbMakeQty";
             this.tbMakeQty.ReadOnly = true;
             this.tbMakeQty.Size = new System.Drawing.Size(200, 29);
@@ -1584,17 +1606,30 @@
             this.label19.AutoSize = true;
             this.label19.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label19.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label19.Location = new System.Drawing.Point(31, 61);
+            this.label19.Location = new System.Drawing.Point(26, 82);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(74, 21);
             this.label19.TabIndex = 140;
             this.label19.Text = "검사수량";
             // 
+            // label41
+            // 
+            this.label41.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label41.AutoSize = true;
+            this.label41.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label41.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label41.Location = new System.Drawing.Point(773, 498);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(218, 21);
+            this.label41.TabIndex = 216;
+            this.label41.Text = "중지시작시간(사용자 미표기)";
+            this.label41.Visible = false;
+            // 
             // tbProd
             // 
             this.tbProd.Anchor = System.Windows.Forms.AnchorStyles.Top;
             this.tbProd.Font = new System.Drawing.Font("맑은 고딕", 12F);
-            this.tbProd.Location = new System.Drawing.Point(129, 22);
+            this.tbProd.Location = new System.Drawing.Point(124, 43);
             this.tbProd.Name = "tbProd";
             this.tbProd.ReadOnly = true;
             this.tbProd.Size = new System.Drawing.Size(200, 29);
@@ -1607,7 +1642,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label4.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label4.Location = new System.Drawing.Point(31, 26);
+            this.label4.Location = new System.Drawing.Point(32, 47);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(58, 21);
             this.label4.TabIndex = 138;
@@ -1619,24 +1654,186 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label5.Location = new System.Drawing.Point(31, 98);
+            this.label5.Location = new System.Drawing.Point(355, 43);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(58, 21);
             this.label5.TabIndex = 61;
             this.label5.Text = "검사자";
             // 
-            // dataGridView1
+            // label40
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.label40.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.label40.AutoSize = true;
+            this.label40.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label40.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label40.Location = new System.Drawing.Point(773, 379);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(218, 21);
+            this.label40.TabIndex = 215;
+            this.label40.Text = "작업시작시간(사용자 미표기)";
+            this.label40.Visible = false;
+            // 
+            // mstbEndtime
+            // 
+            this.mstbEndtime.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.mstbEndtime.Font = new System.Drawing.Font("휴먼둥근헤드라인", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.mstbEndtime.Location = new System.Drawing.Point(777, 461);
+            this.mstbEndtime.Name = "mstbEndtime";
+            this.mstbEndtime.Size = new System.Drawing.Size(332, 32);
+            this.mstbEndtime.TabIndex = 184;
+            this.mstbEndtime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mstbEndtime.ValidatingType = typeof(System.DateTime);
+            this.mstbEndtime.Visible = false;
+            // 
+            // mstbPausetime
+            // 
+            this.mstbPausetime.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.mstbPausetime.Font = new System.Drawing.Font("휴먼둥근헤드라인", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.mstbPausetime.Location = new System.Drawing.Point(776, 522);
+            this.mstbPausetime.Name = "mstbPausetime";
+            this.mstbPausetime.Size = new System.Drawing.Size(333, 32);
+            this.mstbPausetime.TabIndex = 185;
+            this.mstbPausetime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mstbPausetime.ValidatingType = typeof(System.DateTime);
+            this.mstbPausetime.Visible = false;
+            // 
+            // mstbContinuetime
+            // 
+            this.mstbContinuetime.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.mstbContinuetime.Font = new System.Drawing.Font("휴먼둥근헤드라인", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.mstbContinuetime.Location = new System.Drawing.Point(776, 581);
+            this.mstbContinuetime.Name = "mstbContinuetime";
+            this.mstbContinuetime.Size = new System.Drawing.Size(333, 32);
+            this.mstbContinuetime.TabIndex = 186;
+            this.mstbContinuetime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mstbContinuetime.ValidatingType = typeof(System.DateTime);
+            this.mstbContinuetime.Visible = false;
+            // 
+            // mstbStarttime
+            // 
+            this.mstbStarttime.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.mstbStarttime.Font = new System.Drawing.Font("휴먼둥근헤드라인", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.mstbStarttime.Location = new System.Drawing.Point(776, 403);
+            this.mstbStarttime.Name = "mstbStarttime";
+            this.mstbStarttime.Size = new System.Drawing.Size(333, 32);
+            this.mstbStarttime.TabIndex = 183;
+            this.mstbStarttime.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.mstbStarttime.Visible = false;
+            // 
+            // gpAOI
+            // 
+            this.gpAOI.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.gpAOI.Controls.Add(this.doc4);
+            this.gpAOI.Controls.Add(this.tbContents);
+            this.gpAOI.Controls.Add(this.tbJobNo);
+            this.gpAOI.Controls.Add(this.doc3);
+            this.gpAOI.Controls.Add(this.doc1);
+            this.gpAOI.Controls.Add(this.doc2);
+            this.gpAOI.Location = new System.Drawing.Point(760, 279);
+            this.gpAOI.Name = "gpAOI";
+            this.gpAOI.Size = new System.Drawing.Size(537, 250);
+            this.gpAOI.TabIndex = 182;
+            this.gpAOI.TabStop = false;
+            this.gpAOI.Text = "AOI 상세 검사 결과";
+            this.gpAOI.Visible = false;
+            // 
+            // doc4
+            // 
+            this.doc4.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.doc4.BackColor = System.Drawing.Color.Transparent;
+            this.doc4.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.doc4.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.doc4.Location = new System.Drawing.Point(498, 0);
+            this.doc4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.doc4.Name = "doc4";
+            this.doc4.Size = new System.Drawing.Size(25, 25);
+            this.doc4.TabIndex = 188;
+            this.doc4.Tag = "";
+            // 
+            // tbContents
+            // 
+            this.tbContents.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbContents.ImeMode = System.Windows.Forms.ImeMode.Hangul;
+            this.tbContents.Location = new System.Drawing.Point(16, 29);
+            this.tbContents.Multiline = true;
+            this.tbContents.Name = "tbContents";
+            this.tbContents.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.tbContents.Size = new System.Drawing.Size(515, 215);
+            this.tbContents.TabIndex = 182;
+            // 
+            // tbJobNo
+            // 
+            this.tbJobNo.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.tbJobNo.Font = new System.Drawing.Font("맑은 고딕", 12F);
+            this.tbJobNo.Location = new System.Drawing.Point(264, 210);
+            this.tbJobNo.Name = "tbJobNo";
+            this.tbJobNo.ReadOnly = true;
+            this.tbJobNo.Size = new System.Drawing.Size(122, 29);
+            this.tbJobNo.TabIndex = 186;
+            this.tbJobNo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.tbJobNo.Visible = false;
+            // 
+            // doc3
+            // 
+            this.doc3.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.doc3.BackColor = System.Drawing.Color.Transparent;
+            this.doc3.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.doc3.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.doc3.Location = new System.Drawing.Point(467, 0);
+            this.doc3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.doc3.Name = "doc3";
+            this.doc3.Size = new System.Drawing.Size(25, 25);
+            this.doc3.TabIndex = 187;
+            this.doc3.Tag = "";
+            // 
+            // doc1
+            // 
+            this.doc1.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.doc1.BackColor = System.Drawing.Color.Transparent;
+            this.doc1.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.doc1.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.doc1.Location = new System.Drawing.Point(401, 0);
+            this.doc1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.doc1.Name = "doc1";
+            this.doc1.Size = new System.Drawing.Size(25, 25);
+            this.doc1.TabIndex = 185;
+            this.doc1.Tag = "";
+            this.doc1.Click += new System.EventHandler(this.doc1_Click);
+            // 
+            // doc2
+            // 
+            this.doc2.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.doc2.BackColor = System.Drawing.Color.Transparent;
+            this.doc2.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.doc2.buttonImage = global::SmartMES_Giroei.Properties.Resources.clipA;
+            this.doc2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.doc2.Location = new System.Drawing.Point(434, 0);
+            this.doc2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.doc2.Name = "doc2";
+            this.doc2.Size = new System.Drawing.Size(25, 25);
+            this.doc2.TabIndex = 186;
+            this.doc2.Tag = "";
+            this.doc2.Click += new System.EventHandler(this.doc2_Click);
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
-            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            this.dataGridView2.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView2.AutoGenerateColumns = false;
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dataGridView2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
@@ -1644,7 +1841,104 @@
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridView2.ColumnHeadersHeight = 35;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.순번DataGridViewTextBoxColumn,
+            this.중지DataGridViewTextBoxColumn,
+            this.다시시작DataGridViewTextBoxColumn,
+            this.loss시간DataGridViewTextBoxColumn,
+            this.중지사유DataGridViewTextBoxColumn});
+            this.dataGridView2.Cursor = System.Windows.Forms.Cursors.Arrow;
+            this.dataGridView2.DataSource = this.sPAOILossBindingSource;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView2.DefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridView2.EnableHeadersVisualStyles = false;
+            this.dataGridView2.Location = new System.Drawing.Point(7, 161);
+            this.dataGridView2.MultiSelect = false;
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridView2.RowHeadersVisible = false;
+            this.dataGridView2.RowHeadersWidth = 35;
+            this.dataGridView2.RowTemplate.Height = 35;
+            this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView2.Size = new System.Drawing.Size(1309, 129);
+            this.dataGridView2.TabIndex = 89;
+            // 
+            // 순번DataGridViewTextBoxColumn
+            // 
+            this.순번DataGridViewTextBoxColumn.DataPropertyName = "순번";
+            this.순번DataGridViewTextBoxColumn.FillWeight = 30F;
+            this.순번DataGridViewTextBoxColumn.HeaderText = "순번";
+            this.순번DataGridViewTextBoxColumn.Name = "순번DataGridViewTextBoxColumn";
+            this.순번DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 중지DataGridViewTextBoxColumn
+            // 
+            this.중지DataGridViewTextBoxColumn.DataPropertyName = "중지";
+            this.중지DataGridViewTextBoxColumn.HeaderText = "중지";
+            this.중지DataGridViewTextBoxColumn.Name = "중지DataGridViewTextBoxColumn";
+            this.중지DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 다시시작DataGridViewTextBoxColumn
+            // 
+            this.다시시작DataGridViewTextBoxColumn.DataPropertyName = "다시시작";
+            this.다시시작DataGridViewTextBoxColumn.HeaderText = "다시시작";
+            this.다시시작DataGridViewTextBoxColumn.Name = "다시시작DataGridViewTextBoxColumn";
+            this.다시시작DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // loss시간DataGridViewTextBoxColumn
+            // 
+            this.loss시간DataGridViewTextBoxColumn.DataPropertyName = "Loss시간";
+            this.loss시간DataGridViewTextBoxColumn.FillWeight = 30F;
+            this.loss시간DataGridViewTextBoxColumn.HeaderText = "Loss시간";
+            this.loss시간DataGridViewTextBoxColumn.Name = "loss시간DataGridViewTextBoxColumn";
+            this.loss시간DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // 중지사유DataGridViewTextBoxColumn
+            // 
+            this.중지사유DataGridViewTextBoxColumn.DataPropertyName = "중지사유";
+            this.중지사유DataGridViewTextBoxColumn.FillWeight = 50F;
+            this.중지사유DataGridViewTextBoxColumn.HeaderText = "중지사유";
+            this.중지사유DataGridViewTextBoxColumn.Name = "중지사유DataGridViewTextBoxColumn";
+            this.중지사유DataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.AutoGenerateColumns = false;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.SingleVertical;
+            this.dataGridView1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dataGridView1.ColumnHeadersHeight = 35;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.DisableResizing;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -1703,33 +1997,33 @@
             this.업체명});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPProdResultQueryBindingSource;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.Tomato;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.Tomato;
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridView1.DefaultCellStyle = dataGridViewCellStyle8;
             this.dataGridView1.EnableHeadersVisualStyles = false;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 19);
+            this.dataGridView1.Location = new System.Drawing.Point(7, 3);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(93)))), ((int)(((byte)(123)))), ((int)(((byte)(157)))));
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowHeadersWidth = 35;
             this.dataGridView1.RowTemplate.Height = 35;
             this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(411, 722);
+            this.dataGridView1.Size = new System.Drawing.Size(1309, 162);
             this.dataGridView1.TabIndex = 37;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellClick);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
@@ -1926,9 +2220,9 @@
             // 
             // Column1
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = "점검";
-            this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.NullValue = "점검";
+            this.Column1.DefaultCellStyle = dataGridViewCellStyle7;
             this.Column1.FillWeight = 40F;
             this.Column1.HeaderText = "사양";
             this.Column1.Name = "Column1";
@@ -2158,103 +2452,32 @@
             this.업체명.ReadOnly = true;
             this.업체명.Visible = false;
             // 
-            // sPProdResultQueryBindingSource
+            // panel1
             // 
-            this.sPProdResultQueryBindingSource.DataMember = "SP_ProdResult_Query";
-            this.sPProdResultQueryBindingSource.DataSource = this.dataSetP1C;
-            // 
-            // dataSetP1C
-            // 
-            this.dataSetP1C.DataSetName = "DataSetP1C";
-            this.dataSetP1C.EnforceConstraints = false;
-            this.dataSetP1C.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // timer1
-            // 
-            this.timer1.Interval = 1000;
-            // 
-            // timer2
-            // 
-            this.timer2.Interval = 1000;
-            // 
-            // sP_ProdResult_QueryTableAdapter
-            // 
-            this.sP_ProdResult_QueryTableAdapter.ClearBeforeFill = true;
-            // 
-            // dtpDate
-            // 
-            this.dtpDate.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.dtpDate.CalendarFont = new System.Drawing.Font("맑은 고딕", 14F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dtpDate.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.dtpDate.Location = new System.Drawing.Point(581, 20);
-            this.dtpDate.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
-            this.dtpDate.Name = "dtpDate";
-            this.dtpDate.Size = new System.Drawing.Size(211, 29);
-            this.dtpDate.TabIndex = 2;
-            this.dtpDate.ValueChanged += new System.EventHandler(this.dtpDate_ValueChanged);
-            // 
-            // label2
-            // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label2.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.label2.Location = new System.Drawing.Point(436, 24);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(74, 21);
-            this.label2.TabIndex = 0;
-            this.label2.Text = "작업일자";
-            // 
-            // userButtonA1
-            // 
-            this.userButtonA1.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.userButtonA1.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA1.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.left2;
-            this.userButtonA1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA1.buttonImage = global::SmartMES_Giroei.Properties.Resources.left2;
-            this.userButtonA1.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA1.Location = new System.Drawing.Point(516, 24);
-            this.userButtonA1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA1.Name = "userButtonA1";
-            this.userButtonA1.Size = new System.Drawing.Size(60, 20);
-            this.userButtonA1.TabIndex = 1;
-            this.userButtonA1.Click += new System.EventHandler(this.userButtonA1_Click);
-            // 
-            // userButtonA2
-            // 
-            this.userButtonA2.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.userButtonA2.BackColor = System.Drawing.Color.Transparent;
-            this.userButtonA2.BackgroundImage = global::SmartMES_Giroei.Properties.Resources.right2;
-            this.userButtonA2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.userButtonA2.buttonImage = global::SmartMES_Giroei.Properties.Resources.right2;
-            this.userButtonA2.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.userButtonA2.Location = new System.Drawing.Point(797, 24);
-            this.userButtonA2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            this.userButtonA2.Name = "userButtonA2";
-            this.userButtonA2.Size = new System.Drawing.Size(60, 20);
-            this.userButtonA2.TabIndex = 3;
-            this.userButtonA2.Click += new System.EventHandler(this.userButtonA2_Click);
-            // 
-            // panSearch
-            // 
-            this.panSearch.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.panSearch.AutoSize = true;
-            this.panSearch.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(205)))), ((int)(((byte)(219)))));
-            this.panSearch.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.panSearch.Controls.Add(this.userButtonA2);
-            this.panSearch.Controls.Add(this.userButtonA1);
-            this.panSearch.Controls.Add(this.label2);
-            this.panSearch.Controls.Add(this.dtpDate);
-            this.panSearch.Location = new System.Drawing.Point(2, 58);
-            this.panSearch.Name = "panSearch";
-            this.panSearch.Size = new System.Drawing.Size(1319, 71);
-            this.panSearch.TabIndex = 0;
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(191)))), ((int)(((byte)(205)))), ((int)(((byte)(219)))));
+            this.panel1.Controls.Add(this.dataGridView2);
+            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.TabControl1);
+            this.panel1.Location = new System.Drawing.Point(2, 135);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1319, 899);
+            this.panel1.TabIndex = 1;
             // 
-            // timer3
+            // lblPrint
             // 
-            this.timer3.Interval = 1000;
-            this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
+            this.lblPrint.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblPrint.AutoSize = true;
+            this.lblPrint.Font = new System.Drawing.Font("맑은 고딕", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lblPrint.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.lblPrint.Location = new System.Drawing.Point(675, 1);
+            this.lblPrint.Name = "lblPrint";
+            this.lblPrint.Size = new System.Drawing.Size(42, 21);
+            this.lblPrint.TabIndex = 222;
+            this.lblPrint.Text = "출력";
+            this.lblPrint.Visible = false;
             // 
             // P1C02_PROD_RESULT
             // 
@@ -2274,21 +2497,23 @@
             ((System.ComponentModel.ISupportInitialize)(this.pbAdd)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSearch)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbClose)).EndInit();
-            this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sPAOILossBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.sPProdResultQueryBindingSource)).EndInit();
+            this.panSearch.ResumeLayout(false);
+            this.panSearch.PerformLayout();
             this.TabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            this.gpAOI.ResumeLayout(false);
-            this.gpAOI.PerformLayout();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.gpResult.ResumeLayout(false);
             this.gpResult.PerformLayout();
+            this.gpAOI.ResumeLayout(false);
+            this.gpAOI.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sPProdResultQueryBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetP1C)).EndInit();
-            this.panSearch.ResumeLayout(false);
-            this.panSearch.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -2489,14 +2714,119 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn114;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn116;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn117;
-        private System.Windows.Forms.Panel panel1;
-        public System.Windows.Forms.DataGridView dataGridView1;
         private P1C.DataSetP1C dataSetP1C;
         private P1C.DataSetP1CTableAdapters.SP_ProdResult_QueryTableAdapter sP_ProdResult_QueryTableAdapter;
-        private System.Windows.Forms.Label label5;
         public System.Windows.Forms.Timer timer1;
         public System.Windows.Forms.Timer timer2;
         public System.Windows.Forms.BindingSource sPProdResultQueryBindingSource;
+        public System.Windows.Forms.DateTimePicker dtpDate;
+        private System.Windows.Forms.Label label2;
+        private UserButtonA userButtonA1;
+        private UserButtonA userButtonA2;
+        private System.Windows.Forms.Panel panSearch;
+        public System.Windows.Forms.Timer timer3;
+        private System.Windows.Forms.Timer timer4;
+        private System.Windows.Forms.BindingSource sPAOILossBindingSource;
+        private P1C.DataSetP1CTableAdapters.SP_AOI_LossTableAdapter sP_AOI_LossTableAdapter;
+        private System.Windows.Forms.TabControl TabControl1;
+        private System.Windows.Forms.TabPage tabPage2;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.TabPage tabPage1;
+        private System.Windows.Forms.GroupBox gpAOI;
+        public UserButtonA doc4;
+        public System.Windows.Forms.TextBox tbContents;
+        public System.Windows.Forms.TextBox tbJobNo;
+        public UserButtonA doc3;
+        public UserButtonA doc1;
+        public UserButtonA doc2;
+        private System.Windows.Forms.Label lblSeq;
+        public System.Windows.Forms.TextBox tbSeq;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label lbPause;
+        public System.Windows.Forms.TextBox tbWorkline1;
+        private System.Windows.Forms.ComboBox cbMan;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.GroupBox groupBox4;
+        private System.Windows.Forms.Label lblMsg;
+        private System.Windows.Forms.Label lblmstbIngtime2;
+        private System.Windows.Forms.Label lblmstbIngtime;
+        public System.Windows.Forms.MaskedTextBox mstbIngtime2;
+        public System.Windows.Forms.MaskedTextBox mstbIngtime;
+        private System.Windows.Forms.Label lbIngtime;
+        private UserButtonA btEnd;
+        private UserButtonA btContinue;
+        private UserButtonA btPause;
+        private UserButtonA btStart;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.GroupBox gpResult;
+        public System.Windows.Forms.TextBox tbDefectCount;
+        private UserButtonA Mbt6;
+        private UserButtonA Pbt6;
+        private System.Windows.Forms.Label label1;
+        private UserButtonA Mbt11;
+        private UserButtonA Pbt11;
+        private UserButtonA Mbt10;
+        private UserButtonA Pbt10;
+        public System.Windows.Forms.TextBox tbMiNap;
+        public System.Windows.Forms.TextBox tbEtcError;
+        public System.Windows.Forms.TextBox tbnengttem;
+        private UserButtonA Mbt9;
+        public System.Windows.Forms.TextBox tbReverse;
+        private UserButtonA Pbt9;
+        public System.Windows.Forms.TextBox tbSonap;
+        public System.Windows.Forms.TextBox tbManhattan;
+        public System.Windows.Forms.TextBox tbMiSap;
+        private UserButtonA Mbt8;
+        private UserButtonA Pbt8;
+        public System.Windows.Forms.TextBox tbShort;
+        private UserButtonA Mbt7;
+        private UserButtonA Pbt7;
+        public System.Windows.Forms.TextBox tbLeadOpen;
+        private UserButtonA Mbt5;
+        private UserButtonA Pbt5;
+        public System.Windows.Forms.TextBox tbOverTurned;
+        private UserButtonA Mbt4;
+        private UserButtonA Pbt4;
+        public System.Windows.Forms.TextBox tbTwisted;
+        private UserButtonA Mbt3;
+        private UserButtonA Pbt3;
+        private UserButtonA Mbt2;
+        private UserButtonA Pbt2;
+        private UserButtonA Mbt1;
+        private UserButtonA Pbt1;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.ComboBox cbPause;
+        public System.Windows.Forms.TextBox tbMakeQty;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Label label41;
+        public System.Windows.Forms.TextBox tbProd;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.MaskedTextBox mstbEndtime;
+        private System.Windows.Forms.MaskedTextBox mstbPausetime;
+        private System.Windows.Forms.MaskedTextBox mstbContinuetime;
+        private System.Windows.Forms.MaskedTextBox mstbStarttime;
+        public System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 순번DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 중지DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 다시시작DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn loss시간DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 중지사유DataGridViewTextBoxColumn;
+        public System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn 수주번호;
         private System.Windows.Forms.DataGridViewTextBoxColumn 공정명DataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn 작업라인DataGridViewTextBoxColumn;
@@ -2550,101 +2880,10 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 검사수;
         private System.Windows.Forms.DataGridViewTextBoxColumn AOI검사완료시간;
         private System.Windows.Forms.DataGridViewTextBoxColumn 업체명;
-        private System.Windows.Forms.TabControl TabControl1;
-        private System.Windows.Forms.TabPage tabPage1;
-        private System.Windows.Forms.TabPage tabPage2;
-        private System.Windows.Forms.TabPage tabPage3;
-        public System.Windows.Forms.DateTimePicker dtpDate;
-        private System.Windows.Forms.Label label2;
-        private UserButtonA userButtonA1;
-        private UserButtonA userButtonA2;
-        private System.Windows.Forms.Panel panSearch;
-        public System.Windows.Forms.TextBox tbEtcError;
-        public System.Windows.Forms.TextBox tbMiNap;
-        public System.Windows.Forms.TextBox tbManhattan;
-        public System.Windows.Forms.TextBox tbnengttem;
-        public System.Windows.Forms.TextBox tbShort;
-        public System.Windows.Forms.TextBox tbReverse;
-        public System.Windows.Forms.TextBox tbLeadOpen;
-        public System.Windows.Forms.TextBox tbSonap;
-        public System.Windows.Forms.TextBox tbOverTurned;
-        public System.Windows.Forms.TextBox tbMiSap;
-        public System.Windows.Forms.TextBox tbTwisted;
-        public System.Windows.Forms.TextBox tbMakeQty;
-        private System.Windows.Forms.Label label19;
-        public System.Windows.Forms.TextBox tbProd;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.GroupBox groupBox4;
-        private UserButtonA btEnd;
-        private UserButtonA btContinue;
-        private UserButtonA btPause;
-        private UserButtonA btStart;
-        private System.Windows.Forms.Label label39;
-        private System.Windows.Forms.Label label38;
-        private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.Label label36;
-        private System.Windows.Forms.GroupBox gpResult;
-        private UserButtonA Mbt6;
-        private UserButtonA Pbt6;
-        private UserButtonA Mbt11;
-        private UserButtonA Pbt11;
-        private UserButtonA Mbt10;
-        private UserButtonA Pbt10;
-        private UserButtonA Mbt9;
-        private UserButtonA Pbt9;
-        private UserButtonA Mbt8;
-        private UserButtonA Pbt8;
-        private UserButtonA Mbt7;
-        private UserButtonA Pbt7;
-        private UserButtonA Mbt5;
-        private UserButtonA Pbt5;
-        private UserButtonA Mbt4;
-        private UserButtonA Pbt4;
-        private UserButtonA Mbt3;
-        private UserButtonA Pbt3;
-        private UserButtonA Mbt2;
-        private UserButtonA Pbt2;
-        private UserButtonA Mbt1;
-        private UserButtonA Pbt1;
-        private System.Windows.Forms.Label label24;
-        private System.Windows.Forms.Label label26;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label28;
-        private System.Windows.Forms.Label label29;
-        private System.Windows.Forms.Label label30;
-        private System.Windows.Forms.Label label31;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.GroupBox gpAOI;
-        public System.Windows.Forms.TextBox tbContents;
-        private System.Windows.Forms.MaskedTextBox mstbEndtime;
-        private System.Windows.Forms.MaskedTextBox mstbStarttime;
-        public System.Windows.Forms.Timer timer3;
-        private System.Windows.Forms.Label lbIngtime;
-        public System.Windows.Forms.MaskedTextBox mstbIngtime;
-        public UserButtonA doc4;
-        public UserButtonA doc3;
-        public UserButtonA doc2;
-        public UserButtonA doc1;
-        private System.Windows.Forms.MaskedTextBox mstbContinuetime;
-        private System.Windows.Forms.MaskedTextBox mstbPausetime;
-        public System.Windows.Forms.MaskedTextBox mstbIngtime2;
-        private System.Windows.Forms.Timer timer4;
-        private System.Windows.Forms.Label label43;
-        private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.ComboBox cbPause;
-        private System.Windows.Forms.Label lbPause;
-        private System.Windows.Forms.Label label46;
-        private System.Windows.Forms.Label label45;
-        private System.Windows.Forms.ComboBox cbMan;
-        public System.Windows.Forms.TextBox tbJobNo;
-        public System.Windows.Forms.TextBox tbDefectCount;
-        private System.Windows.Forms.Label label1;
-        public System.Windows.Forms.TextBox tbWorkline1;
-        private System.Windows.Forms.Label lblMsg;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label3;
+        public System.Windows.Forms.TextBox tbCust;
+        private UserButtonA BtPrint;
+        private System.Windows.Forms.Label lblPrint;
     }
 }
