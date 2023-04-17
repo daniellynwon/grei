@@ -16,7 +16,7 @@ namespace SmartMES_Giroei
         private DateTime SDT1 = DateTime.Now;
         private DateTime SDT3 = DateTime.Now;
         private bool isTimeStarted = false;
-
+        private int sSeq = 0;
 
         public P1C02_PROD_RESULT()
         {
@@ -97,6 +97,33 @@ namespace SmartMES_Giroei
                 Cursor.Current = Cursors.Default;
             }
         }
+        public void ListSearch2()
+        {
+
+            try
+            {
+                Cursor.Current = Cursors.WaitCursor;
+                string _no = tbJobNo.Text;
+
+                sP_AOI_LossTableAdapter.Fill(dataSetP1C.SP_AOI_Loss, _no);
+
+                var data = dataSetP1C.SP_AOI_Loss;
+                Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.조회, data);
+
+                dataGridView2.CurrentCell = null;
+                dataGridView2.ClearSelection();
+
+                InitControls();
+            }
+            catch (NullReferenceException)
+            {
+                return;
+            }
+            finally
+            {
+                Cursor.Current = Cursors.Default;
+            }
+        }
         public void InitControls()
         {
             tbContents.Text = string.Empty;
@@ -118,6 +145,7 @@ namespace SmartMES_Giroei
                 cbMan.Text = dataGridView.Rows[rowIndex].Cells[34].Value.ToString();
                 tbJobNo.Text = dataGridView.Rows[rowIndex].Cells[45].Value.ToString();
                 tbMakeQty.Text = dataGridView.Rows[rowIndex].Cells[49].Value.ToString();
+                tbCust.Text = dataGridView.Rows[rowIndex].Cells[52].Value.ToString(); //업체명
                 //tbQty.Text = dataGridView.Rows[rowIndex].Cells[6].Value.ToString();
                 //tbGdQty.Text = dataGridView.Rows[rowIndex].Cells[7].Value.ToString();
                 //tbNgQty.Text = dataGridView.Rows[rowIndex].Cells[8].Value.ToString();
@@ -128,7 +156,6 @@ namespace SmartMES_Giroei
                 //tbInstTop.Text = dataGridView.Rows[rowIndex].Cells[13].Value.ToString();
                 //tbInstBot.Text = dataGridView.Rows[rowIndex].Cells[14].Value.ToString();
                 //tbShowQty.Text = dataGridView.Rows[rowIndex].Cells[50].Value.ToString(); //검사수
-                //tbCust.Text = dataGridView.Rows[rowIndex].Cells[52].Value.ToString(); //업체명
                 //if (dataGridView.Rows[rowIndex].Cells[51].Value == null || string.IsNullOrEmpty(dataGridView.Rows[rowIndex].Cells[51].Value.ToString())) //AOI완료시간
                 //    tbAOITimeFinish.Text = "";
                 //else
@@ -215,6 +242,8 @@ namespace SmartMES_Giroei
 
             SettingValues(dgv, rowIndex);
             TabControl1.Visible = true;
+            TabControl1.Enabled = true;
+            ListSearch2();
             //set_production_result();
         }
         public byte[] get_file_data(string fname, string job_no)
@@ -457,9 +486,9 @@ namespace SmartMES_Giroei
             //string sFname1 = lbFname1.Text;
             //string sFname2 = lbFname2.Text;
 
-            string sInspFromTime = mstbStarttime.Text; //검사시작시간 insp_start_time 
-            string sInspToTime = mstbEndtime.Text; //검사종료시간 insp_end_time
-            string sInspIngTime = mstbIngtime.Text; //경과시간 insp_ing_time
+            string sInspFromTime = DateTime.Parse(mstbStarttime.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사시작시간 insp_start_time 
+            string sInspToTime = DateTime.Parse(mstbEndtime.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사종료시간 insp_end_time
+            string sInspIngTime = DateTime.Parse(mstbIngtime.Text).ToString("HH:mm:ss"); //경과시간 insp_ing_time
 
             string sql = string.Empty;
 
@@ -480,6 +509,7 @@ namespace SmartMES_Giroei
                         + ", misap = " + sMisap + ", overturned = " + sOverturned + ", leadopen = " + sLeadopen + ", minap = " + sMinap + ", short = " + sShort + ", reverse = " + sReverse
                         + ", manhattan = " + sManhattan + ", twisted = " + sTwisted + ", etc_error = " + sEtcerror
                         + ", contents = '" + sContents + "', workline ='" + sWorkline + "', enter_man = '" + sMan + "'";
+
             cmd.Connection = con;
             cmd.CommandText = sql;
             cmd.ExecuteNonQuery();
@@ -487,103 +517,50 @@ namespace SmartMES_Giroei
             con.Close();
 
             lblMsg.Text = "저장되었습니다.";
-
-            //string sDate = dtpDate.Value.ToString("yyyy-MM-dd");
-            //string sUserCnt = tbUserCnt.Text;
-            //if (string.IsNullOrEmpty(sUserCnt)) sUserCnt = "0";
-
-            //string msg = string.Empty;
-            //MariaCRUD m = new MariaCRUD();
-            //string sql = string.Empty;
-
-            //string sWork = cbWorkLine.SelectedValue.ToString();
-            //string sGdQty = tbGdQty.Text.Replace(",", "").Trim(); string sNgQty = tbNgQty.Text.Replace(",", "").Trim();
-            //string sNumt = tbMatnotop.Text.Replace(",", "").Trim(); string sNumb = tbMatnobot.Text.Replace(",", "").Trim();
-            //string sPtt = tbMatpttop.Text.Replace(",", "").Trim(); string sPtb = tbMatptbot.Text.Replace(",", "").Trim();
-            //string sInstt = tbInstTop.Text.Replace(",", "").Trim(); string sInstb = tbInstBot.Text.Replace(",", "").Trim();
-
-            //if (string.IsNullOrEmpty(sGdQty)) sGdQty = "0"; if (string.IsNullOrEmpty(sNgQty)) sNgQty = "0";
-            //if (string.IsNullOrEmpty(sNumt)) sNumt = "0"; if (string.IsNullOrEmpty(sNumb)) sNumb = "0";
-            //if (string.IsNullOrEmpty(sPtt)) sPtt = "0"; if (string.IsNullOrEmpty(sPtb)) sPtb = "0";
-            //if (string.IsNullOrEmpty(sInstt)) sInstt = "0"; if (string.IsNullOrEmpty(sInstb)) sInstb = "0";
-
-            //sql = "update PRD_prod_result set work_line = '" + sWork + "', good_qty = " + sGdQty + ", bad_qty = " + sNgQty + ", mat_num_top = " + sNumt + ", mat_num_bot = " + sNumb + ", mat_point_top = " + sPtt +
-            //    ", mat_point_bot = " + sPtb + ", manual_insert_top = " + sInstt + ", manual_insert_bot = " + sInstb + ", num_workers = " + sUserCnt + ", contents = '" + tbContents.Text.Trim() + "'" +
-            //        " where job_no = '" + tbJobNo.Text + "'";
-
-            //m.dbCUD(sql, ref msg);
-
-            //if (msg != "OK")
-            //{
-            //    lblMsg.Text = msg;
-            //    return;
-            //}
-
-            //var data1 = sql;
-            //Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.수정, data1);
-
-            //sP_ProdResult_QueryTableAdapter.Fill(dataSetP1C.SP_ProdResult_Query, DateTime.Parse(sDate));
-
-            //var data2 = dataSetP1C.SP_ProdResult_Query;
-            //Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.조회, data2);
-
-            //int rowIndex = 0;
-            //for (int i = 0; i < dataGridView1.Rows.Count; i++)
-            //{
-            //    if (dataGridView1.Rows[i].Cells[0].Value.ToString() == lblLotNo.Text) // tbJobNo.Text
-            //    {
-            //        dataGridView1.CurrentCell = dataGridView1[0, i];
-            //        dataGridView1.CurrentCell.Selected = true;
-            //        rowIndex = i;
-            //        break;
-            //    }
-            //}
-
-            //SettingValues(dataGridView1, rowIndex);
-            //lblMsg.Text = "저장 되었습니다.";
+            ListSearch();
         }
         private void pbPrint_Click(object sender, EventArgs e)
         {
-            //    string reportFileName = "SmartMES_Giroei.Reports.P1C02_PROD_RESULT_AOI.rdlc";
+            string reportFileName = "SmartMES_Giroei.Reports.P1C02_PROD_RESULT_AOI.rdlc";
 
-            //string reportParm1 = "";
-            //string reportParm2 = "";
-            //string reportParm3 = "";
-            //string reportParm4 = "";
-            //string reportParm5 = "";
-            //string reportParm6 = "";
-            //string reportParm7 = "임시조치";
-            //string reportParm8 = "";
+            string reportParm1 = "";
+            string reportParm2 = "";
+            string reportParm3 = "";
+            string reportParm4 = "";
+            string reportParm5 = "";
+            string reportParm6 = "";
+            string reportParm7 = "";
+            string reportParm8 = "";
 
-            //reportParm1 = reportParm1 + lblLotNo.Text; // 수주번호
-            //reportParm2 = reportParm2 + tbCust.Text; //업체명
-            //reportParm3 = reportParm3 + tbProd.Text; //모델명
-            //reportParm4 = reportParm4 + tbJobNo.Text; // LOT No
-            //reportParm5 = reportParm5 + tbMakeQty.Text + " pcs"; //생산수
-            //reportParm6 = reportParm6 + tbAOITimeFinish.Text; //검사일
-            //reportParm7 = reportParm7 + ""; //검사자
-            //reportParm8 = reportParm8 + tbShowQty.Text; //검사수
+            reportParm1 = reportParm1 + tbJobNo.Text; // 수주번호
+            reportParm2 = reportParm2 + tbCust.Text; //업체명
+            reportParm3 = reportParm3 + tbProd.Text; //모델명
+            reportParm4 = reportParm4 + tbJobNo.Text; // LOT No
+            reportParm5 = reportParm5 + tbMakeQty.Text + " pcs"; //생산수
+            reportParm6 = reportParm6 + mstbEndtime.Text; //검사일
+            reportParm7 = reportParm7 + cbMan.Text; //검사자
+            reportParm8 = reportParm8 + tbDefectCount.Text; //총불량수
 
-            //ViewReport_V viewReport = new ViewReport_V();
-            //    viewReport.reportViewer1.ProcessingMode = ProcessingMode.Local;
-            //    viewReport.reportViewer1.LocalReport.ReportEmbeddedResource = reportFileName;
+            ViewReport_V viewReport = new ViewReport_V();
+            viewReport.reportViewer1.ProcessingMode = ProcessingMode.Local;
+            viewReport.reportViewer1.LocalReport.ReportEmbeddedResource = reportFileName;
 
-            //ReportParameter rp1 = new ReportParameter("ReportParameter1", reportParm1);
-            //ReportParameter rp2 = new ReportParameter("ReportParameter2", reportParm2);
-            //ReportParameter rp3 = new ReportParameter("ReportParameter3", reportParm3);
-            //ReportParameter rp4 = new ReportParameter("ReportParameter4", reportParm4);
-            //ReportParameter rp5 = new ReportParameter("ReportParameter5", reportParm5);
-            //ReportParameter rp6 = new ReportParameter("ReportParameter6", reportParm6);
-            //ReportParameter rp7 = new ReportParameter("ReportParameter7", reportParm7);
-            //ReportParameter rp8 = new ReportParameter("ReportParameter8", reportParm8);
+            ReportParameter rp1 = new ReportParameter("ReportParameter1", reportParm1);
+            ReportParameter rp2 = new ReportParameter("ReportParameter2", reportParm2);
+            ReportParameter rp3 = new ReportParameter("ReportParameter3", reportParm3);
+            ReportParameter rp4 = new ReportParameter("ReportParameter4", reportParm4);
+            ReportParameter rp5 = new ReportParameter("ReportParameter5", reportParm5);
+            ReportParameter rp6 = new ReportParameter("ReportParameter6", reportParm6);
+            ReportParameter rp7 = new ReportParameter("ReportParameter7", reportParm7);
+            ReportParameter rp8 = new ReportParameter("ReportParameter8", reportParm8);
 
-            //viewReport.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rp1, rp2, rp3, rp4, rp5, rp6, rp7, rp8 });
+            viewReport.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rp1, rp2, rp3, rp4, rp5, rp6, rp7, rp8 });
 
-            //ReportDataSource rds = new ReportDataSource("DataSet1", sPProdResultQueryBindingSource);
-            //    viewReport.reportViewer1.LocalReport.DataSources.Add(rds);
-            //    viewReport.reportViewer1.LocalReport.Refresh();
+            ReportDataSource rds = new ReportDataSource("DataSet1", sPProdResultQueryBindingSource);
+            viewReport.reportViewer1.LocalReport.DataSources.Add(rds);
+            viewReport.reportViewer1.LocalReport.Refresh();
 
-            //    viewReport.ShowDialog();
+            viewReport.ShowDialog();
         }
         #endregion
 
@@ -613,80 +590,6 @@ namespace SmartMES_Giroei
         }
         #endregion
 
-        #region 생산량 불러오기
-        private void set_production_result()
-        {
-            //MySqlCommand cmd = new MySqlCommand();
-            //DataSet ds = new DataSet();
-            ////ProResult[] proResult = new ProResult[10];
-            //int seq = 10;
-            //int i = 0;
-
-            //DateTime fromDate = DateTime.Parse(tbJobTimeStart.Text);
-            //DateTime toDate;
-            //if (tbJobTimeFinish.Text == "")
-            //    toDate = DateTime.Now;
-            //else
-            //    toDate = DateTime.Parse(tbJobTimeFinish.Text);
-            //using (MySqlConnection conn = new MySqlConnection(G.conStr))
-            //{
-            //    try
-            //    {
-            //        conn.Open();
-            //        cmd.Connection = conn;
-
-            //        cmd.CommandText = "SP_ProductionResult_Query";
-            //        cmd.CommandType = CommandType.StoredProcedure;
-
-            //        cmd.Parameters.Add(new MySqlParameter("_fromDate", MySqlDbType.DateTime));
-            //        cmd.Parameters.Add(new MySqlParameter("_toDate", MySqlDbType.DateTime));
-            //        cmd.Parameters["_fromDate"].Value = fromDate;
-            //        cmd.Parameters["_toDate"].Value = toDate;
-
-            //        cmd.ExecuteNonQuery();
-
-            //        MySqlDataAdapter da = new MySqlDataAdapter(cmd);
-
-            //        // Fill the DataSet using default values for DataTable names, etc
-            //        da.Fill(ds);
-
-            //        foreach (DataRow r in ds.Tables[0].Rows)
-            //        {
-            //            tbGdQty.Text = r["생산량"].ToString();
-            //            seq += 1;
-            //            i += 1;
-            //        }
-            //        if (string.IsNullOrEmpty(tbGdQty.Text)) tbGdQty.Text = "0";
-            //        //lblMsg.Text = "생산실적이 반영되었습니다.";   주석처리 -> 삭제할때도 뜸.
-            //    }
-            //    catch (Exception ex)
-            //    {
-            //        {
-            //            MessageBox.Show(ex.Message);
-            //        }
-            //    }
-            //    conn.Close();
-            //    conn.Dispose();
-            //}
-        }
-        #endregion
-
-        private void btnAOI_Click(object sender, EventArgs e)
-        {
-            //lblMsg.Text = "";
-
-            //if (string.IsNullOrEmpty(lblLotNo.Text))
-            //{
-            //    lblMsg.Text = "LotNo.가 선택되지 않았습니다.";
-            //    return;
-            //}
-
-            //P1C02_PROD_RESULT_AOI sub = new P1C02_PROD_RESULT_AOI();
-            //sub.parentWin = this;
-            //sub.job_no = lblLotNo.Text;
-            //sub.ShowDialog();
-        }
-
         public void timer3_Tick(object sender, EventArgs e)
         {
             //lbIngtime.Text = DateTime.Now.ToString("hh:MM:dd mm:ss");
@@ -715,6 +618,7 @@ namespace SmartMES_Giroei
             timer3.Enabled = true;
             timer3.Tick += new EventHandler(timer3_Tick);
             mstbIngtime.Visible = true;
+            lblmstbIngtime.Visible = true;
             gpResult.Visible = false;
         }
 
@@ -731,6 +635,8 @@ namespace SmartMES_Giroei
                 timer3.Enabled = false;
                 gpResult.Visible = true;
                 gpAOI.Visible = true;
+                BtPrint.Visible = true;
+                lblPrint.Visible = true;
             }
         }
         public void timer4_Tick(object sender, EventArgs e)
@@ -770,31 +676,52 @@ namespace SmartMES_Giroei
                 timer4.Enabled = true;
                 timer4.Tick += new EventHandler(timer4_Tick);
                 mstbIngtime2.Visible = true;
+                lblmstbIngtime2.Visible = true;
             }
         }
 
         private void btContinue_Click(object sender, EventArgs e)
         {
+            int sSeq = 0;
+            string sJob = tbJobNo.Text; // 작지번호
+            string sPause = cbPause.SelectedValue.ToString();
+            string sPausetime = DateTime.Parse(mstbPausetime.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사시작시간 insp_start_time 
+            string sContinuetime = DateTime.Parse(mstbContinuetime.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사종료시간 insp_end_time
+            string sInspIngTime2 = DateTime.Parse(mstbIngtime2.Text).ToString("HH:mm:ss"); //경과시간 insp_ing_time
+
+            sSeq = Convert.ToInt32(tbSeq.Text);
+            sSeq = sSeq + 1;
+            tbSeq.Text = sSeq.ToString();
+
+            string sql = string.Empty;
+
+            MySqlConnection con = new MySqlConnection(G.conStr);
+            MySqlCommand cmd = new MySqlCommand();
+            con.Open();
+
             if (MessageBox.Show("선택하신 중지사유는 " + cbPause.Text + " 입니다.", "중지사유", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
+                sql = "insert into QLT_inspection_AOI_Loss (job_no, seq, start_time, end_time, ing_time, reason_code, enter_dt)" +
+                    " values('" + sJob + "','" + sSeq + "','" + sPausetime + "','" + sContinuetime + "','" + sInspIngTime2 + "','" + sPause + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "')";
+                        //+ " on duplicate key update" + " start_time = '" + sPausetime + "', end_time = '" + sContinuetime + "', ing_time = '" + sInspIngTime2 + "',"
+                        //+ " seq = '" + sSeq + "', reason_code = '" + sPause + "', enter_dt = '" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "'";
+
+                cmd.Connection = con;
+                cmd.CommandText = sql;
+                cmd.ExecuteNonQuery();
+
+                con.Close();
+
+                lblMsg.Text = "저장되었습니다.";
                 timer4.Enabled = false;
                 lbPause.Visible = false;
                 cbPause.Visible = false;
+                lblmstbIngtime2.Visible = false;
                 mstbIngtime2.Visible = false;
+                lblSeq.Visible = true;
+                tbSeq.Visible = true;
+                ListSearch2();
             }
-
-            ////lblMsg.Text = "";
-
-            ////if (string.IsNullOrEmpty(lblLotNo.Text))
-            ////{
-            ////    lblMsg.Text = "LotNo.가 선택되지 않았습니다.";
-            ////    return;
-            ////}
-
-            //P1C02_PROD_RESULT_AOI sub = new P1C02_PROD_RESULT_AOI();
-            //sub.parentWin = this;
-            //sub.job_no = lblLotNo.Text;
-            //sub.ShowDialog();
         }
         #region 검사내역 +-버튼
         private void Pbt1_Click(object sender, EventArgs e)
