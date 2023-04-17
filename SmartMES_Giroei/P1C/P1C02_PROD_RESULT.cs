@@ -457,9 +457,9 @@ namespace SmartMES_Giroei
             //string sFname1 = lbFname1.Text;
             //string sFname2 = lbFname2.Text;
 
-            string sInspFromTime = mstbStarttime.Text; //검사시작시간 insp_start_time 
-            string sInspToTime = mstbEndtime.Text; //검사종료시간 insp_end_time
-            string sInspIngTime = mstbIngtime.Text; //경과시간 insp_ing_time
+            string sInspFromTime = DateTime.Parse(mstbStarttime.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사시작시간 insp_start_time 
+            string sInspToTime = DateTime.Parse(mstbEndtime.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사종료시간 insp_end_time
+            string sInspIngTime = DateTime.Parse(mstbIngtime.Text).ToString("HH:mm:ss"); //경과시간 insp_ing_time
 
             string sql = string.Empty;
 
