@@ -2123,114 +2123,6 @@
               <PaddingBottom>2pt</PaddingBottom>
             </Style>
           </Textbox>
-          <Textbox Name="Textbox90">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>미납
-</Value>
-                    <Style>
-                      <FontFamily>휴먼모음T</FontFamily>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox48</rd:DefaultName>
-            <Top>6.42068cm</Top>
-            <Left>4.7549cm</Left>
-            <Height>0.53622cm</Height>
-            <Width>0.93262cm</Width>
-            <ZIndex>80</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox91">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>소납
-</Value>
-                    <Style>
-                      <FontFamily>휴먼모음T</FontFamily>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox48</rd:DefaultName>
-            <Top>7.07156cm</Top>
-            <Left>4.75843cm</Left>
-            <Height>0.48682cm</Height>
-            <Width>0.89734cm</Width>
-            <ZIndex>81</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox101">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>냉땜
-</Value>
-                    <Style>
-                      <FontFamily>휴먼모음T</FontFamily>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox48</rd:DefaultName>
-            <Top>7.69774cm</Top>
-            <Left>4.79371cm</Left>
-            <Height>0.56064cm</Height>
-            <Width>0.86207cm</Width>
-            <ZIndex>82</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
           <Textbox Name="Textbox102">
             <CanGrow>true</CanGrow>
             <KeepTogether>true</KeepTogether>
@@ -2254,7 +2146,7 @@
             <Left>4.72668cm</Left>
             <Height>0.54858cm</Height>
             <Width>1.02434cm</Width>
-            <ZIndex>83</ZIndex>
+            <ZIndex>80</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2289,7 +2181,7 @@
             <Left>4.74432cm</Left>
             <Height>0.46948cm</Height>
             <Width>1.0067cm</Width>
-            <ZIndex>84</ZIndex>
+            <ZIndex>81</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2324,43 +2216,7 @@
             <Left>4.74785cm</Left>
             <Height>0.48507cm</Height>
             <Width>1.32388cm</Width>
-            <ZIndex>85</ZIndex>
-            <Style>
-              <Border>
-                <Style>None</Style>
-              </Border>
-              <VerticalAlign>Middle</VerticalAlign>
-              <PaddingLeft>2pt</PaddingLeft>
-              <PaddingRight>2pt</PaddingRight>
-              <PaddingTop>2pt</PaddingTop>
-              <PaddingBottom>2pt</PaddingBottom>
-            </Style>
-          </Textbox>
-          <Textbox Name="Textbox105">
-            <CanGrow>true</CanGrow>
-            <KeepTogether>true</KeepTogether>
-            <Paragraphs>
-              <Paragraph>
-                <TextRuns>
-                  <TextRun>
-                    <Value>뒤집힘
-</Value>
-                    <Style>
-                      <FontFamily>휴먼모음T</FontFamily>
-                    </Style>
-                  </TextRun>
-                </TextRuns>
-                <Style>
-                  <TextAlign>Left</TextAlign>
-                </Style>
-              </Paragraph>
-            </Paragraphs>
-            <rd:DefaultName>Textbox48</rd:DefaultName>
-            <Top>10.24154cm</Top>
-            <Left>4.74785cm</Left>
-            <Height>0.52536cm</Height>
-            <Width>1.32388cm</Width>
-            <ZIndex>86</ZIndex>
+            <ZIndex>82</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2395,7 +2251,7 @@
             <Left>4.78313cm</Left>
             <Height>0.5831cm</Height>
             <Width>0.9679cm</Width>
-            <ZIndex>87</ZIndex>
+            <ZIndex>83</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2430,7 +2286,7 @@
             <Left>11.51414cm</Left>
             <Height>0.50976cm</Height>
             <Width>2.71714cm</Width>
-            <ZIndex>88</ZIndex>
+            <ZIndex>84</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2465,7 +2321,7 @@
             <Left>11.51414cm</Left>
             <Height>0.50271cm</Height>
             <Width>2.71714cm</Width>
-            <ZIndex>89</ZIndex>
+            <ZIndex>85</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2500,7 +2356,7 @@
             <Left>11.51414cm</Left>
             <Height>0.53622cm</Height>
             <Width>2.71714cm</Width>
-            <ZIndex>90</ZIndex>
+            <ZIndex>86</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2535,7 +2391,7 @@
             <Left>11.51414cm</Left>
             <Height>0.49212cm</Height>
             <Width>2.71714cm</Width>
-            <ZIndex>91</ZIndex>
+            <ZIndex>87</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2570,7 +2426,7 @@
             <Left>11.51414cm</Left>
             <Height>0.49389cm</Height>
             <Width>2.71714cm</Width>
-            <ZIndex>92</ZIndex>
+            <ZIndex>88</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2605,7 +2461,7 @@
             <Left>11.51414cm</Left>
             <Height>0.4745cm</Height>
             <Width>2.71714cm</Width>
-            <ZIndex>93</ZIndex>
+            <ZIndex>89</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2640,7 +2496,7 @@
             <Left>11.51414cm</Left>
             <Height>0.49864cm</Height>
             <Width>2.71714cm</Width>
-            <ZIndex>94</ZIndex>
+            <ZIndex>90</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2675,7 +2531,7 @@
             <Left>11.51414cm</Left>
             <Height>0.52944cm</Height>
             <Width>2.71714cm</Width>
-            <ZIndex>95</ZIndex>
+            <ZIndex>91</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2710,7 +2566,7 @@
             <Left>11.51414cm</Left>
             <Height>0.56092cm</Height>
             <Width>2.71714cm</Width>
-            <ZIndex>96</ZIndex>
+            <ZIndex>92</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2745,7 +2601,7 @@
             <Left>11.51414cm</Left>
             <Height>0.51932cm</Height>
             <Width>2.71714cm</Width>
-            <ZIndex>97</ZIndex>
+            <ZIndex>93</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2782,7 +2638,7 @@
             <Left>4.05993cm</Left>
             <Height>0.6cm</Height>
             <Width>4.20764cm</Width>
-            <ZIndex>98</ZIndex>
+            <ZIndex>94</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2817,7 +2673,7 @@
             <Left>10.40886cm</Left>
             <Height>0.6cm</Height>
             <Width>2.88401cm</Width>
-            <ZIndex>99</ZIndex>
+            <ZIndex>95</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2834,7 +2690,7 @@
             <Left>1.79328cm</Left>
             <Height>7.31083cm</Height>
             <Width>0cm</Width>
-            <ZIndex>100</ZIndex>
+            <ZIndex>96</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
@@ -2862,7 +2718,7 @@
             <Left>1.93439cm</Left>
             <Height>3.25438cm</Height>
             <Width>10.93945cm</Width>
-            <ZIndex>101</ZIndex>
+            <ZIndex>97</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2894,7 +2750,7 @@
             <Left>13.66304cm</Left>
             <Height>1.53711cm</Height>
             <Width>1.30083cm</Width>
-            <ZIndex>102</ZIndex>
+            <ZIndex>98</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2931,7 +2787,7 @@
             <Left>0.81651cm</Left>
             <Height>0.57326cm</Height>
             <Width>0.87633cm</Width>
-            <ZIndex>103</ZIndex>
+            <ZIndex>99</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -2966,7 +2822,7 @@
             <Left>4.78313cm</Left>
             <Height>0.52698cm</Height>
             <Width>0.9679cm</Width>
-            <ZIndex>104</ZIndex>
+            <ZIndex>100</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3001,7 +2857,7 @@
             <Left>11.51414cm</Left>
             <Height>0.50048cm</Height>
             <Width>2.71714cm</Width>
-            <ZIndex>105</ZIndex>
+            <ZIndex>101</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3032,7 +2888,7 @@
             <Left>15.14378cm</Left>
             <Height>1.43127cm</Height>
             <Width>5.19878cm</Width>
-            <ZIndex>106</ZIndex>
+            <ZIndex>102</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3067,7 +2923,7 @@
             <Left>17.81183cm</Left>
             <Height>0.50271cm</Height>
             <Width>2.53072cm</Width>
-            <ZIndex>107</ZIndex>
+            <ZIndex>103</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3103,7 +2959,7 @@
             <Left>17.81183cm</Left>
             <Height>0.5365cm</Height>
             <Width>2.53072cm</Width>
-            <ZIndex>108</ZIndex>
+            <ZIndex>104</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3139,7 +2995,7 @@
             <Left>17.81183cm</Left>
             <Height>0.54829cm</Height>
             <Width>2.53072cm</Width>
-            <ZIndex>109</ZIndex>
+            <ZIndex>105</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3175,7 +3031,7 @@
             <Left>17.81183cm</Left>
             <Height>0.52387cm</Height>
             <Width>2.53072cm</Width>
-            <ZIndex>110</ZIndex>
+            <ZIndex>106</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3211,7 +3067,7 @@
             <Left>17.81183cm</Left>
             <Height>0.52183cm</Height>
             <Width>2.566cm</Width>
-            <ZIndex>111</ZIndex>
+            <ZIndex>107</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3247,7 +3103,7 @@
             <Left>17.81183cm</Left>
             <Height>0.55739cm</Height>
             <Width>2.53072cm</Width>
-            <ZIndex>112</ZIndex>
+            <ZIndex>108</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3283,7 +3139,7 @@
             <Left>17.81183cm</Left>
             <Height>0.51506cm</Height>
             <Width>2.53072cm</Width>
-            <ZIndex>113</ZIndex>
+            <ZIndex>109</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3319,7 +3175,7 @@
             <Left>17.81183cm</Left>
             <Height>0.52211cm</Height>
             <Width>2.53072cm</Width>
-            <ZIndex>114</ZIndex>
+            <ZIndex>110</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3355,7 +3211,7 @@
             <Left>17.81183cm</Left>
             <Height>0.49389cm</Height>
             <Width>2.53072cm</Width>
-            <ZIndex>115</ZIndex>
+            <ZIndex>111</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3391,7 +3247,7 @@
             <Left>17.81183cm</Left>
             <Height>0.51686cm</Height>
             <Width>2.53072cm</Width>
-            <ZIndex>116</ZIndex>
+            <ZIndex>112</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3427,7 +3283,7 @@
             <Left>17.81183cm</Left>
             <Height>0.56472cm</Height>
             <Width>2.53072cm</Width>
-            <ZIndex>117</ZIndex>
+            <ZIndex>113</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3462,7 +3318,7 @@
             <Left>8.47218cm</Left>
             <Height>0.67056cm</Height>
             <Width>1.47101cm</Width>
-            <ZIndex>118</ZIndex>
+            <ZIndex>114</ZIndex>
             <Style>
               <Border>
                 <Style>None</Style>
@@ -3479,13 +3335,153 @@
             <Left>0.62584cm</Left>
             <Height>0cm</Height>
             <Width>19.78589cm</Width>
-            <ZIndex>119</ZIndex>
+            <ZIndex>115</ZIndex>
             <Style>
               <Border>
                 <Style>Solid</Style>
               </Border>
             </Style>
           </Line>
+          <Textbox Name="Textbox109">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>미납</Value>
+                    <Style>
+                      <FontFamily>휴먼모음T</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox48</rd:DefaultName>
+            <Top>6.40481cm</Top>
+            <Left>4.76912cm</Left>
+            <Height>0.50623cm</Height>
+            <Width>0.9679cm</Width>
+            <ZIndex>116</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox110">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>소납</Value>
+                    <Style>
+                      <FontFamily>휴먼모음T</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox48</rd:DefaultName>
+            <Top>7.07156cm</Top>
+            <Left>4.76912cm</Left>
+            <Height>0.50623cm</Height>
+            <Width>0.9679cm</Width>
+            <ZIndex>117</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox122">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>냉땜</Value>
+                    <Style>
+                      <FontFamily>휴먼모음T</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox48</rd:DefaultName>
+            <Top>7.73831cm</Top>
+            <Left>4.76912cm</Left>
+            <Height>0.50623cm</Height>
+            <Width>0.9679cm</Width>
+            <ZIndex>118</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
+          <Textbox Name="Textbox123">
+            <CanGrow>true</CanGrow>
+            <KeepTogether>true</KeepTogether>
+            <Paragraphs>
+              <Paragraph>
+                <TextRuns>
+                  <TextRun>
+                    <Value>뒤집힘</Value>
+                    <Style>
+                      <FontFamily>휴먼모음T</FontFamily>
+                    </Style>
+                  </TextRun>
+                </TextRuns>
+                <Style>
+                  <TextAlign>Left</TextAlign>
+                </Style>
+              </Paragraph>
+            </Paragraphs>
+            <rd:DefaultName>Textbox48</rd:DefaultName>
+            <Top>10.26067cm</Top>
+            <Left>4.76912cm</Left>
+            <Height>0.50623cm</Height>
+            <Width>1.15311cm</Width>
+            <ZIndex>119</ZIndex>
+            <Style>
+              <Border>
+                <Style>None</Style>
+              </Border>
+              <VerticalAlign>Middle</VerticalAlign>
+              <PaddingLeft>2pt</PaddingLeft>
+              <PaddingRight>2pt</PaddingRight>
+              <PaddingTop>2pt</PaddingTop>
+              <PaddingBottom>2pt</PaddingBottom>
+            </Style>
+          </Textbox>
         </ReportItems>
         <Height>8.11746in</Height>
         <Style />
