@@ -142,54 +142,31 @@ namespace SmartMES_Giroei
         {
             try
             {
-                //lbMsg.Text = "";
-                //lblLotNo.Text = dataGridView.Rows[rowIndex].Cells[0].Value.ToString();   // tbJobNo.Text
-                ////cbWorkLine.SelectedValue = dataGridView.Rows[rowIndex].Cells[2].Value; 
+                mstbStarttime.Mask = dataGridView.Rows[rowIndex].Cells[14].Value.ToString();
+                mstbEndtime.Mask = dataGridView.Rows[rowIndex].Cells[15].Value.ToString(); //검사종료시간 insp_end_time
+                mstbIngtime.Mask = dataGridView.Rows[rowIndex].Cells[16].Value.ToString(); //경과시간 insp_ing_time
+
                 tbProd.Tag = dataGridView.Rows[rowIndex].Cells[4].Value.ToString();
-                tbProd.Text = dataGridView.Rows[rowIndex].Cells[5].Value.ToString();
-                tbContents.Text = dataGridView.Rows[rowIndex].Cells[18].Value.ToString();
-                cbMan.Text = dataGridView.Rows[rowIndex].Cells[34].Value.ToString();
-                tbJobNo.Text = dataGridView.Rows[rowIndex].Cells[45].Value.ToString();
-                tbMakeQty.Text = dataGridView.Rows[rowIndex].Cells[49].Value.ToString();
-                tbCust.Text = dataGridView.Rows[rowIndex].Cells[52].Value.ToString(); //업체명
-                //tbQty.Text = dataGridView.Rows[rowIndex].Cells[6].Value.ToString();
-                //tbGdQty.Text = dataGridView.Rows[rowIndex].Cells[7].Value.ToString();
-                //tbNgQty.Text = dataGridView.Rows[rowIndex].Cells[8].Value.ToString();
-                //tbMatnotop.Text = dataGridView.Rows[rowIndex].Cells[9].Value.ToString();
-                //tbMatnobot.Text = dataGridView.Rows[rowIndex].Cells[10].Value.ToString();
-                //tbMatpttop.Text = dataGridView.Rows[rowIndex].Cells[11].Value.ToString();
-                //tbMatptbot.Text = dataGridView.Rows[rowIndex].Cells[12].Value.ToString();
-                //tbInstTop.Text = dataGridView.Rows[rowIndex].Cells[13].Value.ToString();
-                //tbInstBot.Text = dataGridView.Rows[rowIndex].Cells[14].Value.ToString();
-                //tbShowQty.Text = dataGridView.Rows[rowIndex].Cells[50].Value.ToString(); //검사수
-                //if (dataGridView.Rows[rowIndex].Cells[51].Value == null || string.IsNullOrEmpty(dataGridView.Rows[rowIndex].Cells[51].Value.ToString())) //AOI완료시간
-                //    tbAOITimeFinish.Text = "";
-                //else
-                //    tbAOITimeFinish.Text = DateTime.Parse(dataGridView.Rows[rowIndex].Cells[51].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-
-                //if (dataGridView.Rows[rowIndex].Cells[15].Value == null || string.IsNullOrEmpty(dataGridView.Rows[rowIndex].Cells[15].Value.ToString()))
-                //    tbJobTimeStart.Text = "";
-                //else
-                //    tbJobTimeStart.Text = DateTime.Parse(dataGridView.Rows[rowIndex].Cells[15].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-
-                //if (dataGridView.Rows[rowIndex].Cells[16].Value == null || string.IsNullOrEmpty(dataGridView.Rows[rowIndex].Cells[16].Value.ToString()))
-                //    tbJobTimeFinish.Text = "";
-                //else
-                //    tbJobTimeFinish.Text = DateTime.Parse(dataGridView.Rows[rowIndex].Cells[16].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-
-                //tbUserCnt.Text = dataGridView.Rows[rowIndex].Cells[17].Value.ToString();
+                tbProd.Text = dataGridView.Rows[rowIndex].Cells[8].Value.ToString();
+                tbJobNo.Text = dataGridView.Rows[rowIndex].Cells[1].Value.ToString();
+                tbCust.Text = dataGridView.Rows[rowIndex].Cells[6].Value.ToString(); //업체명
+                tbMakeQty.Text = dataGridView.Rows[rowIndex].Cells[12].Value.ToString();
+                cbWorkline1.Text = dataGridView.Rows[rowIndex].Cells[17].Value.ToString();
+                tbDefectCount.Text = dataGridView.Rows[rowIndex].Cells[18].Value.ToString();
+                tbSonap.Text = dataGridView.Rows[rowIndex].Cells[19].Value.ToString();
+                tbnengttem.Text = dataGridView.Rows[rowIndex].Cells[20].Value.ToString();
+                tbMiSap.Text = dataGridView.Rows[rowIndex].Cells[21].Value.ToString();
+                tbOverTurned.Text = dataGridView.Rows[rowIndex].Cells[22].Value.ToString();
+                tbLeadOpen.Text = dataGridView.Rows[rowIndex].Cells[23].Value.ToString();
+                tbMiNap.Text = dataGridView.Rows[rowIndex].Cells[24].Value.ToString();
+                tbShort.Text = dataGridView.Rows[rowIndex].Cells[25].Value.ToString();
+                tbReverse.Text = dataGridView.Rows[rowIndex].Cells[26].Value.ToString();
+                tbManhattan.Text = dataGridView.Rows[rowIndex].Cells[27].Value.ToString();
+                tbTwisted.Text = dataGridView.Rows[rowIndex].Cells[28].Value.ToString();
+                tbEtcError.Text = dataGridView.Rows[rowIndex].Cells[29].Value.ToString(); //기타
+                tbContents.Text = dataGridView.Rows[rowIndex].Cells[30].Value.ToString();
+                cbMan.SelectedValue = dataGridView.Rows[rowIndex].Cells[31].Value.ToString();
             }
-
-            //    if (dataGridView.Rows[rowIndex].Cells[22].Value == null || string.IsNullOrEmpty(dataGridView.Rows[rowIndex].Cells[22].Value.ToString()))
-            //        tbStartTime.Text = "";
-            //    else
-            //        tbStartTime.Text = DateTime.Parse(dataGridView.Rows[rowIndex].Cells[22].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-
-            //    if (dataGridView.Rows[rowIndex].Cells[23].Value == null || string.IsNullOrEmpty(dataGridView.Rows[rowIndex].Cells[23].Value.ToString()))
-            //        tbFinishTime.Text = "";
-            //    else
-            //        tbFinishTime.Text = DateTime.Parse(dataGridView.Rows[rowIndex].Cells[23].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-            //}
             catch (System.NullReferenceException)
             {
                 return;
@@ -221,8 +198,8 @@ namespace SmartMES_Giroei
             DataGridView dgv = (DataGridView)sender;
             int rowIndex = dgv.CurrentCell.RowIndex;
 
-            string sFile1 = dataGridView1.Rows[e.RowIndex].Cells[47].Value.ToString();
-            string sFile2 = dataGridView1.Rows[e.RowIndex].Cells[48].Value.ToString();
+            string sFile1 = dataGridView1.Rows[e.RowIndex].Cells[32].Value.ToString();
+            string sFile2 = dataGridView1.Rows[e.RowIndex].Cells[33].Value.ToString();
 
             // clip icon 처리 - 파일 있으면 파란색, 없으면 회색 클립
             if (string.IsNullOrEmpty(sFile1))
@@ -278,33 +255,33 @@ namespace SmartMES_Giroei
         }
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (G.Authority == "D") return;
-            if (e.RowIndex < 0) return;
-            if (e.ColumnIndex != 24) return;    // 사양점검
+            //if (G.Authority == "D") return;
+            //if (e.RowIndex < 0) return;
+            //if (e.ColumnIndex != 24) return;    // 사양점검
 
-            P1C02_PROD_RESULT_SUB sub = new P1C02_PROD_RESULT_SUB();
-            sub.lblLotNo.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-            sub.lblChkID.Text = dataGridView1.Rows[e.RowIndex].Cells[35].Value.ToString();
-            sub.rorderID = dataGridView1.Rows[e.RowIndex].Cells[45].Value.ToString();       // 11/9 추가 수주번호,순번
-            sub.rorderSeq = dataGridView1.Rows[e.RowIndex].Cells[46].Value.ToString();
-            if (dataGridView1.Rows[e.RowIndex].Cells[25].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[e.RowIndex].Cells[25].Value.ToString())) sub.tbJobTimeStart.Text = "";
-            else
-                sub.tbJobTimeStart.Text = DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells[25].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-            if (dataGridView1.Rows[e.RowIndex].Cells[26].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[e.RowIndex].Cells[26].Value.ToString())) sub.tbJobTimeFinish.Text = "";
-            else
-                sub.tbJobTimeFinish.Text = DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells[26].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
-            sub.cbMan.SelectedValue = dataGridView1.Rows[e.RowIndex].Cells[34].Value.ToString();
+            //P1C02_PROD_RESULT_SUB sub = new P1C02_PROD_RESULT_SUB();
+            //sub.lblLotNo.Text = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+            //sub.lblChkID.Text = dataGridView1.Rows[e.RowIndex].Cells[35].Value.ToString();
+            //sub.rorderID = dataGridView1.Rows[e.RowIndex].Cells[45].Value.ToString();       // 11/9 추가 수주번호,순번
+            //sub.rorderSeq = dataGridView1.Rows[e.RowIndex].Cells[46].Value.ToString();
+            //if (dataGridView1.Rows[e.RowIndex].Cells[25].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[e.RowIndex].Cells[25].Value.ToString())) sub.tbJobTimeStart.Text = "";
+            //else
+            //    sub.tbJobTimeStart.Text = DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells[25].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+            //if (dataGridView1.Rows[e.RowIndex].Cells[26].Value == null || string.IsNullOrEmpty(dataGridView1.Rows[e.RowIndex].Cells[26].Value.ToString())) sub.tbJobTimeFinish.Text = "";
+            //else
+            //    sub.tbJobTimeFinish.Text = DateTime.Parse(dataGridView1.Rows[e.RowIndex].Cells[26].Value.ToString()).ToString("yyyy-MM-dd HH:mm:ss");
+            //sub.cbMan.SelectedValue = dataGridView1.Rows[e.RowIndex].Cells[34].Value.ToString();
 
-            if (dataGridView1.Rows[e.RowIndex].Cells[27].Value.ToString() == "0") sub.rbNg1.Checked = true;
-            if (dataGridView1.Rows[e.RowIndex].Cells[28].Value.ToString() == "0") sub.rbNg2.Checked = true;
-            if (dataGridView1.Rows[e.RowIndex].Cells[29].Value.ToString() == "0") sub.rbNg3.Checked = true;
-            if (dataGridView1.Rows[e.RowIndex].Cells[30].Value.ToString() == "0") sub.rbNg4.Checked = true;
-            if (dataGridView1.Rows[e.RowIndex].Cells[31].Value.ToString() == "0") sub.rbNg5.Checked = true;
-            if (dataGridView1.Rows[e.RowIndex].Cells[32].Value.ToString() == "0") sub.rbNg6.Checked = true;
-            if (dataGridView1.Rows[e.RowIndex].Cells[33].Value.ToString() == "0") sub.rbNg7.Checked = true;
+            //if (dataGridView1.Rows[e.RowIndex].Cells[27].Value.ToString() == "0") sub.rbNg1.Checked = true;
+            //if (dataGridView1.Rows[e.RowIndex].Cells[28].Value.ToString() == "0") sub.rbNg2.Checked = true;
+            //if (dataGridView1.Rows[e.RowIndex].Cells[29].Value.ToString() == "0") sub.rbNg3.Checked = true;
+            //if (dataGridView1.Rows[e.RowIndex].Cells[30].Value.ToString() == "0") sub.rbNg4.Checked = true;
+            //if (dataGridView1.Rows[e.RowIndex].Cells[31].Value.ToString() == "0") sub.rbNg5.Checked = true;
+            //if (dataGridView1.Rows[e.RowIndex].Cells[32].Value.ToString() == "0") sub.rbNg6.Checked = true;
+            //if (dataGridView1.Rows[e.RowIndex].Cells[33].Value.ToString() == "0") sub.rbNg7.Checked = true;
 
-            sub.parentWin = this;
-            sub.ShowDialog();
+            //sub.parentWin = this;
+            //sub.ShowDialog();
         }
         #endregion
 
