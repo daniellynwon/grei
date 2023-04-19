@@ -142,30 +142,37 @@ namespace SmartMES_Giroei
         {
             try
             {
-                mstbStarttime.Mask = dataGridView.Rows[rowIndex].Cells[14].Value.ToString();
-                mstbEndtime.Mask = dataGridView.Rows[rowIndex].Cells[15].Value.ToString(); //검사종료시간 insp_end_time
-                mstbIngtime.Mask = dataGridView.Rows[rowIndex].Cells[16].Value.ToString(); //경과시간 insp_ing_time
-
-                tbProd.Tag = dataGridView.Rows[rowIndex].Cells[4].Value.ToString();
+                //필수
                 tbProd.Text = dataGridView.Rows[rowIndex].Cells[8].Value.ToString();
-                tbJobNo.Text = dataGridView.Rows[rowIndex].Cells[1].Value.ToString();
+                tbJobNo.Text = dataGridView.Rows[rowIndex].Cells[0].Value.ToString();
                 tbCust.Text = dataGridView.Rows[rowIndex].Cells[6].Value.ToString(); //업체명
                 tbMakeQty.Text = dataGridView.Rows[rowIndex].Cells[12].Value.ToString();
-                cbWorkline1.Text = dataGridView.Rows[rowIndex].Cells[17].Value.ToString();
-                tbDefectCount.Text = dataGridView.Rows[rowIndex].Cells[18].Value.ToString();
-                tbSonap.Text = dataGridView.Rows[rowIndex].Cells[19].Value.ToString();
-                tbnengttem.Text = dataGridView.Rows[rowIndex].Cells[20].Value.ToString();
-                tbMiSap.Text = dataGridView.Rows[rowIndex].Cells[21].Value.ToString();
-                tbOverTurned.Text = dataGridView.Rows[rowIndex].Cells[22].Value.ToString();
-                tbLeadOpen.Text = dataGridView.Rows[rowIndex].Cells[23].Value.ToString();
-                tbMiNap.Text = dataGridView.Rows[rowIndex].Cells[24].Value.ToString();
-                tbShort.Text = dataGridView.Rows[rowIndex].Cells[25].Value.ToString();
-                tbReverse.Text = dataGridView.Rows[rowIndex].Cells[26].Value.ToString();
-                tbManhattan.Text = dataGridView.Rows[rowIndex].Cells[27].Value.ToString();
-                tbTwisted.Text = dataGridView.Rows[rowIndex].Cells[28].Value.ToString();
-                tbEtcError.Text = dataGridView.Rows[rowIndex].Cells[29].Value.ToString(); //기타
-                tbContents.Text = dataGridView.Rows[rowIndex].Cells[30].Value.ToString();
-                cbMan.SelectedValue = dataGridView.Rows[rowIndex].Cells[31].Value.ToString();
+                //저장된 후 
+                if (dataGridView.Rows[rowIndex].Cells[17].Value.ToString() == "1라인" || dataGridView.Rows[rowIndex].Cells[17].Value.ToString() == "2라인" || dataGridView.Rows[rowIndex].Cells[17].Value.ToString() == "육안검사")
+                {
+                    mstbStarttime.Text = dataGridView.Rows[rowIndex].Cells[14].Value.ToString();
+                    mstbEndtime.Text = dataGridView.Rows[rowIndex].Cells[15].Value.ToString(); //검사종료시간 insp_end_time
+                    mstbIngtime.Text = dataGridView.Rows[rowIndex].Cells[16].Value.ToString(); //경과시간 insp_ing_time
+                    cbWorkline1.Text = dataGridView.Rows[rowIndex].Cells[17].Value.ToString();
+                    tbDefectCount.Text = dataGridView.Rows[rowIndex].Cells[18].Value.ToString();
+                    tbSonap.Text = dataGridView.Rows[rowIndex].Cells[19].Value.ToString();
+                    tbnengttem.Text = dataGridView.Rows[rowIndex].Cells[20].Value.ToString();
+                    tbMiSap.Text = dataGridView.Rows[rowIndex].Cells[21].Value.ToString();
+                    tbOverTurned.Text = dataGridView.Rows[rowIndex].Cells[22].Value.ToString();
+                    tbLeadOpen.Text = dataGridView.Rows[rowIndex].Cells[23].Value.ToString();
+                    tbMiNap.Text = dataGridView.Rows[rowIndex].Cells[24].Value.ToString();
+                    tbShort.Text = dataGridView.Rows[rowIndex].Cells[25].Value.ToString();
+                    tbReverse.Text = dataGridView.Rows[rowIndex].Cells[26].Value.ToString();
+                    tbManhattan.Text = dataGridView.Rows[rowIndex].Cells[27].Value.ToString();
+                    tbTwisted.Text = dataGridView.Rows[rowIndex].Cells[28].Value.ToString();
+                    tbEtcError.Text = dataGridView.Rows[rowIndex].Cells[29].Value.ToString(); //기타
+                    tbContents.Text = dataGridView.Rows[rowIndex].Cells[30].Value.ToString();
+                    cbMan.SelectedValue = dataGridView.Rows[rowIndex].Cells[31].Value.ToString();
+                    gpAOI.Visible = true;
+                    gpResult.Visible = true;
+                    BtPrint.Visible = true;
+                    lblPrint.Visible = true;
+                }
             }
             catch (System.NullReferenceException)
             {
@@ -227,14 +234,44 @@ namespace SmartMES_Giroei
             lbMsg.Text = "";
             cbWorkline1.Enabled = true;
             cbMan.Enabled = true;
-            gpResult.Visible = false;
-            gpAOI.Visible = false;
-            lblPrint.Visible = false;
-            BtPrint.Visible = false;
             lblSeq.Visible = false;
             tbSeq.Visible = false;
             TabControl1.Visible = true;
             TabControl1.Enabled = true;
+
+            if (dataGridView1.Rows[rowIndex].Cells[17].Value.ToString() == "1라인" || dataGridView1.Rows[rowIndex].Cells[17].Value.ToString() == "2라인" || dataGridView1.Rows[rowIndex].Cells[17].Value.ToString() == "육안검사")
+            {
+
+            }
+            else 
+            {
+                gpResult.Visible = false;
+                gpAOI.Visible = false;
+                lblPrint.Visible = false;
+                BtPrint.Visible = false;
+
+                //탭페이지 초기화
+                tbDefectCount.Text = "0";
+                tbContents.Text = "";
+                tbSonap.Text = "0";
+                tbnengttem.Text = "0";
+                tbMiSap.Text = "0";
+                tbOverTurned.Text = "0";
+                tbLeadOpen.Text = "0";
+                tbMiNap.Text = "0";
+                tbShort.Text = "0";
+                tbReverse.Text = "0";
+                tbManhattan.Text = "0";
+                tbTwisted.Text = "0";
+                tbEtcError.Text = "0";
+                mstbStarttime.ResetText();
+                mstbEndtime.ResetText();
+                mstbIngtime.ResetText();
+                mstbPausetime.ResetText();
+                mstbContinuetime.ResetText();
+                mstbIngtime2.ResetText();
+                tbSeq.Text = "0";
+            }
             ListSearch2();
             //set_production_result();
         }
@@ -526,42 +563,80 @@ namespace SmartMES_Giroei
         private void btStart_Click(object sender, EventArgs e)
         {
             // 시작 버튼
-            if (MessageBox.Show("작업하실 라인과 검사자는 " + cbWorkline1.Text + "," + cbMan.Text + "님이 맞습니까?", "검사시작", MessageBoxButtons.YesNo) == DialogResult.Yes) //작업라인 및 검사자 고정
+            if (mstbEndtime.Text.Length > 0)
             {
-                cbWorkline1.Enabled = false;
-                cbMan.Enabled = false;
-                btReturn.Visible = false;
-                lblReturn.Visible = false;
-            }
-            else
-            {
-                return;
-            }
+                if (MessageBox.Show("다른 검사를 진행하시겠습니까?", "라인검사", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    gpResult.Visible = false;
+                    gpAOI.Visible = false;
 
-            timer3.Enabled = true;
-            timer3.Tick += new EventHandler(timer3_Tick);
-            mstbIngtime.Visible = true;
-            lblmstbIngtime.Visible = true;
-            gpResult.Visible = false;
-            gpAOI.Visible = false;
+                    //탭페이지 초기화
+                    tbDefectCount.Text = "0";
+                    tbContents.Text = "";
+                    tbSonap.Text = "0";
+                    tbnengttem.Text = "0";
+                    tbMiSap.Text = "0";
+                    tbOverTurned.Text = "0";
+                    tbLeadOpen.Text = "0";
+                    tbMiNap.Text = "0";
+                    tbShort.Text = "0";
+                    tbReverse.Text = "0";
+                    tbManhattan.Text = "0";
+                    tbTwisted.Text = "0";
+                    tbEtcError.Text = "0";
+                    mstbStarttime.ResetText();
+                    mstbEndtime.ResetText();
+                    mstbIngtime.ResetText();
+                    mstbPausetime.ResetText();
+                    mstbContinuetime.ResetText();
+                    mstbIngtime2.ResetText();
+                    tbSeq.Text = "0";
+                    return;
+                }
+                else
+                {
+                    return;
+                }
+            }
+                if (MessageBox.Show("작업하실 라인과 검사자는 " + cbWorkline1.Text + "," + cbMan.Text + "님이 맞습니까?", "검사시작", MessageBoxButtons.YesNo) == DialogResult.Yes) //작업라인 및 검사자 고정
+                {
+                    cbWorkline1.Enabled = false;
+                    cbMan.Enabled = false;
+                }
+                else
+                {
+                    return;
+                }
+
+                timer3.Enabled = true;
+                timer3.Tick += new EventHandler(timer3_Tick);
+                mstbIngtime.Visible = true;
+                lblmstbIngtime.Visible = true;
+                gpResult.Visible = false;
+                gpAOI.Visible = false;
         }
 
         private void btEnd_Click(object sender, EventArgs e)
         {
-            if (timer4.Enabled == true)
+            if (mstbEndtime.Text.Length > 0)
             {
-                MessageBox.Show("다시 시작을 누른 후 종료해주세요.");
+               MessageBox.Show("종료된 검사는 다시 종료 할 수 없습니다.");
+                return;
             }
-            else
-            {
-                // 멈춤 버튼
-                isTimeStarted = false;
-                timer3.Enabled = false;
-                gpResult.Visible = true;
-                gpAOI.Visible = true;
-                BtPrint.Visible = true;
-                lblPrint.Visible = true;
-            }
+                if (timer4.Enabled == true)
+                {
+                    MessageBox.Show("다시 시작을 누른 후 종료해주세요.");
+                }
+                else
+                {
+                    // 멈춤 버튼
+                    isTimeStarted = false;
+                    timer3.Enabled = false;
+                    gpResult.Visible = true;
+                    gpAOI.Visible = true;
+                    BtPrint.Visible = true;
+                    lblPrint.Visible = true;
+                }
         }
         public void timer4_Tick(object sender, EventArgs e)
         {
@@ -620,6 +695,35 @@ namespace SmartMES_Giroei
                 string sPausetime = DateTime.Parse(mstbPausetime.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사시작시간 insp_start_time 
                 string sContinuetime = DateTime.Parse(mstbContinuetime.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사종료시간 insp_end_time
                 string sInspIngTime2 = DateTime.Parse(mstbIngtime2.Text).ToString("HH:mm:ss"); //경과시간 insp_ing_time
+                string sInspCount = tbMakeQty.Text; //검사수량
+                string sTotalDefect = tbDefectCount.Text; //총불량수
+                string sContents = tbContents.Text; //상세결과
+                string sMan = cbMan.SelectedValue.ToString(); //검사자
+                string sSonap = tbSonap.Text;
+                string sNengttem = tbnengttem.Text;
+                string sMisap = tbMiSap.Text;
+                string sOverturned = tbOverTurned.Text;
+                string sLeadopen = tbLeadOpen.Text;
+                string sMinap = tbMiNap.Text;
+                string sShort = tbShort.Text;
+                string sReverse = tbReverse.Text;
+                string sManhattan = tbManhattan.Text;
+                string sTwisted = tbTwisted.Text;
+                string sEtcerror = tbEtcError.Text;
+
+                //string sFname1 = lbFname1.Text;
+                //string sFname2 = lbFname2.Text;
+
+                string sInspFromTime = DateTime.Parse(mstbStarttime.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사시작시간 insp_start_time 
+                string sInspToTime = DateTime.Parse(mstbEndtime.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사종료시간 insp_end_time
+                string sInspIngTime = DateTime.Parse(mstbIngtime.Text).ToString("HH:mm:ss"); //경과시간 insp_ing_time
+
+                string sql = string.Empty;
+
+                string fname1 = string.Empty;
+                string fname2 = string.Empty;
+                byte[] rawdata1 = new byte[0];
+                byte[] rawdata2 = new byte[0];
 
                 if (sWorklineName == "1라인")
                 {
@@ -661,7 +765,7 @@ namespace SmartMES_Giroei
                     }
                 }
                 tbSeq.Text = sSeq.ToString();
-                string sql = string.Empty;
+                sql = string.Empty;
 
                 MySqlConnection con = new MySqlConnection(G.conStr);
                 MySqlCommand cmd = new MySqlCommand();
@@ -669,6 +773,40 @@ namespace SmartMES_Giroei
 
                 if (MessageBox.Show("선택하신 중지사유는 " + cbPause.Text + " 입니다.", "중지사유", MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
+                    lbMsg.Text = "";
+
+                    if (string.IsNullOrEmpty(tbJobNo.Text)) // tbJobNo.Text
+                    {
+                        lbMsg.Text = "검사리스트가 선택되지 않았습니다.";
+                        return;
+                    }
+                    if (string.IsNullOrEmpty(mstbEndtime.Text))
+                    {
+                        lbMsg.Text = "작업이 종료되어야 저장할 수 있습니다.";
+                        return;
+                    }
+
+                    con = new MySqlConnection(G.conStr);
+                    cmd = new MySqlCommand();
+                    con.Open();
+
+                    sql = "insert into QLT_inspection_AOI (job_no, insp_start_time, insp_end_time, insp_ing_time, insp_qty, defect_count, sonap, nengttem, misap, overturned, leadopen, minap, short, reverse, manhattan, twisted, etc_error, contents, worklinename, workline, enter_man)" +
+                            " values('" + sJob + "','" + sInspFromTime + "','" + sInspToTime + "','" + sInspIngTime + "'," + sInspCount + "," + sTotalDefect + "," + sSonap + "," + sNengttem + "," + sMisap + "," + sOverturned + "," + sLeadopen + "," + sMinap + "," + sShort + "," + sReverse + "," +
+                                sManhattan + "," + sTwisted + "," + sEtcerror + ",'" + sContents + "','" + sWorklineName + "','" + sWorkline + "','" + sMan + "')"
+                                + " on duplicate key update" + " insp_start_time = '" + sInspFromTime + "', insp_end_time = '" + sInspToTime + "', insp_ing_time = '" + sInspIngTime + "',"
+                                + " insp_qty = " + sInspCount + ", defect_count = " + sTotalDefect + ", sonap = " + sSonap + ", nengttem = " + sNengttem
+                                + ", misap = " + sMisap + ", overturned = " + sOverturned + ", leadopen = " + sLeadopen + ", minap = " + sMinap + ", short = " + sShort + ", reverse = " + sReverse
+                                + ", manhattan = " + sManhattan + ", twisted = " + sTwisted + ", etc_error = " + sEtcerror
+                                + ", contents = '" + sContents + "', worklinename ='" + sWorklineName + "', workline ='" + sWorkline + "', enter_man = '" + sMan + "'";
+
+                    cmd.Connection = con;
+                    cmd.CommandText = sql;
+                    cmd.ExecuteNonQuery();
+
+                    con.Close();
+
+                    con.Open();
+
                     sql = "insert into QLT_inspection_AOI_Loss (job_no, seq, workline, worklinename, start_time, end_time, ing_time, reason_code, enter_dt)" +
                         " values('" + sJob + "','" + sSeq + "','" + sWorkline + "','" + sWorklineName + "','" + sPausetime + "','" + sContinuetime + "','" + sInspIngTime2 + "','" + sPause + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "')";
 
