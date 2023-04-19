@@ -4123,7 +4123,7 @@
                 <Paragraph>
                   <TextRuns>
                     <TextRun>
-                      <Value>LOT NO</Value>
+                      <Value>검사라인</Value>
                       <Style>
                         <FontFamily>휴먼모음T</FontFamily>
                         <FontWeight>Bold</FontWeight>
