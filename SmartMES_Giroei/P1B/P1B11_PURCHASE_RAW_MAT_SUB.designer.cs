@@ -53,6 +53,7 @@
             this.ColumnCheckBox = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.BOM등록일자 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.수주취소 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseRawMatINSUBBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).BeginInit();
@@ -91,7 +92,8 @@
             this.사급DataGridViewTextBoxColumn,
             this.ColumnCheckBox,
             this.BOM등록일자,
-            this.Column1});
+            this.Column1,
+            this.수주취소});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPPurchaseRawMatINSUBBindingSource;
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -275,6 +277,13 @@
             this.Column1.HeaderText = "BOM";
             this.Column1.Name = "Column1";
             // 
+            // 수주취소
+            // 
+            this.수주취소.DataPropertyName = "수주취소";
+            this.수주취소.HeaderText = "수주취소";
+            this.수주취소.Name = "수주취소";
+            this.수주취소.Visible = false;
+            // 
             // P1B11_PURCHASE_RAW_MAT_SUB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -338,5 +347,6 @@
         private System.Windows.Forms.DataGridViewCheckBoxColumn ColumnCheckBox;
         private System.Windows.Forms.DataGridViewTextBoxColumn BOM등록일자;
         private System.Windows.Forms.DataGridViewButtonColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 수주취소;
     }
 }

@@ -53,6 +53,7 @@
             this.공정명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.모델명DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.작업상태DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.수주취소 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sPPurchaseMat1SubBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetP1B)).BeginInit();
@@ -91,7 +92,8 @@
             this.공정코드DataGridViewTextBoxColumn,
             this.공정명DataGridViewTextBoxColumn,
             this.모델명DataGridViewTextBoxColumn,
-            this.작업상태DataGridViewTextBoxColumn});
+            this.작업상태DataGridViewTextBoxColumn,
+            this.수주취소});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPPurchaseMat1SubBindingSource;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -280,6 +282,13 @@
             this.작업상태DataGridViewTextBoxColumn.HeaderText = "작업상태";
             this.작업상태DataGridViewTextBoxColumn.Name = "작업상태DataGridViewTextBoxColumn";
             // 
+            // 수주취소
+            // 
+            this.수주취소.DataPropertyName = "수주취소";
+            this.수주취소.HeaderText = "수주취소";
+            this.수주취소.Name = "수주취소";
+            this.수주취소.Visible = false;
+            // 
             // P1B10_PURCHASE_MAT1_SUB
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -344,5 +353,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 공정명DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 모델명DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 작업상태DataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 수주취소;
     }
 }

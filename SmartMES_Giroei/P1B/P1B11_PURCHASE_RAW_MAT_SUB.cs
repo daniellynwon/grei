@@ -80,7 +80,11 @@ namespace SmartMES_Giroei
             string sProdName = dataGridView1.Rows[e.RowIndex].Cells[5].Value.ToString();
 
             lblMsg.Text = "";
-
+            if (dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString() == "Y")
+            {
+                MessageBox.Show("수주취소건은 사급자재입고등록이 불가능합니다.");
+                return;
+            }
             // 사급자재등록팝업 연결 여기다가
             P1B11_PURCHASE_RAW_MAT_BOM sub = new P1B11_PURCHASE_RAW_MAT_BOM();
             sub.sSujuNo = sSujuNo;
@@ -105,6 +109,18 @@ namespace SmartMES_Giroei
                 if (dataGridView1.Rows[i].Cells[6].Value.ToString() == "Y")
                 {
                     dataGridView1.Rows[i].Cells[7].Value = "1";
+                }
+            }
+
+            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[10].Value.ToString() == "Y") //특정값이면 배경색 바꿔주기 여기서는 재작업 0 OR 1로 판단하여 배경색 바꿈
+                    dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.PaleGoldenrod;
+
+                if (i == 0)
+                {
+                    dataGridView1.RowsDefaultCellStyle.SelectionBackColor = dataGridView1.Rows[i].DefaultCellStyle.BackColor;
+                    dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.White;
                 }
             }
         }

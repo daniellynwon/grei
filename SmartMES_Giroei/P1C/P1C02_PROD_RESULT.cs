@@ -15,7 +15,13 @@ namespace SmartMES_Giroei
         public bool bPunch2D = true;
         private DateTime SDT1 = DateTime.Now;
         private DateTime SDT3 = DateTime.Now;
+        private DateTime SDT5 = DateTime.Now;
+        private DateTime SDT7 = DateTime.Now;
+        private DateTime SDT9 = DateTime.Now;
+        private DateTime SDT11 = DateTime.Now;
         private bool isTimeStarted = false;
+        private bool isTimeStarted2 = false;
+        private bool isTimeStarted3 = false;
 
         public P1C02_PROD_RESULT()
         {
@@ -57,6 +63,78 @@ namespace SmartMES_Giroei
                 cbMan.DataSource = table;
                 cbMan.ValueMember = "user_id";
                 cbMan.DisplayMember = "user_name";
+            }
+
+            sql = @"select co_code, co_item from BAS_common where co_kind = 'M' order by co_code";
+            m = new MariaCRUD();
+            msg = string.Empty;
+            table = m.dbDataTable(sql, ref msg);
+
+            if (msg == "OK")
+            {
+                cbPause2.DataSource = table;
+                cbPause2.ValueMember = "co_code";
+                cbPause2.DisplayMember = "co_item";
+            }
+
+            sql = @"select co_code, co_item from BAS_common where co_kind = 'O' order by co_code";
+            m = new MariaCRUD();
+            msg = string.Empty;
+            table = m.dbDataTable(sql, ref msg);
+
+            if (msg == "OK")
+            {
+                cbWorkline2.DataSource = table;
+                cbWorkline2.ValueMember = "co_code";
+                cbWorkline2.DisplayMember = "co_item";
+            }
+
+            sql = "select user_id, user_name from SYS_user where authority in ('A','B','C') and useYN = 'Y'";
+            m = new MariaCRUD();
+            msg = string.Empty;
+            table = m.dbDataTable(sql, ref msg);
+
+            if (msg == "OK")
+            {
+                cbMan2.DataSource = table;
+                cbMan2.ValueMember = "user_id";
+                cbMan2.DisplayMember = "user_name";
+            }
+
+            sql = @"select co_code, co_item from BAS_common where co_kind = 'M' order by co_code";
+            m = new MariaCRUD();
+            msg = string.Empty;
+            table = m.dbDataTable(sql, ref msg);
+
+            if (msg == "OK")
+            {
+                cbPause3.DataSource = table;
+                cbPause3.ValueMember = "co_code";
+                cbPause3.DisplayMember = "co_item";
+            }
+
+            sql = @"select co_code, co_item from BAS_common where co_kind = 'O' order by co_code";
+            m = new MariaCRUD();
+            msg = string.Empty;
+            table = m.dbDataTable(sql, ref msg);
+
+            if (msg == "OK")
+            {
+                cbWorkline3.DataSource = table;
+                cbWorkline3.ValueMember = "co_code";
+                cbWorkline3.DisplayMember = "co_item";
+            }
+
+            sql = "select user_id, user_name from SYS_user where authority in ('A','B','C') and useYN = 'Y'";
+            m = new MariaCRUD();
+            msg = string.Empty;
+            table = m.dbDataTable(sql, ref msg);
+
+            if (msg == "OK")
+            {
+                cbMan3.DataSource = table;
+                cbMan3.ValueMember = "user_id";
+                cbMan3.DisplayMember = "user_name";
             }
         }
         private void P1C02_PROD_RESULT_Load(object sender, EventArgs e)
@@ -100,6 +178,31 @@ namespace SmartMES_Giroei
             {
                 Cursor.Current = Cursors.WaitCursor;
                 string _no = tbJobNo.Text;
+
+                //if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[17].Value.ToString() == "1라인")
+                //{
+                //    dataGridView2.Visible = true;
+                //    dataGridView3.Visible = false;
+                //    dataGridView4.Visible = false;
+                //}
+                //else if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[17].Value.ToString() == "2라인")
+                //{
+                //    dataGridView2.Visible = false;
+                //    dataGridView3.Visible = true;
+                //    dataGridView4.Visible = false;
+                //}
+                //else if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[17].Value.ToString() == "육안검사")
+                //{
+                //    dataGridView2.Visible = false;
+                //    dataGridView3.Visible = false;
+                //    dataGridView4.Visible = true;
+                //}
+                //else
+                //{
+                //    dataGridView2.Visible = true;
+                //    dataGridView3.Visible = true;
+                //    dataGridView4.Visible = true;
+                //}
 
                 sP_AOI_LossTableAdapter.Fill(dataSetP1C.SP_AOI_Loss, _no);
 
@@ -179,6 +282,88 @@ namespace SmartMES_Giroei
                 return;
             }
         }
+        public void SettingValues2(DataGridView dataGridView, int rowIndex)
+        {
+            try
+            {
+                //필수
+                tbProd2.Text = dataGridView.Rows[rowIndex].Cells[8].Value.ToString();
+                tbJobNo2.Text = dataGridView.Rows[rowIndex].Cells[0].Value.ToString();
+                tbCust2.Text = dataGridView.Rows[rowIndex].Cells[6].Value.ToString(); //업체명
+                tbMakeQty2.Text = dataGridView.Rows[rowIndex].Cells[12].Value.ToString();
+                //저장된 후 
+                if (dataGridView.Rows[rowIndex].Cells[17].Value.ToString() == "1라인" || dataGridView.Rows[rowIndex].Cells[17].Value.ToString() == "2라인" || dataGridView.Rows[rowIndex].Cells[17].Value.ToString() == "육안검사")
+                {
+                    mstbStarttime2.Text = dataGridView.Rows[rowIndex].Cells[14].Value.ToString();
+                    mstbEndtime2.Text = dataGridView.Rows[rowIndex].Cells[15].Value.ToString(); //검사종료시간 insp_end_time
+                    mstbIngtime_2.Text = dataGridView.Rows[rowIndex].Cells[16].Value.ToString(); //경과시간 insp_ing_time
+                    cbWorkline2.Text = dataGridView.Rows[rowIndex].Cells[17].Value.ToString();
+                    tbDefectCount2.Text = dataGridView.Rows[rowIndex].Cells[18].Value.ToString();
+                    tbSonap2.Text = dataGridView.Rows[rowIndex].Cells[19].Value.ToString();
+                    tbnengttem2.Text = dataGridView.Rows[rowIndex].Cells[20].Value.ToString();
+                    tbMiSap2.Text = dataGridView.Rows[rowIndex].Cells[21].Value.ToString();
+                    tbOverTurned2.Text = dataGridView.Rows[rowIndex].Cells[22].Value.ToString();
+                    tbLeadOpen2.Text = dataGridView.Rows[rowIndex].Cells[23].Value.ToString();
+                    tbMiNap2.Text = dataGridView.Rows[rowIndex].Cells[24].Value.ToString();
+                    tbShort2.Text = dataGridView.Rows[rowIndex].Cells[25].Value.ToString();
+                    tbReverse2.Text = dataGridView.Rows[rowIndex].Cells[26].Value.ToString();
+                    tbManhattan2.Text = dataGridView.Rows[rowIndex].Cells[27].Value.ToString();
+                    tbTwisted2.Text = dataGridView.Rows[rowIndex].Cells[28].Value.ToString();
+                    tbEtcError2.Text = dataGridView.Rows[rowIndex].Cells[29].Value.ToString(); //기타
+                    tbContents2.Text = dataGridView.Rows[rowIndex].Cells[30].Value.ToString();
+                    cbMan2.SelectedValue = dataGridView.Rows[rowIndex].Cells[31].Value.ToString();
+                    gpAOI2.Visible = true;
+                    gpResult2.Visible = true;
+                    BtPrint2.Visible = true;
+                    lblPrint2.Visible = true;
+                }
+            }
+            catch (System.NullReferenceException)
+            {
+                return;
+            }
+        }
+        public void SettingValues3(DataGridView dataGridView, int rowIndex)
+        {
+            try
+            {
+                //필수
+                tbProd3.Text = dataGridView.Rows[rowIndex].Cells[8].Value.ToString();
+                tbJobNo3.Text = dataGridView.Rows[rowIndex].Cells[0].Value.ToString();
+                tbCust3.Text = dataGridView.Rows[rowIndex].Cells[6].Value.ToString(); //업체명
+                tbMakeQty3.Text = dataGridView.Rows[rowIndex].Cells[12].Value.ToString();
+                //저장된 후 
+                if (dataGridView.Rows[rowIndex].Cells[17].Value.ToString() == "1라인" || dataGridView.Rows[rowIndex].Cells[17].Value.ToString() == "2라인" || dataGridView.Rows[rowIndex].Cells[17].Value.ToString() == "육안검사")
+                {
+                    mstbStarttime3.Text = dataGridView.Rows[rowIndex].Cells[14].Value.ToString();
+                    mstbEndtime3.Text = dataGridView.Rows[rowIndex].Cells[15].Value.ToString(); //검사종료시간 insp_end_time
+                    mstbIngtime_3.Text = dataGridView.Rows[rowIndex].Cells[16].Value.ToString(); //경과시간 insp_ing_time
+                    cbWorkline3.Text = dataGridView.Rows[rowIndex].Cells[17].Value.ToString();
+                    tbDefectCount3.Text = dataGridView.Rows[rowIndex].Cells[18].Value.ToString();
+                    tbSonap3.Text = dataGridView.Rows[rowIndex].Cells[19].Value.ToString();
+                    tbnengttem3.Text = dataGridView.Rows[rowIndex].Cells[20].Value.ToString();
+                    tbMiSap3.Text = dataGridView.Rows[rowIndex].Cells[21].Value.ToString();
+                    tbOverTurned3.Text = dataGridView.Rows[rowIndex].Cells[22].Value.ToString();
+                    tbLeadOpen3.Text = dataGridView.Rows[rowIndex].Cells[23].Value.ToString();
+                    tbMiNap3.Text = dataGridView.Rows[rowIndex].Cells[24].Value.ToString();
+                    tbShort3.Text = dataGridView.Rows[rowIndex].Cells[25].Value.ToString();
+                    tbReverse3.Text = dataGridView.Rows[rowIndex].Cells[26].Value.ToString();
+                    tbManhattan3.Text = dataGridView.Rows[rowIndex].Cells[27].Value.ToString();
+                    tbTwisted3.Text = dataGridView.Rows[rowIndex].Cells[28].Value.ToString();
+                    tbEtcError3.Text = dataGridView.Rows[rowIndex].Cells[29].Value.ToString(); //기타
+                    tbContents3.Text = dataGridView.Rows[rowIndex].Cells[30].Value.ToString();
+                    cbMan3.SelectedValue = dataGridView.Rows[rowIndex].Cells[31].Value.ToString();
+                    gpAOI3.Visible = true;
+                    gpResult3.Visible = true;
+                    BtPrint3.Visible = true;
+                    lblPrint3.Visible = true;
+                }
+            }
+            catch (System.NullReferenceException)
+            {
+                return;
+            }
+        }
 
         #region Condition Bar Events1 
         private void userButtonA1_Click(object sender, EventArgs e) // 날짜변경
@@ -238,6 +423,18 @@ namespace SmartMES_Giroei
             tbSeq.Visible = false;
             TabControl1.Visible = true;
             TabControl1.Enabled = true;
+            SettingValues2(dgv, rowIndex);
+            lbMsg2.Text = "";
+            cbWorkline2.Enabled = true;
+            cbMan2.Enabled = true;
+            lblSeq2.Visible = false;
+            tbSeq2.Visible = false;
+            SettingValues3(dgv, rowIndex);
+            lbMsg3.Text = "";
+            cbWorkline3.Enabled = true;
+            cbMan3.Enabled = true;
+            lblSeq3.Visible = false;
+            tbSeq3.Visible = false;
 
             if (dataGridView1.Rows[rowIndex].Cells[17].Value.ToString() == "1라인" || dataGridView1.Rows[rowIndex].Cells[17].Value.ToString() == "2라인" || dataGridView1.Rows[rowIndex].Cells[17].Value.ToString() == "육안검사")
             {
@@ -249,6 +446,14 @@ namespace SmartMES_Giroei
                 gpAOI.Visible = false;
                 lblPrint.Visible = false;
                 BtPrint.Visible = false;
+                gpResult2.Visible = false;
+                gpAOI2.Visible = false;
+                lblPrint2.Visible = false;
+                BtPrint2.Visible = false;
+                gpResult3.Visible = false;
+                gpAOI3.Visible = false;
+                lblPrint3.Visible = false;
+                BtPrint3.Visible = false;
 
                 //탭페이지 초기화
                 tbDefectCount.Text = "0";
@@ -275,21 +480,21 @@ namespace SmartMES_Giroei
             ListSearch2();
             //set_production_result();
         }
-        public byte[] get_file_data(string fname, string job_no)
-        {
-            byte[] rawdata = new byte[0];
-            string sql = "select file1 from QLT_inspection_AOI where job_no = '" + job_no + "' and file1_name = '" + fname + "'";
-            MySqlConnection con = new MySqlConnection(G.conStr);
-            MySqlCommand cmd = new MySqlCommand(sql, con);
-            con.Open();
-            MySqlDataReader rdr = cmd.ExecuteReader();
-            while (rdr.Read())
-            {
-                rawdata = (byte[])rdr[0];
-            }
-            con.Close();
-            return rawdata;
-        }
+        //public byte[] get_file_data(string fname, string job_no)
+        //{
+        //    byte[] rawdata = new byte[0];
+        //    string sql = "select file1 from QLT_inspection_AOI where job_no = '" + job_no + "' and file1_name = '" + fname + "'";
+        //    MySqlConnection con = new MySqlConnection(G.conStr);
+        //    MySqlCommand cmd = new MySqlCommand(sql, con);
+        //    con.Open();
+        //    MySqlDataReader rdr = cmd.ExecuteReader();
+        //    while (rdr.Read())
+        //    {
+        //        rawdata = (byte[])rdr[0];
+        //    }
+        //    con.Close();
+        //    return rawdata;
+        //}
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             //if (G.Authority == "D") return;
@@ -431,6 +636,194 @@ namespace SmartMES_Giroei
             lbMsg.Text = "저장되었습니다.";
             ListSearch();
         }
+
+        private void pbSave2_Click(object sender, EventArgs e)
+        {
+            lbMsg2.Text = "";
+
+            if (string.IsNullOrEmpty(tbJobNo2.Text)) // tbJobNo.Text
+            {
+                lbMsg2.Text = "검사리스트가 선택되지 않았습니다.";
+                return;
+            }
+            if (string.IsNullOrEmpty(mstbEndtime2.Text))
+            {
+                lbMsg2.Text = "작업이 종료되어야 저장할 수 있습니다.";
+                return;
+            }
+
+            string sJob2 = tbJobNo2.Text; // 작지번호
+            string sInspCount2 = tbMakeQty2.Text; //검사수량
+            string sTotalDefect2 = tbDefectCount2.Text; //총불량수
+            string sContents2 = tbContents2.Text; //상세결과
+            string sMan2 = cbMan2.SelectedValue.ToString(); //검사자
+            string sWorklineName2 = cbWorkline2.Text.ToString(); //작업라인이름
+            string sWorkline2 = cbWorkline2.SelectedValue.ToString();//작업라인코드
+            string sSonap2 = tbSonap2.Text;
+            string sNengttem2 = tbnengttem2.Text;
+            string sMisap2 = tbMiSap2.Text;
+            string sOverturned2 = tbOverTurned2.Text;
+            string sLeadopen2 = tbLeadOpen2.Text;
+            string sMinap2 = tbMiNap2.Text;
+            string sShort2 = tbShort2.Text;
+            string sReverse2 = tbReverse2.Text;
+            string sManhattan2 = tbManhattan2.Text;
+            string sTwisted2 = tbTwisted2.Text;
+            string sEtcerror2 = tbEtcError2.Text;
+
+            //string sFname1 = lbFname1.Text;
+            //string sFname2 = lbFname2.Text;
+
+            string sInspFromTime2 = DateTime.Parse(mstbStarttime2.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사시작시간 insp_start_time 
+            string sInspToTime2 = DateTime.Parse(mstbEndtime2.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사종료시간 insp_end_time
+            string sInspIngTime2 = DateTime.Parse(mstbIngtime_2.Text).ToString("HH:mm:ss"); //경과시간 insp_ing_time
+
+            string sql = string.Empty;
+
+            string fname1 = string.Empty;
+            string fname2 = string.Empty;
+            byte[] rawdata1 = new byte[0];
+            byte[] rawdata2 = new byte[0];
+
+            MySqlConnection con = new MySqlConnection(G.conStr);
+            MySqlCommand cmd = new MySqlCommand();
+            con.Open();
+
+            sql = "insert into QLT_inspection_AOI (job_no, insp_start_time, insp_end_time, insp_ing_time, insp_qty, defect_count, sonap, nengttem, misap, overturned, leadopen, minap, short, reverse, manhattan, twisted, etc_error, contents, worklinename, workline, enter_man)" +
+                    " values('" + sJob2 + "','" + sInspFromTime2 + "','" + sInspToTime2 + "','" + sInspIngTime2 + "'," + sInspCount2 + "," + sTotalDefect2 + "," + sSonap2 + "," + sNengttem2 + "," + sMisap2 + "," + sOverturned2 + "," + sLeadopen2 + "," + sMinap2 + "," + sShort2 + "," + sReverse2 + "," +
+                        sManhattan2 + "," + sTwisted2 + "," + sEtcerror2 + ",'" + sContents2 + "','" + sWorklineName2 + "','" + sWorkline2 + "','" + sMan2 + "')"
+                        + " on duplicate key update" + " insp_start_time = '" + sInspFromTime2 + "', insp_end_time = '" + sInspToTime2 + "', insp_ing_time = '" + sInspIngTime2 + "',"
+                        + " insp_qty = " + sInspCount2 + ", defect_count = " + sTotalDefect2 + ", sonap = " + sSonap2 + ", nengttem = " + sNengttem2
+                        + ", misap = " + sMisap2 + ", overturned = " + sOverturned2 + ", leadopen = " + sLeadopen2 + ", minap = " + sMinap2 + ", short = " + sShort2 + ", reverse = " + sReverse2
+                        + ", manhattan = " + sManhattan2 + ", twisted = " + sTwisted2 + ", etc_error = " + sEtcerror2
+                        + ", contents = '" + sContents2 + "', worklinename ='" + sWorklineName2 + "', workline ='" + sWorkline2 + "', enter_man = '" + sMan2 + "'";
+
+            cmd.Connection = con;
+            cmd.CommandText = sql;
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            //탭페이지 초기화
+            tbJobNo2.Text = "";
+            tbMakeQty2.Text = "";
+            tbDefectCount2.Text = "0";
+            tbContents2.Text = "";
+            tbSonap2.Text = "0";
+            tbnengttem2.Text = "0";
+            tbMiSap2.Text = "0";
+            tbOverTurned2.Text = "0";
+            tbLeadOpen2.Text = "0";
+            tbMiNap2.Text = "0";
+            tbShort2.Text = "0";
+            tbReverse2.Text = "0";
+            tbManhattan2.Text = "0";
+            tbTwisted2.Text = "0";
+            tbEtcError2.Text = "0";
+            mstbStarttime2.Text = "";
+            mstbEndtime2.Text = "";
+            mstbIngtime_2.Text = "";
+            mstbPausetime2.Text = "";
+            mstbContinuetime2.Text = "";
+            mstbIngtime2_2.Text = "";
+            tbSeq2.Text = "0";
+            lbMsg2.Text = "저장되었습니다.";
+            ListSearch();
+        }
+
+        private void pbSave3_Click(object sender, EventArgs e)
+        {
+            lbMsg3.Text = "";
+
+            if (string.IsNullOrEmpty(tbJobNo3.Text)) // tbJobNo.Text
+            {
+                lbMsg3.Text = "검사리스트가 선택되지 않았습니다.";
+                return;
+            }
+            if (string.IsNullOrEmpty(mstbEndtime3.Text))
+            {
+                lbMsg3.Text = "작업이 종료되어야 저장할 수 있습니다.";
+                return;
+            }
+
+            string sJob3 = tbJobNo3.Text; // 작지번호
+            string sInspCount3 = tbMakeQty3.Text; //검사수량
+            string sTotalDefect3 = tbDefectCount3.Text; //총불량수
+            string sContents3 = tbContents3.Text; //상세결과
+            string sMan3 = cbMan3.SelectedValue.ToString(); //검사자
+            string sWorklineName3 = cbWorkline3.Text.ToString(); //작업라인이름
+            string sWorkline3 = cbWorkline3.SelectedValue.ToString();//작업라인코드
+            string sSonap3 = tbSonap3.Text;
+            string sNengttem3 = tbnengttem3.Text;
+            string sMisap3 = tbMiSap3.Text;
+            string sOverturned3 = tbOverTurned3.Text;
+            string sLeadopen3 = tbLeadOpen3.Text;
+            string sMinap3 = tbMiNap3.Text;
+            string sShort3 = tbShort3.Text;
+            string sReverse3 = tbReverse3.Text;
+            string sManhattan3 = tbManhattan3.Text;
+            string sTwisted3 = tbTwisted3.Text;
+            string sEtcerror3 = tbEtcError3.Text;
+
+            //string sFname1 = lbFname1.Text;
+            //string sFname2 = lbFname2.Text;
+
+            string sInspFromTime3 = DateTime.Parse(mstbStarttime3.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사시작시간 insp_start_time 
+            string sInspToTime3 = DateTime.Parse(mstbEndtime3.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사종료시간 insp_end_time
+            string sInspIngTime3 = DateTime.Parse(mstbIngtime_3.Text).ToString("HH:mm:ss"); //경과시간 insp_ing_time
+
+            string sql = string.Empty;
+
+            string fname1 = string.Empty;
+            string fname2 = string.Empty;
+            byte[] rawdata1 = new byte[0];
+            byte[] rawdata2 = new byte[0];
+
+            MySqlConnection con = new MySqlConnection(G.conStr);
+            MySqlCommand cmd = new MySqlCommand();
+            con.Open();
+
+            sql = "insert into QLT_inspection_AOI (job_no, insp_start_time, insp_end_time, insp_ing_time, insp_qty, defect_count, sonap, nengttem, misap, overturned, leadopen, minap, short, reverse, manhattan, twisted, etc_error, contents, worklinename, workline, enter_man)" +
+                    " values('" + sJob3 + "','" + sInspFromTime3 + "','" + sInspToTime3 + "','" + sInspIngTime3 + "'," + sInspCount3 + "," + sTotalDefect3 + "," + sSonap3 + "," + sNengttem3 + "," + sMisap3 + "," + sOverturned3 + "," + sLeadopen3 + "," + sMinap3 + "," + sShort3 + "," + sReverse3 + "," +
+                        sManhattan3 + "," + sTwisted3 + "," + sEtcerror3 + ",'" + sContents3 + "','" + sWorklineName3 + "','" + sWorkline3 + "','" + sMan3 + "')"
+                        + " on duplicate key update" + " insp_start_time = '" + sInspFromTime3 + "', insp_end_time = '" + sInspToTime3 + "', insp_ing_time = '" + sInspIngTime3 + "',"
+                        + " insp_qty = " + sInspCount3 + ", defect_count = " + sTotalDefect3 + ", sonap = " + sSonap3 + ", nengttem = " + sNengttem3
+                        + ", misap = " + sMisap3 + ", overturned = " + sOverturned3 + ", leadopen = " + sLeadopen3 + ", minap = " + sMinap3 + ", short = " + sShort3 + ", reverse = " + sReverse3
+                        + ", manhattan = " + sManhattan3 + ", twisted = " + sTwisted3 + ", etc_error = " + sEtcerror3
+                        + ", contents = '" + sContents3 + "', worklinename ='" + sWorklineName3 + "', workline ='" + sWorkline3 + "', enter_man = '" + sMan3 + "'";
+
+            cmd.Connection = con;
+            cmd.CommandText = sql;
+            cmd.ExecuteNonQuery();
+
+            con.Close();
+
+            //탭페이지 초기화
+            tbJobNo3.Text = "";
+            tbMakeQty3.Text = "";
+            tbDefectCount3.Text = "0";
+            tbContents3.Text = "";
+            tbSonap3.Text = "0";
+            tbnengttem3.Text = "0";
+            tbMiSap3.Text = "0";
+            tbOverTurned3.Text = "0";
+            tbLeadOpen3.Text = "0";
+            tbMiNap3.Text = "0";
+            tbShort3.Text = "0";
+            tbReverse3.Text = "0";
+            tbManhattan3.Text = "0";
+            tbTwisted3.Text = "0";
+            tbEtcError3.Text = "0";
+            mstbStarttime3.Text = "";
+            mstbEndtime3.Text = "";
+            mstbIngtime_3.Text = "";
+            mstbPausetime3.Text = "";
+            mstbContinuetime3.Text = "";
+            mstbIngtime2_3.Text = "";
+            tbSeq3.Text = "0";
+            lbMsg3.Text = "저장되었습니다.";
+            ListSearch();
+        }
         private void pbPrint_Click(object sender, EventArgs e)
         {
             string reportFileName = "SmartMES_Giroei.Reports.P1C02_PROD_RESULT_AOI.rdlc";
@@ -476,6 +869,166 @@ namespace SmartMES_Giroei
             reportParm18 = reportParm18 + tbOverTurned.Text; //뒤집힘
             reportParm19 = reportParm19 + tbShort.Text; //쇼트
             reportParm20 = reportParm20 + tbEtcError.Text; // 기타
+
+            ViewReport_V viewReport = new ViewReport_V();
+            viewReport.reportViewer1.ProcessingMode = ProcessingMode.Local;
+            viewReport.reportViewer1.LocalReport.ReportEmbeddedResource = reportFileName;
+
+            ReportParameter rp1 = new ReportParameter("ReportParameter1", reportParm1);
+            ReportParameter rp2 = new ReportParameter("ReportParameter2", reportParm2);
+            ReportParameter rp3 = new ReportParameter("ReportParameter3", reportParm3);
+            ReportParameter rp4 = new ReportParameter("ReportParameter4", reportParm4);
+            ReportParameter rp5 = new ReportParameter("ReportParameter5", reportParm5);
+            ReportParameter rp6 = new ReportParameter("ReportParameter6", reportParm6);
+            ReportParameter rp7 = new ReportParameter("ReportParameter7", reportParm7);
+            ReportParameter rp8 = new ReportParameter("ReportParameter8", reportParm8);
+            ReportParameter rp9 = new ReportParameter("ReportParameter9", reportParm9);
+            ReportParameter rp10 = new ReportParameter("ReportParameter10", reportParm10);
+            ReportParameter rp11 = new ReportParameter("ReportParameter11", reportParm11);
+            ReportParameter rp12 = new ReportParameter("ReportParameter12", reportParm12);
+            ReportParameter rp13 = new ReportParameter("ReportParameter13", reportParm13);
+            ReportParameter rp14 = new ReportParameter("ReportParameter14", reportParm14);
+            ReportParameter rp15 = new ReportParameter("ReportParameter15", reportParm15);
+            ReportParameter rp16 = new ReportParameter("ReportParameter16", reportParm16);
+            ReportParameter rp17 = new ReportParameter("ReportParameter17", reportParm17);
+            ReportParameter rp18 = new ReportParameter("ReportParameter18", reportParm18);
+            ReportParameter rp19 = new ReportParameter("ReportParameter19", reportParm19);
+            ReportParameter rp20 = new ReportParameter("ReportParameter20", reportParm20);
+
+            viewReport.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rp1, rp2, rp3, rp4, rp5, rp6, rp7, rp8, rp9, rp10, rp11, rp12, rp13, rp14, rp15, rp16, rp17, rp18, rp19, rp20 });
+
+            ReportDataSource rds = new ReportDataSource("DataSet1", sPProdResultQueryBindingSource);
+            viewReport.reportViewer1.LocalReport.DataSources.Add(rds);
+            viewReport.reportViewer1.LocalReport.Refresh();
+
+            viewReport.ShowDialog();
+        }
+
+        private void pbPrint2_Click(object sender, EventArgs e)
+        {
+            string reportFileName = "SmartMES_Giroei.Reports.P1C02_PROD_RESULT_AOI.rdlc";
+
+            string reportParm1 = "";
+            string reportParm2 = "";
+            string reportParm3 = "";
+            string reportParm4 = "";
+            string reportParm5 = "";
+            string reportParm6 = "";
+            string reportParm7 = "";
+            string reportParm8 = "";
+            string reportParm9 = " ";
+            string reportParm10 = "";
+            string reportParm11 = "";
+            string reportParm12 = "";
+            string reportParm13 = "";
+            string reportParm14 = "";
+            string reportParm15 = "";
+            string reportParm16 = "";
+            string reportParm17 = "";
+            string reportParm18 = "";
+            string reportParm19 = "";
+            string reportParm20 = "";
+
+            reportParm1 = reportParm1 + tbJobNo2.Text; // 수주번호
+            reportParm2 = reportParm2 + tbCust2.Text; //업체명
+            reportParm3 = reportParm3 + tbProd2.Text; //모델명
+            reportParm4 = reportParm4 + cbWorkline2.Text; // 작업라인
+            reportParm5 = reportParm5 + tbMakeQty2.Text + " pcs"; //생산수
+            reportParm6 = reportParm6 + mstbEndtime2.Text; //검사일
+            reportParm7 = reportParm7 + cbMan2.Text; //검사자
+            reportParm8 = reportParm8 + tbDefectCount2.Text; //총불량수
+            reportParm9 = reportParm9 + tbContents2.Text; // 검사 특이사항 (코멘트) 
+            reportParm10 = reportParm10 + tbMiSap2.Text; //미삽
+            reportParm11 = reportParm11 + tbReverse2.Text; //역삽
+            reportParm12 = reportParm12 + tbMiNap2.Text; //미납
+            reportParm13 = reportParm13 + tbSonap2.Text;//소납
+            reportParm14 = reportParm14 + tbnengttem2.Text; //냉땜
+            reportParm15 = reportParm15 + tbTwisted2.Text; //틀어짐
+            reportParm16 = reportParm16 + tbLeadOpen2.Text; //리드뜸
+            reportParm17 = reportParm17 + tbManhattan2.Text; // 맨하탄
+            reportParm18 = reportParm18 + tbOverTurned2.Text; //뒤집힘
+            reportParm19 = reportParm19 + tbShort2.Text; //쇼트
+            reportParm20 = reportParm20 + tbEtcError2.Text; // 기타
+
+            ViewReport_V viewReport = new ViewReport_V();
+            viewReport.reportViewer1.ProcessingMode = ProcessingMode.Local;
+            viewReport.reportViewer1.LocalReport.ReportEmbeddedResource = reportFileName;
+
+            ReportParameter rp1 = new ReportParameter("ReportParameter1", reportParm1);
+            ReportParameter rp2 = new ReportParameter("ReportParameter2", reportParm2);
+            ReportParameter rp3 = new ReportParameter("ReportParameter3", reportParm3);
+            ReportParameter rp4 = new ReportParameter("ReportParameter4", reportParm4);
+            ReportParameter rp5 = new ReportParameter("ReportParameter5", reportParm5);
+            ReportParameter rp6 = new ReportParameter("ReportParameter6", reportParm6);
+            ReportParameter rp7 = new ReportParameter("ReportParameter7", reportParm7);
+            ReportParameter rp8 = new ReportParameter("ReportParameter8", reportParm8);
+            ReportParameter rp9 = new ReportParameter("ReportParameter9", reportParm9);
+            ReportParameter rp10 = new ReportParameter("ReportParameter10", reportParm10);
+            ReportParameter rp11 = new ReportParameter("ReportParameter11", reportParm11);
+            ReportParameter rp12 = new ReportParameter("ReportParameter12", reportParm12);
+            ReportParameter rp13 = new ReportParameter("ReportParameter13", reportParm13);
+            ReportParameter rp14 = new ReportParameter("ReportParameter14", reportParm14);
+            ReportParameter rp15 = new ReportParameter("ReportParameter15", reportParm15);
+            ReportParameter rp16 = new ReportParameter("ReportParameter16", reportParm16);
+            ReportParameter rp17 = new ReportParameter("ReportParameter17", reportParm17);
+            ReportParameter rp18 = new ReportParameter("ReportParameter18", reportParm18);
+            ReportParameter rp19 = new ReportParameter("ReportParameter19", reportParm19);
+            ReportParameter rp20 = new ReportParameter("ReportParameter20", reportParm20);
+
+            viewReport.reportViewer1.LocalReport.SetParameters(new ReportParameter[] { rp1, rp2, rp3, rp4, rp5, rp6, rp7, rp8, rp9, rp10, rp11, rp12, rp13, rp14, rp15, rp16, rp17, rp18, rp19, rp20 });
+
+            ReportDataSource rds = new ReportDataSource("DataSet1", sPProdResultQueryBindingSource);
+            viewReport.reportViewer1.LocalReport.DataSources.Add(rds);
+            viewReport.reportViewer1.LocalReport.Refresh();
+
+            viewReport.ShowDialog();
+        }
+
+        private void pbPrint3_Click(object sender, EventArgs e)
+        {
+            string reportFileName = "SmartMES_Giroei.Reports.P1C02_PROD_RESULT_AOI.rdlc";
+
+            string reportParm1 = "";
+            string reportParm2 = "";
+            string reportParm3 = "";
+            string reportParm4 = "";
+            string reportParm5 = "";
+            string reportParm6 = "";
+            string reportParm7 = "";
+            string reportParm8 = "";
+            string reportParm9 = " ";
+            string reportParm10 = "";
+            string reportParm11 = "";
+            string reportParm12 = "";
+            string reportParm13 = "";
+            string reportParm14 = "";
+            string reportParm15 = "";
+            string reportParm16 = "";
+            string reportParm17 = "";
+            string reportParm18 = "";
+            string reportParm19 = "";
+            string reportParm20 = "";
+
+            reportParm1 = reportParm1 + tbJobNo3.Text; // 수주번호
+            reportParm2 = reportParm2 + tbCust3.Text; //업체명
+            reportParm3 = reportParm3 + tbProd3.Text; //모델명
+            reportParm4 = reportParm4 + cbWorkline3.Text; // 작업라인
+            reportParm5 = reportParm5 + tbMakeQty3.Text + " pcs"; //생산수
+            reportParm6 = reportParm6 + mstbEndtime3.Text; //검사일
+            reportParm7 = reportParm7 + cbMan3.Text; //검사자
+            reportParm8 = reportParm8 + tbDefectCount3.Text; //총불량수
+            reportParm9 = reportParm9 + tbContents3.Text; // 검사 특이사항 (코멘트) 
+            reportParm10 = reportParm10 + tbMiSap3.Text; //미삽
+            reportParm11 = reportParm11 + tbReverse3.Text; //역삽
+            reportParm12 = reportParm12 + tbMiNap3.Text; //미납
+            reportParm13 = reportParm13 + tbSonap3.Text;//소납
+            reportParm14 = reportParm14 + tbnengttem3.Text; //냉땜
+            reportParm15 = reportParm15 + tbTwisted3.Text; //틀어짐
+            reportParm16 = reportParm16 + tbLeadOpen3.Text; //리드뜸
+            reportParm17 = reportParm17 + tbManhattan3.Text; // 맨하탄
+            reportParm18 = reportParm18 + tbOverTurned3.Text; //뒤집힘
+            reportParm19 = reportParm19 + tbShort3.Text; //쇼트
+            reportParm20 = reportParm20 + tbEtcError3.Text; // 기타
 
             ViewReport_V viewReport = new ViewReport_V();
             viewReport.reportViewer1.ProcessingMode = ProcessingMode.Local;
@@ -569,6 +1122,8 @@ namespace SmartMES_Giroei
                 {
                     gpResult.Visible = false;
                     gpAOI.Visible = false;
+                    lblPrint.Visible = false;
+                    BtPrint.Visible = false;
 
                     //탭페이지 초기화
                     tbDefectCount.Text = "0";
@@ -600,8 +1155,32 @@ namespace SmartMES_Giroei
             }
                 if (MessageBox.Show("작업하실 라인과 검사자는 " + cbWorkline1.Text + "," + cbMan.Text + "님이 맞습니까?", "검사시작", MessageBoxButtons.YesNo) == DialogResult.Yes) //작업라인 및 검사자 고정
                 {
+                    tbProd.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[8].Value.ToString();
+                    tbJobNo.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                    tbCust.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[6].Value.ToString(); //업체명
+                    tbMakeQty.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[12].Value.ToString();
                     cbWorkline1.Enabled = false;
                     cbMan.Enabled = false;
+
+                    tbDefectCount.Text = "0";
+                    tbContents.Text = "";
+                    tbSonap.Text = "0";
+                    tbnengttem.Text = "0";
+                    tbMiSap.Text = "0";
+                    tbOverTurned.Text = "0";
+                    tbLeadOpen.Text = "0";
+                    tbMiNap.Text = "0";
+                    tbShort.Text = "0";
+                    tbReverse.Text = "0";
+                    tbManhattan.Text = "0";
+                    tbTwisted.Text = "0";
+                    tbEtcError.Text = "0";
+                    mstbEndtime.ResetText();
+                    mstbIngtime.ResetText();
+                    mstbPausetime.ResetText();
+                    mstbContinuetime.ResetText();
+                    mstbIngtime2.ResetText();
+                    tbSeq.Text = "0";
                 }
                 else
                 {
@@ -618,11 +1197,19 @@ namespace SmartMES_Giroei
 
         private void btEnd_Click(object sender, EventArgs e)
         {
-            if (mstbEndtime.Text.Length > 0)
+            if (mstbStarttime.Text.Length < 0) //시작시간이 없으면
             {
-               MessageBox.Show("종료된 검사는 다시 종료 할 수 없습니다.");
+                MessageBox.Show("시작되지 않은 검사는 종료 할 수 없습니다.");
                 return;
             }
+            //if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[17].Value.ToString() == "1라인" || dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[17].Value.ToString() == "2라인" || dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[17].Value.ToString() == "육안검사")
+            //{
+            //    if (mstbEndtime.Text.Length > 0)
+            //    {
+            //        MessageBox.Show("종료된 검사는 다시 종료 할 수 없습니다.");
+            //        return;
+            //    }
+            //}
                 if (timer4.Enabled == true)
                 {
                     MessageBox.Show("다시 시작을 누른 후 종료해주세요.");
@@ -662,6 +1249,11 @@ namespace SmartMES_Giroei
 
         private void btPause_Click(object sender, EventArgs e)
         {
+            if (mstbPausetime.Text.Length > 0) //중지시간이 있으면
+            {
+                MessageBox.Show("새로운 중지가 필요하시면, 다시 시작을 눌러주세요.");
+                return;
+            }
             if (timer3.Enabled == false)
             {
                 MessageBox.Show("검사가 끝난 제품은 중지 할 수 없습니다.");
@@ -672,6 +1264,7 @@ namespace SmartMES_Giroei
                 cbPause.Visible = true;
                 isTimeStarted = false;
 
+                mstbPausetime.ResetText();
                 timer4.Enabled = true;
                 timer4.Tick += new EventHandler(timer4_Tick);
                 mstbIngtime2.Visible = true;
@@ -828,9 +1421,666 @@ namespace SmartMES_Giroei
                 }
             }
         }
-        private void btReturn_Click(object sender, EventArgs e)
+        public void timer5_Tick(object sender, EventArgs e) // SDT...5,6,7,8
         {
+            //lbIngtime.Text = DateTime.Now.ToString("hh:MM:dd mm:ss");
 
+            // 현재시간 -- Load 시점에 설정으로 변경
+            //DateTime SDT1 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            if (isTimeStarted2 == false)
+            {
+                isTimeStarted2 = true;
+                SDT5 = DateTime.Now;
+            }
+            //비가동 시작시간
+            DateTime SDT6 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")); // DateTime.Parse(dtpDate.Value.ToString("yyyy-MM-dd HH:mm:ss")); 
+
+            //시간 차이 구함
+            TimeSpan gapTime = SDT5 - SDT6;
+
+            mstbStarttime2.Text = SDT5.ToString();
+            mstbEndtime2.Text = SDT6.ToString();
+            mstbIngtime_2.Text = gapTime.ToString();
+        }
+
+        private void btStart2_Click(object sender, EventArgs e)
+        {
+            // 시작 버튼
+            if (mstbEndtime2.Text.Length > 0)
+            {
+                if (MessageBox.Show("다른 검사를 진행하시겠습니까?", "라인검사", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    gpResult2.Visible = false;
+                    gpAOI2.Visible = false;
+                    lblPrint2.Visible = false;
+                    BtPrint2.Visible = false;
+
+                    //탭페이지 초기화
+                    tbDefectCount2.Text = "0";
+                    tbContents2.Text = "";
+                    tbSonap2.Text = "0";
+                    tbnengttem2.Text = "0";
+                    tbMiSap2.Text = "0";
+                    tbOverTurned2.Text = "0";
+                    tbLeadOpen2.Text = "0";
+                    tbMiNap2.Text = "0";
+                    tbShort2.Text = "0";
+                    tbReverse2.Text = "0";
+                    tbManhattan2.Text = "0";
+                    tbTwisted2.Text = "0";
+                    tbEtcError2.Text = "0";
+                    mstbStarttime2.ResetText();
+                    mstbEndtime2.ResetText();
+                    mstbIngtime2.ResetText();
+                    mstbPausetime2.ResetText();
+                    mstbContinuetime2.ResetText();
+                    mstbIngtime2_2.ResetText();
+                    tbSeq2.Text = "0";
+                    return;
+                }
+                else
+                {
+                    return;
+                }
+            }
+            if (MessageBox.Show("작업하실 라인과 검사자는 " + cbWorkline2.Text + "," + cbMan2.Text + "님이 맞습니까?", "검사시작", MessageBoxButtons.YesNo) == DialogResult.Yes) //작업라인 및 검사자 고정
+            {
+                tbProd2.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[8].Value.ToString();
+                tbJobNo2.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                tbCust2.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[6].Value.ToString(); //업체명
+                tbMakeQty2.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[12].Value.ToString();
+                cbWorkline2.Enabled = false;
+                cbMan2.Enabled = false;
+
+                tbDefectCount2.Text = "0";
+                tbContents2.Text = "";
+                tbSonap2.Text = "0";
+                tbnengttem2.Text = "0";
+                tbMiSap2.Text = "0";
+                tbOverTurned2.Text = "0";
+                tbLeadOpen2.Text = "0";
+                tbMiNap2.Text = "0";
+                tbShort2.Text = "0";
+                tbReverse2.Text = "0";
+                tbManhattan2.Text = "0";
+                tbTwisted2.Text = "0";
+                tbEtcError2.Text = "0";
+                mstbEndtime2.ResetText();
+                mstbIngtime2.ResetText();
+                mstbPausetime2.ResetText();
+                mstbContinuetime2.ResetText();
+                mstbIngtime2_2.ResetText();
+                tbSeq2.Text = "0";
+            }
+            else
+            {
+                return;
+            }
+
+            timer5.Enabled = true;
+            timer5.Tick += new EventHandler(timer5_Tick);
+            mstbIngtime_2.Visible = true;
+            lblmstbIngtime_2.Visible = true;
+            gpResult2.Visible = false;
+            gpAOI2.Visible = false;
+        }
+
+        private void btEnd2_Click(object sender, EventArgs e)
+        {
+            if (mstbStarttime2.Text.Length < 0) //시작시간이 없으면
+            {
+                MessageBox.Show("시작되지 않은 검사는 종료 할 수 없습니다.");
+                return;
+            }
+            //if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[17].Value.ToString() == "1라인" || dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[17].Value.ToString() == "2라인" || dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[17].Value.ToString() == "육안검사")
+            //{
+            //    if (mstbEndtime.Text.Length > 0)
+            //    {
+            //        MessageBox.Show("종료된 검사는 다시 종료 할 수 없습니다.");
+            //        return;
+            //    }
+            //}
+            if (timer6.Enabled == true)
+            {
+                MessageBox.Show("다시 시작을 누른 후 종료해주세요.");
+            }
+            else
+            {
+                // 멈춤 버튼
+                isTimeStarted2 = false;
+                timer5.Enabled = false;
+                gpResult2.Visible = true;
+                gpAOI2.Visible = true;
+                BtPrint2.Visible = true;
+                lblPrint2.Visible = true;
+            }
+        }
+        public void timer6_Tick(object sender, EventArgs e) // SDT...5,6,7,8
+        {
+            //lbIngtime.Text = DateTime.Now.ToString("hh:MM:dd mm:ss");
+
+            // 현재시간 -- Load 시점에 설정으로 변경
+            //DateTime SDT1 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            if (isTimeStarted2 == false)
+            {
+                isTimeStarted2 = true;
+                SDT7 = DateTime.Now;
+            }
+            //비가동 시작시간
+            DateTime SDT8 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")); // DateTime.Parse(dtpDate.Value.ToString("yyyy-MM-dd HH:mm:ss")); 
+
+            //시간 차이 구함
+            TimeSpan gapTime = SDT7 - SDT8;
+
+            mstbPausetime.Text = SDT7.ToString();
+            mstbContinuetime.Text = SDT8.ToString();
+            mstbIngtime2.Text = gapTime.ToString();
+        }
+
+        private void btPause2_Click(object sender, EventArgs e)
+        {
+            if (mstbPausetime2.Text.Length > 0) //중지시간이 있으면
+            {
+                MessageBox.Show("새로운 중지가 필요하시면, 다시 시작을 눌러주세요.");
+                return;
+            }
+            if (timer5.Enabled == false)
+            {
+                MessageBox.Show("검사가 끝난 제품은 중지 할 수 없습니다.");
+            }
+            else
+            {
+                lbPause2.Visible = true;
+                cbPause2.Visible = true;
+                isTimeStarted2 = false;
+
+                mstbPausetime2.ResetText();
+                timer6.Enabled = true;
+                timer6.Tick += new EventHandler(timer6_Tick);
+                mstbIngtime2_2.Visible = true;
+                lblmstbIngtime2_2.Visible = true;
+            }
+        }
+
+        private void btContinue2_Click(object sender, EventArgs e)
+        {
+            if (timer6.Enabled == false)
+            {
+                MessageBox.Show("중지상태가 아니면 다시시작을 할 수 없습니다..");
+            }
+            else
+            {
+                int sSeq2 = 0;
+                string sJob2 = tbJobNo2.Text; // 작지번호
+                string sPause2 = cbPause2.SelectedValue.ToString();
+                string sWorklineName2 = cbWorkline2.Text.ToString(); //작업라인이름
+                string sWorkline2 = cbWorkline2.SelectedValue.ToString();//작업라인코드
+                string sPausetime2 = DateTime.Parse(mstbPausetime2.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사시작시간 insp_start_time 
+                string sContinuetime2 = DateTime.Parse(mstbContinuetime2.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사종료시간 insp_end_time
+                string sInspIngTime2_2 = DateTime.Parse(mstbIngtime2_2.Text).ToString("HH:mm:ss"); //경과시간 insp_ing_time
+                string sInspCount2 = tbMakeQty2.Text; //검사수량
+                string sTotalDefect2 = tbDefectCount2.Text; //총불량수
+                string sContents2 = tbContents2.Text; //상세결과
+                string sMan2 = cbMan2.SelectedValue.ToString(); //검사자
+                string sSonap2 = tbSonap2.Text;
+                string sNengttem2 = tbnengttem2.Text;
+                string sMisap2 = tbMiSap2.Text;
+                string sOverturned2 = tbOverTurned2.Text;
+                string sLeadopen2 = tbLeadOpen2.Text;
+                string sMinap2 = tbMiNap2.Text;
+                string sShort2 = tbShort2.Text;
+                string sReverse2 = tbReverse2.Text;
+                string sManhattan2 = tbManhattan2.Text;
+                string sTwisted2 = tbTwisted2.Text;
+                string sEtcerror2 = tbEtcError2.Text;
+
+                //string sFname1 = lbFname1.Text;
+                //string sFname2 = lbFname2.Text;
+
+                string sInspFromTime2 = DateTime.Parse(mstbStarttime2.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사시작시간 insp_start_time 
+                string sInspToTime2 = DateTime.Parse(mstbEndtime2.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사종료시간 insp_end_time
+                string sInspIngTime2 = DateTime.Parse(mstbIngtime2.Text).ToString("HH:mm:ss"); //경과시간 insp_ing_time
+
+                string sql = string.Empty;
+
+                string fname1 = string.Empty;
+                string fname2 = string.Empty;
+                byte[] rawdata1 = new byte[0];
+                byte[] rawdata2 = new byte[0];
+
+                if (sWorklineName2 == "1라인")
+                {
+                    if (dataGridView2.RowCount > 0) //로스 테이블에 카운트가 있을 경우 카운트+1로 Seq를 증가시킴.
+                    {
+                        int SeqCount = dataGridView2.RowCount;
+                        sSeq2 = SeqCount + 1;
+                    }
+                    else
+                    {
+                        sSeq2 = 0;
+                        sSeq2 = sSeq2 + 1;
+                    }
+                }
+                if (sWorklineName2 == "2라인")
+                {
+                    if (dataGridView3.RowCount > 0) //로스 테이블에 카운트가 있을 경우 카운트+1로 Seq를 증가시킴.
+                    {
+                        int SeqCount = dataGridView3.RowCount;
+                        sSeq2 = SeqCount + 1;
+                    }
+                    else
+                    {
+                        sSeq2 = 0;
+                        sSeq2 = sSeq2 + 1;
+                    }
+                }
+                if (sWorklineName2 == "육안검사")
+                {
+                    if (dataGridView4.RowCount > 0) //로스 테이블에 카운트가 있을 경우 카운트+1로 Seq를 증가시킴.
+                    {
+                        int SeqCount = dataGridView4.RowCount;
+                        sSeq2 = SeqCount + 1;
+                    }
+                    else
+                    {
+                        sSeq2 = 0;
+                        sSeq2 = sSeq2 + 1;
+                    }
+                }
+                tbSeq2.Text = sSeq2.ToString();
+                sql = string.Empty;
+
+                MySqlConnection con = new MySqlConnection(G.conStr);
+                MySqlCommand cmd = new MySqlCommand();
+                con.Open();
+
+                if (MessageBox.Show("선택하신 중지사유는 " + cbPause2.Text + " 입니다.", "중지사유", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    lbMsg.Text = "";
+
+                    if (string.IsNullOrEmpty(tbJobNo.Text)) // tbJobNo.Text
+                    {
+                        lbMsg2.Text = "검사리스트가 선택되지 않았습니다.";
+                        return;
+                    }
+                    if (string.IsNullOrEmpty(mstbEndtime.Text))
+                    {
+                        lbMsg2.Text = "작업이 종료되어야 저장할 수 있습니다.";
+                        return;
+                    }
+
+                    con = new MySqlConnection(G.conStr);
+                    cmd = new MySqlCommand();
+                    con.Open();
+
+                    sql = "insert into QLT_inspection_AOI (job_no, insp_start_time, insp_end_time, insp_ing_time, insp_qty, defect_count, sonap, nengttem, misap, overturned, leadopen, minap, short, reverse, manhattan, twisted, etc_error, contents, worklinename, workline, enter_man)" +
+                            " values('" + sJob2 + "','" + sInspFromTime2 + "','" + sInspToTime2 + "','" + sInspIngTime2 + "'," + sInspCount2 + "," + sTotalDefect2 + "," + sSonap2 + "," + sNengttem2 + "," + sMisap2 + "," + sOverturned2 + "," + sLeadopen2 + "," + sMinap2 + "," + sShort2 + "," + sReverse2 + "," +
+                                sManhattan2 + "," + sTwisted2 + "," + sEtcerror2 + ",'" + sContents2 + "','" + sWorklineName2 + "','" + sWorkline2 + "','" + sMan2 + "')"
+                                + " on duplicate key update" + " insp_start_time = '" + sInspFromTime2 + "', insp_end_time = '" + sInspToTime2 + "', insp_ing_time = '" + sInspIngTime2 + "',"
+                                + " insp_qty = " + sInspCount2 + ", defect_count = " + sTotalDefect2 + ", sonap = " + sSonap2 + ", nengttem = " + sNengttem2
+                                + ", misap = " + sMisap2 + ", overturned = " + sOverturned2 + ", leadopen = " + sLeadopen2 + ", minap = " + sMinap2 + ", short = " + sShort2 + ", reverse = " + sReverse2
+                                + ", manhattan = " + sManhattan2 + ", twisted = " + sTwisted2 + ", etc_error = " + sEtcerror2
+                                + ", contents = '" + sContents2 + "', worklinename ='" + sWorklineName2 + "', workline ='" + sWorkline2 + "', enter_man = '" + sMan2 + "'";
+
+                    cmd.Connection = con;
+                    cmd.CommandText = sql;
+                    cmd.ExecuteNonQuery();
+
+                    con.Close();
+
+                    con.Open();
+
+                    sql = "insert into QLT_inspection_AOI_Loss (job_no, seq, workline, worklinename, start_time, end_time, ing_time, reason_code, enter_dt)" +
+                        " values('" + sJob2 + "','" + sSeq2 + "','" + sWorkline2 + "','" + sWorklineName2 + "','" + sPausetime2 + "','" + sContinuetime2 + "','" + sInspIngTime2_2 + "','" + sPause2 + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "')";
+
+                    cmd.Connection = con;
+                    cmd.CommandText = sql;
+                    cmd.ExecuteNonQuery();
+
+                    con.Close();
+
+                    lbMsg2.Text = "저장되었습니다.";
+                    timer6.Enabled = false;
+                    lbPause2.Visible = false;
+                    cbPause2.Visible = false;
+                    lblmstbIngtime2_2.Visible = false;
+                    mstbIngtime2_2.Visible = false;
+                    lblSeq2.Visible = true;
+                    tbSeq2.Visible = true;
+                    ListSearch2();
+                }
+            }
+        }
+
+        public void timer7_Tick(object sender, EventArgs e) //SDT...9,10,11,12
+        {
+            //lbIngtime.Text = DateTime.Now.ToString("hh:MM:dd mm:ss");
+
+            // 현재시간 -- Load 시점에 설정으로 변경
+            //DateTime SDT1 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            if (isTimeStarted3 == false)
+            {
+                isTimeStarted3 = true;
+                SDT9 = DateTime.Now;
+            }
+            //비가동 시작시간
+            DateTime SDT10 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")); // DateTime.Parse(dtpDate.Value.ToString("yyyy-MM-dd HH:mm:ss")); 
+
+            //시간 차이 구함
+            TimeSpan gapTime = SDT9 - SDT10;
+
+            mstbStarttime3.Text = SDT9.ToString();
+            mstbEndtime3.Text = SDT10.ToString();
+            mstbIngtime_3.Text = gapTime.ToString();
+        }
+
+        private void btStart3_Click(object sender, EventArgs e)
+        {
+            // 시작 버튼
+            if (mstbEndtime3.Text.Length > 0)
+            {
+                if (MessageBox.Show("다른 검사를 진행하시겠습니까?", "라인검사", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    gpResult3.Visible = false;
+                    gpAOI3.Visible = false;
+                    lblPrint3.Visible = false;
+                    BtPrint3.Visible = false;
+
+                    //탭페이지 초기화
+                    tbDefectCount3.Text = "0";
+                    tbContents3.Text = "";
+                    tbSonap3.Text = "0";
+                    tbnengttem3.Text = "0";
+                    tbMiSap3.Text = "0";
+                    tbOverTurned3.Text = "0";
+                    tbLeadOpen3.Text = "0";
+                    tbMiNap3.Text = "0";
+                    tbShort3.Text = "0";
+                    tbReverse3.Text = "0";
+                    tbManhattan3.Text = "0";
+                    tbTwisted3.Text = "0";
+                    tbEtcError3.Text = "0";
+                    mstbStarttime3.ResetText();
+                    mstbEndtime3.ResetText();
+                    mstbIngtime_3.ResetText();
+                    mstbPausetime3.ResetText();
+                    mstbContinuetime3.ResetText();
+                    mstbIngtime_3.ResetText();
+                    tbSeq3.Text = "0";
+                    return;
+                }
+                else
+                {
+                    return;
+                }
+            }
+            if (MessageBox.Show("작업하실 라인과 검사자는 " + cbWorkline3.Text + "," + cbMan3.Text + "님이 맞습니까?", "검사시작", MessageBoxButtons.YesNo) == DialogResult.Yes) //작업라인 및 검사자 고정
+            {
+                tbProd3.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[8].Value.ToString();
+                tbJobNo3.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[0].Value.ToString();
+                tbCust3.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[6].Value.ToString(); //업체명
+                tbMakeQty3.Text = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[12].Value.ToString();
+                cbWorkline3.Enabled = false;
+                cbMan3.Enabled = false;
+
+                tbDefectCount3.Text = "0";
+                tbContents3.Text = "";
+                tbSonap3.Text = "0";
+                tbnengttem3.Text = "0";
+                tbMiSap3.Text = "0";
+                tbOverTurned3.Text = "0";
+                tbLeadOpen3.Text = "0";
+                tbMiNap3.Text = "0";
+                tbShort3.Text = "0";
+                tbReverse3.Text = "0";
+                tbManhattan3.Text = "0";
+                tbTwisted3.Text = "0";
+                tbEtcError3.Text = "0";
+                mstbEndtime3.ResetText();
+                mstbIngtime_3.ResetText();
+                mstbPausetime3.ResetText();
+                mstbContinuetime3.ResetText();
+                mstbIngtime2_3.ResetText();
+                tbSeq3.Text = "0";
+            }
+            else
+            {
+                return;
+            }
+
+            timer7.Enabled = true;
+            timer7.Tick += new EventHandler(timer7_Tick);
+            mstbIngtime_3.Visible = true;
+            lblmstbIngtime_3.Visible = true;
+            gpResult3.Visible = false;
+            gpAOI3.Visible = false;
+        }
+
+        private void btEnd3_Click(object sender, EventArgs e)
+        {
+            if (mstbStarttime3.Text.Length < 0) //시작시간이 없으면
+            {
+                MessageBox.Show("시작되지 않은 검사는 종료 할 수 없습니다.");
+                return;
+            }
+            //if (dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[17].Value.ToString() == "1라인" || dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[17].Value.ToString() == "2라인" || dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[17].Value.ToString() == "육안검사")
+            //{
+            //    if (mstbEndtime.Text.Length > 0)
+            //    {
+            //        MessageBox.Show("종료된 검사는 다시 종료 할 수 없습니다.");
+            //        return;
+            //    }
+            //}
+            if (timer8.Enabled == true)
+            {
+                MessageBox.Show("다시 시작을 누른 후 종료해주세요.");
+            }
+            else
+            {
+                // 멈춤 버튼
+                isTimeStarted3 = false;
+                timer7.Enabled = false;
+                gpResult3.Visible = true;
+                gpAOI3.Visible = true;
+                BtPrint3.Visible = true;
+                lblPrint3.Visible = true;
+            }
+        }
+        public void timer8_Tick(object sender, EventArgs e)
+        {
+            //lbIngtime.Text = DateTime.Now.ToString("hh:MM:dd mm:ss");
+
+            // 현재시간 -- Load 시점에 설정으로 변경
+            //DateTime SDT1 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss"));
+            if (isTimeStarted3 == false)
+            {
+                isTimeStarted3 = true;
+                SDT11 = DateTime.Now;
+            }
+            //비가동 시작시간
+            DateTime SDT12 = DateTime.Parse(DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")); // DateTime.Parse(dtpDate.Value.ToString("yyyy-MM-dd HH:mm:ss")); 
+
+            //시간 차이 구함
+            TimeSpan gapTime = SDT11 - SDT12;
+
+            mstbPausetime3.Text = SDT11.ToString();
+            mstbContinuetime3.Text = SDT12.ToString();
+            mstbIngtime2_3.Text = gapTime.ToString();
+        }
+
+        private void btPause3_Click(object sender, EventArgs e)
+        {
+            if (mstbPausetime3.Text.Length > 0) //중지시간이 있으면
+            {
+                MessageBox.Show("새로운 중지가 필요하시면, 다시 시작을 눌러주세요.");
+                return;
+            }
+            if (timer7.Enabled == false)
+            {
+                MessageBox.Show("검사가 끝난 제품은 중지 할 수 없습니다.");
+            }
+            else
+            {
+                lbPause3.Visible = true;
+                cbPause3.Visible = true;
+                isTimeStarted3 = false;
+
+                mstbPausetime3.ResetText();
+                timer8.Enabled = true;
+                timer8.Tick += new EventHandler(timer8_Tick);
+                mstbIngtime2_3.Visible = true;
+                lblmstbIngtime2_3.Visible = true;
+            }
+        }
+
+        private void btContinue3_Click(object sender, EventArgs e)
+        {
+            if (timer8.Enabled == false)
+            {
+                MessageBox.Show("중지상태가 아니면 다시시작을 할 수 없습니다..");
+            }
+            else
+            {
+                int sSeq3 = 0;
+                string sJob3 = tbJobNo3.Text; // 작지번호
+                string sPause3 = cbPause3.SelectedValue.ToString();
+                string sWorklineName3 = cbWorkline3.Text.ToString(); //작업라인이름
+                string sWorkline3 = cbWorkline3.SelectedValue.ToString();//작업라인코드
+                string sPausetime3 = DateTime.Parse(mstbPausetime3.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사시작시간 insp_start_time 
+                string sContinuetime3 = DateTime.Parse(mstbContinuetime3.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사종료시간 insp_end_time
+                string sInspIngTime2_3 = DateTime.Parse(mstbIngtime2_3.Text).ToString("HH:mm:ss"); //경과시간 insp_ing_time
+                string sInspCount3 = tbMakeQty3.Text; //검사수량
+                string sTotalDefect3 = tbDefectCount3.Text; //총불량수
+                string sContents3 = tbContents3.Text; //상세결과
+                string sMan3 = cbMan3.SelectedValue.ToString(); //검사자
+                string sSonap3 = tbSonap3.Text;
+                string sNengttem3 = tbnengttem3.Text;
+                string sMisap3 = tbMiSap3.Text;
+                string sOverturned3 = tbOverTurned3.Text;
+                string sLeadopen3 = tbLeadOpen3.Text;
+                string sMinap3 = tbMiNap3.Text;
+                string sShort3 = tbShort3.Text;
+                string sReverse3 = tbReverse3.Text;
+                string sManhattan3 = tbManhattan3.Text;
+                string sTwisted3 = tbTwisted3.Text;
+                string sEtcerror3 = tbEtcError3.Text;
+
+                //string sFname1 = lbFname1.Text;
+                //string sFname2 = lbFname2.Text;
+
+                string sInspFromTime3 = DateTime.Parse(mstbStarttime3.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사시작시간 insp_start_time 
+                string sInspToTime3 = DateTime.Parse(mstbEndtime3.Text).ToString("yyyy-MM-dd HH:mm:ss"); //검사종료시간 insp_end_time
+                string sInspIngTime3 = DateTime.Parse(mstbIngtime_3.Text).ToString("HH:mm:ss"); //경과시간 insp_ing_time
+
+                string sql = string.Empty;
+
+                string fname1 = string.Empty;
+                string fname2 = string.Empty;
+                byte[] rawdata1 = new byte[0];
+                byte[] rawdata2 = new byte[0];
+
+                if (sWorklineName3 == "1라인")
+                {
+                    if (dataGridView2.RowCount > 0) //로스 테이블에 카운트가 있을 경우 카운트+1로 Seq를 증가시킴.
+                    {
+                        int SeqCount = dataGridView2.RowCount;
+                        sSeq3 = SeqCount + 1;
+                    }
+                    else
+                    {
+                        sSeq3 = 0;
+                        sSeq3 = sSeq3 + 1;
+                    }
+                }
+                if (sWorklineName3 == "2라인")
+                {
+                    if (dataGridView3.RowCount > 0) //로스 테이블에 카운트가 있을 경우 카운트+1로 Seq를 증가시킴.
+                    {
+                        int SeqCount = dataGridView3.RowCount;
+                        sSeq3 = SeqCount + 1;
+                    }
+                    else
+                    {
+                        sSeq3 = 0;
+                        sSeq3 = sSeq3 + 1;
+                    }
+                }
+                if (sWorklineName3 == "육안검사")
+                {
+                    if (dataGridView4.RowCount > 0) //로스 테이블에 카운트가 있을 경우 카운트+1로 Seq를 증가시킴.
+                    {
+                        int SeqCount = dataGridView4.RowCount;
+                        sSeq3 = SeqCount + 1;
+                    }
+                    else
+                    {
+                        sSeq3 = 0;
+                        sSeq3 = sSeq3 + 1;
+                    }
+                }
+                tbSeq3.Text = sSeq3.ToString();
+                sql = string.Empty;
+
+                MySqlConnection con = new MySqlConnection(G.conStr);
+                MySqlCommand cmd = new MySqlCommand();
+                con.Open();
+
+                if (MessageBox.Show("선택하신 중지사유는 " + cbPause3.Text + " 입니다.", "중지사유", MessageBoxButtons.YesNo) == DialogResult.Yes)
+                {
+                    lbMsg3.Text = "";
+
+                    if (string.IsNullOrEmpty(tbJobNo3.Text)) // tbJobNo.Text
+                    {
+                        lbMsg3.Text = "검사리스트가 선택되지 않았습니다.";
+                        return;
+                    }
+                    if (string.IsNullOrEmpty(mstbEndtime3.Text))
+                    {
+                        lbMsg3.Text = "작업이 종료되어야 저장할 수 있습니다.";
+                        return;
+                    }
+
+                    con = new MySqlConnection(G.conStr);
+                    cmd = new MySqlCommand();
+                    con.Open();
+
+                    sql = "insert into QLT_inspection_AOI (job_no, insp_start_time, insp_end_time, insp_ing_time, insp_qty, defect_count, sonap, nengttem, misap, overturned, leadopen, minap, short, reverse, manhattan, twisted, etc_error, contents, worklinename, workline, enter_man)" +
+                            " values('" + sJob3 + "','" + sInspFromTime3 + "','" + sInspToTime3 + "','" + sInspIngTime3 + "'," + sInspCount3 + "," + sTotalDefect3 + "," + sSonap3 + "," + sNengttem3 + "," + sMisap3 + "," + sOverturned3 + "," + sLeadopen3 + "," + sMinap3 + "," + sShort3 + "," + sReverse3 + "," +
+                                sManhattan3 + "," + sTwisted3 + "," + sEtcerror3 + ",'" + sContents3 + "','" + sWorklineName3 + "','" + sWorkline3 + "','" + sMan3 + "')"
+                                + " on duplicate key update" + " insp_start_time = '" + sInspFromTime3 + "', insp_end_time = '" + sInspToTime3 + "', insp_ing_time = '" + sInspIngTime3 + "',"
+                                + " insp_qty = " + sInspCount3 + ", defect_count = " + sTotalDefect3 + ", sonap = " + sSonap3 + ", nengttem = " + sNengttem3
+                                + ", misap = " + sMisap3 + ", overturned = " + sOverturned3 + ", leadopen = " + sLeadopen3 + ", minap = " + sMinap3 + ", short = " + sShort3 + ", reverse = " + sReverse3
+                                + ", manhattan = " + sManhattan3 + ", twisted = " + sTwisted3 + ", etc_error = " + sEtcerror3
+                                + ", contents = '" + sContents3 + "', worklinename ='" + sWorklineName3 + "', workline ='" + sWorkline3 + "', enter_man = '" + sMan3 + "'";
+
+                    cmd.Connection = con;
+                    cmd.CommandText = sql;
+                    cmd.ExecuteNonQuery();
+
+                    con.Close();
+
+                    con.Open();
+
+                    sql = "insert into QLT_inspection_AOI_Loss (job_no, seq, workline, worklinename, start_time, end_time, ing_time, reason_code, enter_dt)" +
+                        " values('" + sJob3 + "','" + sSeq3 + "','" + sWorkline3 + "','" + sWorklineName3 + "','" + sPausetime3 + "','" + sContinuetime3 + "','" + sInspIngTime2_3 + "','" + sPause3 + "','" + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss") + "')";
+
+                    cmd.Connection = con;
+                    cmd.CommandText = sql;
+                    cmd.ExecuteNonQuery();
+
+                    con.Close();
+
+                    lbMsg3.Text = "저장되었습니다.";
+                    timer8.Enabled = false;
+                    lbPause3.Visible = false;
+                    cbPause3.Visible = false;
+                    lblmstbIngtime2_3.Visible = false;
+                    mstbIngtime2_3.Visible = false;
+                    lblSeq3.Visible = true;
+                    tbSeq3.Visible = true;
+                    ListSearch2();
+                }
+            }
         }
         #region 검사내역 +-버튼
         private void Pbt1_Click(object sender, EventArgs e)
@@ -1193,6 +2443,734 @@ namespace SmartMES_Giroei
             {
                 l = l - 1;
                 tbDefectCount.Text = l.ToString();
+            }
+        }
+        #endregion
+        #region 검사내역 +-버튼2
+        private void Pbt1_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbTwisted2.Text);
+            i = i + 1;
+            tbTwisted2.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            l = l + 1;
+            tbDefectCount2.Text = l.ToString();
+        }
+
+        private void Mbt1_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbTwisted2.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbTwisted2.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount2.Text = l.ToString();
+            }
+        }
+
+        private void Pbt2_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbLeadOpen2.Text);
+            i = i + 1;
+            tbLeadOpen2.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            l = l + 1;
+            tbDefectCount2.Text = l.ToString();
+        }
+
+        private void Mbt2_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbLeadOpen2.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbLeadOpen2.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount2.Text = l.ToString();
+            }
+        }
+
+        private void Pbt3_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbManhattan2.Text);
+            i = i + 1;
+            tbManhattan2.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            l = l + 1;
+            tbDefectCount2.Text = l.ToString();
+        }
+
+        private void Mbt3_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbManhattan2.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbManhattan2.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount2.Text = l.ToString();
+            }
+        }
+
+        private void Pbt4_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbOverTurned2.Text);
+            i = i + 1;
+            tbOverTurned2.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            l = l + 1;
+            tbDefectCount2.Text = l.ToString();
+        }
+
+        private void Mbt4_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbOverTurned2.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbOverTurned2.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount2.Text = l.ToString();
+            }
+        }
+
+        private void Pbt5_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbShort2.Text);
+            i = i + 1;
+            tbShort2.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            l = l + 1;
+            tbDefectCount2.Text = l.ToString();
+        }
+
+        private void Mbt5_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbShort2.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbShort2.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount2.Text = l.ToString();
+            }
+        }
+
+        private void Pbt6_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbEtcError2.Text);
+            i = i + 1;
+            tbEtcError2.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            l = l + 1;
+            tbDefectCount2.Text = l.ToString();
+        }
+
+        private void Mbt6_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbEtcError2.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbEtcError2.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount2.Text = l.ToString();
+            }
+        }
+
+        private void Pbt7_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbMiSap2.Text);
+            i = i + 1;
+            tbMiSap2.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            l = l + 1;
+            tbDefectCount2.Text = l.ToString();
+        }
+
+        private void Mbt7_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbMiSap2.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbMiSap2.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount2.Text = l.ToString();
+            }
+        }
+
+        private void Pbt8_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbReverse2.Text);
+            i = i + 1;
+            tbReverse2.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            l = l + 1;
+            tbDefectCount2.Text = l.ToString();
+        }
+
+        private void Mbt8_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbReverse2.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbReverse2.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount2.Text = l.ToString();
+            }
+        }
+
+        private void Pbt9_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbMiNap2.Text);
+            i = i + 1;
+            tbMiNap2.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            l = l + 1;
+            tbDefectCount2.Text = l.ToString();
+        }
+
+        private void Mbt9_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbMiNap2.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbMiNap2.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount2.Text = l.ToString();
+            }
+        }
+
+        private void Pbt10_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbSonap2.Text);
+            i = i + 1;
+            tbSonap2.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            l = l + 1;
+            tbDefectCount2.Text = l.ToString();
+        }
+
+        private void Mbt10_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbSonap2.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbSonap2.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount2.Text = l.ToString();
+            }
+        }
+
+        private void Pbt11_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbnengttem2.Text);
+            i = i + 1;
+            tbnengttem2.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            l = l + 1;
+            tbDefectCount2.Text = l.ToString();
+        }
+
+        private void Mbt11_2_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbnengttem2.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbnengttem2.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount2.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount2.Text = l.ToString();
+            }
+        }
+        #endregion
+        #region 검사내역 +-버튼3
+        private void Pbt1_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbTwisted3.Text);
+            i = i + 1;
+            tbTwisted3.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            l = l + 1;
+            tbDefectCount3.Text = l.ToString();
+        }
+
+        private void Mbt1_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbTwisted3.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbTwisted3.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount3.Text = l.ToString();
+            }
+        }
+
+        private void Pbt2_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbLeadOpen3.Text);
+            i = i + 1;
+            tbLeadOpen3.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            l = l + 1;
+            tbDefectCount3.Text = l.ToString();
+        }
+
+        private void Mbt2_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbLeadOpen3.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbLeadOpen3.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount3.Text = l.ToString();
+            }
+        }
+
+        private void Pbt3_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbManhattan3.Text);
+            i = i + 1;
+            tbManhattan3.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            l = l + 1;
+            tbDefectCount3.Text = l.ToString();
+        }
+
+        private void Mbt3_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbManhattan3.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbManhattan3.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount3.Text = l.ToString();
+            }
+        }
+
+        private void Pbt4_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbOverTurned3.Text);
+            i = i + 1;
+            tbOverTurned3.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            l = l + 1;
+            tbDefectCount3.Text = l.ToString();
+        }
+
+        private void Mbt4_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbOverTurned3.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbOverTurned3.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount3.Text = l.ToString();
+            }
+        }
+
+        private void Pbt5_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbShort3.Text);
+            i = i + 1;
+            tbShort3.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            l = l + 1;
+            tbDefectCount3.Text = l.ToString();
+        }
+
+        private void Mbt5_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbShort3.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbShort3.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount3.Text = l.ToString();
+            }
+        }
+
+        private void Pbt6_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbEtcError3.Text);
+            i = i + 1;
+            tbEtcError3.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            l = l + 1;
+            tbDefectCount3.Text = l.ToString();
+        }
+
+        private void Mbt6_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbEtcError3.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbEtcError3.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount3.Text = l.ToString();
+            }
+        }
+
+        private void Pbt7_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbMiSap3.Text);
+            i = i + 1;
+            tbMiSap3.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            l = l + 1;
+            tbDefectCount3.Text = l.ToString();
+        }
+
+        private void Mbt7_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbMiSap3.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbMiSap3.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount3.Text = l.ToString();
+            }
+        }
+
+        private void Pbt8_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbReverse3.Text);
+            i = i + 1;
+            tbReverse3.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            l = l + 1;
+            tbDefectCount3.Text = l.ToString();
+        }
+
+        private void Mbt8_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbReverse3.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbReverse3.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount3.Text = l.ToString();
+            }
+        }
+
+        private void Pbt9_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbMiNap3.Text);
+            i = i + 1;
+            tbMiNap3.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            l = l + 1;
+            tbDefectCount3.Text = l.ToString();
+        }
+
+        private void Mbt9_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbMiNap3.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbMiNap3.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount3.Text = l.ToString();
+            }
+        }
+
+        private void Pbt10_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbSonap3.Text);
+            i = i + 1;
+            tbSonap3.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            l = l + 1;
+            tbDefectCount3.Text = l.ToString();
+        }
+
+        private void Mbt10_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbSonap3.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbSonap3.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount3.Text = l.ToString();
+            }
+        }
+
+        private void Pbt11_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbnengttem3.Text);
+            i = i + 1;
+            tbnengttem3.Text = i.ToString();
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            l = l + 1;
+            tbDefectCount3.Text = l.ToString();
+        }
+
+        private void Mbt11_3_Click(object sender, EventArgs e)
+        {
+            int i = 0;
+            i = Convert.ToInt32(tbnengttem3.Text);
+            if (i >= 1)
+            {
+                i = i - 1;
+                tbnengttem3.Text = i.ToString();
+            }
+            else return;
+
+            int l = 0;
+            l = Convert.ToInt32(tbDefectCount3.Text);
+            if (l >= 1)
+            {
+                l = l - 1;
+                tbDefectCount3.Text = l.ToString();
             }
         }
         #endregion

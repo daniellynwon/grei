@@ -13,6 +13,7 @@ namespace SmartMES_Giroei
         int columnIndex = 0;
         int rowIndex = 0;
         bool endEdit = false;
+        string sCancel = string.Empty;
 
         public P1B03_RORDER()
         {
@@ -71,6 +72,11 @@ namespace SmartMES_Giroei
                 tbEstiNo.Text = dataGridViewList.Rows[rowIndex].Cells[10].Value.ToString();
                 if (string.IsNullOrEmpty(tbEstiNo.Text)) cbIsEstimate.Checked = false;
                 else cbIsEstimate.Checked = true;
+                if (dataGridViewList.Rows[rowIndex].Cells[17].Value.ToString() == "Y")
+                {
+                    cbSuju_cancel.Checked = true;
+                }
+                else { cbSuju_cancel.Checked = false;  }
                 tbProject.Text = dataGridViewList.Rows[rowIndex].Cells[5].Value.ToString();
                 //첨부물1,2,3,4 추가
                 string sFile1 = dataGridViewList[13, rowIndex].Value.ToString();
@@ -1049,7 +1055,7 @@ namespace SmartMES_Giroei
                 }
             }
 
-            if (MessageBox.Show("상세정보를 입력하시겠습니까?", "YesOrNo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            if (MessageBox.Show("상세정보를 입력하시겠습니까?", "상세정보", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 tbNo.Text = sNo;
                 P1B03_RORDER_DETAIL rd = new P1B03_RORDER_DETAIL();
@@ -1077,7 +1083,7 @@ namespace SmartMES_Giroei
             }
 
             m.TransLogCreate(G.Authority, G.UserID, "M", this.Name, lblTitle.Text, sNo + "-" + tbCust.Text);
-            lblMsg.Text = "저장되었습니다.";
+            lblMsg.Text = "저장되었습니다. 다른 수주 등록은 추가버튼을 눌러주시고, 동일 거래처 작업은 체크 후 추가를 누르시고 등록진행 하시면됩니다.";
 
             btnDetail.Visible = true;
         }
@@ -1236,6 +1242,40 @@ namespace SmartMES_Giroei
 
                 rd.ShowDialog();
             }
+        }
+
+        private void cbSuju_cancel_Click(object sender, EventArgs e) //수주취소 체크 시 수주취소 업데이트
+        {
+            if (dataGridViewList.CurrentCell == null)
+            {
+                MessageBox.Show("수주리스트를 선택하세요.", "", MessageBoxButtons.OK);
+                return;
+            }
+            int rowIndex = dataGridViewList.CurrentCell.RowIndex;
+            if (rowIndex < 0) return;
+
+            string sNo = tbNo.Text;
+            string sql = string.Empty;
+            string msg = string.Empty;
+            if (dataGridViewList.Rows[rowIndex].Cells[17].Value.ToString() == "N")
+            {
+                string sCancel = "Y";
+                sql = $@"UPDATE SAL_order_main SET Suju_cancel = '{@sCancel}' WHERE order_id = '{@sNo}'";
+                MessageBox.Show("수주건이 취소되었습니다.", "", MessageBoxButtons.OK);
+                MariaCRUD m = new MariaCRUD();
+                m.dbCUD(sql, ref msg);
+            }
+            else if (dataGridViewList.Rows[rowIndex].Cells[17].Value.ToString() == "Y")
+            {
+                string sCancel = "N";
+                sql = $@"UPDATE SAL_order_main SET Suju_cancel = '{@sCancel}' WHERE order_id = '{@sNo}'";
+                MessageBox.Show("수주취소건이 정상 수주로 바뀌었습니다.", "", MessageBoxButtons.OK);
+                MariaCRUD m = new MariaCRUD();
+                m.dbCUD(sql, ref msg);
+            }
+            ListSearch1();
+            ListSearch3();
+            ListSearch4();
         }
     }
 }

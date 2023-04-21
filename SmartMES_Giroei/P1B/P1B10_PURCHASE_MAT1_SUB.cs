@@ -76,10 +76,10 @@ namespace SmartMES_Giroei
 
             for (int i = 0; i < dataGridView1.RowCount; i++)
             {
-                if (dataGridView1.Rows[i].Cells[6].Value != null && dataGridView1.Rows[i].Cells[6].Value.ToString() == "1")
-                {
-                    iCnt++;
-                }
+                    if (dataGridView1.Rows[i].Cells[6].Value != null && dataGridView1.Rows[i].Cells[6].Value.ToString() == "1")
+                    {
+                        iCnt++;
+                    }
             }
             if (iCnt < 1)
             {
@@ -131,24 +131,29 @@ namespace SmartMES_Giroei
         #region GridView Events
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            int CheckFlag = 1;
-            int DataCount = 0;
-
-            if (e.RowIndex < 0) return;
-            if (e.ColumnIndex != 0) return;
-
-            string sROrderNo, sModelName;
-
-            if (e.ColumnIndex == 0)
+            if (dataGridView1.Rows[e.RowIndex].Cells[10].Value.ToString() == "Y")
             {
-                sROrderNo = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
-                sModelName = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
-
-                parentWin.tbROrderNo.Text = sROrderNo;
-                parentWin.tbModelName.Text = sModelName;
-
-                this.Dispose();
+                MessageBox.Show("수주취소건은 자재발주등록이 불가능합니다.");
+                return;
             }
+                int CheckFlag = 1;
+                int DataCount = 0;
+
+                if (e.RowIndex < 0) return;
+                if (e.ColumnIndex != 0) return;
+
+                string sROrderNo, sModelName;
+
+                if (e.ColumnIndex == 0)
+                {
+                    sROrderNo = dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString();
+                    sModelName = dataGridView1.Rows[e.RowIndex].Cells[8].Value.ToString();
+
+                    parentWin.tbROrderNo.Text = sROrderNo;
+                    parentWin.tbModelName.Text = sModelName;
+
+                    this.Dispose();
+                }
 
             //if (e.ColumnIndex == 0)
             //{
@@ -266,6 +271,17 @@ namespace SmartMES_Giroei
         private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
         {
             if (dataGridView1.RowCount < 2) return;
+            for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+            {
+                if (dataGridView1.Rows[i].Cells[10].Value.ToString() == "Y") //특정값이면 배경색 바꿔주기 여기서는 수주취소 Y OR N로 판단하여 배경색 바꿈
+                    dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.PaleGoldenrod;
+
+                if (i == 0)
+                {
+                    dataGridView1.RowsDefaultCellStyle.SelectionBackColor = dataGridView1.Rows[i].DefaultCellStyle.BackColor;
+                    dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.White;
+                }
+            }
         }
         #endregion
 

@@ -103,6 +103,18 @@ namespace SmartMES_Giroei
                 dataGridView1[12, rowIndex].Value = iSum7;
                 dataGridView1[13, rowIndex].Value = iSum8;
 
+                for (int i = 0; i < dataGridView1.RowCount - 1; i++)
+                {
+                    if (dataGridView1.Rows[i].Cells[17].Value.ToString() == "Y") //특정값이면 배경색 바꿔주기 여기서는 수주취소 Y OR N로 판단하여 배경색 바꿈
+                        dataGridView1.Rows[i].DefaultCellStyle.BackColor = Color.PaleGoldenrod;
+
+                    if (i == 0)
+                    {
+                        dataGridView1.RowsDefaultCellStyle.SelectionBackColor = dataGridView1.Rows[i].DefaultCellStyle.BackColor;
+                        dataGridView1.RowsDefaultCellStyle.SelectionForeColor = Color.White;
+                    }
+                }
+
             }
             catch (NullReferenceException)
             {

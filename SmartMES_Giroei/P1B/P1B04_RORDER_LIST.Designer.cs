@@ -74,7 +74,7 @@
             this.납기DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.출하DataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column1 = new System.Windows.Forms.DataGridViewButtonColumn();
-
+            this.수주취소 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.pbPrint)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbSave)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbDel)).BeginInit();
@@ -247,7 +247,8 @@
             this.합계금액DataGridViewTextBoxColumn,
             this.납기DataGridViewTextBoxColumn,
             this.출하DataGridViewTextBoxColumn,
-            this.Column1});
+            this.Column1,
+            this.수주취소});
             this.dataGridView1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.dataGridView1.DataSource = this.sPROrderListQueryBindingSource;
             dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
@@ -469,6 +470,14 @@
             this.Column1.Name = "Column1";
             this.Column1.ReadOnly = true;
             // 
+            // 수주취소
+            // 
+            this.수주취소.DataPropertyName = "수주취소";
+            this.수주취소.HeaderText = "수주취소";
+            this.수주취소.Name = "수주취소";
+            this.수주취소.ReadOnly = true;
+            this.수주취소.Visible = false;
+            // 
             // P1B04_RORDER_LIST
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 21F);
@@ -529,5 +538,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn 납기DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn 출하DataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewButtonColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn 수주취소;
     }
 }
