@@ -19328,8 +19328,6 @@ namespace SmartMES_Giroei.P1B {
             
             private global::System.Data.DataColumn column입고일;
             
-            private global::System.Data.DataColumn column필요수량;
-            
             private global::System.Data.DataColumn column수주수량;
             
             private global::System.Data.DataColumn column총필요수량;
@@ -19353,6 +19351,8 @@ namespace SmartMES_Giroei.P1B {
             private global::System.Data.DataColumn column바코드;
             
             private global::System.Data.DataColumn column바코드Surfix;
+            
+            private global::System.Data.DataColumn column필요수량;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
@@ -19461,14 +19461,6 @@ namespace SmartMES_Giroei.P1B {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public global::System.Data.DataColumn 필요수량Column {
-                get {
-                    return this.column필요수량;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public global::System.Data.DataColumn 수주수량Column {
                 get {
                     return this.column수주수량;
@@ -19565,6 +19557,14 @@ namespace SmartMES_Giroei.P1B {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public global::System.Data.DataColumn 필요수량Column {
+                get {
+                    return this.column필요수량;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -19610,7 +19610,6 @@ namespace SmartMES_Giroei.P1B {
                         string 자재코드, 
                         string 자재명, 
                         System.DateTime 입고일, 
-                        sbyte 필요수량, 
                         int 수주수량, 
                         long 총필요수량, 
                         decimal 입고량, 
@@ -19621,7 +19620,8 @@ namespace SmartMES_Giroei.P1B {
                         string 미삽, 
                         string 비고, 
                         string 바코드, 
-                        string 바코드Surfix) {
+                        string 바코드Surfix, 
+                        int 필요수량) {
                 SP_Item_Box_SubRow rowSP_Item_Box_SubRow = ((SP_Item_Box_SubRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         수주번호,
@@ -19633,7 +19633,6 @@ namespace SmartMES_Giroei.P1B {
                         자재코드,
                         자재명,
                         입고일,
-                        필요수량,
                         수주수량,
                         총필요수량,
                         입고량,
@@ -19645,7 +19644,8 @@ namespace SmartMES_Giroei.P1B {
                         미삽,
                         비고,
                         바코드,
-                        바코드Surfix};
+                        바코드Surfix,
+                        필요수량};
                 rowSP_Item_Box_SubRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSP_Item_Box_SubRow);
                 return rowSP_Item_Box_SubRow;
@@ -19677,7 +19677,6 @@ namespace SmartMES_Giroei.P1B {
                 this.column자재코드 = base.Columns["자재코드"];
                 this.column자재명 = base.Columns["자재명"];
                 this.column입고일 = base.Columns["입고일"];
-                this.column필요수량 = base.Columns["필요수량"];
                 this.column수주수량 = base.Columns["수주수량"];
                 this.column총필요수량 = base.Columns["총필요수량"];
                 this.column입고량 = base.Columns["입고량"];
@@ -19690,6 +19689,7 @@ namespace SmartMES_Giroei.P1B {
                 this.column비고 = base.Columns["비고"];
                 this.column바코드 = base.Columns["바코드"];
                 this.column바코드Surfix = base.Columns["바코드Surfix"];
+                this.column필요수량 = base.Columns["필요수량"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -19713,8 +19713,6 @@ namespace SmartMES_Giroei.P1B {
                 base.Columns.Add(this.column자재명);
                 this.column입고일 = new global::System.Data.DataColumn("입고일", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column입고일);
-                this.column필요수량 = new global::System.Data.DataColumn("필요수량", typeof(sbyte), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.column필요수량);
                 this.column수주수량 = new global::System.Data.DataColumn("수주수량", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column수주수량);
                 this.column총필요수량 = new global::System.Data.DataColumn("총필요수량", typeof(long), null, global::System.Data.MappingType.Element);
@@ -19739,13 +19737,19 @@ namespace SmartMES_Giroei.P1B {
                 base.Columns.Add(this.column바코드);
                 this.column바코드Surfix = new global::System.Data.DataColumn("바코드Surfix", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.column바코드Surfix);
+                this.column필요수량 = new global::System.Data.DataColumn("필요수량", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.column필요수량);
+                this.column수주번호.AllowDBNull = false;
                 this.column수주번호.MaxLength = 13;
+                this.column수주순번.AllowDBNull = false;
                 this.column업체코드.MaxLength = 7;
                 this.column업체명.MaxLength = 50;
+                this.column품목코드.AllowDBNull = false;
                 this.column품목코드.MaxLength = 10;
                 this.column품목명.MaxLength = 50;
                 this.column자재코드.MaxLength = 10;
                 this.column자재명.MaxLength = 50;
+                this.column입고량.AllowDBNull = false;
                 this.column박스ID.AutoIncrement = true;
                 this.column박스ID.AutoIncrementSeed = -1;
                 this.column박스ID.AutoIncrementStep = -1;
@@ -37198,12 +37202,7 @@ namespace SmartMES_Giroei.P1B {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string 수주번호 {
                 get {
-                    try {
-                        return ((string)(this[this.tableSP_Item_Box_Sub.수주번호Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_Item_Box_Sub\' 테이블의 \'수주번호\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((string)(this[this.tableSP_Item_Box_Sub.수주번호Column]));
                 }
                 set {
                     this[this.tableSP_Item_Box_Sub.수주번호Column] = value;
@@ -37214,12 +37213,7 @@ namespace SmartMES_Giroei.P1B {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public uint 수주순번 {
                 get {
-                    try {
-                        return ((uint)(this[this.tableSP_Item_Box_Sub.수주순번Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_Item_Box_Sub\' 테이블의 \'수주순번\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((uint)(this[this.tableSP_Item_Box_Sub.수주순번Column]));
                 }
                 set {
                     this[this.tableSP_Item_Box_Sub.수주순번Column] = value;
@@ -37262,12 +37256,7 @@ namespace SmartMES_Giroei.P1B {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public string 품목코드 {
                 get {
-                    try {
-                        return ((string)(this[this.tableSP_Item_Box_Sub.품목코드Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_Item_Box_Sub\' 테이블의 \'품목코드\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((string)(this[this.tableSP_Item_Box_Sub.품목코드Column]));
                 }
                 set {
                     this[this.tableSP_Item_Box_Sub.품목코드Column] = value;
@@ -37340,22 +37329,6 @@ namespace SmartMES_Giroei.P1B {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public sbyte 필요수량 {
-                get {
-                    try {
-                        return ((sbyte)(this[this.tableSP_Item_Box_Sub.필요수량Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_Item_Box_Sub\' 테이블의 \'필요수량\' 열의 값이 DBNull입니다.", e);
-                    }
-                }
-                set {
-                    this[this.tableSP_Item_Box_Sub.필요수량Column] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public int 수주수량 {
                 get {
                     try {
@@ -37390,12 +37363,7 @@ namespace SmartMES_Giroei.P1B {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public decimal 입고량 {
                 get {
-                    try {
-                        return ((decimal)(this[this.tableSP_Item_Box_Sub.입고량Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("\'SP_Item_Box_Sub\' 테이블의 \'입고량\' 열의 값이 DBNull입니다.", e);
-                    }
+                    return ((decimal)(this[this.tableSP_Item_Box_Sub.입고량Column]));
                 }
                 set {
                     this[this.tableSP_Item_Box_Sub.입고량Column] = value;
@@ -37548,26 +37516,18 @@ namespace SmartMES_Giroei.P1B {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is수주번호Null() {
-                return this.IsNull(this.tableSP_Item_Box_Sub.수주번호Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set수주번호Null() {
-                this[this.tableSP_Item_Box_Sub.수주번호Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is수주순번Null() {
-                return this.IsNull(this.tableSP_Item_Box_Sub.수주순번Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set수주순번Null() {
-                this[this.tableSP_Item_Box_Sub.수주순번Column] = global::System.Convert.DBNull;
+            public int 필요수량 {
+                get {
+                    try {
+                        return ((int)(this[this.tableSP_Item_Box_Sub.필요수량Column]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("\'SP_Item_Box_Sub\' 테이블의 \'필요수량\' 열의 값이 DBNull입니다.", e);
+                    }
+                }
+                set {
+                    this[this.tableSP_Item_Box_Sub.필요수량Column] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -37592,18 +37552,6 @@ namespace SmartMES_Giroei.P1B {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set업체명Null() {
                 this[this.tableSP_Item_Box_Sub.업체명Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is품목코드Null() {
-                return this.IsNull(this.tableSP_Item_Box_Sub.품목코드Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set품목코드Null() {
-                this[this.tableSP_Item_Box_Sub.품목코드Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -37656,18 +37604,6 @@ namespace SmartMES_Giroei.P1B {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is필요수량Null() {
-                return this.IsNull(this.tableSP_Item_Box_Sub.필요수량Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set필요수량Null() {
-                this[this.tableSP_Item_Box_Sub.필요수량Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public bool Is수주수량Null() {
                 return this.IsNull(this.tableSP_Item_Box_Sub.수주수량Column);
             }
@@ -37688,18 +37624,6 @@ namespace SmartMES_Giroei.P1B {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set총필요수량Null() {
                 this[this.tableSP_Item_Box_Sub.총필요수량Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public bool Is입고량Null() {
-                return this.IsNull(this.tableSP_Item_Box_Sub.입고량Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
-            public void Set입고량Null() {
-                this[this.tableSP_Item_Box_Sub.입고량Column] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -37808,6 +37732,18 @@ namespace SmartMES_Giroei.P1B {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
             public void Set바코드SurfixNull() {
                 this[this.tableSP_Item_Box_Sub.바코드SurfixColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public bool Is필요수량Null() {
+                return this.IsNull(this.tableSP_Item_Box_Sub.필요수량Column);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
+            public void Set필요수량Null() {
+                this[this.tableSP_Item_Box_Sub.필요수량Column] = global::System.Convert.DBNull;
             }
         }
         
@@ -52208,7 +52144,6 @@ namespace SmartMES_Giroei.P1B.DataSetP1BTableAdapters {
             tableMapping.ColumnMappings.Add("자재코드", "자재코드");
             tableMapping.ColumnMappings.Add("자재명", "자재명");
             tableMapping.ColumnMappings.Add("입고일", "입고일");
-            tableMapping.ColumnMappings.Add("필요수량", "필요수량");
             tableMapping.ColumnMappings.Add("수주수량", "수주수량");
             tableMapping.ColumnMappings.Add("총필요수량", "총필요수량");
             tableMapping.ColumnMappings.Add("입고량", "입고량");
@@ -52221,6 +52156,7 @@ namespace SmartMES_Giroei.P1B.DataSetP1BTableAdapters {
             tableMapping.ColumnMappings.Add("비고", "비고");
             tableMapping.ColumnMappings.Add("바코드", "바코드");
             tableMapping.ColumnMappings.Add("바코드Surfix", "바코드Surfix");
+            tableMapping.ColumnMappings.Add("필요수량", "필요수량");
             this._adapter.TableMappings.Add(tableMapping);
         }
         
@@ -54720,13 +54656,29 @@ namespace SmartMES_Giroei.P1B.DataSetP1BTableAdapters {
             param.IsNullable = true;
             param.SourceVersion = global::System.Data.DataRowVersion.Current;
             this._commandCollection[0].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "_chk0";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[0].Parameters.Add(param);
+            param = new global::MySql.Data.MySqlClient.MySqlParameter();
+            param.ParameterName = "_chk1";
+            param.DbType = global::System.Data.DbType.Int32;
+            param.MySqlDbType = global::MySql.Data.MySqlClient.MySqlDbType.Int32;
+            param.Size = 2147483647;
+            param.IsNullable = true;
+            param.SourceVersion = global::System.Data.DataRowVersion.Current;
+            this._commandCollection[0].Parameters.Add(param);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(DataSetP1B.SP_ROrderList_QueryDataTable dataTable, global::System.Nullable<global::System.DateTime> _fromDate, global::System.Nullable<global::System.DateTime> _toDate, string _search) {
+        public virtual int Fill(DataSetP1B.SP_ROrderList_QueryDataTable dataTable, global::System.Nullable<global::System.DateTime> _fromDate, global::System.Nullable<global::System.DateTime> _toDate, string _search, global::System.Nullable<int> _chk0, global::System.Nullable<int> _chk1) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((_fromDate.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(_fromDate.Value));
@@ -54745,6 +54697,18 @@ namespace SmartMES_Giroei.P1B.DataSetP1BTableAdapters {
             }
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(_search));
+            }
+            if ((_chk0.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((int)(_chk0.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((_chk1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((int)(_chk1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -54757,7 +54721,7 @@ namespace SmartMES_Giroei.P1B.DataSetP1BTableAdapters {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual DataSetP1B.SP_ROrderList_QueryDataTable GetData(global::System.Nullable<global::System.DateTime> _fromDate, global::System.Nullable<global::System.DateTime> _toDate, string _search) {
+        public virtual DataSetP1B.SP_ROrderList_QueryDataTable GetData(global::System.Nullable<global::System.DateTime> _fromDate, global::System.Nullable<global::System.DateTime> _toDate, string _search, global::System.Nullable<int> _chk0, global::System.Nullable<int> _chk1) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((_fromDate.HasValue == true)) {
                 this.Adapter.SelectCommand.Parameters[0].Value = ((System.DateTime)(_fromDate.Value));
@@ -54776,6 +54740,18 @@ namespace SmartMES_Giroei.P1B.DataSetP1BTableAdapters {
             }
             else {
                 this.Adapter.SelectCommand.Parameters[2].Value = ((string)(_search));
+            }
+            if ((_chk0.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[3].Value = ((int)(_chk0.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[3].Value = global::System.DBNull.Value;
+            }
+            if ((_chk1.HasValue == true)) {
+                this.Adapter.SelectCommand.Parameters[4].Value = ((int)(_chk1.Value));
+            }
+            else {
+                this.Adapter.SelectCommand.Parameters[4].Value = global::System.DBNull.Value;
             }
             DataSetP1B.SP_ROrderList_QueryDataTable dataTable = new DataSetP1B.SP_ROrderList_QueryDataTable();
             this.Adapter.Fill(dataTable);

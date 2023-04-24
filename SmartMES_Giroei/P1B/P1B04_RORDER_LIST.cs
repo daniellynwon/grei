@@ -30,10 +30,18 @@ namespace SmartMES_Giroei
 
                 if (dtFromDate > dtToDate)
                     MessageBox.Show("기간 설정이 정확하지 않습니다.\r\r다시 확인해 주세요.");
+                int scb0;
+                int scb1;
+
+                if (cb0.Checked == true) scb0 = 1;
+                else scb0 = 0;
+
+                if (cb1.Checked == true) scb1 = 1;
+                else scb1 = 0;
 
                 string sSearch = tbSearch.Text.Trim();
 
-                sP_ROrderList_QueryTableAdapter.Fill(dataSetP1B.SP_ROrderList_Query, dtFromDate, dtToDate, sSearch);
+                sP_ROrderList_QueryTableAdapter.Fill(dataSetP1B.SP_ROrderList_Query, dtFromDate, dtToDate, sSearch, scb0, scb1);
 
                 var data = dataSetP1B.SP_ROrderList_Query;
                 var result = await Logger.ApiLog(G.UserID, lblTitle.Text, ActionType.조회, data);
@@ -49,6 +57,31 @@ namespace SmartMES_Giroei
             {
                 Cursor.Current = Cursors.Default;
             }
+        }
+        private void cbAllFeatures_Click(object sender, System.EventArgs e)
+        {
+            ListSearch();
+        }
+        private void cbAllFeatures_CheckedChanged(object sender, EventArgs e)
+        {
+            if (cbAllFeatures.Checked == true)
+            {
+                cb0.Checked = true;
+                cb1.Checked = true;
+            }
+            else
+            {
+                cb0.Checked = false;
+                cb1.Checked = false;
+            }
+        }
+        private void cb0_Click(object sender, EventArgs e)
+        {
+            ListSearch();
+        }
+        private void cb1_Click(object sender, EventArgs e)
+        {
+            ListSearch();
         }
 
         #region Condition Bar Events
