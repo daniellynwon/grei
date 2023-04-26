@@ -375,6 +375,11 @@ namespace SmartMES_Giroei
 
         private void btnBarcodePrint_Click(object sender, EventArgs e)
         {
+            if (tbPackQty.Text == "0" || tbQtyInPacking.Text == "0" || tbInQty.Text == "0")
+            {
+                MessageBox.Show("입고수량, PKG당 수량, PKG는 0이 될 수 없습니다.");
+                return;
+            }
             printBarcode();
         }
         private void printBarcode()
@@ -543,6 +548,11 @@ namespace SmartMES_Giroei
 
             if (int.TryParse(tbQtyInPacking.Text.Replace(",", ""), out iQtyInPacking))
             {
+                if (iQtyInPacking == 0)
+                {
+                    MessageBox.Show("패키지수량은 0이 될 수 없습니다.", "패키지수량", MessageBoxButtons.OK);
+                    return;
+                }
                 int iPackQty = int.Parse(tbInQty.Text.Replace(",", "")) / iQtyInPacking;
 
                 int remain = int.Parse(tbInQty.Text.Replace(",", "")) % iQtyInPacking;

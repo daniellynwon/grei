@@ -337,7 +337,7 @@ namespace SmartMES_Giroei
             if (e.RowIndex < 0) return;
             if (e.ColumnIndex < 8 || e.ColumnIndex > 10) return;
 
-            dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = (dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value == "O") ? "X" : "O";
+            dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = (dataGridView2.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "O") ? "X" : "O";
         }
         private void dataGridView3_DragDrop(object sender, DragEventArgs e)
         {
@@ -420,7 +420,10 @@ namespace SmartMES_Giroei
             string sProdNameSub = string.Empty;
             string sProdIDSub = string.Empty;
             string sProdSize = string.Empty;
-            string sQty = string.Empty;
+            string sQty = string.Empty; //소요기준
+            string sEnter_Qty = string.Empty; // 소요수량
+            string sItem_Count = string.Empty; // 투입수량
+            string sReturn_Qty = string.Empty; // 반납수량
             string sSusap = string.Empty; string sMisap = string.Empty;
             string sContents = string.Empty; string sKind = string.Empty; /*(P,M,S)*/ string sProdKind = string.Empty; /*품목분류 */
             string sConsign = "N"; /*사급도급*/ string sSeq = string.Empty;
@@ -488,8 +491,11 @@ namespace SmartMES_Giroei
                     sProdKind = (range.Cells[row, 2] as Excel.Range).Value2.ToString().Trim();  // 품목분류
                     sProdNameSub = (range.Cells[row, 5] as Excel.Range).Value2.ToString().Trim();   // 자재명
                     sProdSize = (range.Cells[row, 6] as Excel.Range).Value2.ToString().Trim();
-                    sQty = (range.Cells[row, 7] as Excel.Range).Value2.ToString().Trim();
-                    sContents = ((range.Cells[row, 14] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 14] as Excel.Range).Value2.ToString().Trim();
+                    sQty = (range.Cells[row, 7] as Excel.Range).Value2.ToString().Trim(); //소요기준
+                    sEnter_Qty = (range.Cells[row, 8] as Excel.Range).Value2.ToString().Trim(); //소요수량
+                    sItem_Count = (range.Cells[row, 9] as Excel.Range).Value2.ToString().Trim(); //투입수량
+                    sReturn_Qty = (range.Cells[row, 10] as Excel.Range).Value2.ToString().Trim(); //반납수량
+                    sContents = ((range.Cells[row, 14] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 14] as Excel.Range).Value2.ToString().Trim(); //비고
                     sMisap = ((range.Cells[row, 13] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 13] as Excel.Range).Value2.ToString().Trim();   // 미삽
                     sSusap = ((range.Cells[row, 17] as Excel.Range).Value2 == null) ? "" : (range.Cells[row, 17] as Excel.Range).Value2.ToString().Trim();    // 수삽
                     string sSageop = ((range.Cells[row, 16] as Excel.Range).Value2 == null) ? "도급" : (range.Cells[row, 16] as Excel.Range).Value2.ToString().Trim();    // 사급
@@ -546,7 +552,8 @@ namespace SmartMES_Giroei
                             Susap = "Y";
                         }
 
-                        sql = $@"INSERT INTO BOM_bomlist (seq, prod_id, parent_id, req_qty, IsSusap, IsMiSap, contents, consignedYN) VALUES ('{@sSeq}', '{@_sProdID}', '{@sProdIDSub}', '{@sQty}', '{Susap}', '{Misap}', '{sContents}', '{@sConsign}');";
+                        sql = $@"INSERT INTO BOM_bomlist (seq, prod_id, parent_id, req_qty, enter_qty, item_count, return_qty, IsSusap, IsMiSap, contents, consignedYN) VALUES ('{@sSeq}', '{@_sProdID}', '{@sProdIDSub}', '{@sQty}', '{@sEnter_Qty}', '{@sItem_Count}', '{@sReturn_Qty
+                            }', '{Susap}', '{Misap}', '{sContents}', '{@sConsign}');";
                         m.dbCUD(sql, ref msg);
                     }
                     else

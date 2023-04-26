@@ -271,9 +271,9 @@
             // Column1
             // 
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = "BOM";
+            dataGridViewCellStyle3.NullValue = "자재현황";
             this.Column1.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Column1.FillWeight = 30F;
+            this.Column1.FillWeight = 40F;
             this.Column1.HeaderText = "BOM";
             this.Column1.Name = "Column1";
             // 
