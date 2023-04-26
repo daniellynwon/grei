@@ -2054,3 +2054,4 @@ C:\ProJect(유지보수)\(유지보수)지로이아이\0224지로이아이\Smart
 C:\ProJect(유지보수)\(유지보수)지로이아이\0224지로이아이\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.csproj.CopyComplete
 C:\ProJect(유지보수)\(유지보수)지로이아이\0224지로이아이\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.exe
 C:\ProJect(유지보수)\(유지보수)지로이아이\0224지로이아이\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.pdb
+C:\ProJect(유지보수)\(유지보수)지로이아이\0224지로이아이\SmartMES_Giroei\obj\Debug\SmartMES_Giroei.csproj.AssemblyReference.cache

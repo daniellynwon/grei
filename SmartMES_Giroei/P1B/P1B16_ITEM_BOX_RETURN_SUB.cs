@@ -1,10 +1,12 @@
 ﻿using Microsoft.Reporting.WinForms;
+using Excel = Microsoft.Office.Interop.Excel;
 using SmartFactory;
 using System;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace SmartMES_Giroei
 {
@@ -13,6 +15,10 @@ namespace SmartMES_Giroei
         public P1B16_ITEM_BOX_RETURN parentWin;
         public string sGubun, sIsComplete, sSujuNo, sSujuSeq, sProdID, sProdName, sBoxID;
 
+        static Excel.Application excelApp = null;
+        static Excel.Workbook workBook = null;
+        static Excel.Worksheet workSheet = null;
+        static Excel.Range range = null;
         public P1B16_ITEM_BOX_RETURN_SUB()
         {
             InitializeComponent();
@@ -322,6 +328,146 @@ namespace SmartMES_Giroei
 
         #region Other Functions
         //
+        #endregion
+        #region Excel
+        private void btnExcel_Click(object sender, EventArgs e) //현품박스(회수)에서 엑셀 불러오기 단순 회수량만 업데이트하는 수단으로 사용예정 회수량
+        {
+            MariaCRUD m = new MariaCRUD();
+
+            DataTable table;
+
+            string sql = string.Empty;
+            string msg = string.Empty;
+            string sProdIDSub = string.Empty;
+            string sOrderNo = string.Empty;
+            string _sProdName = sProdName;
+            string _sProdID = sProdID;       // 제품품목ID
+            string sProdNameSub = string.Empty;
+            string sReturn_qty = string.Empty; // 반납수량
+
+            string sFileName = string.Empty;
+            OpenFileDialog ofg = new OpenFileDialog();
+
+            //ofg.Filter = "Excel File 97~2013(*.xls)| *.xls| *.xlsx|*.xlsx| All Files(*.*)|*.*";
+            ofg.Filter = "Excel File *.xls| *.xlsx| 97~2013(*.xls)|*.xlsx| All Files(*.*)|*.*"; //양식 액셀이 바로 나오게 수정
+
+            if (ofg.ShowDialog() == DialogResult.OK)
+            {
+                sFileName = ofg.FileName;
+                //MessageBox.Show("sFileName : " + sFileName);
+            }
+            else       // 1/3/23 취소 경우 
+            {
+                return;
+            }
+
+            try
+            {
+
+                excelApp = new Excel.Application(); // 엑셀 어플리케이션 생성 
+
+                workBook = excelApp.Workbooks.Open(ofg.FileName); // 워크북 열기 
+
+                workSheet = workBook.Worksheets.get_Item(1) as Excel.Worksheet; // 엑셀 첫번째 워크시트 가져오기 
+                range = workSheet.UsedRange; // 사용중인 셀 범위를 가져오기
+
+                if ((range.Cells[4, 4] as Excel.Range).Value2.ToString().Trim() != sProdName)
+                {
+                    if (DialogResult.OK == MessageBox.Show("해당 품목의 BOM 엑셀 파일이 아니거나,\r품목명이 일치하지 않습니다.", "엑셀 파일 확인이 필요합니다", MessageBoxButtons.OK, MessageBoxIcon.Warning))
+                    {
+                        return;
+                    }
+                    workBook.Close();
+                    excelApp.Quit();
+                    return;
+                }
+
+                progressBar1.Visible = true;
+
+                int count = 0;
+
+                for (int row = 8; row <= range.Rows.Count; row++) // 가져온 행 만큼 반복
+                {
+                    if ((range.Cells[row, 5] as Excel.Range).Value2 == null || string.IsNullOrEmpty((range.Cells[row, 5] as Excel.Range).Value2.ToString().Trim())) break;
+
+                    sProdNameSub = (range.Cells[row, 5] as Excel.Range).Value2.ToString().Trim();   // 자재명
+                    sReturn_qty = (range.Cells[row, 10] as Excel.Range).Value2.ToString().Trim(); //소요수량
+
+                    sql = $@"SELECT prod_name FROM BAS_product WHERE gubun = 'M' AND prod_name = '{@sProdNameSub}' ORDER BY prod_id DESC LIMIT 1";
+
+                    if (m.dbDataTable(sql, ref msg).Rows.Count == 0)
+                    {
+
+                    }
+                    else
+                    {
+                        _sProdName = m.dbDataTable(sql, ref msg).Rows[0][0].ToString();
+
+                        sql = $@"SELECT prod_id FROM BAS_product WHERE gubun = 'M' AND prod_name = '{@_sProdName}' ORDER BY prod_id DESC LIMIT 1";
+                        sProdIDSub = m.dbDataTable(sql, ref msg).Rows[0][0].ToString();
+                    }
+
+                    sql = $@"SELECT prod_id, parent_id FROM BOM_bomlist WHERE prod_id = '{@_sProdID}' AND parent_id = '{@sProdIDSub}' ORDER BY prod_id";
+
+                    sql = $@"UPDATE BOM_bomlist SET return_qty = '{@sReturn_qty}' WHERE prod_id = '{@_sProdID}' AND parent_id = '{@sProdIDSub}'";
+                    m.dbCUD(sql, ref msg);
+
+                    int ratio = (int)Math.Round((count * 100) / ((double)range.Rows.Count - 8.0));
+                    progressBar1.Value = (ratio > 100) ? 100 : ratio;
+                    count = count + 1;
+
+                    sql = "update BAS_product set bomYN = 'Y', bom_dt = now() where prod_id = '" + _sProdID + "'";
+                    m.dbCUD(sql, ref msg);
+
+                }
+                progressBar1.Value = 0;
+                progressBar1.Visible = false;
+                ListSearch();
+            }
+            catch (Exception e2)
+            {
+                return;
+            }
+            finally
+            {
+                workBook.Close(true);
+                excelApp.Quit();
+
+                ReleaseObject(workSheet);
+                ReleaseObject(workBook);
+                ReleaseObject(excelApp);
+            }
+        }
+        static void ReleaseObject(object obj)
+        {
+            try
+            {
+                if (obj != null)
+                {
+                    Marshal.ReleaseComObject(obj); // 액셀 객체 해제 
+                    obj = null;
+                }
+            }
+            catch (Exception ex)
+            {
+                obj = null;
+                throw ex;
+            }
+            finally
+            {
+                GC.Collect(); // 가비지 수집
+
+            }
+        }
+        private string getProdCode(string _gubun)
+        {
+            string sql = @"select UF_ProdCodeGenerator('" + _gubun + "')";
+
+            MariaCRUD m = new MariaCRUD();
+
+            string msg = string.Empty;
+            return m.dbRonlyOne(sql, ref msg).ToString();
+        }
         #endregion
 
     }

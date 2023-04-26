@@ -576,6 +576,8 @@ namespace SmartMES_Giroei
             string sManhattan = tbManhattan.Text;
             string sTwisted = tbTwisted.Text;
             string sEtcerror = tbEtcError.Text;
+            string rorderID = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            string rorderSeq = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value.ToString();
 
             //string sFname1 = lbFname1.Text;
             //string sFname2 = lbFname2.Text;
@@ -603,6 +605,8 @@ namespace SmartMES_Giroei
                         + ", misap = " + sMisap + ", overturned = " + sOverturned + ", leadopen = " + sLeadopen + ", minap = " + sMinap + ", short = " + sShort + ", reverse = " + sReverse
                         + ", manhattan = " + sManhattan + ", twisted = " + sTwisted + ", etc_error = " + sEtcerror
                         + ", contents = '" + sContents + "', worklinename ='" + sWorklineName + "', workline ='" + sWorkline + "', enter_man = '" + sMan + "'";
+
+            sql = "update SAL_order_sub set prod_status = 5 where order_id = '" + rorderID + "' and order_seq = " + rorderSeq;   // SAL_order_sub prod_status 4로 변경
 
             cmd.Connection = con;
             cmd.CommandText = sql;
@@ -670,6 +674,8 @@ namespace SmartMES_Giroei
             string sManhattan2 = tbManhattan2.Text;
             string sTwisted2 = tbTwisted2.Text;
             string sEtcerror2 = tbEtcError2.Text;
+            string rorderID = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[1].Value.ToString();
+            string rorderSeq = dataGridView1.Rows[dataGridView1.CurrentCell.RowIndex].Cells[2].Value.ToString();
 
             //string sFname1 = lbFname1.Text;
             //string sFname2 = lbFname2.Text;
@@ -697,6 +703,8 @@ namespace SmartMES_Giroei
                         + ", misap = " + sMisap2 + ", overturned = " + sOverturned2 + ", leadopen = " + sLeadopen2 + ", minap = " + sMinap2 + ", short = " + sShort2 + ", reverse = " + sReverse2
                         + ", manhattan = " + sManhattan2 + ", twisted = " + sTwisted2 + ", etc_error = " + sEtcerror2
                         + ", contents = '" + sContents2 + "', worklinename ='" + sWorklineName2 + "', workline ='" + sWorkline2 + "', enter_man = '" + sMan2 + "'";
+
+            sql = "update SAL_order_sub set prod_status = 5 where order_id = '" + rorderID + "' and order_seq = " + rorderSeq;   // SAL_order_sub prod_status 4로 변경
 
             cmd.Connection = con;
             cmd.CommandText = sql;
